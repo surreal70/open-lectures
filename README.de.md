@@ -1,5 +1,10 @@
 # Open Lectures
 
+[![Lizenz: CC BY-NC 4.0](https://img.shields.io/badge/Lizenz-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/deed.de)
+[![Inhalt: Bildung](https://img.shields.io/badge/Inhalt-Bildung-blue.svg)](#)
+[![Format: Obsidian](https://img.shields.io/badge/Format-Obsidian-purple.svg)](https://obsidian.md/)
+[![Sprache: Deutsch](https://img.shields.io/badge/Sprache-Deutsch-yellow.svg)](#)
+
 Eine Sammlung offener Vorlesungsunterlagen, Arbeitsmaterialien und Kursinhalte im Obsidian-Format.
 
 🇬🇧 [English Version](README.md)
@@ -36,7 +41,7 @@ Siehe [LICENSE](LICENSE) für den vollständigen Lizenztext.
 
 | Vault | Beschreibung | Autor | Status |
 |-------|--------------|-------|--------|
-| | | | |
+| `Betriebssysteme, Rechnernetze und verteilte Systeme` | Betriebssysteme, Rechnernetze und Verteilte Systeme – IU-Kursmaterialien. **BS** (Prozesse, Scheduling, Speicher, Synchronisation, E/A, Dateisysteme), **RN** (OSI/TCP-IP-Modelle, alle Schichten, Sicherheit), **VS** (Grundlagen, Kommunikation, Konsistenz, Koordination) | Andreas Hümmer | in Entwicklung (BS: v0.9.3, RN: v0.1, VS: v0.1) |
 
 ## Mitwirken
 
@@ -49,3 +54,14 @@ Ob Sie:
 - Materialien übersetzen möchten
 
 Bitte öffnen Sie gerne ein Issue oder reichen Sie einen Pull Request ein. Jeder Beitrag hilft, diese Bildungsressourcen für alle zu verbessern.
+
+## Über KI-Unterstützung
+
+Dieses Projekt nutzt KI-Unterstützung (Kiro) zur Unterstützung des Entwicklungsworkflows:
+
+- **Strukturelle Integrität** — Steering-Dateien definieren Formatierungsregeln, Dokumentstruktur und Konventionen. Die KI validiert Inhalte gegen diese Regeln und erstellt Compliance-Berichte (siehe [Beispielbericht](Betriebssysteme,%20Rechnernetze%20und%20verteilte%20Systeme/COMPLIANCE-REPORT.md)).
+- **Konsistente Darstellung** — Automatisierte Prüfungen stellen einheitliche Frontmatter, Callout-Nutzung, Querverweise und Tagging über alle Dokumente sicher.
+- **Inhaltskonvertierung** — Reformatierungsaufgaben wie das Umwandeln von ASCII-Diagrammen in PNG-Grafiken oder das Umstrukturieren importierter Inhalte.
+- **Ideensammlung** — Sammeln und Organisieren von Gedanken, Notizen und Überlegungen zu Themen und Teilprojekten.
+
+Die eigentlichen Bildungsinhalte werden von menschlichen Autoren erstellt. Die KI unterstützt bei der Mechanik der Pflege eines gut organisierten Vaults.

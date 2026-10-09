@@ -1,5 +1,10 @@
 # Open Lectures
 
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Content: Educational](https://img.shields.io/badge/Content-Educational-blue.svg)](#)
+[![Format: Obsidian](https://img.shields.io/badge/Format-Obsidian-purple.svg)](https://obsidian.md/)
+[![Language: German](https://img.shields.io/badge/Language-German-yellow.svg)](#)
+
 A collection of open educational lecture notes, workbooks, and course materials formatted as Obsidian vaults.
 
 🇩🇪 [Deutsche Version](README.de.md)
@@ -36,7 +41,7 @@ See [LICENSE](LICENSE) for the full license text.
 
 | Vault | Description | Author | Status |
 |-------|-------------|--------|--------|
-| | | | |
+| `Betriebssysteme, Rechnernetze und verteilte Systeme` | Operating Systems, Computer Networks and Distributed Systems – IU course materials. **OS** (processes, scheduling, memory, synchronization, I/O, filesystems), **Networks** (OSI/TCP-IP models, all layers, security), **Distributed Systems** (fundamentals, communication, consistency, coordination) | Andreas Hümmer | in-development (OS: v0.9.3, RN: v0.1, VS: v0.1) |
 
 ## Contributing
 
@@ -49,3 +54,14 @@ Whether you want to:
 - Translate materials
 
 Please feel free to open an issue or submit a pull request. Every contribution helps make these educational resources better for everyone.
+
+## About AI Assistance
+
+This project uses AI assistance (Kiro) to support the development workflow:
+
+- **Structural integrity** — Steering files define formatting rules, document structure, and conventions. The AI validates content against these rules and generates compliance reports (see [example report](Betriebssysteme,%20Rechnernetze%20und%20verteilte%20Systeme/COMPLIANCE-REPORT.md)).
+- **Consistent presentation** — Automated checks ensure uniform frontmatter, callout usage, cross-references, and tagging across all documents.
+- **Content conversion** — Reformatting tasks like converting ASCII diagrams to PNG graphics or restructuring imported content.
+- **Idea collection** — Gathering and organizing thoughts, notes, and considerations for topics and subprojects.
+
+The actual educational content is authored by human contributors. AI assists with the mechanics of maintaining a well-organized vault.

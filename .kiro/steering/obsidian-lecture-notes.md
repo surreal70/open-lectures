@@ -34,19 +34,21 @@ vault-name/
 |------------|--------|----------|
 | Organisation | `00-` | `00-Organisation/` |
 | Themenkapitel | `01-`, `02-`, ... | `01-Grundlagen/`, `02-Vertiefung/` |
-| Zusatzkapitel | kein Präfix | `Praesentationen/`, `Anhang/` |
+| Zusatzkapitel | optional | `Praesentationen/` oder `05-Praesentationen/` |
 
 ### Pflichtverzeichnisse
 
 **Mit Index-Präfix (Hauptinhalt):**
-- `00-Organisation` - Kursorganisation, Termine, Dozenten
+- `00-Organisation` - Kursorganisation, Termine, Dozenten, Metadaten
 - `01-TOP1` bis `0n-TOPn` - Mindestens 3 Themenkapitel (nach Bedarf erweiterbar)
 
-**Ohne Präfix (Zusatzmaterial):**
+**Ohne Präfix (Zusatzmaterial) — Präfix optional:**
 - `Praesentationen` - Folien, PPT-Dateien
 - `Uebungsaufgaben` - Übungen mit Lösungen
 - `Pruefungen` - Musterklausuren, alte Prüfungen
 - `Anhang` - Sonstiges Material
+
+Hinweis: Zusatzkapitel können optional nummerierte Präfixe haben (z.B. `05-Praesentationen/`), um die Sortierung im Dateisystem zu kontrollieren.
 
 **Versteckt:**
 - `.templates` - Vorlagen für neue Dokumente
@@ -71,7 +73,7 @@ Content files within directories **must** have a numeric prefix for ordering:
 
 ## Frontmatter (Metadata)
 
-Every content file starts with YAML frontmatter. **No visible title section (H1)** – the title comes from the frontmatter.
+Every content file starts with YAML frontmatter.
 
 ```yaml
 ---
@@ -103,11 +105,11 @@ tags:
 | `Pruefungen/` | `pruefung` |
 | `Anhang/` | `anhang` |
 
-Vaults können zusätzliche individuelle Tags definieren.
+Vaults können zusätzliche individuelle Tags definieren (z.B. `bs`, `rn`, `vs` für Themenbereiche).
 
 ## Note Structure
 
-Each content note **must** follow this structure in the specified order. **Kein H1-Titel** – der Titel wird aus dem Frontmatter/Dateinamen abgeleitet.
+Each content note **must** follow this structure in the specified order:
 
 ```markdown
 ---
@@ -118,6 +120,8 @@ tags:
   - content
   - algorithmen
 ---
+
+# Titel des Dokuments
 
 > [!info] **Lernziele**
 > - Lernziel 1
@@ -172,14 +176,15 @@ Querverweise zu anderen relevanten Dokumenten im Vault:
 | Reihenfolge | Element | Beschreibung |
 |-------------|---------|--------------|
 | 1 | Frontmatter | YAML-Metadaten (author, created, modified, tags) |
-| 2 | Callout: Lernziele | `[!info]` - Kompetenzziele |
-| 3 | Überblick | Einführung ins Thema |
-| 4 | Thema 1...n | Hauptinhalte (min. 3 Themen als Start) |
-| 5 | Zusammenhänge | Crosslinks zu anderen Vault-Dokumenten |
-| 6 | Callout: Prüfungsrelevant | `[!warning]` - Klausurrelevante Punkte |
-| 7 | Callout: Prüfungsfragen | `[!question]` - Typische Fragen |
-| 8 | Quellen | Literatur und Referenzen |
-| 9 | Callout: Weiterführende Links | `[!tip]` - Zusätzliche Ressourcen |
+| 2 | Titel (H1) | `# Dokumenttitel` |
+| 3 | Callout: Lernziele | `[!info]` - Kompetenzziele |
+| 4 | Überblick | Einführung ins Thema |
+| 5 | Thema 1...n | Hauptinhalte (min. 3 Themen als Start) |
+| 6 | Zusammenhänge | Crosslinks zu anderen Vault-Dokumenten |
+| 7 | Callout: Prüfungsrelevant | `[!warning]` - Klausurrelevante Punkte |
+| 8 | Callout: Prüfungsfragen | `[!question]` - Typische Fragen |
+| 9 | Quellen | Literatur und Referenzen |
+| 10 | Callout: Weiterführende Links | `[!tip]` - Zusätzliche Ressourcen |
 
 ## Linking Strategy
 

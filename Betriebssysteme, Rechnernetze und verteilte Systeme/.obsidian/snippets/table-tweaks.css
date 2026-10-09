@@ -1,0 +1,23 @@
+/* Table tweaks
+ * Keeps the first column of tables from wrapping/breaking so short labels
+ * (e.g. "Windows-95", version names, keys) stay on a single line, while the
+ * remaining columns absorb the available width.
+ *
+ * Enable under: Settings → Appearance → CSS snippets → "table-tweaks".
+ */
+
+/* Reading view (rendered Markdown) */
+.markdown-preview-view table th:first-child,
+.markdown-preview-view table td:first-child,
+/* Live Preview / editing view */
+.markdown-rendered table th:first-child,
+.markdown-rendered table td:first-child {
+  white-space: nowrap;      /* never wrap the first column */
+  width: 1%;                /* shrink-to-fit: take only what the content needs */
+}
+
+/* Give the whole table room to breathe and use the full note width */
+.markdown-preview-view table,
+.markdown-rendered table {
+  width: 100%;
+}
