@@ -31,19 +31,19 @@ Die Geschichte der Betriebssysteme ist eng mit der Entwicklung der Computer-Hard
 Die Wurzeln der Datenverarbeitung reichen bis in die Industrielle Revolution zurück.
 
 ![[industrielle-revolution.jpg]]
-*Fabrikhalle im 19. Jahrhundert - Beginn der Automatisierung*
+*02-01-01-industrielle-revolution: Fabrikhalle im 19. Jahrhundert - Beginn der Automatisierung*
 
 ### Frühe Programmierkonzepte
 
 ![[jacquard-webstuhl-lochkarten.jpg]]
-*Jacquard-Webstuhl (1805) - Lochkarten zur Mustersteuerung*
+*02-01-01-jacquard-webstuhl-lochkarten: Jacquard-Webstuhl (1805) - Lochkarten zur Mustersteuerung*
 
 Der Jacquard-Webstuhl nutzte bereits Lochkarten zur Programmierung von Webmustern - ein Konzept, das später für Computer übernommen wurde.
 
 ### Charles Babbage's Vision
 
 ![[babbage-analytical-engine.jpg]]
-*Modell der Analytical Engine von Charles Babbage*
+*02-01-01-babbage-analytical-engine: Modell der Analytical Engine von Charles Babbage*
 
 Charles Babbage entwarf um 1837 die **Analytical Engine** - einen mechanischen Universalrechner mit:
 - Rechenwerk ("Mill")
@@ -73,10 +73,10 @@ Ada Lovelace schrieb das erste Programm für diese (nie gebaute) Maschine.
 
 
 ![[hollerith-tabelliermaschine.jpg]]
+*02-01-01-hollerith-tabelliermaschine: Hollerith-Tabelliermaschine (ca. 1890) - Quelle: [Computer History Museum](https://www.computerhistory.org)*
 
-*Hollerith-Tabelliermaschine (ca. 1890) - Quelle: [Computer History Museum](https://www.computerhistory.org)*
 ![[hollerith-lochkarte.jpg]]
-*Hollerith-Lochkarte - Datenträger für die US-Volkszählung 1890*
+*02-01-01-hollerith-lochkarte: Hollerith-Lochkarte - Datenträger für die US-Volkszählung 1890*
 
 **Die US-Volkszählung 1890:**
 
@@ -121,7 +121,7 @@ Die 1940er Jahre markierten den Beginn der eigentlichen Computerära. Mehrere ba
 > Deutscher Bauingenieur und Computerpionier. Er baute den Z3 in der Wohnung seiner Eltern in Berlin - ohne Kenntnis von parallelen Entwicklungen in anderen Ländern.
 
 ![[zuse-z3-deutsches-museum.jpg]]
-*Nachbau der Zuse Z3 im Deutschen Museum München - Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Z3_Deutsches_Museum.JPG), Lizenz: CC BY-SA 3.0*
+*02-01-01-zuse-z3-deutsches-museum: Nachbau der Zuse Z3 im Deutschen Museum München - Quelle: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Z3_Deutsches_Museum.JPG), Lizenz: CC BY-SA 3.0*
 
 Die Z3 war der weltweit erste funktionierende, programmierbare, vollautomatische digitale Computer.
 
@@ -154,7 +154,7 @@ Die Z3 war der weltweit erste funktionierende, programmierbare, vollautomatische
 ##### Colossus (1943) - Der erste elektronische programmierbare Computer
 
 ![[colossus.jpg]]
-*Colossus Mark 2 in Bletchley Park, bedient von "Wrens" (Women's Royal Naval Service) - Quelle: [The National Museum of Computing](https://www.tnmoc.org)*
+*02-01-01-colossus: Colossus Mark 2 in Bletchley Park, bedient von "Wrens" (Women's Royal Naval Service) - Quelle: [The National Museum of Computing](https://www.tnmoc.org)*
 
 > [!info] Tommy Flowers (1905-1998)
 > Britischer Ingenieur der Post Office Research Station, der Colossus entwarf. Nach dem Krieg wurde seine bahnbrechende Arbeit jahrzehntelang geheim gehalten.
@@ -193,10 +193,10 @@ Colossus war der weltweit erste programmierbare, elektronische, digitale Compute
 ##### ENIAC (1946) - Der erste elektronische Universalrechner
 
 ![[eniac.jpg]]
-*ENIAC in der Moore School of Electrical Engineering, University of Pennsylvania - Quelle: U.S. Army Photo*
+*02-01-01-eniac: ENIAC in der Moore School of Electrical Engineering, University of Pennsylvania - Quelle: U.S. Army Photo*
 
 ![[eniac-programmiererinnen.jpg]]
-*ENIAC-Programmiererinnen bei der Verkabelung - Die "ENIAC Six" waren die ersten Software-Entwicklerinnen der Geschichte - Quelle: U.S. Army Photo*
+*02-01-01-eniac-programmiererinnen: ENIAC-Programmiererinnen bei der Verkabelung - Die "ENIAC Six" waren die ersten Software-Entwicklerinnen der Geschichte - Quelle: U.S. Army Photo*
 
 > [!info] ENIAC = Electronic Numerical Integrator and Computer
 > Der erste programmierbare, elektronische, universell einsetzbare Digitalcomputer. Von der Presse als "Giant Brain" (Riesengehirn) bezeichnet.
@@ -279,7 +279,7 @@ Die zweite Generation markierte den Übergang von Vakuumröhren zu **Transistore
 #### Übergang: Harvard Mark I (1944)
 
 ![[harvard-mark-i.jpg]]
-*Harvard Mark I (ASCC) - Einer der letzten elektromechanischen Großrechner, Übergang zur Computerära - Quelle: [Harvard University](https://chsi.harvard.edu)*
+*02-01-01-harvard-mark-i: Harvard Mark I (ASCC) - Einer der letzten elektromechanischen Großrechner, Übergang zur Computerära - Quelle: [Harvard University](https://chsi.harvard.edu)*
 
 > [!info] Harvard Mark I (1944)
 > Obwohl technisch noch zur 1. Generation gehörend (elektromechanisch), war der Mark I ein wichtiger Übergang zur modernen Computerära und wurde bis in die 1950er Jahre genutzt.
@@ -311,7 +311,7 @@ Die zweite Generation markierte den Übergang von Vakuumröhren zu **Transistore
 #### Transistor-Mainframes: IBM 7090/7094
 
 ![[ibm-7094.jpg]]
-*IBM 7094 Konsole - Transistorisierter Großrechner der 2. Generation - Quelle: [Computer History Museum](https://www.computerhistory.org)*
+*02-01-01-ibm-7094: IBM 7094 Konsole - Transistorisierter Großrechner der 2. Generation - Quelle: [Computer History Museum](https://www.computerhistory.org)*
 
 Die **IBM 7090** (1959) und ihr Nachfolger **IBM 7094** (1962) waren die dominierenden wissenschaftlichen Großrechner der 2. Generation.
 
@@ -338,10 +338,10 @@ Die **IBM 7090** (1959) und ihr Nachfolger **IBM 7094** (1962) waren die dominie
 Die 2. Generation etablierte die **Batch-Verarbeitung** als Standard-Arbeitsweise:
 
 ![[lochkarten-sortiert.jpg]]
-*Lochkarten-Stapel sortiert in Ablagefächern - Jobs warteten oft Stunden oder Tage auf Verarbeitung*
+*02-01-01-lochkarten-sortiert: Lochkarten-Stapel sortiert in Ablagefächern - Jobs warteten oft Stunden oder Tage auf Verarbeitung*
 
 ![[papertape-archiv.jpg]]
-*Lochstreifen-Archiv (Papertape) - Alternative zu Lochkarten für Programm- und Datenspeicherung*
+*02-01-01-papertape-archiv: Lochstreifen-Archiv (Papertape) - Alternative zu Lochkarten für Programm- und Datenspeicherung*
 
 **Der Batch-Workflow:**
 
@@ -397,8 +397,7 @@ Die ersten Computer hatten **kein Betriebssystem**. Ein Operator musste jeden Jo
 > Entwickelt von **Robert L. Patrick** (General Motors) und **Owen Mock** (North American Aviation) für den IBM 704. Die Hauptfunktion war die automatische Ausführung des nächsten Programms nach Abschluss des vorherigen - die Grundidee der Batch-Verarbeitung.
 
 ![[batch-speicher-layout.png]]
-
-*Quelle: Basierend auf Stallings, "Operating Systems" und Gordon College CS322 Lecture Notes*
+*02-01-01-batch-speicher-layout: Basierend auf Stallings, "Operating Systems" und Gordon College CS322 Lecture Notes*
 
 **Aufgaben des Residenten Monitors:**
 - **Job Control Language (JCL) interpretieren**: Steuerkarten wie `$JOB`, `$FORTRAN`, `$RUN` auswerten
@@ -453,8 +452,7 @@ Dies verschwendete wertvolle CPU-Zyklen und war bei langsamen Geräten extrem in
 **Die Lösung: Hardware-Interrupts**
 
 ![[hardware-interrupt-ablauf.png]]
-
-*Ablauf: Die CPU arbeitet am Hauptprogramm, während das Gerät autonom arbeitet. Meldet das Gerät "Fertig!", löst es ein Interrupt-Signal aus. Die CPU unterbricht das Hauptprogramm, führt die Interrupt-Service-Routine (ISR) aus und kehrt per Rücksprung (IRET) zum Hauptprogramm zurück.*
+*02-01-01-hardware-interrupt-ablauf: Die CPU arbeitet am Hauptprogramm, während das Gerät autonom arbeitet. Meldet das Gerät "Fertig!", löst es ein Interrupt-Signal aus. Die CPU unterbricht das Hauptprogramm, führt die Interrupt-Service-Routine (ISR) aus und kehrt per Rücksprung (IRET) zum Hauptprogramm zurück.*
 
 **Geschichte der Interrupt-Erfindung:**
 
@@ -491,8 +489,7 @@ Dies verschwendete wertvolle CPU-Zyklen und war bei langsamen Geräten extrem in
 **Von Polling zu Interrupts:**
 
 ![[polling-vs-interrupts.png]]
-
-*Beim **Polling** fragt die CPU das Gerät permanent ab ("Fertig?") und verschwendet dabei Rechenzeit. Mit **Interrupts** arbeitet die CPU ungestört weiter, bis das Gerät sich von selbst meldet – erst dann wird die Interrupt-Service-Routine (ISR) ausgeführt.*
+*02-01-01-polling-vs-interrupts: Beim **Polling** fragt die CPU das Gerät permanent ab ("Fertig?") und verschwendet dabei Rechenzeit. Mit **Interrupts** arbeitet die CPU ungestört weiter, bis das Gerät sich von selbst meldet – erst dann wird die Interrupt-Service-Routine (ISR) ausgeführt.*
 
 ---
 
@@ -504,8 +501,7 @@ Mit der Einführung von Interrupts wurde ein weiteres wichtiges Konzept möglich
 > Spooling ermöglicht es, I/O-Operationen parallel zur CPU-Verarbeitung auszuführen. Eingabedaten werden auf schnelle Medien (Trommel, Disk) zwischengespeichert, während die CPU rechnet.
 
 ![[spooling-architektur.png]]
-
-*Langsame mechanische Geräte (Kartenleser, Drucker) schreiben bzw. lesen über einen schnellen Puffer (Disk/Trommel). Die CPU greift nur auf diesen Puffer zu und muss daher nie auf die langsamen Geräte warten.*
+*02-01-01-spooling-architektur: Langsame mechanische Geräte (Kartenleser, Drucker) schreiben bzw. lesen über einen schnellen Puffer (Disk/Trommel). Die CPU greift nur auf diesen Puffer zu und muss daher nie auf die langsamen Geräte warten.*
 
 **Vorteile von Spooling:**
 - CPU muss nicht auf Kartenleser/Drucker warten
@@ -577,7 +573,7 @@ Die dritte Generation brachte den Durchbruch der **integrierten Schaltkreise (IC
 #### IBM System/360 (1964) - Die Computer-Revolution
 
 ![[ibm-system360-mainframe.jpg]]
-*IBM System/360 - Die erste kompatible Rechnerfamilie, hier im Computer History Museum - Quelle: [Wikimedia Commons](https://commons.wikimedia.org)*
+*02-01-01-ibm-system360-mainframe: IBM System/360 - Die erste kompatible Rechnerfamilie, hier im Computer History Museum - Quelle: [Wikimedia Commons](https://commons.wikimedia.org)*
 
 > [!info] "Die $5 Milliarden Wette"
 > Die Entwicklung des System/360 kostete IBM rund $5 Milliarden (ca. $45 Mrd. heute) - mehr als die Entwicklung der Atombombe. Es war das riskanteste Projekt der Unternehmensgeschichte und wurde zum größten Erfolg.
@@ -632,8 +628,7 @@ Während die CPU auf I/O wartete, war sie **vollständig untätig** - bei Maschi
 ##### CPU-Auslastung bei Uniprogramming
 
 ![[uniprogramming-auslastung.png]]
-
-*Bei Uniprogramming läuft nur ein Job zur Zeit. Während Job A auf I/O wartet (rot), bleibt die CPU untätig – Job B kann erst starten, wenn Job A komplett fertig ist. Die CPU ist dadurch den Großteil der Zeit im Leerlauf.*
+*02-01-01-uniprogramming-auslastung: Bei Uniprogramming läuft nur ein Job zur Zeit. Während Job A auf I/O wartet (rot), bleibt die CPU untätig – Job B kann erst starten, wenn Job A komplett fertig ist. Die CPU ist dadurch den Großteil der Zeit im Leerlauf.*
 
 **Berechnung der CPU-Auslastung:**
 
@@ -647,8 +642,7 @@ Bei einem typischen Programm mit 20% CPU-Arbeit und 80% I/O-Wartezeit ergibt sic
 Die Idee war einfach aber revolutionär: **Wenn Programm A auf I/O wartet, lasse Programm B auf der CPU laufen!**
 
 ![[multiprogramming-auslastung.png]]
-
-*Bei Multiprogramming liegen mehrere Jobs gleichzeitig im Speicher. Wartet ein Job auf I/O, nutzt ein anderer die CPU. Die untere Zeile ("CPU gesamt") zeigt: Die CPU bleibt nahezu durchgehend aktiv – die Auslastung steigt dramatisch.*
+*02-01-01-multiprogramming-auslastung: Bei Multiprogramming liegen mehrere Jobs gleichzeitig im Speicher. Wartet ein Job auf I/O, nutzt ein anderer die CPU. Die untere Zeile ("CPU gesamt") zeigt: Die CPU bleibt nahezu durchgehend aktiv – die Auslastung steigt dramatisch.*
 
 **Multiprogramming-Formel (Tanenbaum):**
 
@@ -678,14 +672,12 @@ $$\text{CPU-Auslastung} = 1 - p^n$$
 Die Lösung: **Time-Sharing** (Zeitscheiben-Verfahren), bei dem die CPU alle 10-100 Millisekunden zwischen den Benutzern wechselt.
 
 ![[time-sharing-prinzip.png]]
-
-*Die CPU teilt ihre Zeit in kurze Quanten (hier je 100 ms) auf und wechselt per Timer-Interrupt (T-INT) reihum zwischen den Benutzern. Bei ~10 Wechseln pro Sekunde entsteht für jeden User der Eindruck, den Computer allein zu nutzen.*
+*02-01-01-time-sharing-prinzip: Die CPU teilt ihre Zeit in kurze Quanten (hier je 100 ms) auf und wechselt per Timer-Interrupt (T-INT) reihum zwischen den Benutzern. Bei ~10 Wechseln pro Sekunde entsteht für jeden User der Eindruck, den Computer allein zu nutzen.*
 
 **Time-Sharing im Detail:**
 
 ![[time-sharing-detail.png]]
-
-*Mehrere Terminals sind über einen Terminal-Konzentrator (Frontend) mit dem Mainframe verbunden. Dort liegen die Jobs aller Benutzer gleichzeitig im Speicher, und die CPU wechselt alle 10–100 ms zwischen ihnen. Jeder Benutzer hatte das Gefühl, den Computer alleine zu nutzen!*
+*02-01-01-time-sharing-detail: Mehrere Terminals sind über einen Terminal-Konzentrator (Frontend) mit dem Mainframe verbunden. Dort liegen die Jobs aller Benutzer gleichzeitig im Speicher, und die CPU wechselt alle 10–100 ms zwischen ihnen. Jeder Benutzer hatte das Gefühl, den Computer alleine zu nutzen!*
 ##### CTSS - Das erste Time-Sharing-System (1961)
 
 > [!info] Fernando J. Corbató (1926-2019)
@@ -815,7 +807,7 @@ MULTICS sollte ein "Computing Utility" werden - Computer als Dienstleistung wie 
 Die 3. Generation brachte auch die **Minicomputer** - kleiner und günstiger als Mainframes, aber leistungsfähiger als die späteren PCs.
 
 ![[dec-pdp-1.jpg]]
-*DEC PDP-1 (1960) - Einer der ersten kommerziellen Minicomputer - Quelle: [Computer History Museum](https://www.computerhistory.org)*
+*02-01-01-dec-pdp-1: DEC PDP-1 (1960) - Einer der ersten kommerziellen Minicomputer - Quelle: [Computer History Museum](https://www.computerhistory.org)*
 
 ##### PDP-1 (1960)
 
@@ -828,7 +820,7 @@ Die 3. Generation brachte auch die **Minicomputer** - kleiner und günstiger als
 | Besonderheit | Erstes Computerspiel "Spacewar!" (1962) |
 
 ![[dec-pdp-11.jpg]]
-*DEC PDP-11 (1970) - Der einflussreichste Minicomputer aller Zeiten - Quelle: [Wikimedia Commons](https://commons.wikimedia.org)*
+*02-01-01-dec-pdp-11: DEC PDP-11 (1970) - Der einflussreichste Minicomputer aller Zeiten - Quelle: [Wikimedia Commons](https://commons.wikimedia.org)*
 
 ##### PDP-11 (1970) - Der Minicomputer-König
 
@@ -912,7 +904,7 @@ Die vierte Generation markierte die **Demokratisierung des Computing** - Compute
 #### Xerox Alto (1973) - Der Visionär
 
 ![[xerox-alto-maus-1973.jpg]]
-*Xerox Alto (1973) - Erster Personal Computer mit grafischer Oberfläche und Maus - Quelle: [Computer History Museum](https://www.computerhistory.org)*
+*02-01-01-xerox-alto-maus-1973: Xerox Alto (1973) - Erster Personal Computer mit grafischer Oberfläche und Maus - Quelle: [Computer History Museum](https://www.computerhistory.org)*
 
 > [!info] XEROX PARC
 > Das **Palo Alto Research Center** (gegründet 1970) entwickelte viele Technologien, die die moderne Computerwelt prägen: GUI, Maus, Ethernet, Laserdrucker, WYSIWYG-Textverarbeitung. Xerox selbst vermarktete diese Innovationen nicht erfolgreich - andere profitierten davon.
@@ -955,7 +947,7 @@ Jobs verhandelte, dass Apple-Ingenieure PARC besuchen durften - im Austausch fü
 #### IBM PC (1981) - Der Industriestandard
 
 ![[ibm-pc-xt-1983.jpg]]
-*IBM PC XT (1983) - Erweitertes Modell mit Festplatte - Quelle: [Computer History Museum](https://www.computerhistory.org)*
+*02-01-01-ibm-pc-xt-1983: IBM PC XT (1983) - Erweitertes Modell mit Festplatte - Quelle: [Computer History Museum](https://www.computerhistory.org)*
 
 > [!info] "Project Chess"
 > IBM entwickelte den PC in nur 12 Monaten mit einem kleinen Team in Boca Raton, Florida - außerhalb der normalen IBM-Bürokratie. Die Entscheidung, Standard-Komponenten von Drittanbietern zu verwenden, ermöglichte das Tempo - und die späteren Klone.
@@ -1004,7 +996,7 @@ Die frühen 1980er Jahre erlebten einen Boom erschwinglicher Heimcomputer, die e
 ##### Commodore 64 (1982) - Der Meistverkaufte
 
 ![[commodore-c64.jpg]]
-*Commodore 64 (1982) - Der meistverkaufte Heimcomputer aller Zeiten - Quelle: [Wikimedia Commons](https://commons.wikimedia.org)*
+*02-01-01-commodore-c64: Commodore 64 (1982) - Der meistverkaufte Heimcomputer aller Zeiten - Quelle: [Wikimedia Commons](https://commons.wikimedia.org)*
 
 > [!info] Guinness-Weltrekord
 > Der C64 hält den **Guinness-Weltrekord** als meistverkaufter einzelner Computertyp aller Zeiten. Schätzungen reichen von **12,5 bis 17 Millionen** verkauften Einheiten.
@@ -1031,7 +1023,7 @@ Die frühen 1980er Jahre erlebten einen Boom erschwinglicher Heimcomputer, die e
 ##### Sinclair ZX Spectrum (1982) - Der Europäer
 
 ![[zx-spectrum.jpg]]
-*Sinclair ZX Spectrum (1982) - Der populärste britische Heimcomputer - Quelle: [Wikimedia Commons](https://commons.wikimedia.org)*
+*02-01-01-zx-spectrum: Sinclair ZX Spectrum (1982) - Der populärste britische Heimcomputer - Quelle: [Wikimedia Commons](https://commons.wikimedia.org)*
 
 **Technische Daten:**
 
@@ -1062,7 +1054,7 @@ Der Spectrum prägte die britische Spieleindustrie und brachte Millionen Europä
 #### Apple Macintosh (1984) - Die GUI-Revolution
 
 ![[apple-macintosh-1984.jpg]]
-*Apple Macintosh 128K (1984) - Der Computer, der die grafische Oberfläche popularisierte - Quelle: [Computer History Museum](https://www.computerhistory.org)*
+*02-01-01-apple-macintosh-1984: Apple Macintosh 128K (1984) - Der Computer, der die grafische Oberfläche popularisierte - Quelle: [Computer History Museum](https://www.computerhistory.org)*
 
 > [!info] "1984" - Der berühmteste Werbespot
 > Der Mac wurde am **22. Januar 1984** während des Super Bowl XVIII mit einem von **Ridley Scott** inszenierten Werbespot eingeführt, der auf George Orwells "1984" anspielte. IBM wurde als "Big Brother" dargestellt, der Mac als Befreier. Der Spot lief nur einmal im TV und gilt als einer der einflussreichsten Werbespots aller Zeiten.
@@ -1142,7 +1134,7 @@ Microsoft Windows brauchte Jahre, um von einer belächelten DOS-Erweiterung zum 
 > — **Linus Torvalds**, comp.os.minix, 25. August 1991
 
 ![[frueh-pc-terminal.jpg]]
-*Frühe PC-Workstation - Systeme wie diese waren die Zielplattform für Linux*
+*02-01-01-frueh-pc-terminal: Frühe PC-Workstation - Systeme wie diese waren die Zielplattform für Linux*
 
 Am **25. August 1991** kündigte der 21-jährige finnische Student **Linus Torvalds** in der Newsgroup comp.os.minix sein "kleines" Projekt an - ein freies Betriebssystem für x86-PCs.
 
@@ -1236,7 +1228,7 @@ Die 2000er Jahre brachten den nächsten Paradigmenwechsel: Computer wurden tragb
 **Docker (2013)** und **Kubernetes (2014)** revolutionierten das Deployment:
 
 ![[virtualisierung-container.png]]
-*Der zentrale Unterschied liegt im Umgang mit dem Betriebssystem: Virtuelle Maschinen virtualisieren über einen Hypervisor die komplette Hardware, sodass **jede VM ihr eigenes Gast-OS** mitbringt (ressourcenintensiv). Container teilen sich dagegen **ein gemeinsames Host-OS** und isolieren nur die Anwendungen über die Container-Runtime – dadurch sind sie leichtgewichtig und starten in Sekunden.*
+*02-01-01-virtualisierung-container: Der zentrale Unterschied liegt im Umgang mit dem Betriebssystem: Virtuelle Maschinen virtualisieren über einen Hypervisor die komplette Hardware, sodass **jede VM ihr eigenes Gast-OS** mitbringt (ressourcenintensiv). Container teilen sich dagegen **ein gemeinsames Host-OS** und isolieren nur die Anwendungen über die Container-Runtime – dadurch sind sie leichtgewichtig und starten in Sekunden.*
 
 ##### Weitere moderne Trends
 
@@ -1332,8 +1324,7 @@ Die 2000er Jahre brachten den nächsten Paradigmenwechsel: Computer wurden tragb
 ### Entwicklung der Programmausführung
 
 ![[programmausfuehrung-evolution.png]]
-
-*Die Zuordnung von Benutzern/Jobs zur CPU entwickelte sich über drei Generationen: von der direkten 1:1-Nutzung (ein User belegt die CPU exklusiv) über die sequentielle Batch-Abarbeitung mehrerer Jobs (n:1) bis zum Time-Sharing, bei dem die CPU per Zeitscheiben quasi-parallel zwischen vielen Benutzern wechselt.*
+*02-01-01-programmausfuehrung-evolution: Die Zuordnung von Benutzern/Jobs zur CPU entwickelte sich über drei Generationen: von der direkten 1:1-Nutzung (ein User belegt die CPU exklusiv) über die sequentielle Batch-Abarbeitung mehrerer Jobs (n:1) bis zum Time-Sharing, bei dem die CPU per Zeitscheiben quasi-parallel zwischen vielen Benutzern wechselt.*
 
 ### Evolution der Abstraktionsebenen
 

@@ -29,8 +29,7 @@ bereich: BS
 Anwendungen laufen aus Sicherheitsgründen im unprivilegierten User-Mode und dürfen die Hardware nicht direkt ansprechen. Jede Operation, die privilegierten Zugriff erfordert – eine Datei lesen, Speicher anfordern, über das Netzwerk senden – muss daher beim Kernel angefragt werden. Diese Anfrage ist der Systemaufruf, und der Weg dorthin führt über mehrere klar getrennte Ebenen:
 
 ![[syscall-schnittstelle.png]]
-
-*Ein Systemaufruf durchläuft mehrere Ebenen: Das Anwendungsprogramm ruft eine Bibliotheksfunktion (z. B. `printf`) auf, die ihrerseits eine libc-Funktion wie `write()` nutzt. Über die Systemaufruf-Schnittstelle löst eine TRAP-/SYSCALL-Instruktion den Wechsel in den Kernel aus. Dort ordnet der Syscall-Dispatcher den Aufruf anhand der `sys_call_table` der passenden Kernel-Funktion (`sys_read`, `sys_write`, `sys_fork`, …) zu.*
+*02-02-03-syscall-schnittstelle: Ein Systemaufruf durchläuft mehrere Ebenen: Das Anwendungsprogramm ruft eine Bibliotheksfunktion (z. B. `printf`) auf, die ihrerseits eine libc-Funktion wie `write()` nutzt. Über die Systemaufruf-Schnittstelle löst eine TRAP-/SYSCALL-Instruktion den Wechsel in den Kernel aus. Dort ordnet der Syscall-Dispatcher den Aufruf anhand der `sys_call_table` der passenden Kernel-Funktion (`sys_read`, `sys_write`, `sys_fork`, …) zu.*
 
 ## Definition
 
@@ -48,8 +47,7 @@ Der Übergang vom User- in den Kernel-Mode kann nicht durch einen gewöhnlichen 
 ### Ablauf eines Systemaufrufs
 
 ![[syscall-ablauf-detail.png]]
-
-*Ein Systemaufruf durchläuft acht Stationen, aufgeteilt auf zwei Ebenen: Im **User Mode** (Ring 3) ruft die Anwendung eine libc-Funktion auf (1), der Wrapper legt Syscall-Nummer und Parameter in Register (2) und löst die SYSCALL-Instruktion aus (3). Der **Kontextwechsel** bringt die CPU in den **Kernel Mode** (Ring 0): Dort sichert der Syscall-Handler die Register (4), der Dispatcher findet über die `sys_call_table` die zuständige Funktion (5), diese führt die Operation aus (6) und legt den Rückgabewert in RAX ab (7). Mit `SYSRET`/`IRET` kehrt die Ausführung in den User Mode zurück, und die Anwendung erhält das Ergebnis (8).*
+*02-02-03-syscall-ablauf-detail: Ein Systemaufruf durchläuft acht Stationen, aufgeteilt auf zwei Ebenen: Im **User Mode** (Ring 3) ruft die Anwendung eine libc-Funktion auf (1), der Wrapper legt Syscall-Nummer und Parameter in Register (2) und löst die SYSCALL-Instruktion aus (3). Der **Kontextwechsel** bringt die CPU in den **Kernel Mode** (Ring 0): Dort sichert der Syscall-Handler die Register (4), der Dispatcher findet über die `sys_call_table` die zuständige Funktion (5), diese führt die Operation aus (6) und legt den Rückgabewert in RAX ab (7). Mit `SYSRET`/`IRET` kehrt die Ausführung in den User Mode zurück, und die Anwendung erhält das Ergebnis (8).*
 
 ### Registerkonventionen (x86-64 Linux)
 
@@ -124,8 +122,7 @@ Systemaufrufe lassen sich nach ihrem Aufgabenbereich gruppieren. Die folgenden K
 | `clone()` | Thread/Prozess mit geteilten Ressourcen erzeugen |
 
 ![[syscall-fork-exec-shell.png]]
-
-*Beispiel: Die Shell führt ein Kommando aus. Mit `fork()` erzeugt sie eine Kopie ihrer selbst; das Kind ersetzt sein Programm per `exec()` durch `ls`, während die Eltern-Shell mit `wait()` blockiert. Nach dem `exit(0)` des Kindes kehrt `wait()` zurück und die Shell macht weiter.*
+*02-02-03-syscall-fork-exec-shell: Beispiel: Die Shell führt ein Kommando aus. Mit `fork()` erzeugt sie eine Kopie ihrer selbst; das Kind ersetzt sein Programm per `exec()` durch `ls`, während die Eltern-Shell mit `wait()` blockiert. Nach dem `exit(0)` des Kindes kehrt `wait()` zurück und die Shell macht weiter.*
 
 ### Dateisystem-Operationen
 
@@ -145,8 +142,7 @@ Systemaufrufe lassen sich nach ihrem Aufgabenbereich gruppieren. Die folgenden K
 | `chown()` | Eigentümer ändern |
 
 ![[file-descriptor-tabelle.png]]
-
-*Jeder Prozess besitzt eine Filedeskriptor-Tabelle. Die Deskriptoren 0, 1 und 2 sind standardmäßig mit stdin, stdout und stderr belegt; weitere entstehen beim Öffnen von Dateien oder Sockets und verweisen auf das jeweilige Ziel.*
+*02-02-03-file-descriptor-tabelle: Jeder Prozess besitzt eine Filedeskriptor-Tabelle. Die Deskriptoren 0, 1 und 2 sind standardmäßig mit stdin, stdout und stderr belegt; weitere entstehen beim Öffnen von Dateien oder Sockets und verweisen auf das jeweilige Ziel.*
 
 ### Speicherverwaltung
 
@@ -159,8 +155,7 @@ Systemaufrufe lassen sich nach ihrem Aufgabenbereich gruppieren. Die folgenden K
 | `mlock()` | Speicher vor Auslagerung schützen |
 
 ![[prozess-adressraum.png]]
-
-*Der Adressraum eines Prozesses ist in Segmente gegliedert: Text (Code), initialisierte und uninitialisierte Daten (Data/BSS), der nach oben wachsende Heap (`brk()`), der Bereich für Memory-Mapped Files und Shared Libraries (`mmap()`), der nach unten wachsende Stack und ganz oben der dem Kernel vorbehaltene Bereich.*
+*02-02-03-prozess-adressraum: Der Adressraum eines Prozesses ist in Segmente gegliedert: Text (Code), initialisierte und uninitialisierte Daten (Data/BSS), der nach oben wachsende Heap (`brk()`), der Bereich für Memory-Mapped Files und Shared Libraries (`mmap()`), der nach unten wachsende Stack und ganz oben der dem Kernel vorbehaltene Bereich.*
 
 ### Geräteverwaltung
 
@@ -211,6 +206,7 @@ Einige Systemaufrufe tauchen in nahezu jedem Programm auf. Besonders das Zusamme
 `fork()` erzeugt einen neuen Prozess als Kopie des aufrufenden. Beide Prozesse laufen anschließend dieselbe Stelle im Code weiter – unterschieden werden sie nur am Rückgabewert: Der Elternprozess erhält die PID des Kindes, das Kind erhält `0`.
 
 ![[fork-copy-on-write.png]]
+*02-02-03-fork-copy-on-write: Copy-on-Write bei fork(): Eltern- und Kindprozess teilen sich zunächst dieselben Speicherseiten (read-only markiert). Erst bei einem Schreibzugriff wird die betroffene Seite kopiert, sodass jeder Prozess seine eigene Kopie erhält.*
 
 > [!note] Copy-on-Write (COW)
 > Nach `fork()` teilen sich Eltern- und Kindprozess zunächst dieselben Speicherseiten. Erst wenn einer der beiden schreibt, wird die betroffene Seite kopiert. Das macht `fork()` schnell und speichereffizient, selbst bei großen Prozessen.
@@ -274,8 +270,7 @@ Dateien werden über einen File Descriptor angesprochen, den `open()` zurückgib
 | `O_APPEND` | am Ende anhängen |
 
 ![[open-file-table.png]]
-
-*Der vom Prozess gehaltene File Descriptor (hier `fd = 3`) verweist auf einen Eintrag in der systemweiten Open File Table des Kernels. Dieser Eintrag speichert u. a. die aktuelle Position und die Zugriffs-Flags und zeigt auf den Inode, der die eigentliche Datei auf dem Datenträger repräsentiert.*
+*02-02-03-open-file-table: Der vom Prozess gehaltene File Descriptor (hier `fd = 3`) verweist auf einen Eintrag in der systemweiten Open File Table des Kernels. Dieser Eintrag speichert u. a. die aktuelle Position und die Zugriffs-Flags und zeigt auf den Inode, der die eigentliche Datei auf dem Datenträger repräsentiert.*
 
 **Lesen, Schreiben, Schließen:**
 
@@ -375,8 +370,7 @@ Dieselben Grundoperationen heißen je nach Betriebssystem anders. Während Unix-
 Anwendungen rufen Systemaufrufe fast nie direkt auf, sondern über die C-Bibliothek (libc, unter Linux meist glibc). Sie kapselt die rohen Syscalls in bequeme, portable Funktionen und erledigt viel Arbeit bereits im User-Space.
 
 ![[libc-wrapper.png]]
-
-*Am Beispiel `printf("Zahl: %d\n", 42)`: Die eigentliche Formatierung des Strings erledigt die libc vollständig im User-Space – ganz ohne Syscall. Erst die Ausgabe erfolgt über den dünnen `write()`-Wrapper, der die Register setzt, die SYSCALL-Instruktion ausführt und den Rückgabewert prüft. Im Kernel schreibt `sys_write()` die Daten schließlich ins Dateisystem oder Terminal.*
+*02-02-03-libc-wrapper: Am Beispiel `printf("Zahl: %d\n", 42)`: Die eigentliche Formatierung des Strings erledigt die libc vollständig im User-Space – ganz ohne Syscall. Erst die Ausgabe erfolgt über den dünnen `write()`-Wrapper, der die Register setzt, die SYSCALL-Instruktion ausführt und den Rückgabewert prüft. Im Kernel schreibt `sys_write()` die Daten schließlich ins Dateisystem oder Terminal.*
 
 **Aufgaben der libc:**
 
@@ -407,8 +401,7 @@ long ret = syscall(SYS_write, 1, "Hello\n", 6);
 **Lösung:** Das **vDSO** ist ein kleiner Codebereich, den der Kernel direkt in den Adressraum jedes Prozesses einblendet. Für die betroffenen Funktionen muss die CPU dann gar nicht mehr in den Kernel wechseln.
 
 ![[vdso-schnelle-syscalls.png]]
-
-*Ohne vDSO durchläuft selbst ein `gettimeofday()` den vollen Trap-Pfad in den Kernel und zurück. Mit vDSO liest die Funktion die Zeit direkt aus einem gemeinsamen Speicherbereich, den der Kernel regelmäßig aktualisiert – ganz ohne Kontextwechsel.*
+*02-02-03-vdso-schnelle-syscalls: Ohne vDSO durchläuft selbst ein `gettimeofday()` den vollen Trap-Pfad in den Kernel und zurück. Mit vDSO liest die Funktion die Zeit direkt aus einem gemeinsamen Speicherbereich, den der Kernel regelmäßig aktualisiert – ganz ohne Kontextwechsel.*
 
 **Ergebnis:** Kein Kontextwechsel, dadurch rund **10× schneller** als ein echter Systemaufruf.
 

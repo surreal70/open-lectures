@@ -47,8 +47,7 @@ Die Aufgabenbereiche eines Betriebssystems lassen sich in vier Hauptkategorien g
 Das Betriebssystem bildet die **Schnittstelle zwischen Anwendungsprogrammen und Hardware**:
 
 ![[bs-schnittstelle.png]]
-
-*Das Betriebssystem liegt zwischen Anwendungen und Hardware: Nach oben stellt es den Programmen Systemaufrufe (API) bereit, nach unten greift es privilegiert auf die Hardware zu.*
+*02-01-03-bs-schnittstelle: Das Betriebssystem liegt zwischen Anwendungen und Hardware: Nach oben stellt es den Programmen Systemaufrufe (API) bereit, nach unten greift es privilegiert auf die Hardware zu.*
 
 ### 2. Ressourcenverwaltung
 
@@ -135,8 +134,7 @@ Aus Sicht der Hardware ist das BS ein **Ressourcenmanager**:
 - Koordination von E/A-Zugriffen
 
 ![[bs-zwei-sichtweisen.png]]
-
-*Dasselbe Betriebssystem lässt sich aus zwei Blickwinkeln betrachten: Die **Top-Down-Sicht** (Benutzerperspektive) sieht eine virtuelle Maschine mit komfortabler API; die **Bottom-Up-Sicht** (Systemperspektive) sieht einen Ressourcenmanager, der die Hardware verwaltet.*
+*02-01-03-bs-zwei-sichtweisen: Dasselbe Betriebssystem lässt sich aus zwei Blickwinkeln betrachten: Die **Top-Down-Sicht** (Benutzerperspektive) sieht eine virtuelle Maschine mit komfortabler API; die **Bottom-Up-Sicht** (Systemperspektive) sieht einen Ressourcenmanager, der die Hardware verwaltet.*
 
 ---
 

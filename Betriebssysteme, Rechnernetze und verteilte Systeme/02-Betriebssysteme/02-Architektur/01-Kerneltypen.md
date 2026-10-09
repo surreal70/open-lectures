@@ -49,8 +49,7 @@ Ein **monolithischer Kernel** ist ein einzelnes, großes Programm, das alle Betr
 ### Architektur
 
 ![[monolithischer-kernel.png]]
-
-*Beim monolithischen Kernel laufen sämtliche Betriebssystemdienste – Prozess- und Speicherverwaltung, Dateisystem, Netzwerkstack, Scheduler, IPC, Security, I/O und die Gerätetreiber – gemeinsam im Kernel-Space (Ring 0). Anwendungen greifen ausschließlich über das System Call Interface darauf zu.*
+*02-02-01-monolithischer-kernel: Beim monolithischen Kernel laufen sämtliche Betriebssystemdienste – Prozess- und Speicherverwaltung, Dateisystem, Netzwerkstack, Scheduler, IPC, Security, I/O und die Gerätetreiber – gemeinsam im Kernel-Space (Ring 0). Anwendungen greifen ausschließlich über das System Call Interface darauf zu.*
 
 ### Merkmale
 
@@ -92,8 +91,7 @@ Ein reiner Monolith müsste bei jeder neuen Hardware neu kompiliert werden – u
 Linux erweitert das monolithische Konzept durch **Loadable Kernel Modules (LKM)**:
 
 ![[linux-lkm.png]]
-
-*Linux kombiniert einen fest kompilierten Kern (Scheduler, Memory Manager, VFS, Core Networking) mit **Loadable Kernel Modules**: Treiber und Funktionen wie ext4, GPU- oder WLAN-Module werden zur Laufzeit per `insmod`/`modprobe` geladen und mit `rmmod` wieder entladen.*
+*02-02-01-linux-lkm: Linux kombiniert einen fest kompilierten Kern (Scheduler, Memory Manager, VFS, Core Networking) mit **Loadable Kernel Modules**: Treiber und Funktionen wie ext4, GPU- oder WLAN-Module werden zur Laufzeit per `insmod`/`modprobe` geladen und mit `rmmod` wieder entladen.*
 
 **Vorteil**: Flexibilität eines modularen Systems bei monolithischer Leistung.
 
@@ -110,14 +108,12 @@ Ein **Mikrokernel** reduziert den Kernel auf das absolute Minimum: Interprozessk
 ### Architektur
 
 ![[mikrokernel.png]]
-
-*Beim Mikrokernel enthält der Kernel-Space nur das Nötigste – IPC, grundlegende Speicherverwaltung und CPU-Scheduling (≈ 10 000 Zeilen Code). Alle übrigen Dienste (Dateisystem, Netzwerk, Treiber, Memory-/Process-Manager, Security) laufen als normale Server-Prozesse im User-Space und kommunizieren über Message Passing. Deutlicher Kontrast zum monolithischen Kernel, der all das im Kernel-Space hält.*
+*02-02-01-mikrokernel: Beim Mikrokernel enthält der Kernel-Space nur das Nötigste – IPC, grundlegende Speicherverwaltung und CPU-Scheduling (≈ 10 000 Zeilen Code). Alle übrigen Dienste (Dateisystem, Netzwerk, Treiber, Memory-/Process-Manager, Security) laufen als normale Server-Prozesse im User-Space und kommunizieren über Message Passing. Deutlicher Kontrast zum monolithischen Kernel, der all das im Kernel-Space hält.*
 
 ### Kommunikation via Message Passing
 
 ![[mikrokernel-message-passing.png]]
-
-*Im Mikrokernel kommunizieren Prozesse nicht direkt, sondern über den Kernel: Die App schickt eine Anfrage per `send()` in die Message Queue des Kernels (2), der Server holt sie per `receive()` ab (3). Jeder Request (1) und jede Response (4) läuft so durch das IPC-Subsystem.*
+*02-02-01-mikrokernel-message-passing: Im Mikrokernel kommunizieren Prozesse nicht direkt, sondern über den Kernel: Die App schickt eine Anfrage per `send()` in die Message Queue des Kernels (2), der Server holt sie per `receive()` ab (3). Jeder Request (1) und jede Response (4) läuft so durch das IPC-Subsystem.*
 
 ### Merkmale
 
@@ -177,14 +173,12 @@ Ein **Hybridkernel** kombiniert Elemente beider Architekturen: Er behält einen 
 ### Architektur (Beispiel: Windows NT)
 
 ![[hybridkernel-windows-nt.png]]
-
-*Der Hybridkernel kombiniert beide Welten: Im Kernel-Space sitzt eine große **Executive** (Object-, Process-, Memory-, I/O-Manager usw.) über einem kleinen, mikrokernel-artigen Kern (Thread-Scheduling, Interrupt-Dispatch). Darunter abstrahiert der **HAL** die Hardware. Im User-Space vermitteln Environment-Subsysteme (Win32, POSIX, OS/2) zwischen Anwendungen und der Native API.*
+*02-02-01-hybridkernel-windows-nt: Der Hybridkernel kombiniert beide Welten: Im Kernel-Space sitzt eine große **Executive** (Object-, Process-, Memory-, I/O-Manager usw.) über einem kleinen, mikrokernel-artigen Kern (Thread-Scheduling, Interrupt-Dispatch). Darunter abstrahiert der **HAL** die Hardware. Im User-Space vermitteln Environment-Subsysteme (Win32, POSIX, OS/2) zwischen Anwendungen und der Native API.*
 
 ### Architektur (Beispiel: macOS XNU)
 
 ![[hybridkernel-macos-xnu.png]]
-
-*Der XNU-Kernel ist aus drei Schichten zusammengesetzt: Der **BSD Layer** (POSIX-API, Networking, VFS, Security) sitzt über dem **I/O Kit** (Treiber-Framework in C++), das wiederum auf dem **Mach-Mikrokernel** (IPC, Tasks, Threads, Memory, Scheduling) aufbaut. So verbindet XNU einen Mikrokernel-Kern mit monolithischen BSD-Komponenten.*
+*02-02-01-hybridkernel-macos-xnu: Der XNU-Kernel ist aus drei Schichten zusammengesetzt: Der **BSD Layer** (POSIX-API, Networking, VFS, Security) sitzt über dem **I/O Kit** (Treiber-Framework in C++), das wiederum auf dem **Mach-Mikrokernel** (IPC, Tasks, Threads, Memory, Scheduling) aufbaut. So verbindet XNU einen Mikrokernel-Kern mit monolithischen BSD-Komponenten.*
 
 ### Merkmale
 
@@ -267,16 +261,14 @@ Neben den drei klassischen Architekturen gibt es radikalere Entwürfe, die vor a
 Noch minimaler als Mikrokernel: Der Kernel bietet nur sicheren Multiplexing-Zugriff auf Hardware. Libraries im User-Space implementieren Abstraktionen.
 
 ![[exokernel.png]]
-
-*Der Exokernel ist noch minimaler als ein Mikrokernel: Er stellt nur sicheres Hardware-Multiplexing bereit. Sämtliche Abstraktionen (Dateisystem, Netzwerk usw.) werden von einem Library Operating System (libOS) im User-Space implementiert, das direkt in die Anwendung eingebunden wird.*
+*02-02-01-exokernel: Der Exokernel ist noch minimaler als ein Mikrokernel: Er stellt nur sicheres Hardware-Multiplexing bereit. Sämtliche Abstraktionen (Dateisystem, Netzwerk usw.) werden von einem Library Operating System (libOS) im User-Space implementiert, das direkt in die Anwendung eingebunden wird.*
 
 ### Unikernel
 
 Eine Anwendung wird mit genau den Kernel-Komponenten kompiliert, die sie braucht - als ein einziges Image.
 
 ![[unikernel.png]]
-
-*Ein Unikernel bündelt die Anwendung mit genau den Kernel-Komponenten, die sie benötigt (z. B. nur TCP/IP für einen Web-Server), zu einem einzigen, single-purpose Image. Es gibt kein separates Betriebssystem darunter.*
+*02-02-01-unikernel: Ein Unikernel bündelt die Anwendung mit genau den Kernel-Komponenten, die sie benötigt (z. B. nur TCP/IP für einen Web-Server), zu einem einzigen, single-purpose Image. Es gibt kein separates Betriebssystem darunter.*
 
 **Beispiele**: MirageOS, IncludeOS, OSv
 

@@ -94,8 +94,7 @@ Aus Sicht des **Systems** ist das Betriebssystem ein Verwalter, der die begrenzt
 Das folgende Diagramm zeigt die typische Schichtenarchitektur eines Betriebssystems:
 
 ![[schichtenarchitektur.png]]
-
-*Das Betriebssystem liegt als Schichtenstapel zwischen den Anwendungsprogrammen und der Hardware. Nach oben bildet die **System-Call-API** die Schnittstelle zu den Anwendungen, nach unten greift der **Kernel-Mode** privilegiert auf die Hardware zu. Dazwischen koordinieren Ressourcenmanagement, Gerätetreiber/Dateisystem und die Hardware-Abstraktionsschicht (HAL) den Betrieb.*
+*02-01-02-schichtenarchitektur: Das Betriebssystem liegt als Schichtenstapel zwischen den Anwendungsprogrammen und der Hardware. Nach oben bildet die **System-Call-API** die Schnittstelle zu den Anwendungen, nach unten greift der **Kernel-Mode** privilegiert auf die Hardware zu. Dazwischen koordinieren Ressourcenmanagement, Gerätetreiber/Dateisystem und die Hardware-Abstraktionsschicht (HAL) den Betrieb.*
 
 ---
 
@@ -135,21 +134,19 @@ Betriebssysteme sind nicht nur auf PCs zu finden, sondern in praktisch jedem ele
 Auch Chipkarten (Smartcards) enthalten vollständige Betriebssysteme - nur eben extrem miniaturisiert.
 
 ![[smartcard.png]]
-*Smartcard mit sichtbarem Chip-Modul und Kontaktflächen*
+*02-01-02-smartcard: Smartcard mit sichtbarem Chip-Modul und Kontaktflächen*
 
 #### Aufbau einer Smartcard
 
 Eine Smartcard enthält einen kompletten Mikrocontroller mit Kontaktflächen nach **ISO 7816**:
 
 ![[smartcard-kontakte.png]]
-
-*Kontaktbelegung des Chip-Moduls nach ISO 7816-2: fünf Kontakte in der oberen, drei in der unteren Reihe. Aktive Kontakte (amber) übernehmen Spannung, Reset, Takt, Masse, Programmierspannung und Datenein-/ausgabe; die Kontakte 4 und 8 sind reserviert (RFU).*
+*02-01-02-smartcard-kontakte: Kontaktbelegung des Chip-Moduls nach ISO 7816-2: fünf Kontakte in der oberen, drei in der unteren Reihe. Aktive Kontakte (amber) übernehmen Spannung, Reset, Takt, Masse, Programmierspannung und Datenein-/ausgabe; die Kontakte 4 und 8 sind reserviert (RFU).*
 
 **Interner Aufbau des Chip-Moduls:**
 
 ![[smartcard-chip-aufbau.png]]
-
-*Interner Aufbau des Chip-Moduls: Der Rechenkern (CPU, RAM, ROM mit dem Betriebssystem) ist über einen gemeinsamen Bus mit dem EEPROM/Flash (Anwendungsdaten und Schlüssel), einem optionalen Krypto-Coprozessor (RSA, ECC, AES, SHA) und dem I/O-Interface (kontaktbehaftet nach ISO 7816 oder kontaktlos über NFC) verbunden.*
+*02-01-02-smartcard-chip-aufbau: Interner Aufbau des Chip-Moduls: Der Rechenkern (CPU, RAM, ROM mit dem Betriebssystem) ist über einen gemeinsamen Bus mit dem EEPROM/Flash (Anwendungsdaten und Schlüssel), einem optionalen Krypto-Coprozessor (RSA, ECC, AES, SHA) und dem I/O-Interface (kontaktbehaftet nach ISO 7816 oder kontaktlos über NFC) verbunden.*
 
 #### Wichtige Smartcard-Betriebssysteme
 
@@ -280,14 +277,13 @@ RTOS stecken in unzähligen Geräten des Alltags – meist unsichtbar, aber übe
 
 Ein moderner Server kann **mehrere Betriebssysteme gleichzeitig** enthalten:
 
-![Dell PowerEdge Server mit geöffnetem Gehäuse](../../assets/images/dell-poweredge-server-offen.jpg)
-*Dell PowerEdge Server - Ansicht von oben mit geöffnetem Gehäuse (Quelle: servershopping.com)*
+![[DELL-EMC-Poweredge-R640-8dell-poweredge-server-offen.jpg]]
+*02-01-02-DELL-EMC-Poweredge-R640-8dell-poweredge-server-offen: Dell PowerEdge Server - Ansicht von oben mit geöffnetem Gehäuse (Quelle: servershopping.com)*
 
 Das folgende Diagramm zeigt schematisch die Komponenten und ihre jeweiligen Betriebssysteme:
 
 ![[rack-server-betriebssysteme.png]]
-
-*Schematische Darstellung eines Rack-Servers (PowerEdge-Architektur). Auf der Hauptplatine läuft das primäre Betriebssystem – doch die Erweiterungskarten (NIC, RAID, BMC) führen jeweils ihr **eigenes** eingebettetes OS aus. Ein moderner Server besteht also aus vielen kooperierenden Betriebssystemen.*
+*02-01-02-rack-server-betriebssysteme: Schematische Darstellung eines Rack-Servers (PowerEdge-Architektur). Auf der Hauptplatine läuft das primäre Betriebssystem – doch die Erweiterungskarten (NIC, RAID, BMC) führen jeweils ihr **eigenes** eingebettetes OS aus. Ein moderner Server besteht also aus vielen kooperierenden Betriebssystemen.*
 
 **Legende – Betriebssysteme im Server:**
 

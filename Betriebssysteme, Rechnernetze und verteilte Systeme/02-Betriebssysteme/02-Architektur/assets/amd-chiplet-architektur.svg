@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 750">
+  <defs>
+    <style>
+      .title { font: bold 18px sans-serif; fill: #1a1a1a; }
+      .subtitle { font: 14px sans-serif; fill: #444; }
+      .label { font: 12px sans-serif; fill: #333; }
+      .small { font: 11px sans-serif; fill: #444; }
+      .tiny { font: 10px sans-serif; fill: #555; }
+      .outer-box { fill: #f8f9fa; stroke: #555; stroke-width: 3; }
+      .package-box { fill: #e8e8e8; stroke: #666; stroke-width: 2; }
+      .ccd-box { fill: #e8f4fc; stroke: #2980b9; stroke-width: 2; }
+      .ccx-box { fill: #d5e8f7; stroke: #2980b9; stroke-width: 1.5; }
+      .io-box { fill: #fdebd0; stroke: #e67e22; stroke-width: 2; }
+      .io-component { fill: #fff3e0; stroke: #e67e22; stroke-width: 1.5; }
+      .fabric-line { stroke: #9b59b6; stroke-width: 3; fill: none; }
+      .fabric-text { font: bold 11px sans-serif; fill: #8e44ad; }
+      .benefit { font: 11px sans-serif; fill: #333; }
+      .connector { stroke: #666; stroke-width: 2; fill: none; }
+      .arrow-bi { stroke: #9b59b6; stroke-width: 2; fill: none; marker-end: url(#arrowhead); marker-start: url(#arrowhead-rev); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9b59b6"/>
+    </marker>
+    <marker id="arrowhead-rev" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0, 0 3.5, 10 7" fill="#9b59b6"/>
+    </marker>
+  </defs>
+  
+  <!-- Outer frame -->
+  <rect x="20" y="20" width="860" height="710" class="outer-box" rx="10"/>
+  
+  <!-- Title -->
+  <text x="450" y="55" text-anchor="middle" class="title">AMD CHIPLET-ARCHITEKTUR</text>
+  <text x="450" y="78" text-anchor="middle" class="subtitle">(am Beispiel Ryzen 9 5950X)</text>
+  
+  <!-- AM4 Package -->
+  <rect x="60" y="100" width="780" height="420" class="package-box" rx="8"/>
+  <text x="450" y="130" text-anchor="middle" class="label" font-weight="bold">AM4 PACKAGE</text>
+  
+  <!-- CCD 0 -->
+  <rect x="100" y="150" width="270" height="160" class="ccd-box" rx="6"/>
+  <text x="235" y="175" text-anchor="middle" class="label" font-weight="bold">CCD 0 (7nm)</text>
+  <rect x="130" y="190" width="210" height="100" class="ccx-box" rx="4"/>
+  <text x="235" y="220" text-anchor="middle" class="small" font-weight="bold">CCX (8C)</text>
+  <text x="235" y="245" text-anchor="middle" class="small">32 MB L3</text>
+  <text x="235" y="270" text-anchor="middle" class="tiny">8 Zen 3 Kerne</text>
+  
+  <!-- CCD 1 -->
+  <rect x="530" y="150" width="270" height="160" class="ccd-box" rx="6"/>
+  <text x="665" y="175" text-anchor="middle" class="label" font-weight="bold">CCD 1 (7nm)</text>
+  <rect x="560" y="190" width="210" height="100" class="ccx-box" rx="4"/>
+  <text x="665" y="220" text-anchor="middle" class="small" font-weight="bold">CCX (8C)</text>
+  <text x="665" y="245" text-anchor="middle" class="small">32 MB L3</text>
+  <text x="665" y="270" text-anchor="middle" class="tiny">8 Zen 3 Kerne</text>
+  
+  <!-- Infinity Fabric connections -->
+  <line x1="235" y1="310" x2="235" y2="350" class="fabric-line"/>
+  <line x1="665" y1="310" x2="665" y2="350" class="fabric-line"/>
+  <path d="M235,350 L665,350" class="arrow-bi"/>
+  <text x="450" y="345" text-anchor="middle" class="fabric-text">INFINITY FABRIC</text>
+  <line x1="450" y1="350" x2="450" y2="390" class="fabric-line"/>
+  
+  <!-- I/O Die -->
+  <rect x="150" y="400" width="600" height="100" class="io-box" rx="6"/>
+  <text x="450" y="425" text-anchor="middle" class="label" font-weight="bold">I/O DIE (12nm)</text>
+  
+  <!-- I/O Components -->
+  <rect x="180" y="440" width="140" height="45" class="io-component" rx="4"/>
+  <text x="250" y="460" text-anchor="middle" class="small" font-weight="bold">Memory</text>
+  <text x="250" y="475" text-anchor="middle" class="tiny">Controller</text>
+  <text x="250" y="488" text-anchor="middle" class="tiny">DDR4-3200</text>
+  
+  <rect x="340" y="440" width="140" height="45" class="io-component" rx="4"/>
+  <text x="410" y="460" text-anchor="middle" class="small" font-weight="bold">PCIe 4.0</text>
+  <text x="410" y="478" text-anchor="middle" class="tiny">24 Lanes</text>
+  
+  <rect x="500" y="440" width="140" height="45" class="io-component" rx="4"/>
+  <text x="570" y="460" text-anchor="middle" class="small" font-weight="bold">USB / SATA</text>
+  <text x="570" y="478" text-anchor="middle" class="tiny">etc.</text>
+  
+  <rect x="660" y="440" width="70" height="45" class="io-component" rx="4"/>
+  <text x="695" y="468" text-anchor="middle" class="tiny">...</text>
+  
+  <!-- Benefits Section -->
+  <rect x="60" y="535" width="780" height="180" fill="#f0f8ff" stroke="#888" stroke-width="1" rx="6"/>
+  <text x="80" y="560" class="label" font-weight="bold">VORTEILE:</text>
+  
+  <text x="80" y="585" class="benefit">• CCDs auf modernstem Prozess (7nm / 5nm / 4nm)</text>
+  <text x="80" y="608" class="benefit">• I/O Die auf günstigerem Prozess (12nm / 6nm)</text>
+  <text x="80" y="631" class="benefit">• Bessere Yields (kleinere Dies)</text>
+  <text x="80" y="654" class="benefit">• Skalierbar von 8 bis 64 Kerne (EPYC: 8 CCDs)</text>
+  <text x="80" y="677" class="benefit">• Konsistente Architektur über Desktop / Server</text>
+  
+  <text x="500" y="585" class="benefit" font-weight="bold">EPYC (Server):</text>
+  <text x="500" y="608" class="benefit">Bis zu 8 CCDs + 1 I/O Die = 64 Kerne</text>
+  
+  <!-- Visual: EPYC config hint -->
+  <g transform="translate(500, 625)">
+    <rect x="0" y="0" width="25" height="20" fill="#e8f4fc" stroke="#2980b9" stroke-width="1" rx="2"/>
+    <rect x="28" y="0" width="25" height="20" fill="#e8f4fc" stroke="#2980b9" stroke-width="1" rx="2"/>
+    <rect x="56" y="0" width="25" height="20" fill="#e8f4fc" stroke="#2980b9" stroke-width="1" rx="2"/>
+    <rect x="84" y="0" width="25" height="20" fill="#e8f4fc" stroke="#2980b9" stroke-width="1" rx="2"/>
+    <rect x="112" y="0" width="25" height="20" fill="#e8f4fc" stroke="#2980b9" stroke-width="1" rx="2"/>
+    <rect x="140" y="0" width="25" height="20" fill="#e8f4fc" stroke="#2980b9" stroke-width="1" rx="2"/>
+    <rect x="168" y="0" width="25" height="20" fill="#e8f4fc" stroke="#2980b9" stroke-width="1" rx="2"/>
+    <rect x="196" y="0" width="25" height="20" fill="#e8f4fc" stroke="#2980b9" stroke-width="1" rx="2"/>
+    <text x="110" y="14" text-anchor="middle" class="tiny">8× CCD</text>
+    <rect x="70" y="25" width="80" height="18" fill="#fdebd0" stroke="#e67e22" stroke-width="1" rx="2"/>
+    <text x="110" y="37" text-anchor="middle" class="tiny">I/O Die</text>
+  </g>
+</svg>

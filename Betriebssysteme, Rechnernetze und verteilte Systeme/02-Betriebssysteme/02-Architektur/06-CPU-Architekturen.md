@@ -47,6 +47,7 @@ Der **Beginn der x86-Ära** – diese Prozessoren legten den Grundstein für die
 ### Pinbelegung (DIP-40)
 
 ![[intel-8088-pinout.png]]
+*02-02-06-intel-8088-pinout: Pinbelegung des Intel 8088 im DIP-40-Gehäuse mit den wichtigsten Signalgruppen (Adress-/Datenbus, Takt, Interrupts).*
 
 Die wichtigsten Signalgruppen des DIP-40-Gehäuses:
 
@@ -60,8 +61,7 @@ Die wichtigsten Signalgruppen des DIP-40-Gehäuses:
 ### Blockdiagramm
 
 ![[intel-8088-blockdiagramm.png]]
-
-Der 8088 teilt sich in zwei Einheiten: Die **Execution Unit (EU)** führt Befehle aus und enthält die Allgemein- und Flag-Register sowie die 16-Bit-ALU. Die **Bus Interface Unit (BIU)** kümmert sich um den Speicherzugriff – sie bildet über den Adress-Addierer aus Segment und Offset die physische 20-Bit-Adresse (`Segment × 16 + Offset`) und füllt parallel die 4-Byte-Instruction-Queue vor (Prefetch). Beide Einheiten arbeiten überlappend: Während die EU rechnet, holt die BIU bereits den nächsten Befehl.
+*02-02-06-intel-8088-blockdiagramm: Der 8088 teilt sich in zwei Einheiten: Die **Execution Unit (EU)** führt Befehle aus und enthält die Allgemein- und Flag-Register sowie die 16-Bit-ALU. Die **Bus Interface Unit (BIU)** kümmert sich um den Speicherzugriff – sie bildet über den Adress-Addierer aus Segment und Offset die physische 20-Bit-Adresse (`Segment × 16 + Offset`) und füllt parallel die 4-Byte-Instruction-Queue vor (Prefetch). Beide Einheiten arbeiten überlappend: Während die EU rechnet, holt die BIU bereits den nächsten Befehl.*
 
 ---
 
@@ -97,8 +97,7 @@ Der **erste x86-Prozessor mit Protected Mode** – ein Meilenstein für Speicher
 ### Vereinfachtes Blockdiagramm
 
 ![[intel-80286-blockdiagramm.png]]
-
-Der 80286 gliedert sich in drei Einheiten. Die eigentliche Neuerung ist die **Protection Unit** innerhalb der Address Unit: Sie prüft bei jedem Speicherzugriff die Descriptor-Tabellen (GDT/LDT), die Privilegstufe (Ring 0–3) und das Segment-Limit – die Grundlage des **Protected Mode**. Die Execution Unit erweitert die 8086-Register um das Machine Status Word (MSW), und die Bus Unit bedient einen 24-Bit-Adressbus (16 MB adressierbar) mit 6-Byte-Prefetch-Queue.
+*02-02-06-intel-80286-blockdiagramm: Der 80286 gliedert sich in drei Einheiten. Die eigentliche Neuerung ist die **Protection Unit** innerhalb der Address Unit: Sie prüft bei jedem Speicherzugriff die Descriptor-Tabellen (GDT/LDT), die Privilegstufe (Ring 0–3) und das Segment-Limit – die Grundlage des **Protected Mode**. Die Execution Unit erweitert die 8086-Register um das Machine Status Word (MSW), und die Bus Unit bedient einen 24-Bit-Adressbus (16 MB adressierbar) mit 6-Byte-Prefetch-Queue.*
 
 ---
 
@@ -135,8 +134,7 @@ Der **erste echte 32-Bit x86-Prozessor** – ein revolutionärer Sprung, der die
 ### Blockdiagramm
 
 ![[intel-80386-blockdiagramm.png]]
-
-Der 80386 ist der erste vollwertige 32-Bit-x86-Prozessor und bringt zwei Neuerungen, die bis heute das Fundament moderner Betriebssysteme bilden: die **Control-Register** (CR0/CR2/CR3) und vor allem die **Paging Unit**. Eine lineare 32-Bit-Adresse wird in Directory (10 Bit), Table (10 Bit) und Offset (12 Bit) zerlegt und über zwei Tabellenstufen in einen physischen Frame übersetzt; der TLB cached die letzten Übersetzungen. Erst dieses hardwaregestützte Paging macht echten virtuellen Speicher mit Demand Paging praktikabel.
+*02-02-06-intel-80386-blockdiagramm: Der 80386 ist der erste vollwertige 32-Bit-x86-Prozessor und bringt zwei Neuerungen, die bis heute das Fundament moderner Betriebssysteme bilden: die **Control-Register** (CR0/CR2/CR3) und vor allem die **Paging Unit**. Eine lineare 32-Bit-Adresse wird in Directory (10 Bit), Table (10 Bit) und Offset (12 Bit) zerlegt und über zwei Tabellenstufen in einen physischen Frame übersetzt; der TLB cached die letzten Übersetzungen. Erst dieses hardwaregestützte Paging macht echten virtuellen Speicher mit Demand Paging praktikabel.*
 
 ---
 
@@ -199,8 +197,7 @@ Die 80486-Pipeline war die erste echte Pipeline in der x86-Familie:
 ### Blockdiagramm
 
 ![[intel-80486-blockdiagramm.png]]
-
-Der 80486 integriert erstmals mehrere bisher getrennte Bausteine auf einem Die: einen **8-KB-L1-Cache**, die **FPU** (der externe 80387-Coprozessor entfällt) und die oben gezeigte fünfstufige Integer-Pipeline. Durch Pipelining und On-Chip-Cache erreicht der 486 bei gleicher Taktfrequenz etwa die doppelte Leistung des 80386.
+*02-02-06-intel-80486-blockdiagramm: Der 80486 integriert erstmals mehrere bisher getrennte Bausteine auf einem Die: einen **8-KB-L1-Cache**, die **FPU** (der externe 80387-Coprozessor entfällt) und die oben gezeigte fünfstufige Integer-Pipeline. Durch Pipelining und On-Chip-Cache erreicht der 486 bei gleicher Taktfrequenz etwa die doppelte Leistung des 80386.*
 
 ---
 
@@ -239,8 +236,7 @@ Die **erste superskalare x86-Architektur** – zwei Befehle gleichzeitig in para
 ### Dual-Pipeline Architektur
 
 ![[intel-pentium-blockdiagramm.png]]
-
-Der Pentium ist der erste **superskalare** x86-Prozessor: Er dekodiert zwei Befehle pro Takt und verteilt sie auf zwei parallele Integer-Pipelines (U-Pipe und V-Pipe). Im Idealfall werden so zwei Befehle gleichzeitig ausgeführt (CPI < 1). Nicht jedes Befehlspaar lässt sich jedoch parallelisieren – es gelten strenge **Pairing-Regeln**:
+*02-02-06-intel-pentium-blockdiagramm: Der Pentium ist der erste **superskalare** x86-Prozessor: Er dekodiert zwei Befehle pro Takt und verteilt sie auf zwei parallele Integer-Pipelines (U-Pipe und V-Pipe). Im Idealfall werden so zwei Befehle gleichzeitig ausgeführt (CPI < 1). Nicht jedes Befehlspaar lässt sich jedoch parallelisieren – es gelten strenge **Pairing-Regeln**.*
 
 - Keine Datenabhängigkeiten zwischen dem Befehl in U und dem in V
 - Die V-Pipe führt nur einfache Befehle aus (ADD, SUB, MOV, …)
@@ -284,8 +280,7 @@ Der *Beginn der modernen x86-Mikroarchitektur** – diese revolutionäre Archite
 ### P6 Mikroarchitektur
 
 ![[intel-p6-mikroarchitektur.png]]
-
-Die **P6-Mikroarchitektur** ist der tiefgreifendste Umbruch der x86-Geschichte und bildet die Grundlage aller folgenden Intel-Kerne bis heute. Das Frontend arbeitet noch **in-order**: Es holt x86-Befehle, zerlegt sie in RISC-artige **µOps** und benennt über die Register Alias Table die 8 architekturellen auf 40 physische Register um (eliminiert WAR-/WAW-Scheinabhängigkeiten). Das Backend arbeitet **out-of-order**: Der Reorder Buffer verwaltet alle µOps spekulativ, die Reservation Stations geben sie an die Execution Units frei, sobald deren Operanden bereitstehen – unabhängig von der Programmreihenfolge. Erst beim Commit (Retire) wird das Ergebnis in-order sichtbar. So entkoppelt der P6 die Ausführungsreihenfolge von der Programmreihenfolge und hält die Rechenwerke ausgelastet.
+*02-02-06-intel-p6-mikroarchitektur: Die **P6-Mikroarchitektur** ist der tiefgreifendste Umbruch der x86-Geschichte und bildet die Grundlage aller folgenden Intel-Kerne bis heute. Das Frontend arbeitet noch **in-order**: Es holt x86-Befehle, zerlegt sie in RISC-artige **µOps** und benennt über die Register Alias Table die 8 architekturellen auf 40 physische Register um (eliminiert WAR-/WAW-Scheinabhängigkeiten). Das Backend arbeitet **out-of-order**: Der Reorder Buffer verwaltet alle µOps spekulativ, die Reservation Stations geben sie an die Execution Units frei, sobald deren Operanden bereitstehen – unabhängig von der Programmreihenfolge. Erst beim Commit (Retire) wird das Ergebnis in-order sichtbar. So entkoppelt der P6 die Ausführungsreihenfolge von der Programmreihenfolge und hält die Rechenwerke ausgelastet.*
 
 ---
 
@@ -323,8 +318,7 @@ Die **P6-Mikroarchitektur** ist der tiefgreifendste Umbruch der x86-Geschichte u
 ### K7 Blockdiagramm
 
 ![[amd-k7-blockdiagramm.png]]
-
-Der K7/Athlon war 1999 die erste x86-CPU, die Intel bei der Taktfrequenz überholte. Auffällig sind die großzügigen **64-KB-L1-Caches** (doppelt so groß wie beim Pentium III), die drei vollwertigen Decoder (bis zu 6 µOps/Takt) und die **getrennten Scheduler** für Integer und Floating Point mit jeweils eigenen Ausführungseinheiten. Der Systembus übernimmt das leistungsfähige **EV6-Protokoll** aus der DEC-Alpha-Welt und ersetzt den geteilten Bus durch eine Punkt-zu-Punkt-Verbindung.
+*02-02-06-amd-k7-blockdiagramm: Der K7/Athlon war 1999 die erste x86-CPU, die Intel bei der Taktfrequenz überholte. Auffällig sind die großzügigen **64-KB-L1-Caches** (doppelt so groß wie beim Pentium III), die drei vollwertigen Decoder (bis zu 6 µOps/Takt) und die **getrennten Scheduler** für Integer und Floating Point mit jeweils eigenen Ausführungseinheiten. Der Systembus übernimmt das leistungsfähige **EV6-Protokoll** aus der DEC-Alpha-Welt und ersetzt den geteilten Bus durch eine Punkt-zu-Punkt-Verbindung.*
 
 ---
 
@@ -352,8 +346,7 @@ Der K7/Athlon war 1999 die erste x86-CPU, die Intel bei der Taktfrequenz überho
 ### Register-Layout
 
 ![[amd64-register-layout.png]]
-
-Jedes 64-Bit-Register enthält seine kleineren Vorgänger als **niederwertige Teilregister**: RAX umfasst EAX (untere 32 Bit), darin AX (untere 16 Bit), darin AH und AL (je 8 Bit). Die acht neuen Register R8–R15 folgen demselben Schema mit den Suffixen D (32), W (16) und B (8), besitzen aber kein getrenntes High-Byte wie das historische AH.
+*02-02-06-amd64-register-layout: Jedes 64-Bit-Register enthält seine kleineren Vorgänger als **niederwertige Teilregister**: RAX umfasst EAX (untere 32 Bit), darin AX (untere 16 Bit), darin AH und AL (je 8 Bit). Die acht neuen Register R8–R15 folgen demselben Schema mit den Suffixen D (32), W (16) und B (8), besitzen aber kein getrenntes High-Byte wie das historische AH.*
 
 ### Weitere Neuerungen
 
@@ -412,8 +405,7 @@ Jedes 64-Bit-Register enthält seine kleineren Vorgänger als **niederwertige Te
 ### Core 2 Duo Blockdiagramm
 
 ![[intel-core2duo-blockdiagramm.png]]
-
-Mit dem Core 2 Duo wird **Mehrkern-Technik** im Mainstream Standard: Zwei vollständige, identische Kerne sitzen auf einem Die. Jeder Kern besitzt eigene L1-Caches und eine komplette Out-of-Order-Pipeline, teilt sich aber mit dem anderen Kern einen gemeinsamen **L2-Cache** (4 MB). Der geteilte L2 erlaubt es, Daten zwischen den Kernen ohne Umweg über den Hauptspeicher auszutauschen. Nach außen führt noch der klassische **Front Side Bus** zum Chipsatz – ein Flaschenhals, den AMD mit integriertem Speichercontroller zu diesem Zeitpunkt bereits umgangen hatte.
+*02-02-06-intel-core2duo-blockdiagramm: Mit dem Core 2 Duo wird **Mehrkern-Technik** im Mainstream Standard: Zwei vollständige, identische Kerne sitzen auf einem Die. Jeder Kern besitzt eigene L1-Caches und eine komplette Out-of-Order-Pipeline, teilt sich aber mit dem anderen Kern einen gemeinsamen **L2-Cache** (4 MB). Der geteilte L2 erlaubt es, Daten zwischen den Kernen ohne Umweg über den Hauptspeicher auszutauschen. Nach außen führt noch der klassische **Front Side Bus** zum Chipsatz – ein Flaschenhals, den AMD mit integriertem Speichercontroller zu diesem Zeitpunkt bereits umgangen hatte.*
 
 ---
 
@@ -450,185 +442,18 @@ Mit dem Core 2 Duo wird **Mehrkern-Technik** im Mainstream Standard: Zwei vollst
 
 ### Zen 3 CCX (Core Complex)
 
-```
-┌───────────────────────────────────────────────────────────────────────────────┐
-│                    ZEN 3 CORE COMPLEX (CCX)                                   │
-│                    (8 Kerne mit Unified L3)                                   │
-├───────────────────────────────────────────────────────────────────────────────┤
-│                                                                               │
-│  ┌─────────────────────────────────────────────────────────────────────────┐  │
-│  │                         8 ZEN 3 KERNE                                   │  │
-│  │                                                                         │  │
-│  │  ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐ ┌──────┐│  │
-│  │  │Core 0│ │Core 1│ │Core 2│ │Core 3│ │Core 4│ │Core 5│ │Core 6│ │Core 7││  │
-│  │  │      │ │      │ │      │ │      │ │      │ │      │ │      │ │      ││  │
-│  │  │L1 I$ │ │L1 I$ │ │L1 I$ │ │L1 I$ │ │L1 I$ │ │L1 I$ │ │L1 I$ │ │L1 I$ ││  │
-│  │  │32 KB │ │32 KB │ │32 KB │ │32 KB │ │32 KB │ │32 KB │ │32 KB │ │32 KB ││  │
-│  │  │      │ │      │ │      │ │      │ │      │ │      │ │      │ │      ││  │
-│  │  │L1 D$ │ │L1 D$ │ │L1 D$ │ │L1 D$ │ │L1 D$ │ │L1 D$ │ │L1 D$ │ │L1 D$ ││  │
-│  │  │32 KB │ │32 KB │ │32 KB │ │32 KB │ │32 KB │ │32 KB │ │32 KB │ │32 KB ││  │
-│  │  │      │ │      │ │      │ │      │ │      │ │      │ │      │ │      ││  │
-│  │  │ L2$  │ │ L2$  │ │ L2$  │ │ L2$  │ │ L2$  │ │ L2$  │ │ L2$  │ │ L2$  ││  │
-│  │  │512 KB│ │512 KB│ │512 KB│ │512 KB│ │512 KB│ │512 KB│ │512 KB│ │512 KB││  │
-│  │  └──┬───┘ └──┬───┘ └──┬───┘ └──┬───┘ └──┬───┘ └──┬───┘ └──┬───┘ └──┬───┘│  │
-│  │     │        │        │        │        │        │        │        │    │  │
-│  │     └────────┴────────┴────────┴────────┴────────┴────────┴────────┘    │  │
-│  │                               │                                         │  │
-│  │                               ▼                                         │  │
-│  │  ┌──────────────────────────────────────────────────────────────┐       │  │
-│  │  │               UNIFIED L3 CACHE (32 MB)                       │       │  │
-│  │  │                                                              │       │  │
-│  │  │   Alle 8 Kerne teilen sich den gesamten L3 Cache             │       │  │
-│  │  │   (Zen 2 hatte 2×4 Kerne mit je 16 MB = nicht unified)       │       │  │
-│  │  │                                                              │       │  │
-│  │  │   16-Way Set Associative                                     │       │  │
-│  │  │   64 Byte Cache Lines                                        │       │  │
-│  │  └──────────────────────────────────────────────────────────────┘       │  │
-│  │                               │                                         │  │
-│  └───────────────────────────────┼─────────────────────────────────────────┘  │
-│                                  │                                            │
-│                                  ▼                                            |
-│  ┌──────────────────────────────────────────────────────────────────┐         │
-│  │                    INFINITY FABRIC                               │         │
-│  │                                                                  │         │
-│  │   • Verbindet CCX mit Memory Controller (I/O Die)                │         │
-│  │   • Verbindet mehrere CCDs in Multi-Chiplet Designs              │         │
-│  │   • Skaliert von 1 CCD (8 Kerne) bis 8 CCDs (64 Kerne, EPYC)     │         │
-│  └──────────────────────────────────────────────────────────────────┘         │
-│                                                                               │
-└───────────────────────────────────────────────────────────────────────────────┘
-```
+![[amd-zen3-ccx.png]]
+*02-02-06-amd-zen3-ccx: Zen 3 Core Complex mit 8 Kernen und unified 32 MB L3-Cache, verbunden über Infinity Fabric*
 
 ### Zen 3 Kern-Architektur
 
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                    ZEN 3 EINZELNER KERN                                 │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│  ┌───────────────────────────────────────────────────────────────────┐  │
-│  │                         FRONTEND                                  │  │
-│  │                                                                   │  │
-│  │   ┌─────────────────────────────────────────────────────────┐     │  │
-│  │   │  Branch Prediction                                      │     │  │
-│  │   │  • TAGE Predictor                                       │     │  │
-│  │   │  • 6.5K BTB Entries                                     │     │  │
-│  │   │  • 512 Indirect Target Array                            │     │  │
-│  │   └─────────────────────────────────────────────────────────┘     │  │
-│  │                              │                                    │  │
-│  │   ┌─────────────────────────────────────────────────────────┐     │  │
-│  │   │  L1 Instruction Cache: 32 KB, 8-Way                     │     │  │
-│  │   └─────────────────────────────────────────────────────────┘     │  │
-│  │                              │                                    │  │
-│  │   ┌─────────────────────────────────────────────────────────┐     │  │
-│  │   │  Op Cache: 4K µOps (Decoded Instruction Cache)          │     │  │
-│  │   │  Bypass für häufig genutzte Befehlssequenzen            │     │  │
-│  │   └─────────────────────────────────────────────────────────┘     │  │
-│  │                              │                                    │  │
-│  │   ┌─────────────────────────────────────────────────────────┐     │  │
-│  │   │  4 Decoder (bis zu 8 µOps/Takt)                         │     │  │
-│  │   │  Macro-Op Fusion (CMP+JCC, TEST+JCC)                    │     │  │
-│  │   └─────────────────────────────────────────────────────────┘     │  │
-│  └───────────────────────────────────────────────────────────────────┘  │
-│                              │                                          │
-│  ┌───────────────────────────────────────────────────────────────────┐  │
-│  │                         EXECUTION                                 │  │
-│  │                                                                   │  │
-│  │   ┌─────────────────────────────────────────────────────────┐     │  │
-│  │   │  Integer Scheduler: 4 × 24 Entries = 96                 │     │  │
-│  │   │                                                         │     │  │
-│  │   │   ┌────┐ ┌────┐ ┌────┐ ┌────┐                           │     │  │
-│  │   │   │ALU │ │ALU │ │ALU │ │ALU │   4× Integer ALU          │     │  │
-│  │   │   └────┘ └────┘ └────┘ └────┘                           │     │  │
-│  │   │   ┌─────────┐ ┌─────────┐                               │     │  │
-│  │   │   │  AGU    │ │  AGU    │ │  AGU    │   3× Address Gen  │     │  │
-│  │   │   └─────────┘ └─────────┘ └─────────┘                   │     │  │
-│  │   │   ┌─────────┐                                           │     │  │
-│  │   │   │ Branch  │                        1× Branch Unit     │     │  │
-│  │   │   └─────────┘                                           │     │  │
-│  │   └─────────────────────────────────────────────────────────┘     │  │
-│  │                                                                   │  │
-│  │   ┌─────────────────────────────────────────────────────────┐     │  │
-│  │   │  Floating Point / SIMD Scheduler: 2 × 32 = 64 Entries   │     │  │
-│  │   │                                                         │     │  │
-│  │   │   ┌──────────────────────────────────────────────────┐  │     │  │
-│  │   │   │  4× 256-Bit FMA (AVX2)                           │  │     │  │
-│  │   │   │  = 2× 256-Bit FP MUL + 2× 256-Bit FP ADD         │  │     │  │
-│  │   │   │  oder 4× 128-Bit                                 │  │     │  │
-│  │   │   └──────────────────────────────────────────────────┘  │     │  │
-│  │   │   ┌──────────────────────────────────────────────────┐  │     │  │
-│  │   │   │  2× FP Store (256-Bit)                           │  │     │  │
-│  │   │   └──────────────────────────────────────────────────┘  │     │  │
-│  │   └─────────────────────────────────────────────────────────┘     │  │
-│  │                                                                   │  │
-│  │   Reorder Buffer: 256 Entries                                     │  │
-│  │   Retire Width: 8 µOps/Takt                                       │  │
-│  └───────────────────────────────────────────────────────────────────┘  │
-│                              │                                          │
-│  ┌───────────────────────────────────────────────────────────────────┐  │
-│  │                       LOAD/STORE                                  │  │
-│  │                                                                   │  │
-│  │   L1 Data Cache: 32 KB, 8-Way                                     │  │
-│  │   Load Queue: 72 Entries                                          │  │
-│  │   Store Queue: 64 Entries                                         │  │
-│  │   3 Loads + 2 Stores pro Takt                                     │  │
-│  │                                                                   │  │
-│  │   L2 Cache: 512 KB, 8-Way (privat pro Kern)                       │  │
-│  └───────────────────────────────────────────────────────────────────┘  │
-│                                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
-```
+![[amd-zen3-kern.png]]
+*02-02-06-amd-zen3-kern: Interner Aufbau eines Zen 3 Kerns mit Frontend, Execution Units und Load/Store-Einheit*
 
 ### Chiplet-Design (Zen 2+)
 
-```
-┌─────────────────────────────────────────────────────────────────────────┐
-│                    AMD CHIPLET-ARCHITEKTUR                              │
-│                    (am Beispiel Ryzen 9 5950X)                          │
-├─────────────────────────────────────────────────────────────────────────┤
-│                                                                         │
-│  ┌─────────────────────────────────────────────────────────────────┐    │
-│  │                     AM4 PACKAGE                                 │    │
-│  │                                                                 │    │
-│  │   ┌─────────────────────┐         ┌─────────────────────┐       │    │
-│  │   │    CCD 0 (7nm)      │         │    CCD 1 (7nm)      │       │    │
-│  │   │                     │         │                     │       │    │
-│  │   │  ┌───────────────┐  │         │  ┌───────────────┐  │       │    │
-│  │   │  │   CCX (8C)    │  │         │  │   CCX (8C)    │  │       │    │
-│  │   │  │   32 MB L3    │  │         │  │   32 MB L3    │  │       │    │
-│  │   │  └───────────────┘  │         │  └───────────────┘  │       │    │
-│  │   │                     │         │                     │       │    │
-│  │   └──────────┬──────────┘         └──────────┬──────────┘       │    │
-│  │              │                               │                  │    │
-│  │              │      INFINITY FABRIC          │                  │    │
-│  │              │◄─────────────────────────────►│                  │    │
-│  │              │                               │                  │    │
-│  │              └───────────────┬───────────────┘                  │    │
-│  │                              │                                  │    │
-│  │   ┌──────────────────────────┴──────────────────────────┐       │    │
-│  │   │                   I/O DIE (12nm)                    │       │    │
-│  │   │                                                     │       │    │
-│  │   │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐  │       │    │
-│  │   │  │   Memory    │  │   PCIe 4.0  │  │    USB      │  │       │    │
-│  │   │  │ Controller  │  │  24 Lanes   │  │   SATA      │  │       │    │
-│  │   │  │  DDR4-3200  │  │             │  │   etc.      │  │       │    │
-│  │   │  └─────────────┘  └─────────────┘  └─────────────┘  │       │    │
-│  │   │                                                     │       │    │
-│  │   └─────────────────────────────────────────────────────┘       │    │
-│  │                                                                 │    │
-│  └─────────────────────────────────────────────────────────────────┘    │
-│                                                                         │
-│  VORTEILE:                                                              │
-│  • CCDs auf modernstem Prozess (7nm/5nm/4nm)                            │
-│  • I/O Die auf günstigerem Prozess (12nm/6nm)                           │
-│  • Bessere Yields (kleinere Dies)                                       │
-│  • Skalierbar von 8 bis 64 Kerne (EPYC: 8 CCDs)                         │
-│  • Konsistente Architektur über Desktop/Server                          │
-│                                                                         │
-│  EPYC (Server): Bis zu 8 CCDs + 1 I/O Die = 64 Kerne                    │
-│                                                                         │
-└─────────────────────────────────────────────────────────────────────────┘
-```
+![[amd-chiplet-architektur.png]]
+*02-02-06-amd-chiplet-architektur: AMD Chiplet-Architektur am Beispiel Ryzen 9 5950X – zwei CCDs (je 8 Kerne) und ein I/O Die*
 
 ---
 
