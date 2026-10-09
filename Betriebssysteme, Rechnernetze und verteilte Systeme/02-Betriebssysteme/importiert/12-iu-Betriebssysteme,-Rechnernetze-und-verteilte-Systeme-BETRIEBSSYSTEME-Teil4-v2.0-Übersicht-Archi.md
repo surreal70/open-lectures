@@ -12,7 +12,6 @@ typ: sonstig
 quelle: "12-iu-Betriebssysteme, Rechnernetze und verteilte Systeme-BETRIEBSSYSTEME-Teil4-v2.0 - Übersicht Architektur Definitionen.pdf"
 seiten: 14
 ---
-author: Andreas Hümmer
 
 # Betriebssysteme, Rechnernetze und verteilte Systeme
 
@@ -24,7 +23,6 @@ author: Andreas Hümmer
 > - **Autor:** Andreas Hümmer
 
 ---
-author: Andreas Hümmer
 
 ## Inhalt
 

@@ -2,14 +2,13 @@
 author: Andreas Hümmer
 title: IEEE 802.1w - Rapid Spanning Tree Protocol (RSTP)
 tags:
-- ieee
-- rstp
-- stp
-- switching
-- 802.1w
+  - ieee
+  - rstp
+  - stp
+  - switching
+  - 802.1w
 created: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # IEEE 802.1w - Rapid Spanning Tree Protocol (RSTP)
 
@@ -59,6 +58,5 @@ author: Andreas Hümmer
 > - Working Group: https://www.ieee802.org/1/
 
 ---
-author: Andreas Hümmer
 
 *Quelle: IEEE Standards Association*

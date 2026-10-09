@@ -12,7 +12,6 @@ tags:
   - electrical
   - networking
 ---
-author: Andreas Hümmer
 
 # 13011 IEEE - Institute of Electrical and Electronics Engineers
 

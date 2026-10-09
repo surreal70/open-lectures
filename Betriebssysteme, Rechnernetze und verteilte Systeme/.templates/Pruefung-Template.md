@@ -15,14 +15,12 @@ punkte_gesamt: 100
 hilfsmittel: "Keine"
 status: draft
 ---
-author: Andreas Hümmer
 
 # {{title}}
 
 ## Modul - {{semester}}
 
 ---
-author: Andreas Hümmer
 
 ## Prüfungsinformationen
 
@@ -36,7 +34,6 @@ author: Andreas Hümmer
 | Bereich | {{bereich}} |
 
 ---
-author: Andreas Hümmer
 
 ## Allgemeine Hinweise
 
@@ -47,7 +44,6 @@ author: Andreas Hümmer
 5. Verwenden Sie einen dokumentenechten Stift (kein Bleistift).
 
 ---
-author: Andreas Hümmer
 
 ## Teil 1: Multiple-Choice (20 Punkte)
 
@@ -75,7 +71,6 @@ Was beschreibt Y am besten?
 *Weitere Multiple-Choice-Fragen hier einfügen.*
 
 ---
-author: Andreas Hümmer
 
 ## Teil 2: Kurzfragen (30 Punkte)
 
@@ -102,7 +97,6 @@ Warum ist C wichtig für D?
 *Weitere Kurzfragen hier einfügen.*
 
 ---
-author: Andreas Hümmer
 
 ## Teil 3: Rechenaufgaben (25 Punkte)
 
@@ -137,7 +131,6 @@ Analysieren Sie das folgende Szenario und berechnen Sie die Kennzahlen.
 *Weitere Rechenaufgaben hier einfügen.*
 
 ---
-author: Andreas Hümmer
 
 ## Teil 4: Anwendungsaufgaben (25 Punkte)
 
@@ -174,7 +167,6 @@ Beschreibung einer Problemsituation.
 *Weitere Anwendungsaufgaben hier einfügen.*
 
 ---
-author: Andreas Hümmer
 
 ## Notenspiegel
 
@@ -193,7 +185,6 @@ author: Andreas Hümmer
 | 0-49 | 5,0 |
 
 ---
-author: Andreas Hümmer
 
 ## Punkteübersicht
 
@@ -206,10 +197,8 @@ author: Andreas Hümmer
 | **Gesamt** | | **100** |
 
 ---
-author: Andreas Hümmer
 
 *Viel Erfolg!*
 
 ---
-author: Andreas Hümmer
 *Erstellt am 2026-10-07 | Zuletzt aktualisiert: 2026-10-07*

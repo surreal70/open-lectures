@@ -5,7 +5,6 @@ tags: [bs-referenz, multics, historie]
 created: 2026-10-07
 bereich: Anhang
 ---
-author: Andreas Hümmer
 
 # MULTICS
 

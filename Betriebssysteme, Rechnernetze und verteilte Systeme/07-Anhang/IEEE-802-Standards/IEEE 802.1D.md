@@ -2,13 +2,12 @@
 author: Andreas Hümmer
 title: IEEE 802.1D - Spanning Tree Protocol (STP)
 tags:
-- ieee
-- stp
-- switching
-- 802.1D
+  - ieee
+  - stp
+  - switching
+  - 802.1D
 created: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # IEEE 802.1D - Spanning Tree Protocol (STP)
 
@@ -70,6 +69,5 @@ STP wählt eine **Root Bridge** und blockiert redundante Pfade, um Broadcast-St�
 > - Working Group: https://www.ieee802.org/1/
 
 ---
-author: Andreas Hümmer
 
 *Quelle: IEEE Standards Association*

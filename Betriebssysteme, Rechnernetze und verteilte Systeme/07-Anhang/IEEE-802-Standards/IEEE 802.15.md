@@ -2,14 +2,13 @@
 author: Andreas Hümmer
 title: IEEE 802.15 - Wireless Personal Area Networks (WPAN)
 tags:
-- ieee
-- wpan
-- bluetooth
-- zigbee
-- 802.15
+  - ieee
+  - wpan
+  - bluetooth
+  - zigbee
+  - 802.15
 created: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # IEEE 802.15 - Wireless Personal Area Networks (WPAN)
 
@@ -47,6 +46,5 @@ IEEE 802.15.4 ist die Grundlage für viele IoT-Protokolle:
 > - 802.15.4: https://standards.ieee.org/ieee/802.15.4/7029/
 
 ---
-author: Andreas Hümmer
 
 *Quelle: IEEE Standards Association*

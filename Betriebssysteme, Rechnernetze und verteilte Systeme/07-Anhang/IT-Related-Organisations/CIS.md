@@ -13,7 +13,6 @@ tags:
   - benchmarks
   - controls
 ---
-author: Andreas Hümmer
 
 # 13036 CIS - Center for Internet Security
 

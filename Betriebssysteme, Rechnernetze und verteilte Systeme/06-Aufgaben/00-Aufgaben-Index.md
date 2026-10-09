@@ -6,7 +6,6 @@ created: 2026-10-07
 modified: 2026-10-07
 bereich: BS
 ---
-author: Andreas Hümmer
 
 # Aufgaben
 

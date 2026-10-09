@@ -1,0 +1,52 @@
+---
+author: Andreas Hümmer
+title: TCP
+tags:
+  - content
+  - rn
+  - transport-layer
+  - tcp
+  - verbindungsorientiert
+created: '2026-10-07'
+modified: '2026-10-07'
+bereich: RN
+---
+
+# TCP
+
+## Definition
+
+TCP (Transmission Control Protocol) ist ein verbindungsorientiertes, zuverlässiges Transportprotokoll.
+
+## Erklärung
+
+TCP stellt eine zuverlässige Ende-zu-Ende-Verbindung her und garantiert die vollständige, geordnete Zustellung aller Daten. Es verwendet Sequenznummern, Bestätigungen, Flusskontrolle und Staukontrolle.
+
+## Eigenschaften
+
+- Verbindungsorientiert (3-Way-Handshake)
+- Zuverlässige Zustellung durch Bestätigungen
+- Sequenznummern für Reihenfolge
+- Fluss- und Staukontrolle
+
+## Beispiele
+
+- HTTP/HTTPS für Webseiten
+- SMTP für E-Mail-Versand
+- SSH für sichere Verbindungen
+
+## Zusammenhänge
+
+- [[UDP]]
+- [[Ports]]
+- [[IP-Protokoll]]
+
+## Prüfungstipps
+
+- 3-Way-Handshake verstehen
+- Sliding-Window-Mechanismus
+- Unterschied zu UDP
+
+## Quellen
+
+- *Quelle 1*

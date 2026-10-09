@@ -53,6 +53,5 @@ ECMA-Standards beeinflussen:
 
 
 ---
-author: Andreas Hümmer
 *Zuletzt aktualisiert: 2026-10-03*
 

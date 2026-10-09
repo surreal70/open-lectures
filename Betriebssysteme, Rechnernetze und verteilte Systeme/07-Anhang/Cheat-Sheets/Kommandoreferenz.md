@@ -9,14 +9,12 @@ tags:
 created: 2026-10-07
 modified: 2026-10-07
 ---
-author: Andreas Hümmer
 
 # Kommandoreferenz
 
 Diese Übersicht enthält wichtige Kommandos und Befehle für die Arbeit mit **Betriebssystemen** und **Netzwerken**.
 
 ---
-author: Andreas Hümmer
 
 ## Linux/Unix Grundkommandos
 
@@ -62,7 +60,6 @@ author: Andreas Hümmer
 | `chgrp` | Gruppe ändern | `chgrp developers projekt/` |
 
 ---
-author: Andreas Hümmer
 
 ## Prozessverwaltung
 
@@ -81,7 +78,6 @@ author: Andreas Hümmer
 | `renice` | Priorität ändern | `renice -n 5 -p 1234` |
 
 ---
-author: Andreas Hümmer
 
 ## Speicherverwaltung
 
@@ -93,7 +89,6 @@ author: Andreas Hümmer
 | `vmstat` | Virtuelle Speicherstatistik | `vmstat 1` |
 
 ---
-author: Andreas Hümmer
 
 ## Netzwerk-Kommandos
 
@@ -137,7 +132,6 @@ author: Andreas Hümmer
 | `firewall-cmd` | Firewall (CentOS/RHEL) | `firewall-cmd --list-all` |
 
 ---
-author: Andreas Hümmer
 
 ## Paketverwaltung
 
@@ -160,7 +154,6 @@ author: Andreas Hümmer
 | `dnf search` | Pakete suchen | `dnf search nginx` |
 
 ---
-author: Andreas Hümmer
 
 ## Systemverwaltung
 
@@ -177,7 +170,6 @@ author: Andreas Hümmer
 | `reboot` | System neustarten | `reboot` |
 
 ---
-author: Andreas Hümmer
 
 ## Benutzer- und Gruppenverwaltung
 
@@ -194,7 +186,6 @@ author: Andreas Hümmer
 | `w` | Detaillierte Benutzerinfo | `w` |
 
 ---
-author: Andreas Hümmer
 
 ## Archivierung und Komprimierung
 
@@ -207,7 +198,6 @@ author: Andreas Hümmer
 | `gunzip` | Dekomprimieren | `gunzip datei.txt.gz` |
 
 ---
-author: Andreas Hümmer
 
 > **Hinweis**: Diese Referenz enthält eine Auswahl häufig verwendeter Kommandos. Für detaillierte Informationen nutzen Sie `man <kommando>` oder `<kommando> --help`.
 

@@ -2,16 +2,15 @@
 author: Andreas Hümmer
 title: ASCII-Referenz
 tags:
-- anhang
-- referenz
-- ascii
-- zeichensatz
-- encoding
+  - anhang
+  - referenz
+  - ascii
+  - zeichensatz
+  - encoding
 created: '2026-10-07'
 modified: '2026-10-07'
 bereich: Anhang
 ---
-author: Andreas Hümmer
 
 # ASCII-Referenz
 
@@ -20,7 +19,6 @@ author: Andreas Hümmer
 **ASCII** (American Standard Code for Information Interchange) ist ein 7-Bit-Zeichensatz, der 1963 als US-amerikanischer Standard veröffentlicht wurde und die Grundlage für praktisch alle modernen Zeichenkodierungen bildet.
 
 ---
-author: Andreas Hümmer
 
 ## Historische Entwicklung
 
@@ -55,7 +53,6 @@ author: Andreas Hümmer
 | 2024 | Unicode 15.1 - Über 149.000 Zeichen |
 
 ---
-author: Andreas Hümmer
 
 ## ASCII-Struktur
 
@@ -75,7 +72,6 @@ ASCII ist ein **7-Bit-Code** mit 128 Zeichen (0-127):
 ```
 
 ---
-author: Andreas Hümmer
 
 ## Vollständige ASCII-Tabelle
 
@@ -229,7 +225,6 @@ author: Andreas Hümmer
 | 127 | 0x7F | (DEL) | Delete |
 
 ---
-author: Andreas Hümmer
 
 ## Kompakte ASCII-Tabelle
 
@@ -258,7 +253,6 @@ Beispiel: 'A' = Zeile 4, Spalte 1 = 0x41 = 65 dezimal
 ```
 
 ---
-author: Andreas Hümmer
 
 ## Verhältnis zu UTF-8 und Unicode
 
@@ -315,7 +309,6 @@ author: Andreas Hümmer
 | `😀` | U+1F600 | F0 9F 98 80 | 11110000 10011111 10011000 10000000 |
 
 ---
-author: Andreas Hümmer
 
 ## Wichtige ASCII-Escape-Sequenzen
 
@@ -337,7 +330,6 @@ In Programmiersprachen werden Steuerzeichen oft als Escape-Sequenzen dargestellt
 | `\"` | " | 34 | Double Quote | Anführungszeichen |
 
 ---
-author: Andreas Hümmer
 
 ## ASCII-Art für Diagramme
 
@@ -375,7 +367,6 @@ Pfeile: → ← ↑ ↓ ↔ ↕ ⇒ ⇐ ⇑ ⇓
 ```
 
 ---
-author: Andreas Hümmer
 
 ## Quellen
 

@@ -6,7 +6,6 @@ created: 2026-10-07
 modified: 2026-10-07
 bereich: VS
 ---
-author: Andreas Hümmer
 
 # Verteilte Systeme
 

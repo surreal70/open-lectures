@@ -12,7 +12,6 @@ status: draft
 pruefungsrelevant: true
 schwierigkeit: mittel
 ---
-author: Andreas Hümmer
 
 # {{title}}
 
@@ -74,5 +73,4 @@ Beschreibung des zweiten Beispiels.
 - Lehrbuch: Kapitel X
 
 ---
-author: Andreas Hümmer
 *Erstellt am 2026-10-07 | Zuletzt aktualisiert: 2026-10-07*

@@ -13,7 +13,6 @@ tags:
   - audit
   - governance
 ---
-author: Andreas Hümmer
 
 # 13041 ISACA - Information Systems Audit and Control Association
 

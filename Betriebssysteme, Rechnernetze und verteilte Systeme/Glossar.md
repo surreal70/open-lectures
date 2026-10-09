@@ -8,14 +8,12 @@ tags:
 created: 2026-10-07
 modified: 2026-10-07
 ---
-author: Andreas Hümmer
 
 # Glossar
 
 Dieses Glossar enthält Definitionen wichtiger Fachbegriffe aus den Bereichen **Betriebssysteme**, **Rechnernetze** und **Verteilte Systeme**.
 
 ---
-author: Andreas Hümmer
 
 ## A
 
@@ -158,7 +156,6 @@ author: Andreas Hümmer
 - **Zeitstempel**: Ein Wert, der den Zeitpunkt eines Ereignisses markiert.
 
 ---
-author: Andreas Hümmer
 
 > **Hinweis**: Dieses Glossar wird kontinuierlich erweitert. Fehlende Begriffe können ergänzt werden.
 

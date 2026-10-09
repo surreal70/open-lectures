@@ -2,14 +2,13 @@
 author: Andreas Hümmer
 title: IEEE 802 LAN/MAN Standards
 tags:
-- ieee
-- standards
-- netzwerk
-- lan
-- man
+  - ieee
+  - standards
+  - netzwerk
+  - lan
+  - man
 created: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # IEEE 802 LAN/MAN Standards
 
@@ -64,6 +63,5 @@ Die **IEEE 802** Standardfamilie definiert Netzwerkstandards für Local Area Net
 > - [IEEE 802.11 Working Group](https://www.ieee802.org/11/)
 
 ---
-author: Andreas Hümmer
 
 *Quelle: IEEE Standards Association, https://standards.ieee.org/*

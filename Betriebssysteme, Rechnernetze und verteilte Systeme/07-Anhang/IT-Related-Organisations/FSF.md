@@ -13,7 +13,6 @@ tags:
   - free-software
   - licenses
 ---
-author: Andreas Hümmer
 
 # 13050 FSF - Free Software Foundation
 

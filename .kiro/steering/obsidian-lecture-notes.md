@@ -59,33 +59,40 @@ Hinweis: Zusatzkapitel können optional nummerierte Präfixe haben (z.B. `05-Pra
 
 ## File Naming Convention
 
-Content files within directories **must** have a numeric prefix for ordering:
+Content files within directories **must** have a numeric prefix for ordering, but **without** duplicating the parent directory's prefix:
 
 ```
-01-Grundlagen/
-├── 01-Einfuehrung.md
-├── 02-Komplexitaetsanalyse.md
-├── 03-Grundlegende-Datentypen.md
-└── .assets/
+02-Betriebssysteme/
+└── 01-Einfuehrung/
+    ├── 01-Historie.md
+    ├── 02-Definition.md
+    ├── 03-Aufgaben.md
+    └── assets/
 ```
 
-**Format:** `NN-Titel.md` where `NN` is a two-digit number (01, 02, 03, ...).
+**Format:** `NN-Titel.md` where `NN` is a two-digit number (01, 02, 03, ...) unique within that directory.
+
+**Correct:** `01-Einfuehrung/01-Historie.md`  
+**Wrong:** `01-Einfuehrung/01-01-Historie.md` (directory prefix duplicated)
 
 ### Chapter Asset Directories
 
-Each chapter directory contains a hidden `.assets/` folder for images and attachments:
+Each chapter directory contains an `assets/` folder for images and attachments:
 
 ```
-02-Architektur/
-├── 02-01-Kerneltypen.md
-├── 02-02-Schichtenmodell.md
-└── .assets/
-    ├── monolithischer-kernel.png
-    ├── mikrokernel.png
-    └── hybridkernel.png
+02-Betriebssysteme/
+└── 02-Architektur/
+    ├── 02-01-Kerneltypen.md
+    ├── 02-02-Schichtenmodell.md
+    └── assets/
+        ├── monolithischer-kernel.png
+        ├── mikrokernel.png
+        └── hybridkernel.png
 ```
 
-Reference images using explicit relative paths: `![[./.assets/image.png]]`
+Reference images using **filename only**: `![[monolithischer-kernel.png]]`
+
+Obsidian resolves filenames via "shortest path". Use descriptive, unique filenames to avoid collisions.
 
 ## Frontmatter (Metadata)
 

@@ -13,7 +13,6 @@ tags:
   - german
   - national
 ---
-author: Andreas Hümmer
 
 # 13060 DIN - Deutsches Institut für Normung
 

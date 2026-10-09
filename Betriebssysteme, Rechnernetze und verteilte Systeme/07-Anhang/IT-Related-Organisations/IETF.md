@@ -12,7 +12,6 @@ tags:
   - internet
   - protocols
 ---
-author: Andreas Hümmer
 
 # 13010 IETF - Internet Engineering Task Force
 

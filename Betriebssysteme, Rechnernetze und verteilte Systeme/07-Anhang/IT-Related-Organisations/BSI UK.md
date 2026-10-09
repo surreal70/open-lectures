@@ -64,5 +64,4 @@ BSI UK bietet:
 
 
 ---
-author: Andreas Hümmer
 *Zuletzt aktualisiert: 2026-10-03*

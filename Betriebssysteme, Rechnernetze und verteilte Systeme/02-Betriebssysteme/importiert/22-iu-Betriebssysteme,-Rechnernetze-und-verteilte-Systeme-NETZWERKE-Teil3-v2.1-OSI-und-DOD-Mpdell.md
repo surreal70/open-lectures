@@ -12,7 +12,6 @@ typ: sonstig
 quelle: "22-iu-Betriebssysteme, Rechnernetze und verteilte Systeme-NETZWERKE-Teil3-v2.1 - OSI und DOD Mpdell.pdf"
 seiten: 60
 ---
-author: Andreas Hümmer
 
 # Betriebssysteme, Rechnernetze und verteilte Systeme
 
@@ -24,7 +23,6 @@ author: Andreas Hümmer
 > - **Autor:** Andreas Hümmer
 
 ---
-author: Andreas Hümmer
 
 ## Inhalt
 

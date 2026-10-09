@@ -13,7 +13,6 @@ tags:
   - application
   - web
 ---
-author: Andreas Hümmer
 
 # 13037 OWASP - Open Web Application Security Project
 

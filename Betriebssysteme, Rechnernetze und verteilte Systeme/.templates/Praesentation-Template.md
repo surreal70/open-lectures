@@ -13,7 +13,6 @@ tags:
 created: 2026-10-07
 modified: 2026-10-07
 ---
-author: Andreas Hümmer
 
 <!-- _class: lead -->
 
@@ -26,7 +25,6 @@ author: Andreas Hümmer
 2026-10-07
 
 ---
-author: Andreas Hümmer
 
 # Übersicht
 
@@ -37,7 +35,6 @@ author: Andreas Hümmer
 5. Zusammenfassung
 
 ---
-author: Andreas Hümmer
 
 # Einführung
 
@@ -53,7 +50,6 @@ author: Andreas Hümmer
 - Lernziel 3
 
 ---
-author: Andreas Hümmer
 
 # Hauptteil
 
@@ -64,7 +60,6 @@ author: Andreas Hümmer
 - Detail C
 
 ---
-author: Andreas Hümmer
 
 # Hauptteil (Fortsetzung)
 
@@ -75,7 +70,6 @@ author: Andreas Hümmer
 - Detail F
 
 ---
-author: Andreas Hümmer
 
 # Beispiel
 
@@ -86,7 +80,6 @@ Hier könnte Code oder ein Beispiel stehen
 ```
 
 ---
-author: Andreas Hümmer
 
 # Zusammenfassung
 
@@ -95,7 +88,6 @@ author: Andreas Hümmer
 - Kernpunkt 3
 
 ---
-author: Andreas Hümmer
 
 # Fragen?
 
@@ -103,7 +95,6 @@ author: Andreas Hümmer
 
 
 ---
-author: Andreas Hümmer
 
 <!-- _class: lead -->
 

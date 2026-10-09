@@ -12,7 +12,6 @@ tags:
   - security
   - us-government
 ---
-author: Andreas Hümmer
 
 # 13030 NIST - National Institute of Standards and Technology
 

@@ -12,7 +12,6 @@ typ: sonstig
 quelle: "14-iu-Betriebssysteme, Rechnernetze und verteilte Systeme-BETRIEBSSYSTEME-Teil5-v2.1 - Ressourcen.pdf"
 seiten: 54
 ---
-author: Andreas Hümmer
 
 # Betriebssysteme, Rechnernetze und verteilte Systeme
 
@@ -24,7 +23,6 @@ author: Andreas Hümmer
 > - **Autor:** Andreas Hümmer
 
 ---
-author: Andreas Hümmer
 
 ## Inhalt
 

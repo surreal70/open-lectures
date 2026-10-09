@@ -2,13 +2,12 @@
 author: Andreas Hümmer
 title: IEEE 802.11a - WLAN 5 GHz
 tags:
-- ieee
-- wifi
-- wlan
-- 802.11a
+  - ieee
+  - wifi
+  - wlan
+  - 802.11a
 created: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # IEEE 802.11a - WLAN 5 GHz
 
@@ -47,6 +46,5 @@ author: Andreas Hümmer
 > - URL: https://standards.ieee.org/ieee/802.11/7028/
 
 ---
-author: Andreas Hümmer
 
 *Quelle: IEEE Standards Association*

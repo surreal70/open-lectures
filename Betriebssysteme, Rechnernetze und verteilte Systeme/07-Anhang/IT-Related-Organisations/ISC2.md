@@ -13,7 +13,6 @@ tags:
   - security
   - professional
 ---
-author: Andreas Hümmer
 
 # 13040 ISC2 - International Information System Security Certification Consortium
 

@@ -2,13 +2,12 @@
 author: Andreas Hümmer
 title: IEEE 802.3 - Ethernet
 tags:
-- ieee
-- ethernet
-- lan
-- 802.3
+  - ieee
+  - ethernet
+  - lan
+  - 802.3
 created: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # IEEE 802.3 - Ethernet
 
@@ -53,6 +52,5 @@ author: Andreas Hümmer
 > - Working Group: https://www.ieee802.org/3/
 
 ---
-author: Andreas Hümmer
 
 *Quelle: IEEE Standards Association*

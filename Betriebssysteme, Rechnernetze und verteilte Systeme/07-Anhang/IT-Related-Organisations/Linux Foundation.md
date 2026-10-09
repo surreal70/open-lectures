@@ -13,7 +13,6 @@ tags:
   - linux
   - cloud
 ---
-author: Andreas Hümmer
 
 # 13052 Linux Foundation
 

@@ -58,5 +58,4 @@ TCG-Standards sind essentiell für:
 
 
 ---
-author: Andreas Hümmer
 *Zuletzt aktualisiert: 2026-10-03*

@@ -2,14 +2,13 @@
 author: Andreas Hümmer
 title: IEEE 802.1s - Multiple Spanning Tree Protocol (MSTP)
 tags:
-- ieee
-- mstp
-- stp
-- vlan
-- 802.1s
+  - ieee
+  - mstp
+  - stp
+  - vlan
+  - 802.1s
 created: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # IEEE 802.1s - Multiple Spanning Tree Protocol (MSTP)
 
@@ -60,6 +59,5 @@ Switches gehören zur selben MST-Region, wenn sie identische Konfiguration haben
 > - Working Group: https://www.ieee802.org/1/
 
 ---
-author: Andreas Hümmer
 
 *Quelle: IEEE Standards Association*

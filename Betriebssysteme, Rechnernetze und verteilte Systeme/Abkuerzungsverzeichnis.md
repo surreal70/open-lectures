@@ -8,14 +8,12 @@ tags:
 created: 2026-10-07
 modified: 2026-10-07
 ---
-author: Andreas Hümmer
 
 # Abkürzungsverzeichnis
 
 Dieses Verzeichnis enthält Erklärungen zu Abkürzungen und Akronymen aus den Bereichen **Betriebssysteme**, **Rechnernetze** und **Verteilte Systeme**.
 
 ---
-author: Andreas Hümmer
 
 ## A
 
@@ -223,7 +221,6 @@ author: Andreas Hümmer
 | XML | Extensible Markup Language | Auszeichnungssprache |
 
 ---
-author: Andreas Hümmer
 
 > **Hinweis**: Dieses Verzeichnis wird kontinuierlich erweitert. Fehlende Abkürzungen können ergänzt werden.
 

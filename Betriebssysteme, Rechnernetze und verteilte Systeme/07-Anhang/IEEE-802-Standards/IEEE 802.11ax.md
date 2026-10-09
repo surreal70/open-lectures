@@ -2,15 +2,14 @@
 author: Andreas Hümmer
 title: IEEE 802.11ax - Wi-Fi 6/6E
 tags:
-- ieee
-- wifi
-- wlan
-- 802.11ax
-- wifi6
-- ofdma
+  - ieee
+  - wifi
+  - wlan
+  - 802.11ax
+  - wifi6
+  - ofdma
 created: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # IEEE 802.11ax - Wi-Fi 6/6E
 
@@ -62,6 +61,5 @@ author: Andreas Hümmer
 > - URL: https://standards.ieee.org/ieee/802.11ax/6735/
 
 ---
-author: Andreas Hümmer
 
 *Quelle: IEEE Standards Association*

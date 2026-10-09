@@ -62,5 +62,4 @@ ANSI ist wichtig für:
 
 
 ---
-author: Andreas Hümmer
 *Zuletzt aktualisiert: 2026-10-03*

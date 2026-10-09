@@ -12,7 +12,6 @@ typ: sonstig
 quelle: "KursBetriebssysteme_rk_FC4.pdf"
 seiten: 15
 ---
-author: Andreas Hümmer
 
 # Grosser
 
@@ -24,7 +23,6 @@ author: Andreas Hümmer
 > - **Autor:** Kloos, Reinhold, Dr.
 
 ---
-author: Andreas Hümmer
 
 ## Inhalt
 

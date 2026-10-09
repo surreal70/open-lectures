@@ -53,7 +53,9 @@ When creating graphics (e.g., rendered from ASCII, generated diagrams, exports):
 
 Every illustration or picture must have a description beneath it:
 
-- **Identifier format**: `<markdown-filename>-<number>` where `<number>` is unique within that file
+- **Identifier format**: `<topic-prefix>-<chapter-prefix>-<file-prefix>-<image-name>` 
+  - The prefixes are derived from the directory structure where the file resides
+  - The image name is the filename without extension
 - **Color coding**: The identifier is styled in blue using CSS class
 
 **Required CSS snippet** (Settings → Appearance → CSS snippets):
@@ -69,34 +71,43 @@ Every illustration or picture must have a description beneath it:
 **Usage:**
 
 ```markdown
-![[./.assets/architecture-diagram.png]]
-*<span class="fig-id">my-note-1</span>: System architecture overview showing the main components.*
+![[eniac.jpg]]
+*<span class="fig-id">02-01-01-eniac</span>: Der ENIAC war einer der ersten vollelektronischen Universalrechner.*
 ```
 
-Example for a file named `database-design.md`:
-- First figure: `database-design-1`
-- Second figure: `database-design-2`
-- And so on...
+**Examples based on directory structure:**
+
+| File Location | Image | Figure ID |
+|---------------|-------|-----------|
+| `02-Betriebssysteme/01-Einfuehrung/01-01-Historie.md` | `eniac.jpg` | `02-01-01-eniac` |
+| `02-Betriebssysteme/02-Architektur/02-01-Kerneltypen.md` | `monolithischer-kernel.png` | `02-02-01-monolithischer-kernel` |
+| `03-Rechnernetze/04-Transport/03-02-TCP.md` | `tcp-handshake.png` | `03-04-02-tcp-handshake` |
+
+The pattern ensures globally unique figure identifiers across the entire vault.
 
 ## Assets and Attachments
 
-Pictures, attachments, and other media files used in a Markdown file must be stored in a hidden asset directory within the same directory as the Markdown file:
+Pictures, attachments, and other media files used in a Markdown file must be stored in an `assets/` directory within the same directory as the Markdown file:
 
 ```
-chapter/
-├── 01-some-note.md
-├── 02-another-note.md
-└── .assets/
-    ├── screenshot.png
-    ├── diagram.svg
-    └── document.pdf
+vault/
+└── 02-Topic/
+    └── 01-Chapter/
+        ├── 01-some-note.md
+        ├── 02-another-note.md
+        └── assets/
+            ├── screenshot.png
+            └── diagram.png
 ```
 
-- Directory name: `.assets/` (hidden directory, prefixed with dot)
-- Reference assets using **explicit relative paths** with `./` prefix: `![[./.assets/screenshot.png]]`
-- The `./` prefix ensures Obsidian resolves the path relative to the current file's directory, not the vault root
-- Keep assets co-located with their referencing notes for portability
-- When moving a note, move its corresponding `.assets/` contents as well
+- Directory name: `assets/` (visible directory for chapter-level assets)
+- Reference assets using **filename only**: `![[screenshot.png]]`
+- Obsidian resolves filenames via "shortest path" matching
+- Keep assets co-located with their referencing notes for organization
+- When moving a note, move its corresponding `assets/` contents as well
+- **Important**: Use unique, descriptive filenames to avoid collisions across the vault
+
+**Note**: The vault-root `.assets/` directory (hidden) is reserved for shared vault-wide assets like logos. Chapter-level `assets/` directories are visible.
 
 ## Tags
 

@@ -10,7 +10,6 @@ tags:
 created: 2026-10-07
 modified: 2026-10-07
 ---
-author: Andreas Hümmer
 
 # Kursüberblick
 
@@ -133,7 +132,6 @@ Nach Abschluss dieses Moduls können Sie:
 - [[00-VS-Index|Verteilte Systeme]]
 
 ---
-author: Andreas Hümmer
 
 > [!warning] Wichtiger Hinweis
 > Um das Wissen zu verstehen und eine gute Leistung zu erbringen, ist es **NICHT ausreichend** sich nur berieseln zu lassen. Bitte arbeiten Sie aktiv mit, bereiten Sie sich vor und bearbeiten Sie die Hausaufgaben.

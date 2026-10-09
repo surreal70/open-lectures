@@ -12,7 +12,6 @@ tags:
   - german
   - government
 ---
-author: Andreas Hümmer
 
 # 13032 BSI - Bundesamt für Sicherheit in der Informationstechnik
 

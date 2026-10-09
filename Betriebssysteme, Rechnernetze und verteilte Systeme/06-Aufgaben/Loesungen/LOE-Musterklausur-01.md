@@ -8,14 +8,12 @@ tags:
 created: 2026-10-07
 modified: 2026-10-07
 ---
-author: Andreas Hümmer
 # Lösungen zu Musterklausur 1
 
 > [!warning] Vertraulich
 > Diese Lösungen sind nur für Dozenten bestimmt.
 
 ---
-author: Andreas Hümmer
 
 ### Aufgabe 1: Multiple-Choice (2.0 Punkte) ⭐⭐
 

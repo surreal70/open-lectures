@@ -61,5 +61,4 @@ PCI SSC betrifft:
 
 
 ---
-author: Andreas Hümmer
 *Zuletzt aktualisiert: 2026-10-03*

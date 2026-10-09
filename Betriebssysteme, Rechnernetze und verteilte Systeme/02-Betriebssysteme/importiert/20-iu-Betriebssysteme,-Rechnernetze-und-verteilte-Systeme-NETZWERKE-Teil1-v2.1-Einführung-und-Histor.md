@@ -12,7 +12,6 @@ typ: sonstig
 quelle: "20-iu-Betriebssysteme, Rechnernetze und verteilte Systeme-NETZWERKE-Teil1-v2.1 - Einführung und Historie.pdf"
 seiten: 13
 ---
-author: Andreas Hümmer
 
 # Betriebssysteme, Rechnernetze und verteilte Systeme
 
@@ -24,7 +23,6 @@ author: Andreas Hümmer
 > - **Autor:** Andreas Hümmer
 
 ---
-author: Andreas Hümmer
 
 ## Inhalt
 

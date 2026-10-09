@@ -12,7 +12,6 @@ typ: sonstig
 quelle: "00-iu-Betriebssysteme, Rechnernetze und verteilte Systeme-ORGA-v2.0.pdf"
 seiten: 18
 ---
-author: Andreas Hümmer
 
 # Betriebssysteme, Rechnernetze und verteilte Systeme
 
@@ -24,7 +23,6 @@ author: Andreas Hümmer
 > - **Autor:** Andreas Hümmer
 
 ---
-author: Andreas Hümmer
 
 ## Inhalt
 

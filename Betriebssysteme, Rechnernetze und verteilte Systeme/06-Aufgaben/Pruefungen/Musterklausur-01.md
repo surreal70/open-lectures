@@ -3,11 +3,11 @@ author: Andreas Hümmer
 title: Musterklausur 1
 tags:
   - uebung
-- pruefung
-- klausur
-- bs
-- rn
-- vs
+  - pruefung
+  - klausur
+  - bs
+  - rn
+  - vs
 punkte_gesamt: 34.0
 bearbeitungszeit: 51
 bestehensgrenze: 50.0
@@ -18,7 +18,6 @@ bereiche:
 - RN
 - VS
 ---
-author: Andreas Hümmer
 
 # Musterklausur 1
 
@@ -37,7 +36,6 @@ author: Andreas Hümmer
 > - Zeigen Sie bei Rechenaufgaben Ihren Lösungsweg.
 
 ---
-author: Andreas Hümmer
 
 ## Aufgaben
 
@@ -167,7 +165,6 @@ Berechnen Sie unter Anwendung von **Prozessmodell** das gesuchte Ergebnis. Zeige
 > **Ergebnis:** [Wert mit Einheit]
 
 ---
-author: Andreas Hümmer
 
 ## Notenspiegel
 

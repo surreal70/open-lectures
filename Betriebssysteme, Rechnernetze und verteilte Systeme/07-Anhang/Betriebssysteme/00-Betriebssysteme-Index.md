@@ -11,7 +11,6 @@ tags:
 Diese Sammlung enthält Kurzprofile aller im Vault erwähnten Betriebssysteme mit Quellenverweisen.
 
 ---
-author: Andreas Hümmer
 
 ## Unix-Familie
 
@@ -41,7 +40,6 @@ author: Andreas Hümmer
 - [[Linux]] - Freier Unix-Kernel (Torvalds, 1991)
 
 ---
-author: Andreas Hümmer
 
 ## Microsoft Windows
 
@@ -65,7 +63,6 @@ author: Andreas Hümmer
 - [[Windows-11]] - Neues Design (2021)
 
 ---
-author: Andreas Hümmer
 
 ## Apple
 
@@ -73,7 +70,6 @@ author: Andreas Hümmer
 - [[iOS]] - iPhone/iPad (2007)
 
 ---
-author: Andreas Hümmer
 
 ## Mobile Betriebssysteme
 
@@ -82,7 +78,6 @@ author: Andreas Hümmer
 - [[Symbian]] - Nokia/Sony Ericsson (1997-2012) †
 
 ---
-author: Andreas Hümmer
 
 ## Mainframe-Betriebssysteme
 
@@ -91,7 +86,6 @@ author: Andreas Hümmer
 - [[BS2000]] - Fujitsu/Siemens (1975)
 
 ---
-author: Andreas Hümmer
 
 ## Echtzeit-Betriebssysteme (RTOS)
 
@@ -103,7 +97,6 @@ author: Andreas Hümmer
 - [[AUTOSAR]] - Automotive-Standard (2003)
 
 ---
-author: Andreas Hümmer
 
 ## Smartcard-Betriebssysteme
 
@@ -111,7 +104,6 @@ author: Andreas Hümmer
 - [[JavaCard]] - Oracle/Sun (1996)
 
 ---
-author: Andreas Hümmer
 
 ## Historische Systeme
 
@@ -121,7 +113,6 @@ author: Andreas Hümmer
 - [[Symbian]] - Smartphone-Ära vor iPhone (1997-2012)
 
 ---
-author: Andreas Hümmer
 
 ## Chronologische Übersicht
 
@@ -136,12 +127,11 @@ author: Andreas Hümmer
 | 2020er | [[Windows-11]] |
 
 ---
-author: Andreas Hümmer
 
 ## Siehe auch
 
-- [[01-01-Historie]] - Historische Entwicklung der Betriebssysteme
-- [[01-02-Definition]] - Was ist ein Betriebssystem?
-- [[01-03-Aufgaben]] - Aufgaben von Betriebssystemen
+- [[01-Historie]] - Historische Entwicklung der Betriebssysteme
+- [[02-Definition]] - Was ist ein Betriebssystem?
+- [[03-Aufgaben]] - Aufgaben von Betriebssystemen
 - [Levenez Unix History](https://www.levenez.com/unix/)
 - [Levenez Windows History](https://www.levenez.com/windows/)

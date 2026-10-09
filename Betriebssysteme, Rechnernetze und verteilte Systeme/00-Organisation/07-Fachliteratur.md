@@ -10,7 +10,6 @@ tags:
 created: 2026-10-07
 modified: 2026-10-07
 ---
-author: Andreas Hümmer
 
 # Fachliteratur
 
@@ -23,7 +22,6 @@ Diese Seite listet die empfohlene Literatur für das Modul "Betriebssysteme, Rec
 > - **Weiterführende Literatur:** Vertiefung oder praktische Anwendung ausgewählter Einzelthemen. Nicht verpflichtend zu lesen.
 
 ---
-author: Andreas Hümmer
 
 ## Basisliteratur
 
@@ -46,7 +44,6 @@ author: Andreas Hümmer
 **Relevante Kapitel für diesen Kurs:** 1-6 (siehe [[01-Kursueberblick#Arbeitspakete (Leseempfehlungen)]])
 
 ---
-author: Andreas Hümmer
 
 #### Mandl: Grundkurs Betriebssysteme
 
@@ -61,7 +58,6 @@ author: Andreas Hümmer
 | **Sprache** | Deutsch |
 
 ---
-author: Andreas Hümmer
 
 ### Rechnernetze
 
@@ -85,7 +81,6 @@ author: Andreas Hümmer
 > Im Modulhandbuch wird die 5. Auflage (2012) referenziert. Die Kapitelstruktur kann in neueren Auflagen abweichen.
 
 ---
-author: Andreas Hümmer
 
 #### Baun: Computernetze kompakt
 
@@ -99,7 +94,6 @@ author: Andreas Hümmer
 | **Sprache** | Deutsch |
 
 ---
-author: Andreas Hümmer
 
 ### Verteilte Systeme
 
@@ -121,7 +115,6 @@ author: Andreas Hümmer
 **Relevante Kapitel für diesen Kurs:** 1-12, jeweils die Einführungskapitel (*.1)
 
 ---
-author: Andreas Hümmer
 
 #### Schill/Springer: Verteilte Systeme
 
@@ -135,7 +128,6 @@ author: Andreas Hümmer
 | **Sprache** | Deutsch |
 
 ---
-author: Andreas Hümmer
 
 ## Weiterführende Literatur
 
@@ -172,7 +164,6 @@ author: Andreas Hümmer
 - Bengel, G. (2014): *Grundkurs Verteilte Systeme*. 4. Auflage, Vieweg+Teubner, Wiesbaden.
 
 ---
-author: Andreas Hümmer
 
 ## Hinweise zur Literatursuche
 
@@ -184,7 +175,6 @@ author: Andreas Hümmer
 **Kontakt Bibliothek:** lis@iubh-fernstudium.de
 
 ---
-author: Andreas Hümmer
 
 ## Verwandte Seiten
 

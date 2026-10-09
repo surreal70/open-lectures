@@ -12,7 +12,6 @@ tags:
   - internet
   - numbers
 ---
-author: Andreas Hümmer
 
 # 13020 IANA - Internet Assigned Numbers Authority
 

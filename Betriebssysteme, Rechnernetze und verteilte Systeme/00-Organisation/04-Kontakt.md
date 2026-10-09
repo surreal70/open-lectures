@@ -10,7 +10,6 @@ tags:
 created: 2026-10-07
 modified: 2026-10-07
 ---
-author: Andreas Hümmer
 
 # Kontaktinformationen
 

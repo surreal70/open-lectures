@@ -57,6 +57,5 @@ W3C-Standards sind essenziell für:
 
 
 ---
-author: Andreas Hümmer
 *Zuletzt aktualisiert: 2026-10-03*
 

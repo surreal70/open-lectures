@@ -2,15 +2,14 @@
 author: Andreas Hümmer
 title: IEEE 802.11ac - Wi-Fi 5
 tags:
-- ieee
-- wifi
-- wlan
-- 802.11ac
-- wifi5
-- mu-mimo
+  - ieee
+  - wifi
+  - wlan
+  - 802.11ac
+  - wifi5
+  - mu-mimo
 created: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # IEEE 802.11ac - Wi-Fi 5
 
@@ -52,6 +51,5 @@ author: Andreas Hümmer
 > - URL: https://standards.ieee.org/ieee/802.11/7028/
 
 ---
-author: Andreas Hümmer
 
 *Quelle: IEEE Standards Association*

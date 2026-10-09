@@ -1,0 +1,53 @@
+---
+author: Andreas Hümmer
+title: RPC
+tags:
+  - content
+  - vs
+  - kommunikation
+  - rpc
+  - middleware
+created: '2026-10-07'
+modified: '2026-10-07'
+bereich: VS
+---
+
+# RPC
+
+## Definition
+
+Remote Procedure Call (RPC) ist ein Protokoll, das es einem Programm ermöglicht, eine Prozedur auf einem entfernten Computer auszuführen, als wäre es ein lokaler Aufruf.
+
+## Erklärung
+
+RPC abstrahiert die Netzwerkkommunikation und ermöglicht es Entwicklern, verteilte Systeme ähnlich wie lokale Systeme zu programmieren. Client-Stub und Server-Stub übernehmen Marshalling/Unmarshalling der Parameter und die Netzwerkkommunikation.
+
+## Eigenschaften
+
+- Transparente entfernte Prozeduraufrufe
+- Synchrone Kommunikation (blockierend)
+- Stub-Generierung aus Interface-Definition
+- Parameter-Marshalling automatisiert
+- Verschiedene Implementierungen (gRPC, XML-RPC, JSON-RPC)
+
+## Beispiele
+
+- gRPC für Microservices-Kommunikation
+- Java RMI für Java-basierte verteilte Systeme
+- DCE RPC als historisches Beispiel
+
+## Zusammenhänge
+
+- [[Message-Queues]]
+- [[REST]]
+- [[Serialisierung]]
+
+## Prüfungstipps
+
+- Ablauf eines RPC-Aufrufs erklären können
+- Unterschied synchron/asynchron kennen
+- Stub-Konzept verstehen
+
+## Quellen
+
+- *Quelle 1*

@@ -212,6 +212,20 @@ To install: Settings → Community plugins → Browse
 - Internal links use `[[Note Name]]` syntax
 - External links use `[text](url)` syntax
 
+### Images don't display
+
+Obsidian has inconsistent behavior with hidden directories (folders starting with `.`):
+
+- **Problem**: Images in hidden folders like `.assets/` may not display correctly, even though Obsidian claims to index them
+- **Solution**: Use visible `assets/` folders for chapter-level images
+- **Reference**: Use filename only: `![[image.png]]` – Obsidian finds the file via "shortest path" matching
+- **Avoid**: Full paths like `![[folder/.assets/image.png]]` can cause issues
+
+If images suddenly stop working after moving files, try:
+1. Reload Obsidian (`Ctrl/Cmd + R` or restart)
+2. Check that the image file actually exists in the `assets/` folder
+3. Ensure the filename in the link matches exactly (case-sensitive on some systems)
+
 ### Math doesn't display
 
 - LaTeX rendering is built-in

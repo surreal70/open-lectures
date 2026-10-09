@@ -2,13 +2,12 @@
 author: Andreas Hümmer
 title: IEEE 802.11g - WLAN 2.4 GHz (54 Mbit/s)
 tags:
-- ieee
-- wifi
-- wlan
-- 802.11g
+  - ieee
+  - wifi
+  - wlan
+  - 802.11g
 created: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # IEEE 802.11g - WLAN 2.4 GHz (54 Mbit/s)
 
@@ -49,6 +48,5 @@ author: Andreas Hümmer
 > - URL: https://standards.ieee.org/ieee/802.11/7028/
 
 ---
-author: Andreas Hümmer
 
 *Quelle: IEEE Standards Association*

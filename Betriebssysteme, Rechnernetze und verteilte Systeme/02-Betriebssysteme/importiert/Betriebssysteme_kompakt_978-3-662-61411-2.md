@@ -12,7 +12,6 @@ typ: sonstig
 quelle: "Betriebssysteme_kompakt_978-3-662-61411-2.pdf"
 seiten: 298
 ---
-author: Andreas Hümmer
 
 # 429734_2_De_Print.indd
 
@@ -24,7 +23,6 @@ author: Andreas Hümmer
 > - **Autor:** 0012149
 
 ---
-author: Andreas Hümmer
 
 ## Inhalt
 

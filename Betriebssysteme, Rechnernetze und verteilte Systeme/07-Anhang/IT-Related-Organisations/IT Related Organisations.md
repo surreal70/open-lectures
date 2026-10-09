@@ -51,7 +51,6 @@ Dieser Abschnitt bietet Dokumentation zu wichtigen Organisationen, die Standards
 |----------|--------------|-------------|
 
 ---
-author: Andreas Hümmer
 
 ## Kurzreferenz nach Thema
 
@@ -66,6 +65,5 @@ author: Andreas Hümmer
 ### Cloud und moderne Infrastruktur
 
 ---
-author: Andreas Hümmer
 *Zuletzt aktualisiert: 2026-10-03*
 

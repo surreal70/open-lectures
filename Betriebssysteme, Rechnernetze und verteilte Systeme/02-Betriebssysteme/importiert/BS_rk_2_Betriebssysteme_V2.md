@@ -12,7 +12,6 @@ typ: sonstig
 quelle: "BS_rk_2_Betriebssysteme_V2.pdf"
 seiten: 46
 ---
-author: Andreas Hümmer
 
 # Grosser
 
@@ -24,7 +23,6 @@ author: Andreas Hümmer
 > - **Autor:** Kloos, Reinhold, Dr.
 
 ---
-author: Andreas Hümmer
 
 ## Inhalt
 

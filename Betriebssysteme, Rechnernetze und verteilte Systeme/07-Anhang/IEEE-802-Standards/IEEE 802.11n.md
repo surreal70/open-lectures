@@ -2,15 +2,14 @@
 author: Andreas Hümmer
 title: IEEE 802.11n - Wi-Fi 4 (MIMO)
 tags:
-- ieee
-- wifi
-- wlan
-- 802.11n
-- wifi4
-- mimo
+  - ieee
+  - wifi
+  - wlan
+  - 802.11n
+  - wifi4
+  - mimo
 created: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # IEEE 802.11n - Wi-Fi 4 (MIMO)
 
@@ -52,6 +51,5 @@ author: Andreas Hümmer
 > - URL: https://standards.ieee.org/ieee/802.11/7028/
 
 ---
-author: Andreas Hümmer
 
 *Quelle: IEEE Standards Association*

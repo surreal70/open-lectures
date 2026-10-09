@@ -13,7 +13,6 @@ bearbeitungszeit: "90 Minuten"
 abgabedatum: "TBD"
 status: draft
 ---
-author: Andreas Hümmer
 
 # {{title}} 1
 
@@ -28,7 +27,6 @@ author: Andreas Hümmer
 | Bereich | {{bereich}} |
 
 ---
-author: Andreas Hümmer
 
 ## Allgemeine Hinweise
 
@@ -37,7 +35,6 @@ author: Andreas Hümmer
 - Achten Sie auf die korrekte Formatierung Ihrer Abgabe.
 
 ---
-author: Andreas Hümmer
 
 ## Aufgaben
 
@@ -57,7 +54,6 @@ Beschreiben Sie die grundlegenden Konzepte.
 > - Achten Sie auf vollständige Antworten.
 
 ---
-author: Andreas Hümmer
 
 ### Aufgabe 2: Anwendung (15 Punkte)
 
@@ -73,7 +69,6 @@ Lösen Sie die folgende praktische Aufgabe.
 > - Begründen Sie Ihre Entscheidungen.
 
 ---
-author: Andreas Hümmer
 
 ## Punkteverteilung
 
@@ -84,7 +79,6 @@ author: Andreas Hümmer
 | **Gesamt** | **0** |
 
 ---
-author: Andreas Hümmer
 
 ## Abgabe
 
@@ -93,5 +87,4 @@ author: Andreas Hümmer
 - **Dateiname:** `Uebung1_Nachname_Vorname.pdf`
 
 ---
-author: Andreas Hümmer
 *Erstellt am 2026-10-07 | Zuletzt aktualisiert: 2026-10-07*

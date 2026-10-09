@@ -12,7 +12,6 @@ tags:
   - international
   - quality
 ---
-author: Andreas Hümmer
 
 # 13012 ISO - International Organization for Standardization
 

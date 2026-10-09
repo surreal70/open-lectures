@@ -3,22 +3,20 @@ author: Andreas Hümmer
 title: 'Lösung 2: Verteilte Systeme Konzepte'
 tags:
   - uebung
-- loesung
-- vs
+  - loesung
+  - vs
 punkte_gesamt: 10.0
 bearbeitungszeit: 40
 bereich: VS
 created: '2026-10-07'
 modified: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # Lösung 2: Verteilte Systeme Konzepte
 
 **Zugehörige Übung:** [[UE-VS-02]]
 
 ---
-author: Andreas Hümmer
 
 ### Aufgabe 1: Theoretische Aufgabe (4.0 Punkte) ⭐⭐
 

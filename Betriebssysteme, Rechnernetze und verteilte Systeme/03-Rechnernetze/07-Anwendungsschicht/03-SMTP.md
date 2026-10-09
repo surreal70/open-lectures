@@ -1,0 +1,54 @@
+---
+author: Andreas Hümmer
+title: SMTP
+tags:
+  - content
+  - rn
+  - application-layer
+  - smtp
+  - email
+  - protokoll
+created: '2026-10-07'
+modified: '2026-10-07'
+bereich: RN
+---
+
+# SMTP
+
+## Definition
+
+SMTP (Simple Mail Transfer Protocol) ist das Standardprotokoll für den E-Mail-Versand.
+
+## Erklärung
+
+SMTP wird zum Senden von E-Mails zwischen Mail-Servern und vom Client zum Server verwendet. Es arbeitet textbasiert und nutzt TCP Port 25 (Server-zu-Server) oder 587 (Client-zu-Server mit Authentifizierung).
+
+## Eigenschaften
+
+- Textbasiertes Protokoll
+- Push-Protokoll für E-Mail-Versand
+- STARTTLS für Verschlüsselung
+- Authentifizierung über SMTP AUTH
+
+## Beispiele
+
+- HELO/EHLO - Begrüßung
+- MAIL FROM: - Absenderadresse
+- RCPT TO: - Empfängeradresse
+- DATA - E-Mail-Inhalt übertragen
+
+## Zusammenhänge
+
+- [[DNS]]
+- [[TCP]]
+- [[TLS]]
+- [[Ports]]
+
+## Prüfungstipps
+
+- SMTP-Kommandos verstehen
+- Unterschied zu POP3/IMAP (Abruf)
+
+## Quellen
+
+- *Quelle 1*

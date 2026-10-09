@@ -2,14 +2,13 @@
 author: Andreas Hümmer
 title: IEEE 802.1X - Port-based Network Access Control
 tags:
-- ieee
-- security
-- authentication
-- 802.1X
-- radius
+  - ieee
+  - security
+  - authentication
+  - 802.1X
+  - radius
 created: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # IEEE 802.1X - Port-based Network Access Control
 
@@ -67,6 +66,5 @@ author: Andreas Hümmer
 > - Working Group: https://www.ieee802.org/1/
 
 ---
-author: Andreas Hümmer
 
 *Quelle: IEEE Standards Association*

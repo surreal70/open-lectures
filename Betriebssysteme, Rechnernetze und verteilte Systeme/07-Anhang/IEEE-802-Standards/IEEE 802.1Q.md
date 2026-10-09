@@ -2,13 +2,12 @@
 author: Andreas Hümmer
 title: IEEE 802.1Q - Virtual LANs (VLANs)
 tags:
-- ieee
-- vlan
-- switching
-- 802.1Q
+  - ieee
+  - vlan
+  - switching
+  - 802.1Q
 created: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # IEEE 802.1Q - Virtual LANs (VLANs)
 
@@ -63,6 +62,5 @@ author: Andreas Hümmer
 > - Working Group: https://www.ieee802.org/1/
 
 ---
-author: Andreas Hümmer
 
 *Quelle: IEEE Standards Association*

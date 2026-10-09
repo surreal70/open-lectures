@@ -12,7 +12,6 @@ typ: sonstig
 quelle: "21-iu-Betriebssysteme, Rechnernetze und verteilte Systeme-NETZWERKE-Teil2-v2.1 - Standards und Gremien.pdf"
 seiten: 9
 ---
-author: Andreas Hümmer
 
 # Betriebssysteme, Rechnernetze und verteilte Systeme
 
@@ -24,7 +23,6 @@ author: Andreas Hümmer
 > - **Autor:** Andreas Hümmer
 
 ---
-author: Andreas Hümmer
 
 ## Inhalt
 

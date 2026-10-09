@@ -12,7 +12,6 @@ typ: sonstig
 quelle: "KursBetriebssysteme_rk_Zusatz_V3.pdf"
 seiten: 32
 ---
-author: Andreas Hümmer
 
 # Grosser
 
@@ -24,7 +23,6 @@ author: Andreas Hümmer
 > - **Autor:** Kloos, Reinhold, Dr.
 
 ---
-author: Andreas Hümmer
 
 ## Inhalt
 

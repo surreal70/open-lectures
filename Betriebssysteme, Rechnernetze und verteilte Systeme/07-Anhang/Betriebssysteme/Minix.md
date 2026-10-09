@@ -5,7 +5,6 @@ tags: [bs-referenz, minix, mikrokernel, lehre]
 created: 2026-10-07
 bereich: Anhang
 ---
-author: Andreas Hümmer
 
 # Minix
 

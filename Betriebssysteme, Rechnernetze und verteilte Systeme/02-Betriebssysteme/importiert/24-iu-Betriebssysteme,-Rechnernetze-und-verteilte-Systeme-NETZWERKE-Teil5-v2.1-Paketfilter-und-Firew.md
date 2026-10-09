@@ -12,7 +12,6 @@ typ: sonstig
 quelle: "24-iu-Betriebssysteme, Rechnernetze und verteilte Systeme-NETZWERKE-Teil5-v2.1 - Paketfilter und Firewalls.pdf"
 seiten: 15
 ---
-author: Andreas Hümmer
 
 # Betriebssysteme, Rechnernetze und verteilte Systeme
 
@@ -24,7 +23,6 @@ author: Andreas Hümmer
 > - **Autor:** Andreas Hümmer
 
 ---
-author: Andreas Hümmer
 
 ## Inhalt
 

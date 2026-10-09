@@ -3,22 +3,20 @@ author: Andreas Hümmer
 title: 'Lösung 2: Betriebssysteme Konzepte'
 tags:
   - uebung
-- loesung
-- bs
+  - loesung
+  - bs
 punkte_gesamt: 10.0
 bearbeitungszeit: 40
 bereich: BS
 created: '2026-10-07'
 modified: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # Lösung 2: Betriebssysteme Konzepte
 
 **Zugehörige Übung:** [[UE-BS-02]]
 
 ---
-author: Andreas Hümmer
 
 ### Aufgabe 1: Theoretische Aufgabe (4.0 Punkte) ⭐⭐
 

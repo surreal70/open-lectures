@@ -12,7 +12,6 @@ typ: sonstig
 quelle: "29-iu-Betriebssysteme, Rechnernetze und verteilte Systeme-VERTEILTESYSTEME-Teil1-v1.3 - Einfuerhung et al.pdf"
 seiten: 48
 ---
-author: Andreas Hümmer
 
 # Betriebssysteme, Rechnernetze und verteilte Systeme
 
@@ -24,7 +23,6 @@ author: Andreas Hümmer
 > - **Autor:** Andreas Hümmer
 
 ---
-author: Andreas Hümmer
 
 ## Inhalt
 

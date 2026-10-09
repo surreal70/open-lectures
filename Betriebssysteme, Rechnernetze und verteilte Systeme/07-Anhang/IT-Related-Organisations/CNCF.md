@@ -13,7 +13,6 @@ tags:
   - containers
   - kubernetes
 ---
-author: Andreas Hümmer
 
 # 13054 CNCF - Cloud Native Computing Foundation
 

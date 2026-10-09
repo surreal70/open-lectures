@@ -6,7 +6,6 @@ created: 2026-10-07
 modified: 2026-10-07
 bereich: Meta
 ---
-author: Andreas Hümmer
 
 # Betriebssysteme, Rechnernetze und verteilte Systeme
 
@@ -44,7 +43,6 @@ author: Andreas Hümmer
 | `07-Anhang` | Referenzmaterial (RFCs, IEEE, Kommandos) |
 
 ---
-author: Andreas Hümmer
 
 ## Farbcodierung der Callout-Boxen
 
@@ -96,7 +94,6 @@ In diesem Vault werden verschiedene Callout-Boxen verwendet, um Informationen zu
 > Blaue Boxen mit diesem Titel kennzeichnen **interessante Zusatzinformationen**, die für die Prüfung nicht relevant sind, aber das Verständnis vertiefen.
 
 ---
-author: Andreas Hümmer
 
 ## Verwendete Symbole und Konventionen
 
@@ -110,7 +107,6 @@ author: Andreas Hümmer
 | `⊕` | XOR (Exklusiv-Oder) |
 
 ---
-author: Andreas Hümmer
 
 ## Changelog
 

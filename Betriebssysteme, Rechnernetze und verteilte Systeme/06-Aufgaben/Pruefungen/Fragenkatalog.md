@@ -3,11 +3,11 @@ author: Andreas Hümmer
 title: Fragenkatalog
 tags:
   - uebung
-- fragenkatalog
-- wissensfragen
-- rn
-- bs
-- vs
+  - fragenkatalog
+  - wissensfragen
+  - rn
+  - bs
+  - vs
 punkte_gesamt: 15.0
 bearbeitungszeit: 24
 bestehensgrenze: 50.0
@@ -18,7 +18,6 @@ bereiche:
 - RN
 - VS
 ---
-author: Andreas Hümmer
 
 # Fragenkatalog
 
@@ -27,7 +26,6 @@ author: Andreas Hümmer
 **Themenbereiche:** BS, RN, VS
 
 ---
-author: Andreas Hümmer
 
 ## BS
 

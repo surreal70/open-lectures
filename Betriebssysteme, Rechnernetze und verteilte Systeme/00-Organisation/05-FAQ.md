@@ -10,7 +10,6 @@ tags:
 created: 2026-10-07
 modified: 2026-10-07
 ---
-author: Andreas Hümmer
 
 # Häufig gestellte Fragen (FAQ)
 
@@ -63,6 +62,5 @@ Musterlösungen finden Sie im Verzeichnis [[06-Aufgaben/Loesungen/]].
 <!-- TODO: Anmeldeverfahren -->
 
 ---
-author: Andreas Hümmer
 
 *Weitere Fragen? Kontaktieren Sie uns über [[04-Kontakt]].*

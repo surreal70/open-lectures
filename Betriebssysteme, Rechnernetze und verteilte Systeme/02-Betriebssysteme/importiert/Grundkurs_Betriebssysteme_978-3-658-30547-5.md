@@ -12,7 +12,6 @@ typ: sonstig
 quelle: "Grundkurs_Betriebssysteme_978-3-658-30547-5.pdf"
 seiten: 365
 ---
-author: Andreas Hümmer
 
 # Grundkurs_Betriebssysteme_978-3-658-30547-5
 
@@ -23,7 +22,6 @@ author: Andreas Hümmer
 > - **Seiten:** 365
 
 ---
-author: Andreas Hümmer
 
 ## Inhalt
 

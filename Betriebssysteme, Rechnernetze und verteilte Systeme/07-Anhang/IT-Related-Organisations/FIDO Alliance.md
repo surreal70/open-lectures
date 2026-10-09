@@ -64,5 +64,4 @@ FIDO Alliance ist kritisch für:
 
 
 ---
-author: Andreas Hümmer
 *Zuletzt aktualisiert: 2026-10-03*

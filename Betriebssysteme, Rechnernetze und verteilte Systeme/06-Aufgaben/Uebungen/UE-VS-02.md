@@ -3,15 +3,14 @@ author: Andreas Hümmer
 title: 'Übung 2: Verteilte Systeme Konzepte'
 tags:
   - uebung
-- uebung
-- vs
+  - uebung
+  - vs
 punkte_gesamt: 10.0
 bearbeitungszeit: 40
 bereich: VS
 created: '2026-10-07'
 modified: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # Übung 2: Verteilte Systeme Konzepte
 
@@ -20,7 +19,6 @@ author: Andreas Hümmer
 **Bearbeitungszeit:** ca. 40 Minuten
 
 ---
-author: Andreas Hümmer
 
 ### Aufgabe 1: Theoretische Aufgabe (4.0 Punkte) ⭐⭐
 

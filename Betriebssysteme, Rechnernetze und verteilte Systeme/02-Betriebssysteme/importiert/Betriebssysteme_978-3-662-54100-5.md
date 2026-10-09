@@ -12,7 +12,6 @@ typ: sonstig
 quelle: "Betriebssysteme_978-3-662-54100-5.pdf"
 seiten: 496
 ---
-author: Andreas Hümmer
 
 # Betriebssysteme_978-3-662-54100-5
 
@@ -23,7 +22,6 @@ author: Andreas Hümmer
 > - **Seiten:** 496
 
 ---
-author: Andreas Hümmer
 
 ## Inhalt
 

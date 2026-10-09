@@ -12,7 +12,6 @@ tags:
   - open-source
   - licenses
 ---
-author: Andreas Hümmer
 
 # 13051 OSI - Open Source Initiative
 

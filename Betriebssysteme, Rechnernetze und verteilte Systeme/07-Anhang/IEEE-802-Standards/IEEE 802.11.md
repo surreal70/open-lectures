@@ -2,14 +2,13 @@
 author: Andreas Hümmer
 title: IEEE 802.11 - Wireless LAN (Wi-Fi)
 tags:
-- ieee
-- wifi
-- wlan
-- wireless
-- 802.11
+  - ieee
+  - wifi
+  - wlan
+  - wireless
+  - 802.11
 created: '2026-10-07'
 ---
-author: Andreas Hümmer
 
 # IEEE 802.11 - Wireless LAN (Wi-Fi)
 
@@ -63,6 +62,5 @@ author: Andreas Hümmer
 > - Wi-Fi Alliance: https://www.wi-fi.org/
 
 ---
-author: Andreas Hümmer
 
 *Quelle: IEEE Standards Association*

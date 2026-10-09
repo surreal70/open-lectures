@@ -5,7 +5,6 @@ tags: [bs-referenz, unix, bell-labs]
 created: 2026-10-07
 bereich: Anhang
 ---
-author: Andreas Hümmer
 
 # UNIX
 
