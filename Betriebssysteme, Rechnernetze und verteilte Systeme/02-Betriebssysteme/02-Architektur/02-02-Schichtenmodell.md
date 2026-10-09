@@ -34,7 +34,7 @@ author: Andreas Hümmer
 
 ### Grundidee
 
-![[.assets/schichtenprinzip.png]]
+![[./.assets/schichtenprinzip.png]]
 
 *Grundidee der Schichtung: Jede Schicht N nutzt ausschließlich die Dienste der direkt darunterliegenden Schicht N-1 und bietet selbst Dienste für die Schicht N+1 darüber. Da nur über die definierte Schnittstelle kommuniziert wird, lässt sich eine Schicht austauschen, ohne die anderen zu verändern.*
 
@@ -59,7 +59,7 @@ author: Andreas Hümmer
 
 ### 6-Schichten-Modell
 
-![[.assets/sechs-schichten-modell.png]]
+![[./.assets/sechs-schichten-modell.png]]
 
 *Das 6-Schichten-Modell ordnet ein Betriebssystem von der Hardware (Schicht 1) bis zu den Benutzeranwendungen (Schicht 6). Die Schichten 2–4 (HAL, Gerätetreiber, Kernel) laufen im privilegierten Kernel-Space, die Schichten 5–6 im User-Space. Zwischen den Ebenen vermitteln definierte Schnittstellen: das Hardware-Interface, die System Calls und die API/Libraries.*
 
@@ -85,7 +85,7 @@ Die Trennung zwischen privilegiertem Kernel und unprivilegierten Anwendungen ist
 
 Moderne CPUs (x86, ARM) implementieren **Schutzringe** (Protection Rings), die verschiedene Privilegierungsstufen definieren:
 
-![[.assets/cpu-protection-rings.png]]
+![[./.assets/cpu-protection-rings.png]]
 
 *CPU-Schutzringe als konzentrische Privilegstufen: Im Zentrum liegt Ring 0 (Kernel) mit vollem Hardware-Zugriff, außen Ring 3 für Anwendungen mit stark eingeschränkten Rechten. Je weiter innen, desto mehr Privilegien. Die Ringe 1 und 2 waren ursprünglich für Treiber bzw. OS-Dienste gedacht, werden heute aber kaum genutzt.*
 
@@ -105,7 +105,7 @@ Moderne CPUs (x86, ARM) implementieren **Schutzringe** (Protection Rings), die v
 
 Da Anwendungen in Ring 3 keine privilegierten Operationen ausführen dürfen, benötigen sie für jeden Hardware- oder Kernel-Dienst einen kontrollierten Übergang nach Ring 0. Dieser Wechsel – der *Mode Switch* – ist der einzige legale Weg vom User- in den Kernel-Mode und wird über Systemaufrufe ausgelöst. Er ist bewusst teuer und streng kontrolliert, denn an dieser Stelle entscheidet sich die Sicherheit des gesamten Systems.
 
-![[.assets/ring-wechsel-mode-switch.png]]
+![[./.assets/ring-wechsel-mode-switch.png]]
 
 *Beim Mode Switch wechselt die CPU zwischen User Mode (Ring 3) und Kernel Mode (Ring 0): Ein Anwendungsaufruf wie `read()` löst über eine SYSCALL-/INT-Instruktion den Übergang in den Kernel aus, der die eigentliche Funktion `sys_read()` ausführt. Mit SYSRET/IRET kehrt die Ausführung anschließend in den User Mode zurück.*
 
@@ -156,7 +156,7 @@ Unix und seine Nachfolger setzen das Schichtenmodell pragmatisch um: Oberhalb de
 
 ### Traditionelle Unix-Architektur
 
-![[.assets/unix-linux-architektur.png]]
+![[./.assets/unix-linux-architektur.png]]
 
 *Die Unix/Linux-Architektur gliedert sich in User-Space (Anwendungen über die libc) und Kernel-Space, getrennt durch das System Call Interface. Im Kernel verteilt der System-Call-Dispatcher die Aufrufe an die Subsysteme (Prozess-, Speicherverwaltung, VFS, Netzwerk-Stack, Security). Darunter liegen die Gerätetreiber und der architekturabhängige Code, der die konkrete Hardware anspricht.*
 
@@ -164,7 +164,7 @@ Unix und seine Nachfolger setzen das Schichtenmodell pragmatisch um: Oberhalb de
 
 Eine Schlüsselabstraktion in Unix/Linux ist das **VFS**, das verschiedene Dateisysteme hinter einer einheitlichen Schnittstelle vereint:
 
-![[.assets/virtual-file-system.png]]
+![[./.assets/virtual-file-system.png]]
 
 *Das VFS bietet Anwendungen eine einheitliche Schnittstelle (`open`, `read`, `write`, `close`, `stat`), unabhängig davon, welches Dateisystem tatsächlich dahintersteckt. So landet ein `open()` je nach Pfad transparent bei ext4, btrfs, procfs, NFS oder FAT – und damit auf lokaler SSD, in Kernel-Daten, auf einem Remote-Server oder einem USB-Stick.*
 
@@ -177,7 +177,7 @@ Windows NT wurde von Anfang an stärker geschichtet entworfen als klassisches Un
 
 ### Die NT-Architektur
 
-![[.assets/windows-nt-architektur.png]]
+![[./.assets/windows-nt-architektur.png]]
 
 *Windows NT trennt User Mode (Ring 3) und Kernel Mode (Ring 0): Anwendungen rufen über Subsystem-DLLs und `ntdll` die Native API auf; Environment-Subsysteme bieten verschiedene API-Umgebungen (Windows, POSIX/WSL). Im Kernel-Mode liegt die große Executive mit ihren Managern über dem Low-Level-Kernel, den Gerätetreibern und dem HAL, der die konkrete Hardware kapselt.*
 
@@ -220,7 +220,7 @@ Das Schichtenmodell ist kein Selbstzweck, sondern ein Kompromiss. Es erkauft sei
 
 ### Strenge vs. Relaxierte Schichtung
 
-![[.assets/strenge-vs-relaxierte-schichtung.png]]
+![[./.assets/strenge-vs-relaxierte-schichtung.png]]
 
 *Bei strenger Schichtung ruft jede Schicht ausschließlich die direkt darunterliegende auf. Bei relaxierter Schichtung dürfen Schichten auch tiefere Ebenen direkt aufrufen (im Bild überspringt Schicht 3 die Schicht 2) – das verbessert die Performance, lockert aber die saubere Hierarchie auf.*
 

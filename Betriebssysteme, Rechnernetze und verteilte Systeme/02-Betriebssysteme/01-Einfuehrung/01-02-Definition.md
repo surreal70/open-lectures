@@ -97,7 +97,7 @@ author: Andreas Hümmer
 
 Das folgende Diagramm zeigt die typische Schichtenarchitektur eines Betriebssystems:
 
-![[.assets/schichtenarchitektur.png]]
+![[./.assets/schichtenarchitektur.png]]
 
 *Das Betriebssystem liegt als Schichtenstapel zwischen den Anwendungsprogrammen und der Hardware. Nach oben bildet die **System-Call-API** die Schnittstelle zu den Anwendungen, nach unten greift der **Kernel-Mode** privilegiert auf die Hardware zu. Dazwischen koordinieren Ressourcenmanagement, Gerätetreiber/Dateisystem und die Hardware-Abstraktionsschicht (HAL) den Betrieb.*
 
@@ -140,20 +140,20 @@ Betriebssysteme sind nicht nur auf PCs zu finden, sondern in praktisch jedem ele
 
 Auch Chipkarten (Smartcards) enthalten vollständige Betriebssysteme - nur eben extrem miniaturisiert.
 
-![[.assets/smartcard.png]]
+![[./.assets/smartcard.png]]
 *Smartcard mit sichtbarem Chip-Modul und Kontaktflächen*
 
 #### Aufbau einer Smartcard
 
 Eine Smartcard enthält einen kompletten Mikrocontroller mit Kontaktflächen nach **ISO 7816**:
 
-![[.assets/smartcard-kontakte.png]]
+![[./.assets/smartcard-kontakte.png]]
 
 *Kontaktbelegung des Chip-Moduls nach ISO 7816-2: fünf Kontakte in der oberen, drei in der unteren Reihe. Aktive Kontakte (amber) übernehmen Spannung, Reset, Takt, Masse, Programmierspannung und Datenein-/ausgabe; die Kontakte 4 und 8 sind reserviert (RFU).*
 
 **Interner Aufbau des Chip-Moduls:**
 
-![[.assets/smartcard-chip-aufbau.png]]
+![[./.assets/smartcard-chip-aufbau.png]]
 
 *Interner Aufbau des Chip-Moduls: Der Rechenkern (CPU, RAM, ROM mit dem Betriebssystem) ist über einen gemeinsamen Bus mit dem EEPROM/Flash (Anwendungsdaten und Schlüssel), einem optionalen Krypto-Coprozessor (RSA, ECC, AES, SHA) und dem I/O-Interface (kontaktbehaftet nach ISO 7816 oder kontaktlos über NFC) verbunden.*
 
@@ -291,7 +291,7 @@ Ein moderner Server kann **mehrere Betriebssysteme gleichzeitig** enthalten:
 
 Das folgende Diagramm zeigt schematisch die Komponenten und ihre jeweiligen Betriebssysteme:
 
-![[.assets/rack-server-betriebssysteme.png]]
+![[./.assets/rack-server-betriebssysteme.png]]
 
 *Schematische Darstellung eines Rack-Servers (PowerEdge-Architektur). Auf der Hauptplatine läuft das primäre Betriebssystem – doch die Erweiterungskarten (NIC, RAID, BMC) führen jeweils ihr **eigenes** eingebettetes OS aus. Ein moderner Server besteht also aus vielen kooperierenden Betriebssystemen.*
 

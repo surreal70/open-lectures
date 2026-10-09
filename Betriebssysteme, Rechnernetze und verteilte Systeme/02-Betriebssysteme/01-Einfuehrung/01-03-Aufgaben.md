@@ -49,7 +49,7 @@ author: Andreas Hümmer
 
 Das Betriebssystem bildet die **Schnittstelle zwischen Anwendungsprogrammen und Hardware**:
 
-![[.assets/bs-schnittstelle.png]]
+![[./.assets/bs-schnittstelle.png]]
 
 *Das Betriebssystem liegt zwischen Anwendungen und Hardware: Nach oben stellt es den Programmen Systemaufrufe (API) bereit, nach unten greift es privilegiert auf die Hardware zu.*
 
@@ -139,7 +139,7 @@ Aus Sicht der Hardware ist das BS ein **Ressourcenmanager**:
 - Multiplexing des Speichers (räumlich)
 - Koordination von E/A-Zugriffen
 
-![[.assets/bs-zwei-sichtweisen.png]]
+![[./.assets/bs-zwei-sichtweisen.png]]
 
 *Dasselbe Betriebssystem lässt sich aus zwei Blickwinkeln betrachten: Die **Top-Down-Sicht** (Benutzerperspektive) sieht eine virtuelle Maschine mit komfortabler API; die **Bottom-Up-Sicht** (Systemperspektive) sieht einen Ressourcenmanager, der die Hardware verwaltet.*
 

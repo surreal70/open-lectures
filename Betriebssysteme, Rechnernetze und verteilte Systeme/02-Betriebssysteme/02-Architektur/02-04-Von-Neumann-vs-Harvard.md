@@ -29,7 +29,7 @@ author: Andreas Hümmer
 
 ## Überblick
 
-![[.assets/von-neumann-vs-harvard-ueberblick.png]]
+![[./.assets/von-neumann-vs-harvard-ueberblick.png]]
 
 *Die beiden grundlegenden Rechnerarchitekturen im Vergleich: Die **Von-Neumann-Architektur** verbindet die CPU über einen einzigen gemeinsamen Bus mit einem einzigen Speicher, in dem Befehle und Daten zusammenliegen. Die **Harvard-Architektur** trennt beides – ein eigener Befehlsbus und -speicher für den Code, ein eigener Datenbus und -speicher für die Daten.*
 
@@ -72,7 +72,7 @@ Alle Informationen (Daten + Befehle) werden binär codiert.
 
 ### Detaillierte Architektur
 
-![[.assets/von-neumann-detail.png]]
+![[./.assets/von-neumann-detail.png]]
 
 *Die Von-Neumann-Architektur im Detail: Die CPU besteht aus Steuerwerk (Befehlsregister, Programmzähler, Dekoder) und Rechenwerk (ALU, Register, Statusregister). Über den Systembus – unterteilt in Adress-, Daten- und Steuerbus – ist sie mit den Ein-/Ausgabewerken und dem gemeinsamen Speicher verbunden, in dem Befehle und Daten gemeinsam liegen.*
 
@@ -163,7 +163,7 @@ Der Prozessor lädt Befehle und Daten vorausschauend in den Cache, noch bevor si
 
 ### Befehlszyklus (Instruction Cycle)
 
-![[.assets/von-neumann-befehlszyklus.png]]
+![[./.assets/von-neumann-befehlszyklus.png]]
 
 *Der Befehlszyklus durchläuft fünf Stufen: **Fetch** (Befehl anhand des Programmzählers aus dem Speicher holen), **Decode** (Opcode und Operanden ermitteln), optional **Fetch Operands** (Operanden laden), **Execute** (ALU-Operation ausführen) und **Write Back** (Ergebnis zurückschreiben). Solange kein HALT erreicht ist, beginnt der Zyklus mit dem nächsten Befehl von vorn.*
 
@@ -178,7 +178,7 @@ Die Harvard-Architektur wurde nach dem **Harvard Mark I** Computer (1944) benann
 
 ### Detaillierte Architektur
 
-![[.assets/harvard-detail.png]]
+![[./.assets/harvard-detail.png]]
 
 *Die Harvard-Architektur im Detail: Dieselbe CPU-Struktur wie bei Von-Neumann, aber mit zwei getrennten Pfaden – ein Befehlsbus zum (meist nur lesbaren) Befehlsspeicher (ROM) und ein eigener Datenbus zum les- und schreibbaren Datenspeicher (RAM).*
 
@@ -245,7 +245,7 @@ author: Andreas Hümmer
 
 ### Das Beste aus beiden Welten
 
-![[.assets/modified-harvard.png]]
+![[./.assets/modified-harvard.png]]
 
 *Modified Harvard: **intern** arbeitet die CPU nach dem Harvard-Prinzip (getrennte L1-Caches für Befehle und Daten), während der **externe** Zugriff auf den gemeinsamen Hauptspeicher dem Von-Neumann-Modell folgt. Ab dem vereinheitlichten L2-Cache fließen Code und Daten über einen gemeinsamen Pfad.*
 

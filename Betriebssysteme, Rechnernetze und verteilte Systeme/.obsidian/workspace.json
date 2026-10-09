@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "ATTRIBUTION-REPORT.md",
+                "file": "02-Betriebssysteme/01-Einfuehrung/01-01-Historie.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ATTRIBUTION-REPORT"
+              "title": "01-01-Historie"
             }
           }
         ]
@@ -194,7 +194,11 @@
   },
   "active": "8eea389c8703c2c3",
   "lastOpenFiles": [
+    "02-Betriebssysteme/02-Architektur/02-02-Schichtenmodell.md",
     "02-Betriebssysteme/02-Architektur/02-01-Kerneltypen.md",
+    "02-Betriebssysteme/01-Einfuehrung/01-03-Aufgaben.md",
+    "02-Betriebssysteme/01-Einfuehrung/01-02-Definition.md",
+    "02-Betriebssysteme/01-Einfuehrung/01-01-Historie.md",
     "ATTRIBUTION-REPORT.md",
     "sedojzbJz",
     "07-Anhang/Cheat-Sheets/Kommandoreferenz.md",
@@ -229,10 +233,6 @@
     "assets/diagrams",
     "assets/00-assets-Index.md",
     "assets",
-    "07-Anhang/Glossar.md",
-    "07-Anhang/IEEE-802-Standards/IEEE 802.3.md",
-    "07-Anhang/IEEE-802-Standards/IEEE 802.1w.md",
-    "07-Anhang/IEEE-802-Standards/IEEE 802.1s.md",
     "02-Betriebssysteme/01-Einfuehrung/assets/zx-spectrum.jpg",
     "02-Betriebssysteme/01-Einfuehrung/assets/zuse-z3-deutsches-museum.jpg",
     "02-Betriebssysteme/01-Einfuehrung/assets/xerox-alto-maus-1973.jpg",

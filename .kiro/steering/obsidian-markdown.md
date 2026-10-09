@@ -69,7 +69,7 @@ Every illustration or picture must have a description beneath it:
 **Usage:**
 
 ```markdown
-![[.assets/architecture-diagram.png]]
+![[./.assets/architecture-diagram.png]]
 *<span class="fig-id">my-note-1</span>: System architecture overview showing the main components.*
 ```
 
@@ -83,8 +83,9 @@ Example for a file named `database-design.md`:
 Pictures, attachments, and other media files used in a Markdown file must be stored in a hidden asset directory within the same directory as the Markdown file:
 
 ```
-notes/
-├── my-note.md
+chapter/
+├── 01-some-note.md
+├── 02-another-note.md
 └── .assets/
     ├── screenshot.png
     ├── diagram.svg
@@ -92,8 +93,9 @@ notes/
 ```
 
 - Directory name: `.assets/` (hidden directory, prefixed with dot)
-- Reference assets using relative paths: `![[.assets/screenshot.png]]`
-- Keep assets co-located with their referencing note for portability
+- Reference assets using **explicit relative paths** with `./` prefix: `![[./.assets/screenshot.png]]`
+- The `./` prefix ensures Obsidian resolves the path relative to the current file's directory, not the vault root
+- Keep assets co-located with their referencing notes for portability
 - When moving a note, move its corresponding `.assets/` contents as well
 
 ## Tags

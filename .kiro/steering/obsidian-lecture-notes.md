@@ -71,6 +71,22 @@ Content files within directories **must** have a numeric prefix for ordering:
 
 **Format:** `NN-Titel.md` where `NN` is a two-digit number (01, 02, 03, ...).
 
+### Chapter Asset Directories
+
+Each chapter directory contains a hidden `.assets/` folder for images and attachments:
+
+```
+02-Architektur/
+├── 02-01-Kerneltypen.md
+├── 02-02-Schichtenmodell.md
+└── .assets/
+    ├── monolithischer-kernel.png
+    ├── mikrokernel.png
+    └── hybridkernel.png
+```
+
+Reference images using explicit relative paths: `![[./.assets/image.png]]`
+
 ## Frontmatter (Metadata)
 
 Every content file starts with YAML frontmatter.

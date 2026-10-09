@@ -10,7 +10,7 @@ tags:
 
 # Vault Compliance Report
 
-**Generated:** 2026-10-09 18:56:26  
+**Generated:** 2026-10-09 19:30:06  
 **Vault:** Betriebssysteme, Rechnernetze und verteilte Systeme
 
 ---
@@ -20,7 +20,7 @@ tags:
 | Metric | Value |
 |--------|-------|
 | Total markdown files | 283 |
-| Steering compliance | 85% |
+| Steering compliance | 90% |
 | Valid links | 177 (49%) |
 | Broken links | 185 (51%) |
 
@@ -28,7 +28,7 @@ tags:
 
 ## Part 1: Steering Compliance
 
-### ✅ Compliant (16 items)
+### ✅ Compliant (17 items)
 
 | Rule | Status | Details |
 |------|--------|---------|
@@ -46,7 +46,8 @@ tags:
 | Glossar.md location | ✅ | In vault root |
 | Abkuerzungsverzeichnis.md location | ✅ | In vault root |
 | Templates hidden | ✅ | `.templates/` |
-| Assets hidden | ✅ | `.assets/` |
+| Assets hidden | ✅ | `.assets/` at vault root and per-chapter |
+| Per-chapter assets | ✅ | `![[./.assets/...]]` relative paths |
 | Supplementary folder prefixes | ✅ | Optional per steering |
 
 ### ⚠️ Partial Compliance (4 items)

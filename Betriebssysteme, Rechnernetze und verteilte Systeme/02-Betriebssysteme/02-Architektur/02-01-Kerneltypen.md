@@ -51,7 +51,7 @@ Ein **monolithischer Kernel** ist ein einzelnes, großes Programm, das alle Betr
 
 ### Architektur
 
-![[.assets/monolithischer-kernel.png]]
+![[./.assets/monolithischer-kernel.png]]
 
 *Beim monolithischen Kernel laufen sämtliche Betriebssystemdienste – Prozess- und Speicherverwaltung, Dateisystem, Netzwerkstack, Scheduler, IPC, Security, I/O und die Gerätetreiber – gemeinsam im Kernel-Space (Ring 0). Anwendungen greifen ausschließlich über das System Call Interface darauf zu.*
 
@@ -94,7 +94,7 @@ Ein reiner Monolith müsste bei jeder neuen Hardware neu kompiliert werden – u
 
 Linux erweitert das monolithische Konzept durch **Loadable Kernel Modules (LKM)**:
 
-![[.assets/linux-lkm.png]]
+![[./.assets/linux-lkm.png]]
 
 *Linux kombiniert einen fest kompilierten Kern (Scheduler, Memory Manager, VFS, Core Networking) mit **Loadable Kernel Modules**: Treiber und Funktionen wie ext4, GPU- oder WLAN-Module werden zur Laufzeit per `insmod`/`modprobe` geladen und mit `rmmod` wieder entladen.*
 
@@ -113,13 +113,13 @@ Ein **Mikrokernel** reduziert den Kernel auf das absolute Minimum: Interprozessk
 
 ### Architektur
 
-![[.assets/mikrokernel.png]]
+![[./.assets/mikrokernel.png]]
 
 *Beim Mikrokernel enthält der Kernel-Space nur das Nötigste – IPC, grundlegende Speicherverwaltung und CPU-Scheduling (≈ 10 000 Zeilen Code). Alle übrigen Dienste (Dateisystem, Netzwerk, Treiber, Memory-/Process-Manager, Security) laufen als normale Server-Prozesse im User-Space und kommunizieren über Message Passing. Deutlicher Kontrast zum monolithischen Kernel, der all das im Kernel-Space hält.*
 
 ### Kommunikation via Message Passing
 
-![[.assets/mikrokernel-message-passing.png]]
+![[./.assets/mikrokernel-message-passing.png]]
 
 *Im Mikrokernel kommunizieren Prozesse nicht direkt, sondern über den Kernel: Die App schickt eine Anfrage per `send()` in die Message Queue des Kernels (2), der Server holt sie per `receive()` ab (3). Jeder Request (1) und jede Response (4) läuft so durch das IPC-Subsystem.*
 
@@ -181,13 +181,13 @@ Ein **Hybridkernel** kombiniert Elemente beider Architekturen: Er behält einen 
 
 ### Architektur (Beispiel: Windows NT)
 
-![[.assets/hybridkernel-windows-nt.png]]
+![[./.assets/hybridkernel-windows-nt.png]]
 
 *Der Hybridkernel kombiniert beide Welten: Im Kernel-Space sitzt eine große **Executive** (Object-, Process-, Memory-, I/O-Manager usw.) über einem kleinen, mikrokernel-artigen Kern (Thread-Scheduling, Interrupt-Dispatch). Darunter abstrahiert der **HAL** die Hardware. Im User-Space vermitteln Environment-Subsysteme (Win32, POSIX, OS/2) zwischen Anwendungen und der Native API.*
 
 ### Architektur (Beispiel: macOS XNU)
 
-![[.assets/hybridkernel-macos-xnu.png]]
+![[./.assets/hybridkernel-macos-xnu.png]]
 
 *Der XNU-Kernel ist aus drei Schichten zusammengesetzt: Der **BSD Layer** (POSIX-API, Networking, VFS, Security) sitzt über dem **I/O Kit** (Treiber-Framework in C++), das wiederum auf dem **Mach-Mikrokernel** (IPC, Tasks, Threads, Memory, Scheduling) aufbaut. So verbindet XNU einen Mikrokernel-Kern mit monolithischen BSD-Komponenten.*
 
@@ -273,7 +273,7 @@ Neben den drei klassischen Architekturen gibt es radikalere Entwürfe, die vor a
 
 Noch minimaler als Mikrokernel: Der Kernel bietet nur sicheren Multiplexing-Zugriff auf Hardware. Libraries im User-Space implementieren Abstraktionen.
 
-![[.assets/exokernel.png]]
+![[./.assets/exokernel.png]]
 
 *Der Exokernel ist noch minimaler als ein Mikrokernel: Er stellt nur sicheres Hardware-Multiplexing bereit. Sämtliche Abstraktionen (Dateisystem, Netzwerk usw.) werden von einem Library Operating System (libOS) im User-Space implementiert, das direkt in die Anwendung eingebunden wird.*
 
@@ -281,7 +281,7 @@ Noch minimaler als Mikrokernel: Der Kernel bietet nur sicheren Multiplexing-Zugr
 
 Eine Anwendung wird mit genau den Kernel-Komponenten kompiliert, die sie braucht - als ein einziges Image.
 
-![[.assets/unikernel.png]]
+![[./.assets/unikernel.png]]
 
 *Ein Unikernel bündelt die Anwendung mit genau den Kernel-Komponenten, die sie benötigt (z. B. nur TCP/IP für einen Web-Server), zu einem einzigen, single-purpose Image. Es gibt kein separates Betriebssystem darunter.*
 

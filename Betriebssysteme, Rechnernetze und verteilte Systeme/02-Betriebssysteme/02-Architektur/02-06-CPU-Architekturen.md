@@ -48,7 +48,7 @@ Der **Beginn der x86-Ära** – diese Prozessoren legten den Grundstein für die
 
 ### Pinbelegung (DIP-40)
 
-![[.assets/intel-8088-pinout.png]]
+![[./.assets/intel-8088-pinout.png]]
 
 Die wichtigsten Signalgruppen des DIP-40-Gehäuses:
 
@@ -61,7 +61,7 @@ Die wichtigsten Signalgruppen des DIP-40-Gehäuses:
 
 ### Blockdiagramm
 
-![[.assets/intel-8088-blockdiagramm.png]]
+![[./.assets/intel-8088-blockdiagramm.png]]
 
 Der 8088 teilt sich in zwei Einheiten: Die **Execution Unit (EU)** führt Befehle aus und enthält die Allgemein- und Flag-Register sowie die 16-Bit-ALU. Die **Bus Interface Unit (BIU)** kümmert sich um den Speicherzugriff – sie bildet über den Adress-Addierer aus Segment und Offset die physische 20-Bit-Adresse (`Segment × 16 + Offset`) und füllt parallel die 4-Byte-Instruction-Queue vor (Prefetch). Beide Einheiten arbeiten überlappend: Während die EU rechnet, holt die BIU bereits den nächsten Befehl.
 
@@ -99,7 +99,7 @@ Der **erste x86-Prozessor mit Protected Mode** – ein Meilenstein für Speicher
 
 ### Vereinfachtes Blockdiagramm
 
-![[.assets/intel-80286-blockdiagramm.png]]
+![[./.assets/intel-80286-blockdiagramm.png]]
 
 Der 80286 gliedert sich in drei Einheiten. Die eigentliche Neuerung ist die **Protection Unit** innerhalb der Address Unit: Sie prüft bei jedem Speicherzugriff die Descriptor-Tabellen (GDT/LDT), die Privilegstufe (Ring 0–3) und das Segment-Limit – die Grundlage des **Protected Mode**. Die Execution Unit erweitert die 8086-Register um das Machine Status Word (MSW), und die Bus Unit bedient einen 24-Bit-Adressbus (16 MB adressierbar) mit 6-Byte-Prefetch-Queue.
 
@@ -138,7 +138,7 @@ Der **erste echte 32-Bit x86-Prozessor** – ein revolutionärer Sprung, der die
 
 ### Blockdiagramm
 
-![[.assets/intel-80386-blockdiagramm.png]]
+![[./.assets/intel-80386-blockdiagramm.png]]
 
 Der 80386 ist der erste vollwertige 32-Bit-x86-Prozessor und bringt zwei Neuerungen, die bis heute das Fundament moderner Betriebssysteme bilden: die **Control-Register** (CR0/CR2/CR3) und vor allem die **Paging Unit**. Eine lineare 32-Bit-Adresse wird in Directory (10 Bit), Table (10 Bit) und Offset (12 Bit) zerlegt und über zwei Tabellenstufen in einen physischen Frame übersetzt; der TLB cached die letzten Übersetzungen. Erst dieses hardwaregestützte Paging macht echten virtuellen Speicher mit Demand Paging praktikabel.
 
@@ -203,7 +203,7 @@ Die 80486-Pipeline war die erste echte Pipeline in der x86-Familie:
 
 ### Blockdiagramm
 
-![[.assets/intel-80486-blockdiagramm.png]]
+![[./.assets/intel-80486-blockdiagramm.png]]
 
 Der 80486 integriert erstmals mehrere bisher getrennte Bausteine auf einem Die: einen **8-KB-L1-Cache**, die **FPU** (der externe 80387-Coprozessor entfällt) und die oben gezeigte fünfstufige Integer-Pipeline. Durch Pipelining und On-Chip-Cache erreicht der 486 bei gleicher Taktfrequenz etwa die doppelte Leistung des 80386.
 
@@ -244,7 +244,7 @@ Die **erste superskalare x86-Architektur** – zwei Befehle gleichzeitig in para
 
 ### Dual-Pipeline Architektur
 
-![[.assets/intel-pentium-blockdiagramm.png]]
+![[./.assets/intel-pentium-blockdiagramm.png]]
 
 Der Pentium ist der erste **superskalare** x86-Prozessor: Er dekodiert zwei Befehle pro Takt und verteilt sie auf zwei parallele Integer-Pipelines (U-Pipe und V-Pipe). Im Idealfall werden so zwei Befehle gleichzeitig ausgeführt (CPI < 1). Nicht jedes Befehlspaar lässt sich jedoch parallelisieren – es gelten strenge **Pairing-Regeln**:
 
@@ -290,7 +290,7 @@ Der *Beginn der modernen x86-Mikroarchitektur** – diese revolutionäre Archite
 
 ### P6 Mikroarchitektur
 
-![[.assets/intel-p6-mikroarchitektur.png]]
+![[./.assets/intel-p6-mikroarchitektur.png]]
 
 Die **P6-Mikroarchitektur** ist der tiefgreifendste Umbruch der x86-Geschichte und bildet die Grundlage aller folgenden Intel-Kerne bis heute. Das Frontend arbeitet noch **in-order**: Es holt x86-Befehle, zerlegt sie in RISC-artige **µOps** und benennt über die Register Alias Table die 8 architekturellen auf 40 physische Register um (eliminiert WAR-/WAW-Scheinabhängigkeiten). Das Backend arbeitet **out-of-order**: Der Reorder Buffer verwaltet alle µOps spekulativ, die Reservation Stations geben sie an die Execution Units frei, sobald deren Operanden bereitstehen – unabhängig von der Programmreihenfolge. Erst beim Commit (Retire) wird das Ergebnis in-order sichtbar. So entkoppelt der P6 die Ausführungsreihenfolge von der Programmreihenfolge und hält die Rechenwerke ausgelastet.
 
@@ -330,7 +330,7 @@ author: Andreas Hümmer
 
 ### K7 Blockdiagramm
 
-![[.assets/amd-k7-blockdiagramm.png]]
+![[./.assets/amd-k7-blockdiagramm.png]]
 
 Der K7/Athlon war 1999 die erste x86-CPU, die Intel bei der Taktfrequenz überholte. Auffällig sind die großzügigen **64-KB-L1-Caches** (doppelt so groß wie beim Pentium III), die drei vollwertigen Decoder (bis zu 6 µOps/Takt) und die **getrennten Scheduler** für Integer und Floating Point mit jeweils eigenen Ausführungseinheiten. Der Systembus übernimmt das leistungsfähige **EV6-Protokoll** aus der DEC-Alpha-Welt und ersetzt den geteilten Bus durch eine Punkt-zu-Punkt-Verbindung.
 
@@ -360,7 +360,7 @@ author: Andreas Hümmer
 
 ### Register-Layout
 
-![[.assets/amd64-register-layout.png]]
+![[./.assets/amd64-register-layout.png]]
 
 Jedes 64-Bit-Register enthält seine kleineren Vorgänger als **niederwertige Teilregister**: RAX umfasst EAX (untere 32 Bit), darin AX (untere 16 Bit), darin AH und AL (je 8 Bit). Die acht neuen Register R8–R15 folgen demselben Schema mit den Suffixen D (32), W (16) und B (8), besitzen aber kein getrenntes High-Byte wie das historische AH.
 
@@ -421,7 +421,7 @@ author: Andreas Hümmer
 
 ### Core 2 Duo Blockdiagramm
 
-![[.assets/intel-core2duo-blockdiagramm.png]]
+![[./.assets/intel-core2duo-blockdiagramm.png]]
 
 Mit dem Core 2 Duo wird **Mehrkern-Technik** im Mainstream Standard: Zwei vollständige, identische Kerne sitzen auf einem Die. Jeder Kern besitzt eigene L1-Caches und eine komplette Out-of-Order-Pipeline, teilt sich aber mit dem anderen Kern einen gemeinsamen **L2-Cache** (4 MB). Der geteilte L2 erlaubt es, Daten zwischen den Kernen ohne Umweg über den Hauptspeicher auszutauschen. Nach außen führt noch der klassische **Front Side Bus** zum Chipsatz – ein Flaschenhals, den AMD mit integriertem Speichercontroller zu diesem Zeitpunkt bereits umgangen hatte.
 
