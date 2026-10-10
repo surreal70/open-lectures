@@ -1,0 +1,29 @@
+# Obsidian
+**/.obsidian/workspace.json
+**/.obsidian/workspace-mobile.json
+**/.obsidian/plugins/
+**/.obsidian/themes/
+
+# Temporäre Dateien
+**/.DS_Store
+**/Thumbs.db
+*.tmp
+*.bak
+*~
+
+# Noch nicht fertige Vaults (werden später hinzugefügt)
+L-Kryptographie/
+L-Zufallszahlenerzeugung/
+L-Python/
+L-Chemie-I/
+L-Chemie-II/
+L-Chemie-III/
+L-Chemie-IV/
+L-Mathematik-I/
+L-Mathematik-II/
+L-Mathematik-III/
+L-Informatik-I/
+L-Informatik-II/
+L-Informatik-III/
+L-Informatik-IV/
+L-Informatik-V/
