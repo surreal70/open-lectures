@@ -1,6 +1,6 @@
 # Abbildungsverzeichnis
 
-> Dieses Verzeichnis enthält alle Abbildungen der bisher fertiggestellten Kapitel: **02-Betriebssysteme / 01-Einführung**, **02-Betriebssysteme / 02-Architektur** und **02-Betriebssysteme / 03-Prozesse**.
+> Dieses Verzeichnis enthält alle Abbildungen der bisher fertiggestellten Kapitel: **02-Betriebssysteme / 01-Einführung**, **02-Betriebssysteme / 02-Architektur**, **02-Betriebssysteme / 03-Prozesse** und **02-Betriebssysteme / 05-Speicherverwaltung**.
 
 ---
 
@@ -196,7 +196,50 @@
 
 ---
 
-**Gesamtzahl der Abbildungen:** 120
+## 02-Betriebssysteme / 05-Speicherverwaltung
+
+### 01-Adressräume (02-05-01)
+
+| Abbildungs-ID | Beschreibung |
+|---------------|--------------|
+| 02-05-01-arbeitsspeicher-belegung | Typische Belegung des Arbeitsspeichers mit externer Fragmentierung |
+| 02-05-01-adressumrechnung | Adressumrechnung durch die MMU: Logische → Physische Adressen |
+| 02-05-01-speicherschutz-grenzregister | Speicherschutz mit Base- und Limit-Registern |
+| 02-05-01-prozess-adressraum | Typischer Aufbau eines Prozess-Adressraums (Text, Data, BSS, Heap, Stack) |
+
+### 02-Virtueller-Speicher (02-05-02)
+
+| Abbildungs-ID | Beschreibung |
+|---------------|--------------|
+| 02-05-02-virtueller-speicher | Virtueller Speicher: Zusammenhängender Adressraum mit Swap-Auslagerung |
+| 02-05-02-speicherhierarchie | Speicherhierarchie als Pyramide: Register → Cache → RAM → SSD → HDD |
+| 02-05-02-swapping | Swapping: Ganze Prozesse zwischen RAM und Swap verschieben |
+| 02-05-02-demand-paging | Demand Paging: Pages werden erst bei Zugriff geladen |
+| 02-05-02-working-set | Working Set: Aktive Pages innerhalb eines Zeitfensters |
+
+### 03-Paging (02-05-03)
+
+| Abbildungs-ID | Beschreibung |
+|---------------|--------------|
+| 02-05-03-paging-konzept | Paging-Konzept: Pages → Frames über Page Table |
+| 02-05-03-adressumrechnung | Adressumrechnung bei Paging: Page Number → Frame Number + Offset |
+| 02-05-03-tlb | TLB-Ablauf: Hit liefert direkt, Miss konsultiert Page Table |
+| 02-05-03-zweistufig | Zweistufige Page Table mit Page Directory |
+| 02-05-03-x86-64-paging | x86-64 vierstufiges Paging (PML4 → PDP → PD → PT) |
+| 02-05-03-clock-algorithmus | Clock-Algorithmus zur Seitenersetzung |
+
+### 04-Segmentierung (02-05-04)
+
+| Abbildungs-ID | Beschreibung |
+|---------------|--------------|
+| 05-04-01-segmentierung-konzept | Segmentierung: Logische Segmente → Physischer Speicher |
+| 05-04-02-segmentierung-adressumrechnung | Adressumrechnung bei Segmentierung mit Grenzprüfung |
+| 05-04-03-segmentierung-fragmentierung | Externe Fragmentierung und Lösung durch Kompaktierung |
+| 05-04-04-segmentierung-paging | Kombinierte Adressumrechnung: Segmentierung mit Paging |
+
+---
+
+**Gesamtzahl der Abbildungen:** 139
 
 | Kapitel | Anzahl |
 |---------|--------|
@@ -212,3 +255,7 @@
 | 02-03-02 Scheduling | 6 |
 | 02-03-03 Threads | 8 |
 | 02-03-04 Interprozesskommunikation | 10 |
+| 02-05-01 Adressräume | 4 |
+| 02-05-02 Virtueller Speicher | 5 |
+| 02-05-03 Paging | 6 |
+| 02-05-04 Segmentierung | 4 |

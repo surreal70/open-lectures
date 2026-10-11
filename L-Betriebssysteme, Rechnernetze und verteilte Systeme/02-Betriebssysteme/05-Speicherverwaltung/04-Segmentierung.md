@@ -308,10 +308,6 @@ Konzeptionell ähnlich wie Segmente:
 
 > [!warning] **Prüfungsrelevant**
 > - Unterschied Segmentierung vs. Paging
-> - Adressumrechnung bei Segmentierung (Base + Offset)
-> - Externe vs. interne Fragmentierung
-> - Aufbau der Segment Table
-> - Kombination von Segmentierung und Paging
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Was ist der Unterschied zwischen Segmentierung und Paging?
