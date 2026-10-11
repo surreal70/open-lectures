@@ -1,6 +1,6 @@
 # Abbildungsverzeichnis
 
-> Dieses Verzeichnis enthält alle Abbildungen der bisher fertiggestellten Kapitel: **02-Betriebssysteme / 01-Einführung**, **02-Betriebssysteme / 02-Architektur**, **02-Betriebssysteme / 03-Prozesse** und **02-Betriebssysteme / 05-Speicherverwaltung**.
+> Dieses Verzeichnis enthält alle Abbildungen der bisher fertiggestellten Kapitel: **02-Betriebssysteme / 01-Einführung**, **02-Betriebssysteme / 02-Architektur**, **02-Betriebssysteme / 03-Prozesse**, **02-Betriebssysteme / 05-Speicherverwaltung** und **02-Betriebssysteme / 06-Ein-Ausgabe**.
 
 ---
 
@@ -239,7 +239,23 @@
 
 ---
 
-**Gesamtzahl der Abbildungen:** 139
+## 02-Betriebssysteme / 06-Ein-Ausgabe
+
+### 01-IO-Grundlagen (02-06-01)
+
+| Abbildungs-ID | Beschreibung |
+|---------------|--------------|
+| 02-06-01-io-controller | Aufbau eines I/O-Controllers mit seinen Registern |
+| 02-06-01-polling-busy-waiting | Polling – CPU fragt wiederholt den Gerätestatus ab, bis es bereit ist |
+| 02-06-01-interrupt-driven-io | Interrupt-gesteuertes I/O – CPU arbeitet weiter, bis das Gerät per Interrupt meldet |
+| 02-06-01-dma-transfer | DMA – Daten werden ohne CPU-Beteiligung zwischen Gerät und RAM übertragen |
+| 02-06-01-io-software-schichten | Die Schichten der I/O-Software von User-Space bis Hardware |
+| 02-06-01-double-buffering | Double Buffering – zwei Puffer werden abwechselnd gefüllt und verarbeitet |
+| 02-06-01-spooling | Spooling – Jobs werden in einer Warteschlange gesammelt und nacheinander abgearbeitet |
+
+---
+
+**Gesamtzahl der Abbildungen:** 146
 
 | Kapitel | Anzahl |
 |---------|--------|
@@ -259,3 +275,4 @@
 | 02-05-02 Virtueller Speicher | 5 |
 | 02-05-03 Paging | 6 |
 | 02-05-04 Segmentierung | 4 |
+| 02-06-01 IO-Grundlagen | 7 |
