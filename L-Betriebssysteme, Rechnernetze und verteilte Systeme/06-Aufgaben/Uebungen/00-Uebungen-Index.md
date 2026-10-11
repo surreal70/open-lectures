@@ -13,9 +13,15 @@ tags:
 
 ### Betriebssysteme
 
-- [[UE-BS-01]] – Grundlagen
-- [[UE-BS-02]] – Vertiefung
-- [[P-BS-Scheduling-AnimOS]] – **Praxisübung:** CPU-Scheduling mit AnimOS ⭐
+#### Theorie-Übungen
+- [[UE-BS-Betriebssysteme]] – **Klausurformat: Alle Themen** (120 Punkte)
+- [[UE-BS-Synchronisation]] – Synchronisation (Klausuraufgaben)
+- [[UE-BS-Deadlock-Waschraum]] – Deadlock-Analyse mit Semaphoren
+
+#### Praxisübungen ⭐
+- [[P-BS-Scheduling-AnimOS]] – CPU-Scheduling mit AnimOS
+- [[P-BS-Shell-Prozesse]] – Shell-Kommandos für Prozessmanagement
+- [[P-BS-Simulatoren]] – Systemnahe Simulatoren (MOSS, Johnny, etc.)
 
 ### Rechnernetze
 
@@ -31,3 +37,5 @@ tags:
 
 > [!tip] **Legende**
 > - ⭐ = Praxisübung mit Simulator/Tool
+> - **UE-** = Theorie-Übung (Klausurformat)
+> - **P-** = Praxisübung (Hands-on)

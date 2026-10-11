@@ -11,15 +11,15 @@ tags:
 
 ## Inhaltsverzeichnis
 
-### Musterklausuren
-
-- [[LOE-Musterklausur-01]]
-
 ### Betriebssysteme
 
-- [[LOE-UE-BS-01]]
-- [[LOE-UE-BS-02]]
-- [[LOE-P-BS-Scheduling-AnimOS]] – **Praxisübung:** CPU-Scheduling mit AnimOS ⭐
+#### Theorie-Übungen
+- [[L-BS-Betriebssysteme]] – **Klausurformat: Alle Themen** (120 Punkte)
+- [[L-BS-Synchronisation]] – Synchronisation (Klausuraufgaben)
+- [[L-BS-Deadlock-Waschraum]] – Deadlock-Analyse mit Semaphoren
+
+#### Praxisübungen ⭐
+- [[LOE-P-BS-Scheduling-AnimOS]] – CPU-Scheduling mit AnimOS
 
 ### Rechnernetze
 
@@ -35,3 +35,5 @@ tags:
 
 > [!tip] **Legende**
 > - ⭐ = Praxisübung mit Simulator/Tool
+> - **L-** = Lösung zu Theorie-Übung
+> - **LOE-** = Lösung (älteres Namensschema)

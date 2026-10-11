@@ -7,9 +7,11 @@ tags:
   - index
 ---
 
-# Pruefungen
+# Prüfungen
 
 ## Inhaltsverzeichnis
 
-- [[Fragenkatalog]]
-- [[Musterklausur-01]]
+> [!note] **Hinweis**
+> Klausurvorbereitende Übungen finden sich im Ordner [[00-Uebungen-Index|Übungen]]:
+> - [[UE-BS-Betriebssysteme]] – Umfassende Klausurübung (120 Punkte)
+> - [[UE-BS-Synchronisation]] – Synchronisation (Klausurformat)
