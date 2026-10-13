@@ -1,0 +1,14 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Date Awareness on Session Start",
+      "trigger": "SessionStart",
+      "description": "Remind agent of current date at session start for accurate frontmatter dates",
+      "action": {
+        "type": "agent",
+        "prompt": "Note the current date from the system. Use this date for any `created` or `modified` fields in frontmatter when creating or editing Markdown files. Format: YYYY-MM-DD."
+      }
+    }
+  ]
+}

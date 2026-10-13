@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Update Modified Date on Save",
+      "trigger": "PostFileSave",
+      "description": "Automatically update the modified date in frontmatter when Markdown files are saved",
+      "matcher": "\\.md$",
+      "action": {
+        "type": "agent",
+        "prompt": "The file was just saved. If it has YAML frontmatter with a `modified` field, update that field to today's date (YYYY-MM-DD). Do not modify files without frontmatter or without a `modified` field."
+      }
+    }
+  ]
+}
