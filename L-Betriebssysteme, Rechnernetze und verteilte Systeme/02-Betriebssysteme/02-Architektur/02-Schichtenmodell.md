@@ -247,10 +247,8 @@ Beide Systeme verfolgen dasselbe Grundprinzip, treffen aber unterschiedliche Ent
 > - **Das Grundprinzip** der Schichtung erklären können (Abstraktion, Kapselung)
 > - **CPU-Ringe**: Ring 0 (Kernel) vs. Ring 3 (User) verstehen
 > - **Mode Switch**: Wie wechselt ein Programm vom User- in den Kernel-Mode?
-> - **THE-System**: Historische Bedeutung (Dijkstra, Semaphoren, erste Schichtung)
 > - **Unix-Schichten**: VFS als Abstraktionsschicht kennen
-> - **Windows-Schichten**: HAL, Executive, Kernel unterscheiden
-> - **Vor-/Nachteile**: Modularität vs. Performance-Overhead
+> 
 
 **Typische Prüfungsfragen:**
 1. Erklären Sie das Prinzip der Schichtung in Betriebssystemen.

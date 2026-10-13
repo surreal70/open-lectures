@@ -288,8 +288,6 @@ Eine Anwendung wird mit genau den Kernel-Komponenten kompiliert, die sie braucht
 > [!warning] Prüfungsrelevant
 > - **Die drei Haupttypen** (Monolithisch, Mikrokernel, Hybrid) mit je 2-3 Vor-/Nachteilen
 > - **Beispiele**: Mindestens ein System pro Typ nennen können
-> - **Unterschied IPC**: Direkte Aufrufe (monolithisch) vs. Message Passing (Mikrokernel)
-> - **Trade-off**: Performance vs. Stabilität/Sicherheit verstehen
 > - **Kernel-Space vs. User-Space**: Welche Komponenten laufen wo?
 > - **Ladbare Module**: Wie Linux die Flexibilität eines Mikrokernels erreicht
 

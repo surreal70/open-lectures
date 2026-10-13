@@ -375,9 +375,8 @@ cat /proc/$(pgrep -x firefox)/status | grep Threads
 > [!warning] **Prüfungsrelevant**
 > - Definition Thread vs. Prozess
 > - User-Level vs. Kernel-Level Threads (Vor-/Nachteile)
-> - Was teilen Threads, was nicht?
+> - **Was teilen Threads, was nicht?**
 > - Unterschied Multithreading/Multitasking/Multiprocessing
-> - Threading-Modelle (1:1, N:1, M:N)
 > - Blocking-Problem bei User-Level Threads
 
 > [!question] **Häufige Prüfungsfragen**

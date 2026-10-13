@@ -508,7 +508,6 @@ graph LR
 > - Aufbau und Inhalte des PCB (alle Kategorien)
 > - Die drei/fünf Prozesszustände und ihre Übergänge
 > - Unterschied Systemprozesse vs. Benutzerprozesse
-> - Funktion von Interrupts und IVT
 > - Speicherlayout eines Prozesses (Text, Data, BSS, Heap, Stack)
 > - Kontextwechsel-Mechanismus
 
@@ -532,26 +531,6 @@ graph LR
 > - **fork()** = "Zellteilung" (Kopie des Elternprozesses)
 > - **TDBHS**: Text → Data → BSS → Heap → Stack (Speicherlayout von unten nach oben)
 > - **Restaurant-Analogie**: 1 Koch (CPU), viele Tische (Prozesse), Oberkellner (Scheduler)
-
-> [!example] **Typische Klausuraufgabe**
-> *"Erklären Sie, wie das Betriebssystem durch das Prozessmodell die Illusion erzeugt, dass mehrere Programme gleichzeitig auf einer einzigen CPU laufen."*
-> 
-> **Musterlösung:**
-> Das Prozessmodell abstrahiert die physische CPU zu virtuellen CPUs:
-> 1. Jeder Prozess erhält einen eigenen Adressraum und Kontext (PCB)
-> 2. Der Scheduler teilt die CPU-Zeit in kleine Zeitscheiben (~10-100ms)
-> 3. Der Timer-Interrupt unterbricht den laufenden Prozess regelmäßig
-> 4. Beim Kontextwechsel wird der Zustand gesichert und ein anderer Prozess geladen
-> 5. Durch den schnellen Wechsel entsteht die Illusion von Parallelität
-> 
-> *"Zeichnen Sie das Zustandsdiagramm eines Prozesses mit allen Übergängen und beschriften Sie die Kanten mit den auslösenden Ereignissen."*
-> 
-> Lösung: Drei-Zustands-Modell mit:
-> - Ready → Running (Dispatch/Scheduler)
-> - Running → Ready (Timeout/Preemption)
-> - Running → Blocked (I/O-Request/Wait)
-> - Blocked → Ready (I/O-Complete/Wakeup)
-
 ---
 
 ## Weiterführende Ressourcen
@@ -570,5 +549,4 @@ graph LR
 
 ## Quellen
 
-- IU Skript: Betriebssysteme, Rechnernetze und verteilte Systeme - Teil 5 (Ressourcen)
 - Tanenbaum: Modern Operating Systems

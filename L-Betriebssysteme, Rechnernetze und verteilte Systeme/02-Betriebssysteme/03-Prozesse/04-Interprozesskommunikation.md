@@ -709,8 +709,6 @@ rm /tmp/testpipe
 
 > [!warning] **Prüfungsrelevant**
 > - Unterschied Shared Memory vs. Message Passing (Kopieren vs. gemeinsamer Zugriff)
-> - Unix IPC-Mechanismen (Pipes, Signals, Sockets, Shared Memory, Message Queues)
-> - Vor- und Nachteile der verschiedenen Mechanismen
 > - Wann braucht man Synchronisation? (Bei Shared Memory!)
 > - Synchrone vs. asynchrone Kommunikation
 > - Socket-Typen (TCP vs. UDP, Unix Domain)
