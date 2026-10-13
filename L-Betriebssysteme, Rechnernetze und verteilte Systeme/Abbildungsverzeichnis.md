@@ -1,6 +1,6 @@
 # Abbildungsverzeichnis
 
-> Dieses Verzeichnis enthält alle Abbildungen der bisher fertiggestellten Kapitel: **02-Betriebssysteme / 01-Einführung**, **02-Betriebssysteme / 02-Architektur**, **02-Betriebssysteme / 03-Prozesse**, **02-Betriebssysteme / 05-Speicherverwaltung** und **02-Betriebssysteme / 06-Ein-Ausgabe**.
+> Dieses Verzeichnis enthält alle Abbildungen der bisher fertiggestellten Kapitel: **02-Betriebssysteme / 01-Einführung**, **02-Betriebssysteme / 02-Architektur**, **02-Betriebssysteme / 03-Prozesse**, **02-Betriebssysteme / 05-Speicherverwaltung**, **02-Betriebssysteme / 06-Ein-Ausgabe** und **02-Betriebssysteme / 07-Dateisysteme**.
 
 ---
 
@@ -255,7 +255,71 @@
 
 ---
 
-**Gesamtzahl der Abbildungen:** 146
+## 02-Betriebssysteme / 07-Dateisysteme
+
+### 01-Historie-Festplatten (02-07-01)
+
+| Abbildungs-ID | Beschreibung |
+|---------------|--------------|
+| 02-07-01-ibmramac305 | IBM RAMAC 305 (1956) – die erste kommerzielle Festplatte der Welt |
+| 02-07-01-ibm3340 | IBM 3340 Winchester Festplatten (1973) – Grundlage aller modernen HDDs |
+| 02-07-01-ibm-old-hdd | IBM-Festplatte aus der frühen PC-Ära |
+| 02-07-01-shugart-sa1004 | Shugart SA1004 – 8-Zoll-Festplatte (1982) mit 10 MB Kapazität |
+| 02-07-01-525inch-mfm-hdd | 5,25-Zoll MFM-Festplatte (Full Height) im Größenvergleich mit 2,5-Zoll-HDD |
+| 02-07-01-quantum-bigfoot | Quantum Bigfoot – eine der letzten 5,25-Zoll-Festplatten (Half Height) |
+| 02-07-01-35inch-hdd-closed | 3,5-Zoll-Desktop-Festplatte (geschlossen) mit PATA-Anschluss |
+| 02-07-01-hdd-formfaktoren | Größenvergleich verschiedener HDD-Formfaktoren (5,25", 3,5", 2,5", PCMCIA) |
+| 02-07-01-hdd-aufbau | Festplattenaufbau – Draufsicht und Seitenansicht mit Plattenstapel und Aktuator |
+| 02-07-01-chs-adressierung | CHS-Adressierung – Zylinder, Köpfe und Sektoren |
+| 02-07-01-hdd-zugriffszeit | Zugriffszeit einer HDD – Seek Time, Rotational Latency und Transfer Time |
+| 02-07-01-storage-size-comparison | Evolution der Speichermedien – Größenvergleich HDD → SSD → microSD |
+| 02-07-01-hdd-vs-ssd | HDD vs. SSD – mechanischer vs. elektronischer Speicher |
+| 02-07-01-ssd-architektur | SSD-Architektur – Host, Controller mit FTL, und NAND Flash Chips |
+| 02-07-01-ssd-formfaktoren | Moderne SSD-Formfaktoren – mSATA, M.2 SATA, M.2 NVMe |
+
+### 02-Grundlagen (02-07-02)
+
+| Abbildungs-ID | Beschreibung |
+|---------------|--------------|
+| 02-07-02-dateisystem-abstraktion | Die drei Abstraktionsebenen eines Dateisystems |
+| 02-07-02-verzeichnis-evolution | Evolution der Verzeichnisstruktur – von flach bis zum azyklischen Graphen |
+| 02-07-02-hard-vs-soft-links | Hard Links vs. Symbolic Links – zwei Wege zur gemeinsamen Dateinutzung |
+| 02-07-02-open-file-tables | Drei-Ebenen-Struktur der Open File Tables |
+| 02-07-02-unix-permissions | Aufbau der Unix-Dateiberechtigungen |
+| 02-07-02-vfs | Das Virtual File System als einheitliche Abstraktionsschicht |
+| 02-07-02-mount-concept | Vor und nach dem Mounten eines USB-Sticks |
+
+### 03-Implementierung (02-07-03)
+
+| Abbildungs-ID | Beschreibung |
+|---------------|--------------|
+| 02-07-03-disk-layout | Typische Aufteilung eines Speichermediums in funktionale Bereiche |
+| 02-07-03-contiguous-alloc | Zusammenhängende Blockallokation – Dateien belegen aufeinanderfolgende Blöcke |
+| 02-07-03-linked-alloc | Verkettete Blockallokation – jeder Block enthält Zeiger auf den nächsten |
+| 02-07-03-fat-alloc | File Allocation Table – zentrale Tabelle im RAM mit Verkettungsinformationen |
+| 02-07-03-inode-alloc | Inode-Struktur mit Direct Blocks und mehrstufiger Indirektion |
+| 02-07-03-dir-linear | Verzeichnis als lineare Liste mit Name-Inode-Zuordnungen |
+| 02-07-03-dir-hash | Verzeichnis mit Hash-Tabelle und Kollisionsbehandlung durch Verkettung |
+| 02-07-03-bitmap-free | Bitmap-basierte Freispeicherverwaltung – ein Bit pro Block |
+| 02-07-03-freelist | Verkettete Freispeicherliste – freie Blöcke zeigen auf den nächsten freien Block |
+| 02-07-03-buffer-cache | Buffer Cache als Vermittler zwischen Anwendung und Festplatte |
+
+### 04-Journaling (02-07-04)
+
+| Abbildungs-ID | Beschreibung |
+|---------------|--------------|
+| 02-07-04-journaling-prinzip | Vergleich – ohne vs. mit Journaling bei einem Systemabsturz |
+| 02-07-04-journal-transaktion | Ablauf einer Journal-Transaktion mit den 5 Phasen |
+| 02-07-04-metadata-journaling | Metadata-Only Journaling – nur Metadaten werden geloggt |
+| 02-07-04-ordered-mode | Ordered Mode – Reihenfolge garantiert: Daten vor Metadaten |
+| 02-07-04-full-data-journaling | Full Data Journaling – alle Daten werden zweimal geschrieben |
+| 02-07-04-crash-recovery | Ablauf der Crash Recovery nach einem Systemabsturz |
+| 02-07-04-ext4-journal | Struktur des ext4 Journals (JBD2) als Ring Buffer |
+| 02-07-04-copy-on-write | Vergleich von In-Place Update und Copy-on-Write |
+
+---
+
+**Gesamtzahl der Abbildungen:** 186
 
 | Kapitel | Anzahl |
 |---------|--------|
@@ -276,3 +340,7 @@
 | 02-05-03 Paging | 6 |
 | 02-05-04 Segmentierung | 4 |
 | 02-06-01 IO-Grundlagen | 7 |
+| 02-07-01 Historie-Festplatten | 15 |
+| 02-07-02 Grundlagen | 7 |
+| 02-07-03 Implementierung | 10 |
+| 02-07-04 Journaling | 8 |
