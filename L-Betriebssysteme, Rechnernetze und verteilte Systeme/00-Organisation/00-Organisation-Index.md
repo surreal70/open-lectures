@@ -1,9 +1,12 @@
 ---
 author: Andreas Hümmer
-title: "Meta Index"
-tags: [index, meta, vault-info]
+title: Meta Index
+tags:
+  - index
+  - meta
+  - vault-info
 created: 2026-10-07
-modified: 2026-10-07
+modified: 2026-10-12
 bereich: Meta
 ---
 
@@ -23,11 +26,11 @@ bereich: Meta
 
 ## Versionen
 
-| Bereich | Version | Status |
-|---------|---------|--------|
-| **Betriebssysteme** | 0.9.3 | In Bearbeitung |
-| **Rechnernetze** | 0.1.0 | Begonnen |
-| **Verteilte Systeme** | 0.1.0 | Begonnen |
+| Bereich               | Version | Status   |
+| --------------------- | ------- | -------- |
+| **Betriebssysteme**   | 1.0.0   | Komplett |
+| **Rechnernetze**      | 0.1.0   | Begonnen |
+| **Verteilte Systeme** | 0.1.0   | Begonnen |
 
 ## Struktur
 
@@ -107,65 +110,3 @@ In diesem Vault werden verschiedene Callout-Boxen verwendet, um Informationen zu
 | `⊕` | XOR (Exklusiv-Oder) |
 
 ---
-
-## Changelog
-
-### Version 0.9.3 (Betriebssysteme) - Oktober 2026
-- **Ordnerstruktur reorganisiert** (logischere Reihenfolge):
-  - 01-Einfuehrung (unverändert)
-  - 02-Architektur (unverändert)
-  - 03-Prozesse (unverändert)
-  - 04-Synchronisation (vorher 07) – folgt logisch auf Prozesse
-  - 05-Speicherverwaltung (vorher 04)
-  - 06-Ein-Ausgabe (unverändert)
-  - 07-Dateisysteme (vorher 05) – ans Ende verschoben
-- Alle Dateien umbenannt (neue Präfixe)
-- Alle internen Crosslinks aktualisiert
-
-### Version 0.9.2 (Betriebssysteme) - Oktober 2026
-- **Kapitel 03-Prozesse komplett überarbeitet**
-  - 03-01-Prozessmodell: PCB, Prozesszustände, Interrupts, ASCII-Diagramme
-  - 03-02-Scheduling: FCFS, RR, SJF, SRTF, HRRN, MLFQ mit Berechnungen
-  - 03-03-Threads: User-/Kernel-Threads, Multithreading vs. Multitasking
-  - 03-04-Interprozesskommunikation: Pipes, Signals, Sockets, Shared Memory
-- **Kapitel 04-Speicherverwaltung komplett überarbeitet**
-  - 04-01-Adressraeume: MMU, Belegungsstrategien, Speicherschutz
-  - 04-02-Virtueller-Speicher: Speicherhierarchie, Swapping, Demand Paging
-  - 04-03-Paging: Page Tables, TLB, Ersetzungsalgorithmen
-- **Kapitel 07-Synchronisation komplett überarbeitet**
-  - 07-01-Kritische-Abschnitte: Race Conditions, Mutex, Lösungsansätze
-  - 07-02-Semaphore: P/V Operationen, Producer-Consumer
-  - 07-03-Deadlocks: Coffman-Bedingungen, Banker's Algorithm
-- Alle Dokumente mit Lernzielen, Prüfungstipps und ASCII-Diagrammen
-- Quellmaterial: IU Skript Teil 5 (Ressourcen) integriert
-
-### Version 0.9.1 (Betriebssysteme) - Oktober 2026
-- **Architektur-Kapitel vervollständigt** (02-Architektur)
-  - 02-03-Systemaufrufe: Lernziele hinzugefügt, Prüfungstipps strukturiert
-  - 02-04-Von-Neumann-vs-Harvard: Lernziele und Prüfungsrelevanz ergänzt
-  - 02-05-RISC-vs-CISC: Lernziele und Prüfungsrelevanz ergänzt
-  - 02-06-CPU-Architekturen: Vollständige Dokumentation
-- **Callout-Boxen vereinheitlicht** über alle Dokumente
-  - `[!info]` für Lernziele (konsistent)
-  - `[!warning]` für Prüfungsrelevant
-  - `[!question]` für Häufige Prüfungsfragen
-  - `[!tip]` für Merkhilfen
-- **Meta-Index erweitert**
-  - Farbcodierung der Callout-Boxen dokumentiert
-  - Symbole und Konventionen hinzugefügt
-  - Weiterführende Ressourcen mit externen Links
-
-### Version 0.7.1 (Betriebssysteme) - Oktober 2026
-- Einführung und Historie vollständig
-- Neuer Abschnitt: Einprogramm- zu Mehrprogrammbetrieb
-- RFC-Dokumentation erweitert (52 RFCs)
-- IEEE 802 Standards hinzugefügt
-
-### Version 0.1.0 (Rechnernetze) - Oktober 2026
-- Grundstruktur angelegt
-- Historie begonnen
-
-### Version 0.1.0 (Verteilte Systeme) - Oktober 2026
-- Grundstruktur angelegt
-
-

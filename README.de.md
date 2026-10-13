@@ -21,7 +21,7 @@ Die Materialien umfassen:
 
 **Sprache:** Die Kursmaterialien sind hauptsächlich auf **Deutsch**. Englische Übersetzungen können auf Anfrage erstellt werden.
 
-**Neu bei Obsidian?** Siehe die [Anleitung](HOWTO.md) für Installationshinweise, eine Kurzreferenz und Tipps zum effektiven Lernen.
+**Neu bei Obsidian?** Siehe die [Anleitung](HOWTO.de.md) für Installationshinweise, eine Kurzreferenz und Tipps zum effektiven Lernen.
 
 ## Lizenz
 

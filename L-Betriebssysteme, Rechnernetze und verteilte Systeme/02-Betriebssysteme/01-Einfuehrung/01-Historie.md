@@ -161,16 +161,6 @@ Die Z3 war der weltweit erste funktionierende, programmierbare, vollautomatische
 
 Colossus war der weltweit erste programmierbare, elektronische, digitale Computer. Er wurde entwickelt, um die verschlüsselten Nachrichten der deutschen Lorenz-Chiffriermaschine zu knacken.
 
-**Technische Daten:**
-
-| Eigenschaft | Mark 1 (1943) | Mark 2 (1944) |
-|-------------|---------------|---------------|
-| Röhren (Vakuumröhren) | 1.600 | 2.400 |
-| Leistungsaufnahme | 8,5 kW | 8,5 kW |
-| Geschwindigkeit | - | 5x schneller |
-| Eingabe | Lochstreifen (5.000 Zeichen/Sek.) | Lochstreifen |
-| Anzahl gebaut | 1 | 10 |
-
 **Historische Bedeutung:**
 - Der erste Mark 2 wurde am **1. Juni 1944** fertig - gerade rechtzeitig für die Planungen zum **D-Day** (6. Juni 1944)
 - Die Existenz von Colossus wurde bis Mitte der 1970er Jahre geheim gehalten
@@ -203,29 +193,29 @@ Colossus war der weltweit erste programmierbare, elektronische, digitale Compute
 
 **Technische Daten:**
 
-| Eigenschaft | Wert |
-|-------------|------|
-| Fertigstellung | 1945, offiziell eingeweiht 15. Februar 1946 |
-| Entwickler | John Mauchly & J. Presper Eckert (University of Pennsylvania) |
-| Röhren | 17.468 Vakuumröhren |
-| Gewicht | ca. 30 Tonnen |
-| Grundfläche | ca. 167 m² |
-| Leistungsaufnahme | 150 kW |
-| Kosten | $487.000 (ca. $7 Mio. in 2024) |
-| Geschwindigkeit | 1.000x schneller als elektromechanische Rechner |
-| Betriebsdauer | 1945-1955 (Aberdeen Proving Ground) |
+| Eigenschaft       | Wert                                                          |
+| ----------------- | ------------------------------------------------------------- |
+| Fertigstellung    | 1945, offiziell eingeweiht 15. Februar 1946                   |
+| Entwickler        | John Mauchly & J. Presper Eckert (University of Pennsylvania) |
+| Röhren            | 17.468 Vakuumröhren                                           |
+| Gewicht           | ca. 30 Tonnen                                                 |
+| Grundfläche       | ca. 167 m²                                                    |
+| Leistungsaufnahme | 150 kW                                                        |
+| Kosten            | $487.000 (ca. $7 Mio. in 2024)                                |
+| Geschwindigkeit   | 1.000x schneller als elektromechanische Rechner               |
+| Betriebsdauer     | 1945-1955 (Aberdeen Proving Ground)                           |
 
 **Die ENIAC Six - Die ersten Programmiererinnen:**
 Sechs Mathematikerinnen programmierten den ENIAC, um ballistische Flugbahnen zu berechnen:
 
-| Name | Späterer Name |
-|------|---------------|
-| Betty Jean Jennings | Jean Bartik |
-| Frances "Betty" Snyder | Betty Holberton |
-| Kathleen McNulty | Kay Mauchly Antonelli |
-| Marlyn Wescoff | Marlyn Meltzer |
-| Frances Bilas | Fran Spence |
-| Ruth Lichterman | Ruth Teitelbaum |
+| Name                   | Späterer Name         |
+| ---------------------- | --------------------- |
+| Betty Jean Jennings    | Jean Bartik           |
+| Frances "Betty" Snyder | Betty Holberton       |
+| Kathleen McNulty       | Kay Mauchly Antonelli |
+| Marlyn Wescoff         | Marlyn Meltzer        |
+| Frances Bilas          | Fran Spence           |
+| Ruth Lichterman        | Ruth Teitelbaum       |
 
 Sie wurden 1997 in die **Women in Technology International Hall of Fame** aufgenommen.
 
@@ -285,6 +275,14 @@ Die zweite Generation markierte den Übergang von Vakuumröhren zu **Transistore
 > Obwohl technisch noch zur 1. Generation gehörend (elektromechanisch), war der Mark I ein wichtiger Übergang zur modernen Computerära und wurde bis in die 1950er Jahre genutzt.
 
 **Technische Daten:**
+
+| Eigenschaft           | Mark 1 (1943)                     | Mark 2 (1944) |
+| --------------------- | --------------------------------- | ------------- |
+| Röhren (Vakuumröhren) | 1.600                             | 2.400         |
+| Leistungsaufnahme     | 8,5 kW                            | 8,5 kW        |
+| Geschwindigkeit       | -                                 | 5x schneller  |
+| Eingabe               | Lochstreifen (5.000 Zeichen/Sek.) | Lochstreifen  |
+| Anzahl gebaut         | 1                                 | 10            |
 
 | Eigenschaft | Wert |
 |-------------|------|
