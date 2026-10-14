@@ -24,6 +24,8 @@ bereich: RN
 
 Das **Network Time Protocol (NTP)** synchronisiert Systemuhren in Netzwerken. Präzise Zeitsynchronisation ist kritisch für Logging, Authentifizierung, Zertifikate und verteilte Systeme.
 
+**Verwendete Ports:** 123 UDP und TCP
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    NTP-Stratum-Hierarchie                   │

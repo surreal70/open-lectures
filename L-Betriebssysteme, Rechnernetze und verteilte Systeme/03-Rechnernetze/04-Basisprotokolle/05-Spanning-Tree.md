@@ -55,7 +55,15 @@ Das **Spanning Tree Protocol (STP)** verhindert Schleifen in geswitchten Netzwer
 
 ### Root Bridge Election
 
-TODO: Bridge ID (Priorität + MAC), niedrigste gewinnt
+Im ersten Schritt wird eine **Root Bridge** ausgewählt, die als Ausgangspunkt für den Spannbaum fungiert:
+
+- Jeder Switch hat eine **Bridge ID** (Priorität + MAC-Adresse)
+- Die **niedrigste Bridge ID** gewinnt
+- Standardpriorität: 32768
+- Von der Root Bridge aus werden die Pfade ausgebaut
+
+> [!warning] Sicherheitsrisiko
+> Die vergleichsweise lange Ausfallzeit bei Neustrukturierung macht STP anfällig für Angriffe. Nur über die Root Bridge können Einstellungen verändert und Timer neu justiert werden.
 
 ### Pfadkostenberechnung
 
@@ -68,13 +76,24 @@ TODO: Kosten basierend auf Bandbreite
 | 1 Gbps | 4 | 20.000 |
 | 10 Gbps | 2 | 2.000 |
 
+## Port-Zustände
+
+| Zustand | Frames | Adressen lernen | BPDUs empfangen | BPDUs senden |
+|---------|--------|-----------------|-----------------|--------------|
+| **Forwarding** | Weiterleiten | ✓ | ✓ | ✓ |
+| **Blocking** | Verwerfen | ✗ | ✓ | ✗ |
+| **Listening** | Verwerfen | ✗ | ✓ | ✓ |
+| **Learning** | Verwerfen | ✓ | ✓ | ✓ |
+| **Disabled** | Verwerfen | ✗ | ✗ | ✗ |
+
+> [!info] BPDU
+> **Bridge Protocol Data Units (BPDUs)** sind die Kontrollnachrichten, die Switches untereinander austauschen, um die Topologie zu ermitteln.
+
 ### Port-Rollen
 
-TODO: Root Port, Designated Port, Blocked/Alternate Port
-
-### Port-Zustände
-
-TODO: Blocking, Listening, Learning, Forwarding, Disabled
+- **Root Port**: Der Port mit dem kürzesten Pfad zur Root Bridge
+- **Designated Port**: Der Port, der Frames an ein Segment weiterleitet
+- **Blocked/Alternate Port**: Deaktivierter Port zur Schleifenvermeidung
 
 ## BPDU-Format
 

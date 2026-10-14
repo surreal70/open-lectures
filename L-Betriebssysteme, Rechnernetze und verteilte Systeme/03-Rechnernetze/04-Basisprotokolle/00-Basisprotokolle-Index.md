@@ -57,6 +57,7 @@ Dieses Kapitel behandelt fundamentale Netzwerkprotokolle und Dienste, die für d
 | 03 | [[03-DNS\|DNS]] | Domain Name System | 7 |
 | 04 | [[04-NTP\|NTP]] | Network Time Protocol | 7 |
 | 05 | [[05-Spanning-Tree\|Spanning Tree]] | Schleifenvermeidung in L2-Netzen | 2 |
+| 06 | [[06-NDP\|NDP]] | Neighbor Discovery Protocol (IPv6) | 3 |
 
 ## Einordnung
 
@@ -67,6 +68,7 @@ Diese Protokolle bilden das **Fundament** für den praktischen Betrieb von Netzw
 - **DNS**: Übersetzt menschenlesbare Namen in IP-Adressen
 - **NTP**: Synchronisiert Systemuhren – kritisch für Logs, Zertifikate, Authentifizierung
 - **Spanning Tree**: Verhindert Broadcast-Stürme in geswitchten Netzen
+- **NDP**: IPv6-Ersatz für ARP mit erweiterten Funktionen
 
 ## Zusammenhänge
 

@@ -60,15 +60,47 @@ Das **Dynamic Host Configuration Protocol (DHCP)** automatisiert die Netzwerkkon
 
 ### DORA-Prozess
 
-TODO: Detaillierte Beschreibung der vier Schritte
+Der DHCP-Prozess besteht aus vier Schritten (DORA):
+
+1. **DHCPDISCOVER**: Ein Client ohne IP-Adresse sendet eine Broadcast-Anfrage nach Adress-Angeboten an alle DHCP-Server im lokalen Netz.
+
+2. **DHCPOFFER**: Die DHCP-Server antworten mit entsprechenden Werten auf eine DHCPDISCOVER-Anfrage.
+
+3. **DHCPREQUEST**: Der Client fordert eine der angebotenen IP-Adressen, weitere Daten sowie Verlängerung der Lease-Zeit von einem der antwortenden DHCP-Server.
+
+4. **DHCPACK**: Bestätigung des DHCP-Servers zu einer DHCPREQUEST-Anforderung.
+
+### Weitere DHCP-Nachrichten
+
+| Nachricht | Beschreibung |
+|-----------|--------------|
+| **DHCPNAK** | Ablehnung einer DHCPREQUEST-Anforderung durch den DHCP-Server |
+| **DHCPDECLINE** | Ablehnung durch den Client, da die IP-Adresse schon verwendet wird |
+| **DHCPRELEASE** | Der Client gibt die eigene Konfiguration frei, damit die Parameter wieder für andere Clients zur Verfügung stehen |
+| **DHCPINFORM** | Anfrage eines Clients nach weiteren Konfigurationsparametern, z.B. weil der Client eine statische IP-Adresse besitzt |
 
 ### Lease-Verwaltung
 
 TODO: Lease-Zeit, Renewal (T1), Rebinding (T2)
 
+### Portnummern
+
+| Protokoll | Port | Verwendung |
+|-----------|------|------------|
+| UDP | 67 | IPv4 Server oder Relay Agent |
+| UDP | 68 | IPv4 Client |
+| UDP | 547 | IPv6 Server oder Relay Agent |
+| UDP | 546 | IPv6 Client |
+
 ### DHCP-Optionen
 
-TODO: Option 1 (Subnet Mask), Option 3 (Router), Option 6 (DNS), etc.
+Wichtige Server-Optionen (Auszug):
+- **Time Server** (RFC 868) und NTP-Server
+- **Name Server** (DNS)
+- **Router** (Default Gateway)
+- **Subnet Mask**
+- **Domain Name**
+- **Lease Time**
 
 ## Paketformat
 

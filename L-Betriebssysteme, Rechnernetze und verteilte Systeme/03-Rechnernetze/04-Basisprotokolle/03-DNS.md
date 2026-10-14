@@ -52,7 +52,15 @@ Das **Domain Name System (DNS)** ist ein hierarchisches, verteiltes System zur N
 
 ### Rekursive Auflösung
 
-TODO: Client fragt Resolver, Resolver erledigt alles
+Bei der rekursiven Auflösung fragt der Client einen Resolver, der die gesamte Auflösung übernimmt:
+
+1. Client fragt lokalen DNS-Resolver
+2. Resolver prüft lokalen Cache
+3. Bei Cache Miss: Resolver fragt nacheinander Root → TLD → Authoritative
+4. Resolver speichert Ergebnis im Cache und antwortet dem Client
+
+> [!info] Caching
+> Sowohl positive als auch **negative Antworten** werden gecacht (Negative Caching). Die TTL bestimmt die Cache-Dauer.
 
 ### Iterative Auflösung
 
@@ -72,18 +80,16 @@ TODO: TTL, Negative Caching
 
 ## Record-Typen
 
-| Typ | Beschreibung | Beispiel |
-|-----|--------------|----------|
-| A | IPv4-Adresse | `www.example.de → 93.184.216.34` |
-| AAAA | IPv6-Adresse | `www.example.de → 2606:2800:...` |
-| CNAME | Alias | `www → webserver.example.de` |
-| MX | Mailserver | `example.de → mail.example.de` |
-| NS | Nameserver | `example.de → ns1.example.de` |
-| TXT | Textinformation | SPF, DKIM, DMARC |
-| PTR | Reverse DNS | `34.216.184.93 → www.example.de` |
-| SOA | Zone-Autorität | Seriennummer, Refresh, Expire |
-
-TODO: Detaillierte Erklärung jedes Typs
+| Typ | IPv4 | IPv6 | Beschreibung | Beispiel |
+|-----|------|------|--------------|----------|
+| **A** | ✓ | - | Name zu IPv4-Adresse | `foo.example.org. IN A 192.168.1.2` |
+| **AAAA** | - | ✓ | Name zu IPv6-Adresse | `foo.example.org. IN AAAA 2001:db8::1` |
+| **PTR** | ✓ | ✓ | Adresse zu Name (Reverse) | `2.1.168.192.in-addr.arpa. IN PTR foo.example.org.` |
+| **CNAME** | ✓ | ✓ | Alias für einen Namen | `www IN CNAME foo.example.org.` |
+| **NS** | ✓ | ✓ | Nameserver für Domain | `example.org. IN NS ns1.example.org.` |
+| **MX** | ✓ | ✓ | Mailserver für Domain | `example.org. 10 IN MX mail.example.org.` |
+| **TXT** | ✓ | ✓ | Textinformation | SPF, DKIM, DMARC |
+| **SOA** | ✓ | ✓ | Zone-Autorität | Seriennummer, Refresh, Expire |
 
 ## Paketformat
 
@@ -91,7 +97,20 @@ TODO: DNS-Header und -Sections (Question, Answer, Authority, Additional)
 
 ## DNS-Zonen
 
-TODO: Primary/Secondary, Zone Transfers (AXFR, IXFR)
+### Zonentypen
+
+| Zonentyp | Beschreibung |
+|----------|--------------|
+| **Primary** | Autoritativer Server mit Original-Zonendaten. Hier werden Änderungen durchgeführt. |
+| **Secondary** | Autoritativer DNS Server mit Kopie der Zonendaten vom Primary. Zonendaten müssen nur an einer Stelle gepflegt werden. |
+| **Stub Zone** | Enthält nur Verweise auf die autoritativen Nameserver für eine DNS Zone (keine vollständige Kopie) |
+| **Delegate** | Benennt einen autoritativen Nameserver für eine DNS Zone |
+| **Hidden Primary** | Die Zonendaten zeigen auf "andere" autoritative DNS Server für diese Zone |
+
+### Zone Transfers
+
+- **AXFR**: Vollständiger Zonentransfer
+- **IXFR**: Inkrementeller Zonentransfer (nur Änderungen)
 
 ## Sicherheit
 
