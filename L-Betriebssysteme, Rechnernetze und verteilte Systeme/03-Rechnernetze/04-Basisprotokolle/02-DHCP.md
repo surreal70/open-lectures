@@ -17,14 +17,66 @@ bereich: RN
 
 # DHCP – Dynamic Host Configuration Protocol
 
-## Definition
+> [!info] **Lernziele**
+> Nach diesem Kapitel solltest du:
+> - Den Zweck von DHCP verstehen (automatische Netzwerkkonfiguration)
+> - Den DORA-Prozess (Discover, Offer, Request, Acknowledge) erklären können
+> - Die Lease-Verwaltung mit T1 und T2 verstehen
+> - Die wichtigsten DHCP-Optionen kennen
+> - DHCP-Relay und dessen Notwendigkeit verstehen
+> - Sicherheitsrisiken (Starvation, Rogue Server) und Gegenmaßnahmen kennen
+> - Den Unterschied zwischen DHCPv4 und DHCPv6/SLAAC verstehen
 
-Das **Dynamic Host Configuration Protocol (DHCP)** automatisiert die Netzwerkkonfiguration von Endgeräten. Es vergibt IP-Adressen, Subnetzmasken, Default Gateways, DNS-Server und weitere Parameter dynamisch an Clients.
+---
 
-> [!info] Schichtzuordnung
+## Das Problem: Manuelle Konfiguration skaliert nicht
+
+> [!important] **Kernkonzept**
+> Das **Dynamic Host Configuration Protocol (DHCP)** automatisiert die Netzwerkkonfiguration von Endgeräten. Es vergibt IP-Adressen, Subnetzmasken, Default Gateways, DNS-Server und weitere Parameter dynamisch an Clients – ohne manuelle Konfiguration jedes einzelnen Geräts.
+
+### Warum ist DHCP notwendig?
+
+Ohne DHCP müsste jedes Gerät manuell konfiguriert werden:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│              Das Konfigurationsproblem                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│   Ohne DHCP:                                                    │
+│   ┌─────────────────────────────────────────────────────────┐  │
+│   │ • Jedes Gerät manuell konfigurieren                     │  │
+│   │ • IP-Adressen manuell vergeben und dokumentieren       │  │
+│   │ • Bei Änderungen: alle Geräte anfassen                 │  │
+│   │ • Fehleranfällig: Tippfehler, Duplikate                │  │
+│   │ • Hoher Administrationsaufwand                          │  │
+│   └─────────────────────────────────────────────────────────┘  │
+│                                                                  │
+│   Mit DHCP:                                                     │
+│   ┌─────────────────────────────────────────────────────────┐  │
+│   │ • Gerät anschließen → automatisch konfiguriert         │  │
+│   │ • Zentrale Verwaltung aller IP-Parameter               │  │
+│   │ • Änderungen nur am Server → alle Clients aktualisiert │  │
+│   │ • Keine Duplikate möglich                               │  │
+│   │ • Skaliert auf tausende Geräte                         │  │
+│   └─────────────────────────────────────────────────────────┘  │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+> [!example] **Analogie: Hotel-Rezeption**
+> - Du kommst in ein Hotel (= Netzwerk) und brauchst ein Zimmer (= IP-Adresse)
+> - Die **Rezeption** (= DHCP-Server) weist dir ein freies Zimmer zu
+> - Du bekommst einen **Schlüssel** (= vollständige Netzwerkkonfiguration)
+> - Das Zimmer ist für deine **Aufenthaltsdauer reserviert** (= Lease-Zeit)
+> - Beim Auschecken wird das Zimmer wieder **freigegeben** (= Release)
+
+---
+
+## DHCP im Protokollstapel
+
+> [!info] **Schichtzuordnung**
 > DHCP ist ein **Layer 7-Protokoll** (Anwendungsschicht), das auf UDP aufsetzt. Es hat jedoch eine Besonderheit: Es muss funktionieren, **bevor** der Client eine IP-Adresse hat. Deshalb nutzt es Broadcast auf Layer 2/3 mit den speziellen Adressen 0.0.0.0 (Quelle) und 255.255.255.255 (Ziel).
-
-## Einordnung im Protokollstapel
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -57,7 +109,7 @@ Das **Dynamic Host Configuration Protocol (DHCP)** automatisiert die Netzwerkkon
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## Portnummern
+### Portnummern
 
 | Protokoll | Port | Verwendung |
 |-----------|------|------------|
@@ -66,15 +118,9 @@ Das **Dynamic Host Configuration Protocol (DHCP)** automatisiert die Netzwerkkon
 | UDP | **547** | DHCPv6-Server / Relay Agent |
 | UDP | **546** | DHCPv6-Client |
 
-> [!tip] Merkregel Ports
-> **67** = Server, **68** = Client (aufsteigende Reihenfolge)
+---
 
 ## DORA-Prozess
-
-> [!info] RFC-Referenz
-> - DHCPv4: [[A-RFC-Index#RFC 2131|RFC 2131]]
-> - DHCP-Optionen: [[A-RFC-Index#RFC 2132|RFC 2132]]
-> - DHCPv6: [[A-RFC-Index#RFC 8415|RFC 8415]]
 
 Der DHCP-Prozess besteht aus vier Schritten – **DORA**:
 
@@ -132,6 +178,8 @@ Der DHCP-Prozess besteht aus vier Schritten – **DORA**:
 > [!question] Warum ist DHCPREQUEST ein Broadcast?
 > Der Client sendet DHCPREQUEST als **Broadcast**, damit **alle** DHCP-Server im Netzwerk erfahren, welchen Server der Client gewählt hat. Die nicht gewählten Server können ihre Angebote dann zurücknehmen.
 
+---
+
 ## Weitere DHCP-Nachrichten
 
 | Nachricht | Richtung | Beschreibung |
@@ -158,6 +206,8 @@ Der DHCP-Prozess besteht aus vier Schritten – **DORA**:
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
+---
 
 ## Lease-Verwaltung
 
@@ -196,11 +246,7 @@ Die IP-Adresse wird für eine **Lease-Zeit** vergeben – nicht dauerhaft.
 | **T2 (87.5%)** | Rebinding | Client sendet DHCPREQUEST als Broadcast an alle Server |
 | **100%** | Lease Expired | Client **muss** IP aufgeben, startet DORA neu |
 
-> [!tip] Typische Lease-Zeiten
-> - **Unternehmensnetz**: 8-24 Stunden
-> - **Heimnetz**: 24 Stunden bis 7 Tage
-> - **Öffentliches WLAN**: 1-4 Stunden
-> - **Mobilfunk**: Oft unbegrenzt (Carrier-Grade NAT)
+---
 
 ## DHCP-Paketformat
 
@@ -241,16 +287,11 @@ DHCP basiert auf dem älteren **BOOTP**-Format:
 | **hlen** | 1 | Hardware-Adresslänge: 6 (MAC) |
 | **hops** | 1 | Relay-Hop-Count |
 | **xid** | 4 | Transaction ID (zufällig, zur Zuordnung) |
-| **secs** | 2 | Sekunden seit DHCP-Start |
-| **flags** | 2 | Flags (Bit 0: Broadcast-Flag) |
-| **ciaddr** | 4 | Client IP (falls bekannt) |
 | **yiaddr** | 4 | "Your" IP (vom Server angeboten) |
-| **siaddr** | 4 | Server IP |
 | **giaddr** | 4 | Gateway/Relay IP |
 | **chaddr** | 16 | Client Hardware Address (MAC) |
-| **sname** | 64 | Server Hostname (optional) |
-| **file** | 128 | Boot-Dateiname (PXE) |
-| **options** | var | DHCP-Optionen |
+
+---
 
 ## DHCP-Optionen
 
@@ -266,23 +307,8 @@ DHCP-Optionen transportieren die eigentlichen Konfigurationsparameter:
 | **51** | Lease Time | Gültigkeitsdauer in Sekunden |
 | **53** | Message Type | DISCOVER, OFFER, REQUEST, ACK, etc. |
 | **54** | Server Identifier | IP des DHCP-Servers |
-| **55** | Parameter Request | Vom Client gewünschte Optionen |
-| **61** | Client Identifier | Eindeutige Client-ID |
-| **66** | TFTP Server | Für PXE-Boot |
-| **67** | Bootfile Name | Für PXE-Boot |
 
-> [!example] DHCP-Optionen im Wireshark
-> ```
-> Option: (53) DHCP Message Type (Discover)
-> Option: (55) Parameter Request List
->     Parameter Request List Item: (1) Subnet Mask
->     Parameter Request List Item: (3) Router
->     Parameter Request List Item: (6) Domain Name Server
->     Parameter Request List Item: (15) Domain Name
-> Option: (61) Client identifier
->     Hardware type: Ethernet (0x01)
->     Client MAC address: aa:bb:cc:dd:ee:ff
-> ```
+---
 
 ## DHCP-Relay
 
@@ -323,10 +349,7 @@ Da DHCP Broadcasts verwendet, funktioniert es nur im lokalen Netzwerk. Ein **DHC
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-> [!tip] Relay-Konfiguration
-> Der Relay-Agent wird oft auf dem Router konfiguriert:
-> - **Cisco IOS**: `ip helper-address 10.0.0.5`
-> - **Linux (dhcrelay)**: `dhcrelay -i eth0 10.0.0.5`
+---
 
 ## DHCPv6
 
@@ -338,7 +361,6 @@ DHCPv6 unterscheidet sich von DHCPv4:
 | **Adressen** | Broadcast | Multicast (ff02::1:2) |
 | **Nachrichten** | DISCOVER, OFFER, REQUEST, ACK | SOLICIT, ADVERTISE, REQUEST, REPLY |
 | **Alternative** | Keine | SLAAC (Stateless) |
-| **Identifier** | MAC-basiert | DUID (DHCP Unique ID) |
 
 ### Stateful vs. Stateless
 
@@ -367,6 +389,8 @@ DHCPv6 unterscheidet sich von DHCPv4:
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
+---
 
 ## Sicherheit
 
@@ -418,33 +442,15 @@ DHCPv6 unterscheidet sich von DHCPv4:
 
 ### Gegenmaßnahmen
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              DHCP-Sicherheitsmaßnahmen                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   ✓ DHCP Snooping (Switch-Feature)                             │
-│     → Switch lernt legitime DHCP-Server                        │
-│     → Blockiert DHCP-Antworten von nicht-trusted Ports        │
-│     → Baut Binding-Tabelle auf (MAC ↔ IP ↔ Port)              │
-│                                                                  │
-│   ✓ Port Security                                              │
-│     → Begrenzt MAC-Adressen pro Port                           │
-│     → Verhindert Starvation mit vielen MACs                    │
-│                                                                  │
-│   ✓ Rate Limiting                                              │
-│     → Begrenzt DHCP-Nachrichten pro Zeiteinheit                │
-│                                                                  │
-│   ✓ 802.1X                                                     │
-│     → Authentifizierung vor Netzwerkzugang                     │
-│     → Nur autorisierte Geräte erhalten DHCP                    │
-│                                                                  │
-│   ✓ IP Source Guard                                            │
-│     → Nutzt DHCP-Snooping-Tabelle                              │
-│     → Blockiert Traffic mit gefälschter Quell-IP              │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Maßnahme | Beschreibung |
+|----------|--------------|
+| **DHCP Snooping** | Switch lernt legitime DHCP-Server, blockiert andere |
+| **Port Security** | Begrenzt MAC-Adressen pro Port |
+| **Rate Limiting** | Begrenzt DHCP-Nachrichten pro Zeiteinheit |
+| **802.1X** | Authentifizierung vor Netzwerkzugang |
+| **IP Source Guard** | Blockiert Traffic mit gefälschter Quell-IP |
+
+---
 
 ## Praxisbeispiele
 
@@ -465,77 +471,74 @@ DHCPv6 unterscheidet sich von DHCPv4:
 > C:\> ipconfig /release      # IP freigeben
 > C:\> ipconfig /renew        # Neue IP anfordern
 > C:\> ipconfig /all          # Lease-Infos anzeigen
-> 
-> DHCP-Server . . . . . . . . : 192.168.1.1
-> Lease erhalten. . . . . . . : 13.10.2026 10:00:00
-> Lease läuft ab. . . . . . . : 14.10.2026 10:00:00
 > ```
 
-## Prüfungsrelevante Themen
+---
 
-> [!warning] Klausurrelevanz: Hoch
->
-> **Häufige Prüfungsthemen:**
-> 1. DORA-Prozess (Discover, Offer, Request, Acknowledge)
-> 2. Warum ist DHCPREQUEST ein Broadcast?
-> 3. Lease-Konzept (T1 = 50%, T2 = 87.5%)
-> 4. DHCP-Relay: Warum nötig? Wie funktioniert es?
-> 5. Wichtige DHCP-Optionen (1, 3, 6, 51, 53)
-> 6. Sicherheitsrisiken (Starvation, Rogue Server)
+## Zusammenhänge
 
-### Typische Prüfungsfragen
+```mermaid
+graph LR
+    A[DHCP] --> B[IP-Adresse]
+    A --> C[DNS-Server]
+    A --> D[Default Gateway]
+    A --> E[NTP-Server]
+    A --> F[ARP]
+    B --> G[Netzwerkschicht]
+    C --> H[Namensauflösung]
+    F --> I[Duplicate Detection]
+```
 
-> [!question] Übungsfragen
+- [[01-ARP|ARP]] → DHCP nutzt ARP für Duplicate Address Detection
+- [[03-DNS|DNS]] → DNS-Server-Adressen werden via DHCP verteilt
+- [[04-NTP|NTP]] → NTP-Server können via DHCP verteilt werden
+- [[06-NDP|NDP]] → IPv6 Alternative: SLAAC via Router Advertisement
+
+---
+
+## Prüfungstipps
+
+> [!warning] **Prüfungsrelevant**
+> - DORA-Prozess (Discover, Offer, Request, Acknowledge)
+> - Warum ist DHCPREQUEST ein Broadcast?
+> - Lease-Konzept (T1 = 50%, T2 = 87.5%)
+> - DHCP-Relay: Warum nötig? Wie funktioniert es?
+> - Wichtige DHCP-Optionen (1, 3, 6, 51, 53)
+> - Sicherheitsrisiken (Starvation, Rogue Server)
+
+> [!question] **Häufige Prüfungsfragen**
 > 1. Beschreiben Sie den DORA-Prozess.
 > 2. Was passiert, wenn T1 erreicht wird und der ursprüngliche Server nicht antwortet?
 > 3. Warum kann ein DHCP-Server nicht in einem anderen Subnetz stehen (ohne Relay)?
 > 4. Wie schützt DHCP Snooping vor Rogue-Servern?
 > 5. Was ist der Unterschied zwischen DHCPv4 und SLAAC?
 
-### Merkhilfen
-
-> [!tip] Merkregel: DORA
+> [!tip] **Merkhilfen**
 > - **D**iscover = "**D**arf ich eine IP haben?"
 > - **O**ffer = "**O**k, hier ist ein Angebot"
 > - **R**equest = "**R**eserviere mir diese IP"
 > - **A**ck = "**A**lles klar, sie gehört dir"
+> - **Port 67** = Server, **Port 68** = Client (aufsteigend)
+> - **T1 = 50%**, **T2 = 87.5%** (Renewal, Rebind)
 
-## Zusammenfassung
+---
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DHCP auf einen Blick                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Zweck:      Automatische Netzwerkkonfiguration               │
-│   Schicht:    Layer 7 (UDP), arbeitet mit Layer 2/3 Broadcast  │
-│   Standard:   RFC 2131 (DHCPv4), RFC 8415 (DHCPv6)             │
-│   Ports:      67 (Server), 68 (Client)                         │
-│                                                                  │
-│   Ablauf (DORA):                                               │
-│   1. Discover (Broadcast) - Client sucht Server                │
-│   2. Offer - Server bietet IP an                               │
-│   3. Request (Broadcast) - Client akzeptiert                   │
-│   4. Acknowledge - Server bestätigt                            │
-│                                                                  │
-│   Lease:      T1 (50%) → Renewal, T2 (87.5%) → Rebind         │
-│   Relay:      Für DHCP über Subnetzgrenzen hinweg             │
-│   Optionen:   Subnet, Gateway, DNS, NTP, Domain, etc.         │
-│   Sicherheit: DHCP Snooping, Port Security, 802.1X            │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+## Weiterführende Ressourcen
 
-## Querverweise
+> [!note] **RFC und Standards**
+> - [[A-RFC-Index#RFC 2131|RFC 2131]] - Dynamic Host Configuration Protocol
+> - [[A-RFC-Index#RFC 2132|RFC 2132]] - DHCP Options and BOOTP Vendor Extensions
+> - [[A-RFC-Index#RFC 8415|RFC 8415]] - DHCPv6
 
-- [[01-ARP|ARP]] – DHCP nutzt ARP für Duplicate Address Detection
-- [[03-DNS|DNS]] – DNS-Server-Adressen werden via DHCP verteilt
-- [[04-NTP|NTP]] – NTP-Server können via DHCP verteilt werden
-- [[06-NDP|NDP]] – IPv6 Alternative: SLAAC via Router Advertisement
-- [[../03-Referenzmodelle/06-Netzwerkschicht/03-IPv6|IPv6]] – DHCPv6 vs. SLAAC
+> [!tip] **Praktische Tools**
+> - **Wireshark** → DHCP-Traffic analysieren (Filter: `bootp` oder `dhcp`)
+> - **dhcpdump** → DHCP-Pakete im Klartext anzeigen
+> - **dnsmasq** → Einfacher DHCP-Server für Tests
+
+---
 
 ## Quellen
 
-- [[A-RFC-Index#RFC 2131|RFC 2131]] - Dynamic Host Configuration Protocol
-- [[A-RFC-Index#RFC 2132|RFC 2132]] - DHCP Options and BOOTP Vendor Extensions
-- [[A-RFC-Index#RFC 8415|RFC 8415]] - DHCPv6
+- Tanenbaum, Andrew S.: Computernetzwerke – Die Standardreferenz für Netzwerkprotokolle mit detaillierter Beschreibung von DHCP und anderen Basisdiensten.
+- Kurose, Ross: Computernetze – Ein Top-Down-Ansatz – Didaktisch aufbereitete Darstellung der Anwendungsschicht-Protokolle.
+- RFC 2131 – Dynamic Host Configuration Protocol – Die maßgebliche Spezifikation für DHCPv4.

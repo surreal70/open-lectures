@@ -17,14 +17,23 @@ bereich: RN
 
 # Spanning Tree Protocol (STP)
 
-## Definition
+> [!info] **Lernziele**
+> Nach diesem Kapitel solltest du:
+> - Das Layer-2-Schleifenproblem verstehen (Broadcast-Sturm, MAC-Flapping)
+> - Die Root Bridge Election erklären können (Bridge ID = Priority + MAC)
+> - Port-Rollen (Root, Designated, Blocked) unterscheiden können
+> - Port-Zustände (Blocking, Listening, Learning, Forwarding) kennen
+> - Den Unterschied zwischen STP und RSTP verstehen (Konvergenzzeit)
+> - Sicherheitsmaßnahmen (BPDU Guard, Root Guard) kennen
 
-Das **Spanning Tree Protocol (STP)** verhindert Schleifen in geswitchten Layer-2-Netzwerken. Es erstellt einen schleifenfreien Spannbaum, indem es redundante Pfade blockiert und nur einen aktiven Pfad zwischen je zwei Netzwerkknoten zulässt.
+---
 
-> [!info] Schichtzuordnung
-> STP ist ein **Layer-2-Protokoll** (Sicherungsschicht). Es arbeitet mit MAC-Adressen und Ethernet-Frames. Die BPDUs (Bridge Protocol Data Units) werden als Multicast an `01:80:C2:00:00:00` gesendet.
+## Das Problem: Layer-2-Schleifen sind fatal
 
-## Das Schleifenproblem
+> [!important] **Kernkonzept**
+> Das **Spanning Tree Protocol (STP)** verhindert Schleifen in geswitchten Layer-2-Netzwerken. Es erstellt einen schleifenfreien Spannbaum, indem es redundante Pfade blockiert und nur einen aktiven Pfad zwischen je zwei Netzwerkknoten zulässt.
+
+### Warum sind Layer-2-Schleifen fatal?
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -49,9 +58,8 @@ Das **Spanning Tree Protocol (STP)** verhindert Schleifen in geswitchten Layer-2
 │                                                                  │
 │   Problem 2: MAC-Flapping                                       │
 │   ┌─────────────────────────────────────────────────────────┐  │
-│   │ Switch sieht dieselbe MAC-Adresse an verschiedenen     │  │
-│   │ Ports → MAC-Tabelle instabil → Pakete werden falsch    │  │
-│   │ zugestellt                                              │  │
+│   │ Switch sieht dieselbe MAC an verschiedenen Ports       │  │
+│   │ → MAC-Tabelle instabil → Pakete falsch zugestellt      │  │
 │   └─────────────────────────────────────────────────────────┘  │
 │                                                                  │
 │   Problem 3: Mehrfachzustellung                                │
@@ -63,12 +71,23 @@ Das **Spanning Tree Protocol (STP)** verhindert Schleifen in geswitchten Layer-2
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## STP-Lösung: Der Spannbaum
+> [!example] **Analogie: Einbahnstraßen-Netz**
+> - Eine Stadt mit **kreisförmigen Straßen** (= Schleifen)
+> - Autos fahren **endlos im Kreis** (= Broadcast-Sturm)
+> - Verkehr kollabiert, nichts kommt mehr an
+> - Lösung: **Straßensperren** aufstellen (= Ports blockieren)
+> - Bei Unfall: Alternative Route **automatisch freigeben** (= Failover)
 
-> [!info] IEEE-Standard
-> - **STP**: IEEE 802.1D (ursprünglich 1990, revidiert 2004)
-> - **RSTP**: IEEE 802.1w (2001, in 802.1D-2004 integriert)
-> - **MSTP**: IEEE 802.1s (2002, in 802.1Q integriert)
+---
+
+## STP im Protokollstapel
+
+> [!info] **Schichtzuordnung**
+> STP ist ein **Layer-2-Protokoll** (Sicherungsschicht). Es arbeitet mit MAC-Adressen und Ethernet-Frames. Die BPDUs (Bridge Protocol Data Units) werden als Multicast an `01:80:C2:00:00:00` gesendet.
+
+---
+
+## STP-Lösung: Der Spannbaum
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -89,6 +108,8 @@ Das **Spanning Tree Protocol (STP)** verhindert Schleifen in geswitchten Layer-2
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
+---
 
 ## Root Bridge Election
 
@@ -120,12 +141,7 @@ Der erste Schritt in STP ist die Wahl der **Root Bridge** – der zentrale Punkt
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-> [!tip] Root Bridge gezielt setzen
-> Um einen bestimmten Switch zur Root Bridge zu machen, setzt man dessen Priority niedriger:
-> ```
-> Switch(config)# spanning-tree vlan 1 priority 4096
-> ```
-> Priority muss ein Vielfaches von 4096 sein (0, 4096, 8192, ..., 61440).
+---
 
 ## Pfadkosten
 
@@ -137,33 +153,8 @@ Nach der Root Bridge Election berechnet jeder Switch den kürzesten Pfad zur Roo
 | 100 Mbps | 19 | 200.000 |
 | 1 Gbps | 4 | 20.000 |
 | 10 Gbps | 2 | 2.000 |
-| 100 Gbps | — | 200 |
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              Pfadkostenberechnung                               │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│                    Root Bridge (A)                              │
-│                    Priority: 4096                               │
-│                         │                                       │
-│              ┌──────────┴──────────┐                            │
-│              │ 1 Gbps              │ 1 Gbps                     │
-│              │ Kosten: 4           │ Kosten: 4                  │
-│              ▼                     ▼                            │
-│          Switch B              Switch C                         │
-│          Root Path Cost: 4     Root Path Cost: 4               │
-│              │                     │                            │
-│              │ 100 Mbps            │                            │
-│              │ Kosten: 19          │                            │
-│              ▼                     │                            │
-│          Switch D ◄────────────────┘                            │
-│          Root Path Cost: 23   oder   4                         │
-│                                                                  │
-│   Switch D wählt den Pfad über C (Kosten 4) statt über B (23)  │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+---
 
 ## Port-Rollen
 
@@ -172,7 +163,6 @@ Nach der Root Bridge Election berechnet jeder Switch den kürzesten Pfad zur Roo
 | **Root Port (RP)** | Port mit kürzestem Pfad zur Root Bridge | Forwarding |
 | **Designated Port (DP)** | Bester Port für ein Segment zur Root Bridge | Forwarding |
 | **Blocked/Alternate Port** | Redundanter Port, deaktiviert | Blocking |
-| **Backup Port** | Redundanter Port zum gleichen Segment (RSTP) | Blocking |
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -199,21 +189,21 @@ Nach der Root Bridge Election berechnet jeder Switch den kürzesten Pfad zur Roo
 │         └───────────────────┘                                   │
 │                                                                  │
 │   RP = Root Port, DP = Designated Port                         │
-│   Switch D: Port zu B ist Root Port (besserer Pfad)            │
-│            Port zu C ist Blocked (Schleifenvermeidung)         │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+---
+
 ## Port-Zustände (STP)
 
-| Zustand | Frames | MAC lernen | BPDUs RX | BPDUs TX | Dauer |
-|---------|--------|------------|----------|----------|-------|
-| **Disabled** | ✗ | ✗ | ✗ | ✗ | — |
-| **Blocking** | ✗ | ✗ | ✓ | ✗ | 20s (max age) |
-| **Listening** | ✗ | ✗ | ✓ | ✓ | 15s (forward delay) |
-| **Learning** | ✗ | ✓ | ✓ | ✓ | 15s (forward delay) |
-| **Forwarding** | ✓ | ✓ | ✓ | ✓ | — |
+| Zustand | Frames | MAC lernen | BPDUs | Dauer |
+|---------|--------|------------|-------|-------|
+| **Disabled** | ✗ | ✗ | ✗ | — |
+| **Blocking** | ✗ | ✗ | RX | 20s (max age) |
+| **Listening** | ✗ | ✗ | RX/TX | 15s (forward delay) |
+| **Learning** | ✗ | ✓ | RX/TX | 15s (forward delay) |
+| **Forwarding** | ✓ | ✓ | RX/TX | — |
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -226,17 +216,15 @@ Nach der Root Bridge Election berechnet jeder Switch den kürzesten Pfad zur Roo
 │   ┌─────────┐                                                   │
 │   │Blocking │ ←──── Port wird blockiert                        │
 │   └────┬────┘                                                   │
-│        │ Port soll aktiv werden (20s Max Age)                  │
+│        │ (20s Max Age)                                         │
 │        ▼                                                        │
 │   ┌─────────┐                                                   │
 │   │Listening│  ←── Sendet/empfängt BPDUs                       │
 │   └────┬────┘       (15s Forward Delay)                        │
-│        │                                                        │
 │        ▼                                                        │
 │   ┌─────────┐                                                   │
 │   │Learning │  ←── Lernt MAC-Adressen                          │
 │   └────┬────┘       (15s Forward Delay)                        │
-│        │                                                        │
 │        ▼                                                        │
 │   ┌──────────┐                                                  │
 │   │Forwarding│ ←── Leitet Frames weiter                        │
@@ -247,39 +235,7 @@ Nach der Root Bridge Election berechnet jeder Switch den kürzesten Pfad zur Roo
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## BPDU-Format
-
-```
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│      Protocol ID (0x0000)     │    Version    │   BPDU Type   │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                              Flags                            │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                         Root Bridge ID                        │
-│                           (8 Bytes)                           │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                        Root Path Cost                         │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                        Bridge ID                              │
-│                           (8 Bytes)                           │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│           Port ID             │         Message Age           │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│           Max Age             │         Hello Time            │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│        Forward Delay          │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-```
-
-### STP-Timer
-
-| Timer | Default | Beschreibung |
-|-------|---------|--------------|
-| **Hello Time** | 2s | Intervall für BPDU-Versand |
-| **Max Age** | 20s | Zeit bis BPDU als veraltet gilt |
-| **Forward Delay** | 15s | Zeit in Listening/Learning |
+---
 
 ## RSTP (Rapid Spanning Tree)
 
@@ -301,16 +257,6 @@ RSTP (IEEE 802.1w) verbessert die Konvergenzzeit drastisch:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### RSTP Port-Zustände
-
-| STP | RSTP | Aktiv |
-|-----|------|-------|
-| Disabled | Discarding | Nein |
-| Blocking | Discarding | Nein |
-| Listening | Discarding | Nein |
-| Learning | Learning | Nein |
-| Forwarding | Forwarding | Ja |
-
 ### RSTP Proposal/Agreement
 
 ```
@@ -331,12 +277,13 @@ RSTP (IEEE 802.1w) verbessert die Konvergenzzeit drastisch:
 │       │                                  │                      │
 │       │  Port geht sofort auf           │                      │
 │       │  Forwarding!                    │                      │
-│       │                                  │                      │
 │                                                                  │
 │   → Kein Warten auf Timer, sofortige Konvergenz!               │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
+---
 
 ## MSTP (Multiple Spanning Tree)
 
@@ -349,8 +296,7 @@ MSTP (IEEE 802.1s) ermöglicht mehrere STP-Instanzen für verschiedene VLANs:
 │                                                                  │
 │   Problem mit klassischem STP:                                 │
 │   → Eine Root Bridge für alle VLANs                            │
-│   → Suboptimale Pfade für manche VLANs                        │
-│   → Keine Lastverteilung                                       │
+│   → Suboptimale Pfade, keine Lastverteilung                   │
 │                                                                  │
 │   MSTP-Lösung:                                                  │
 │   ┌─────────────────────────────────────────────────────────┐  │
@@ -359,10 +305,11 @@ MSTP (IEEE 802.1s) ermöglicht mehrere STP-Instanzen für verschiedene VLANs:
 │   └─────────────────────────────────────────────────────────┘  │
 │                                                                  │
 │   → Lastverteilung über verschiedene Pfade                     │
-│   → Optimale Pfade pro VLAN-Gruppe                            │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
+---
 
 ## Sicherheit
 
@@ -386,8 +333,6 @@ MSTP (IEEE 802.1s) ermöglicht mehrere STP-Instanzen für verschiedene VLANs:
 │                                                                  │
 │   Cisco-Konfiguration:                                         │
 │   Switch(config-if)# spanning-tree bpduguard enable           │
-│   oder global:                                                  │
-│   Switch(config)# spanning-tree portfast bpduguard default    │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -399,15 +344,14 @@ MSTP (IEEE 802.1s) ermöglicht mehrere STP-Instanzen für verschiedene VLANs:
 │                    Root Guard                                   │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
-│   Problem: Upstream-Switch wird durch bessere BPDU             │
-│           zur Root Bridge degradiert                           │
+│   Problem: Downstream-Switch sendet bessere BPDUs             │
+│           → Wird zur Root Bridge                               │
 │                                                                  │
 │   Lösung: Root Guard auf Ports zu Downstream-Switches          │
 │                                                                  │
 │   ┌──────────────────────────────────────────┐                 │
 │   │ Wenn Superior BPDU empfangen wird:       │                 │
 │   │ → Port geht in "root-inconsistent" State │                 │
-│   │ → Keine Frames werden weitergeleitet     │                 │
 │   │ → Automatische Erholung wenn BPDU stoppt │                 │
 │   └──────────────────────────────────────────┘                 │
 │                                                                  │
@@ -416,6 +360,8 @@ MSTP (IEEE 802.1s) ermöglicht mehrere STP-Instanzen für verschiedene VLANs:
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
+---
 
 ## Praxisbeispiele
 
@@ -431,11 +377,6 @@ MSTP (IEEE 802.1s) ermöglicht mehrere STP-Instanzen für verschiedene VLANs:
 >              Address     0011.2233.4455
 >              This bridge is the root
 > 
-> Interface        Role Sts Cost      Prio.Nbr Type
-> ---------------- ---- --- --------- -------- ----
-> Gi0/1            Desg FWD 4         128.1    P2p
-> Gi0/2            Desg FWD 4         128.2    P2p
-> 
 > ! Priority setzen (Root Bridge werden)
 > Switch(config)# spanning-tree vlan 1 priority 4096
 > 
@@ -443,71 +384,69 @@ MSTP (IEEE 802.1s) ermöglicht mehrere STP-Instanzen für verschiedene VLANs:
 > Switch(config-if)# spanning-tree portfast
 > ```
 
-## Prüfungsrelevante Themen
+---
 
-> [!warning] Klausurrelevanz: Hoch
->
-> **Häufige Prüfungsthemen:**
-> 1. Warum sind Layer-2-Schleifen problematisch?
-> 2. Root Bridge Election (Bridge ID = Priority + MAC)
-> 3. Port-Rollen (Root, Designated, Blocked)
-> 4. Port-Zustände (Blocking, Listening, Learning, Forwarding)
-> 5. STP vs. RSTP Konvergenzzeit
-> 6. BPDU Guard / Root Guard
+## Zusammenhänge
 
-### Typische Prüfungsfragen
+```mermaid
+graph LR
+    A[STP] --> B[Redundanz]
+    A --> C[Schleifen]
+    A --> D[Layer 2]
+    B --> E[Hochverfügbarkeit]
+    C --> F[Broadcast-Sturm]
+    D --> G[Switches]
+```
 
-> [!question] Übungsfragen
+- [[../03-Referenzmodelle/05-Sicherungsschicht/00-Sicherungsschicht-Index|Sicherungsschicht]] → STP arbeitet auf Layer 2
+- [[../03-Referenzmodelle/05-Sicherungsschicht/04-Broadcast-Kollisionsdomaene|Broadcast-Domäne]] → STP verhindert Broadcast-Stürme
+- [[01-ARP|ARP]] → Broadcasts, die ohne STP zu Stürmen führen würden
+
+---
+
+## Prüfungstipps
+
+> [!warning] **Prüfungsrelevant**
+> - Warum sind Layer-2-Schleifen problematisch?
+> - Root Bridge Election (Bridge ID = Priority + MAC)
+> - Port-Rollen (Root, Designated, Blocked)
+> - Port-Zustände (Blocking, Listening, Learning, Forwarding)
+> - STP vs. RSTP Konvergenzzeit
+> - BPDU Guard / Root Guard
+
+> [!question] **Häufige Prüfungsfragen**
 > 1. Was passiert ohne STP bei redundanten Verbindungen?
 > 2. Wie wird die Root Bridge gewählt?
 > 3. Was ist der Unterschied zwischen Root Port und Designated Port?
 > 4. Warum ist RSTP schneller als STP?
 > 5. Wie schützt BPDU Guard vor Angriffen?
 
-### Merkhilfen
-
-> [!tip] Merkregeln
+> [!tip] **Merkhilfen**
 > - **Root Bridge** = Niedrigste Bridge ID gewinnt
-> - **Root Port** = Bester Weg ZUR Root
-> - **Designated Port** = Bester Weg VON der Root (pro Segment)
+> - **Root Port** = Bester Weg **ZUR** Root
+> - **Designated Port** = Bester Weg **VON** der Root (pro Segment)
 > - **STP-Konvergenz** = 30-50 Sekunden
 > - **RSTP-Konvergenz** = < 1 Sekunde
+> - **Multicast** = `01:80:C2:00:00:00`
 
-## Zusammenfassung
+---
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              Spanning Tree auf einen Blick                     │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Zweck:      Schleifenvermeidung in Layer-2-Netzen            │
-│   Schicht:    Layer 2 (Sicherungsschicht)                      │
-│   Standard:   IEEE 802.1D (STP), 802.1w (RSTP), 802.1s (MSTP) │
-│   Multicast:  01:80:C2:00:00:00                                │
-│                                                                  │
-│   Ablauf:                                                       │
-│   1. Root Bridge Election (niedrigste Bridge ID)               │
-│   2. Root Ports bestimmen (kürzester Pfad zur Root)           │
-│   3. Designated Ports bestimmen (bester Port pro Segment)     │
-│   4. Übrige Ports blockieren                                   │
-│                                                                  │
-│   Bridge ID: Priority (2 Byte) + MAC-Adresse (6 Byte)         │
-│   Pfadkosten: Bandbreitenabhängig (1 Gbps = 4, 100 Mbps = 19) │
-│                                                                  │
-│   Konvergenz: STP 30-50s, RSTP < 1s                           │
-│   Sicherheit: BPDU Guard, Root Guard                          │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+## Weiterführende Ressourcen
 
-## Querverweise
+> [!note] **IEEE-Standards**
+> - IEEE 802.1D-2004 – MAC Bridges and Bridged Networks (STP/RSTP)
+> - IEEE 802.1w – Rapid Spanning Tree Protocol
+> - IEEE 802.1Q – VLAN und MSTP
 
-- [[../03-Referenzmodelle/05-Sicherungsschicht/00-Sicherungsschicht-Index|Sicherungsschicht]] – STP arbeitet auf Layer 2
-- [[../03-Referenzmodelle/05-Sicherungsschicht/04-Broadcast-Kollisionsdomaene|Broadcast-Domäne]] – STP verhindert Broadcast-Stürme
-- [[01-ARP|ARP]] – Broadcasts, die ohne STP zu Stürmen führen würden
+> [!tip] **Praktische Tools**
+> - **Wireshark** → STP-Traffic analysieren (Filter: `stp`)
+> - **Cisco Packet Tracer** → STP simulieren
+> - **GNS3** → Realistische Netzwerksimulation
+
+---
 
 ## Quellen
 
-- IEEE 802.1D-2004 - MAC Bridges and Bridged Networks
-- IEEE 802.1w - Rapid Spanning Tree Protocol
-- IEEE 802.1Q - VLAN und MSTP
+- Tanenbaum, Andrew S.: Computernetzwerke – Grundlagen der Layer-2-Technologien und Bridging.
+- IEEE 802.1D-2004 – MAC Bridges and Bridged Networks – Die offizielle Spezifikation für STP und RSTP.
+- Cisco Systems: Spanning Tree Protocol Design Guide – Praxisorientierte Konfigurationsanleitungen.

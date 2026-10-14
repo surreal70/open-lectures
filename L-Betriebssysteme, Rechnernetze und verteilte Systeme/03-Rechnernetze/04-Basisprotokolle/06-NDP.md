@@ -17,14 +17,23 @@ bereich: RN
 
 # NDP – Neighbor Discovery Protocol
 
-## Definition
+> [!info] **Lernziele**
+> Nach diesem Kapitel solltest du:
+> - NDP als IPv6-Ersatz für ARP verstehen
+> - Die ICMPv6-Nachrichtentypen (RS, RA, NS, NA) erklären können
+> - Das Konzept von Solicited-Node Multicast verstehen
+> - SLAAC (Stateless Address Autoconfiguration) erklären können
+> - DAD (Duplicate Address Detection) verstehen
+> - Sicherheitsrisiken (NDP-Spoofing) und Gegenmaßnahmen (RA Guard, SEND) kennen
 
-Das **Neighbor Discovery Protocol (NDP)** ist der IPv6-Ersatz für ARP und mehr. Es nutzt ICMPv6 und bietet neben der Adressauflösung auch Router Discovery, Prefix Discovery, Duplicate Address Detection und Redirect-Funktionalität.
+---
 
-> [!info] Schichtzuordnung
-> NDP ist ein **Layer-3-Protokoll**, das auf ICMPv6 basiert. Es verwendet spezielle ICMPv6-Nachrichtentypen (133-137) und arbeitet mit Multicast statt Broadcast.
+## Das Problem: ARP funktioniert nur mit IPv4
 
-## NDP vs. ARP
+> [!important] **Kernkonzept**
+> Das **Neighbor Discovery Protocol (NDP)** ist der IPv6-Ersatz für ARP – und mehr. Es nutzt ICMPv6 und bietet neben der Adressauflösung auch Router Discovery, Prefix Discovery, Duplicate Address Detection und Redirect-Funktionalität. NDP vereint mehrere IPv4-Protokolle in einem.
+
+### NDP vs. ARP
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -47,12 +56,22 @@ Das **Neighbor Discovery Protocol (NDP)** ist der IPv6-Ersatz für ARP und mehr.
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## ICMPv6-Nachrichtentypen für NDP
+> [!example] **Analogie: Verbesserte Nachbarschaftssuche**
+> - ARP ist wie **laut rufen** auf der Straße: "Wer wohnt hier?" (Broadcast – alle hören)
+> - NDP ist wie **gezielte Klingel**: Man klingelt nur bei passenden Häusern (Multicast)
+> - NDP liefert zusätzlich die **Wegbeschreibung** zum nächsten Bahnhof (Router Discovery)
+> - Und prüft automatisch, ob die neue Hausnummer **schon vergeben** ist (DAD)
 
-> [!info] RFC-Referenz
-> - NDP: [[A-RFC-Index#RFC 4861|RFC 4861]]
-> - SLAAC: [[A-RFC-Index#RFC 4862|RFC 4862]]
-> - SEND: [[A-RFC-Index#RFC 3971|RFC 3971]]
+---
+
+## NDP im Protokollstapel
+
+> [!info] **Schichtzuordnung**
+> NDP ist ein **Layer-3-Protokoll**, das auf ICMPv6 basiert. Es verwendet spezielle ICMPv6-Nachrichtentypen (133-137) und arbeitet mit Multicast statt Broadcast.
+
+---
+
+## ICMPv6-Nachrichtentypen für NDP
 
 | Typ | Name | Abkürzung | Funktion |
 |-----|------|-----------|----------|
@@ -61,6 +80,8 @@ Das **Neighbor Discovery Protocol (NDP)** ist der IPv6-Ersatz für ARP und mehr.
 | **135** | Neighbor Solicitation | NS | MAC-Auflösung (wie ARP Request) |
 | **136** | Neighbor Advertisement | NA | MAC-Antwort (wie ARP Reply) |
 | **137** | Redirect | — | Router leitet zu besserem Next-Hop um |
+
+---
 
 ## Neighbor Discovery (Adressauflösung)
 
@@ -72,7 +93,6 @@ Das **Neighbor Discovery Protocol (NDP)** ist der IPv6-Ersatz für ARP und mehr.
 │   Host A                                              Host B    │
 │   fe80::1                                         fe80::2       │
 │   MAC: AA:AA:AA:AA:AA:AA                    MAC: BB:BB:BB:BB:..│
-│       │                                               │         │
 │       │                                               │         │
 │       │  Neighbor Solicitation (Type 135)            │         │
 │       │  ──────────────────────────────────────────► │         │
@@ -89,7 +109,6 @@ Das **Neighbor Discovery Protocol (NDP)** ist der IPv6-Ersatz für ARP und mehr.
 │       │  Quell-IP: fe80::2                           │         │
 │       │  Ziel-IP:  fe80::1 (Unicast)                │         │
 │       │  Inhalt:   "fe80::2 ist bei BB:BB:..."      │         │
-│       │                                               │         │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -117,13 +136,11 @@ Das **Neighbor Discovery Protocol (NDP)** ist der IPv6-Ersatz für ARP und mehr.
 │                                                                  │
 │   Vorteil: Nur Hosts mit passenden letzten 24 Bit empfangen!   │
 │   → Weniger Traffic als Broadcast                               │
-│   → NICs können filtern (Hardware-Support)                      │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-> [!tip] Multicast statt Broadcast
-> Bei ARP erhält **jeder** Host im Netzwerk den Request. Bei NDP erhält nur der Host, dessen IPv6-Adresse auf die gleichen 24 Bits endet, die Solicitation. Das reduziert Traffic erheblich!
+---
 
 ## Router Discovery
 
@@ -144,16 +161,12 @@ Das **Neighbor Discovery Protocol (NDP)** ist der IPv6-Ersatz für ARP und mehr.
 │       │  Router Advertisement (Type 134)             │         │
 │       │  ◄────────────────────────────────────────── │         │
 │       │                                               │         │
-│       │  Quell-IP: fe80::1 (Router Link-Local)      │         │
-│       │  Ziel-IP:  ff02::1 (All-Nodes) oder Unicast │         │
-│       │                                               │         │
 │       │  Inhalt:                                     │         │
 │       │  • Prefix: 2001:db8:1::/64                  │         │
 │       │  • Flags: M=0, O=0 (SLAAC)                  │         │
 │       │  • Router Lifetime: 1800s                    │         │
 │       │  • MTU: 1500                                 │         │
 │       │  • DNS-Server (RDNSS)                        │         │
-│       │                                               │         │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -166,6 +179,8 @@ Das **Neighbor Discovery Protocol (NDP)** ist der IPv6-Ersatz für ARP und mehr.
 | 0 | 1 | SLAAC für Adresse, **DHCPv6 für andere Infos** (DNS, etc.) |
 | 1 | 0 | **Stateful DHCPv6** für Adresse |
 | 1 | 1 | Stateful DHCPv6 für Adresse und andere Infos |
+
+---
 
 ## SLAAC (Stateless Address Autoconfiguration)
 
@@ -205,8 +220,6 @@ Das **Neighbor Discovery Protocol (NDP)** ist der IPv6-Ersatz für ARP und mehr.
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
 │   MAC-Adresse:     00:1A:2B:3C:4D:5E                           │
-│                    ─────────  ─────────                         │
-│                    OUI        NIC-spezifisch                    │
 │                                                                  │
 │   Schritt 1: FFFE einfügen                                     │
 │              00:1A:2B:FF:FE:3C:4D:5E                           │
@@ -214,9 +227,7 @@ Das **Neighbor Discovery Protocol (NDP)** ist der IPv6-Ersatz für ARP und mehr.
 │                      eingefügt                                  │
 │                                                                  │
 │   Schritt 2: Universal/Local Bit flippen (Bit 7)               │
-│              00 = 0000 0000                                     │
-│                        ↓                                        │
-│              02 = 0000 0010                                     │
+│              00 = 0000 0000 → 02 = 0000 0010                   │
 │                                                                  │
 │   EUI-64:    02:1A:2B:FF:FE:3C:4D:5E                           │
 │              → ::021a:2bff:fe3c:4d5e                           │
@@ -224,9 +235,7 @@ Das **Neighbor Discovery Protocol (NDP)** ist der IPv6-Ersatz für ARP und mehr.
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-> [!warning] Privacy-Bedenken bei EUI-64
-> Die MAC-Adresse ist in der IPv6-Adresse sichtbar → Tracking möglich!
-> Lösung: **Privacy Extensions** (RFC 4941) generieren zufällige Interface IDs.
+---
 
 ## Duplicate Address Detection (DAD)
 
@@ -246,17 +255,17 @@ Das **Neighbor Discovery Protocol (NDP)** ist der IPv6-Ersatz für ARP und mehr.
 │       │                                                         │
 │       │  Warte ~1 Sekunde...                                   │
 │       │                                                         │
-│       │                                                         │
 │   Fall 1: Keine Antwort                                        │
 │           → Adresse ist einzigartig, kann verwendet werden     │
 │                                                                  │
 │   Fall 2: Neighbor Advertisement empfangen                     │
 │           → Adresse bereits vergeben!                          │
 │           → Host darf Adresse NICHT verwenden                  │
-│           → Manuelle Intervention nötig                        │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
+
+---
 
 ## Neighbor Cache
 
@@ -266,7 +275,7 @@ Der Neighbor Cache ist das IPv6-Äquivalent zum ARP-Cache:
 |---------|--------------|--------|
 | **INCOMPLETE** | NS gesendet, warte auf NA | Pakete werden gepuffert |
 | **REACHABLE** | Kürzlich bestätigt | Normal verwenden |
-| **STALE** | Timeout abgelaufen | Bei nächster Nutzung: Reachability prüfen |
+| **STALE** | Timeout abgelaufen | Bei nächster Nutzung prüfen |
 | **DELAY** | Warte auf Upper-Layer Hint | 5 Sekunden warten |
 | **PROBE** | Sende NS zur Bestätigung | Max. 3 Versuche |
 
@@ -277,32 +286,7 @@ Der Neighbor Cache ist das IPv6-Äquivalent zum ARP-Cache:
 > 2001:db8::1 dev eth0 lladdr aa:bb:cc:dd:ee:ff STALE
 > ```
 
-## Redirect
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              NDP Redirect (Type 137)                           │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Host A sendet an Ziel über Router 1                          │
-│   Router 1 weiß: Router 2 ist besser für dieses Ziel           │
-│                                                                  │
-│       Host A              Router 1            Router 2          │
-│          │                    │                   │             │
-│          │  Paket an Ziel     │                   │             │
-│          │───────────────────►│                   │             │
-│          │                    │                   │             │
-│          │  ICMPv6 Redirect   │                   │             │
-│          │◄───────────────────│                   │             │
-│          │  "Nutze Router 2   │                   │             │
-│          │   für dieses Ziel" │                   │             │
-│          │                    │                   │             │
-│          │  Nächste Pakete direkt an Router 2    │             │
-│          │────────────────────────────────────────►│             │
-│          │                                        │             │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+---
 
 ## Sicherheit
 
@@ -332,7 +316,6 @@ Der Neighbor Cache ist das IPv6-Äquivalent zum ARP-Cache:
 | **RA Guard** | Switch blockiert RAs von nicht-Router-Ports |
 | **DHCPv6 Guard** | Switch blockiert DHCPv6 von nicht-Server-Ports |
 | **Source Guard** | Bindet IPv6 an MAC/Port |
-| **Secure Neighbor Discovery** | Cryptographically Generated Addresses (CGA) |
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -344,85 +327,82 @@ Der Neighbor Cache ist das IPv6-Äquivalent zum ARP-Cache:
 │   │ Port 1: Router (RA erlaubt)        ✓ RA                │  │
 │   │ Port 2: Host (RA blockiert)        ✗ RA                │  │
 │   │ Port 3: Host (RA blockiert)        ✗ RA                │  │
-│   │ Port 4: Host (RA blockiert)        ✗ RA                │  │
 │   └─────────────────────────────────────────────────────────┘  │
 │                                                                  │
 │   Cisco-Konfiguration:                                         │
 │   Switch(config)# ipv6 nd raguard policy BLOCK-RA             │
 │   Switch(config-nd-raguard)# device-role host                 │
-│   Switch(config-if)# ipv6 nd raguard attach-policy BLOCK-RA   │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## Prüfungsrelevante Themen
+---
 
-> [!warning] Klausurrelevanz: Mittel-Hoch
->
-> **Häufige Prüfungsthemen:**
-> 1. NDP als IPv6-Ersatz für ARP
-> 2. ICMPv6-Nachrichtentypen (RS, RA, NS, NA)
-> 3. Solicited-Node Multicast (ff02::1:ffXX:XXXX)
-> 4. SLAAC-Prozess
-> 5. DAD (Duplicate Address Detection)
-> 6. Unterschied Multicast vs. Broadcast
+## Zusammenhänge
 
-### Typische Prüfungsfragen
+```mermaid
+graph LR
+    A[NDP] --> B[ICMPv6]
+    A --> C[IPv6]
+    A --> D[SLAAC]
+    A --> E[Router Discovery]
+    B --> F[Type 133-137]
+    C --> G[Netzwerkschicht]
+    D --> H[Ohne DHCP]
+```
 
-> [!question] Übungsfragen
+- [[01-ARP|ARP]] → IPv4-Pendant zu NDP
+- [[../03-Referenzmodelle/06-Netzwerkschicht/03-IPv6|IPv6]] → Netzwerkschicht
+- [[../03-Referenzmodelle/06-Netzwerkschicht/05-ICMP|ICMP]] → ICMPv6 ist die Basis für NDP
+- [[02-DHCP|DHCP]] → DHCPv6 als Alternative zu SLAAC
+
+---
+
+## Prüfungstipps
+
+> [!warning] **Prüfungsrelevant**
+> - NDP als IPv6-Ersatz für ARP
+> - ICMPv6-Nachrichtentypen (RS, RA, NS, NA)
+> - Solicited-Node Multicast (ff02::1:ffXX:XXXX)
+> - SLAAC-Prozess
+> - DAD (Duplicate Address Detection)
+> - Unterschied Multicast vs. Broadcast
+
+> [!question] **Häufige Prüfungsfragen**
 > 1. Warum nutzt NDP Multicast statt Broadcast?
 > 2. Wie generiert ein Host seine IPv6-Adresse mit SLAAC?
 > 3. Was bedeuten die M- und O-Flags in Router Advertisements?
 > 4. Wie funktioniert Duplicate Address Detection?
 > 5. Welche Sicherheitsrisiken hat NDP und wie kann man sie mitigieren?
 
-### Merkhilfen
-
-> [!tip] Merkregeln
+> [!tip] **Merkhilfen**
 > - **Type 133** = RS (Router **S**olicitation)
 > - **Type 134** = RA (Router **A**dvertisement)
 > - **Type 135** = NS (Neighbor **S**olicitation) = "ARP Request"
 > - **Type 136** = NA (Neighbor **A**dvertisement) = "ARP Reply"
 > - **ff02::1** = All Nodes, **ff02::2** = All Routers
 > - **Solicited-Node** = ff02::1:ff + letzte 24 Bit der IPv6
+> - **SLAAC** = Prefix (RA) + Interface ID (EUI-64 oder Random)
 
-## Zusammenfassung
+---
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    NDP auf einen Blick                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Zweck:      IPv6-Adressauflösung + Router/Prefix Discovery   │
-│   Schicht:    Layer 3 (basiert auf ICMPv6)                     │
-│   Standard:   RFC 4861 (NDP), RFC 4862 (SLAAC)                 │
-│                                                                  │
-│   Nachrichtentypen:                                            │
-│   • RS (133): Host sucht Router                                │
-│   • RA (134): Router sendet Prefix, Optionen                   │
-│   • NS (135): MAC-Auflösung (wie ARP Request)                  │
-│   • NA (136): MAC-Antwort (wie ARP Reply)                      │
-│   • Redirect (137): Besserer Next-Hop                          │
-│                                                                  │
-│   SLAAC: Prefix (RA) + Interface ID (EUI-64 oder Random)       │
-│   DAD: Prüfung auf doppelte Adressen via NS                    │
-│                                                                  │
-│   Multicast statt Broadcast → effizienter!                     │
-│   Sicherheit: SEND, RA Guard                                   │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+## Weiterführende Ressourcen
 
-## Querverweise
+> [!note] **RFC und Standards**
+> - [[A-RFC-Index#RFC 4861|RFC 4861]] - Neighbor Discovery for IPv6
+> - [[A-RFC-Index#RFC 4862|RFC 4862]] - IPv6 Stateless Address Autoconfiguration
+> - [[A-RFC-Index#RFC 3971|RFC 3971]] - SEcure Neighbor Discovery (SEND)
+> - [[A-RFC-Index#RFC 4941|RFC 4941]] - Privacy Extensions for SLAAC
 
-- [[01-ARP|ARP]] – IPv4-Pendant zu NDP
-- [[../03-Referenzmodelle/06-Netzwerkschicht/03-IPv6|IPv6]] – Netzwerkschicht
-- [[../03-Referenzmodelle/06-Netzwerkschicht/05-ICMP|ICMP]] – ICMPv6 ist die Basis für NDP
-- [[02-DHCP|DHCP]] – DHCPv6 als Alternative zu SLAAC
+> [!tip] **Praktische Tools**
+> - **Wireshark** → NDP-Traffic analysieren (Filter: `icmpv6.type >= 133 and icmpv6.type <= 137`)
+> - **radvd** → Linux Router Advertisement Daemon
+> - **ndptool** → NDP-Pakete senden und empfangen
+
+---
 
 ## Quellen
 
-- [[A-RFC-Index#RFC 4861|RFC 4861]] - Neighbor Discovery for IPv6
-- [[A-RFC-Index#RFC 4862|RFC 4862]] - IPv6 Stateless Address Autoconfiguration
-- [[A-RFC-Index#RFC 3971|RFC 3971]] - SEcure Neighbor Discovery (SEND)
-- [[A-RFC-Index#RFC 4941|RFC 4941]] - Privacy Extensions for SLAAC
+- Tanenbaum, Andrew S.: Computernetzwerke – IPv6-Grundlagen und Neighbor Discovery.
+- Hagen, Silvia: IPv6 Essentials – Das Standardwerk für IPv6 mit ausführlicher NDP-Behandlung.
+- RFC 4861 – Neighbor Discovery for IPv6 – Die maßgebliche Spezifikation für NDP.

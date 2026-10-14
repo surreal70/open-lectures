@@ -16,14 +16,23 @@ bereich: RN
 
 # DNS – Domain Name System
 
-## Definition
+> [!info] **Lernziele**
+> Nach diesem Kapitel solltest du:
+> - Den Zweck von DNS verstehen (Namensauflösung)
+> - Die DNS-Hierarchie (Root, TLD, SLD) erklären können
+> - Den Unterschied zwischen rekursiver und iterativer Auflösung verstehen
+> - Die wichtigsten Record-Typen (A, AAAA, MX, CNAME, NS, PTR) kennen
+> - Das Konzept von Zonen und Zone Transfers verstehen
+> - DNS-Sicherheitsrisiken (Spoofing, Cache Poisoning) und Gegenmaßnahmen (DNSSEC, DoH/DoT) kennen
 
-Das **Domain Name System (DNS)** ist ein hierarchisches, verteiltes System zur Namensauflösung. Es übersetzt menschenlesbare Domainnamen (z.B. `www.example.de`) in IP-Adressen (z.B. `93.184.216.34`) und umgekehrt.
+---
 
-> [!info] Schichtzuordnung
-> DNS ist ein **Layer-7-Protokoll** (Anwendungsschicht), das primär **UDP Port 53** verwendet. Für Zonentransfers und große Antworten (>512 Bytes) wird **TCP Port 53** genutzt.
+## Das Problem: Menschen vs. Computer
 
-## Warum DNS?
+> [!important] **Kernkonzept**
+> Das **Domain Name System (DNS)** ist ein hierarchisches, verteiltes System zur Namensauflösung. Es übersetzt menschenlesbare Domainnamen (z.B. `www.example.de`) in IP-Adressen (z.B. `93.184.216.34`) und umgekehrt – das "Telefonbuch des Internets".
+
+### Warum ist DNS notwendig?
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -43,11 +52,23 @@ Das **Domain Name System (DNS)** ist ein hierarchisches, verteiltes System zur N
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## DNS-Hierarchie
+> [!example] **Analogie: Telefonbuch**
+> - Du kennst den **Namen** deines Freundes (= Domainname)
+> - Du brauchst aber die **Telefonnummer** (= IP-Adresse)
+> - Das **Telefonbuch** (= DNS) liefert die Zuordnung
+> - Große Städte haben eigene Telefonbücher (= DNS-Zonen)
+> - Bei Umzug: Eintrag aktualisieren (= DNS-Record ändern)
 
-> [!info] RFC-Referenz
-> - DNS Concepts: [[A-RFC-Index#RFC 1034|RFC 1034]]
-> - DNS Implementation: [[A-RFC-Index#RFC 1035|RFC 1035]]
+---
+
+## DNS im Protokollstapel
+
+> [!info] **Schichtzuordnung**
+> DNS ist ein **Layer-7-Protokoll** (Anwendungsschicht), das primär **UDP Port 53** verwendet. Für Zonentransfers und große Antworten (>512 Bytes) wird **TCP Port 53** genutzt.
+
+---
+
+## DNS-Hierarchie
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -87,9 +108,7 @@ Das **Domain Name System (DNS)** ist ein hierarchisches, verteiltes System zur N
 | **2** | SLD | `example.de` | Second-Level-Domain |
 | **3+** | Subdomain | `www.example.de` | Subdomains/Hosts |
 
-> [!tip] FQDN
-> Ein **Fully Qualified Domain Name (FQDN)** endet immer mit einem Punkt: `www.example.de.`
-> Der Punkt repräsentiert die Root-Zone.
+---
 
 ## DNS-Auflösung
 
@@ -108,7 +127,6 @@ Das **Domain Name System (DNS)** ist ein hierarchisches, verteiltes System zur N
 │     │                                     │   erledigt alles    │
 │     │  "Antwort: 93.184.216.34"          │                     │
 │     │ ◄───────────────────────────────── │                     │
-│     │                                     │                     │
 │                                                                  │
 │   → Client fragt einmal, Resolver liefert Endergebnis          │
 │                                                                  │
@@ -137,44 +155,13 @@ Das **Domain Name System (DNS)** ist ein hierarchisches, verteiltes System zur N
 │      │                                           │              │
 │      │ "93.184.216.34"                          │              │
 │      │◄──────────────────────────────────────────│              │
-│      │                                                          │
 │                                                                  │
 │   → Resolver erhält bei jedem Schritt nur einen Verweis        │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-### Vollständiger DNS-Auflösungsprozess
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│          Vollständige DNS-Auflösung für www.example.de         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   1. Client prüft lokalen Cache und /etc/hosts                 │
-│      → Nicht gefunden                                          │
-│                                                                  │
-│   2. Client fragt konfigurierten DNS-Resolver (z.B. 8.8.8.8)   │
-│      (rekursive Anfrage)                                       │
-│                                                                  │
-│   3. Resolver prüft seinen Cache                               │
-│      → Nicht gefunden                                          │
-│                                                                  │
-│   4. Resolver fragt Root-Server (a.root-servers.net)           │
-│      → Antwort: "Frag die .de-Server" (NS für .de)            │
-│                                                                  │
-│   5. Resolver fragt .de-TLD-Server                             │
-│      → Antwort: "Frag ns1.example.de" (NS für example.de)     │
-│                                                                  │
-│   6. Resolver fragt ns1.example.de (autoritativer Server)      │
-│      → Antwort: "www.example.de = 93.184.216.34" (A-Record)   │
-│                                                                  │
-│   7. Resolver speichert Antwort im Cache (TTL beachten!)       │
-│                                                                  │
-│   8. Resolver antwortet dem Client                             │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+---
 
 ## DNS-Caching
 
@@ -197,61 +184,10 @@ Das **Domain Name System (DNS)** ist ein hierarchisches, verteiltes System zur N
 │   • Typische Werte: 300s (5 Min) bis 86400s (1 Tag)           │
 │   • Nach Ablauf: Neue Anfrage erforderlich                    │
 │                                                                  │
-│   Negative Caching:                                            │
-│   • Auch "NXDOMAIN" (Domain existiert nicht) wird gecacht     │
-│   • Verhindert wiederholte Anfragen für nicht existente Namen │
-│   • SOA MINIMUM-Feld bestimmt negative TTL                    │
-│                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## DNS-Paketformat
-
-```
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│              ID               │QR| Opcode |AA|TC|RD|RA| Z |RCODE│
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│            QDCOUNT            │            ANCOUNT            │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│            NSCOUNT            │            ARCOUNT            │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                         Question Section                      │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                         Answer Section                        │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                        Authority Section                      │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                       Additional Section                      │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-```
-
-### Header-Felder
-
-| Feld | Bits | Beschreibung |
-|------|------|--------------|
-| **ID** | 16 | Transaktions-ID (zur Zuordnung Anfrage/Antwort) |
-| **QR** | 1 | 0 = Query, 1 = Response |
-| **Opcode** | 4 | 0 = Standard Query, 1 = Inverse Query, 2 = Status |
-| **AA** | 1 | Authoritative Answer |
-| **TC** | 1 | Truncated (Antwort zu groß für UDP) |
-| **RD** | 1 | Recursion Desired (Client wünscht Rekursion) |
-| **RA** | 1 | Recursion Available (Server unterstützt Rekursion) |
-| **RCODE** | 4 | Response Code (0=OK, 3=NXDOMAIN) |
-| **QDCOUNT** | 16 | Anzahl Fragen |
-| **ANCOUNT** | 16 | Anzahl Antworten |
-| **NSCOUNT** | 16 | Anzahl Authority Records |
-| **ARCOUNT** | 16 | Anzahl Additional Records |
-
-### Sektionen
-
-| Sektion | Inhalt |
-|---------|--------|
-| **Question** | Angefragter Name, Typ und Klasse |
-| **Answer** | Antwort-Records (A, AAAA, MX, etc.) |
-| **Authority** | Nameserver-Records (NS) für die Zone |
-| **Additional** | Zusätzliche hilfreiche Records (z.B. IP der NS) |
+---
 
 ## DNS Record-Typen
 
@@ -259,14 +195,13 @@ Das **Domain Name System (DNS)** ist ein hierarchisches, verteiltes System zur N
 |-----|------|------|--------------|----------|
 | **A** | ✓ | - | Name → IPv4-Adresse | `www IN A 192.168.1.2` |
 | **AAAA** | - | ✓ | Name → IPv6-Adresse | `www IN AAAA 2001:db8::1` |
-| **PTR** | ✓ | ✓ | IP → Name (Reverse) | `2.1.168.192.in-addr.arpa. IN PTR www.example.de.` |
+| **PTR** | ✓ | ✓ | IP → Name (Reverse) | `2.1.168.192.in-addr.arpa. IN PTR www` |
 | **CNAME** | ✓ | ✓ | Alias für Namen | `www IN CNAME webserver.example.de.` |
 | **NS** | ✓ | ✓ | Nameserver für Zone | `example.de. IN NS ns1.example.de.` |
 | **MX** | ✓ | ✓ | Mailserver (mit Priorität) | `example.de. IN MX 10 mail.example.de.` |
-| **TXT** | ✓ | ✓ | Textinformation | SPF, DKIM, DMARC, Domain Verification |
-| **SOA** | ✓ | ✓ | Start of Authority | Seriennummer, Refresh, Retry, Expire, Minimum |
-| **SRV** | ✓ | ✓ | Service-Lokalisierung | `_ldap._tcp.example.de. IN SRV 0 100 389 dc.example.de.` |
-| **CAA** | ✓ | ✓ | Certificate Authority Auth. | Wer darf Zertifikate ausstellen |
+| **TXT** | ✓ | ✓ | Textinformation | SPF, DKIM, DMARC |
+| **SOA** | ✓ | ✓ | Start of Authority | Seriennummer, Refresh, etc. |
+| **SRV** | ✓ | ✓ | Service-Lokalisierung | `_ldap._tcp IN SRV 0 100 389 dc` |
 
 ### Beispiel: Zonendatei
 
@@ -285,36 +220,28 @@ $TTL 86400
 
 ; Mailserver
 @       IN  MX  10  mail.example.de.
-@       IN  MX  20  backup-mail.example.de.
 
 ; A-Records
 @       IN  A       93.184.216.34
 www     IN  A       93.184.216.34
 mail    IN  A       93.184.216.35
-ns1     IN  A       93.184.216.10
-ns2     IN  A       93.184.216.11
-
-; AAAA-Records
-www     IN  AAAA    2001:db8::1
 
 ; CNAME
 ftp     IN  CNAME   www.example.de.
-
-; TXT für SPF
-@       IN  TXT     "v=spf1 mx -all"
 ```
 
-## DNS-Zonen
+---
+
+## DNS-Zonen und Zone Transfers
 
 ### Zonentypen
 
 | Zonentyp | Beschreibung |
 |----------|--------------|
 | **Primary (Master)** | Originale Zonendaten, Änderungen nur hier |
-| **Secondary (Slave)** | Kopie vom Primary, für Redundanz und Lastverteilung |
+| **Secondary (Slave)** | Kopie vom Primary, für Redundanz |
 | **Stub Zone** | Nur NS-Records, für Delegationen |
 | **Forward Zone** | Leitet Anfragen an anderen Server weiter |
-| **Hidden Primary** | Primary nicht öffentlich, nur Secondaries antworten |
 
 ### Zone Transfers
 
@@ -332,15 +259,13 @@ ftp     IN  CNAME   www.example.de.
 │      │  2. SOA-Antwort mit Seriennummer          │             │
 │      │────────────────────────────────────────────►│             │
 │      │                                            │             │
-│      │     Seriennummer geändert?                │             │
-│      │     Ja → Zone Transfer anfordern          │             │
+│      │     Seriennummer geändert? → Transfer!    │             │
 │      │                                            │             │
 │      │  3. AXFR/IXFR Request (TCP)               │             │
 │      │◄───────────────────────────────────────────│             │
 │      │                                            │             │
 │      │  4. Zonendaten übertragen (TCP)           │             │
 │      │────────────────────────────────────────────►│             │
-│      │                                            │             │
 │                                                                  │
 │   AXFR = Full Transfer (komplette Zone)                        │
 │   IXFR = Incremental Transfer (nur Änderungen)                 │
@@ -348,9 +273,11 @@ ftp     IN  CNAME   www.example.de.
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+---
+
 ## Sicherheit
 
-### DNS-Spoofing / Cache Poisoning
+### DNS Cache Poisoning
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -368,12 +295,9 @@ ftp     IN  CNAME   www.example.de.
 │      │               │  Antwort!      │  Antwort     │         │
 │      │               │◄───────────────│               │         │
 │      │               │◄───────────────┼───────────────│         │
-│      │               │                │               │         │
-│      │               │                │               │         │
-│   Resolver akzeptiert die schnellere (gefälschte) Antwort!    │
-│   Cache enthält jetzt falsche IP für die Domain.               │
 │                                                                  │
-│   Angreifer kann Nutzer auf Phishing-Seite umleiten.           │
+│   Resolver akzeptiert die schnellere (gefälschte) Antwort!    │
+│   → Nutzer wird auf Phishing-Seite umgeleitet                  │
 │                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -387,18 +311,13 @@ ftp     IN  CNAME   www.example.de.
 │                                                                  │
 │   DNSSEC fügt kryptographische Signaturen zu DNS hinzu:        │
 │                                                                  │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ Neue Record-Typen:                                       │  │
-│   │ • RRSIG  - Signatur für einen Record-Set                │  │
-│   │ • DNSKEY - Öffentlicher Schlüssel der Zone              │  │
-│   │ • DS     - Delegation Signer (Vertrauenskette)          │  │
-│   │ • NSEC/NSEC3 - Authenticated Denial of Existence        │  │
-│   └─────────────────────────────────────────────────────────┘  │
+│   Neue Record-Typen:                                            │
+│   • RRSIG  - Signatur für einen Record-Set                     │
+│   • DNSKEY - Öffentlicher Schlüssel der Zone                   │
+│   • DS     - Delegation Signer (Vertrauenskette)               │
+│   • NSEC   - Authenticated Denial of Existence                 │
 │                                                                  │
-│   Vertrauenskette (Chain of Trust):                            │
-│   Root (.) → .de → example.de                                  │
-│                                                                  │
-│   ✓ Authentizität: Record stammt wirklich vom Zoneninhaber    │
+│   ✓ Authentizität: Record stammt vom Zoneninhaber             │
 │   ✓ Integrität: Record wurde nicht verändert                   │
 │   ✗ Keine Verschlüsselung! Nur Signierung.                     │
 │                                                                  │
@@ -413,28 +332,7 @@ ftp     IN  CNAME   www.example.de.
 | **DoH** | DNS over HTTPS | 443 | DNS als HTTPS-Anfrage |
 | **DoQ** | DNS over QUIC | 853 | DNS über QUIC-Protokoll |
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              Klassisches DNS vs. DoH/DoT                       │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Klassisches DNS:                                              │
-│   • Port 53 (UDP/TCP)                                          │
-│   • Unverschlüsselt → ISP kann mitlesen                        │
-│   • Leicht zu blockieren/umzuleiten                            │
-│                                                                  │
-│   DoH (DNS over HTTPS):                                        │
-│   • Port 443 (wie normaler HTTPS-Traffic)                      │
-│   • Verschlüsselt → ISP sieht nur "HTTPS zu 1.1.1.1"          │
-│   • Schwer zu blockieren (gleicher Port wie Web)               │
-│                                                                  │
-│   DoT (DNS over TLS):                                          │
-│   • Port 853 (dedizierter Port)                                │
-│   • Verschlüsselt → ISP sieht nur "TLS zu DNS-Server"         │
-│   • Leichter zu blockieren als DoH                             │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+---
 
 ## Praxisbeispiele
 
@@ -454,94 +352,81 @@ ftp     IN  CNAME   www.example.de.
 > **dig (Linux):**
 > ```bash
 > $ dig www.example.de
-> 
-> ;; QUESTION SECTION:
-> ;www.example.de.            IN      A
-> 
-> ;; ANSWER SECTION:
-> www.example.de.     300     IN      A       93.184.216.34
-> 
-> ;; Query time: 23 msec
-> ;; SERVER: 8.8.8.8#53(8.8.8.8)
-> ```
-> 
-> **dig mit spezifischen Typen:**
-> ```bash
 > $ dig example.de MX         # Mailserver
 > $ dig example.de NS         # Nameserver
-> $ dig example.de ANY        # Alle Records
+> $ dig +trace example.de     # Vollständige Auflösung
 > $ dig @1.1.1.1 example.de   # Bestimmten Server fragen
-> $ dig +trace example.de     # Vollständige Auflösung zeigen
 > ```
 
-## Prüfungsrelevante Themen
+---
 
-> [!warning] Klausurrelevanz: Hoch
->
-> **Häufige Prüfungsthemen:**
-> 1. DNS-Hierarchie (Root, TLD, SLD, Subdomain)
-> 2. Rekursive vs. iterative Auflösung
-> 3. Wichtige Record-Typen (A, AAAA, MX, CNAME, NS, PTR)
-> 4. TTL und Caching
-> 5. Zone Transfers (AXFR, IXFR)
-> 6. DNSSEC Grundprinzip (Signierung, keine Verschlüsselung)
+## Zusammenhänge
 
-### Typische Prüfungsfragen
+```mermaid
+graph LR
+    A[DNS] --> B[IP-Adressen]
+    A --> C[Mailserver]
+    A --> D[TLS-Zertifikate]
+    A --> E[Load Balancing]
+    B --> F[Netzwerkschicht]
+    C --> G[MX-Records]
+    D --> H[Hostname-Validierung]
+    E --> I[Round-Robin DNS]
+```
 
-> [!question] Übungsfragen
+- [[02-DHCP|DHCP]] → Liefert DNS-Server-Adressen
+- [[04-NTP|NTP]] → Zeitsynchronisation für DNSSEC wichtig
+- [[../05-Sicherheit/03-TLS|TLS]] → Zertifikate basieren auf DNS-Namen
+- [[../03-Referenzmodelle/08-Anwendungsschicht/02-HTTP|HTTP]] → Nutzt DNS für Hostname-Auflösung
+
+---
+
+## Prüfungstipps
+
+> [!warning] **Prüfungsrelevant**
+> - DNS-Hierarchie (Root, TLD, SLD, Subdomain)
+> - Rekursive vs. iterative Auflösung
+> - Wichtige Record-Typen (A, AAAA, MX, CNAME, NS, PTR)
+> - TTL und Caching
+> - Zone Transfers (AXFR, IXFR)
+> - DNSSEC Grundprinzip (Signierung, keine Verschlüsselung)
+
+> [!question] **Häufige Prüfungsfragen**
 > 1. Beschreiben Sie den Ablauf einer DNS-Auflösung für www.example.de.
 > 2. Was ist der Unterschied zwischen einem A- und einem CNAME-Record?
 > 3. Warum ist DNS anfällig für Spoofing? Wie hilft DNSSEC?
 > 4. Was bedeutet TTL und welche Auswirkungen hat ein niedriger Wert?
 > 5. Erklären Sie Primary vs. Secondary DNS-Server.
 
-### Merkhilfen
+> [!tip] **Merkhilfen**
+> - **A** = **A**ddress (IPv4)
+> - **AAAA** = Address (IPv6, 4× A weil 128 Bit statt 32)
+> - **MX** = **M**ail e**X**change
+> - **NS** = **N**ame **S**erver
+> - **PTR** = **P**oin**T**e**R** (Reverse)
+> - **CNAME** = **C**anonical **NAME** (Alias)
+> - **Port 53** = DNS (UDP für Queries, TCP für Transfers)
 
-> [!tip] Merkregeln
-> - **A** = Address (IPv4)
-> - **AAAA** = Address (IPv6, 4x A = 128 Bit)
-> - **MX** = Mail eXchange
-> - **NS** = Name Server
-> - **PTR** = PoinTeR (Reverse)
-> - **CNAME** = Canonical NAME (Alias)
+---
 
-## Zusammenfassung
+## Weiterführende Ressourcen
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DNS auf einen Blick                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Zweck:      Namensauflösung (Name ↔ IP-Adresse)              │
-│   Schicht:    Layer 7 (Anwendungsschicht)                      │
-│   Port:       53 (UDP für Queries, TCP für Transfers)          │
-│   Standard:   RFC 1034, RFC 1035                               │
-│                                                                  │
-│   Hierarchie: Root (.) → TLD (.de) → SLD (example) → Host (www)│
-│                                                                  │
-│   Auflösung:                                                    │
-│   • Rekursiv: Client fragt einmal, Resolver erledigt alles    │
-│   • Iterativ: Resolver fragt stufenweise (Root→TLD→Auth)      │
-│                                                                  │
-│   Wichtige Records: A, AAAA, MX, NS, CNAME, PTR, TXT, SOA     │
-│                                                                  │
-│   Caching:    TTL bestimmt Gültigkeitsdauer                    │
-│   Sicherheit: DNSSEC (Signierung), DoH/DoT (Verschlüsselung)  │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+> [!note] **RFC und Standards**
+> - [[A-RFC-Index#RFC 1034|RFC 1034]] - Domain Names – Concepts and Facilities
+> - [[A-RFC-Index#RFC 1035|RFC 1035]] - Domain Names – Implementation and Specification
+> - [[A-RFC-Index#RFC 4033|RFC 4033]] - DNS Security Introduction (DNSSEC)
+> - [[A-RFC-Index#RFC 8484|RFC 8484]] - DNS Queries over HTTPS (DoH)
 
-## Querverweise
+> [!tip] **Praktische Tools**
+> - **dig** → Detaillierte DNS-Abfragen (Linux)
+> - **nslookup** → Einfache DNS-Abfragen (Windows/Linux)
+> - **Wireshark** → DNS-Traffic analysieren (Filter: `dns`)
+> - **DNSViz** → DNSSEC-Validierung visualisieren
 
-- [[02-DHCP|DHCP]] – Liefert DNS-Server-Adressen
-- [[04-NTP|NTP]] – Zeitsynchronisation für DNSSEC wichtig
-- [[../05-Sicherheit/03-TLS|TLS]] – Zertifikate basieren auf DNS-Namen
-- [[../03-Referenzmodelle/08-Anwendungsschicht/02-HTTP|HTTP]] – Nutzt DNS für Hostname-Auflösung
+---
 
 ## Quellen
 
-- [[A-RFC-Index#RFC 1034|RFC 1034]] - Domain Names - Concepts and Facilities
-- [[A-RFC-Index#RFC 1035|RFC 1035]] - Domain Names - Implementation and Specification
-- [[A-RFC-Index#RFC 4033|RFC 4033]] - DNS Security Introduction and Requirements (DNSSEC)
-- [[A-RFC-Index#RFC 8484|RFC 8484]] - DNS Queries over HTTPS (DoH)
-- [[A-RFC-Index#RFC 7858|RFC 7858]] - DNS over TLS (DoT)
+- Tanenbaum, Andrew S.: Computernetzwerke – Ausführliche Behandlung der DNS-Architektur und -Protokolle.
+- Kurose, Ross: Computernetze – Ein Top-Down-Ansatz – Didaktisch aufbereitete Darstellung der Anwendungsschicht mit DNS-Fokus.
+- RFC 1034/1035 – Domain Names – Die grundlegenden Spezifikationen für DNS, die auch heute noch gültig sind.
