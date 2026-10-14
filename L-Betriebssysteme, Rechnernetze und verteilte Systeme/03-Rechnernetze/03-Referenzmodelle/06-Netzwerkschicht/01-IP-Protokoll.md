@@ -183,14 +183,169 @@ Diese Adressen sind nicht im Internet routbar:
 | B | 172.16.0.0 - 172.31.255.255 | 172.16.0.0/12 | Mittlere Netze |
 | C | 192.168.0.0 - 192.168.255.255 | 192.168.0.0/16 | Heimnetzwerke |
 
-### Spezielle Adressen
+### Spezielle und reservierte IPv4-Adressbereiche
 
-| Adresse/Bereich | Verwendung |
-|-----------------|------------|
-| 127.0.0.0/8 | Loopback (localhost) |
-| 0.0.0.0 | "Dieses Netzwerk" (Platzhalter) |
-| 255.255.255.255 | Limited Broadcast |
-| 169.254.0.0/16 | Link-Local (APIPA) |
+Die IANA hat verschiedene Adressbereiche für spezielle Zwecke reserviert:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│           Übersicht: Spezielle IPv4-Netzbereiche               │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   0.0.0.0/8          "Dieses Netzwerk" (This host)            │
+│   10.0.0.0/8         Privat (Klasse A)                        │
+│   100.64.0.0/10      Carrier-Grade NAT (CGNAT)                │
+│   127.0.0.0/8        Loopback                                 │
+│   169.254.0.0/16     Link-Local (APIPA)                       │
+│   172.16.0.0/12      Privat (Klasse B)                        │
+│   192.0.0.0/24       IETF Protocol Assignments                │
+│   192.0.2.0/24       Dokumentation (TEST-NET-1)               │
+│   192.88.99.0/24     6to4 Relay Anycast (deprecated)          │
+│   192.168.0.0/16     Privat (Klasse C)                        │
+│   198.18.0.0/15      Benchmark-Tests                          │
+│   198.51.100.0/24    Dokumentation (TEST-NET-2)               │
+│   203.0.113.0/24     Dokumentation (TEST-NET-3)               │
+│   224.0.0.0/4        Multicast                                │
+│   240.0.0.0/4        Reserviert (ehem. Klasse E)              │
+│   255.255.255.255/32 Limited Broadcast                        │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+#### Detaillierte Beschreibung
+
+| Adressbereich | CIDR | Zweck | RFC |
+|---------------|------|-------|-----|
+| **0.0.0.0/8** | /8 | "Dieses Netzwerk" – Quelle vor IP-Zuweisung | [[A-RFC-Index\|RFC 1122]] |
+| **10.0.0.0/8** | /8 | Private Adressen (16 Mio. Hosts) | [[A-RFC-Index\|RFC 1918]] |
+| **100.64.0.0/10** | /10 | Shared Address Space (CGNAT) | [[A-RFC-Index\|RFC 6598]] |
+| **127.0.0.0/8** | /8 | Loopback (127.0.0.1 = localhost) | [[A-RFC-Index\|RFC 1122]] |
+| **169.254.0.0/16** | /16 | Link-Local (APIPA, Zeroconf) | [[A-RFC-Index\|RFC 3927]] |
+| **172.16.0.0/12** | /12 | Private Adressen (1 Mio. Hosts) | [[A-RFC-Index\|RFC 1918]] |
+| **192.0.0.0/24** | /24 | IETF Protocol Assignments | [[A-RFC-Index\|RFC 6890]] |
+| **192.0.2.0/24** | /24 | Dokumentation (TEST-NET-1) | [[A-RFC-Index\|RFC 5737]] |
+| **192.88.99.0/24** | /24 | 6to4 Relay Anycast (deprecated) | [[A-RFC-Index\|RFC 7526]] |
+| **192.168.0.0/16** | /16 | Private Adressen (65k Hosts) | [[A-RFC-Index\|RFC 1918]] |
+| **198.18.0.0/15** | /15 | Network Benchmark Tests | [[A-RFC-Index\|RFC 2544]] |
+| **198.51.100.0/24** | /24 | Dokumentation (TEST-NET-2) | [[A-RFC-Index\|RFC 5737]] |
+| **203.0.113.0/24** | /24 | Dokumentation (TEST-NET-3) | [[A-RFC-Index\|RFC 5737]] |
+| **224.0.0.0/4** | /4 | Multicast (ehem. Klasse D) | [[A-RFC-Index\|RFC 5771]] |
+| **233.252.0.0/24** | /24 | Multicast-Dokumentation (MCAST-TEST-NET) | [[A-RFC-Index\|RFC 5771]] |
+| **240.0.0.0/4** | /4 | Reserviert für zukünftige Nutzung | [[A-RFC-Index\|RFC 1112]] |
+| **255.255.255.255** | /32 | Limited Broadcast (lokales Segment) | [[A-RFC-Index\|RFC 919]] |
+
+#### Wichtige Kategorien
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                 Private Adressbereiche                          │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   10.0.0.0/8       ████████████████████████████  16.777.216    │
+│   172.16.0.0/12    ██████████                     1.048.576    │
+│   192.168.0.0/16   ███                               65.536    │
+│                                                                 │
+│   Gesamt: ~18 Millionen private Adressen                       │
+│   → Nicht im Internet routbar                                   │
+│   → Benötigen NAT für Internetzugang                           │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│              Dokumentations-Adressbereiche                      │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   ┌───────────────────┐   Verwendung in:                       │
+│   │ 192.0.2.0/24      │   • Dokumentation                      │
+│   │ TEST-NET-1        │   • Büchern, RFCs                      │
+│   └───────────────────┘   • Beispielkonfigurationen            │
+│                                                                 │
+│   ┌───────────────────┐   Diese Adressen sollten nie           │
+│   │ 198.51.100.0/24   │   in produktiven Netzen oder           │
+│   │ TEST-NET-2        │   im Internet auftauchen.              │
+│   └───────────────────┘                                         │
+│                                                                 │
+│   ┌───────────────────┐                                         │
+│   │ 203.0.113.0/24    │                                         │
+│   │ TEST-NET-3        │                                         │
+│   └───────────────────┘                                         │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+#### Carrier-Grade NAT (CGNAT)
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    CGNAT (100.64.0.0/10)                        │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   Problem: IPv4-Erschöpfung bei ISPs                           │
+│                                                                 │
+│   ┌──────────┐    ┌─────────────┐    ┌────────────────┐        │
+│   │ Kunde A  │    │             │    │                │        │
+│   │100.64.0.1│───►│   CGNAT     │───►│   Internet     │        │
+│   └──────────┘    │   (ISP)     │    │  203.0.113.1   │        │
+│   ┌──────────┐    │             │    │                │        │
+│   │ Kunde B  │───►│100.64.0.0/10│───►│                │        │
+│   │100.64.0.2│    │             │    │                │        │
+│   └──────────┘    └─────────────┘    └────────────────┘        │
+│                                                                 │
+│   Nachteile:                                                    │
+│   • Doppeltes NAT (Kunde-NAT + ISP-NAT)                        │
+│   • Probleme mit Portweiterleitung                             │
+│   • Peer-to-Peer erschwert                                     │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+#### Link-Local (APIPA)
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                  Link-Local (169.254.0.0/16)                    │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   Automatische Zuweisung wenn:                                  │
+│   • Kein DHCP-Server erreichbar                                │
+│   • Statische IP nicht konfiguriert                            │
+│                                                                 │
+│   ┌────────────┐        ┌────────────┐                         │
+│   │    PC1     │────────│    PC2     │   Direkte Verbindung    │
+│   │169.254.x.x │        │169.254.y.y │   ohne Router/DHCP      │
+│   └────────────┘        └────────────┘                         │
+│                                                                 │
+│   Reservierte Bereiche:                                         │
+│   • 169.254.0.0/24   → Reserviert                              │
+│   • 169.254.255.0/24 → Reserviert                              │
+│   • 169.254.1.0 - 169.254.254.255 → Nutzbar                    │
+│                                                                 │
+│   Hinweis: Nicht routbar, nur lokales Segment!                 │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+#### Multicast-Adressbereiche
+
+| Bereich | Scope | Verwendung |
+|---------|-------|------------|
+| 224.0.0.0/24 | Link-Local | Routing-Protokolle (OSPF, RIP) |
+| 224.0.0.1 | Link-Local | Alle Hosts im Segment |
+| 224.0.0.2 | Link-Local | Alle Router im Segment |
+| 224.0.0.5 | Link-Local | OSPF-Router |
+| 224.0.0.6 | Link-Local | OSPF Designated Router |
+| 224.0.0.9 | Link-Local | RIPv2-Router |
+| 224.0.1.0/24 | Internetwork | Kontrollierte Multicast-Dienste |
+| 239.0.0.0/8 | Administrativ | Privater Multicast (wie RFC 1918) |
+
+> [!tip] Prüfungshinweis
+> Die speziellen Adressbereiche sind ein beliebtes Prüfungsthema:
+> - Private Adressen (10/172.16/192.168) und deren Größe
+> - Dokumentationsadressen für Beispiele
+> - Loopback (127.0.0.1) und Link-Local (169.254.x.x)
+> - CGNAT als Übergangslösung
 
 ## NAT - Network Address Translation
 
