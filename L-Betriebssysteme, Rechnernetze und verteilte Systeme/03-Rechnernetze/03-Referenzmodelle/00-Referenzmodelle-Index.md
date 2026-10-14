@@ -29,6 +29,7 @@ Dieses Kapitel behandelt die Referenzmodelle der Netzwerktechnik sowie die einze
 | 01 | [[01-OSI-Modell]] | Das ISO/OSI-Referenzmodell mit 7 Schichten |
 | 02 | [[02-TCP-IP-Modell]] | Das DoD/TCP-IP-Modell mit 4 Schichten |
 | 03 | [[03-Schichtenvergleich]] | Gegenüberstellung beider Modelle |
+| 04 | [[04-Arbeitsweise-Schichtenmodell]] | Paketfluss, Einkapselung, Client-Router-Server |
 
 ## Die Schichten im Detail
 
@@ -36,11 +37,11 @@ Nach dem Verständnis der Modelle werden die einzelnen Schichten vertieft:
 
 | Nr. | Schicht | OSI | TCP/IP | Inhalt |
 |-----|---------|-----|--------|--------|
-| 04 | [[04-Physikalische-Schicht/00-Physikalische-Schicht-Index\|Physikalische Schicht]] | 1 | Netzzugang | Übertragungsmedien, Signale |
-| 05 | [[05-Sicherungsschicht/00-Sicherungsschicht-Index\|Sicherungsschicht]] | 2 | Netzzugang | Frames, MAC, Ethernet |
-| 06 | [[06-Netzwerkschicht/00-Netzwerkschicht-Index\|Netzwerkschicht]] | 3 | Internet | IP, Routing, ICMP |
-| 07 | [[07-Transportschicht/00-Transportschicht-Index\|Transportschicht]] | 4 | Transport | TCP, UDP, Ports |
-| 08 | [[08-Anwendungsschicht/00-Anwendungsschicht-Index\|Anwendungsschicht]] | 5-7 | Anwendung | HTTP, DNS, SMTP |
+| 05 | [[04-Physikalische-Schicht/00-Physikalische-Schicht-Index\|Physikalische Schicht]] | 1 | Netzzugang | Übertragungsmedien, Signale |
+| 06 | [[05-Sicherungsschicht/00-Sicherungsschicht-Index\|Sicherungsschicht]] | 2 | Netzzugang | Frames, MAC, Ethernet |
+| 07 | [[06-Netzwerkschicht/00-Netzwerkschicht-Index\|Netzwerkschicht]] | 3 | Internet | IP, Routing, ICMP |
+| 08 | [[07-Transportschicht/00-Transportschicht-Index\|Transportschicht]] | 4 | Transport | TCP, UDP, Ports |
+| 09 | [[08-Anwendungsschicht/00-Anwendungsschicht-Index\|Anwendungsschicht]] | 5-7 | Anwendung | HTTP, DNS, SMTP |
 
 ## Schichtenübersicht
 

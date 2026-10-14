@@ -21,7 +21,6 @@ bereich: RN
 | 04 | [[04-Basisprotokolle/00-Basisprotokolle-Index\|Basisprotokolle]] | ARP, DHCP, DNS, NTP, Spanning Tree |
 | 05 | [[05-Sicherheit/00-Sicherheit-Index\|Sicherheit]] | Firewalls, VPN, TLS, Overlay-Netzwerke |
 | 06 | [[06-WAN-Technologien/00-WAN-Index\|WAN-Technologien]] | MPLS, SD-WAN, SASE |
-| 07 | [[07-Arbeitsweise-Schichtenmodell\|Arbeitsweise Schichtenmodell]] | Paketfluss, Einkapselung, Client-Router-Server |
 
 ### Kapitel 06: WAN-Technologien
 
@@ -38,13 +37,6 @@ Das Kapitel [[04-Basisprotokolle/00-Basisprotokolle-Index|Basisprotokolle]] beha
 - **DNS** – Namensauflösung
 - **NTP** – Zeitsynchronisation
 - **Spanning Tree** – Schleifenvermeidung
-
-### Kapitel 07: Arbeitsweise des Schichtenmodells
-
-Das Kapitel [[07-Arbeitsweise-Schichtenmodell]] demonstriert anhand eines praktischen Beispiels (HTTP-Anfrage Client → Router → Server):
-- Einkapselung und Entkapselung
-- Beitrag jeder Schicht
-- Was sich beim Durchgang durch den Router ändert
 
 ### Kapitel 03: Referenzmodelle (Unterkapitel)
 
