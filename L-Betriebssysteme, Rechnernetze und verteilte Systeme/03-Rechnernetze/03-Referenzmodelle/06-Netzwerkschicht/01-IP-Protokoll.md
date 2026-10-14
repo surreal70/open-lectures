@@ -195,7 +195,7 @@ Die IANA hat verschiedene Adressbereiche für spezielle Zwecke reserviert:
 | 127.0.0.0/8 | /8 | Loopback | [[A-RFC-Index#RFC 1122\|RFC 1122]] |
 | 169.254.0.0/16 | /16 | Link-Local (APIPA) | [[A-RFC-Index#RFC 3927\|RFC 3927]] |
 | 172.16.0.0/12 | /12 | Privat (Klasse B) | [[A-RFC-Index#RFC 1918\|RFC 1918]] |
-| 192.0.0.0/24 | /24 | IETF Protocol Assignments | [[A-RFC-Index#RFC 6890\|RFC 6890]] |
+| 192.0.0.0/24 | /24 | IETF Protocol Assignments | [[A-RFC-Index#RFC 6890\|RFC 6890]], [[A-RFC-Index#RFC 8190\|RFC 8190]] |
 | 192.0.2.0/24 | /24 | Dokumentation (TEST-NET-1) | [[A-RFC-Index#RFC 5737\|RFC 5737]] |
 | 192.88.99.0/24 | /24 | 6to4 Relay Anycast (deprecated) | [[A-RFC-Index#RFC 7526\|RFC 7526]] |
 | 192.168.0.0/16 | /16 | Privat (Klasse C) | [[A-RFC-Index#RFC 1918\|RFC 1918]] |
@@ -206,6 +206,9 @@ Die IANA hat verschiedene Adressbereiche für spezielle Zwecke reserviert:
 | 233.252.0.0/24 | /24 | Multicast-Dokumentation (MCAST-TEST-NET) | [[A-RFC-Index#RFC 5771\|RFC 5771]] |
 | 240.0.0.0/4 | /4 | Reserviert (ehem. Klasse E) | [[A-RFC-Index#RFC 1112\|RFC 1112]] |
 | 255.255.255.255/32 | /32 | Limited Broadcast | [[A-RFC-Index#RFC 919\|RFC 919]] |
+
+> [!info] RFC-Updates
+> Die zentralen Registries für spezielle IP-Adressen werden in [[A-RFC-Index#RFC 6890|RFC 6890]] definiert und durch [[A-RFC-Index#RFC 8190|RFC 8190]] (2017) aktualisiert.
 
 #### Wichtige Kategorien
 
