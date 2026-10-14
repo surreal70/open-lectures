@@ -26,7 +26,7 @@ Dieses Kapitel behandelt fundamentale Netzwerkprotokolle und Dienste, die für d
 │   ├──────────────────┤    ├──────────────────┤                  │
 │   │ IP → MAC         │    │ Automatische     │                  │
 │   │ Adressauflösung  │    │ IP-Konfiguration │                  │
-│   │ Layer 2/3        │    │ Layer 7          │                  │
+│   │ Layer 2/3        │    │ Layer 3/7        │                  │
 │   └──────────────────┘    └──────────────────┘                  │
 │                                                                  │
 │   ┌──────────────────┐    ┌──────────────────┐                  │
@@ -53,7 +53,7 @@ Dieses Kapitel behandelt fundamentale Netzwerkprotokolle und Dienste, die für d
 | Nr. | Protokoll | Beschreibung | Schicht |
 |-----|-----------|--------------|---------|
 | 01 | [[01-ARP\|ARP]] | Address Resolution Protocol – IP zu MAC | 2/3 |
-| 02 | [[02-DHCP\|DHCP]] | Dynamic Host Configuration Protocol | 7 |
+| 02 | [[02-DHCP\|DHCP]] | Dynamic Host Configuration Protocol | 3/7 |
 | 03 | [[03-DNS\|DNS]] | Domain Name System | 7 |
 | 04 | [[04-NTP\|NTP]] | Network Time Protocol | 7 |
 | 05 | [[05-Spanning-Tree\|Spanning Tree]] | Schleifenvermeidung in L2-Netzen | 2 |
