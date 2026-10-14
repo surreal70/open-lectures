@@ -18,9 +18,10 @@ bereich: RN
 | 01 | [[01-Grundlagen/00-Grundlagen-Index\|Grundlagen]] | Historie, Netzwerktypen, Topologien |
 | 02 | [[02-Standards-und-Gremien/00-Standards-Index\|Standards und Gremien]] | IEEE, IETF, RFCs |
 | 03 | [[03-Referenzmodelle/00-Referenzmodelle-Index\|Referenzmodelle]] | OSI, TCP/IP und alle Schichten |
-| 04 | [[04-Arbeitsweise-Schichtenmodell\|Arbeitsweise Schichtenmodell]] | Paketfluss, Einkapselung, Client-Router-Server |
+| 04 | [[04-Basisprotokolle/00-Basisprotokolle-Index\|Basisprotokolle]] | ARP, DHCP, DNS, NTP, Spanning Tree |
 | 05 | [[05-Sicherheit/00-Sicherheit-Index\|Sicherheit]] | Firewalls, VPN, TLS, Overlay-Netzwerke |
 | 06 | [[06-WAN-Technologien/00-WAN-Index\|WAN-Technologien]] | MPLS, SD-WAN, SASE |
+| 07 | [[07-Arbeitsweise-Schichtenmodell\|Arbeitsweise Schichtenmodell]] | Paketfluss, Einkapselung, Client-Router-Server |
 
 ### Kapitel 06: WAN-Technologien
 
@@ -29,9 +30,18 @@ Das Kapitel [[06-WAN-Technologien/00-WAN-Index|WAN-Technologien]] behandelt:
 - **SD-WAN** - Software-defined Wide Area Networks
 - **SASE** - Secure Access Service Edge (Cloud-native Architektur)
 
-### Kapitel 04: Arbeitsweise des Schichtenmodells
+### Kapitel 04: Basisprotokolle und Dienste
 
-Das Kapitel [[04-Arbeitsweise-Schichtenmodell]] demonstriert anhand eines praktischen Beispiels (HTTP-Anfrage Client → Router → Server):
+Das Kapitel [[04-Basisprotokolle/00-Basisprotokolle-Index|Basisprotokolle]] behandelt fundamentale Netzwerkprotokolle:
+- **ARP** – Adressauflösung IP → MAC
+- **DHCP** – Automatische IP-Konfiguration
+- **DNS** – Namensauflösung
+- **NTP** – Zeitsynchronisation
+- **Spanning Tree** – Schleifenvermeidung
+
+### Kapitel 07: Arbeitsweise des Schichtenmodells
+
+Das Kapitel [[07-Arbeitsweise-Schichtenmodell]] demonstriert anhand eines praktischen Beispiels (HTTP-Anfrage Client → Router → Server):
 - Einkapselung und Entkapselung
 - Beitrag jeder Schicht
 - Was sich beim Durchgang durch den Router ändert
