@@ -138,7 +138,7 @@ Um diese Komplexität aufzulösen, betrachten wir Rechnernetze aus verschiedenen
 Netzwerke lassen sich nach ihrer räumlichen Ausdehnung klassifizieren – von chip-internen Verbindungen bis zu interplanetaren Netzen.
 
 > [!info] Detaillierte Informationen
-> Eine ausführliche Behandlung der Netzwerktypen mit Technologien, Bandbreiten und Anwendungsbeispielen finden Sie in [[02-Netzwerktypen]].
+> Eine ausführliche Behandlung der Netzwerktypen mit Technologien, Bandbreiten und Anwendungsbeispielen finden Sie in [[03-Netzwerktypen]].
 
 Die wichtigsten Kategorien im Überblick:
 - **PAN** (Personal Area Network) – Bluetooth, wenige Meter
@@ -157,7 +157,7 @@ Die Art der Kommunikation in Netzwerken hängt von der Anzahl der Empfänger ab:
 - **Anycast** (1:nächster) – Nachricht an den nächsten aus einer Gruppe
 
 > [!info] Detaillierte Informationen
-> Eine ausführliche Behandlung der Kommunikationsarten mit Beispielen und Anwendungsfällen finden Sie in [[02-Netzwerktypen#Kommunikationsarten in Netzwerken]].
+> Eine ausführliche Behandlung der Kommunikationsarten mit Beispielen und Anwendungsfällen finden Sie in [[03-Netzwerktypen#Kommunikationsarten in Netzwerken]].
 
 ## Moderne Kommunikationstechnologien
 
@@ -260,8 +260,9 @@ Entwickelt bei **XEROX PARC** als „Distributed Packet Switching":
 
 ## Verwandte Themen
 
-- [[02-Netzwerktypen]] – Klassifikation nach Funktion und Einsatz
-- [[03-Topologien]] – Physische und logische Netzwerkstrukturen
+- [[02-Standards-und-Gremien]] – Standardisierungsgremien und IEEE 802
+- [[03-Netzwerktypen]] – Klassifikation nach Funktion und Einsatz
+- [[04-Topologien]] – Physische und logische Netzwerkstrukturen
 - [[00-Referenzmodelle-Index|Referenzmodelle]] – OSI und TCP/IP Modell
 
 ## Quellen

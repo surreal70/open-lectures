@@ -388,7 +388,8 @@ Moderne Rechenzentren nutzen eine spezielle Mesh-Variante:
 ## Verwandte Themen
 
 - [[01-Historie]] – Entwicklung der Netzwerktechnologien
-- [[02-Netzwerktypen]] – Klassifikation nach Reichweite
+- [[02-Standards-und-Gremien]] – Standardisierungsgremien und IEEE 802
+- [[03-Netzwerktypen]] – Klassifikation nach Reichweite
 - [[01-Ethernet|Ethernet]] – Der dominierende LAN-Standard
 - [[00-Sicherungsschicht-Index|Sicherungsschicht]] – MAC-Adressen und Switching
 
