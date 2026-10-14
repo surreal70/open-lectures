@@ -69,6 +69,7 @@ Nach diesem Kapitel sollten Sie:
 2. [[02-Routing]] - Statisches/dynamisches Routing, Protokolle
 3. [[03-IPv6]] - Next Generation Internet Protocol
 4. [[04-Broadcast-Kollisionsdomaene]] - Unterschied Broadcast- und Kollisionsdomäne
+5. [[05-ICMP]] - Internet Control Message Protocol, Ping, Traceroute
 
 ## Netzwerkgeräte auf Layer 3
 
