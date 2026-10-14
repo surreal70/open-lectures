@@ -68,6 +68,7 @@ Nach diesem Kapitel sollten Sie:
 1. [[01-IP-Protokoll]] - IPv4-Adressierung, Header, Subnetting
 2. [[02-Routing]] - Statisches/dynamisches Routing, Protokolle
 3. [[03-IPv6]] - Next Generation Internet Protocol
+4. [[04-Broadcast-Kollisionsdomaene]] - Unterschied Broadcast- und Kollisionsdomäne
 
 ## Netzwerkgeräte auf Layer 3
 
