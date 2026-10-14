@@ -19,7 +19,15 @@ bereich: RN
 | 02 | [[02-Standards-und-Gremien/00-Standards-Index\|Standards und Gremien]] | IEEE, IETF, RFCs |
 | 03 | [[03-Referenzmodelle/00-Referenzmodelle-Index\|Referenzmodelle]] | OSI, TCP/IP und alle Schichten |
 | 04 | [[04-Arbeitsweise-Schichtenmodell\|Arbeitsweise Schichtenmodell]] | Paketfluss, Einkapselung, Client-Router-Server |
-| 05 | [[05-Sicherheit/00-Sicherheit-Index\|Sicherheit]] | Firewalls, VPN, TLS |
+| 05 | [[05-Sicherheit/00-Sicherheit-Index\|Sicherheit]] | Firewalls, VPN, TLS, Overlay-Netzwerke |
+| 06 | [[06-WAN-Technologien/00-WAN-Index\|WAN-Technologien]] | MPLS, SD-WAN, SASE |
+
+### Kapitel 06: WAN-Technologien
+
+Das Kapitel [[06-WAN-Technologien/00-WAN-Index|WAN-Technologien]] behandelt:
+- **MPLS** - Label-basiertes Switching für Provider-Netze
+- **SD-WAN** - Software-defined Wide Area Networks
+- **SASE** - Secure Access Service Edge (Cloud-native Architektur)
 
 ### Kapitel 04: Arbeitsweise des Schichtenmodells
 
