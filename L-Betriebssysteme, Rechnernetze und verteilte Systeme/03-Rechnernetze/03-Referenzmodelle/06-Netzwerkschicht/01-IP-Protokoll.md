@@ -187,52 +187,25 @@ Diese Adressen sind nicht im Internet routbar:
 
 Die IANA hat verschiedene Adressbereiche für spezielle Zwecke reserviert:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│           Übersicht: Spezielle IPv4-Netzbereiche               │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   0.0.0.0/8          "Dieses Netzwerk" (This host)            │
-│   10.0.0.0/8         Privat (Klasse A)                        │
-│   100.64.0.0/10      Carrier-Grade NAT (CGNAT)                │
-│   127.0.0.0/8        Loopback                                 │
-│   169.254.0.0/16     Link-Local (APIPA)                       │
-│   172.16.0.0/12      Privat (Klasse B)                        │
-│   192.0.0.0/24       IETF Protocol Assignments                │
-│   192.0.2.0/24       Dokumentation (TEST-NET-1)               │
-│   192.88.99.0/24     6to4 Relay Anycast (deprecated)          │
-│   192.168.0.0/16     Privat (Klasse C)                        │
-│   198.18.0.0/15      Benchmark-Tests                          │
-│   198.51.100.0/24    Dokumentation (TEST-NET-2)               │
-│   203.0.113.0/24     Dokumentation (TEST-NET-3)               │
-│   224.0.0.0/4        Multicast                                │
-│   240.0.0.0/4        Reserviert (ehem. Klasse E)              │
-│   255.255.255.255/32 Limited Broadcast                        │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
-
-#### Detaillierte Beschreibung
-
 | Adressbereich | CIDR | Zweck | RFC |
 |---------------|------|-------|-----|
-| **0.0.0.0/8** | /8 | "Dieses Netzwerk" – Quelle vor IP-Zuweisung | [[A-RFC-Index\|RFC 1122]] |
-| **10.0.0.0/8** | /8 | Private Adressen (16 Mio. Hosts) | [[A-RFC-Index\|RFC 1918]] |
-| **100.64.0.0/10** | /10 | Shared Address Space (CGNAT) | [[A-RFC-Index\|RFC 6598]] |
-| **127.0.0.0/8** | /8 | Loopback (127.0.0.1 = localhost) | [[A-RFC-Index\|RFC 1122]] |
-| **169.254.0.0/16** | /16 | Link-Local (APIPA, Zeroconf) | [[A-RFC-Index\|RFC 3927]] |
-| **172.16.0.0/12** | /12 | Private Adressen (1 Mio. Hosts) | [[A-RFC-Index\|RFC 1918]] |
-| **192.0.0.0/24** | /24 | IETF Protocol Assignments | [[A-RFC-Index\|RFC 6890]] |
-| **192.0.2.0/24** | /24 | Dokumentation (TEST-NET-1) | [[A-RFC-Index\|RFC 5737]] |
-| **192.88.99.0/24** | /24 | 6to4 Relay Anycast (deprecated) | [[A-RFC-Index\|RFC 7526]] |
-| **192.168.0.0/16** | /16 | Private Adressen (65k Hosts) | [[A-RFC-Index\|RFC 1918]] |
-| **198.18.0.0/15** | /15 | Network Benchmark Tests | [[A-RFC-Index\|RFC 2544]] |
-| **198.51.100.0/24** | /24 | Dokumentation (TEST-NET-2) | [[A-RFC-Index\|RFC 5737]] |
-| **203.0.113.0/24** | /24 | Dokumentation (TEST-NET-3) | [[A-RFC-Index\|RFC 5737]] |
-| **224.0.0.0/4** | /4 | Multicast (ehem. Klasse D) | [[A-RFC-Index\|RFC 5771]] |
-| **233.252.0.0/24** | /24 | Multicast-Dokumentation (MCAST-TEST-NET) | [[A-RFC-Index\|RFC 5771]] |
-| **240.0.0.0/4** | /4 | Reserviert für zukünftige Nutzung | [[A-RFC-Index\|RFC 1112]] |
-| **255.255.255.255** | /32 | Limited Broadcast (lokales Segment) | [[A-RFC-Index\|RFC 919]] |
+| 0.0.0.0/8 | /8 | "Dieses Netzwerk" (This host) | [[A-RFC-Index#RFC 1122\|RFC 1122]] |
+| 10.0.0.0/8 | /8 | Privat (Klasse A) | [[A-RFC-Index#RFC 1918\|RFC 1918]] |
+| 100.64.0.0/10 | /10 | Carrier-Grade NAT (CGNAT) | [[A-RFC-Index#RFC 6598\|RFC 6598]] |
+| 127.0.0.0/8 | /8 | Loopback | [[A-RFC-Index#RFC 1122\|RFC 1122]] |
+| 169.254.0.0/16 | /16 | Link-Local (APIPA) | [[A-RFC-Index#RFC 3927\|RFC 3927]] |
+| 172.16.0.0/12 | /12 | Privat (Klasse B) | [[A-RFC-Index#RFC 1918\|RFC 1918]] |
+| 192.0.0.0/24 | /24 | IETF Protocol Assignments | [[A-RFC-Index#RFC 6890\|RFC 6890]] |
+| 192.0.2.0/24 | /24 | Dokumentation (TEST-NET-1) | [[A-RFC-Index#RFC 5737\|RFC 5737]] |
+| 192.88.99.0/24 | /24 | 6to4 Relay Anycast (deprecated) | [[A-RFC-Index#RFC 7526\|RFC 7526]] |
+| 192.168.0.0/16 | /16 | Privat (Klasse C) | [[A-RFC-Index#RFC 1918\|RFC 1918]] |
+| 198.18.0.0/15 | /15 | Benchmark-Tests | [[A-RFC-Index#RFC 2544\|RFC 2544]] |
+| 198.51.100.0/24 | /24 | Dokumentation (TEST-NET-2) | [[A-RFC-Index#RFC 5737\|RFC 5737]] |
+| 203.0.113.0/24 | /24 | Dokumentation (TEST-NET-3) | [[A-RFC-Index#RFC 5737\|RFC 5737]] |
+| 224.0.0.0/4 | /4 | Multicast | [[A-RFC-Index#RFC 5771\|RFC 5771]] |
+| 233.252.0.0/24 | /24 | Multicast-Dokumentation (MCAST-TEST-NET) | [[A-RFC-Index#RFC 5771\|RFC 5771]] |
+| 240.0.0.0/4 | /4 | Reserviert (ehem. Klasse E) | [[A-RFC-Index#RFC 1112\|RFC 1112]] |
+| 255.255.255.255/32 | /32 | Limited Broadcast | [[A-RFC-Index#RFC 919\|RFC 919]] |
 
 #### Wichtige Kategorien
 
