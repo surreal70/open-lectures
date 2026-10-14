@@ -205,6 +205,74 @@ bereich: RN
 └─────────────────────────────────────────────────────────────────┘
 ```
 
+## Padding (Auffüllung)
+
+### Warum Padding?
+
+Ethernet erfordert eine **Mindestframegröße von 64 Bytes** (ohne Präambel/SFD). Dies hat technische Gründe:
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    PADDING BEI ETHERNET                         │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  PROBLEM: Kollisionserkennung (CSMA/CD)                        │
+│  ─────────────────────────────────────────────────────────────  │
+│  Bei Ethernet muss der Sender während der gesamten Übertragung │
+│  eine mögliche Kollision erkennen können. Das Frame muss       │
+│  mindestens so lange sein, dass es die maximale Netzausdehnung │
+│  (2× Laufzeit = Round-Trip-Time) überbrückt.                   │
+│                                                                 │
+│  Slot Time bei 10 Mbps:     51,2 µs = 512 Bit = 64 Bytes      │
+│  Maximale Kabellänge:       2500 m (mit Repeatern)             │
+│                                                                 │
+│  BERECHNUNG der Mindestgröße:                                   │
+│  ─────────────────────────────────────────────────────────────  │
+│  Min. Frame = Dst MAC + Src MAC + Type + Payload + FCS         │
+│             = 6 + 6 + 2 + Payload + 4 = 64 Bytes               │
+│                                                                 │
+│  → Payload muss mindestens 46 Bytes sein!                      │
+│                                                                 │
+│  Wenn Nutzdaten < 46 Bytes → Padding hinzufügen                │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Wie funktioniert Padding?
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    PADDING-BEISPIEL                             │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Beispiel: ARP-Paket (28 Bytes Nutzdaten)                      │
+│                                                                 │
+│  Ohne Padding (ungültig!):                                      │
+│  │ Dst │ Src │ Type │ ARP-Paket │ FCS │                        │
+│  │ 6 B │ 6 B │  2 B │   28 B    │ 4 B │ = 46 Bytes < 64!      │
+│                                                                 │
+│  Mit Padding (gültig):                                          │
+│  │ Dst │ Src │ Type │ ARP-Paket │ Padding │ FCS │              │
+│  │ 6 B │ 6 B │  2 B │   28 B    │  18 B   │ 4 B │ = 64 Bytes ✓│
+│                                                                 │
+│  Das Padding besteht aus Null-Bytes (0x00):                    │
+│  ┌────────────────────────────────────────────────────────┐    │
+│  │ 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 │    │
+│  └────────────────────────────────────────────────────────┘    │
+│                        18 Bytes                                 │
+│                                                                 │
+│  WICHTIG:                                                       │
+│  • Padding wird vom Sender hinzugefügt                         │
+│  • Padding wird nicht als separates Feld im Header markiert    │
+│  • Der Empfänger muss das echte Payload-Ende anhand des        │
+│    übergeordneten Protokolls (z.B. IP Total Length) erkennen   │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+> [!info] Padding bei Gigabit-Ethernet
+> Bei Gigabit-Ethernet (1000 Mbps) wäre die Slot Time nur 0,512 µs – viel zu kurz für vernünftige Kabellängen. Daher wird **Carrier Extension** verwendet: Der Frame wird auf mindestens 512 Bytes erweitert (nicht die Nutzdaten, sondern spezielle Extension-Symbole nach dem FCS).
+
 ## MTU und Jumbo Frames
 
 | Begriff | Größe | Beschreibung |
@@ -215,6 +283,374 @@ bereich: RN
 
 > [!warning] Jumbo Frames
 > Jumbo Frames müssen auf **allen** Geräten im Pfad konfiguriert sein. Unterschiedliche MTU-Größen führen zu Fragmentierung oder Paketverlust.
+
+## Leitungskodierung vs. Kanalkodierung
+
+### Begriffsunterscheidung
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│           LEITUNGSKODIERUNG VS. KANALKODIERUNG                  │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌──────────────────────────────────────────────────────────┐  │
+│  │                                                          │  │
+│  │   Daten (Bits)                                          │  │
+│  │        │                                                 │  │
+│  │        ▼                                                 │  │
+│  │   ┌────────────────────┐                                │  │
+│  │   │  KANALKODIERUNG    │  ← Layer 2 (Data Link)        │  │
+│  │   │  (Redundanz für    │     Fehlererkennung/-korrektur│  │
+│  │   │   Fehlerschutz)    │     z.B. CRC, FEC, Hamming    │  │
+│  │   └─────────┬──────────┘                                │  │
+│  │             │                                            │  │
+│  │             ▼                                            │  │
+│  │   ┌────────────────────┐                                │  │
+│  │   │  LEITUNGSKODIERUNG │  ← Layer 1 (Physical)         │  │
+│  │   │  (Bitdarstellung   │     Signalform auf Medium      │  │
+│  │   │   auf dem Medium)  │     z.B. Manchester, 4B/5B    │  │
+│  │   └─────────┬──────────┘                                │  │
+│  │             │                                            │  │
+│  │             ▼                                            │  │
+│  │      Physisches Signal                                   │  │
+│  │   (Spannung, Licht, Funk)                               │  │
+│  │                                                          │  │
+│  └──────────────────────────────────────────────────────────┘  │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Leitungskodierung (Physical Layer – Layer 1)
+
+**Zweck:** Umsetzung von Bits in physikalische Signale
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    LEITUNGSKODIERUNG                            │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Anforderungen:                                                 │
+│  • Taktrückgewinnung (Synchronisation)                         │
+│  • Gleichstromfreiheit (DC-Balance)                            │
+│  • Geringe Bandbreite                                          │
+│  • Fehlererkennung auf Symbolebene                             │
+│                                                                 │
+│  BEISPIEL: Manchester-Kodierung (10BASE-T)                     │
+│  ─────────────────────────────────────────                     │
+│  • Jedes Bit wird durch einen Pegelwechsel kodiert             │
+│  • 0 = Wechsel von High nach Low (fallende Flanke)             │
+│  • 1 = Wechsel von Low nach High (steigende Flanke)            │
+│                                                                 │
+│      Daten:    0       1       1       0       1               │
+│                │       │       │       │       │               │
+│           ┌────┘   ┌───┘   ┌───┘   ┌───┘   ┌───┘              │
+│      ─────┤    ├───┤   ├───┤   ├───┤   ├───┤   ├───           │
+│           └────    └───    └───    └───    └───                │
+│                ↓       ↑       ↑       ↓       ↑               │
+│               High→Low Low→High                                 │
+│                                                                 │
+│  Vorteil:  Takt ist im Signal enthalten                        │
+│  Nachteil: Doppelte Bandbreite nötig (10 Mbps → 20 MHz)       │
+│                                                                 │
+│                                                                 │
+│  BEISPIEL: 4B/5B + MLT-3 (100BASE-TX)                         │
+│  ─────────────────────────────────────                         │
+│  • 4 Datenbits werden auf 5 Symbole abgebildet                 │
+│  • Garantiert maximal 3 aufeinanderfolgende gleiche Bits       │
+│  • MLT-3: Drei Pegel (-V, 0, +V) für Signalübertragung        │
+│                                                                 │
+│  Effizienz: 4/5 = 80% (besser als Manchester mit 50%)         │
+│                                                                 │
+│                                                                 │
+│  BEISPIEL: 8B/10B (1000BASE-X, Gigabit Ethernet)              │
+│  ───────────────────────────────────────────────               │
+│  • 8 Datenbits → 10 Symbole                                    │
+│  • DC-Balance durch Running Disparity                          │
+│  • Spezielle Kontrollsymbole (K-Codes) für Framing            │
+│                                                                 │
+│  Effizienz: 8/10 = 80%                                        │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Kanalkodierung (Data Link Layer – Layer 2)
+
+**Zweck:** Hinzufügen von Redundanz zur Fehlererkennung/-korrektur
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    KANALKODIERUNG                               │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Ziel: Schutz der Datenintegrität bei der Übertragung          │
+│                                                                 │
+│  FEHLERERKENNUNG (Detection):                                   │
+│  ────────────────────────────                                   │
+│  • Parität (einfach, erkennt 1-Bit-Fehler)                     │
+│  • Prüfsummen (Checksums)                                      │
+│  • CRC (Cyclic Redundancy Check) ← bei Ethernet!              │
+│                                                                 │
+│  Ethernet verwendet CRC-32:                                     │
+│  • 32-Bit Prüfsumme im FCS-Feld                               │
+│  • Erkennt alle 1-Bit, 2-Bit und ungerade Bitfehler           │
+│  • Erkennt alle Burst-Fehler ≤ 32 Bit                         │
+│  • Fehlerhafte Frames werden verworfen (kein ARQ bei Ethernet)│
+│                                                                 │
+│  FEHLERKORREKTUR (Correction) – FEC:                           │
+│  ────────────────────────────────────                          │
+│  • Hamming-Code (korrigiert 1-Bit-Fehler)                      │
+│  • Reed-Solomon (Block-Codes, z.B. bei CDs, DVDs)              │
+│  • Convolutional Codes (Faltungscodes, z.B. bei WLAN)         │
+│  • LDPC (Low-Density Parity Check, z.B. bei 10GBASE-T)        │
+│                                                                 │
+│  Bei Ethernet:                                                  │
+│  • Klassisches Ethernet: Nur Fehlererkennung (CRC)            │
+│  • 10GBASE-T: FEC (LDPC) wegen schlechterer Kanalqualität     │
+│                                                                 │
+│  ┌──────────────────────────────────────────────────────────┐  │
+│  │                                                          │  │
+│  │  Daten (46-1500 Bytes)                                   │  │
+│  │  ┌───────────────────────────────────────────────────┐  │  │
+│  │  │ Nutzdaten                                          │  │  │
+│  │  └───────────────────────────────────────────────────┘  │  │
+│  │                          │                               │  │
+│  │                          ▼ CRC-32 Berechnung            │  │
+│  │  ┌───────────────────────────────────────────────┬────┐ │  │
+│  │  │ Nutzdaten                                     │FCS │ │  │
+│  │  └───────────────────────────────────────────────┴────┘ │  │
+│  │                                                  4 Bytes │  │
+│  │                                                          │  │
+│  └──────────────────────────────────────────────────────────┘  │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Vergleich: Leitungs- vs. Kanalkodierung
+
+| Aspekt | Leitungskodierung | Kanalkodierung |
+|--------|-------------------|----------------|
+| **Schicht** | Layer 1 (Physical) | Layer 2 (Data Link) |
+| **Zweck** | Bitdarstellung auf Medium | Fehlerschutz |
+| **Redundanz** | Für Synchronisation | Für Integrität |
+| **Beispiele** | Manchester, 4B/5B, 8B/10B | CRC, Hamming, LDPC |
+| **Bei Ethernet** | 4B/5B (100M), 8B/10B (1G) | CRC-32 (FCS) |
+
+## Übergang Layer 1 ↔ Layer 2: Die Netzwerkkarte (NIC)
+
+### Aufbau einer Netzwerkkarte
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│               NETZWERKKARTE (NIC) – Layer 1 & 2                 │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  ┌────────────────────────────────────────────────────────────┐│
+│  │                       HOST (CPU)                           ││
+│  │                          │                                 ││
+│  │                     ┌────┴────┐                            ││
+│  │                     │   Bus   │ (PCIe)                     ││
+│  │                     └────┬────┘                            ││
+│  └──────────────────────────┼─────────────────────────────────┘│
+│                             │                                   │
+│  ┌──────────────────────────┼─────────────────────────────────┐│
+│  │                    NETZWERKKARTE                           ││
+│  │                          │                                 ││
+│  │  ┌───────────────────────┼───────────────────────────────┐ ││
+│  │  │              MAC-Controller (Layer 2)                 │ ││
+│  │  │                       │                               │ ││
+│  │  │  ┌────────────────────┼──────────────────────────┐   │ ││
+│  │  │  │  • Frame-Aufbau/-Abbau                        │   │ ││
+│  │  │  │  • MAC-Adressfilterung                        │   │ ││
+│  │  │  │  • FCS-Berechnung/-Prüfung (CRC-32)          │   │ ││
+│  │  │  │  • CSMA/CD-Logik (Half-Duplex)               │   │ ││
+│  │  │  │  • Flow Control (Pause Frames)               │   │ ││
+│  │  │  │  • VLAN-Tagging                               │   │ ││
+│  │  │  └────────────────────┼──────────────────────────┘   │ ││
+│  │  │                       │                               │ ││
+│  │  └───────────────────────┼───────────────────────────────┘ ││
+│  │                          │                                 ││
+│  │  ┌───────────────────────┼───────────────────────────────┐ ││
+│  │  │               PHY-Chip (Layer 1)                      │ ││
+│  │  │                       │                               │ ││
+│  │  │  ┌────────────────────┼──────────────────────────┐   │ ││
+│  │  │  │  • Leitungskodierung (4B/5B, 8B/10B, ...)     │   │ ││
+│  │  │  │  • Scrambling/Descrambling                    │   │ ││
+│  │  │  │  • Taktrückgewinnung (Clock Recovery)         │   │ ││
+│  │  │  │  • Signalverstärkung                          │   │ ││
+│  │  │  │  • Auto-Negotiation                           │   │ ││
+│  │  │  │  • Link-Detection                             │   │ ││
+│  │  │  └────────────────────┼──────────────────────────┘   │ ││
+│  │  │                       │                               │ ││
+│  │  └───────────────────────┼───────────────────────────────┘ ││
+│  │                          │                                 ││
+│  │                    ┌─────┴─────┐                           ││
+│  │                    │Transformer│ (galvanische Trennung)    ││
+│  │                    └─────┬─────┘                           ││
+│  │                          │                                 ││
+│  │                    ┌─────┴─────┐                           ││
+│  │                    │ RJ45-Port │                           ││
+│  │                    └───────────┘                           ││
+│  │                                                            ││
+│  └────────────────────────────────────────────────────────────┘│
+│                             │                                   │
+│                      ═══════╧═══════                           │
+│                        Kabel (UTP)                             │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Zusammenspiel MAC-Controller und PHY
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│              MAC-PHY-SCHNITTSTELLE (MII/GMII/RGMII)            │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  SENDEN (Host → Medium):                                       │
+│  ─────────────────────────────────────────────────────────────  │
+│                                                                 │
+│  1. Host übergibt Daten an MAC-Controller                      │
+│       │                                                        │
+│       ▼                                                        │
+│  2. MAC-Controller:                                            │
+│     • Baut Ethernet-Frame auf (Header + FCS)                  │
+│     • Prüft ob Medium frei (CSMA/CD bei Half-Duplex)          │
+│     • Wartet ggf. auf IFG (Inter-Frame Gap, 96 Bit-Zeiten)    │
+│       │                                                        │
+│       ▼                                                        │
+│  3. MAC übergibt Frame bitweise an PHY                        │
+│     (über MII: 4 Bit parallel @ 25 MHz bei 100 Mbps)          │
+│       │                                                        │
+│       ▼                                                        │
+│  4. PHY-Chip:                                                  │
+│     • Kodiert Bits (z.B. 4B/5B-Kodierung)                     │
+│     • Wandelt in Signale um (MLT-3 Pegel)                     │
+│     • Sendet über Transformer auf das Kabel                   │
+│                                                                 │
+│  EMPFANGEN (Medium → Host):                                    │
+│  ─────────────────────────────────────────────────────────────  │
+│                                                                 │
+│  1. PHY-Chip empfängt Signale vom Kabel                       │
+│     • Taktrückgewinnung aus Präambel                          │
+│     • Dekodierung (z.B. 5B/4B)                                │
+│     • Übergabe an MAC                                          │
+│       │                                                        │
+│       ▼                                                        │
+│  2. MAC-Controller:                                            │
+│     • Erkennt SFD (Start Frame Delimiter)                     │
+│     • Prüft Destination MAC (für mich? Broadcast? Multicast?) │
+│     • Prüft FCS (CRC-32)                                      │
+│     • Verwirft bei Fehler oder gibt an Host weiter            │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### CSMA/CD im Detail (Übergang L1/L2)
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                CSMA/CD – LAYER 1 & 2 KOOPERATION                │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  CSMA/CD = Carrier Sense Multiple Access / Collision Detection │
+│                                                                 │
+│  ┌────────────────────────────────────────────────────────────┐│
+│  │                                                            ││
+│  │   LAYER 2 (MAC-Controller):          LAYER 1 (PHY):       ││
+│  │                                                            ││
+│  │   ┌─────────────────────┐           ┌──────────────────┐  ││
+│  │   │ 1. Frame bereit     │           │                  │  ││
+│  │   │    zum Senden       │           │                  │  ││
+│  │   └──────────┬──────────┘           │                  │  ││
+│  │              │                       │                  │  ││
+│  │              ▼                       │                  │  ││
+│  │   ┌─────────────────────┐           │                  │  ││
+│  │   │ 2. Carrier Sense?   │◄──────────│ Signalpegel      │  ││
+│  │   │    (Medium frei?)   │  Carrier  │ messen           │  ││
+│  │   └──────────┬──────────┘  Detect   │                  │  ││
+│  │          Ja  │  Nein                 │                  │  ││
+│  │              │    └──► Warten        │                  │  ││
+│  │              ▼                       │                  │  ││
+│  │   ┌─────────────────────┐           │                  │  ││
+│  │   │ 3. Senden starten   │──────────►│ Signal auf       │  ││
+│  │   │    + weiter prüfen  │  Daten    │ Medium senden    │  ││
+│  │   └──────────┬──────────┘           │                  │  ││
+│  │              │                       │                  │  ││
+│  │              ▼                       │                  │  ││
+│  │   ┌─────────────────────┐           │                  │  ││
+│  │   │ 4. Collision        │◄──────────│ Signalpegel      │  ││
+│  │   │    Detection?       │ Collision │ zu hoch?         │  ││
+│  │   └──────────┬──────────┘  Signal   │ (Überlagerung)   │  ││
+│  │         Nein │  Ja                   │                  │  ││
+│  │              │    │                  │                  │  ││
+│  │              │    ▼                  │                  │  ││
+│  │              │ ┌─────────────────┐   │                  │  ││
+│  │              │ │ 5. JAM-Signal   │──►│ 32-Bit JAM      │  ││
+│  │              │ │    senden       │   │ übertragen      │  ││
+│  │              │ └────────┬────────┘   │                  │  ││
+│  │              │          │            │                  │  ││
+│  │              │          ▼            │                  │  ││
+│  │              │ ┌─────────────────┐   │                  │  ││
+│  │              │ │ 6. Backoff      │   │                  │  ││
+│  │              │ │ (exponentiell)  │   │                  │  ││
+│  │              │ └────────┬────────┘   │                  │  ││
+│  │              │          │            │                  │  ││
+│  │              │          └──► zurück zu 2.               │  ││
+│  │              │                       │                  │  ││
+│  │              ▼                       │                  │  ││
+│  │   ┌─────────────────────┐           │                  │  ││
+│  │   │ 7. Frame komplett   │           │                  │  ││
+│  │   │    gesendet         │           │                  │  ││
+│  │   └─────────────────────┘           └──────────────────┘  ││
+│  │                                                            ││
+│  └────────────────────────────────────────────────────────────┘│
+│                                                                 │
+│  Layer 1 (PHY) liefert:                                        │
+│  • Carrier Sense Signal (CRS) – "Medium belegt"               │
+│  • Collision Detect Signal (COL) – "Kollision erkannt"        │
+│                                                                 │
+│  Layer 2 (MAC) steuert:                                        │
+│  • Entscheidung wann senden                                    │
+│  • JAM-Signal bei Kollision                                    │
+│  • Exponentieller Backoff-Algorithmus                          │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### Exponentieller Backoff (Binary Exponential Backoff)
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│              BACKOFF-ALGORITHMUS BEI KOLLISION                  │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│  Nach Kollision Nr. n:                                         │
+│                                                                 │
+│  Wartezeit = zufällig(0 bis 2^n - 1) × Slot Time              │
+│              ────────────────────────                          │
+│                Slot Time = 51,2 µs (bei 10 Mbps)              │
+│                                                                 │
+│  ┌────────────┬─────────────────┬─────────────────────────┐    │
+│  │ Kollision  │ Bereich k       │ Max. Wartezeit          │    │
+│  ├────────────┼─────────────────┼─────────────────────────┤    │
+│  │     1      │ 0 oder 1        │ 1 × 51,2 µs = 51,2 µs  │    │
+│  │     2      │ 0 bis 3         │ 3 × 51,2 µs = 153,6 µs │    │
+│  │     3      │ 0 bis 7         │ 7 × 51,2 µs = 358,4 µs │    │
+│  │     4      │ 0 bis 15        │ 15 × 51,2 µs           │    │
+│  │    ...     │ ...             │ ...                     │    │
+│  │    10      │ 0 bis 1023      │ 1023 × 51,2 µs ≈ 52 ms │    │
+│  │  11-15     │ 0 bis 1023      │ (gedeckelt)            │    │
+│  │    16      │ ABBRUCH         │ Frame wird verworfen   │    │
+│  └────────────┴─────────────────┴─────────────────────────┘    │
+│                                                                 │
+│  Nach 16 Kollisionen: Übertragung fehlgeschlagen!             │
+│  → Frame wird an höhere Schicht mit Fehler gemeldet           │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+> [!info] Full-Duplex und Switches
+> Bei modernem Switched Ethernet im **Full-Duplex-Modus** ist CSMA/CD **deaktiviert**, da jeder Port eine dedizierte, kollisionsfreie Verbindung hat. Stattdessen wird **Flow Control** (Pause Frames nach IEEE 802.3x) verwendet.
 
 ## Zusammenfassung
 
