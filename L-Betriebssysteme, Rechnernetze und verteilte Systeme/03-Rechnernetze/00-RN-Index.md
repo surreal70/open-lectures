@@ -21,6 +21,7 @@ bereich: RN
 | 04 | [[04-Basisprotokolle/00-Basisprotokolle-Index\|Basisprotokolle]] | ARP, DHCP, DNS, NTP, STP, NDP |
 | 05 | [[05-Sicherheit/00-Sicherheit-Index\|Sicherheit]] | Firewalls, VPN, TLS, Overlay-Netzwerke |
 | 06 | [[06-WAN-Technologien/00-WAN-Index\|WAN-Technologien]] | MPLS, SD-WAN, SASE |
+| 07 | [[07-Mobile-Computing/00-MC-Index\|Mobile Computing]] | Mobile Netze, Betriebssysteme, Kommunikation |
 
 ---
 
@@ -79,6 +80,14 @@ Das Kapitel [[06-WAN-Technologien/00-WAN-Index|WAN-Technologien]] behandelt:
 - **MPLS** – Label-basiertes Switching für Provider-Netze
 - **SD-WAN** – Software-defined Wide Area Networks
 - **SASE** – Secure Access Service Edge
+
+### 07 – Mobile Computing
+
+Das Kapitel [[07-Mobile-Computing/00-MC-Index|Mobile Computing]] behandelt:
+- **Grundlagen** – Mobile Netze, Mobilfunkgenerationen
+- **Betriebssysteme** – Android, iOS, mobile Architekturen
+- **Kommunikation** – Mobile Protokolle, Handover
+- **Anwendungen** – Mobile Apps, Offline-Fähigkeit
 
 ---
 

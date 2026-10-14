@@ -9,46 +9,149 @@ tags:
   - theorem
   - tradeoff
 created: '2026-10-07'
-modified: '2026-10-07'
+modified: '2026-10-13'
 bereich: VS
 ---
 
 # CAP-Theorem
 
-## Definition
+> [!info] Lernziele
+> - CAP-Theorem und seine drei Eigenschaften verstehen
+> - Trade-offs in verteilten Systemen erklären können
+> - Praktische Systeme als CP oder AP klassifizieren
+> - PACELC als Erweiterung kennen
 
-Das CAP-Theorem besagt, dass ein verteiltes System höchstens zwei der drei Eigenschaften Konsistenz (C), Verfügbarkeit (A) und Partitionstoleranz (P) gleichzeitig garantieren kann.
+## Einleitung
 
-## Erklärung
+Das CAP-Theorem ist eines der fundamentalsten Konzepte in verteilten Systemen. Es beschreibt die unvermeidlichen Trade-offs, die Designer bei der Architektur verteilter Datenspeicher treffen müssen.
 
-Eric Brewer formulierte das CAP-Theorem, das fundamentale Trade-offs in verteilten Systemen beschreibt. Bei Netzwerkpartitionen (P ist notwendig) muss zwischen starker Konsistenz (C) und Verfügbarkeit (A) gewählt werden. CP-Systeme opfern Verfügbarkeit, AP-Systeme akzeptieren eventuelle Konsistenz.
+> [!important] Kernkonzept
+> Das CAP-Theorem (Brewer, 2000) besagt: Ein verteiltes System kann höchstens **zwei** der drei Eigenschaften **Consistency** (C), **Availability** (A) und **Partition Tolerance** (P) gleichzeitig garantieren. Da Netzwerkpartitionen in der Praxis unvermeidlich sind, ist P meist unverhandelbar – die Wahl liegt zwischen C und A.
 
-## Eigenschaften
+> [!example] Analogie
+> Stell dir ein Filialnetz einer Bank vor: Bei einer Netzwerkstörung (Partition) zwischen Filialen kannst du entweder **Konsistenz** wahren (Kontostände werden eingefroren bis die Verbindung wiederhergestellt ist – keine Abhebungen möglich) oder **Verfügbarkeit** (Filialen arbeiten unabhängig weiter, aber Kontostände könnten temporär abweichen). Beides gleichzeitig ist unmöglich.
 
-- Consistency: Alle Knoten sehen gleiche Daten
-- Availability: Jede Anfrage erhält eine Antwort
-- Partition Tolerance: System funktioniert trotz Netzwerkpartitionen
-- Trade-off zwischen CA, CP, AP
-- In der Praxis ist P meist unverhandelbar
+## Die drei CAP-Eigenschaften
 
-## Beispiele
+### Consistency (Konsistenz)
 
-- CP: HBase, MongoDB (im strict mode)
-- AP: Cassandra, DynamoDB
-- CA: Traditionelle RDBMS (ohne Verteilung)
+> Alle Knoten sehen zur gleichen Zeit dieselben Daten.
+
+- Jede Leseoperation liefert den Wert der letzten Schreiboperation
+- Entspricht der **Linearisierbarkeit** in der Theorie
+- Erfordert Koordination zwischen allen Knoten
+
+### Availability (Verfügbarkeit)
+
+> Jede Anfrage erhält eine (nicht-fehlerhafte) Antwort – ohne Garantie auf Aktualität.
+
+- Keine Anfrage bleibt unbeantwortet
+- System antwortet auch bei Teilausfällen
+- Antwort muss korrekt sein (keine Fehlermeldung)
+
+### Partition Tolerance (Partitionstoleranz)
+
+> Das System arbeitet trotz Nachrichtenverlust oder Netzwerkpartitionen weiter.
+
+- Kommunikation zwischen Knoten kann unterbrochen sein
+- System muss trotzdem funktionsfähig bleiben
+- In verteilten Systemen praktisch unvermeidlich
+
+## CAP-Trade-offs
+
+```mermaid
+graph TD
+    subgraph cap["CAP-Dreieck"]
+        C[Consistency]
+        A[Availability]
+        P[Partition Tolerance]
+        
+        C --- A
+        A --- P
+        P --- C
+    end
+    
+    CP["CP-System<br/>z.B. HBase, ZooKeeper"]
+    AP["AP-System<br/>z.B. Cassandra, DynamoDB"]
+    CA["CA-System<br/>z.B. Single-Node RDBMS"]
+    
+    C -.-> CP
+    P -.-> CP
+    A -.-> AP
+    P -.-> AP
+    C -.-> CA
+    A -.-> CA
+```
+
+### Systemklassifikation
+
+| Klasse | Eigenschaften | Verhalten bei Partition | Beispiele |
+|--------|---------------|------------------------|-----------|
+| **CP** | Consistency + Partition Tolerance | Opfert Verfügbarkeit | HBase, MongoDB (strict), ZooKeeper |
+| **AP** | Availability + Partition Tolerance | Opfert Konsistenz | Cassandra, DynamoDB, CouchDB |
+| **CA** | Consistency + Availability | Nicht partitionstolerant | Traditionelle RDBMS (single-node) |
+
+> [!warning] Wichtig
+> CA-Systeme existieren praktisch nicht in verteilten Umgebungen, da Netzwerkpartitionen nicht ausgeschlossen werden können. Die reale Wahl liegt zwischen CP und AP.
+
+## PACELC-Erweiterung
+
+Das PACELC-Theorem erweitert CAP um das Verhalten im Normalfall (ohne Partition):
+
+> **P**artition → **A**vailability vs. **C**onsistency  
+> **E**lse → **L**atency vs. **C**onsistency
+
+| System | Partition | Else (Normal) |
+|--------|-----------|---------------|
+| Cassandra | AP | EL (niedrige Latenz, eventual consistent) |
+| MongoDB | CP | EC (Konsistenz vor Latenz) |
+| DynamoDB | AP | EC oder EL (konfigurierbar) |
 
 ## Zusammenhänge
 
-- [[Konsistenzmodelle]]
-- [[Replikation]]
-- [[ACID]]
+```mermaid
+graph TD
+    CAP[CAP-Theorem] --> |"erweitert durch"| PACELC[PACELC]
+    CAP --> |"beeinflusst"| KM[Konsistenzmodelle]
+    CAP --> |"bestimmt"| REP[Replikationsstrategien]
+    CAP --> |"Gegensatz zu"| ACID[ACID-Transaktionen]
+    ACID --> |"relaxiert zu"| BASE[BASE]
+    
+    style CAP fill:#4a86e8,color:#fff
+```
+
+---
 
 ## Prüfungstipps
 
-- CAP-Theorem formal erklären können
-- Beispiele für CP und AP Systeme nennen
-- PACELC als Erweiterung kennen
+> [!warning] Häufige Prüfungsfragen
+> - Erklären Sie das CAP-Theorem und seine drei Eigenschaften
+> - Klassifizieren Sie gegebene Systeme als CP oder AP
+> - Warum gibt es praktisch keine CA-Systeme?
+
+> [!question] Verständnisfragen
+> - Was passiert bei einem CP-System während einer Partition?
+> - Wie verhält sich ein AP-System bei Netzwerkausfällen?
+> - Was bedeutet PACELC und wie erweitert es CAP?
+
+> [!tip] Merkhilfe
+> **CAP = "Choose Any Pair"**:
+> - **C**onsistency: Alle sehen das Gleiche
+> - **A**vailability: Alle bekommen Antwort
+> - **P**artition Tolerance: Funktioniert trotz Netzausfall
+> 
+> Bei Partition (unvermeidlich): CP = "Lieber nichts als Falsches", AP = "Lieber was als nichts"
+
+---
+
+## Weiterführende Ressourcen
+
+- [[02-Konsistenzmodelle]] – Verschiedene Konsistenzstufen
+- [[03-Replikation]] – Replikationsstrategien
+- [[../01-Grundlagen/02-Eigenschaften]] – ACID-Eigenschaften
+
+---
 
 ## Quellen
 
-- *Quelle 1*
+Die Inhalte basieren auf dem Kurshandbuch "Betriebssysteme, Rechnernetze und verteilte Systeme" der IU Internationalen Hochschule sowie den zugehörigen Vorlesungsmaterialien. Grundlegend ist Eric Brewer's Keynote "Towards Robust Distributed Systems" (PODC 2000) und das formale Proof von Gilbert & Lynch (2002).

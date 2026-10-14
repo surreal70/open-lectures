@@ -5,7 +5,7 @@ tags:
   - meta
   - vault-info
 created: 2026-10-07
-modified: 2026-10-12
+modified: 2026-10-13
 bereich: Meta
 ---
 
@@ -27,9 +27,9 @@ bereich: Meta
 
 | Bereich               | Version | Status         |
 | --------------------- | ------- | -------------- |
-| **Betriebssysteme**   | 0.9.19  | In Bearbeitung |
-| **Rechnernetze**      | 0.1.0   | Begonnen       |
-| **Verteilte Systeme** | 0.1.0   | Begonnen       |
+| **Betriebssysteme**   | 1.0.0   | Final          |
+| **Rechnernetze**      | 0.6.4   | In Bearbeitung |
+| **Verteilte Systeme** | 0.3.0   | In Bearbeitung |
 
 ## Struktur
 
