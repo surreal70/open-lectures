@@ -12,6 +12,7 @@
 *~
 
 # Noch nicht fertige Vaults (werden später hinzugefügt)
+L-IHK-Fachinformatiker/
 L-Kryptographie/
 L-Zufallszahlenerzeugung/
 L-Python/
@@ -27,3 +28,7 @@ L-Informatik-II/
 L-Informatik-III/
 L-Informatik-IV/
 L-Informatik-V/
+
+# Temporäre Quellmaterialien
+/tmp/
+input-*/

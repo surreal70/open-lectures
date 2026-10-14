@@ -65,3 +65,21 @@ Dieses Projekt nutzt KI-Unterstützung (Kiro) zur Unterstützung des Entwicklung
 - **Ideensammlung** — Sammeln und Organisieren von Gedanken, Notizen und Überlegungen zu Themen und Teilprojekten.
 
 Die eigentlichen Bildungsinhalte werden von menschlichen Autoren erstellt. Die KI unterstützt bei der Mechanik der Pflege eines gut organisierten Vaults.
+
+### Setup für AI-gestützte Arbeit
+
+Für die Nutzung der Obsidian-Vaults sind **keine zusätzlichen Tools erforderlich**.
+
+Wenn Sie jedoch mit Kiro oder einem anderen AI-Agenten an diesem Repository arbeiten möchten, finden Sie im Verzeichnis [`.kiro/`](.kiro/README.md) alle nötigen Informationen:
+
+- **Skills** für wiederkehrende Aufgaben (PDF-Extraktion, Vorlesungserstellung, Validierung)
+- **Steering-Dateien** die die Konventionen definieren
+- **requirements.txt** für optionale Python-Dependencies
+
+```bash
+# Optionale System-Tools (für PDF-Verarbeitung etc.)
+sudo apt install poppler-utils pandoc  # Debian/Ubuntu
+
+# Optionale Python-Dependencies
+pip install -r .kiro/requirements.txt
+```

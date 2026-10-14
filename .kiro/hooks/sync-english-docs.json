@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Sync English Documentation",
+      "trigger": "PostFileSave",
+      "description": "When German documentation files (README.de.md, HOWTO.de.md, .kiro/README.md) are saved, prompt to update the corresponding English version.",
+      "matcher": "^(/media/andhue/Wissen/open-lectures/README\\.de\\.md|/media/andhue/Wissen/open-lectures/HOWTO\\.de\\.md|/media/andhue/Wissen/open-lectures/\\.kiro/README\\.md)$",
+      "action": {
+        "type": "agent",
+        "prompt": "A German documentation file was just saved. Please update the corresponding English version to match:\n\n- README.de.md → README.md\n- HOWTO.de.md → HOWTO.md  \n- .kiro/README.md → .kiro/README.en.md\n\nRead the saved German file and update the English counterpart with a proper translation. Preserve formatting, code blocks, and links. Do not translate technical terms, tool names, or code."
+      }
+    }
+  ]
+}

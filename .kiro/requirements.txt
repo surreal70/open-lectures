@@ -1,0 +1,58 @@
+# Open Lectures - Python Dependencies for AI Agent Tools
+# =====================================================
+#
+# Diese Dependencies werden NUR benötigt, wenn Sie mit einem
+# AI-Agenten (z.B. Kiro) arbeiten, der die Skills in diesem
+# Repository nutzt.
+#
+# Für die reine Nutzung der Obsidian-Vaults sind KEINE
+# Python-Abhängigkeiten erforderlich.
+#
+# Installation:
+#   pip install -r .kiro/requirements.txt
+#
+# Oder mit virtuellem Environment:
+#   python -m venv .venv
+#   source .venv/bin/activate  # Linux/macOS
+#   .venv\Scripts\activate     # Windows
+#   pip install -r .kiro/requirements.txt
+
+# ===================
+# PDF Processing
+# ===================
+pdfplumber>=0.10.0          # PDF text/table extraction (better than pdftotext for tables)
+PyPDF2>=3.0.0               # PDF manipulation and metadata
+pdf2image>=1.16.0           # PDF to image conversion (requires poppler)
+
+# ===================
+# Document Processing
+# ===================
+python-docx>=1.1.0          # Word document (.docx) processing
+python-pptx>=0.6.23         # PowerPoint (.pptx) processing
+openpyxl>=3.1.0             # Excel (.xlsx) processing
+beautifulsoup4>=4.12.0      # HTML parsing
+lxml>=5.0.0                 # XML/HTML processing
+
+# ===================
+# Image Processing
+# ===================
+Pillow>=10.0.0              # Image manipulation (PNG creation, resize)
+cairosvg>=2.7.0             # SVG to PNG conversion
+
+# ===================
+# Text Processing
+# ===================
+markdown>=3.5.0             # Markdown parsing
+PyYAML>=6.0.0               # YAML frontmatter parsing
+chardet>=5.0.0              # Character encoding detection
+
+# ===================
+# Optional: OCR
+# ===================
+# pytesseract>=0.3.10       # OCR for scanned documents (requires tesseract binary)
+
+# ===================
+# Optional: Advanced PDF
+# ===================
+# pymupdf>=1.23.0           # Alternative PDF library (fitz)
+# pdfminer.six>=20221105    # PDF text extraction
