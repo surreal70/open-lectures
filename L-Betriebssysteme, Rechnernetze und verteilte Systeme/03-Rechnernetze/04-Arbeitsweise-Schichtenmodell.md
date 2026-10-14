@@ -26,6 +26,97 @@ Dieses Kapitel demonstriert die praktische Arbeitsweise des TCP/IP-Schichtenmode
 > - Den Beitrag jeder Schicht zur Kommunikation benennen
 > - Die unterschiedliche Verarbeitung in Endgeräten und Routern verstehen
 
+## Übersichtsgrafik: Schichtendurchlauf
+
+Die folgende Grafik zeigt den kompletten Weg der Daten durch die Schichten (OSI-Nummerierung):
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                    SCHICHTENDURCHLAUF: CLIENT → ROUTER → SERVER                 │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│      CLIENT                    ROUTER                    SERVER                 │
+│   (Sender)                  (Vermittler)              (Empfänger)              │
+│                                                                                 │
+│  ┌─────────┐                                          ┌─────────┐              │
+│  │ 7 Anw.  │─────────────────────────────────────────►│ 7 Anw.  │              │
+│  ├─────────┤                                          ├─────────┤              │
+│  │ 6 Darst.│                                          │ 6 Darst.│              │
+│  ├─────────┤                                          ├─────────┤              │
+│  │ 5 Sitz. │                                          │ 5 Sitz. │              │
+│  ├─────────┤                                          ├─────────┤              │
+│  │ 4 Trans.│─────────────────────────────────────────►│ 4 Trans.│              │
+│  ├─────────┤              ┌─────────┐                 ├─────────┤              │
+│  │ 3 Verm. │─────────────►│ 3 Verm. │────────────────►│ 3 Verm. │              │
+│  ├─────────┤              ├─────────┤                 ├─────────┤              │
+│  │ 2 Sich. │─────────────►│ 2 Sich. │────────────────►│ 2 Sich. │              │
+│  ├─────────┤              ├─────────┤                 ├─────────┤              │
+│  │ 1 Bit.  │══════════════│ 1 Bit.  │═════════════════│ 1 Bit.  │              │
+│  └─────────┘              └─────────┘                 └─────────┘              │
+│       │                        │                           ▲                   │
+│       │                        │                           │                   │
+│       ▼                        ▼                           │                   │
+│  ════════════════════════════════════════════════════════════                  │
+│           LAN 1                         LAN 2                                  │
+│   (physisches Medium)          (physisches Medium)                             │
+│                                                                                 │
+│  LEGENDE:                                                                       │
+│  ───────► Logische Verbindung (Ende-zu-Ende)                                   │
+│  ═══════ Physische Übertragung                                                 │
+│                                                                                 │
+│  CLIENT: Daten wandern von Schicht 7 → 4 → 3 → 2 → 1 (Einkapselung)           │
+│  ROUTER: Empfang 1 → 2 → 3, dann Senden 3 → 2 → 1 (nur Layer 1-3)             │
+│  SERVER: Daten wandern von Schicht 1 → 2 → 3 → 4 → 7 (Entkapselung)           │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Detailansicht mit Datenfluss
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                         DATENFLUSS DURCH DIE SCHICHTEN                          │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                 │
+│  CLIENT (Einkapselung)         ROUTER              SERVER (Entkapselung)        │
+│                                                                                 │
+│  7 │ HTTP-Daten │                                        │ HTTP-Daten │ 7      │
+│    └─────┬──────┘                                        └──────▲─────┘        │
+│          │ erzeugen                                      lesen  │              │
+│          ▼                                                      │              │
+│  4 │ TCP │ Daten │                                      │ TCP │ Daten │ 4      │
+│    └──┬──┴───────┘                                      └──▲──┴───────┘        │
+│       │ +Header                                    -Header │                   │
+│       ▼                                                    │                   │
+│  3 │ IP │ TCP │ Daten │         │ IP │ TCP │ Daten │      │ IP │ TCP │ Daten │ 3
+│    └─┬──┴─────┴───────┘         └──┬─┴─────┴───────┘      └──▲─┴─────┴───────┘ │
+│      │ +Header              Routing│TTL--                    │ -Header         │
+│      ▼                             ▼                         │                 │
+│  2 │Eth│ IP │ TCP │ Daten │FCS│  │Eth'│ IP │ TCP │ Daten │FCS'│  │Eth│...│FCS│ 2
+│    └─┬─┴────┴─────┴───────┴───┘  └──┬─┴────┴─────┴───────┴────┘  └─▲─┴───┴───┘ │
+│      │ +Header/Trailer    MAC ändern│                              │ -H/T      │
+│      ▼                              ▼                              │           │
+│  1   ══════════════════════════════════════════════════════════════            │
+│      Bits auf Kupfer/LWL/Funk      Bits auf Kupfer/LWL/Funk                    │
+│                                                                                 │
+│  ──────────────────────────────────────────────────────────────────────────────│
+│                                                                                 │
+│  Schicht  │ Client           │ Router              │ Server                    │
+│  ─────────┼──────────────────┼─────────────────────┼───────────────────────────│
+│  7-5      │ Daten erzeugen   │ —                   │ Daten verarbeiten         │
+│  4        │ +TCP-Header      │ —                   │ -TCP-Header               │
+│  3        │ +IP-Header       │ Routing, TTL--      │ -IP-Header                │
+│  2        │ +Eth-Header/FCS  │ MAC-Adressen ändern │ -Eth-Header/FCS           │
+│  1        │ Bits senden      │ Bits weiterleiten   │ Bits empfangen            │
+│                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+> [!important] Kernkonzept
+> - **Endgeräte (Client, Server):** Verarbeiten alle 7 Schichten
+> - **Router:** Verarbeiten nur Schichten 1-3 (Netzzugang + Internet)
+> - **Switches:** Verarbeiten nur Schichten 1-2 (Netzzugang)
+
 ## Szenario
 
 ```
