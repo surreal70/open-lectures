@@ -1,51 +1,399 @@
 ---
 author: Andreas Hümmer
-title: Topologien
+title: Netzwerktopologien
 tags:
-  - content
+  - vorlesung
   - rn
   - grundlagen
   - topologie
   - netzwerkstruktur
 created: '2026-10-07'
-modified: '2026-10-07'
+modified: '2026-10-13'
 bereich: RN
 ---
 
-# Topologien
+# Netzwerktopologien
 
-## Definition
+## Lernziele
 
-Die Netzwerktopologie beschreibt die physische oder logische Anordnung der Netzwerkkomponenten.
+> [!ziel] Nach diesem Kapitel können Sie...
+> - Den Unterschied zwischen physischer und logischer Topologie erklären
+> - Die Grundtopologien (Bus, Ring, Stern, Baum, Mesh) beschreiben und zeichnen
+> - Vor- und Nachteile jeder Topologie benennen
+> - Das Ausfallverhalten verschiedener Topologien analysieren
+> - Reale Netzwerke den Topologieformen zuordnen
 
-## Erklärung
+## Physische vs. Logische Topologie
 
-Es gibt verschiedene Grundtopologien: Bus, Ring, Stern, Baum, Mesh. Jede Topologie hat spezifische Vor- und Nachteile bezüglich Ausfallsicherheit, Kosten und Komplexität.
+Eine wichtige Unterscheidung:
 
-## Eigenschaften
+| Aspekt | Physische Topologie | Logische Topologie |
+|--------|--------------------|--------------------|
+| **Definition** | Tatsächliche Verkabelung/Verbindung | Datenfluss im Netzwerk |
+| **Sichtbarkeit** | Kabel, Geräte, Räumlichkeiten | Protokolle, Adressen |
+| **Beispiel** | Stern (Kabel zu Switch) | Bus (Ethernet-Broadcast) |
 
-- Bus: Alle Geräte an einem gemeinsamen Medium
-- Ring: Geräte in geschlossenem Kreis verbunden
-- Stern: Zentrale Vermittlungsstelle
-- Mesh: Mehrfache Verbindungen zwischen Knoten
+> [!merke] Merke
+> Ein physischer Stern kann logisch wie ein Bus arbeiten (klassisches Ethernet über Hub) oder wie ein Stern (Ethernet über Switch mit Punkt-zu-Punkt-Verbindungen).
 
-## Beispiele
+## Grundtopologien
 
-- Stern: Typisches Heimnetzwerk mit Router als Zentrum
-- Bus: Klassisches Ethernet mit Koaxialkabel
-- Mesh: WLAN-Mesh-Systeme für große Gebäude
+### Bus-Topologie
 
-## Zusammenhänge
+Alle Geräte sind an ein gemeinsames Übertragungsmedium angeschlossen.
 
-- [[Netzwerktypen]]
-- [[Ethernet]]
-- [[Router]]
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   ══════════════════════════════════════════════════════   │
+│        │         │         │         │         │           │
+│      ┌─┴─┐     ┌─┴─┐     ┌─┴─┐     ┌─┴─┐     ┌─┴─┐        │
+│      │PC1│     │PC2│     │PC3│     │PC4│     │PC5│        │
+│      └───┘     └───┘     └───┘     └───┘     └───┘        │
+│                                                             │
+│   Terminator ─────────────────────────────── Terminator    │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
 
-## Prüfungstipps
+**Eigenschaften:**
+- Alle Geräte empfangen alle Signale
+- Kollisionen möglich (CSMA/CD erforderlich)
+- Terminatoren an den Enden verhindern Signalreflexion
 
-- Vor- und Nachteile jeder Topologie
-- Ausfallverhalten bei verschiedenen Topologien
+| Vorteile | Nachteile |
+|----------|-----------|
+| Einfache Installation | Single Point of Failure (Kabel) |
+| Geringer Kabelaufwand | Schwierige Fehlersuche |
+| Kostengünstig | Kollisionen reduzieren Durchsatz |
+| Leicht erweiterbar | Begrenzte Kabellänge |
+| | Keine Privatsphäre (alle hören mit) |
+
+**Historische Anwendung:**
+- 10BASE2 (Thin Ethernet, Koaxialkabel)
+- 10BASE5 (Thick Ethernet)
+
+### Ring-Topologie
+
+Geräte sind in einer geschlossenen Schleife verbunden. Daten fließen in eine Richtung.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│                    ┌─────────────┐                         │
+│               ┌────┤     PC1     ├────┐                    │
+│               │    └─────────────┘    │                    │
+│               ▼                       │                    │
+│        ┌──────┴──────┐         ┌──────┴──────┐            │
+│        │     PC5     │         │     PC2     │            │
+│        └──────┬──────┘         └──────┬──────┘            │
+│               │                       │                    │
+│               │                       ▼                    │
+│        ┌──────┴──────┐         ┌──────┴──────┐            │
+│        │     PC4     ├────────►│     PC3     │            │
+│        └─────────────┘         └─────────────┘            │
+│                                                             │
+│              ← Datenfluss im Uhrzeigersinn →               │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Eigenschaften:**
+- Jedes Gerät hat genau zwei Nachbarn
+- Daten passieren jeden Knoten
+- Token-basierter Zugriff (Token Ring)
+- Dual Ring für Redundanz möglich
+
+| Vorteile | Nachteile |
+|----------|-----------|
+| Keine Kollisionen | Ausfall eines Geräts unterbricht Ring |
+| Deterministischer Zugriff | Hohe Latenz bei vielen Knoten |
+| Gleichberechtigter Zugang | Schwierige Erweiterung |
+| Gute Performance unter Last | Aufwändige Fehlersuche |
+
+**Varianten:**
+- **Single Ring**: Einfacher Ring, anfällig für Ausfälle
+- **Dual Ring (FDDI)**: Zwei gegenläufige Ringe für Redundanz
+
+```
+DUAL RING (FDDI):
+         ───────────────►  Primärer Ring
+   ┌───┐     ┌───┐     ┌───┐
+   │ A │─────│ B │─────│ C │
+   └───┘     └───┘     └───┘
+         ◄───────────────  Sekundärer Ring
+         
+Bei Ausfall von B: Automatisches Wrapping
+         ──────────►
+   ┌───┐            ┌───┐
+   │ A │────────────│ C │
+   └───┘            └───┘
+         ◄──────────
+```
+
+**Anwendungen:**
+- Token Ring (IBM, historisch)
+- FDDI (Fiber Distributed Data Interface)
+- SONET/SDH (WAN-Backbones)
+
+### Stern-Topologie
+
+Alle Geräte sind mit einem zentralen Knoten (Hub, Switch) verbunden.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│                         ┌───┐                              │
+│                         │PC1│                              │
+│                         └─┬─┘                              │
+│                           │                                │
+│        ┌───┐          ┌───┴───┐          ┌───┐            │
+│        │PC2├──────────┤Switch ├──────────┤PC3│            │
+│        └───┘          └───┬───┘          └───┘            │
+│                      ┌────┼────┐                          │
+│                      │    │    │                          │
+│                    ┌─┴─┐┌─┴─┐┌─┴─┐                        │
+│                    │PC4││PC5││PC6│                        │
+│                    └───┘└───┘└───┘                        │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Eigenschaften:**
+- Zentrale Komponente koordiniert Kommunikation
+- Jedes Gerät hat dedizierte Verbindung zum Zentrum
+- Ausfall eines Endgeräts betrifft nur dieses
+
+| Vorteile | Nachteile |
+|----------|-----------|
+| Einfache Fehlersuche | Single Point of Failure (Zentrale) |
+| Ausfall isoliert | Hoher Kabelaufwand |
+| Leicht erweiterbar | Kosten für zentrale Komponente |
+| Hohe Performance (Switch) | Begrenzte Entfernung zum Zentrum |
+| Einfache Verwaltung | |
+
+**Hub vs. Switch:**
+| Aspekt | Hub | Switch |
+|--------|-----|--------|
+| Logische Topologie | Bus | Stern |
+| Kollisionsdomäne | Eine (alle Ports) | Pro Port |
+| Bandbreite | Geteilt | Dediziert pro Port |
+| Kosten | Niedrig | Höher |
+| Heute noch relevant | Nein | Ja |
+
+**Anwendung:**
+- Nahezu alle modernen LANs
+- Heimnetzwerke
+- Rechenzentren
+
+### Baum-Topologie (Hierarchische Topologie)
+
+Erweiterung der Stern-Topologie mit mehreren Ebenen.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│                      ┌──────────┐                          │
+│                      │Core Switch│   ← Wurzel              │
+│                      └─────┬────┘                          │
+│                    ┌───────┼───────┐                       │
+│                    │       │       │                       │
+│              ┌─────┴──┐┌───┴───┐┌──┴────┐                 │
+│              │Distrib.││Distrib││Distrib│ ← Verteilung    │
+│              │Switch 1││Switch2││Switch3│                  │
+│              └────┬───┘└───┬───┘└───┬───┘                 │
+│              ┌────┴───┐    │   ┌────┴───┐                 │
+│              │        │    │   │        │                 │
+│           ┌──┴──┐ ┌───┴┐ ┌─┴─┐ ┌┴──┐ ┌──┴─┐              │
+│           │Acc.1│ │Acc2│ │Acc│ │Acc│ │Acc5│ ← Access     │
+│           └──┬──┘ └──┬─┘ └─┬─┘ └─┬─┘ └──┬─┘              │
+│              │       │     │     │      │                 │
+│           ┌──┴──┐ ┌──┴─┐ ┌─┴─┐ ┌─┴─┐ ┌──┴─┐              │
+│           │PCs  │ │PCs │ │PCs│ │PCs│ │PCs │ ← Endgeräte  │
+│           └─────┘ └────┘ └───┘ └───┘ └────┘              │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Eigenschaften:**
+- Hierarchische Struktur (Core → Distribution → Access)
+- Skalierbar durch Hinzufügen von Ebenen
+- Kombiniert Stern-Topologien
+
+| Vorteile | Nachteile |
+|----------|-----------|
+| Sehr skalierbar | Ausfall der Wurzel kritisch |
+| Gute Strukturierung | Komplexe Konfiguration |
+| Segmentierung möglich | Höhere Kosten |
+| Broadcast-Kontrolle | Längere Pfade möglich |
+
+**Anwendung:**
+- Große Unternehmensnetzwerke
+- Campus-Netzwerke
+- Rechenzentren (3-Tier-Architektur)
+
+### Vermaschte Topologie (Mesh)
+
+Jeder Knoten ist mit mehreren anderen verbunden. Bietet Redundanz.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                                                             │
+│   VOLLVERMASCHT (Full Mesh)         TEILVERMASCHT          │
+│                                     (Partial Mesh)          │
+│        ┌───┐                            ┌───┐              │
+│        │ A │                            │ A │              │
+│       ╱│   │╲                          ╱│   │              │
+│      ╱ └─┬─┘ ╲                        ╱ └─┬─┘              │
+│     ╱    │    ╲                      ╱    │               │
+│   ┌┴──┐  │  ┌──┴┐                 ┌─┴─┐  │  ┌───┐        │
+│   │ B │──┼──│ C │                 │ B │──┼──│ C │        │
+│   └─┬─┘  │  └─┬─┘                 └───┘  │  └─┬─┘        │
+│     ╲    │    ╱                          │    │          │
+│      ╲ ┌─┴─┐ ╱                         ┌─┴─┐  │          │
+│       ╲│ D │╱                          │ D │──┘          │
+│        └───┘                           └───┘              │
+│                                                             │
+│   Verbindungen: n(n-1)/2           Weniger Verbindungen    │
+│   Für n=4: 6 Verbindungen          aber Redundanz          │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Eigenschaften:**
+- Vollvermascht: Jeder mit jedem verbunden
+- Teilvermascht: Ausgewählte Redundanzpfade
+- Hohe Ausfallsicherheit
+
+| Vorteile | Nachteile |
+|----------|-----------|
+| Hohe Redundanz | Sehr hoher Kabelaufwand |
+| Kein Single Point of Failure | Komplexe Konfiguration |
+| Multiple Pfade (Load Balancing) | Hohe Kosten |
+| Ausfallsicher | Skaliert schlecht (O(n²)) |
+
+**Formel für vollvermaschte Verbindungen:**
+$$\text{Anzahl Verbindungen} = \frac{n \cdot (n-1)}{2}$$
+
+| Knoten | Verbindungen |
+|--------|--------------|
+| 4 | 6 |
+| 5 | 10 |
+| 10 | 45 |
+| 20 | 190 |
+| 100 | 4.950 |
+
+**Anwendung:**
+- WAN-Backbones
+- Internet-Kernnetze
+- Kritische Infrastruktur
+- WLAN-Mesh-Systeme (teilvermascht)
+
+## Hybride Topologien
+
+Reale Netzwerke kombinieren oft mehrere Grundtopologien:
+
+### Stern-Bus
+
+Mehrere Stern-Segmente über einen Bus verbunden.
+
+### Stern-Ring
+
+Stern-Topologie mit Ring-Verbindung der zentralen Switches.
+
+### Spine-Leaf (Datacenter)
+
+Moderne Rechenzentren nutzen eine spezielle Mesh-Variante:
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        SPINE-LEAF                           │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│   SPINE:    ┌───────┐       ┌───────┐       ┌───────┐      │
+│             │Spine 1│       │Spine 2│       │Spine 3│      │
+│             └┬──┬──┬┘       └┬──┬──┬┘       └┬──┬──┬┘      │
+│              │  │  │         │  │  │         │  │  │       │
+│              │  │  └─────────┼──┼──┼─────────┼──┼──┤       │
+│              │  └────────────┼──┼──┼─────────┼──┤  │       │
+│              └───────────────┼──┼──┼─────────┤  │  │       │
+│              ┌───────────────┼──┼──┼─────────┤  │  │       │
+│              │  ┌────────────┼──┼──┼─────────┼──┤  │       │
+│              │  │  ┌─────────┼──┼──┼─────────┼──┼──┤       │
+│              │  │  │         │  │  │         │  │  │       │
+│             ┌┴──┴──┴┐       ┌┴──┴──┴┐       ┌┴──┴──┴┐      │
+│   LEAF:     │Leaf 1 │       │Leaf 2 │       │Leaf 3 │      │
+│             └───┬───┘       └───┬───┘       └───┬───┘      │
+│                 │               │               │          │
+│              ┌──┴──┐         ┌──┴──┐         ┌──┴──┐       │
+│              │Servr│         │Servr│         │Servr│       │
+│              └─────┘         └─────┘         └─────┘       │
+│                                                             │
+│   Jeder Leaf ist mit JEDEM Spine verbunden (Full-Mesh      │
+│   zwischen den Ebenen) → max. 2 Hops zwischen allen Servern│
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**Vereinfachte Darstellung der Verbindungen:**
+
+```
+            Spine 1         Spine 2         Spine 3
+               │               │               │
+       ┌───────┼───────┬───────┼───────┬───────┼───────┐
+       │       │       │       │       │       │       │
+       │   ┌───┼───┐   │   ┌───┼───┐   │   ┌───┼───┐   │
+       │   │   │   │   │   │   │   │   │   │   │   │   │
+     Leaf 1 ───┴───┴───┴─ Leaf 2 ─┴───┴───┴─ Leaf 3   │
+       │                   │                   │       │
+    Server              Server              Server     │
+
+  Verbindungen: Jeder Leaf hat 3 Uplinks (zu allen Spines)
+  Pfad Server→Server: immer genau 2 Hops (Leaf→Spine→Leaf)
+```
+
+## Vergleich der Topologien
+
+| Topologie | Ausfallsicherheit | Kosten | Skalierbarkeit | Komplexität |
+|-----------|-------------------|--------|----------------|-------------|
+| Bus | ⚠️ Niedrig | 💰 Niedrig | ⚠️ Begrenzt | ✅ Einfach |
+| Ring | ⚠️ Niedrig* | 💰💰 Mittel | ⚠️ Begrenzt | 💻 Mittel |
+| Stern | ⚠️ Mittel** | 💰💰 Mittel | ✅ Gut | ✅ Einfach |
+| Baum | ⚠️ Mittel** | 💰💰💰 Hoch | ✅✅ Sehr gut | 💻💻 Hoch |
+| Mesh | ✅✅ Hoch | 💰💰💰💰 Sehr hoch | ⚠️ O(n²) | 💻💻💻 Sehr hoch |
+
+\* Dual Ring verbessert Ausfallsicherheit  
+\** Single Point of Failure am zentralen Knoten
+
+## Zusammenfassung
+
+> [!zusammenfassung] Kernpunkte
+> - Physische Topologie ≠ Logische Topologie
+> - Grundtopologien: Bus, Ring, Stern, Baum, Mesh
+> - Stern ist heute der Standard für LANs
+> - Mesh bietet höchste Redundanz, aber O(n²) Komplexität
+> - Reale Netze sind meist hybride Topologien
+> - Spine-Leaf ist der moderne Datacenter-Standard
+
+## Prüfungsrelevanz
+
+> [!pruefung] Prüfungstipps
+> - Zeichnen Sie jede Grundtopologie aus dem Gedächtnis
+> - Nennen Sie je 3 Vor- und Nachteile pro Topologie
+> - Erklären Sie das Ausfallverhalten jeder Topologie
+> - Berechnen Sie die Anzahl der Verbindungen bei Full-Mesh
+> - Unterscheiden Sie physische und logische Topologie am Beispiel Ethernet
+> - Kennen Sie die 3-Tier-Architektur (Core-Distribution-Access)
+
+## Verwandte Themen
+
+- [[01-Historie]] – Entwicklung der Netzwerktechnologien
+- [[02-Netzwerktypen]] – Klassifikation nach Reichweite
+- [[01-Ethernet|Ethernet]] – Der dominierende LAN-Standard
+- [[00-Sicherungsschicht-Index|Sicherungsschicht]] – MAC-Adressen und Switching
 
 ## Quellen
 
-- *Quelle 1*
+- Vorlesungsskript „Betriebssysteme, Rechnernetze und verteilte Systeme", Andreas Hümmer, IU 2025
+- Tanenbaum, A. S.: Computer Networks, 5th Edition
+- Cisco: Campus Network Design Guide
