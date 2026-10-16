@@ -1,7 +1,7 @@
 ---
 title: "Lineare Ungleichungen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-21
 chapter: "08"
 section: "07"
 status: "draft - review pending"
@@ -21,6 +21,18 @@ keywords:
 > - Die Vorzeichenregel bei Multiplikation/Division anwenden
 > - Lösungsmengen in Intervallschreibweise und grafisch darstellen
 
+## Historischer Kontext
+
+Während Gleichungen schon in der Antike gelöst wurden, entwickelte sich die systematische Behandlung von **Ungleichungen** erst viel später. Der französische Mathematiker **Pierre Bouguer** führte 1734 die Symbole $<$ und $>$ ein, die wir heute verwenden. Die moderne Intervallnotation wurde im 19. Jahrhundert standardisiert.
+
+Ungleichungen sind in der Praxis oft wichtiger als Gleichungen: Während eine Gleichung nach einem exakten Wert fragt („Wie viel genau?"), fragt eine Ungleichung nach einem Bereich („Mindestens wie viel?" oder „Höchstens wie viel?").
+
+> [!tip] **Alltagsbeispiele für Ungleichungen**
+> - **Geschwindigkeitsbegrenzung**: $v \leq 50$ km/h (höchstens 50 km/h)
+> - **Mindestlohn**: $Stundenlohn \geq 12{,}41$ € (mindestens 12,41 €)
+> - **Budgetplanung**: $Ausgaben < Einnahmen$ (weniger ausgeben als einnehmen)
+> - **Notendurchschnitt**: $\varnothing \leq 2{,}5$ für eine Zulassung
+
 ## Ungleichungen vs. Gleichungen
 
 | Gleichung | Ungleichung |
@@ -28,6 +40,8 @@ keywords:
 | $2x + 3 = 11$ | $2x + 3 < 11$ |
 | Genau eine Lösung (meist) | Unendlich viele Lösungen (meist) |
 | $x = 4$ | $x < 4$ (alle Zahlen kleiner als 4) |
+
+Der fundamentale Unterschied: Eine Gleichung sucht einen **Punkt**, eine Ungleichung sucht einen **Bereich**.
 
 ### Ungleichungszeichen
 
@@ -75,8 +89,17 @@ Betrachte die wahre Aussage: $3 < 5$
 | $\cdot (-2)$ | $-6 < -10$? | falsch! |
 | $\cdot (-2)$ mit Umdrehen | $-6 > -10$ | wahr ✓ |
 
-> [!tip] Merksatz
+> [!tip] **Merksatz: Die Spiegelung am Zahlenstrahl**
 > Multiplizieren oder Dividieren mit einer **negativen Zahl** → Ungleichungszeichen **umkehren**!
+>
+> Warum? Multiplizieren mit $-1$ spiegelt alle Zahlen am Nullpunkt: Positive werden negativ, negative werden positiv. Dabei vertauscht sich auch die Reihenfolge auf dem Zahlenstrahl!
+>
+> Beispiel: $2 < 5$, aber $-2 > -5$ (auf dem Zahlenstrahl liegt $-2$ rechts von $-5$)
+
+> [!warning] **Häufiger Fehler: Vorzeichenregel vergessen**
+> Dies ist der häufigste Fehler bei Ungleichungen:
+> - **Falsch:** $-3x > 12 \Rightarrow x > -4$ (Zeichen nicht gedreht!)
+> - **Richtig:** $-3x > 12 \Rightarrow x < -4$ (Division durch $-3$ dreht das Zeichen)
 
 ## Darstellung der Lösungsmenge
 
@@ -177,6 +200,15 @@ $$\mathbb{L} = \emptyset$$
 > - Lösungsmengen sind oft Intervalle mit unendlich vielen Werten
 > - Darstellung: Mengennotation, Intervallschreibweise oder Zahlengerade
 > - $<$, $>$ → offenes Intervall; $\leq$, $\geq$ → geschlossenes Intervall
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[04-Lineare-Gleichungen|Lineare Gleichungen]] – Ähnliches Lösungsverfahren
+- → [[02-Aequivalenzumformungen|Äquivalenzumformungen]] – Grundlegende Umformungen
+- → [[01-Einfuehrung-in-die-Mathematik/02-Mathematische-Symbole|Vergleichszeichen]] – Die Symbole $<$, $>$, $\leq$, $\geq$
+- → [[09-Funktionen-und-Koordinatensysteme/05-Lineare-Funktionen|Lineare Funktionen]] – Grafische Interpretation
 
 ## Übungsaufgaben
 

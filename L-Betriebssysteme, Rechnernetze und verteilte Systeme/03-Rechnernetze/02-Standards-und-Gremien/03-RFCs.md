@@ -40,48 +40,8 @@ Diese Philosophie prägt die IETF bis heute:
 
 ### IETF-Struktur
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                      IETF ORGANISATION                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │                         IAB                              │  │
-│   │           Internet Architecture Board                    │  │
-│   │   (Strategische Ausrichtung, Berufungen, Liaison)       │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                              │                                  │
-│   ┌──────────────────────────┼──────────────────────────────┐  │
-│   │                          │                               │  │
-│   ▼                          ▼                               ▼  │
-│   ┌────────────┐      ┌────────────┐      ┌────────────┐       │
-│   │    IESG    │      │    IRTF    │      │   IANA     │       │
-│   │  Steering  │      │  Research  │      │  Numbers   │       │
-│   │   Group    │      │   Task     │      │ Authority  │       │
-│   │            │      │   Force    │      │            │       │
-│   └─────┬──────┘      └────────────┘      └────────────┘       │
-│         │                                                       │
-│         ▼                                                       │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │                    Working Groups                        │  │
-│   │                                                          │  │
-│   │   ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐   │  │
-│   │   │   INT   │  │   RTG   │  │   SEC   │  │   APP   │   │  │
-│   │   │ Internet│  │ Routing │  │Security │  │  Appli- │   │  │
-│   │   │  Area   │  │  Area   │  │  Area   │  │ cations │   │  │
-│   │   └─────────┘  └─────────┘  └─────────┘  └─────────┘   │  │
-│   │                                                          │  │
-│   │   ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐   │  │
-│   │   │   OPS   │  │   TSV   │  │   WIT   │  │   ART   │   │  │
-│   │   │ Opera-  │  │Transport│  │  Web &  │  │  Apps & │   │  │
-│   │   │  tions  │  │ Services│  │Internet │  │ Real-   │   │  │
-│   │   │         │  │         │  │  Tech   │  │  Time   │   │  │
-│   │   └─────────┘  └─────────┘  └─────────┘  └─────────┘   │  │
-│   │                                                          │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[ietf-organisation.png]]
+*<span class="fig-id">03-02-03-ietf-organisation</span>: Struktur der IETF mit IAB, IESG, IRTF, IANA und den Working Groups.*
 
 ### Wichtige Gremien
 
@@ -117,78 +77,30 @@ RFCs können aus verschiedenen Quellen stammen:
 
 ### RFC-Kategorien
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                      RFC KATEGORIEN                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   STANDARDS TRACK                                               │
-│   ───────────────                                               │
-│   ┌─────────────┐    ┌─────────────┐    ┌─────────────┐        │
-│   │  Proposed   │───▶│    Draft    │───▶│  Internet   │        │
-│   │  Standard   │    │  Standard   │    │  Standard   │        │
-│   └─────────────┘    └─────────────┘    └─────────────┘        │
-│        │                                      ▲                 │
-│        │      (seit 2011 vereinfacht)        │                 │
-│        └─────────────────────────────────────┘                 │
-│                                                                 │
-│   ANDERE KATEGORIEN                                             │
-│   ─────────────────                                             │
-│   • Best Current Practice (BCP) – Empfehlungen                 │
-│   • Informational – Informationen, keine Standards             │
-│   • Experimental – Experimente, nicht für Produktion           │
-│   • Historic – Veraltet, nur noch Referenz                     │
-│                                                                 │
-│   STATUS                                                        │
-│   ──────                                                        │
-│   • Active – Aktuell gültig                                    │
-│   • Obsoleted by – Ersetzt durch neueren RFC                   │
-│   • Updated by – Ergänzt/korrigiert durch anderen RFC          │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[rfc-standards-track.png]]
+*<span class="fig-id">03-02-03-rfc-standards-track</span>: Der RFC Standards Track – von Proposed Standard über Draft Standard zum Internet Standard.*
+
+**Andere Kategorien:**
+
+| Kategorie | Beschreibung |
+|-----------|--------------|
+| **Best Current Practice (BCP)** | Empfehlungen und Best Practices |
+| **Informational** | Informationen, keine verbindlichen Standards |
+| **Experimental** | Experimente, nicht für Produktion gedacht |
+| **Historic** | Veraltet, nur noch als Referenz |
+
+**Status eines RFCs:**
+
+| Status | Bedeutung |
+|--------|-----------|
+| **Active** | Aktuell gültig |
+| **Obsoleted by** | Ersetzt durch neueren RFC |
+| **Updated by** | Ergänzt/korrigiert durch anderen RFC |
 
 ### Der RFC-Prozess
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    RFC ENTWICKLUNGSPROZESS                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   1. Internet-Draft (I-D)                                       │
-│      ├── Kann von jedem eingereicht werden                     │
-│      ├── Format: draft-<autor>-<thema>-<version>               │
-│      ├── Gültig für 6 Monate, dann Erneuerung oder Verfall     │
-│      └── Beispiel: draft-ietf-quic-transport-34                │
-│                                                                 │
-│   2. Working Group Adoption                                     │
-│      ├── WG übernimmt das Draft                                │
-│      ├── Wird zu: draft-ietf-<wg>-<thema>-<version>           │
-│      └── Gemeinschaftliche Weiterentwicklung                   │
-│                                                                 │
-│   3. Working Group Last Call (WGLC)                            │
-│      └── Finale Überprüfung innerhalb der WG                   │
-│                                                                 │
-│   4. IETF Last Call                                             │
-│      ├── Öffentliche Kommentierungsphase (min. 2 Wochen)       │
-│      └── Ankündigung auf ietf-announce Mailingliste            │
-│                                                                 │
-│   5. IESG Review                                                │
-│      ├── Prüfung durch Area Directors                          │
-│      └── Diskussion offener Punkte (DISCUSS)                   │
-│                                                                 │
-│   6. RFC Editor Queue                                           │
-│      ├── Redaktionelle Überarbeitung                           │
-│      ├── AUTH48 – Finale Autorenfreigabe                       │
-│      └── Zuweisung der RFC-Nummer                              │
-│                                                                 │
-│   7. Publication                                                │
-│      └── Veröffentlichung auf rfc-editor.org                   │
-│                                                                 │
-│   Typische Dauer: 1-3 Jahre (kann auch schneller sein)         │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[rfc-entwicklungsprozess.png]]
+*<span class="fig-id">03-02-03-rfc-entwicklungsprozess</span>: Der RFC-Entwicklungsprozess von der ersten Einreichung bis zur Veröffentlichung.*
 
 ## RFC 2119 – Die Schlüsselwörter
 
@@ -329,47 +241,18 @@ RFC 2119 definiert die Bedeutung von Schlüsselwörtern in technischen Standards
 
 ### Aufbau eines RFCs
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    TYPISCHER RFC-AUFBAU                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   1. Header                                                     │
-│      ├── RFC-Nummer, Titel, Autoren                            │
-│      ├── Status (Standards Track, Informational, etc.)         │
-│      ├── Updates/Obsoletes-Verweise                            │
-│      └── ISSN, DOI                                             │
-│                                                                 │
-│   2. Abstract                                                   │
-│      └── Kurze Zusammenfassung                                 │
-│                                                                 │
-│   3. Table of Contents                                          │
-│                                                                 │
-│   4. Introduction                                               │
-│      └── Motivation und Überblick                              │
-│                                                                 │
-│   5. Terminology / Conventions                                  │
-│      └── Verweis auf RFC 2119                                  │
-│                                                                 │
-│   6. Technical Specification                                    │
-│      └── Der eigentliche Standard                              │
-│                                                                 │
-│   7. Security Considerations                                    │
-│      └── PFLICHT seit RFC 3552                                 │
-│                                                                 │
-│   8. IANA Considerations                                        │
-│      └── Registrierte Nummern, Ports, etc.                     │
-│                                                                 │
-│   9. References                                                 │
-│      ├── Normative (MÜSSEN implementiert werden)               │
-│      └── Informative (Hintergrund)                             │
-│                                                                 │
-│   10. Appendices                                                │
-│                                                                 │
-│   11. Authors' Addresses                                        │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Nr. | Abschnitt | Beschreibung |
+|-----|-----------|--------------|
+| 1 | **Header** | RFC-Nummer, Titel, Autoren, Status, Updates/Obsoletes |
+| 2 | **Abstract** | Kurze Zusammenfassung |
+| 3 | **Table of Contents** | Inhaltsverzeichnis |
+| 4 | **Introduction** | Motivation und Überblick |
+| 5 | **Terminology** | Verweis auf RFC 2119 |
+| 6 | **Technical Specification** | Der eigentliche Standard |
+| 7 | **Security Considerations** | PFLICHT seit RFC 3552 |
+| 8 | **IANA Considerations** | Registrierte Nummern, Ports, etc. |
+| 9 | **References** | Normative (MÜSSEN implementiert) / Informative |
+| 10 | **Authors' Addresses** | Kontaktdaten der Autoren |
 
 ### Tipps zum Lesen
 

@@ -52,43 +52,8 @@ Ohne Standards wäre Kommunikation zwischen Geräten verschiedener Hersteller un
 
 ### Entstehungswege
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    STANDARDISIERUNGSWEGE                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   DE-JURE (formell)                DE-FACTO (informell)        │
-│   ─────────────────                ────────────────────         │
-│                                                                 │
-│   ┌──────────────┐                 ┌──────────────┐            │
-│   │  Vorschlag   │                 │  Innovation  │            │
-│   └──────┬───────┘                 └──────┬───────┘            │
-│          ▼                                ▼                     │
-│   ┌──────────────┐                 ┌──────────────┐            │
-│   │  Arbeits-    │                 │  Marktein-   │            │
-│   │  gruppe      │                 │  führung     │            │
-│   └──────┬───────┘                 └──────┬───────┘            │
-│          ▼                                ▼                     │
-│   ┌──────────────┐                 ┌──────────────┐            │
-│   │  Entwurf &   │                 │  Markt-      │            │
-│   │  Review      │                 │  dominanz    │            │
-│   └──────┬───────┘                 └──────┬───────┘            │
-│          ▼                                ▼                     │
-│   ┌──────────────┐                 ┌──────────────┐            │
-│   │  Abstimmung  │                 │  Nachträg-   │            │
-│   │  & Annahme   │                 │  liche       │            │
-│   └──────┬───────┘                 │  Standardi-  │            │
-│          ▼                         │  sierung     │            │
-│   ┌──────────────┐                 └──────┬───────┘            │
-│   │  Veröffent-  │                        │                    │
-│   │  lichung     │◄───────────────────────┘                    │
-│   └──────────────┘                                             │
-│                                                                 │
-│   Dauer: 2-5 Jahre                 Dauer: variabel             │
-│   Beispiel: IEEE 802.11            Beispiel: TCP/IP → RFCs     │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[standardisierungswege.png]]
+*<span class="fig-id">03-02-01-standardisierungswege</span>: Vergleich der Standardisierungswege – formelle De-jure-Standards (links) und informelle De-facto-Standards (rechts).*
 
 ## Standardisierungsgremien – Übersicht
 
@@ -107,32 +72,14 @@ Ohne Standards wäre Kommunikation zwischen Geräten verschiedener Hersteller un
 
 ### Zuständigkeitsbereiche
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                  ZUSTÄNDIGKEITSBEREICHE                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   SCHICHT                    HAUPTVERANTWORTLICH                │
-│   ───────────────────────────────────────────────               │
-│                                                                 │
-│   Anwendung                  W3C (Web), IETF (Protokolle)      │
-│                              OASIS (Enterprise)                 │
-│                                                                 │
-│   Transport                  IETF (TCP, UDP, QUIC)             │
-│                                                                 │
-│   Netzwerk                   IETF (IP), IANA (Adressen)        │
-│                                                                 │
-│   Sicherung                  IEEE 802 (Ethernet, WLAN)         │
-│                                                                 │
-│   Physikalisch               IEEE 802, ITU-T (Telekom)         │
-│                              IEC (Kabel, Stecker)              │
-│                                                                 │
-│   ───────────────────────────────────────────────               │
-│   Übergreifend               ISO (Modelle, Sicherheit)         │
-│                              ITU (Telekommunikation)           │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Schicht | Hauptverantwortlich |
+|---------|---------------------|
+| **Anwendung** | W3C (Web), IETF (Protokolle), OASIS (Enterprise) |
+| **Transport** | IETF (TCP, UDP, QUIC) |
+| **Netzwerk** | IETF (IP), IANA (Adressen) |
+| **Sicherung** | IEEE 802 (Ethernet, WLAN) |
+| **Physikalisch** | IEEE 802, ITU-T (Telekom), IEC (Kabel, Stecker) |
+| *Übergreifend* | ISO (Modelle, Sicherheit), ITU (Telekommunikation) |
 
 ## IEEE – Institute of Electrical and Electronics Engineers
 
@@ -157,39 +104,18 @@ Die [[07-Anhang/IT-Related-Organisations/IEEE|IEEE]] ist eine der wichtigsten Or
 
 ### IEEE-Standardisierungsprozess
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│               IEEE STANDARDISIERUNGSPROZESS                     │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   1. Project Authorization Request (PAR)                        │
-│      └── Vorschlag einer neuen Arbeitsgruppe                   │
-│                                                                 │
-│   2. Task Group Formation                                       │
-│      └── Bildung der Arbeitsgruppe                             │
-│                                                                 │
-│   3. Draft Development                                          │
-│      └── Erstellung des Entwurfs                               │
-│                                                                 │
-│   4. Working Group Ballot                                       │
-│      └── Abstimmung in der Arbeitsgruppe (75% Zustimmung)      │
-│                                                                 │
-│   5. Sponsor Ballot                                             │
-│      └── Breitere Abstimmung (75% Zustimmung)                  │
-│                                                                 │
-│   6. RevCom Approval                                            │
-│      └── Review Committee Genehmigung                          │
-│                                                                 │
-│   7. IEEE-SA Standards Board Approval                           │
-│      └── Finale Genehmigung                                    │
-│                                                                 │
-│   8. Publication                                                │
-│      └── Veröffentlichung des Standards                        │
-│                                                                 │
-│   Typische Dauer: 2-5 Jahre                                    │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Schritt | Phase | Beschreibung |
+|---------|-------|--------------|
+| 1 | **Project Authorization Request (PAR)** | Vorschlag einer neuen Arbeitsgruppe |
+| 2 | **Task Group Formation** | Bildung der Arbeitsgruppe |
+| 3 | **Draft Development** | Erstellung des Entwurfs |
+| 4 | **Working Group Ballot** | Abstimmung in der Arbeitsgruppe (75% Zustimmung) |
+| 5 | **Sponsor Ballot** | Breitere Abstimmung (75% Zustimmung) |
+| 6 | **RevCom Approval** | Review Committee Genehmigung |
+| 7 | **IEEE-SA Standards Board Approval** | Finale Genehmigung |
+| 8 | **Publication** | Veröffentlichung des Standards |
+
+*Typische Dauer: 2-5 Jahre*
 
 ## IETF – Internet Engineering Task Force
 
@@ -206,33 +132,16 @@ Die [[07-Anhang/IT-Related-Organisations/IETF|IETF]] entwickelt und pflegt Inter
 
 ### IETF-Prozess
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    IETF RFC-PROZESS                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   1. Internet-Draft (I-D)                                       │
-│      └── Erste Version, 6 Monate gültig, erneuerbar            │
-│                                                                 │
-│   2. Working Group Adoption                                     │
-│      └── Übernahme durch eine Arbeitsgruppe                    │
-│                                                                 │
-│   3. Working Group Last Call (WGLC)                            │
-│      └── Finale Überprüfung in der WG                          │
-│                                                                 │
-│   4. IETF Last Call                                             │
-│      └── Öffentliche Kommentierung (2 Wochen)                  │
-│                                                                 │
-│   5. IESG Review                                                │
-│      └── Prüfung durch Internet Engineering Steering Group     │
-│                                                                 │
-│   6. RFC Publication                                            │
-│      └── Veröffentlichung durch RFC Editor                     │
-│                                                                 │
-│   Typische Dauer: 1-3 Jahre                                    │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Schritt | Phase | Beschreibung |
+|---------|-------|--------------|
+| 1 | **Internet-Draft (I-D)** | Erste Version, 6 Monate gültig, erneuerbar |
+| 2 | **Working Group Adoption** | Übernahme durch eine Arbeitsgruppe |
+| 3 | **Working Group Last Call (WGLC)** | Finale Überprüfung in der WG |
+| 4 | **IETF Last Call** | Öffentliche Kommentierung (2 Wochen) |
+| 5 | **IESG Review** | Prüfung durch Internet Engineering Steering Group |
+| 6 | **RFC Publication** | Veröffentlichung durch RFC Editor |
+
+*Typische Dauer: 1-3 Jahre*
 
 ## ISO – International Organization for Standardization
 

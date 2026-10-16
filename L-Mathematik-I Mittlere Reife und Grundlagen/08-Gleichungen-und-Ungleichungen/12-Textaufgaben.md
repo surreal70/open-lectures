@@ -1,7 +1,7 @@
 ---
 title: "Textaufgaben"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-21
 chapter: "08"
 section: "12"
 status: "draft - review pending"
@@ -21,13 +21,28 @@ keywords:
 > - Lösungen im Sachkontext interpretieren
 > - Typische Aufgabentypen erkennen und bearbeiten
 
+## Historischer Kontext
+
+Textaufgaben sind so alt wie die Mathematik selbst. Schon die **Babylonier** (ca. 1800 v. Chr.) formulierten mathematische Probleme als Geschichten: „Ein Graben soll ausgehoben werden. Die Länge ist 5 Ruten. Die Breite ist ..." Die ägyptischen Papyri und indischen Lehrbücher enthalten ähnliche Aufgaben.
+
+Die berühmten „Rechenaufgaben" von **Adam Ries** (1492–1559), dem bedeutendsten deutschen Rechenmeister, waren fast ausschließlich Textaufgaben aus dem Handels- und Geschäftsleben. Er wusste: Mathematik lernt man am besten, wenn sie einen Bezug zum echten Leben hat.
+
+> [!tip] **Warum Textaufgaben?**
+> Textaufgaben sind nicht nur Prüfungsstoff – sie sind die eigentliche Anwendung der Mathematik:
+> - Im Beruf werden Probleme immer als Text beschrieben, nie als fertige Gleichung
+> - Die Fähigkeit, Text in Mathematik zu „übersetzen", ist eine Schlüsselkompetenz
+> - Textaufgaben trainieren logisches Denken und strukturiertes Vorgehen
+
 ## Strategie für Textaufgaben
 
 ### Das Fünf-Schritte-Schema
 
+Dieses Schema hat sich über Jahrhunderte bewährt und wird von erfolgreichen Problemlösern intuitiv angewendet:
+
 ```
 ┌─────────────────────────────────────┐
 │ 1. LESEN - Text sorgfältig lesen    │
+│    (mindestens zweimal!)            │
 └──────────────┬──────────────────────┘
                ↓
 ┌─────────────────────────────────────┐
@@ -49,6 +64,9 @@ keywords:
 │    Im Sachkontext formulieren       │
 └─────────────────────────────────────┘
 ```
+
+> [!warning] **Häufiger Fehler: Zu schnell rechnen**
+> Viele Schüler stürzen sich sofort auf die Zahlen im Text und versuchen, irgendwie zu rechnen. Das führt oft zu falschen Gleichungen. Nimm dir Zeit für Schritt 1 und 2!
 
 ## Typische Aufgabentypen
 
@@ -173,19 +191,31 @@ Also: $y = 5 - 3 = 2$
 
 ## Häufige Fehler vermeiden
 
-> [!warning] Typische Fehler
+> [!warning] **Typische Fehler**
 > 
 > **Fehler 1**: Variable nicht klar definieren
 > - Falsch: „$x$ ist das Alter"
 > - Richtig: „$x$ = Alter der Tochter in Jahren"
 > 
+> Eine präzise Definition verhindert Verwechslungen und macht die Lösung nachvollziehbar.
+>
 > **Fehler 2**: Einheiten vergessen
 > - Nicht: $x = 5$
 > - Sondern: $x = 5$ km oder $x = 5$ €
+>
+> Ohne Einheit ist das Ergebnis unvollständig und kann missverstanden werden.
 > 
 > **Fehler 3**: Ergebnis nicht prüfen
 > - Ist die Lösung im Sachkontext sinnvoll?
-> - Kann ein Alter negativ sein?
+> - Kann ein Alter negativ sein? Kann eine Geschwindigkeit größer als die Lichtgeschwindigkeit sein?
+>
+> Ein mathematisch korrektes Ergebnis kann trotzdem sachlich unsinnig sein!
+
+> [!tip] **Textaufgaben-Strategien für Prüfungen**
+> 1. **Unterstreichen**: Markiere alle Zahlen und wichtigen Begriffe im Text
+> 2. **Skizze**: Bei Bewegungs- oder Geometrieaufgaben hilft oft eine Zeichnung
+> 3. **Tabelle**: Bei Mischungs- oder Altersaufgaben kann eine Tabelle helfen
+> 4. **Rückwärts prüfen**: Setze das Ergebnis in den ursprünglichen Text ein – ergibt es Sinn?
 
 ## Checkliste für Textaufgaben
 
@@ -205,6 +235,15 @@ Also: $y = 5 - 3 = 2$
 > - Schlüsselwörter in mathematische Operationen übersetzen
 > - Ergebnis im Sachkontext interpretieren und auf Sinnhaftigkeit prüfen
 > - Vollständigen Antwortsatz mit Einheiten formulieren
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[04-Lineare-Gleichungen|Lineare Gleichungen]] – Häufigster Gleichungstyp bei Textaufgaben
+- → [[11-Lineare-Gleichungssysteme|Gleichungssysteme]] – Für Aufgaben mit mehreren Unbekannten
+- → [[05-Verhaeltnisse-und-Proportionalitaet/03-Dreisatz|Dreisatz]] – Alternative Lösungsmethode für Proportionalitätsaufgaben
+- → [[04-Dezimalzahlen-und-Prozentrechnung/09-Rabatte-und-Preisberechnungen|Preisberechnungen]] – Wirtschaftliche Textaufgaben
 
 ## Übungsaufgaben
 

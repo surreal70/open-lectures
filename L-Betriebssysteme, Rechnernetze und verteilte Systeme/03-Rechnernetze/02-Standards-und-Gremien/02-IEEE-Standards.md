@@ -35,41 +35,37 @@ Die [[07-Anhang/IT-Related-Organisations/IEEE|IEEE]] 802 Arbeitsgruppe ist veran
 
 ### Übersicht der IEEE 802 Arbeitsgruppen
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                     IEEE 802 ARBEITSGRUPPEN                    │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│   AKTIV UND RELEVANT                                          │
-│   ──────────────────                                          │
-│   802.1   Higher Layer LAN Protocols (Bridging, VLANs)        │
-│   802.3   CSMA/CD → Ethernet                                  │
-│   802.11  Wireless LAN (WLAN / WiFi)                          │
-│   802.15  Wireless Personal Area Network (Bluetooth, ZigBee)  │
-│   802.16  Broadband Wireless Access (WiMAX)                   │
-│   802.18  Radio Regulatory TAG                                │
-│   802.19  Wireless Coexistence                                │
-│   802.22  Wireless Regional Area Networks                     │
-│   802.23  Emergency Services                                  │
-│                                                                │
-│   HISTORISCH / INAKTIV                                        │
-│   ────────────────────                                        │
-│   802.2   Logical Link Control (LLC)                          │
-│   802.4   Token Bus                                           │
-│   802.5   Token Ring                                          │
-│   802.6   MAN (DQDB)                                          │
-│   802.7   Broadband TAG                                       │
-│   802.8   Fiber Optic TAG                                     │
-│   802.9   Integrated Services                                 │
-│   802.10  Security (aufgelöst)                                │
-│   802.12  Demand Priority (100VG-AnyLAN)                      │
-│   802.14  Cable-TV Based Broadband                            │
-│   802.17  Resilient Packet Ring                               │
-│   802.20  Mobile Broadband Wireless Access                    │
-│   802.21  Media Independent Handover                          │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+**Aktiv und relevant:**
+
+| Gruppe | Beschreibung |
+|--------|--------------|
+| **802.1** | Higher Layer LAN Protocols (Bridging, VLANs) |
+| **802.3** | CSMA/CD → Ethernet |
+| **802.11** | Wireless LAN (WLAN / WiFi) |
+| **802.15** | Wireless Personal Area Network (Bluetooth, ZigBee) |
+| **802.16** | Broadband Wireless Access (WiMAX) |
+| **802.18** | Radio Regulatory TAG |
+| **802.19** | Wireless Coexistence |
+| **802.22** | Wireless Regional Area Networks |
+| **802.23** | Emergency Services |
+
+**Historisch / Inaktiv:**
+
+| Gruppe | Beschreibung |
+|--------|--------------|
+| 802.2 | Logical Link Control (LLC) |
+| 802.4 | Token Bus |
+| 802.5 | Token Ring |
+| 802.6 | MAN (DQDB) |
+| 802.7 | Broadband TAG |
+| 802.8 | Fiber Optic TAG |
+| 802.9 | Integrated Services |
+| 802.10 | Security (aufgelöst) |
+| 802.12 | Demand Priority (100VG-AnyLAN) |
+| 802.14 | Cable-TV Based Broadband |
+| 802.17 | Resilient Packet Ring |
+| 802.20 | Mobile Broadband Wireless Access |
+| 802.21 | Media Independent Handover |
 
 > [!merke] Die „Big Three"
 > Die drei praxisrelevantesten 802-Arbeitsgruppen sind:
@@ -87,46 +83,8 @@ Die 802.3 Arbeitsgruppe definiert alle kabelgebundenen Ethernet-Standards. Ether
 
 Die Ethernet-Bezeichnungen folgen einem Schema:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                  ETHERNET-NAMENSKONVENTION                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│         [Geschwindigkeit][Signalart][Medium/Segment]           │
-│                                                                 │
-│   Beispiel: 1000BASE-T                                         │
-│             ────┬──── ─┬── ─┬─                                 │
-│                 │      │    │                                   │
-│                 │      │    └── T = Twisted Pair (Kupfer)      │
-│                 │      │                                        │
-│                 │      └────── BASE = Baseband                 │
-│                 │              (Gegenteil: BROAD = Broadband)  │
-│                 │                                               │
-│                 └────────────── 1000 = 1000 Mbit/s = 1 Gbit/s  │
-│                                                                 │
-├─────────────────────────────────────────────────────────────────┤
-│   GESCHWINDIGKEIT                                               │
-│   ───────────────                                               │
-│   10, 100, 1000       → Mbit/s                                 │
-│   10G, 25G, 40G, 100G → Gbit/s (G = Giga)                      │
-│   200G, 400G, 800G    → Gbit/s                                 │
-│                                                                 │
-│   MEDIUM-SUFFIXE                                                │
-│   ──────────────                                                │
-│   -T    Twisted Pair (Kupfer, Cat5/6/7/8)                      │
-│   -TX   Twisted Pair, 2 Paare                                  │
-│   -CX   Twinax Kupferkabel (kurze Distanzen, Rechenzentrum)    │
-│   -SR   Short Range, Multimode-Glasfaser                       │
-│   -LR   Long Range, Singlemode-Glasfaser                       │
-│   -ER   Extended Range, Singlemode-Glasfaser                   │
-│   -ZR   „Zero" Range (eigentlich sehr lang, ~80km)             │
-│   -SX   Short Wavelength, Multimode (850nm)                    │
-│   -LX   Long Wavelength, Singlemode (1310nm)                   │
-│                                                                 │
-│   Bei parallelen Verbindungen: SR4 = 4× Short Range           │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[ethernet-namenskonvention.png]]
+*<span class="fig-id">03-02-02-ethernet-namenskonvention</span>: Aufbau der Ethernet-Bezeichnung am Beispiel 1000BASE-T.*
 
 ### Ethernet-Evolution
 
@@ -237,33 +195,11 @@ Die 802.11 Arbeitsgruppe definiert die drahtlosen Netzwerkstandards, im Marketin
 
 ### Frequenzbänder
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    WLAN FREQUENZBÄNDER                         │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│   2,4 GHz Band (2400-2483,5 MHz)                              │
-│   ├── Kanäle 1-13 (Europa), 1-11 (USA), 1-14 (Japan)          │
-│   ├── Kanalbreite: 20 MHz (802.11b/g), 40 MHz (802.11n)       │
-│   ├── Überlappungsfrei: nur Kanäle 1, 6, 11                   │
-│   ├── Pro: Bessere Reichweite, Durchdringung                  │
-│   └── Contra: Überfüllt, Interferenzen (Mikrowelle, BT)       │
-│                                                                │
-│   5 GHz Band (5150-5875 MHz)                                  │
-│   ├── Mehr Kanäle (19 nicht-überlappend in Europa)            │
-│   ├── Kanalbreite: 20/40/80/160 MHz                           │
-│   ├── Weniger Interferenzen                                   │
-│   ├── Teilweise DFS erforderlich (Radar-Erkennung)            │
-│   └── Contra: Kürzere Reichweite, schlechtere Durchdringung   │
-│                                                                │
-│   6 GHz Band (5925-7125 MHz) – WiFi 6E/7                      │
-│   ├── 1200 MHz zusätzliches Spektrum                          │
-│   ├── Bis zu 7 × 160 MHz oder 3 × 320 MHz Kanäle             │
-│   ├── Noch weniger Interferenzen (nur WiFi 6E+ Geräte)        │
-│   └── Contra: Noch kürzere Reichweite                         │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+| Band | Frequenzbereich | Eigenschaften |
+|------|-----------------|---------------|
+| **2,4 GHz** | 2400–2483,5 MHz | Kanäle 1-13 (EU), 1-11 (USA); 20/40 MHz Kanalbreite; überlappungsfrei nur 1, 6, 11; **+** bessere Reichweite/Durchdringung; **−** überfüllt, Interferenzen |
+| **5 GHz** | 5150–5875 MHz | 19 nicht-überlappende Kanäle (EU); 20/40/80/160 MHz Kanalbreite; teilweise DFS erforderlich; **+** weniger Interferenzen; **−** kürzere Reichweite |
+| **6 GHz** | 5925–7125 MHz | WiFi 6E/7; 1200 MHz zusätzlich; bis 7×160 oder 3×320 MHz Kanäle; **+** viel freies Spektrum; **−** noch kürzere Reichweite |
 
 ### Wichtige 802.11-Erweiterungen
 
@@ -320,39 +256,8 @@ Die 802.1 Arbeitsgruppe definiert höhere Protokolle für geswitchte Netzwerke.
 
 ### 802.1Q VLAN Tagging
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    802.1Q VLAN TAG FORMAT                       │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Ethernet-Frame ohne Tag:                                      │
-│   ┌─────────┬─────────┬──────┬─────────────┬─────┐             │
-│   │ Dst MAC │ Src MAC │ Type │   Payload   │ FCS │             │
-│   │  6 B    │  6 B    │ 2 B  │  46-1500 B  │ 4 B │             │
-│   └─────────┴─────────┴──────┴─────────────┴─────┘             │
-│                                                                 │
-│   Ethernet-Frame mit 802.1Q Tag:                                │
-│   ┌─────────┬─────────┬──────────┬──────┬─────────────┬─────┐  │
-│   │ Dst MAC │ Src MAC │ 802.1Q   │ Type │   Payload   │ FCS │  │
-│   │  6 B    │  6 B    │  4 B     │ 2 B  │  46-1500 B  │ 4 B │  │
-│   └─────────┴─────────┴──────────┴──────┴─────────────┴─────┘  │
-│                         │                                       │
-│                         ▼                                       │
-│   ┌─────────────────────────────────────────┐                  │
-│   │              802.1Q Tag (4 Bytes)       │                  │
-│   ├─────────────┬─────┬───────┬────────────┤                  │
-│   │    TPID     │ PCP │  DEI  │    VID     │                  │
-│   │   0x8100    │ 3b  │  1b   │   12 bit   │                  │
-│   │  (2 Bytes)  │     │       │  (0-4095)  │                  │
-│   └─────────────┴─────┴───────┴────────────┘                  │
-│                                                                 │
-│   TPID = Tag Protocol Identifier                               │
-│   PCP  = Priority Code Point (QoS, 0-7)                        │
-│   DEI  = Drop Eligible Indicator                               │
-│   VID  = VLAN Identifier (4094 nutzbare VLANs)                 │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[vlan-tag-format.png]]
+*<span class="fig-id">03-02-02-vlan-tag-format</span>: 802.1Q VLAN Tag Format – das 4-Byte-Tag wird zwischen Source MAC und Type eingefügt.*
 
 ## Zusammenfassung
 

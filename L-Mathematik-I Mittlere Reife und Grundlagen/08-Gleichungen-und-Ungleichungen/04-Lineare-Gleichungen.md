@@ -1,7 +1,7 @@
 ---
 title: "Lineare Gleichungen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-21
 chapter: "08"
 section: "04"
 status: "draft - review pending"
@@ -21,9 +21,21 @@ keywords:
 > - Sonderfälle (keine Lösung, unendlich viele Lösungen) identifizieren
 > - Lösungen verifizieren
 
+## Historischer Kontext
+
+Lineare Gleichungen sind die ältesten und grundlegendsten algebraischen Gleichungen. Schon die **alten Ägypter** (ca. 1650 v. Chr.) lösten im Papyrus Rhind lineare Gleichungen – allerdings mit der „Methode der falschen Annahme": Man rät einen Wert, prüft das Ergebnis und korrigiert proportional.
+
+Der Name „linear" kommt vom lateinischen „linea" (Linie), weil die grafische Darstellung einer linearen Gleichung $ax + b = c$ im Koordinatensystem eine **Gerade** (Linie) ergibt. Diese Verbindung zwischen Algebra und Geometrie wurde erst im 17. Jahrhundert durch René Descartes systematisch erforscht.
+
+> [!tip] **Alltagsrelevanz**
+> Lineare Gleichungen begegnen uns überall:
+> - **Einkaufen**: „3 Äpfel kosten 4,50 €. Was kostet ein Apfel?" → $3x = 4{,}50$
+> - **Reisen**: „Wie lange brauche ich für 180 km bei 60 km/h?" → $60t = 180$
+> - **Finanzen**: „Wie viel muss ich sparen, wenn ich 500 € habe und 800 € brauche?" → $500 + x = 800$
+
 ## Definition
 
-Eine **lineare Gleichung** (Gleichung ersten Grades) ist eine Gleichung, in der die Variable nur in der ersten Potenz vorkommt.
+Eine **lineare Gleichung** (Gleichung ersten Grades) ist eine Gleichung, in der die Variable nur in der ersten Potenz vorkommt. Der Name „ersten Grades" bezieht sich auf den höchsten Exponenten der Variablen, der hier 1 ist (also $x^1 = x$).
 
 ### Normalform
 
@@ -150,11 +162,18 @@ $$x = 3$$
 
 ## Strategien und Tipps
 
-> [!tip] Praktische Hinweise
-> - **Brüche vermeiden**: Früh mit dem Hauptnenner multiplizieren
-> - **Dezimalzahlen**: Mit passender Zehnerpotenz multiplizieren
-> - **Vorzeichen**: Besonders beim Minuszeichen vor Klammern aufpassen
-> - **Probe**: Immer in die Originalgleichung einsetzen
+> [!tip] **Praktische Hinweise**
+> - **Brüche vermeiden**: Früh mit dem Hauptnenner multiplizieren – das macht die Rechnung übersichtlicher
+> - **Dezimalzahlen**: Mit passender Zehnerpotenz multiplizieren (z.B. $\cdot 10$ bei einer Nachkommastelle)
+> - **Vorzeichen**: Besonders beim Minuszeichen vor Klammern aufpassen – hier passieren die meisten Fehler
+> - **Probe**: Immer in die Originalgleichung einsetzen, nicht in Zwischenschritte
+
+> [!warning] **Häufiger Fehler: Vorzeichenfehler**
+> Der häufigste Fehler bei linearen Gleichungen ist das falsche Vorzeichen:
+> - **Falsch:** $5x - 3 = 2x + 9 \Rightarrow 5x + 2x = 9 + 3$ 
+> - **Richtig:** $5x - 3 = 2x + 9 \Rightarrow 5x - 2x = 9 + 3$
+>
+> Merke: Beim Übertragen auf die andere Seite wechselt das Vorzeichen!
 
 ## Zusammenfassung
 
@@ -164,6 +183,15 @@ $$x = 3$$
 > - Drei mögliche Fälle: eine Lösung, keine Lösung, unendlich viele Lösungen
 > - Bei Brüchen: Mit Hauptnenner multiplizieren
 > - Probe sichert das Ergebnis ab
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[02-Aequivalenzumformungen|Äquivalenzumformungen]] – Die Werkzeuge zum Lösen
+- → [[05-Gleichungen-mit-Klammern|Gleichungen mit Klammern]] – Erweiterung mit Klammern
+- → [[07-Lineare-Ungleichungen|Lineare Ungleichungen]] – Ähnlich, aber mit Ungleichheitszeichen
+- → [[09-Funktionen-und-Koordinatensysteme/05-Lineare-Funktionen|Lineare Funktionen]] – Grafische Darstellung
 
 ## Übungsaufgaben
 

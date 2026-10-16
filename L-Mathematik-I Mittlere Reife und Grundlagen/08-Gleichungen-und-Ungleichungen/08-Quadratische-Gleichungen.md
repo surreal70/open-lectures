@@ -1,7 +1,7 @@
 ---
 title: "Quadratische Gleichungen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-21
 chapter: "08"
 section: "08"
 status: "draft - review pending"
@@ -21,9 +21,20 @@ keywords:
 > - Einfache quadratische Gleichungen durch Wurzelziehen lösen
 > - Das Konzept der Diskriminante verstehen
 
+## Historischer Kontext
+
+Quadratische Gleichungen gehören zu den ältesten mathematischen Problemen. Die **Babylonier** lösten sie bereits um 2000 v. Chr. – allerdings nur für positive Lösungen, da negative Zahlen als „nicht existent" galten. Sie formulierten Aufgaben wie: „Die Fläche eines Quadrats plus die Seitenlänge ergibt 0;45" (in ihrem Sexagesimalsystem, entspricht etwa 3/4).
+
+Die **indischen Mathematiker** machten im frühen Mittelalter entscheidende Fortschritte. **Brahmagupta** (598–668 n. Chr.) formulierte erstmals Regeln für negative Zahlen und akzeptierte sie als gültige Lösungen. Er schrieb: „Die Zahl, deren Quadrat, vermehrt um 1, gleich 10 ist" – und gab sowohl $x = 3$ als auch $x = -3$ als Lösung an.
+
+Die allgemeine **Lösungsformel** (heute als p-q-Formel oder Mitternachtsformel bekannt) wurde im 16. Jahrhundert in Europa standardisiert, basierend auf den Arbeiten arabischer und indischer Mathematiker.
+
+> [!tip] **Warum „quadratisch"?**
+> Der Name kommt vom lateinischen „quadratus" (Quadrat). Geometrisch gesehen: Wenn $x$ die Seitenlänge eines Quadrats ist, dann ist $x^2$ seine Fläche. Quadratische Gleichungen beschreiben also ursprünglich Flächenprobleme.
+
 ## Definition
 
-Eine **quadratische Gleichung** ist eine Gleichung, in der die Variable in der zweiten Potenz vorkommt (und nicht höher).
+Eine **quadratische Gleichung** ist eine Gleichung, in der die Variable in der zweiten Potenz vorkommt (und nicht höher). Sie ist damit die nächste Stufe nach den linearen Gleichungen.
 
 ### Allgemeine Form
 
@@ -103,10 +114,17 @@ Nach dem **Nullproduktsatz** gilt: Ein Produkt ist Null, wenn mindestens ein Fak
 $$x = 0 \quad \text{oder} \quad x - 6 = 0$$
 $$x_1 = 0, \quad x_2 = 6$$
 
-> [!warning] Häufiger Fehler
+> [!warning] **Häufiger Fehler: Division durch Variable**
 > $$x^2 - 6x = 0$$
 > $$x^2 = 6x \quad | :x$$ ← **FALSCH!** (Division durch möglicherweise 0)
 > $$x = 6$$ ← Die Lösung $x = 0$ geht verloren!
+>
+> **Richtig** ist das Ausklammern:
+> $$x^2 - 6x = 0$$
+> $$x(x - 6) = 0$$
+> $$x_1 = 0 \text{ oder } x_2 = 6$$
+>
+> Merke: Nie durch die Variable dividieren – dabei können Lösungen verloren gehen!
 
 ## Anzahl der Lösungen und Diskriminante
 
@@ -170,6 +188,15 @@ Die Lösungen einer quadratischen Gleichung $ax^2 + bx + c = 0$ sind die **Nulls
 > - Gleichungen ohne Konstante ($x^2 + bx = 0$): Ausklammern
 > - Die Diskriminante bestimmt die Anzahl der Lösungen
 > - Nie durch $x$ dividieren – dabei können Lösungen verloren gehen!
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[09-Loesungsformel-quadratische-Gleichungen|Lösungsformel]] – Die p-q-Formel und Mitternachtsformel
+- → [[10-Faktorisierung-quadratischer-Gleichungen|Faktorisierung]] – Alternative Lösungsmethode
+- → [[06-Potenzen-Wurzeln-und-Zahlendarstellung/06-Quadratwurzeln|Quadratwurzeln]] – Mathematische Grundlage
+- → [[09-Funktionen-und-Koordinatensysteme/09-Parabeln|Parabeln]] – Grafische Darstellung
 
 ## Übungsaufgaben
 

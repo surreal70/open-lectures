@@ -1,7 +1,7 @@
 ---
 title: "Äquivalenzumformungen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-21
 chapter: "08"
 section: "02"
 status: "draft - review pending"
@@ -21,13 +21,27 @@ keywords:
 > - Nicht-äquivalente Umformungen erkennen
 > - Gleichungen systematisch nach der Variablen auflösen
 
+## Historischer Kontext
+
+Das systematische Lösen von Gleichungen durch Umformungen geht auf den persischen Mathematiker **Muhammad ibn Musa al-Chwarizmi** (ca. 780–850 n. Chr.) zurück. In seinem Werk „Kitab al-jabr wa-l-muqabala" beschrieb er zwei grundlegende Operationen:
+
+- **al-jabr** („Ergänzung"): Einen Term von einer Seite auf die andere bringen und das Vorzeichen ändern
+- **al-muqabala** („Ausgleichen"): Gleiche Terme auf beiden Seiten zusammenfassen
+
+Vom Wort „al-jabr" leitet sich unser Begriff **Algebra** ab. Al-Chwarizmis Methoden wurden im mittelalterlichen Europa übersetzt und bildeten die Grundlage für den modernen Mathematikunterricht.
+
+> [!tip] **Die Waagen-Analogie**
+> Al-Chwarizmi selbst beschrieb Gleichungen als „zwei Waagschalen im Gleichgewicht". Diese Vorstellung hilft bis heute: Jede Operation, die wir auf der einen Seite durchführen, müssen wir auch auf der anderen Seite ausführen, damit die „Waage" im Gleichgewicht bleibt.
+
 ## Begriff der Äquivalenzumformung
 
-Eine **Äquivalenzumformung** ist eine Umformung einer Gleichung, die die Lösungsmenge nicht verändert.
+Eine **Äquivalenzumformung** ist eine Umformung einer Gleichung, die die Lösungsmenge nicht verändert. Das bedeutet: Die ursprüngliche Gleichung und die umgeformte Gleichung haben exakt dieselben Lösungen.
 
 $$\text{Gleichung 1} \overset{\text{Äquivalenzumformung}}{\Longleftrightarrow} \text{Gleichung 2}$$
 
 Das Symbol $\Leftrightarrow$ bedeutet: Beide Gleichungen haben exakt dieselben Lösungen.
+
+Der Begriff kommt vom lateinischen „aequivalere" (gleichwertig sein) – die umgeformte Gleichung ist also „gleichwertig" zur ursprünglichen.
 
 ## Erlaubte Äquivalenzumformungen
 
@@ -56,8 +70,17 @@ Auf beiden Seiten darf mit derselben Zahl multipliziert oder dividiert werden, *
 > $$x = 21$$
 
 > [!warning] Achtung: Division durch Null
-> Division durch Null ist **verboten**!
+> Division durch Null ist **verboten**! Dies ist eine der fundamentalsten Regeln der Mathematik.
 > $$3x = 0 \quad | :x \quad \text{← FALSCH, falls } x = 0$$
+> 
+> Warum? Wenn $x = 0$ wäre, würden wir durch 0 dividieren, was mathematisch nicht definiert ist. Stattdessen sollte man hier direkt erkennen: Wenn $3x = 0$, dann muss $x = 0$ sein (denn nur $3 \cdot 0 = 0$).
+
+> [!warning] **Häufiger Fehler: Division durch Variable**
+> Viele Schüler teilen vorschnell durch die Variable und verlieren dabei Lösungen:
+> - **Falsch:** $x^2 = 5x \Rightarrow x = 5$ (Division durch $x$)
+> - **Richtig:** $x^2 - 5x = 0 \Rightarrow x(x-5) = 0 \Rightarrow x = 0$ oder $x = 5$
+> 
+> Bei der falschen Methode geht die Lösung $x = 0$ verloren!
 
 ### Übersicht der erlaubten Umformungen
 
@@ -70,7 +93,7 @@ Auf beiden Seiten darf mit derselben Zahl multipliziert oder dividiert werden, *
 
 ## Das Prinzip des Isolierens
 
-**Ziel**: Die Variable auf einer Seite allein stehen haben.
+**Ziel**: Die Variable auf einer Seite allein stehen haben. Man „schält" die Variable quasi wie eine Zwiebel frei, indem man Schicht für Schicht die umgebenden Operationen rückgängig macht.
 
 ### Strategie
 
@@ -83,6 +106,14 @@ Variable isolieren (·/:)
       ↓
 x = Lösung
 ```
+
+> [!tip] **Merkregel: Umgekehrte Reihenfolge**
+> Beim Isolieren macht man die Rechenoperationen in **umgekehrter Reihenfolge** rückgängig:
+> - Zuerst Addition/Subtraktion aufheben (äußere Schicht)
+> - Dann Multiplikation/Division aufheben (innere Schicht)
+> 
+> Beispiel: Bei $3x + 5 = 17$ wurde zuerst multipliziert ($3 \cdot x$), dann addiert ($+5$).
+> Also: Zuerst $-5$, dann $:3$.
 
 ### Ausführliches Beispiel
 
@@ -189,6 +220,15 @@ $$x = \frac{29}{5} = 5{,}8$$
 > - Ziel: Die Variable auf einer Seite isolieren
 > - Quadrieren und Wurzelziehen sind keine Äquivalenzumformungen
 > - Probe am Ende zur Kontrolle!
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[01-Grundlagen-von-Gleichungen|Grundlagen von Gleichungen]] – Was ist eine Gleichung?
+- → [[03-Ueberpruefung-von-Loesungen|Überprüfung von Lösungen]] – Warum die Probe wichtig ist
+- → [[07-Terme-und-algebraische-Ausdruecke/07-Vereinfachen-von-Termen|Vereinfachen von Termen]] – Terme vor dem Umformen vereinfachen
+- → [[04-Lineare-Gleichungen|Lineare Gleichungen]] – Anwendung der Äquivalenzumformungen
 
 ## Übungsaufgaben
 

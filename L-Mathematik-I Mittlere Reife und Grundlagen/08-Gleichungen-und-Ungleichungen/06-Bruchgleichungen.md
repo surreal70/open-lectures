@@ -1,7 +1,7 @@
 ---
 title: "Bruchgleichungen (einfache Fälle)"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-21
 chapter: "08"
 section: "06"
 status: "draft - review pending"
@@ -23,12 +23,20 @@ keywords:
 
 ## Was sind Bruchgleichungen?
 
-Eine **Bruchgleichung** ist eine Gleichung, bei der die Variable im Nenner eines Bruchs vorkommt.
+Eine **Bruchgleichung** ist eine Gleichung, bei der die Variable im Nenner eines Bruchs vorkommt. Dies unterscheidet sie grundlegend von normalen Gleichungen mit Brüchen, bei denen die Variable nur im Zähler steht.
+
+Bruchgleichungen erfordern besondere Vorsicht, weil sie einen **eingeschränkten Definitionsbereich** haben: Werte, die den Nenner zu Null machen würden, sind nicht erlaubt.
 
 > [!example] Beispiele
-> - $\frac{3}{x} = 6$ ← Variable im Nenner
-> - $\frac{x+1}{x-2} = 3$ ← Variable im Nenner
-> - $\frac{x}{3} = 5$ ← keine Bruchgleichung (Variable nur im Zähler)
+> - $\frac{3}{x} = 6$ ← Variable im Nenner → **Bruchgleichung**
+> - $\frac{x+1}{x-2} = 3$ ← Variable im Nenner → **Bruchgleichung**
+> - $\frac{x}{3} = 5$ ← Variable nur im Zähler → **keine** Bruchgleichung (normale lineare Gleichung)
+
+> [!tip] **Alltagsbezug**
+> Bruchgleichungen begegnen uns in vielen praktischen Situationen:
+> - **Geschwindigkeit**: „In welcher Zeit schafft man 120 km, wenn $\frac{120}{t} = 60$ km/h gelten soll?"
+> - **Arbeitsaufgaben**: „Wie lange brauchen 8 Arbeiter für eine Aufgabe, wenn $\frac{1}{t}$ der Arbeitsrate entspricht?"
+> - **Elektrotechnik**: Parallelschaltung von Widerständen: $\frac{1}{R_{ges}} = \frac{1}{R_1} + \frac{1}{R_2}$
 
 ## Definitionsbereich
 
@@ -180,11 +188,14 @@ Die Gleichung hat **keine Lösung**.
 
 ## Typische Fehler
 
-> [!warning] Vermeiden Sie diese Fehler
-> - Definitionsbereich vergessen
-> - Nicht alle Terme mit dem Hauptnenner multiplizieren
-> - Scheinlösungen nicht ausschließen
-> - Probe in die umgeformte statt in die Originalgleichung einsetzen
+> [!warning] **Vermeiden Sie diese Fehler**
+> - **Definitionsbereich vergessen**: Der häufigste und gefährlichste Fehler! Immer zuerst prüfen, welche Werte ausgeschlossen sind
+> - **Nicht alle Terme mit dem Hauptnenner multiplizieren**: Jeder Term der Gleichung muss multipliziert werden
+> - **Scheinlösungen nicht ausschließen**: Nach dem Lösen immer prüfen, ob die Lösung im Definitionsbereich liegt
+> - **Probe in die umgeformte statt in die Originalgleichung einsetzen**: Die Probe muss immer in der Ausgangsgleichung erfolgen
+
+> [!tip] **Merkregel für Scheinlösungen**
+> Eine Scheinlösung ist wie ein falscher Freund: Sie sieht auf den ersten Blick richtig aus, aber wenn man genauer hinschaut (Definitionsbereich prüft), entpuppt sie sich als ungültig.
 
 ## Zusammenfassung
 
@@ -194,6 +205,15 @@ Die Gleichung hat **keine Lösung**.
 > - Lösung durch Multiplikation mit dem Hauptnenner
 > - Scheinlösungen müssen durch Prüfung des Definitionsbereichs erkannt werden
 > - Die Probe erfolgt immer in der Originalgleichung
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[03-Bruchrechnung/06-Hauptnenner-bestimmen|Hauptnenner bestimmen]] – Grundlegende Technik
+- → [[03-Ueberpruefung-von-Loesungen|Überprüfung von Lösungen]] – Scheinlösungen erkennen
+- → [[01-Grundlagen-von-Gleichungen|Definitionsbereich]] – Wann Werte ausgeschlossen werden
+- → [[04-Lineare-Gleichungen|Lineare Gleichungen]] – Nach dem Auflösen der Brüche
 
 ## Übungsaufgaben
 

@@ -1,0 +1,9 @@
+{
+  "verdict": "CHANGES_REQUESTED",
+  "findings": [
+    "Kapitel 08 wurde nicht bearbeitet – keine Enhancement-Commits vorhanden",
+    "Alle Dateien in 08-Gleichungen-und-Ungleichungen/ befinden sich noch im Draft-Zustand",
+    "Fehlende Moderat-Stil-Erweiterungen: historischer Kontext, Waagen-Metapher, häufige Fehler, Textaufgaben-Strategien"
+  ],
+  "reviewDoc": "/media/andhue/Wissen/open-lectures/L-Mathematik-I Mittlere Reife und Grundlagen/00-Meta/.tasks/moderat-enhancement/review-doc-08.md"
+}

@@ -1,7 +1,7 @@
 ---
 title: "Gleichungen und Ungleichungen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-21
 chapter: "08"
 status: "draft - review pending"
 type: index
@@ -18,6 +18,17 @@ keywords:
 
 > [!info] Kapitelübersicht
 > Dieses Kapitel behandelt systematisch das Lösen von Gleichungen und Ungleichungen – von einfachen linearen Gleichungen bis zu quadratischen Gleichungen und Gleichungssystemen. Diese Techniken sind fundamentale Werkzeuge der Algebra und finden breite Anwendung in Naturwissenschaften, Technik und Wirtschaft.
+
+## Historischer Kontext
+
+Das Lösen von Gleichungen gehört zu den ältesten mathematischen Problemen der Menschheit. Bereits die **Babylonier** (ca. 2000 v. Chr.) lösten auf Tontafeln quadratische Gleichungen – allerdings in Worten, nicht mit Symbolen. Sie formulierten Aufgaben wie: „Finde eine Zahl, deren Quadrat, addiert mit dem Sechsfachen der Zahl, 16 ergibt."
+
+Die **indischen Mathematiker** des frühen Mittelalters, insbesondere Brahmagupta (598–668 n. Chr.), entwickelten systematische Lösungsverfahren und akzeptierten als erste auch negative Zahlen als Lösungen. Der persische Mathematiker **al-Chwarizmi** (ca. 780–850 n. Chr.) schrieb das erste Lehrbuch zur systematischen Lösung von Gleichungen – sein Werk „al-jabr" gab der gesamten Disziplin ihren Namen: **Algebra**.
+
+Die symbolische Schreibweise, die wir heute verwenden, entwickelte sich erst im 16. und 17. Jahrhundert in Europa. François Viète führte Buchstaben für Unbekannte ein, und René Descartes etablierte die Konvention, $x$, $y$, $z$ für Variablen zu verwenden.
+
+> [!tip] **Das Waagen-Prinzip**
+> Schon in der Antike wurde die Gleichung als **Waage im Gleichgewicht** verstanden: Was auf der einen Seite hinzugefügt oder weggenommen wird, muss auch auf der anderen Seite geschehen. Dieses anschauliche Bild hilft bis heute beim Verständnis von Äquivalenzumformungen.
 
 ## Lernpfad
 

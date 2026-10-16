@@ -1,7 +1,7 @@
 ---
 title: "Überprüfung von Lösungen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-21
 chapter: "08"
 section: "03"
 status: "draft - review pending"
@@ -23,13 +23,22 @@ keywords:
 
 ## Warum Proben wichtig sind
 
-Die **Probe** ist die Überprüfung, ob ein berechneter Wert tatsächlich eine Lösung der ursprünglichen Gleichung ist.
+Die **Probe** ist die Überprüfung, ob ein berechneter Wert tatsächlich eine Lösung der ursprünglichen Gleichung ist. Sie ist kein optionaler Zusatzschritt, sondern ein wesentlicher Teil des Lösungsprozesses.
 
-> [!tip] Gründe für die Probe
-> - Rechenfehler aufdecken
-> - Scheinlösungen identifizieren (bei nicht-äquivalenten Umformungen)
-> - Prüfungspunkte sichern
-> - Vertrauen in das eigene Ergebnis stärken
+Historisch gesehen war die Probe schon bei den babylonischen Mathematikern üblich. Sie formulierten ihre Lösungen oft als: „Du hast es richtig gefunden, wenn du zurücksetzt und das Ursprüngliche erhältst." Dieses Prinzip gilt bis heute.
+
+> [!tip] **Gründe für die Probe**
+> - **Rechenfehler aufdecken**: Selbst kleine Vorzeichenfehler werden sichtbar
+> - **Scheinlösungen identifizieren**: Bei nicht-äquivalenten Umformungen können falsche Lösungen entstehen
+> - **Prüfungspunkte sichern**: In Klausuren gibt es oft Punkte für die Probe
+> - **Vertrauen stärken**: Du weißt sicher, dass dein Ergebnis stimmt
+>
+> In der Praxis: Programmierer nennen das „Testen" – auch dort wird geprüft, ob eine Lösung wirklich funktioniert.
+
+> [!warning] **Häufiger Fehler: Probe in Zwischenschritt**
+> Die Probe muss **immer in die Ausgangsgleichung** eingesetzt werden, nicht in einen Zwischenschritt! 
+> 
+> Warum? Ein Rechenfehler im Zwischenschritt würde sonst nicht auffallen – man würde nur prüfen, ob der Fehler konsistent weitergerechnet wurde.
 
 ## Durchführung der Probe
 
@@ -179,6 +188,15 @@ Beide Lösungen sind korrekt.
 > - Definitionsbereich vor der Probe prüfen
 > - Scheinlösungen können durch nicht-äquivalente Umformungen entstehen
 > - Bei mehreren Lösungen alle einzeln prüfen
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[02-Aequivalenzumformungen|Äquivalenzumformungen]] – Welche Umformungen zu Scheinlösungen führen können
+- → [[06-Bruchgleichungen|Bruchgleichungen]] – Hier entstehen besonders oft Scheinlösungen
+- → [[08-Quadratische-Gleichungen|Quadratische Gleichungen]] – Probe bei zwei Lösungen
+- → [[01-Grundlagen-von-Gleichungen|Definitionsbereich]] – Wann Werte ausgeschlossen werden müssen
 
 ## Übungsaufgaben
 

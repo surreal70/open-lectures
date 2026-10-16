@@ -1,7 +1,7 @@
 ---
 title: "Faktorisierung quadratischer Gleichungen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-21
 chapter: "08"
 section: "10"
 status: "draft - review pending"
@@ -21,11 +21,19 @@ keywords:
 > - Den Satz von Vieta anwenden können
 > - Durch geschicktes Raten Lösungen finden
 
+## Historischer Hintergrund: Der Satz von Vieta
+
+Der **Satz von Vieta** ist nach dem französischen Mathematiker **François Viète** (1540–1603) benannt, der als „Vater der modernen Algebra" gilt. Viète führte als Erster systematisch Buchstaben für unbekannte Größen ein und entdeckte den eleganten Zusammenhang zwischen den Koeffizienten einer Gleichung und ihren Lösungen.
+
+Dieser Satz ist besonders nützlich, weil er es ermöglicht, Lösungen durch systematisches Probieren zu finden – ohne die p-q-Formel anwenden zu müssen. Bei „schönen" Zahlen ist das oft schneller und weniger fehleranfällig.
+
 ## Das Prinzip der Faktorisierung
 
 Wenn eine quadratische Gleichung die Lösungen $x_1$ und $x_2$ hat, lässt sie sich schreiben als:
 
 $$x^2 + px + q = (x - x_1)(x - x_2)$$
+
+Dieses Prinzip basiert auf dem **Nullproduktsatz**: Ein Produkt ist genau dann Null, wenn mindestens einer der Faktoren Null ist. Wenn also $(x - x_1)(x - x_2) = 0$, dann muss $x = x_1$ oder $x = x_2$ sein.
 
 > [!example] Beispiel
 > Die Gleichung $x^2 - 5x + 6 = 0$ hat die Lösungen $x_1 = 2$ und $x_2 = 3$.
@@ -169,6 +177,15 @@ Keine Faktorisierung in reelle Linearfaktoren möglich.
 > - Vieta ermöglicht das Finden von Lösungen durch systematisches Probieren
 > - Vieta dient zur Kontrolle berechneter Lösungen
 > - Bei Doppellösungen: $(x - x_1)^2$
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[09-Loesungsformel-quadratische-Gleichungen|Lösungsformel]] – Alternative Methode mit p-q-Formel
+- → [[08-Quadratische-Gleichungen|Quadratische Gleichungen]] – Grundlagen und Übersicht
+- → [[07-Terme-und-algebraische-Ausdruecke/06-Ausklammern|Ausklammern]] – Verwandte Technik
+- → [[07-Terme-und-algebraische-Ausdruecke/08-Binomische-Formeln|Binomische Formeln]] – Für Doppellösungen $(x-a)^2$
 
 ## Übungsaufgaben
 

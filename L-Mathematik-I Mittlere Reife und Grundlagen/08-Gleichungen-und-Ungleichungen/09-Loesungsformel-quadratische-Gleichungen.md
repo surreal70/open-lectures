@@ -1,7 +1,7 @@
 ---
 title: "Lösungsformel für quadratische Gleichungen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-21
 chapter: "08"
 section: "09"
 status: "draft - review pending"
@@ -21,6 +21,14 @@ keywords:
 > - Die Bedeutung der Diskriminante für die Lösungen verstehen
 > - Quadratische Gleichungen vollständig lösen können
 
+## Historischer Hintergrund
+
+Die Lösungsformel für quadratische Gleichungen hat eine jahrtausendealte Geschichte. Die **Babylonier** (ca. 2000 v. Chr.) kannten bereits Lösungsverfahren, formulierten sie aber in Worten, nicht als Formel.
+
+Der indische Mathematiker **Brahmagupta** (628 n. Chr.) gab erstmals eine allgemeine Lösung an, die auch negative Zahlen berücksichtigte. Der persische Mathematiker **al-Chwarizmi** (ca. 820 n. Chr.) systematisierte die Verfahren in seinem berühmten Werk „al-Kitab al-mukhtasar fi hisab al-jabr wa-l-muqabala".
+
+Die moderne symbolische Schreibweise der Formel entstand erst im 16. Jahrhundert in Europa. Die **Mitternachtsformel** trägt ihren Namen, weil Schüler sie angeblich auch um Mitternacht im Schlaf aufsagen können sollten – so grundlegend ist sie für die Mathematik.
+
 ## Die p-q-Formel
 
 Für eine quadratische Gleichung in **Normalform**:
@@ -31,8 +39,14 @@ gilt die **p-q-Formel**:
 
 $$x_{1,2} = -\frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q}$$
 
-> [!tip] Merksatz
+> [!tip] **Merksatz mit Rhythmus**
 > „Minus p halbe, plus minus Wurzel aus p halbe Quadrat minus q"
+>
+> Viele Schüler lernen die Formel mit einem Rhythmus oder Reim:
+> - „Minus p halbe – das ist der Start,
+> - plus-minus Wurzel – das macht's apart,
+> - p halbe zum Quadrat, minus q – 
+> - so löst du jede Gleichung im Nu!"
 
 ### Anwendung Schritt für Schritt
 
@@ -68,8 +82,10 @@ gilt die **Mitternachtsformel**:
 
 $$x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
 
-> [!note] Warum „Mitternachtsformel"?
-> Ein Schüler sollte diese Formel auch um Mitternacht im Schlaf aufsagen können – sie ist so wichtig!
+> [!note] **Warum „Mitternachtsformel"?**
+> Ein Schüler sollte diese Formel auch um Mitternacht im Schlaf aufsagen können – sie ist so wichtig! In anderen Ländern heißt sie auch „abc-Formel" (nach den Koeffizienten) oder „Quadratic Formula" (im Englischen).
+>
+> Die Formel ist universeller als die p-q-Formel, weil sie direkt auf die allgemeine Form anwendbar ist, ohne erst durch $a$ dividieren zu müssen.
 
 ### Beispiel mit Mitternachtsformel
 
@@ -131,19 +147,25 @@ $$\mathbb{L} = \emptyset$$
 
 ## Häufige Fehler vermeiden
 
-> [!warning] Typische Fehler
+> [!warning] **Typische Fehler**
 
 **Fehler 1**: Vorzeichen von $p$ vergessen
 $$x^2 \mathbf{- 4}x + 3 = 0 \Rightarrow p = \mathbf{-4}$$
 In der Formel: $-\frac{p}{2} = -\frac{-4}{2} = +2$
 
+Das doppelte Minus ergibt ein Plus! Viele Schüler übersehen dies.
+
 **Fehler 2**: Nicht in Normalform gebracht
 $$2x^2 - 8x + 6 = 0 \quad | :2$$
-$$x^2 - 4x + 3 = 0$$ ← Jetzt p-q-Formel anwenden!
+$$x^2 - 4x + 3 = 0$$ ← Jetzt erst p-q-Formel anwenden!
+
+Vor der p-q-Formel muss der Koeffizient vor $x^2$ gleich 1 sein.
 
 **Fehler 3**: Klammer bei $\left(\frac{p}{2}\right)^2$ vergessen
 $$p = -6: \quad \left(\frac{-6}{2}\right)^2 = (-3)^2 = 9$$ ✓
 Nicht: $-3^2 = -9$ ✗
+
+Die Klammer ist wichtig: Erst die Division, dann das Quadrieren – und das Quadrat eines negativen Wertes ist immer positiv!
 
 ## Lösungsschema
 
@@ -180,6 +202,15 @@ Nicht: $-3^2 = -9$ ✗
 > - Die Diskriminante bestimmt die Anzahl der Lösungen
 > - Vorzeichen sorgfältig beachten!
 > - Immer Probe machen zur Kontrolle
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[08-Quadratische-Gleichungen|Quadratische Gleichungen]] – Grundlagen und Klassifikation
+- → [[10-Faktorisierung-quadratischer-Gleichungen|Faktorisierung]] – Alternative Lösungsmethode mit Satz von Vieta
+- → [[06-Potenzen-Wurzeln-und-Zahlendarstellung/06-Quadratwurzeln|Quadratwurzeln]] – Für die Berechnung der Diskriminante
+- → [[09-Funktionen-und-Koordinatensysteme/09-Parabeln|Parabeln]] – Grafische Bedeutung der Lösungen als Nullstellen
 
 ## Übungsaufgaben
 

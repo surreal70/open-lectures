@@ -1,7 +1,7 @@
 ---
 title: "Einfache lineare Gleichungssysteme"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-21
 chapter: "08"
 section: "11"
 status: "draft - review pending"
@@ -22,9 +22,22 @@ keywords:
 > - Das Additionsverfahren anwenden können
 > - Sonderfälle (keine/unendlich viele Lösungen) erkennen
 
+## Historischer Kontext
+
+Gleichungssysteme wurden bereits in der Antike gelöst. Die **Chinesen** entwickelten um 200 v. Chr. im „Jiuzhang Suanshu" (Neun Bücher der Rechenkunst) eine Methode, die dem heutigen Gauß-Verfahren ähnelt. Sie nannten sie „Fangcheng" (Rechteckmethode) und lösten damit Systeme mit bis zu fünf Unbekannten.
+
+In Europa wurde das systematische Lösen von Gleichungssystemen im 18. Jahrhundert von **Carl Friedrich Gauß** perfektioniert, dessen Name noch heute mit dem Eliminationsverfahren verbunden ist.
+
+> [!tip] **Alltagsrelevanz**
+> Gleichungssysteme begegnen uns überall, wo mehrere Bedingungen gleichzeitig erfüllt sein müssen:
+> - **Mischungsaufgaben**: Wie viel von zwei Zutaten braucht man für ein bestimmtes Ergebnis?
+> - **Preisberechnungen**: Wenn Äpfel und Birnen zusammen einen Betrag kosten...
+> - **Logistik**: Zwei Fahrzeuge starten und treffen sich – wo und wann?
+> - **Wirtschaft**: Angebot und Nachfrage im Gleichgewicht
+
 ## Was ist ein Gleichungssystem?
 
-Ein **lineares Gleichungssystem (LGS)** besteht aus mehreren linearen Gleichungen, die gleichzeitig erfüllt sein müssen.
+Ein **lineares Gleichungssystem (LGS)** besteht aus mehreren linearen Gleichungen, die gleichzeitig erfüllt sein müssen. Das Wort „System" (griechisch: „zusammengesetztes Ganzes") drückt aus, dass die Gleichungen zusammen betrachtet werden.
 
 ### Beispiel mit zwei Gleichungen und zwei Variablen
 
@@ -197,6 +210,22 @@ $$\mathbb{L} = \{(x, y) \mid x + y = 4\}$$
 > - Die Lösung ist der Schnittpunkt der Geraden
 > - Sonderfälle: Keine Lösung (parallel) oder unendlich viele (identisch)
 > - Immer Probe in **beiden** Ausgangsgleichungen!
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[04-Lineare-Gleichungen|Lineare Gleichungen]] – Einzelne lineare Gleichungen lösen
+- → [[09-Funktionen-und-Koordinatensysteme/05-Lineare-Funktionen|Lineare Funktionen]] – Geraden im Koordinatensystem
+- → [[09-Funktionen-und-Koordinatensysteme/10-Schnittpunkte|Schnittpunkte]] – Grafische Interpretation
+- → [[12-Textaufgaben|Textaufgaben]] – Anwendung von Gleichungssystemen
+
+> [!tip] **Welches Verfahren wählen?**
+> - **Einsetzungsverfahren**: Wenn eine Gleichung schon nach $x$ oder $y$ aufgelöst ist
+> - **Gleichsetzungsverfahren**: Wenn beide Gleichungen sich leicht nach derselben Variable auflösen lassen
+> - **Additionsverfahren**: Wenn die Koeffizienten „passen" oder leicht anzupassen sind
+>
+> Im Zweifel: Das Additionsverfahren ist oft am systematischsten und weniger fehleranfällig.
 
 ## Übungsaufgaben
 

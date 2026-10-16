@@ -1,7 +1,7 @@
 ---
 title: "Gleichungen mit Klammern"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-21
 chapter: "08"
 section: "05"
 status: "draft - review pending"
@@ -28,6 +28,13 @@ Bevor eine Gleichung gelöst werden kann, müssen alle **Klammern aufgelöst** w
 $$a \cdot (b + c) = a \cdot b + a \cdot c$$
 $$a \cdot (b - c) = a \cdot b - a \cdot c$$
 
+Das Wort „distributiv" kommt vom lateinischen „distribuere" (verteilen) – der Faktor vor der Klammer wird auf alle Terme in der Klammer „verteilt".
+
+> [!tip] **Anschauliche Erklärung**
+> Stell dir vor, du kaufst 3 Tüten mit je 2 Äpfeln und 4 Birnen:
+> $$3 \cdot (2 + 4) = 3 \cdot 2 + 3 \cdot 4 = 6 + 12 = 18$$
+> Du hast 18 Früchte – egal ob du erst zusammenzählst und dann multiplizierst, oder erst multiplizierst und dann addierst.
+
 ## Einfache Klammern
 
 ### Positiver Faktor vor der Klammer
@@ -50,13 +57,15 @@ $$-2(x + 3) = -2 \cdot x + (-2) \cdot 3 = -2x - 6$$
 
 ## Die Minusklammer
 
-Eine Klammer mit nur einem Minus davor:
+Eine Klammer mit nur einem Minus davor ist eine der häufigsten Fehlerquellen in der Algebra. Das Minuszeichen kann als Multiplikation mit $(-1)$ verstanden werden:
 
-$$-(a + b) = -a - b$$
-$$-(a - b) = -a + b$$
+$$-(a + b) = (-1) \cdot (a + b) = -a - b$$
+$$-(a - b) = (-1) \cdot (a - b) = -a + b$$
 
-> [!tip] Merksatz
+> [!tip] **Merksatz: Die Vorzeichenumkehr**
 > Bei einer Minusklammer **wechseln alle Vorzeichen** innerhalb der Klammer.
+> 
+> Stell dir vor, du gehst durch eine „Minus-Tür": Alles, was hindurchgeht, bekommt das umgekehrte Vorzeichen. Plus wird Minus, Minus wird Plus.
 
 ### Beispiele
 
@@ -177,6 +186,15 @@ $$x = \frac{7}{13}$$
 > - Verschachtelte Klammern: von innen nach außen arbeiten
 > - Nach dem Auflösen: gleichartige Terme zusammenfassen
 > - Vorzeichen sind die häufigste Fehlerquelle!
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[07-Terme-und-algebraische-Ausdruecke/05-Ausmultiplizieren|Ausmultiplizieren]] – Die grundlegende Technik
+- → [[07-Terme-und-algebraische-Ausdruecke/07-Distributivgesetz|Distributivgesetz]] – Mathematische Grundlage
+- → [[04-Lineare-Gleichungen|Lineare Gleichungen]] – Anwendung nach dem Auflösen
+- → [[07-Terme-und-algebraische-Ausdruecke/08-Binomische-Formeln|Binomische Formeln]] – Spezielle Klammerausdrücke
 
 ## Übungsaufgaben
 
