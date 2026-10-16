@@ -4,7 +4,7 @@ chapter: "13"
 section: "Index"
 type: index
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-17
 status: draft - review pending
 tags:
   - mathematik/statistik
@@ -18,6 +18,12 @@ tags:
 
 Dieses Kapitel führt in die beschreibende Statistik ein. Sie lernen, Daten zu erheben, aufzubereiten, darzustellen und mit statistischen Kennwerten zu beschreiben.
 
+Statistik begegnet uns heute überall: in den Nachrichten werden Umfrageergebnisse präsentiert, Unternehmen analysieren Verkaufszahlen, Ärzte bewerten Studienergebnisse, und selbst im Sport werden Spielerstatistiken ausgewertet. Die Fähigkeit, Daten zu verstehen und kritisch zu hinterfragen, ist in der modernen Welt eine unverzichtbare Kompetenz.
+
+### Historischer Hintergrund
+
+Das Wort „Statistik" stammt vom lateinischen *status* (Zustand) ab und bezeichnete ursprünglich die systematische Erfassung von Staatsdaten – Bevölkerungszahlen, Steuern, militärische Stärke. Schon im alten Ägypten und im Römischen Reich wurden Volkszählungen durchgeführt. Die moderne Statistik als mathematische Wissenschaft entwickelte sich jedoch erst ab dem 17. Jahrhundert. Pioniere wie John Graunt (1620–1674) analysierten Sterberegister in London, während Florence Nightingale (1820–1910) mit anschaulichen Diagrammen zeigte, dass mehr Soldaten an Krankheiten als an Kampfhandlungen starben – und damit Hygienestandards revolutionierte.
+
 > [!info] Lernziele
 > Nach Abschluss dieses Kapitels können Sie:
 > - Daten erheben und in Tabellen organisieren
@@ -25,6 +31,7 @@ Dieses Kapitel führt in die beschreibende Statistik ein. Sie lernen, Daten zu e
 > - Verschiedene Diagrammtypen erstellen und lesen
 > - Statistische Kennwerte (Mittelwert, Median, Modalwert) berechnen
 > - Streuungsmaße verstehen und anwenden
+> - Statistische Darstellungen kritisch hinterfragen
 
 ## Themen in diesem Kapitel
 

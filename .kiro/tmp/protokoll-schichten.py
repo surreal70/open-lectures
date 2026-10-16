@@ -3,8 +3,8 @@
 
 from PIL import Image, ImageDraw, ImageFont
 
-# Canvas with enough space for all columns
-WIDTH, HEIGHT = 1400, 700
+# Canvas - sized to match content with symmetric margins (~30px on all sides)
+WIDTH, HEIGHT = 720, 505
 img = Image.new('RGBA', (WIDTH, HEIGHT), (0, 0, 0, 0))
 draw = ImageDraw.Draw(img)
 
@@ -26,7 +26,7 @@ LAYER_COLORS = {
     4: (60, 179, 113, 255),    # Transport - green
     3: (255, 165, 0, 255),     # Network - orange
     2: (255, 99, 71, 255),     # Data Link - tomato
-    1: (220, 20, 60, 255),     # Physical - crimson (not used here but kept for consistency)
+    1: (220, 20, 60, 255),     # Physical - crimson
 }
 HEADER_BG = (70, 70, 90, 255)
 TEXT_LIGHT = (245, 245, 245, 255)
@@ -36,24 +36,24 @@ TITLE_COLOR = (70, 130, 180, 255)
 BRACKET_COLOR = (80, 80, 80, 255)
 
 # Title
-draw.text((WIDTH//2, 35), "Protokolle und Schichtenmodelle im Vergleich", font=font_title, fill=TITLE_COLOR, anchor="mm")
+draw.text((WIDTH//2, 30), "Protokolle und Schichtenmodelle im Vergleich", font=font_title, fill=TITLE_COLOR, anchor="mm")
 
 # Table layout
 TABLE_LEFT = 50
-TABLE_TOP = 70
-ROW_HEIGHT = 55
-HEADER_HEIGHT = 50
+TABLE_TOP = 55
+ROW_HEIGHT = 50
+HEADER_HEIGHT = 45
 
-# Column definitions: (header_text, width)
+# Column definitions: (header_text, width) - reduced widths
 columns = [
-    ("OSI", 40),
-    ("OSI-Schicht", 120),
-    ("OSI\nEinordnung", 90),
-    ("Protokoll-\nbeispiele", 100),
-    ("Einheiten", 110),
-    ("Kopplungs-\nelemente", 130),
-    ("DOD\nEinordnung", 90),
-    ("DOD/\nTCP/IP", 90),
+    ("OSI", 35),
+    ("OSI-Schicht", 95),
+    ("OSI\nEinordnung", 75),
+    ("Protokoll-\nbeispiele", 85),
+    ("Einheiten", 95),
+    ("Kopplungs-\nelemente", 105),
+    ("DOD\nEinordnung", 75),
+    ("DOD/\nTCP/IP", 75),
 ]
 
 # Calculate column positions
@@ -97,7 +97,7 @@ layers = [
     # OSI 4 -> Transportorientiert -> Transport
     ([4],
      ["Transport\n(transport)"],
-     "Transport-\norientiert",
+     None,  # part of Transportorientiert span (1-4)
      "TCP\nUDP",
      "TCP=Segmente\nUDP=Datagramme",
      None,  # part of Gateway span
@@ -106,7 +106,7 @@ layers = [
     # OSI 3 -> Internet
     ([3],
      ["Vermittlung\n(network)"],
-     "",
+     None,  # part of Transportorientiert span
      "ICMP, IGMP\nIP, IPSec",
      "Pakete",
      "Router",
@@ -115,12 +115,21 @@ layers = [
     # OSI 2 -> Netzzugriff
     ([2],
      ["Sicherung\n(data link)"],
-     "",
+     None,  # part of Transportorientiert span
      "IEEE 802.3\nIEEE 802.5\nIEEE 802.11",
      "Rahmen\n(frames)",
      "Bridges\nSwitches",
-     "Punkt zu\nPunkt",
+     None,  # part of Punkt-zu-Punkt span (1-2)
      "Netzzugriff"),
+    # OSI 1 -> Netzzugriff (part of)
+    ([1],
+     ["Bitübertragung\n(physical)"],
+     None,  # part of Transportorientiert span
+     "Ethernet PHY\nWLAN PHY",
+     "Bits",
+     "Repeater\nHubs",
+     None,  # part of Punkt-zu-Punkt span
+     ""),  # merged with Netzzugriff above
 ]
 
 # Draw rows
@@ -163,10 +172,10 @@ for layer_data in layers:
     avg_color = LAYER_COLORS[osi_nums[len(osi_nums)//2]]
     light_bg = tuple(min(255, c + 60) for c in avg_color[:3]) + (255,)
     
-    # Column 2: OSI Einordnung
+    # Column 2: OSI Einordnung - skip for spanning cells
     x, w = col_positions[2]
-    draw.rectangle([x, merge_start_y, x + w, merge_end_y], fill=light_bg, outline=BORDER_COLOR, width=1)
-    if osi_einord:
+    if osi_einord is not None:
+        draw.rectangle([x, merge_start_y, x + w, merge_end_y], fill=light_bg, outline=BORDER_COLOR, width=1)
         draw_multiline_text(draw, x + w//2, (merge_start_y + merge_end_y)//2, osi_einord, font_text, TEXT_DARK)
     
     # Column 3: Protokollbeispiele
@@ -192,10 +201,11 @@ for layer_data in layers:
         draw.rectangle([x, merge_start_y, x + w, merge_end_y], fill=light_bg, outline=BORDER_COLOR, width=1)
         draw_multiline_text(draw, x + w//2, (merge_start_y + merge_end_y)//2, dod_einord, font_text, TEXT_DARK)
     
-    # Column 7: DOD/TCP-IP
+    # Column 7: DOD/TCP-IP - handle spanning for Netzzugriff (OSI 2+1)
     x, w = col_positions[7]
-    draw.rectangle([x, merge_start_y, x + w, merge_end_y], fill=avg_color, outline=BORDER_COLOR, width=1)
-    draw.text((x + w//2, (merge_start_y + merge_end_y)//2), dod_name, font=font_layer, fill=TEXT_LIGHT, anchor="mm")
+    if dod_name:  # Only draw if there's a name (skip empty for OSI 1)
+        draw.rectangle([x, merge_start_y, x + w, merge_end_y], fill=avg_color, outline=BORDER_COLOR, width=1)
+        draw.text((x + w//2, (merge_start_y + merge_end_y)//2), dod_name, font=font_layer, fill=TEXT_LIGHT, anchor="mm")
     
     current_y += total_row_height
 
@@ -215,25 +225,6 @@ draw.line([(bracket_x + 10, row2_top + 5), (bracket_x, row2_top + 5)], fill=BRAC
 draw.line([(bracket_x, row2_top + 5), (bracket_x, row2_bottom - 5)], fill=BRACKET_COLOR, width=2)
 draw.line([(bracket_x, row2_bottom - 5), (bracket_x + 10, row2_bottom - 5)], fill=BRACKET_COLOR, width=2)
 
-# Right side brackets for DOD layers
-bracket_right_x = TABLE_LEFT + TABLE_WIDTH + 15
-
-# Ende zu Ende (rows 1-2: Anwendung + Transport)
-dod_row1_top = TABLE_TOP + HEADER_HEIGHT
-dod_row1_bottom = dod_row1_top + 4 * ROW_HEIGHT  # OSI 7,6,5,4
-draw.line([(bracket_right_x, dod_row1_top + 5), (bracket_right_x + 10, dod_row1_top + 5)], fill=BRACKET_COLOR, width=2)
-draw.line([(bracket_right_x + 10, dod_row1_top + 5), (bracket_right_x + 10, dod_row1_bottom - 5)], fill=BRACKET_COLOR, width=2)
-draw.line([(bracket_right_x + 10, dod_row1_bottom - 5), (bracket_right_x, dod_row1_bottom - 5)], fill=BRACKET_COLOR, width=2)
-draw.text((bracket_right_x + 20, (dod_row1_top + dod_row1_bottom)//2), "Ende zu Ende", font=font_small, fill=BRACKET_COLOR, anchor="lm")
-
-# Punkt zu Punkt (rows 3-4: Internet + Netzzugriff)
-dod_row2_top = dod_row1_bottom
-dod_row2_bottom = current_y
-draw.line([(bracket_right_x, dod_row2_top + 5), (bracket_right_x + 10, dod_row2_top + 5)], fill=BRACKET_COLOR, width=2)
-draw.line([(bracket_right_x + 10, dod_row2_top + 5), (bracket_right_x + 10, dod_row2_bottom - 5)], fill=BRACKET_COLOR, width=2)
-draw.line([(bracket_right_x + 10, dod_row2_bottom - 5), (bracket_right_x, dod_row2_bottom - 5)], fill=BRACKET_COLOR, width=2)
-draw.text((bracket_right_x + 20, (dod_row2_top + dod_row2_bottom)//2), "Punkt zu Punkt", font=font_small, fill=BRACKET_COLOR, anchor="lm")
-
 # Outer border
 draw.rectangle([TABLE_LEFT, TABLE_TOP, TABLE_LEFT + TABLE_WIDTH, current_y], outline=BORDER_COLOR, width=2)
 
@@ -244,6 +235,22 @@ row_anwendung_bottom = row_top + 3 * ROW_HEIGHT  # OSI 7,6,5
 row_transport_bottom = row_anwendung_bottom + ROW_HEIGHT  # OSI 4
 row_vermittlung_bottom = row_transport_bottom + ROW_HEIGHT  # OSI 3
 row_sicherung_bottom = row_vermittlung_bottom + ROW_HEIGHT  # OSI 2
+row_physical_bottom = row_sicherung_bottom + ROW_HEIGHT  # OSI 1
+
+# OSI Einordnung: Anwendungsorientiert spans OSI 7-5
+x, w = col_positions[2]
+anw_top = row_top
+anw_bottom = row_anwendung_bottom
+avg_color_anw = (130, 140, 200, 255)
+draw.rectangle([x, anw_top, x + w, anw_bottom], fill=avg_color_anw, outline=BORDER_COLOR, width=1)
+draw_multiline_text(draw, x + w//2, (anw_top + anw_bottom)//2, "Anwendungs-\norientiert", font_text, TEXT_DARK)
+
+# OSI Einordnung: Transportorientiert spans OSI 4-1
+trans_top = row_anwendung_bottom
+trans_bottom = row_physical_bottom
+avg_color_trans = (180, 160, 120, 255)
+draw.rectangle([x, trans_top, x + w, trans_bottom], fill=avg_color_trans, outline=BORDER_COLOR, width=1)
+draw_multiline_text(draw, x + w//2, (trans_top + trans_bottom)//2, "Transport-\norientiert", font_text, TEXT_DARK)
 
 # Kopplungselemente: Application Level Gateway spans OSI 7-4
 x, w = col_positions[5]
@@ -267,6 +274,13 @@ avg_color_bridges = (255, 160, 140, 255)  # red-ish for data link
 draw.rectangle([x, bridges_top, x + w, bridges_bottom], fill=avg_color_bridges, outline=BORDER_COLOR, width=1)
 draw_multiline_text(draw, x + w//2, (bridges_top + bridges_bottom)//2, "Bridges\nSwitches", font_text, TEXT_DARK)
 
+# Kopplungselemente: Repeater/Hubs spans OSI 1
+repeater_top = row_sicherung_bottom
+repeater_bottom = row_physical_bottom
+avg_color_repeater = (240, 100, 100, 255)  # crimson-ish for physical
+draw.rectangle([x, repeater_top, x + w, repeater_bottom], fill=avg_color_repeater, outline=BORDER_COLOR, width=1)
+draw_multiline_text(draw, x + w//2, (repeater_top + repeater_bottom)//2, "Repeater\nHubs", font_text, TEXT_DARK)
+
 # DOD Einordnung: Ende zu Ende spans OSI 7-3
 x, w = col_positions[6]
 e2e_top = row_top
@@ -275,16 +289,24 @@ avg_color_e2e = (150, 180, 200, 255)  # blue-green
 draw.rectangle([x, e2e_top, x + w, e2e_bottom], fill=avg_color_e2e, outline=BORDER_COLOR, width=1)
 draw_multiline_text(draw, x + w//2, (e2e_top + e2e_bottom)//2, "Ende zu\nEnde", font_text, TEXT_DARK)
 
-# DOD Einordnung: Punkt zu Punkt spans OSI 2
+# DOD Einordnung: Punkt zu Punkt spans OSI 2-1
 p2p_top = row_vermittlung_bottom
-p2p_bottom = row_sicherung_bottom
-avg_color_p2p = (255, 160, 140, 255)  # red-ish
+p2p_bottom = row_physical_bottom
+avg_color_p2p = (255, 140, 120, 255)  # red-ish
 draw.rectangle([x, p2p_top, x + w, p2p_bottom], fill=avg_color_p2p, outline=BORDER_COLOR, width=1)
 draw_multiline_text(draw, x + w//2, (p2p_top + p2p_bottom)//2, "Punkt zu\nPunkt", font_text, TEXT_DARK)
 
+# DOD/TCP-IP: Netzzugriff spans OSI 2-1
+x, w = col_positions[7]
+netz_top = row_vermittlung_bottom
+netz_bottom = row_physical_bottom
+avg_color_netz = (240, 80, 65, 255)  # red for data link/physical combined
+draw.rectangle([x, netz_top, x + w, netz_bottom], fill=avg_color_netz, outline=BORDER_COLOR, width=1)
+draw.text((x + w//2, (netz_top + netz_bottom)//2), "Netzzugriff", font=font_layer, fill=TEXT_LIGHT, anchor="mm")
+
 # Legend
-legend_y = current_y + 25
-draw.text((WIDTH//2, legend_y), "OSI = 7-Schichten-Referenzmodell  |  DOD/TCP/IP = 4-Schichten-Internetmodell", 
+legend_y = current_y + 15
+draw.text((WIDTH//2, legend_y), "OSI = 7 Schichten  |  DOD/TCP/IP = 4 Schichten", 
           font=font_small, fill=(120, 120, 120, 255), anchor="mm")
 
 # Save

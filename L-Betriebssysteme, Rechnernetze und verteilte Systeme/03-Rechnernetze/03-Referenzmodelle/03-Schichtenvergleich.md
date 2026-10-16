@@ -109,39 +109,8 @@ bereich: RN
 
 ## Protokollzuordnung – Vollständige Übersicht
 
-| OSI | TCP/IP | Kategorie | Protokolle |
-|-----|--------|-----------|------------|
-| 7 | 4 | Web | HTTP, HTTPS, WebSocket |
-| 7 | 4 | E-Mail | SMTP, POP3, IMAP |
-| 7 | 4 | Datei | FTP, SFTP, TFTP, NFS, SMB |
-| 7 | 4 | Namen | DNS |
-| 7 | 4 | Fernzugriff | SSH, Telnet, RDP, VNC |
-| 7 | 4 | Verzeichnis | LDAP, Active Directory |
-| 7 | 4 | Zeit | NTP, SNTP |
-| 7 | 4 | Management | SNMP, Syslog |
-| 7 | 4 | Netzwerk | DHCP, BOOTP |
-| 6 | 4 | Codierung | TLS/SSL, MIME, XDR |
-| 6 | 4 | Kompression | (in Anwendungen) |
-| 5 | 4 | Sitzung | RPC, NetBIOS, PPTP |
-| 4 | 3 | Zuverlässig | TCP, SCTP |
-| 4 | 3 | Unzuverlässig | UDP, DCCP |
-| 4 | 3 | Modern | QUIC |
-| 3 | 2 | Adressierung | IPv4, IPv6 |
-| 3 | 2 | Hilfsprotokolle | ICMP, ICMPv6 |
-| 3 | 2 | Multicast | IGMP |
-| 3 | 2 | Sicherheit | IPsec (AH, ESP) |
-| 3 | 2 | Tunneling | GRE |
-| 3 | 2 | Routing | OSPF, BGP, RIP, EIGRP, IS-IS |
-| 3 | 2 | Adressauflösung | ARP, NDP (eigentlich L2) |
-| 2 | 1 | LAN kabelgebunden | Ethernet (802.3) |
-| 2 | 1 | LAN drahtlos | WLAN (802.11) |
-| 2 | 1 | PAN | Bluetooth (802.15.1) |
-| 2 | 1 | WAN | PPP, HDLC, Frame Relay |
-| 2 | 1 | Tunneling | PPPoE, L2TP |
-| 2 | 1 | Bridging | STP, RSTP, VLANs (802.1Q) |
-| 1 | 1 | Kupfer | 10/100/1000BASE-T |
-| 1 | 1 | Glasfaser | 1000BASE-SX/LX, 10GBASE-SR |
-| 1 | 1 | Drahtlos | 802.11 PHY, Bluetooth PHY |
+![[protokoll-schichten.png]]
+*<span class="fig-id">03-03-03-protokoll-schichten</span>: Vollständige Übersicht der Protokolle mit Zuordnung zu OSI- und TCP/IP-Schichten, Dateneinheiten, Kopplungselementen und Kommunikationsart.*
 
 ## Hybridmodell für die Praxis
 
