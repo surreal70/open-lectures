@@ -111,191 +111,23 @@ Der Router empfängt den Frame und verarbeitet ihn nur bis Layer 3:
 
 ### Übersicht der Entkapselung
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│            ENTKAPSELUNG (DECAPSULATION) – SERVER                │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Empfangener Frame auf dem Medium:                             │
-│  ═══════════════════════════════════════════════════════════   │
-│  0110100101010101010101010101010101010101010101010101010...    │
-│         │                                                       │
-│         ▼  Netzzugangsschicht entfernt Ethernet-Header/Trailer │
-│  ┌──────────┬──────────┬──────────┬───────────────────┬─────┐  │
-│  │Eth-Header│IP-Header │TCP-Header│   HTTP-Request    │ FCS │  │
-│  └──────────┴──────────┴──────────┴───────────────────┴─────┘  │
-│         │              ▲                              ▲         │
-│         │              │                              │         │
-│         └──────────────┴───────────── entfernt ───────┘        │
-│         │                                                       │
-│         ▼  Internetschicht entfernt IP-Header                  │
-│  ┌──────────┬──────────┬───────────────────────────────────┐   │
-│  │IP-Header │TCP-Header│         HTTP-Request              │   │
-│  └──────────┴──────────┴───────────────────────────────────┘   │
-│         │   ▲                                                   │
-│         │   └──────────────────────── entfernt                 │
-│         │                                                       │
-│         ▼  Transportschicht entfernt TCP-Header                │
-│  ┌──────────┬──────────────────────────────────────────────┐   │
-│  │TCP-Header│              HTTP-Request                     │   │
-│  └──────────┴──────────────────────────────────────────────┘   │
-│         │   ▲                                                   │
-│         │   └──────────────────────── entfernt                 │
-│         │                                                       │
-│         ▼  Anwendungsschicht erhält reine Nutzdaten           │
-│  ┌─────────────────────────────────────────────────────────┐   │
-│  │                    HTTP-Request                          │   │
-│  │         "GET /index.html HTTP/1.1..."                   │   │
-│  └─────────────────────────────────────────────────────────┘   │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[entkapselung.png]]
+*<span class="fig-id">03-03-04-entkapselung</span>: Entkapselung (Decapsulation) – schrittweises Entfernen der Header auf dem Server.*
 
 ### Detaillierter Empfangsprozess
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│              SERVER – ENTKAPSELUNG IM DETAIL                   │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  SCHRITT 1: Netzzugangsschicht                                │
-│  ─────────────────────────────────────────────────────────────│
-│  ┌────────────────────────────────────────────────────────┐   │
-│  │ ✓ Frame vom Medium empfangen (elektrische Signale)     │   │
-│  │ ✓ Preamble/SFD erkennen (Synchronisation)              │   │
-│  │ ✓ Destination MAC prüfen:                              │   │
-│  │   CC:CC:CC:CC:CC:CC = eigene MAC? → JA                │   │
-│  │ ✓ FCS/CRC prüfen → Keine Übertragungsfehler           │   │
-│  │ ✓ EtherType 0x0800 → IPv4, an IP-Stack übergeben      │   │
-│  │ ✓ Ethernet-Header und FCS entfernen                    │   │
-│  └────────────────────────────────────────────────────────┘   │
-│                                                                │
-│  Verbleibend: IP-Paket (240 Bytes)                            │
-│                                                                │
-│  SCHRITT 2: Internetschicht                                   │
-│  ─────────────────────────────────────────────────────────────│
-│  ┌────────────────────────────────────────────────────────┐   │
-│  │ ✓ IP-Version prüfen: 4 → IPv4                          │   │
-│  │ ✓ Header Checksum validieren → OK                      │   │
-│  │ ✓ Destination IP prüfen:                               │   │
-│  │   10.0.0.5 = eigene IP? → JA, Paket ist für mich      │   │
-│  │ ✓ Protocol-Feld auslesen: 6 → TCP                      │   │
-│  │ ✓ IP-Header entfernen, an TCP-Stack übergeben          │   │
-│  └────────────────────────────────────────────────────────┘   │
-│                                                                │
-│  Verbleibend: TCP-Segment (220 Bytes)                         │
-│                                                                │
-│  SCHRITT 3: Transportschicht                                  │
-│  ─────────────────────────────────────────────────────────────│
-│  ┌────────────────────────────────────────────────────────┐   │
-│  │ ✓ TCP Checksum validieren → OK                         │   │
-│  │ ✓ Destination Port: 80 → HTTP-Dienst                   │   │
-│  │ ✓ Socket-Zuordnung:                                    │   │
-│  │   (TCP, 192.168.1.10, 52345, 10.0.0.5, 80)            │   │
-│  │ ✓ Sequenznummer prüfen (Reihenfolge)                   │   │
-│  │ ✓ ACK senden (Bestätigung)                             │   │
-│  │ ✓ TCP-Header entfernen                                 │   │
-│  │ ✓ Daten an Port 80 (Webserver-Prozess) übergeben      │   │
-│  └────────────────────────────────────────────────────────┘   │
-│                                                                │
-│  Verbleibend: HTTP-Request (~200 Bytes)                       │
-│                                                                │
-│  SCHRITT 4: Anwendungsschicht                                 │
-│  ─────────────────────────────────────────────────────────────│
-│  ┌────────────────────────────────────────────────────────┐   │
-│  │ ✓ Webserver (z.B. Apache, nginx) empfängt Request      │   │
-│  │ ✓ HTTP-Request parsen:                                 │   │
-│  │   - Methode: GET                                       │   │
-│  │   - Pfad: /index.html                                  │   │
-│  │   - Headers: Host, User-Agent, Accept, ...             │   │
-│  │ ✓ Datei /var/www/html/index.html laden                │   │
-│  │ ✓ HTTP-Response generieren                             │   │
-│  └────────────────────────────────────────────────────────┘   │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[empfangsprozess.png]]
+*<span class="fig-id">03-03-04-empfangsprozess</span>: Detaillierter Empfangsprozess – Verarbeitung auf jeder Schicht des Servers.*
 
 ## Gesamtübersicht: Der komplette Paketfluss
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    KOMPLETTER PAKETFLUSS                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  CLIENT              ROUTER                SERVER               │
-│  192.168.1.10        192.168.1.1           10.0.0.5            │
-│                      10.0.0.1                                   │
-│                                                                 │
-│  ┌───────────┐                                                 │
-│  │Application│ HTTP-Request                                    │
-│  ├───────────┤ erstellen                                       │
-│  │ Transport │ +TCP-Header                                     │
-│  │           │ (Port 52345→80)                                 │
-│  ├───────────┤ +IP-Header                                      │
-│  │ Internet  │ (192.168.1.10                                   │
-│  │           │  →10.0.0.5)                                     │
-│  ├───────────┤ +Eth-Header                                     │
-│  │ Net Access│ (AA:AA→BB:BB)         ┌───────────┐            │
-│  └─────┬─────┘                       │           │            │
-│        │                             │ Internet  │ Routing    │
-│        │  ══════════════════════════►├───────────┤ TTL--      │
-│        │      Ethernet LAN 1         │ Net Access│ MAC ändern │
-│        │                             └─────┬─────┘            │
-│        │                                   │                   │
-│        │                                   │  ════════════════►│
-│        │                                   │   Ethernet LAN 2  │
-│        │                                   │                   │
-│        │                                   │         ┌─────────┴─┐
-│        │                                   │         │ Net Access│
-│        │                                   │         ├───────────┤
-│        │                                   │         │ Internet  │
-│        │                                   │         ├───────────┤
-│        │                                   │         │ Transport │
-│        │                                   │         ├───────────┤
-│        │                                   │         │Application│
-│        │                                   │         └───────────┘
-│        │                                   │         HTTP-Request
-│        │                                   │         verarbeiten
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[paketfluss.png]]
+*<span class="fig-id">03-03-04-paketfluss</span>: Kompletter Paketfluss vom Client über den Router zum Server mit Ein- und Entkapselung.*
 
 ## PDU-Bezeichnungen pro Schicht
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                PDU (Protocol Data Unit) pro Schicht            │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  DoD-Schicht          PDU-Name            Enthält              │
-│  ──────────────────────────────────────────────────────────── │
-│                                                                │
-│  Anwendung            Daten / Message     Nutzdaten            │
-│                       (Nachricht)                              │
-│                                                                │
-│  Transport            Segment (TCP)       TCP-Header + Daten   │
-│                       Datagramm (UDP)     UDP-Header + Daten   │
-│                                                                │
-│  Internet             Paket / Packet      IP-Header + Segment  │
-│                       (IP-Datagramm)                           │
-│                                                                │
-│  Netzzugang           Frame / Rahmen      Eth-Header + Paket   │
-│                                           + FCS                │
-│                                                                │
-│  (Physikalisch)       Bits                0 und 1 auf Medium   │
-│                                                                │
-│  ┌─────────────────────────────────────────────────────────┐  │
-│  │        Daten                                            │  │
-│  ├──────┬──────────────────────────────────────────────────┤  │
-│  │ TCP  │                    Segment                       │  │
-│  ├──────┼──────┬───────────────────────────────────────────┤  │
-│  │  IP  │ TCP  │                  Paket                    │  │
-│  ├──────┼──────┼──────┬────────────────────────────┬───────┤  │
-│  │ Eth  │  IP  │ TCP  │           Frame            │  FCS  │  │
-│  └──────┴──────┴──────┴────────────────────────────┴───────┘  │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[pdu.png]]
+*<span class="fig-id">03-03-04-pdu</span>: PDU-Bezeichnungen (Protocol Data Units) für jede Schicht mit visueller Einkapselungsdarstellung.*
 
 ## Zusammenfassung: Beitrag jeder Schicht
 

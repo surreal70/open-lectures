@@ -1,6 +1,10 @@
 # Abbildungsverzeichnis
 
-> Dieses Verzeichnis enthält alle Abbildungen der bisher fertiggestellten Kapitel: **02-Betriebssysteme / 01-Einführung**, **02-Betriebssysteme / 02-Architektur**, **02-Betriebssysteme / 03-Prozesse**, **02-Betriebssysteme / 05-Speicherverwaltung**, **02-Betriebssysteme / 06-Ein-Ausgabe** und **02-Betriebssysteme / 07-Dateisysteme**.
+> Dieses Verzeichnis enthält alle Abbildungen der bisher fertiggestellten Kapitel: **02-Betriebssysteme / 01-Einführung**, **02-Betriebssysteme / 02-Architektur**, **02-Betriebssysteme / 03-Prozesse**, **02-Betriebssysteme / 05-Speicherverwaltung**, **02-Betriebssysteme / 06-Ein-Ausgabe**, **02-Betriebssysteme / 07-Dateisysteme** und **03-Rechnernetze / 03-Referenzmodelle**.
+
+> [!note] Urheberrecht
+> Alle Grafiken, soweit nicht anders gekennzeichnet, sind selbst erstellt.
+> © Andreas Hümmer
 
 ---
 
@@ -319,7 +323,7 @@
 
 ---
 
-**Gesamtzahl der Abbildungen:** 186
+**Gesamtzahl der Abbildungen:** 204
 
 | Kapitel | Anzahl |
 |---------|--------|
@@ -344,3 +348,53 @@
 | 02-07-02 Grundlagen | 7 |
 | 02-07-03 Implementierung | 10 |
 | 02-07-04 Journaling | 8 |
+| 03-03-01 OSI-Modell | 2 |
+| 03-03-02 TCP-IP-Modell | 1 |
+| 03-03-03 Schichtenvergleich | 1 |
+| 03-03-04 Arbeitsweise-Schichtenmodell | 14 |
+
+---
+
+## 03-Rechnernetze / 03-Referenzmodelle
+
+### 01-OSI-Modell (03-03-01)
+
+| Abbildungs-ID | Beschreibung |
+|---------------|--------------|
+| 03-03-01-osi-schichten | Die 7 Schichten des OSI-Referenzmodells |
+| 03-03-01-protokoll-schichten | Protokollzuordnung zu den OSI-Schichten |
+
+### 02-TCP-IP-Modell (03-03-02)
+
+| Abbildungs-ID | Beschreibung |
+|---------------|--------------|
+| 03-03-02-tcp-ip-schichten | Die 4 Schichten des TCP/IP-Modells (DoD-Modell) |
+
+### 03-Schichtenvergleich (03-03-03)
+
+| Abbildungs-ID | Beschreibung |
+|---------------|--------------|
+| 03-03-03-protokoll-schichten | Vergleich OSI vs. TCP/IP mit Protokollzuordnung |
+
+### 04-Arbeitsweise-Schichtenmodell (03-03-04)
+
+| Abbildungs-ID | Beschreibung |
+|---------------|--------------|
+| 03-03-04-schichtendurchlauf | Schichtendurchlauf vom Client über Router zum Server |
+| 03-03-04-datenfluss | Datenfluss durch die Schichten mit Ein- und Entkapselung |
+| 03-03-04-szenario | Netzwerkszenario mit Client, Router und Webserver |
+| 03-03-04-einkapselung | Einkapselung (Encapsulation) – schrittweises Hinzufügen von Headern |
+| 03-03-04-schicht-anwendung | Anwendungsschicht erzeugt HTTP-Request |
+| 03-03-04-schicht-transport | Transportschicht fügt TCP-Header hinzu |
+| 03-03-04-schicht-internet | Internetschicht fügt IP-Header hinzu |
+| 03-03-04-schicht-netzzugang | Netzzugangsschicht fügt Ethernet-Header und FCS hinzu |
+| 03-03-04-router-verarbeitung | Router-Verarbeitung – Empfang, Routing-Entscheidung und Versand |
+| 03-03-04-router-schichten | Router verarbeiten nur Layer 1-3 |
+| 03-03-04-entkapselung | Entkapselung (Decapsulation) – schrittweises Entfernen der Header |
+| 03-03-04-empfangsprozess | Detaillierter Empfangsprozess – Verarbeitung auf jeder Schicht |
+| 03-03-04-paketfluss | Kompletter Paketfluss vom Client über Router zum Server |
+| 03-03-04-pdu | PDU-Bezeichnungen (Protocol Data Units) pro Schicht |
+
+---
+
+**Gesamtzahl der Abbildungen:** 204
