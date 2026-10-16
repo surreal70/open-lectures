@@ -45,353 +45,67 @@ Die folgende Grafik zeigt den kompletten Weg der Daten durch die Schichten (OSI-
 
 ## Szenario
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                         SZENARIO                                │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Client                    Router                  Server      │
-│   (Browser)                                        (Webserver)  │
-│                                                                 │
-│   ┌─────────┐            ┌─────────┐            ┌─────────┐    │
-│   │   PC    │────────────│  Router │────────────│ Server  │    │
-│   │         │   LAN 1    │         │   LAN 2    │         │    │
-│   └─────────┘            └─────────┘            └─────────┘    │
-│                                                                 │
-│   IP: 192.168.1.10       192.168.1.1             10.0.0.5      │
-│   MAC: AA:AA:AA:AA:AA:AA 10.0.0.1                CC:CC:CC:CC:  │
-│                          BB:BB:BB:BB:BB:BB       CC:CC         │
-│                          (LAN1 / LAN2)                         │
-│                                                                 │
-│   Anfrage: GET http://10.0.0.5/index.html                      │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[szenario.png]]
+*<span class="fig-id">03-03-04-szenario</span>: Netzwerkszenario mit Client, Router und Webserver in zwei LANs.*
 
 ## Phase 1: Client – Daten senden
 
 ### Übersicht der Einkapselung
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              EINKAPSELUNG (ENCAPSULATION) – CLIENT              │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Anwendung erzeugt Daten                                        │
-│         │                                                       │
-│         ▼                                                       │
-│  ┌─────────────────────────────────────────────────────────┐   │
-│  │                    HTTP-Request                          │   │
-│  │         "GET /index.html HTTP/1.1..."                   │   │
-│  └─────────────────────────────────────────────────────────┘   │
-│         │                                                       │
-│         ▼  Transportschicht fügt TCP-Header hinzu              │
-│  ┌──────────┬──────────────────────────────────────────────┐   │
-│  │TCP-Header│              HTTP-Request                     │   │
-│  │(20 Bytes)│                                               │   │
-│  └──────────┴──────────────────────────────────────────────┘   │
-│         │                                                       │
-│         ▼  Internetschicht fügt IP-Header hinzu                │
-│  ┌──────────┬──────────┬───────────────────────────────────┐   │
-│  │IP-Header │TCP-Header│         HTTP-Request              │   │
-│  │(20 Bytes)│          │                                   │   │
-│  └──────────┴──────────┴───────────────────────────────────┘   │
-│         │                                                       │
-│         ▼  Netzzugangsschicht fügt Ethernet-Header/Trailer     │
-│  ┌──────────┬──────────┬──────────┬───────────────────┬─────┐  │
-│  │Eth-Header│IP-Header │TCP-Header│   HTTP-Request    │ FCS │  │
-│  │(14 Bytes)│          │          │                   │(4 B)│  │
-│  └──────────┴──────────┴──────────┴───────────────────┴─────┘  │
-│         │                                                       │
-│         ▼  Bits auf das Medium                                 │
-│  ═══════════════════════════════════════════════════════════   │
-│  0110100101010101010101010101010101010101010101010101010...    │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[einkapselung.png]]
+*<span class="fig-id">03-03-04-einkapselung</span>: Einkapselung (Encapsulation) – schrittweises Hinzufügen von Headern auf dem Client.*
 
 ### Schritt 1: Anwendungsschicht (Application Layer)
 
 **Aufgabe:** Erzeugt die Nutzdaten für die Kommunikation
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    ANWENDUNGSSCHICHT                           │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Browser erzeugt HTTP-Request:                                 │
-│                                                                │
-│  ┌──────────────────────────────────────────────────────────┐ │
-│  │ GET /index.html HTTP/1.1                                 │ │
-│  │ Host: 10.0.0.5                                           │ │
-│  │ User-Agent: Mozilla/5.0                                  │ │
-│  │ Accept: text/html                                        │ │
-│  │ Accept-Language: de-DE                                   │ │
-│  │ Connection: keep-alive                                   │ │
-│  │                                                          │ │
-│  └──────────────────────────────────────────────────────────┘ │
-│                                                                │
-│  Beitrag der Schicht:                                          │
-│  ✓ Anwendungsprotokolle (HTTP, DNS, SMTP, FTP, ...)           │
-│  ✓ Datenformat und -kodierung                                 │
-│  ✓ Benutzerinteraktion                                        │
-│                                                                │
-│  Übergabe an: Transportschicht                                │
-│  PDU-Bezeichnung: Daten / Nachricht (Message)                 │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[schicht-anwendung.png]]
+*<span class="fig-id">03-03-04-schicht-anwendung</span>: Anwendungsschicht erzeugt HTTP-Request.*
+
+> [!info] Mehr Details
+> Siehe [[08-Anwendungsschicht/00-Anwendungsschicht-Index|Anwendungsschicht]] für HTTP, DNS, SMTP und weitere Protokolle.
 
 ### Schritt 2: Transportschicht (Transport Layer)
 
 **Aufgabe:** Ende-zu-Ende-Verbindung, Segmentierung, Portzuordnung
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    TRANSPORTSCHICHT                            │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  TCP-Header wird hinzugefügt:                                  │
-│                                                                │
-│  ┌────────────────────────────────────────────────────────┐   │
-│  │                    TCP-HEADER (20 Bytes)               │   │
-│  ├────────────────────────────────────────────────────────┤   │
-│  │ Source Port:        52345  (ephemeral, vom OS gewählt) │   │
-│  │ Destination Port:   80     (HTTP Well-Known Port)      │   │
-│  │ Sequence Number:    1000   (initiale Sequenznummer)    │   │
-│  │ Acknowledgment:     0      (noch keine ACKs)           │   │
-│  │ Flags:              SYN    (Verbindungsaufbau)*        │   │
-│  │ Window Size:        65535  (Empfangspuffer)            │   │
-│  │ Checksum:           0x3A7F (berechnet)                 │   │
-│  └────────────────────────────────────────────────────────┘   │
-│                                                                │
-│  * Hinweis: Vor dem HTTP-Request findet der 3-Way-Handshake   │
-│    statt (SYN → SYN-ACK → ACK), hier vereinfacht dargestellt. │
-│                                                                │
-│  Resultat:                                                     │
-│  ┌──────────┬──────────────────────────────────────────────┐  │
-│  │TCP-Header│              HTTP-Request                    │  │
-│  │  20 B    │                 ~200 B                       │  │
-│  └──────────┴──────────────────────────────────────────────┘  │
-│                                                                │
-│  Beitrag der Schicht:                                          │
-│  ✓ Multiplexing durch Portnummern                             │
-│  ✓ Verbindungsaufbau (TCP) oder verbindungslos (UDP)          │
-│  ✓ Zuverlässigkeit (Sequenznummern, ACKs bei TCP)             │
-│  ✓ Flusskontrolle (Sliding Window bei TCP)                    │
-│                                                                │
-│  Übergabe an: Internetschicht                                 │
-│  PDU-Bezeichnung: Segment (TCP) / Datagramm (UDP)             │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[schicht-transport.png]]
+*<span class="fig-id">03-03-04-schicht-transport</span>: Transportschicht fügt TCP-Header hinzu.*
+
+> [!info] Mehr Details
+> Siehe [[07-Transportschicht/00-Transportschicht-Index|Transportschicht]] für TCP, UDP und Portnummern.
 
 ### Schritt 3: Internetschicht (Internet Layer)
 
 **Aufgabe:** Logische Adressierung, Routing, Fragmentierung
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    INTERNETSCHICHT                             │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  IP-Header wird hinzugefügt:                                   │
-│                                                                │
-│  ┌────────────────────────────────────────────────────────┐   │
-│  │                    IP-HEADER (20 Bytes)                │   │
-│  ├────────────────────────────────────────────────────────┤   │
-│  │ Version:            4       (IPv4)                     │   │
-│  │ Header Length:      5       (20 Bytes, keine Options)  │   │
-│  │ Total Length:       240     (20 IP + 20 TCP + 200 Data)│   │
-│  │ Identification:     0x1A2B  (für Fragmentierung)       │   │
-│  │ Flags:              DF      (Don't Fragment)           │   │
-│  │ TTL:                64      (max. 64 Hops)             │   │
-│  │ Protocol:           6       (TCP)                      │   │
-│  │ Header Checksum:    0x8F21  (berechnet)                │   │
-│  │                                                        │   │
-│  │ Source IP:          192.168.1.10   (Client)           │   │
-│  │ Destination IP:     10.0.0.5       (Server)           │   │
-│  └────────────────────────────────────────────────────────┘   │
-│                                                                │
-│  Routing-Entscheidung:                                         │
-│  ┌────────────────────────────────────────────────────────┐   │
-│  │ Ziel 10.0.0.5 ist NICHT im lokalen Netz 192.168.1.0/24│   │
-│  │ → Paket muss an Default Gateway 192.168.1.1 gesendet  │   │
-│  └────────────────────────────────────────────────────────┘   │
-│                                                                │
-│  Resultat:                                                     │
-│  ┌──────────┬──────────┬───────────────────────────────────┐  │
-│  │IP-Header │TCP-Header│         HTTP-Request              │  │
-│  │  20 B    │  20 B    │            ~200 B                 │  │
-│  └──────────┴──────────┴───────────────────────────────────┘  │
-│                                                                │
-│  Beitrag der Schicht:                                          │
-│  ✓ Logische Adressierung (IP-Adressen)                        │
-│  ✓ Routing-Entscheidung (lokal oder Gateway)                  │
-│  ✓ Fragmentierung bei Bedarf                                  │
-│  ✓ TTL zur Schleifenvermeidung                                │
-│                                                                │
-│  Übergabe an: Netzzugangsschicht                              │
-│  PDU-Bezeichnung: Paket (Packet) / IP-Datagramm               │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[schicht-internet.png]]
+*<span class="fig-id">03-03-04-schicht-internet</span>: Internetschicht fügt IP-Header hinzu und trifft Routing-Entscheidung.*
+
+> [!info] Mehr Details
+> Siehe [[06-Netzwerkschicht/00-Netzwerkschicht-Index|Netzwerkschicht]] für IP, ICMP und Routing.
 
 ### Schritt 4: Netzzugangsschicht (Network Access Layer)
 
 **Aufgabe:** Physische Adressierung, Medienzugriff, Bitübertragung
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                   NETZZUGANGSSCHICHT                           │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  ARP-Auflösung (falls nötig):                                  │
-│  ┌────────────────────────────────────────────────────────┐   │
-│  │ Client muss MAC-Adresse des Gateways 192.168.1.1      │   │
-│  │ ermitteln → ARP Request (Broadcast)                    │   │
-│  │ Gateway antwortet: "192.168.1.1 ist BB:BB:BB:BB:BB:BB"│   │
-│  └────────────────────────────────────────────────────────┘   │
-│                                                                │
-│  Ethernet-Header wird hinzugefügt:                             │
-│                                                                │
-│  ┌────────────────────────────────────────────────────────┐   │
-│  │              ETHERNET-HEADER (14 Bytes)                │   │
-│  ├────────────────────────────────────────────────────────┤   │
-│  │ Destination MAC:   BB:BB:BB:BB:BB:BB  (Router LAN1)   │   │
-│  │ Source MAC:        AA:AA:AA:AA:AA:AA  (Client)        │   │
-│  │ EtherType:         0x0800             (IPv4)          │   │
-│  └────────────────────────────────────────────────────────┘   │
-│                                                                │
-│  Ethernet-Trailer (FCS) wird angehängt:                        │
-│                                                                │
-│  ┌────────────────────────────────────────────────────────┐   │
-│  │              FRAME CHECK SEQUENCE (4 Bytes)            │   │
-│  ├────────────────────────────────────────────────────────┤   │
-│  │ CRC-32:            0xA1B2C3D4  (Prüfsumme des Frames) │   │
-│  └────────────────────────────────────────────────────────┘   │
-│                                                                │
-│  Resultat – Kompletter Ethernet-Frame:                         │
-│  ┌──────┬──────┬──────┬─────────────────────────┬──────┐      │
-│  │ Dst  │ Src  │ Type │      IP-Paket           │ FCS  │      │
-│  │ MAC  │ MAC  │      │ (IP+TCP+HTTP)           │      │      │
-│  │ 6 B  │ 6 B  │ 2 B  │       240 B             │ 4 B  │      │
-│  └──────┴──────┴──────┴─────────────────────────┴──────┘      │
-│                                                                │
-│  Gesamtgröße: 14 + 240 + 4 = 258 Bytes                        │
-│                                                                │
-│  Beitrag der Schicht:                                          │
-│  ✓ Physische Adressierung (MAC-Adressen)                      │
-│  ✓ ARP für MAC-Auflösung                                      │
-│  ✓ Medienzugriffssteuerung (CSMA/CD)                          │
-│  ✓ Fehlererkennung (CRC/FCS)                                  │
-│  ✓ Bitübertragung auf das Medium                              │
-│                                                                │
-│  PDU-Bezeichnung: Frame (Rahmen)                              │
-│                                                                │
-│  Übertragung auf das Medium:                                   │
-│  ════════════════════════════════════════════════════════     │
-│  Elektrische Signale / Lichtimpulse / Funkwellen              │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[schicht-netzzugang.png]]
+*<span class="fig-id">03-03-04-schicht-netzzugang</span>: Netzzugangsschicht fügt Ethernet-Header und FCS hinzu, überträgt Bits auf das Medium.*
+
+> [!info] Mehr Details
+> Siehe [[05-Sicherungsschicht/00-Sicherungsschicht-Index|Sicherungsschicht]] für Ethernet, MAC-Adressen und ARP.
 
 ## Phase 2: Router – Weiterleitung
 
 Der Router empfängt den Frame und verarbeitet ihn nur bis Layer 3:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    ROUTER – VERARBEITUNG                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  EMPFANG auf LAN 1 (192.168.1.0/24):                           │
-│                                                                 │
-│  ┌──────┬──────┬──────┬─────────────────────────┬──────┐       │
-│  │BB:BB │AA:AA │0x0800│      IP-Paket           │ FCS  │       │
-│  └──────┴──────┴──────┴─────────────────────────┴──────┘       │
-│                                                                 │
-│  Schritt 1: Netzzugangsschicht (Layer 2)                       │
-│  ┌────────────────────────────────────────────────────────┐    │
-│  │ ✓ FCS prüfen → OK                                      │    │
-│  │ ✓ Destination MAC = eigene MAC (BB:BB:BB:BB:BB:BB)?   │    │
-│  │   → JA, Frame ist für mich                             │    │
-│  │ ✓ Ethernet-Header und FCS entfernen                    │    │
-│  │ ✓ EtherType 0x0800 → an IPv4-Verarbeitung übergeben   │    │
-│  └────────────────────────────────────────────────────────┘    │
-│                                                                 │
-│  Schritt 2: Internetschicht (Layer 3)                          │
-│  ┌────────────────────────────────────────────────────────┐    │
-│  │ ✓ IP-Header analysieren                                │    │
-│  │   Source IP:      192.168.1.10                         │    │
-│  │   Destination IP: 10.0.0.5                             │    │
-│  │                                                        │    │
-│  │ ✓ Bin ich das Ziel (10.0.0.5)?                        │    │
-│  │   → NEIN, ich muss weiterleiten (routen)              │    │
-│  │                                                        │    │
-│  │ ✓ TTL dekrementieren: 64 → 63                         │    │
-│  │   (Bei TTL=0 → Paket verwerfen, ICMP Time Exceeded)   │    │
-│  │                                                        │    │
-│  │ ✓ Header Checksum neu berechnen (TTL hat sich geändert)│    │
-│  │                                                        │    │
-│  │ ✓ Routing-Tabelle konsultieren:                        │    │
-│  │   ┌────────────────────────────────────────────────┐  │    │
-│  │   │ Ziel         Gateway      Interface            │  │    │
-│  │   │ 10.0.0.0/24  directly     eth1 (LAN 2)        │  │    │
-│  │   │ 192.168.1.0  directly     eth0 (LAN 1)        │  │    │
-│  │   │ 0.0.0.0/0    ISP-Router   eth2                │  │    │
-│  │   └────────────────────────────────────────────────┘  │    │
-│  │                                                        │    │
-│  │ ✓ Ziel 10.0.0.5 → Match mit 10.0.0.0/24              │    │
-│  │   → Direkt erreichbar über eth1 (LAN 2)               │    │
-│  └────────────────────────────────────────────────────────┘    │
-│                                                                 │
-│  Schritt 3: Neuer Frame für LAN 2                              │
-│  ┌────────────────────────────────────────────────────────┐    │
-│  │ ✓ ARP für 10.0.0.5 (falls nicht im Cache)             │    │
-│  │   → Server MAC: CC:CC:CC:CC:CC:CC                     │    │
-│  │                                                        │    │
-│  │ ✓ Neuen Ethernet-Header erstellen:                    │    │
-│  │   Destination MAC: CC:CC:CC:CC:CC:CC (Server)         │    │
-│  │   Source MAC:      DD:DD:DD:DD:DD:DD (Router eth1)    │    │
-│  │   EtherType:       0x0800                             │    │
-│  │                                                        │    │
-│  │ ✓ Neue FCS berechnen                                  │    │
-│  └────────────────────────────────────────────────────────┘    │
-│                                                                 │
-│  VERSAND auf LAN 2 (10.0.0.0/24):                              │
-│                                                                 │
-│  ┌──────┬──────┬──────┬─────────────────────────┬──────┐       │
-│  │CC:CC │DD:DD │0x0800│   IP-Paket (TTL=63)     │ FCS' │       │
-│  └──────┴──────┴──────┴─────────────────────────┴──────┘       │
-│                                                                 │
-│  WICHTIG: IP-Adressen bleiben unverändert!                     │
-│           Nur MAC-Adressen und TTL ändern sich                 │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[router-verarbeitung.png]]
+*<span class="fig-id">03-03-04-router-verarbeitung</span>: Router-Verarbeitung – Empfang, Routing-Entscheidung und Versand mit neuen MAC-Adressen.*
 
 ### Router: Nur Layer 1-3
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│             ROUTER – SCHICHTENVERARBEITUNG                     │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│        Anwendung      │ ░░░░░░░░░░░░░░░░░░░░░ │  Nicht        │
-│        ───────────────┤ ░░░░░░░░░░░░░░░░░░░░░ │  verarbeitet  │
-│        Transport      │ ░░░░░░░░░░░░░░░░░░░░░ │               │
-│        ───────────────┼───────────────────────┼───────────────│
-│        Internet       │ ✓ Routing-Entscheidung│  Layer 3      │
-│        ───────────────┼───────────────────────┼───────────────│
-│        Netzzugang     │ ✓ MAC-Adressen ändern │  Layer 1-2    │
-│                       │ ✓ Frame neu aufbauen  │               │
-│                                                                │
-│  Router "sehen" nicht in TCP-Header oder HTTP-Daten!          │
-│  (Ausnahme: Deep Packet Inspection bei Firewalls)             │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[router-schichten.png]]
+*<span class="fig-id">03-03-04-router-schichten</span>: Router verarbeiten nur Layer 1-3 (Netzzugang und Internet), höhere Schichten bleiben unberührt.*
 
 ## Phase 3: Server – Daten empfangen
 

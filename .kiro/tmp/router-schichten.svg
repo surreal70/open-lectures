@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="340" viewBox="0 0 700 340">
+  <rect x="0" y="0" width="700" height="340" fill="#1A1A1A"/>
+  <text x="350" y="30" fill="#E8E8E8" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">ROUTER – SCHICHTENVERARBEITUNG</text>
+  <rect x="20" y="50" width="660" height="275" fill="#2D2D2D" stroke="#4A9EFF" rx="8" stroke-width="2"/>
+  <text x="50" y="75" fill="#888888" font-family="monospace" font-size="11">Schicht</text>
+  <text x="200" y="75" fill="#888888" font-family="monospace" font-size="11">Verarbeitung</text>
+  <text x="480" y="75" fill="#888888" font-family="monospace" font-size="11">Status</text>
+  <line x1="35" y1="85" x2="665" y2="85" stroke="#444444" stroke-width="1"/>
+  <rect x="35" y="100" width="630" height="45" fill="#4A4A4A" stroke="#444444" rx="4" stroke-width="1"/>
+  <text x="50" y="128" fill="#CCCCCC" font-family="monospace" font-size="13" font-weight="bold">Anwendung</text>
+  <text x="200" y="128" fill="#666666" font-family="monospace" font-size="12">░░░░░░░░░░░░░░░░░░░░</text>
+  <text x="480" y="128" fill="#888888" font-family="monospace" font-size="12">Nicht verarbeitet</text>
+  <rect x="35" y="150" width="630" height="45" fill="#4A4A4A" stroke="#444444" rx="4" stroke-width="1"/>
+  <text x="50" y="178" fill="#CCCCCC" font-family="monospace" font-size="13" font-weight="bold">Transport</text>
+  <text x="200" y="178" fill="#666666" font-family="monospace" font-size="12">░░░░░░░░░░░░░░░░░░░░</text>
+  <text x="480" y="178" fill="#888888" font-family="monospace" font-size="12">Nicht verarbeitet</text>
+  <rect x="35" y="200" width="630" height="45" fill="#1E3A5F" stroke="#444444" rx="4" stroke-width="1"/>
+  <text x="50" y="228" fill="#CCCCCC" font-family="monospace" font-size="13" font-weight="bold">Internet</text>
+  <text x="200" y="222" fill="#4ADE80" font-family="monospace" font-size="12">✓ Routing-Entscheidung</text>
+  <text x="480" y="228" fill="#4ADE80" font-family="monospace" font-size="12">Layer 3</text>
+  <rect x="35" y="250" width="630" height="45" fill="#1E5631" stroke="#444444" rx="4" stroke-width="1"/>
+  <text x="50" y="278" fill="#CCCCCC" font-family="monospace" font-size="13" font-weight="bold">Netzzugang</text>
+  <text x="200" y="272" fill="#4ADE80" font-family="monospace" font-size="12">✓ MAC-Adressen ändern</text>
+  <text x="200" y="288" fill="#4ADE80" font-family="monospace" font-size="12">✓ Frame neu aufbauen</text>
+  <text x="480" y="278" fill="#4ADE80" font-family="monospace" font-size="12">Layer 1-2</text>
+  <rect x="35" y="270" width="630" height="45" fill="#2A2A2A" stroke="#FFB347" rx="4" stroke-width="1"/>
+  <text x="50" y="288" fill="#FFB347" font-family="monospace" font-size="11" font-weight="bold">Router "sehen" nicht in TCP-Header oder HTTP-Daten!</text>
+  <text x="50" y="305" fill="#CCCCCC" font-family="monospace" font-size="10">(Ausnahme: Deep Packet Inspection bei Firewalls)</text>
+</svg>

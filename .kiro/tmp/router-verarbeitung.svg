@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="850" viewBox="0 0 900 850">
+  <rect x="0" y="0" width="900" height="850" fill="#1A1A1A"/>
+  <defs/>
+  <text x="450" y="35" fill="#E8E8E8" font-family="monospace" font-size="18" font-weight="bold" text-anchor="middle">ROUTER – VERARBEITUNG</text>
+  <rect x="20" y="55" width="860" height="780" fill="#2D2D2D" stroke="#4A9EFF" rx="8" stroke-width="2"/>
+  <rect x="35" y="70" width="830" height="100" fill="#1E3A5F" stroke="#4A9EFF" rx="5" stroke-width="1"/>
+  <text x="50" y="95" fill="#FFB347" font-family="monospace" font-size="14" font-weight="bold">EMPFANG auf LAN 1 (192.168.1.0/24):</text>
+  <rect x="50" y="115" width="800" height="40" fill="#3D3D3D" stroke="#666666" rx="3"/>
+  <rect x="50" y="120" width="70" height="30" fill="#4A9EFF" stroke="#333333" rx="2" fill-opacity="0.3" stroke-width="1"/>
+  <text x="85" y="140" fill="#CCCCCC" font-family="monospace" font-size="11" text-anchor="middle">BB:BB</text>
+  <rect x="120" y="120" width="70" height="30" fill="#9B59B6" stroke="#333333" rx="2" fill-opacity="0.3" stroke-width="1"/>
+  <text x="155" y="140" fill="#CCCCCC" font-family="monospace" font-size="11" text-anchor="middle">AA:AA</text>
+  <rect x="190" y="120" width="70" height="30" fill="#2ECC71" stroke="#333333" rx="2" fill-opacity="0.3" stroke-width="1"/>
+  <text x="225" y="140" fill="#CCCCCC" font-family="monospace" font-size="11" text-anchor="middle">0x0800</text>
+  <rect x="260" y="120" width="460" height="30" fill="#F39C12" stroke="#333333" rx="2" fill-opacity="0.3" stroke-width="1"/>
+  <text x="490" y="140" fill="#CCCCCC" font-family="monospace" font-size="11" text-anchor="middle">IP-Paket</text>
+  <rect x="720" y="120" width="60" height="30" fill="#E74C3C" stroke="#333333" rx="2" fill-opacity="0.3" stroke-width="1"/>
+  <text x="750" y="140" fill="#CCCCCC" font-family="monospace" font-size="11" text-anchor="middle">FCS</text>
+  <rect x="35" y="185" width="830" height="130" fill="#1E3A5F" stroke="#4A9EFF" rx="5" stroke-width="1"/>
+  <text x="50" y="205" fill="#FFB347" font-family="monospace" font-size="13" font-weight="bold">Schritt 1: Netzzugangsschicht (Layer 2)</text>
+  <text x="70" y="230" fill="#CCCCCC" font-family="monospace" font-size="12">✓ FCS prüfen → OK</text>
+  <text x="70" y="252" fill="#CCCCCC" font-family="monospace" font-size="12">✓ Destination MAC = eigene MAC (BB:BB:BB:BB:BB:BB)? → JA</text>
+  <text x="70" y="274" fill="#CCCCCC" font-family="monospace" font-size="12">✓ Ethernet-Header und FCS entfernen</text>
+  <text x="70" y="296" fill="#CCCCCC" font-family="monospace" font-size="12">✓ EtherType 0x0800 → an IPv4-Verarbeitung übergeben</text>
+  <rect x="35" y="325" width="830" height="230" fill="#1E3A5F" stroke="#4A9EFF" rx="5" stroke-width="1"/>
+  <text x="50" y="345" fill="#FFB347" font-family="monospace" font-size="13" font-weight="bold">Schritt 2: Internetschicht (Layer 3)</text>
+  <text x="70" y="370" fill="#CCCCCC" font-family="monospace" font-size="12">✓ IP-Header analysieren: Src 192.168.1.10 → Dst 10.0.0.5</text>
+  <text x="70" y="390" fill="#CCCCCC" font-family="monospace" font-size="12">✓ Bin ich das Ziel (10.0.0.5)? → NEIN, weiterleiten</text>
+  <text x="70" y="410" fill="#CCCCCC" font-family="monospace" font-size="12">✓ TTL dekrementieren: 64 → 63</text>
+  <text x="70" y="430" fill="#CCCCCC" font-family="monospace" font-size="12">✓ Header Checksum neu berechnen</text>
+  <rect x="70" y="450" width="500" height="85" fill="#1A1A2E" stroke="#4A9EFF" rx="3" stroke-width="1"/>
+  <text x="85" y="468" fill="#4ADE80" font-family="monospace" font-size="11" font-weight="bold">✓ Routing-Tabelle konsultieren:</text>
+  <text x="100" y="488" fill="#888888" font-family="monospace" font-size="10">Ziel</text>
+  <text x="240" y="488" fill="#888888" font-family="monospace" font-size="10">Gateway</text>
+  <text x="380" y="488" fill="#888888" font-family="monospace" font-size="10">Interface</text>
+  <text x="100" y="505" fill="#FFB347" font-family="monospace" font-size="10">10.0.0.0/24</text>
+  <text x="240" y="505" fill="#FFB347" font-family="monospace" font-size="10">directly</text>
+  <text x="380" y="505" fill="#FFB347" font-family="monospace" font-size="10">eth1 (LAN 2)</text>
+  <text x="100" y="519" fill="#CCCCCC" font-family="monospace" font-size="10">192.168.1.0/24</text>
+  <text x="240" y="519" fill="#CCCCCC" font-family="monospace" font-size="10">directly</text>
+  <text x="380" y="519" fill="#CCCCCC" font-family="monospace" font-size="10">eth0 (LAN 1)</text>
+  <text x="100" y="533" fill="#CCCCCC" font-family="monospace" font-size="10">0.0.0.0/0</text>
+  <text x="240" y="533" fill="#CCCCCC" font-family="monospace" font-size="10">ISP-Router</text>
+  <text x="380" y="533" fill="#CCCCCC" font-family="monospace" font-size="10">eth2</text>
+  <text x="590" y="500" fill="#4ADE80" font-family="monospace" font-size="11">→ Match!</text>
+  <rect x="35" y="565" width="830" height="145" fill="#1E3A5F" stroke="#4A9EFF" rx="5" stroke-width="1"/>
+  <text x="50" y="585" fill="#FFB347" font-family="monospace" font-size="13" font-weight="bold">Schritt 3: Neuer Frame für LAN 2</text>
+  <text x="70" y="610" fill="#CCCCCC" font-family="monospace" font-size="12">✓ ARP für 10.0.0.5 → Server MAC: CC:CC:CC:CC:CC:CC</text>
+  <text x="70" y="630" fill="#CCCCCC" font-family="monospace" font-size="12">✓ Neuen Ethernet-Header: Dst CC:CC, Src DD:DD (Router eth1)</text>
+  <text x="70" y="650" fill="#CCCCCC" font-family="monospace" font-size="12">✓ EtherType: 0x0800</text>
+  <text x="70" y="670" fill="#CCCCCC" font-family="monospace" font-size="12">✓ Neue FCS berechnen</text>
+  <rect x="35" y="720" width="830" height="100" fill="#1E3A5F" stroke="#4A9EFF" rx="5" stroke-width="1"/>
+  <text x="50" y="740" fill="#FFB347" font-family="monospace" font-size="14" font-weight="bold">VERSAND auf LAN 2 (10.0.0.0/24):</text>
+  <rect x="50" y="755" width="800" height="40" fill="#3D3D3D" stroke="#666666" rx="3"/>
+  <rect x="50" y="760" width="70" height="30" fill="#4A9EFF" stroke="#333333" rx="2" fill-opacity="0.3" stroke-width="1"/>
+  <text x="85" y="780" fill="#CCCCCC" font-family="monospace" font-size="11" text-anchor="middle">CC:CC</text>
+  <rect x="120" y="760" width="70" height="30" fill="#9B59B6" stroke="#333333" rx="2" fill-opacity="0.3" stroke-width="1"/>
+  <text x="155" y="780" fill="#CCCCCC" font-family="monospace" font-size="11" text-anchor="middle">DD:DD</text>
+  <rect x="190" y="760" width="70" height="30" fill="#2ECC71" stroke="#333333" rx="2" fill-opacity="0.3" stroke-width="1"/>
+  <text x="225" y="780" fill="#CCCCCC" font-family="monospace" font-size="11" text-anchor="middle">0x0800</text>
+  <rect x="260" y="760" width="420" height="30" fill="#F39C12" stroke="#333333" rx="2" fill-opacity="0.3" stroke-width="1"/>
+  <text x="470" y="780" fill="#CCCCCC" font-family="monospace" font-size="11" text-anchor="middle">IP-Paket (TTL=63)</text>
+  <rect x="680" y="760" width="60" height="30" fill="#E74C3C" stroke="#333333" rx="2" fill-opacity="0.3" stroke-width="1"/>
+  <text x="710" y="780" fill="#CCCCCC" font-family="monospace" font-size="11" text-anchor="middle">FCS'</text>
+  <text x="50" y="810" fill="#4ADE80" font-family="monospace" font-size="11" font-weight="bold">WICHTIG: IP-Adressen bleiben unverändert! Nur MAC-Adressen und TTL ändern sich.</text>
+</svg>
