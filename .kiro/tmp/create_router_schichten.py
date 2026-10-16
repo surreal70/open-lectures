@@ -34,7 +34,7 @@ def svg_to_string(root):
 
 def create_router_schichten():
     width = 700
-    height = 340
+    height = 380
     
     root = create_svg_root(width, height)
     
@@ -61,7 +61,7 @@ def create_router_schichten():
     title.text = "ROUTER – SCHICHTENVERARBEITUNG"
     
     # Main container
-    etree.SubElement(root, "rect", x="20", y="50", width="660", height="275",
+    etree.SubElement(root, "rect", x="20", y="50", width="660", height="315",
                      fill=box_fill, stroke=box_stroke, rx="8",
                      attrib={"stroke-width": "2"})
     
@@ -80,27 +80,24 @@ def create_router_schichten():
     etree.SubElement(root, "line", x1="35", y1="85", x2="665", y2="85",
                      stroke="#444444", attrib={"stroke-width": "1"})
     
-    # Layers data
+    # Layers data - with individual heights
     layers = [
-        ("Anwendung", not_processed_fill, "░░░░░░░░░░░░░░░░░░░░", "Nicht verarbeitet", False),
-        ("Transport", not_processed_fill, "░░░░░░░░░░░░░░░░░░░░", "Nicht verarbeitet", False),
-        ("Internet", layer3_fill, "✓ Routing-Entscheidung", "Layer 3", True),
-        ("Netzzugang", processed_fill, "✓ MAC-Adressen ändern\n✓ Frame neu aufbauen", "Layer 1-2", True),
+        ("Anwendung", not_processed_fill, ["░░░░░░░░░░░░░░░░░░░░"], "Nicht verarbeitet", False, 40),
+        ("Transport", not_processed_fill, ["░░░░░░░░░░░░░░░░░░░░"], "Nicht verarbeitet", False, 40),
+        ("Internet", layer3_fill, ["✓ Routing-Entscheidung"], "Layer 3", True, 40),
+        ("Netzzugang", processed_fill, ["✓ MAC-Adressen ändern", "✓ Frame neu aufbauen"], "Layer 1-2", True, 55),
     ]
     
-    y_start = 100
-    row_height = 50
+    y = 95
     
-    for i, (name, fill, action, status, processed) in enumerate(layers):
-        y = y_start + i * row_height
-        
+    for name, fill, action_lines, status, processed, row_height in layers:
         # Row background
-        etree.SubElement(root, "rect", x="35", y=str(y), width="630", height=str(row_height - 5),
+        etree.SubElement(root, "rect", x="35", y=str(y), width="630", height=str(row_height),
                          fill=fill, stroke="#444444", rx="4",
                          attrib={"stroke-width": "1"})
         
-        # Layer name
-        txt = etree.SubElement(root, "text", x="50", y=str(y + 28),
+        # Layer name - vertically centered
+        txt = etree.SubElement(root, "text", x="50", y=str(y + row_height//2 + 5),
                                fill=text_color, attrib={
                                    "font-family": "monospace",
                                    "font-size": "13",
@@ -110,34 +107,35 @@ def create_router_schichten():
         
         # Action/description
         if processed:
-            lines = action.split('\n')
-            for j, line in enumerate(lines):
-                txt = etree.SubElement(root, "text", x="200", y=str(y + 22 + j * 16),
+            for j, line in enumerate(action_lines):
+                line_y = y + 18 + j * 18 if len(action_lines) > 1 else y + row_height//2 + 5
+                txt = etree.SubElement(root, "text", x="200", y=str(line_y),
                                        fill=check_color, attrib={
                                            "font-family": "monospace",
                                            "font-size": "12"
                                        })
                 txt.text = line
         else:
-            # Strikethrough pattern for not processed
-            txt = etree.SubElement(root, "text", x="200", y=str(y + 28),
+            txt = etree.SubElement(root, "text", x="200", y=str(y + row_height//2 + 5),
                                    fill=not_processed_pattern, attrib={
                                        "font-family": "monospace",
                                        "font-size": "12"
                                    })
-            txt.text = action
+            txt.text = action_lines[0]
         
-        # Status
+        # Status - vertically centered
         status_color = check_color if processed else "#888888"
-        txt = etree.SubElement(root, "text", x="480", y=str(y + 28),
+        txt = etree.SubElement(root, "text", x="480", y=str(y + row_height//2 + 5),
                                fill=status_color, attrib={
                                    "font-family": "monospace",
                                    "font-size": "12"
                                })
         txt.text = status
+        
+        y += row_height + 5
     
     # Note at bottom
-    note_y = 270
+    note_y = 310
     etree.SubElement(root, "rect", x="35", y=str(note_y), width="630", height="45",
                      fill="#2A2A2A", stroke=warning_color, rx="4",
                      attrib={"stroke-width": "1"})
