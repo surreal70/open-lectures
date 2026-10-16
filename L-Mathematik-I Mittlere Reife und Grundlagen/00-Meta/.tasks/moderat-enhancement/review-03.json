@@ -1,0 +1,7 @@
+{
+  "verdict": "CHANGES_REQUESTED",
+  "findings": [
+    "Kapitel 03 (Bruchrechnung) wurde noch nicht mit dem Moderat-Enhancement bearbeitet. Alle 13 Dateien haben Timestamps vom 15.10.2026 und wurden seit der initialen Erstellung nicht modifiziert. Der Coder muss den vollständigen Moderat-Enhancement-Durchlauf für dieses Kapitel durchführen."
+  ],
+  "reviewDoc": "/media/andhue/Wissen/open-lectures/L-Mathematik-I Mittlere Reife und Grundlagen/00-Meta/.tasks/moderat-enhancement/review-doc-03.md"
+}

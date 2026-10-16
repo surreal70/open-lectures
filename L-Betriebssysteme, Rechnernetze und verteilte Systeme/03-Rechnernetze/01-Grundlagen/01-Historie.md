@@ -81,20 +81,11 @@ Lange bevor es elektronische Netzwerke gab, entwickelten Menschen verschiedene M
 - **Informationstiefe:** Mittel – Buchstaben und Wörter möglich
 - **Voraussetzung:** Sichtverbindung, Stationsnetzwerk
 
-```
-        Station A          Station B          Station C
-           ╔╗                 ╔╗                 ╔╗
-          ═╬═               ═╬═               ═╬═
-           ║                  ║                  ║
-        ───┴───           ───┴───           ───┴───
-           │                  │                  │
-        10-30 km          10-30 km          10-30 km
-        
-    Chappe-Telegraf (Frankreich, 1794):
-    - 556 Stationen in Frankreich
-    - Paris-Toulon (800 km) in 20 Minuten
-    - 196 verschiedene Stellungen = ca. 8 Bit pro Symbol
-```
+![[optische-telegrafie-chappe.png]]
+*<span class="fig-id">03-01-01-optische-telegrafie-chappe</span>: Schematische Darstellung einer Chappe-Telegrafenlinie mit drei Stationen.*
+
+![[chappe-telegraf-rees-cyclopaedia.png]]
+*<span class="fig-id">03-01-01-chappe-telegraf-rees-cyclopaedia</span>: Historische Darstellung des Chappe-Telegrafen aus Rees's Cyclopaedia (frühes 19. Jh.). Quelle: Wikimedia Commons, Public Domain.*
 
 > [!beispiel] Parallele zur Netzwerktechnik
 > Der optische Telegraf war das erste echte **Weitverkehrsnetz mit Routing**: Nachrichten wurden von Station zu Station weitergeleitet. Das System hatte bereits **Adressierung** (Zielstation), **Fehlerkorrektur** (Wiederholung bei Missverständnis) und **Priorisierung** (militärische Nachrichten zuerst).
@@ -203,14 +194,18 @@ Das ARPANET gilt als Vorläufer des heutigen Internets:
 - Verwendete zunächst **NCP**, später **TCP/IP** (ab 1983)
 - Dezentrale Struktur – überlebt Ausfälle einzelner Knoten
 
-```
-   UCLA ─────── SRI
-     │           │
-     │           │
-   UCSB ─────── Utah
+![[arpanet-erste-knoten.png]]
+*<span class="fig-id">03-01-01-arpanet-erste-knoten</span>: Die ersten vier ARPANET-Knoten im Dezember 1969.*
 
-   Die ersten vier ARPANET-Knoten (1969)
-```
+| Abkürzung | Vollständiger Name | Standort |
+|-----------|-------------------|----------|
+| **UCLA** | University of California, Los Angeles | Los Angeles, Kalifornien |
+| **SRI** | Stanford Research Institute | Menlo Park, Kalifornien |
+| **UCSB** | University of California, Santa Barbara | Santa Barbara, Kalifornien |
+| **Utah** | University of Utah | Salt Lake City, Utah |
+
+![[A_sketch_of_the_ARPANET_in_December_1969.png]]
+*<span class="fig-id">03-01-01-arpanet-sketch-1969</span>: Originale Handskizze der ARPANET-Topologie vom Dezember 1969. Quelle: Wikimedia Commons, Public Domain.*
 
 ### Ethernet (1977)
 
@@ -222,22 +217,8 @@ Entwickelt bei **XEROX PARC** als „Distributed Packet Switching":
 
 ## Zeitleiste der Netzwerkentwicklung
 
-```
-1960        1970        1980        1990        2000        2010        2020
-  │           │           │           │           │           │           │
-  ├── RS-232 (1964)
-  │           ├── ARPANET (1969)
-  │           ├── ALOHA (1970)
-  │           │           ├── Ethernet (1977)
-  │           │           ├── TCP/IP Standard (1983)
-  │           │           │           ├── WWW (1991)
-  │           │           │           ├── 100 Mbit Ethernet (1995)
-  │           │           │           │           ├── Gigabit Ethernet (1998)
-  │           │           │           │           ├── WiFi 802.11 (1999)
-  │           │           │           │           │           ├── 10 GbE (2002)
-  │           │           │           │           │           ├── WiFi 6 (2019)
-  │           │           │           │           │           ├── 400 GbE (2017)
-```
+![[netzwerk-zeitleiste.png]]
+*<span class="fig-id">03-01-01-netzwerk-zeitleiste</span>: Meilensteine der Netzwerkentwicklung von 1960 bis heute.*
 
 ## Zusammenfassung
 
