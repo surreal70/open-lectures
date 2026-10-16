@@ -16,7 +16,7 @@ tags:
   - zunahme
   - abnahme
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 ---
 
 # Prozentuale Änderungen
@@ -30,6 +30,20 @@ modified: 2026-10-13
 ## Überblick
 
 Prozentuale Änderungen beschreiben, um wie viel Prozent ein Wert zu- oder abnimmt. Dies ist fundamental für Preisänderungen, Wachstum, Rabatte und viele weitere Anwendungen.
+
+### Alltagsrelevanz
+
+Prozentuale Änderungen begegnen uns überall:
+- **Wirtschaft:** Inflation (z.B. „3,2% Preissteigerung"), Wirtschaftswachstum, Börsenkurse
+- **Gesundheit:** Gewichtsveränderung, Heilungsraten, Wirksamkeit von Medikamenten
+- **Umwelt:** Bevölkerungswachstum, CO₂-Reduktionsziele, Artenrückgang
+- **Technik:** Leistungssteigerung von Computern, Energieeinsparung, Effizienzverbesserung
+
+Das Verständnis prozentualer Änderungen ist essentiell, um Nachrichten, Statistiken und Werbung kritisch einordnen zu können.
+
+### Zunahme vs. Abnahme: Die Richtung der Änderung
+
+Bei einer Zunahme wird etwas größer, bei einer Abnahme kleiner. Mathematisch drücken wir das durch positive und negative Vorzeichen oder durch unterschiedliche Faktoren aus.
 
 ## Grundbegriffe
 
@@ -114,7 +128,7 @@ Das negative Vorzeichen zeigt eine **Abnahme** von 20%.
 
 ### Aufeinanderfolgende Änderungen
 
-> [!warning] Wichtig
+> [!warning] **Häufiger Fehler: Prozente addieren**
 > Aufeinanderfolgende Prozentänderungen werden **nicht addiert**, sondern **multipliziert**!
 
 **Beispiel:** Erst +20%, dann −20%
@@ -123,6 +137,21 @@ $$100 \times 1,20 = 120$$
 $$120 \times 0,80 = 96$$
 
 **Ergebnis:** 96 (nicht 100!)
+
+### Warum heben sich +20% und −20% nicht auf?
+
+Das ist eine der wichtigsten Erkenntnisse der Prozentrechnung und gleichzeitig eine häufige Fehlerquelle. Der Grund: Die beiden Prozentangaben beziehen sich auf **unterschiedliche Grundwerte**!
+
+- +20% bezieht sich auf 100 → ergibt 120
+- −20% bezieht sich jetzt auf 120 (nicht auf 100!) → ergibt 96
+
+20% von 120 sind eben mehr als 20% von 100. Deshalb endet man unter dem Ausgangswert.
+
+> [!tip] **Anschauliche Erklärung**
+> Stell dir einen Luftballon vor:
+> - Du bläst ihn um 50% auf → er ist jetzt 1,5-mal so groß
+> - Dann lässt du 50% der Luft ab → aber 50% von dem größeren Ballon!
+> - Der Ballon ist jetzt nur noch 75% seiner ursprünglichen Größe
 
 ### Formel für mehrfache Änderungen
 

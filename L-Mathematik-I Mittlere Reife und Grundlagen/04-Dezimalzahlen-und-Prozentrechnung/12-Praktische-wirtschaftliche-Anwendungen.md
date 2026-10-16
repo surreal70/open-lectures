@@ -16,7 +16,7 @@ tags:
   - wirtschaft
   - alltag
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 ---
 
 # Praktische wirtschaftliche Anwendungen
@@ -29,8 +29,22 @@ modified: 2026-10-13
 
 ## Überblick
 
-Dieses Kapitel verbindet alle erlernten Konzepte der Prozentrechnung in realistischen
-Anwendungsszenarien aus Wirtschaft und Alltag.
+Dieses Kapitel verbindet alle erlernten Konzepte der Prozentrechnung in realistischen Anwendungsszenarien aus Wirtschaft und Alltag.
+
+### Vom Klassenzimmer in die Realität
+
+Die wahre Stärke der Prozentrechnung zeigt sich in der praktischen Anwendung. In diesem Kapitel wenden wir alles Gelernte auf komplexere, lebensnahe Probleme an:
+
+- **Gehaltsabrechnungen:** Brutto, Netto, Steuern und Sozialabgaben verstehen
+- **Kreditentscheidungen:** Angebote vergleichen und Gesamtkosten berechnen
+- **Geschäftliche Kalkulationen:** Vom Einkaufspreis zum Verkaufspreis
+- **Investitionsentscheidungen:** Renditen bewerten und vergleichen
+
+Diese Fähigkeiten sind nicht nur prüfungsrelevant, sondern essenziell für finanzielle Selbstständigkeit im Erwachsenenleben.
+
+### Warum Finanzkompetenz wichtig ist
+
+Studien zeigen, dass viele Erwachsene Schwierigkeiten mit grundlegenden Finanzberechnungen haben – und dadurch schlechte Entscheidungen bei Krediten, Versicherungen oder Geldanlagen treffen. Wer die Mathematik hinter Finanzen versteht, kann bessere Entscheidungen treffen, Fallen erkennen und langfristig Geld sparen.
 
 ## Gehaltsberechnungen
 
@@ -41,6 +55,21 @@ Anwendungsszenarien aus Wirtschaft und Alltag.
 | Bruttogehalt | Gehalt vor Abzügen |
 | Nettogehalt | Auszahlungsbetrag nach Abzügen |
 | Abzüge | Steuern, Sozialversicherung |
+
+### Was wird vom Brutto abgezogen?
+
+In Deutschland werden vom Bruttogehalt verschiedene Beiträge abgezogen:
+
+- **Lohnsteuer:** Je nach Steuerklasse und Verdienst (progressive Besteuerung)
+- **Solidaritätszuschlag:** 5,5% der Lohnsteuer (nur bei höheren Einkommen)
+- **Kirchensteuer:** 8-9% der Lohnsteuer (falls kirchensteuerpflichtig)
+- **Krankenversicherung:** ca. 7,3% + Zusatzbeitrag
+- **Pflegeversicherung:** ca. 1,7% (Kinderlose: 2,1%)
+- **Rentenversicherung:** ca. 9,3%
+- **Arbeitslosenversicherung:** ca. 1,3%
+
+> [!tip] **Faustregel für Berufseinsteiger**
+> Als grobe Orientierung: Bei einem durchschnittlichen Verdienst bleiben etwa 60-65% des Bruttogehalts als Netto übrig. Bei höheren Einkommen sinkt dieser Anteil durch die progressive Besteuerung.
 
 ### Beispielrechnung
 
@@ -58,11 +87,26 @@ $$G = \frac{2496}{1,04} = 2400 €$$
 
 ### Einfacher Ratenkredit
 
+Bei einem einfachen Ratenkredit werden die Zinsen einmalig auf die gesamte Laufzeit berechnet und dann gleichmäßig auf die Raten verteilt.
+
 **Aufgabe:** Kredit 12.000 €, 5% p.a., Laufzeit 3 Jahre.
 
 **Zinsen:** $12.000 \times 0,05 \times 3 = 1.800 €$
 **Gesamtrückzahlung:** $12.000 + 1.800 = 13.800 €$
 **Monatliche Rate:** $13.800 ÷ 36 = 383,33 €$
+
+> [!warning] **Häufiger Fehler: Effektivzins ignorieren**
+> Der **Nominalzins** ist nicht der einzige Kostenfaktor bei Krediten. Der **Effektivzins** berücksichtigt zusätzlich:
+> - Bearbeitungsgebühren
+> - Kontoführungsgebühren
+> - Restschuldversicherung
+> - Auszahlungskurs (bei Anleihen)
+> 
+> Beim Vergleich von Kreditangeboten immer den **effektiven Jahreszins** vergleichen – er ist gesetzlich vorgeschrieben und macht Angebote vergleichbar.
+
+### Annuitätendarlehen (Baufinanzierung)
+
+Bei der klassischen Baufinanzierung zahlt man konstante Monatsraten („Annuitäten"). Der Clou: Am Anfang besteht die Rate hauptsächlich aus Zinsen, am Ende hauptsächlich aus Tilgung. Die Restschuld sinkt, daher sinken auch die Zinsen – und der Tilgungsanteil steigt entsprechend.
 
 ## Preiskalkulationen
 

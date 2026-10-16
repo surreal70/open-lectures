@@ -15,7 +15,7 @@ tags:
   - prozentwert
   - berechnung
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 ---
 
 # Prozentwert
@@ -29,6 +29,16 @@ modified: 2026-10-13
 ## Überblick
 
 Der **Prozentwert (W)** ist der absolute Wert, der einem bestimmten Prozentsatz entspricht. Er gibt an, wie groß der konkrete Anteil vom Grundwert ist.
+
+### Alltagsrelevanz
+
+Die Berechnung des Prozentwerts begegnet uns täglich:
+- **Rabatte berechnen:** „20% Rabatt auf 80 €" – wie viel spare ich konkret?
+- **Trinkgeld geben:** „10% von 45 €" – wie viel Trinkgeld ist das?
+- **Steuern verstehen:** „19% MwSt. auf 100 €" – wie hoch ist die Steuer?
+- **Statistiken interpretieren:** „52% von 1000 Befragten" – wie viele Personen sind das?
+
+Die Fähigkeit, Prozentwerte schnell zu berechnen, ist eine der praktischsten mathematischen Fertigkeiten überhaupt.
 
 ## Definition und Formel
 
@@ -71,11 +81,23 @@ $$W = 160 \times \frac{25}{100} = 160 \times 0,25 = 40$$
 
 ### Weg 3: Kopfrechentricks
 
+Diese Methode ist besonders praktisch im Alltag, wenn kein Taschenrechner zur Hand ist.
+
 **Beispiel:** 15% von 80 €
 
 - 10% = 80 ÷ 10 = 8 €
 - 5% = 8 ÷ 2 = 4 €
 - 15% = 8 + 4 = **12 €**
+
+> [!tip] **Die wichtigsten Kopfrechen-Bausteine**
+> Merke dir diese einfachen Prozentsätze – aus ihnen kannst du fast jeden anderen zusammensetzen:
+> - **50%** = Hälfte (÷ 2)
+> - **25%** = Viertel (÷ 4)
+> - **10%** = Zehntel (÷ 10)
+> - **5%** = Halbes Zehntel (÷ 20 oder 10% ÷ 2)
+> - **1%** = Hundertstel (÷ 100)
+>
+> **Beispiel:** 35% = 25% + 10% oder 3 × 10% + 5%
 
 ### Weg 4: Bruchrechnung
 
@@ -186,6 +208,13 @@ $$W = 90 \times \frac{1}{3} = 30$$
 | Einheit vergessen | Einheit angeben (€, Stück, etc.) |
 | Komma falsch gesetzt | Dezimalzahl prüfen |
 | Vertauschung G und W | Frage genau lesen |
+
+> [!warning] **Häufiger Fehler: Division durch 100 vergessen**
+> Der häufigste Fehler ist, die Division durch 100 zu vergessen:
+> - **Falsch:** 15% von 80 = 80 × 15 = 1200 ✗
+> - **Richtig:** 15% von 80 = 80 × 15 ÷ 100 = 12 ✓
+> 
+> **Kontrollüberlegung:** 15% ist weniger als ein Fünftel (20%). Ein Fünftel von 80 wäre 16. Also muss 15% von 80 etwas weniger als 16 sein – nämlich 12, nicht 1200!
 
 ## Zusammenhänge
 

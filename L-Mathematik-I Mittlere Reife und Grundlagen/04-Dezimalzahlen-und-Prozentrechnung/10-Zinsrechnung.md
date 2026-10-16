@@ -16,7 +16,7 @@ tags:
   - kapital
   - finanzen
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 ---
 
 # Zinsrechnung
@@ -30,6 +30,20 @@ modified: 2026-10-13
 ## Überblick
 
 Die Zinsrechnung ist eine Anwendung der Prozentrechnung, bei der die Zeit als zusätzlicher Faktor berücksichtigt wird. Sie ist grundlegend für das Verständnis von Geldanlagen, Krediten und Finanzprodukten.
+
+### Historischer Hintergrund
+
+Die Idee, für geliehenes Geld eine Gebühr zu verlangen, ist uralt. Bereits im antiken Babylon (ca. 2000 v. Chr.) gab es Zinsen – damals allerdings oft in Form von Naturalien wie Getreide. Das Wort „Zins" stammt vom lateinischen „census" (Abgabe, Steuer).
+
+Im Mittelalter war das Verleihen von Geld gegen Zinsen in Europa zeitweise verboten (Zinsverbot der Kirche), was zur Entstehung des modernen Bankwesens in Italien führte. Heute sind Zinsen das zentrale Instrument der Geldpolitik und beeinflussen Wirtschaft, Immobilienpreise und unsere Sparentscheidungen.
+
+### Alltagsrelevanz
+
+Zinsen betreffen fast jeden:
+- **Sparen:** Was bringt ein Sparkonto, ein Festgeld, ein ETF?
+- **Kredite:** Was kostet ein Autokredit, eine Baufinanzierung?
+- **Dispositionskredit:** Wie teuer wird das Überziehen des Girokontos?
+- **Ratenkauf:** Lohnt sich die „0%-Finanzierung" wirklich?
 
 ## Grundbegriffe
 
@@ -85,6 +99,9 @@ $$Z = 3000 \times 0,06 \times \frac{4}{12} = 3000 \times 0,06 \times \frac{1}{3}
 $$Z_t = K \times \frac{p}{100} \times \frac{t}{360}$$
 
 wobei t = Anzahl der Tage (Bankjahr = 360 Tage)
+
+> [!note] **Warum 360 statt 365 Tage?**
+> Im kaufmännischen Bereich rechnet man traditionell mit 360 Tagen pro Jahr (12 Monate à 30 Tage). Diese Vereinfachung stammt aus der Zeit vor Taschenrechnern, als das Rechnen mit 360 deutlich einfacher war. In der Wissenschaft und bei manchen modernen Finanzprodukten wird dagegen mit 365 (oder 366) Tagen gerechnet – das nennt man dann „taggenaue Verzinsung".
 
 **Beispiel:** 5000 € für 45 Tage bei 4% p.a.
 $$Z = 5000 \times 0,04 \times \frac{45}{360} = 5000 \times 0,04 \times 0,125 = 25 €$$

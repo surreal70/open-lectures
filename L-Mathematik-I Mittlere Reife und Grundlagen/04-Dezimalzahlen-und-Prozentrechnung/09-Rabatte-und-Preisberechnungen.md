@@ -16,7 +16,7 @@ tags:
   - mehrwertsteuer
   - kaufmaennisch
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 ---
 
 # Rabatte und Preisberechnungen
@@ -30,6 +30,22 @@ modified: 2026-10-13
 ## Überblick
 
 Preisberechnungen mit Prozenten sind im kaufmännischen Alltag allgegenwärtig. Dieses Kapitel behandelt die wichtigsten Anwendungen: Rabatte, Mehrwertsteuer, Skonto und zusammengesetzte Berechnungen.
+
+### Historischer Kontext
+
+Das Konzept des Rabatts (vom italienischen „rabbattere" = abschlagen) entwickelte sich parallel zum Prozentsystem im mittelalterlichen Handel. Händler gewährten Preisnachlässe, um größere Abnahmemengen zu fördern, treue Kunden zu belohnen oder den Verkauf anzukurbeln.
+
+Die Mehrwertsteuer in ihrer heutigen Form wurde erstmals 1954 in Frankreich eingeführt und verbreitete sich dann weltweit. In Deutschland gibt es sie seit 1968. Das System besteuert nur die „Wertschöpfung" auf jeder Handelsstufe – daher der Name.
+
+### Alltagsrelevanz
+
+Kaum ein Einkauf kommt ohne Prozentrechnung aus:
+- **Rabattaktionen:** „30% auf alles!", „Nimm 3, zahl 2"
+- **Mehrwertsteuer:** Netto- vs. Bruttopreise, 7% vs. 19%
+- **Rechnungsstellung:** Skonto für schnelle Zahlung
+- **Preisvergleiche:** Grundpreise, Mengenrabatte
+
+Das Verständnis dieser Mechanismen schützt vor Fehleinkäufen und hilft, echte Schnäppchen von Marketing-Tricks zu unterscheiden.
 
 ## Rabatt
 
@@ -74,6 +90,14 @@ $$\text{Originalpreis} = \frac{56 \times 100}{70} = 80 €$$
 |------------|----------|
 | 19% | Regelsteuersatz (die meisten Waren) |
 | 7% | Ermäßigt (Lebensmittel, Bücher, etc.) |
+
+Der ermäßigte Steuersatz von 7% gilt für Güter des täglichen Bedarfs und kulturelle Produkte. Die Idee dahinter: Grundbedürfnisse sollen weniger besteuert werden als Luxusgüter.
+
+> [!note] **Besonderheiten der MwSt.**
+> - Restaurants: Essen zum Mitnehmen 7%, Essen vor Ort 19%
+> - Bücher: Immer 7%, auch E-Books (seit 2020)
+> - Zeitungen: Print 7%, digital variabel
+> - Hotel: Übernachtung 7%, Frühstück 19%
 
 ### Begriffe
 

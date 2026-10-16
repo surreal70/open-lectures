@@ -15,7 +15,7 @@ tags:
   - prozentsatz
   - berechnung
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 ---
 
 # Prozentsatz
@@ -29,6 +29,16 @@ modified: 2026-10-13
 ## Überblick
 
 Der **Prozentsatz (p%)** gibt das Verhältnis des Prozentwerts zum Grundwert in Prozent an. Er beantwortet die Frage: "Wie viel Prozent ist der Teil vom Ganzen?"
+
+### Alltagsrelevanz
+
+Die Berechnung von Prozentsätzen hilft uns, Verhältnisse einzuordnen und zu vergleichen:
+- **Testergebnisse:** „42 von 60 Punkten – welche Note ist das?" (70%)
+- **Preisentwicklung:** „Der Preis stieg von 80 auf 96 € – um wie viel Prozent?" (20%)
+- **Wahlergebnisse:** „320 von 800 Stimmen für Kandidat A" (40%)
+- **Qualitätskontrolle:** „3 defekte Teile von 500 produzierten" (0,6% Ausschuss)
+
+Die Angabe in Prozent macht unterschiedliche Größen vergleichbar: 42 von 60 Punkten (70%) ist eine bessere Leistung als 30 von 50 Punkten (60%), obwohl die absoluten Zahlen ähnlich klingen.
 
 ## Definition und Formel
 
@@ -163,6 +173,15 @@ Je nach Kontext sinnvoll runden:
 | Bei Änderungen: neuer Wert als Grundwert | Alter Wert ist der Grundwert |
 | ×100 vergessen | p = W/G × 100 |
 | Einheiten nicht beachtet | W und G müssen gleiche Einheit haben |
+
+> [!warning] **Häufiger Fehler: Falscher Grundwert bei Änderungen**
+> Bei der Frage „Um wie viel Prozent ist der Preis gestiegen?" ist der **alte** Preis der Grundwert, nicht der neue!
+> 
+> **Beispiel:** Preis steigt von 80 € auf 100 €
+> - **Falsch:** 20/100 × 100 = 20% ✗ (neuer Preis als Grundwert)
+> - **Richtig:** 20/80 × 100 = 25% ✓ (alter Preis als Grundwert)
+> 
+> **Merkregel:** Der Grundwert ist immer der **Ausgangswert**, von dem aus sich etwas verändert hat.
 
 ## Plausibilitätsprüfung
 

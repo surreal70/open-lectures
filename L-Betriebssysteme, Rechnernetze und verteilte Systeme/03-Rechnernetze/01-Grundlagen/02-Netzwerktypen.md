@@ -111,27 +111,8 @@ Ein spezialisiertes Netzwerk, das Tausende von Rechenknoten in einem Cluster ver
 | **Slingshot** | 200 Gbps | < 1 µs | Cray/HPE |
 | **NVIDIA NVLink** | 900 GB/s | - | GPU-zu-GPU |
 
-```
-┌──────────────────────────────────────────────────────────┐
-│           HPC-CLUSTER (vereinfacht)                      │
-├──────────────────────────────────────────────────────────┤
-│                                                          │
-│    ┌─────┐  ┌─────┐  ┌─────┐  ┌─────┐  ┌─────┐         │
-│    │Node1│  │Node2│  │Node3│  │Node4│  │Node5│  ...    │
-│    └──┬──┘  └──┬──┘  └──┬──┘  └──┬──┘  └──┬──┘         │
-│       │        │        │        │        │             │
-│    ═══╪════════╪════════╪════════╪════════╪═══          │
-│       │        │        │        │        │             │
-│    ┌──┴────────┴────────┴────────┴────────┴──┐         │
-│    │         InfiniBand Fabric               │         │
-│    │      (Fat-Tree / Dragonfly)             │         │
-│    └─────────────────────────────────────────┘         │
-│                                                          │
-│    Beispiel: Frontier (Oak Ridge) - 9.472 Knoten        │
-│    74 Exaflops, Slingshot-11 Interconnect               │
-│                                                          │
-└──────────────────────────────────────────────────────────┘
-```
+![[hpc-cluster-infiniband.png]]
+*<span class="fig-id">03-01-02-hpc-cluster-infiniband</span>: Vereinfachte Darstellung eines HPC-Clusters mit InfiniBand Fabric.*
 
 > [!info] RDMA - Remote Direct Memory Access
 > Bei RDMA kann ein Knoten direkt in den Speicher eines anderen schreiben, ohne dass dessen CPU beteiligt ist. Das reduziert Latenz drastisch und entlastet die CPU für Berechnungen.
@@ -169,24 +150,8 @@ Ein Netzwerk zur Kommunikation mit Raumsonden, Rovern und zukünftigen Kolonien 
 
 **Lösung: Delay-Tolerant Networking (DTN)**
 
-```
-STORE-AND-FORWARD (DTN Bundle Protocol):
-
-  Erde                    Mars-Orbiter              Mars-Rover
-    │                          │                         │
-    │──── Bundle ────────────►│                         │
-    │                          │ (speichert)            │
-    │                          │                         │
-    │                          │ (Kontakt möglich)      │
-    │                          │──── Bundle ───────────►│
-    │                          │                         │
-    │                          │◄─── ACK ───────────────│
-    │◄─── ACK ─────────────────│                         │
-    │                          │                         │
-    
-Nachrichten werden gespeichert, bis Weiterleitung möglich ist.
-Kein End-to-End-Pfad erforderlich!
-```
+![[dtn-store-forward.png]]
+*<span class="fig-id">03-01-02-dtn-store-forward</span>: DTN Bundle Protocol – Nachrichten werden gespeichert und weitergeleitet, wenn Kontakt möglich ist.*
 
 **Technologien:**
 - **DSN** (Deep Space Network): 3 Bodenstationen (Goldstone, Madrid, Canberra)
@@ -322,31 +287,15 @@ Ein WAN erstreckt sich über große geografische Distanzen (Länder, Kontinente)
 Das Internet ist das größte GAN – ein Netzwerk von Netzwerken.
 
 **Struktur:**
-```
-┌────────────────────────────────────────────────────────┐
-│                    INTERNET-HIERARCHIE                 │
-├────────────────────────────────────────────────────────┤
-│                                                        │
-│   Tier 1: Globale Backbone-Provider                   │
-│   ┌─────────┐    ┌─────────┐    ┌─────────┐          │
-│   │  AT&T   │────│  NTT    │────│ Level3  │          │
-│   └────┬────┘    └────┬────┘    └────┬────┘          │
-│        │              │              │                │
-│   Tier 2: Regionale/Nationale Provider               │
-│   ┌────┴────┐    ┌────┴────┐    ┌────┴────┐          │
-│   │ Telekom │    │ Vodafone│    │ Comcast │          │
-│   └────┬────┘    └────┬────┘    └────┬────┘          │
-│        │              │              │                │
-│   Tier 3: Lokale ISPs / Access Provider              │
-│   ┌────┴────┐    ┌────┴────┐    ┌────┴────┐          │
-│   │Local ISP│    │  1&1    │    │  o2     │          │
-│   └────┬────┘    └────┬────┘    └────┬────┘          │
-│        │              │              │                │
-│      ┌─┴─┐          ┌─┴─┐          ┌─┴─┐             │
-│      │LAN│          │LAN│          │LAN│  ← Endkunden│
-│      └───┘          └───┘          └───┘             │
-└────────────────────────────────────────────────────────┘
-```
+
+![[internet-hierarchie.png]]
+*<span class="fig-id">03-01-02-internet-hierarchie</span>: Hierarchische Struktur des Internets mit Tier 1, 2 und 3 Providern.*
+
+| Tier | Beschreibung | Beispiele |
+|------|--------------|-----------|
+| **Tier 1** | Globale Backbone-Provider, peeren untereinander kostenlos (Settlement-Free Peering) | AT&T, NTT, Lumen (Level3), Cogent |
+| **Tier 2** | Regionale/nationale Provider, kaufen Transit von Tier 1, peeren mit anderen Tier 2 | Deutsche Telekom, Vodafone, Comcast |
+| **Tier 3** | Lokale ISPs und Access-Provider, kaufen Transit von Tier 1 oder 2 | Lokale Stadtwerke, 1&1, o2 |
 
 ## Klassifikation nach Funktion
 
@@ -408,18 +357,8 @@ Kombination aus Client-Server und P2P-Elementen.
 
 Sichere Verbindung über öffentliche Netze:
 
-```
-┌────────────┐                              ┌────────────┐
-│  Homeoffice│                              │Firmennetz  │
-│            │                              │            │
-│  ┌──────┐  │    ┌─────────────────┐      │  ┌──────┐  │
-│  │Client├──┼────┤    INTERNET     ├──────┼──┤Server│  │
-│  └──────┘  │    │   ╔═══════════╗ │      │  └──────┘  │
-│            │    │   ║VPN-Tunnel ║ │      │            │
-│            │    │   ╚═══════════╝ │      │            │
-└────────────┘    └─────────────────┘      └────────────┘
-                  Verschlüsselte Verbindung
-```
+![[vpn-tunnel.png]]
+*<span class="fig-id">03-01-02-vpn-tunnel</span>: VPN-Tunnel – verschlüsselte Verbindung durch das öffentliche Internet.*
 
 ## Kommunikationsarten in Netzwerken
 
@@ -432,16 +371,8 @@ Die Art der Datenübertragung hängt von der Anzahl der Empfänger ab:
 | **Multicast** | 1:Gruppe | An Abonnenten | IPTV, Video-Konferenz |
 | **Anycast** | 1:nächster | An nächsten aus Gruppe | DNS-Root-Server, CDN |
 
-```
-UNICAST           BROADCAST         MULTICAST         ANYCAST
-   S                  S                 S                S
-   │                  │                 │                │
-   ▼               ┌──┼──┐           ┌──┼──┐            ▼
-   E               ▼  ▼  ▼           ▼  │  │         E (nearest)
-               E₁  E₂  E₃           E₁ E₂ E₃        E₁ E₂ E₃
-                                    (Gruppe)        (alle gleiche
-                                                     Adresse)
-```
+![[kommunikationsarten.png]]
+*<span class="fig-id">03-01-02-kommunikationsarten</span>: Vergleich der vier Kommunikationsarten: Unicast, Broadcast, Multicast und Anycast.*
 
 ## Zusammenfassung
 

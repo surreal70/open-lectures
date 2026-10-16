@@ -15,7 +15,7 @@ tags:
   - rechnen
   - grundrechenarten
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 ---
 
 # Rechnen mit Dezimalzahlen
@@ -29,6 +29,12 @@ modified: 2026-10-13
 ## Überblick
 
 Die Grundrechenarten mit Dezimalzahlen folgen den bekannten Regeln, erfordern aber besondere Aufmerksamkeit bei der Kommastellung. Dieses Kapitel vermittelt die systematische Anwendung der vier Grundrechenarten.
+
+### Warum das Komma so wichtig ist
+
+Beim Rechnen mit Dezimalzahlen ist die korrekte Platzierung des Kommas entscheidend. Ein falsch gesetztes Komma kann das Ergebnis um den Faktor 10, 100 oder mehr verfälschen. In der Praxis kann das gravierende Folgen haben – etwa wenn bei einer Medikamentendosierung 0,5 mg statt 5 mg berechnet wird, oder wenn eine Rechnung 150,00 € statt 15,00 € beträgt.
+
+Die gute Nachricht: Die Regeln sind logisch und konsistent. Wer sie einmal verstanden hat, kann sicher mit Dezimalzahlen rechnen.
 
 ## Addition und Subtraktion
 
@@ -72,12 +78,42 @@ Die Grundrechenarten mit Dezimalzahlen folgen den bekannten Regeln, erfordern ab
 | 12,45 + 3,7 = 12,82 | 12,45 + 3,70 = 16,15 |
 | Kommas nicht ausgerichtet | Kommas untereinander |
 
+> [!warning] **Häufiger Fehler: Stellen verwechseln**
+> Bei der Addition 12,45 + 3,7 schreiben manche:
+> ```
+>    12,45
+> +   3,7
+> ────────
+>    12,82  ✗ FALSCH!
+> ```
+> Das Problem: Die 7 wurde zu den Hundertsteln addiert statt zu den Zehnteln.
+> 
+> **Richtig:** Erst auf gleiche Stellenzahl bringen:
+> ```
+>    12,45
+> +   3,70
+> ────────
+>    16,15  ✓ RICHTIG!
+> ```
+
+> [!tip] **Praktischer Tipp**
+> Schreibe immer zuerst alle Zahlen untereinander, mit dem Komma exakt ausgerichtet. Fülle dann fehlende Stellen mit Nullen auf, bevor du zu rechnen beginnst.
+
 ## Multiplikation
 
 ### Grundregel
 
 > [!tip] Kommaregel bei Multiplikation
 > Die Anzahl der Nachkommastellen im Ergebnis = Summe der Nachkommastellen beider Faktoren
+
+### Warum funktioniert diese Regel?
+
+Die Regel hat einen einfachen mathematischen Hintergrund: Wenn wir z.B. 2,5 × 1,4 rechnen, können wir das so verstehen:
+- 2,5 = 25 Zehntel = 25/10
+- 1,4 = 14 Zehntel = 14/10
+- Also: (25/10) × (14/10) = 350/100 = 3,50
+
+Wir multiplizieren die Zahlen ohne Komma (25 × 14 = 350) und teilen dann durch so viele Zehnerpotenzen, wie wir Nachkommastellen hatten (10 × 10 = 100, also 2 Stellen).
 
 ### Beispiel 1: Dezimalzahl × Dezimalzahl
 
@@ -111,6 +147,8 @@ Die Grundrechenarten mit Dezimalzahlen folgen den bekannten Regeln, erfordern ab
 
 ### Multiplikation mit Zehnerpotenzen
 
+Das Verschieben des Kommas bei Multiplikation/Division mit Zehnerpotenzen ist einer der praktischsten Rechentricks überhaupt. In der Wissenschaft, Technik und im Alltag (z.B. beim Umrechnen von Einheiten) wird er ständig angewendet.
+
 | Operation | Regel | Beispiel |
 |-----------|-------|----------|
 | × 10 | Komma 1 Stelle nach rechts | 2,34 × 10 = 23,4 |
@@ -118,6 +156,12 @@ Die Grundrechenarten mit Dezimalzahlen folgen den bekannten Regeln, erfordern ab
 | × 1000 | Komma 3 Stellen nach rechts | 2,34 × 1000 = 2340 |
 | × 0,1 | Komma 1 Stelle nach links | 2,34 × 0,1 = 0,234 |
 | × 0,01 | Komma 2 Stellen nach links | 2,34 × 0,01 = 0,0234 |
+
+> [!tip] **Merkregel: Größer oder kleiner?**
+> - Multiplizieren mit Zahlen > 1: Das Ergebnis wird **größer** → Komma nach rechts
+> - Multiplizieren mit Zahlen < 1: Das Ergebnis wird **kleiner** → Komma nach links
+> 
+> Diese Überlegung hilft auch zur Kontrolle: Wenn du 5,2 × 0,1 rechnest und 52 herausbekommst, stimmt etwas nicht – das Ergebnis müsste kleiner als 5,2 sein!
 
 ## Division
 
@@ -173,6 +217,8 @@ Die Grundrechenarten mit Dezimalzahlen folgen den bekannten Regeln, erfordern ab
 - Schnelle Schätzung im Alltag
 - Erkennen von Eingabefehlern beim Taschenrechner
 
+Im Zeitalter von Taschenrechnern und Computern mag Überschlagsrechnung überflüssig erscheinen – doch das Gegenteil ist der Fall. Gerade weil wir Ergebnisse oft nicht mehr selbst nachrechnen, ist es umso wichtiger, Fehler erkennen zu können. Ein vertippter Wert oder ein falsch gesetztes Komma fällt nur auf, wenn wir eine ungefähre Vorstellung vom erwarteten Ergebnis haben.
+
 ### Methode
 
 1. Zahlen auf "runde" Werte runden
@@ -188,6 +234,13 @@ Die Grundrechenarten mit Dezimalzahlen folgen den bekannten Regeln, erfordern ab
 **Exakt:** 4,87 × 2,13 = 10,3731
 
 **Kontrolle:** 10,37 ≈ 10 ✓
+
+> [!tip] **Überschlag im Alltag**
+> Im Supermarkt kannst du mit Überschlagsrechnung schnell prüfen, ob du genug Geld dabei hast:
+> - 3,49 € ≈ 3,50 €
+> - 2,99 € ≈ 3,00 €
+> - 4,79 € ≈ 5,00 €
+> - **Summe:** ca. 11,50 € – passt ein 20-€-Schein? Ja, mit Reserve!
 
 ## Rechengesetze
 

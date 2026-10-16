@@ -15,7 +15,7 @@ tags:
   - prozentrechnung
   - grundlagen
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 ---
 
 # Einführung in die Prozentrechnung
@@ -29,6 +29,19 @@ modified: 2026-10-13
 ## Überblick
 
 Die Prozentrechnung ist eines der wichtigsten mathematischen Werkzeuge im Alltag. Das Wort "Prozent" stammt aus dem Lateinischen "pro centum" und bedeutet "von Hundert". Prozente ermöglichen den einfachen Vergleich von Anteilen unabhängig von der absoluten Größe.
+
+### Historischer Ursprung
+
+Die Prozentrechnung entwickelte sich im Mittelalter aus den Bedürfnissen des Handels. Italienische Kaufleute im 15. Jahrhundert begannen, Gewinne und Verluste einheitlich als „Teile von Hundert" anzugeben, um Geschäfte vergleichbar zu machen. Das Symbol „%" entwickelte sich aus der italienischen Abkürzung „per cento" (p cento → p/c → pc → %), die im Laufe der Jahrhunderte immer weiter vereinfacht wurde.
+
+Der große Vorteil dieser Normierung: Ob ein Händler 50 von 200 Goldstücken Gewinn machte oder 250 von 1000 – in Prozent ausgedrückt (25%) sind beide Gewinne sofort vergleichbar.
+
+### Warum Prozente so nützlich sind
+
+Prozente ermöglichen uns, Verhältnisse unabhängig von der absoluten Größe zu vergleichen:
+- „30 von 150 Schülern" vs. „200 von 1000 Einwohnern" → beide sind 20%
+- Preissteigerungen verschiedener Produkte werden vergleichbar
+- Wahlergebnisse, Statistiken und Risiken werden anschaulich
 
 ## Der Begriff "Prozent"
 
@@ -72,6 +85,9 @@ Der **Grundwert** ist die Bezugsgröße, auf die sich die Prozentangabe bezieht.
 - Der Originalpreis einer Ware
 - Die Gesamtzahl der Schüler
 - Das Bruttogehalt
+
+> [!tip] **Merkregel: Der Grundwert ist das Ganze**
+> Der Grundwert ist immer das, wovon du einen Teil berechnest. Wenn du fragst „25% *wovon*?", dann ist die Antwort auf „wovon" der Grundwert.
 
 ### Prozentsatz (p%)
 
@@ -118,6 +134,14 @@ Der **Prozentwert** ist das Ergebnis der Prozentrechnung – der tatsächliche A
 **Prozent → Bruch:** Prozent als Zähler, 100 als Nenner, dann kürzen
 - 25% = 25/100 = 1/4
 - 60% = 60/100 = 3/5
+
+> [!tip] **Merkregel: Prozent = „durch Hundert"**
+> Das Wort „Prozent" bedeutet wörtlich „pro Hundert" oder „durch Hundert". Daher: Um von Prozent zur Dezimalzahl zu kommen, teile durch 100 (verschiebe das Komma um 2 Stellen nach links).
+
+> [!warning] **Häufiger Fehler: Umrechnungsrichtung verwechseln**
+> Viele verwechseln, wann man mal 100 und wann geteilt durch 100 rechnet:
+> - 25% → 0,25: durch 100 (die Zahl wird kleiner, Prozent verschwindet)
+> - 0,25 → 25%: mal 100 (die Zahl wird größer, Prozent erscheint)
 
 ## Die Grundformeln
 

@@ -15,7 +15,7 @@ tags:
   - runden
   - genauigkeit
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 ---
 
 # Rundungsregeln
@@ -29,6 +29,19 @@ modified: 2026-10-13
 ## Überblick
 
 Runden ist das Ersetzen einer Zahl durch einen Näherungswert mit weniger Stellen. Es dient der Vereinfachung von Zahlen und der Darstellung sinnvoller Genauigkeit.
+
+### Warum runden wir überhaupt?
+
+Im Alltag und in der Wissenschaft stoßen wir ständig auf Situationen, in denen exakte Werte entweder nicht nötig oder nicht sinnvoll sind:
+
+- **Praktikabilität:** Niemand bezahlt 12,4873 € – wir runden auf Cent (12,49 €)
+- **Messgenauigkeit:** Ein Lineal kann nicht auf Tausendstel Millimeter genau sein
+- **Kommunikation:** „Etwa 3 Millionen Menschen" ist verständlicher als „2.987.432 Menschen"
+- **Berechnung:** Für Überschlagsrechnungen runden wir auf handliche Werte
+
+### Geschichte des Rundens
+
+Die Notwendigkeit des Rundens entstand mit der Einführung der Dezimalzahlen. Schon Simon Stevin erkannte im 16. Jahrhundert, dass praktische Rechnungen nur eine begrenzte Genauigkeit erfordern. Die heute üblichen Rundungsregeln wurden im 19. Jahrhundert standardisiert, als Wissenschaft und Handel zunehmend präzise Berechnungen erforderten.
 
 ## Grundregeln des Rundens
 
@@ -97,9 +110,13 @@ Die **erste wegfallende Ziffer** (rechts von der Rundungsstelle) bestimmt die Ri
 
 **Beispiel:** 2,5 → 3 (nicht 2)
 
+### Kaufmännisches Runden bei der 5
+
+In der Schule runden wir bei 5 immer auf. Im kaufmännischen und wissenschaftlichen Bereich gibt es jedoch auch die Regel des **„Banker's Rounding"** (Rundung zur geraden Zahl): Bei genau 5 wird zur nächsten geraden Zahl gerundet, um systematische Verzerrungen zu vermeiden. Beispiel: 2,5 → 2, aber 3,5 → 4. Für Schulprüfungen gilt aber: **Bei 5 immer aufrunden!**
+
 ### Kettenrunden (schrittweises Runden)
 
-> [!warning] Achtung
+> [!warning] **Häufiger Fehler: Schrittweises Runden**
 > Nicht in mehreren Schritten runden! Immer die Originalzahl betrachten.
 
 **Beispiel:** 2,449 auf Zehntel runden
@@ -110,6 +127,9 @@ Die **erste wegfallende Ziffer** (rechts von der Rundungsstelle) bestimmt die Ri
 | **Richtig** | 2,449 → direkt auf Zehntel | 2,4 |
 
 Die Entscheidungsziffer ist 4 (< 5), also wird abgerundet.
+
+> [!tip] **Merkregel: Immer nur eine Stelle betrachten**
+> Beim Runden schaust du **nur** auf die erste wegfallende Ziffer. Die Ziffern dahinter sind egal! Bei 2,449 auf Zehntel: Die erste wegfallende Ziffer ist 4 (die zweite Nachkommastelle). Also abrunden zu 2,4.
 
 ### Überlauf beim Runden
 
@@ -132,7 +152,7 @@ Manchmal erhöht sich durch Aufrunden auch die nächsthöhere Stelle:
 
 ### Scheingenauigkeit vermeiden
 
-> [!warning] Scheingenauigkeit
+> [!warning] **Häufiger Fehler: Scheingenauigkeit**
 > Eine Rechnung kann nicht genauer sein als die ungenaueste Eingangsgröße.
 
 **Beispiel:**
@@ -140,6 +160,11 @@ Manchmal erhöht sich durch Aufrunden auch die nächsthöhere Stelle:
 - Zeit: 2,5 h
 - Geschwindigkeit: 12 ÷ 2,5 = 4,8 km/h ✓
 - **Nicht:** 4,800000 km/h ✗
+
+Wenn jemand sagt „ungefähr 12 km", meint er vielleicht 11,5 bis 12,5 km. Eine Angabe wie 4,800000 km/h täuscht eine Präzision vor, die gar nicht vorhanden ist. Das nennt man **Scheingenauigkeit** – und sie kann zu falschen Schlussfolgerungen führen.
+
+> [!tip] **Faustregel für sinnvolle Genauigkeit**
+> Das Ergebnis sollte nicht mehr signifikante Stellen haben als die ungenaueste Eingangsgröße. Wenn du mit „ungefähr 12 km" rechnest, sollte das Ergebnis auch nur auf etwa 2 Stellen genau angegeben werden.
 
 ## Rundungsfehler
 

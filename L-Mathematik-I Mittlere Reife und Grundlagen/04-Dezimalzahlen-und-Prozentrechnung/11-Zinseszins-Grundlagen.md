@@ -16,7 +16,7 @@ tags:
   - exponentiell
   - wachstum
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 ---
 
 # Zinseszins-Grundlagen
@@ -30,6 +30,16 @@ modified: 2026-10-13
 ## Überblick
 
 Beim **Zinseszins** werden die Zinsen nicht ausgezahlt, sondern dem Kapital zugeschlagen. Im nächsten Jahr werden dann Zinsen auf das erhöhte Kapital (einschließlich der Vorjahreszinsen) berechnet – "Zinsen auf Zinsen".
+
+### Die Macht des Zinseszins
+
+Albert Einstein soll den Zinseszins als „achtes Weltwunder" bezeichnet haben. Ob das Zitat echt ist, ist umstritten – die Aussage stimmt aber: Der Zinseszinseffekt ist einer der mächtigsten Mechanismen in der Finanzwelt.
+
+Der entscheidende Unterschied zu einfachen Zinsen: Das Kapital wächst nicht linear, sondern **exponentiell**. Am Anfang ist der Unterschied kaum merklich, aber über lange Zeiträume wird er gewaltig. Das erklärt, warum früh angefangenes Sparen so wichtig ist – und warum Schulden mit Zinseszins so gefährlich werden können.
+
+### Historischer Hintergrund
+
+Das Konzept des Zinseszins ist uralt. Schon babylonische Keilschrifttafeln (ca. 2000 v. Chr.) zeigen Berechnungen von „Zinsen auf Zinsen". Im Mittelalter war Zinseszins oft verboten oder stark reguliert, da er als besonders wucherisch galt. Heute ist er die Grundlage praktisch aller langfristigen Geldanlagen und Kredite.
 
 ## Einfache Zinsen vs. Zinseszins
 
@@ -141,7 +151,13 @@ $$n = \frac{\log(2000/1000)}{\log(1,05)} = \frac{\log(2)}{\log(1,05)} = \frac{0,
 
 ### Verdoppelungszeit abschätzen
 
+Die 72er-Regel ist eine brillante Faustregel, die ohne Taschenrechner auskommt:
+
 $$\text{Verdoppelungszeit} ≈ \frac{72}{\text{Zinssatz in \%}}$$
+
+### Warum funktioniert das?
+
+Die 72er-Regel ist eine Näherung, die aus der Zinseszinsformel abgeleitet wird. Sie funktioniert besonders gut für Zinssätze zwischen 2% und 15%. Die Mathematik dahinter: $\ln(2) \approx 0,693$, und $0,693 \times 100 \approx 69$, aufgerundet zu 72 für einfacheres Rechnen.
 
 ### Beispiele
 
@@ -152,6 +168,12 @@ $$\text{Verdoppelungszeit} ≈ \frac{72}{\text{Zinssatz in \%}}$$
 | 3% | 24 Jahre |
 | 6% | 12 Jahre |
 | 12% | 6 Jahre |
+
+> [!tip] **Anwendung im Alltag**
+> Die 72er-Regel hilft bei schnellen Überschlägen:
+> - „Bei 3% Inflation halbiert sich die Kaufkraft in 24 Jahren"
+> - „Bei 6% Rendite verdoppelt sich mein Erspartes in 12 Jahren"
+> - „Bei 8% Dispozins verdoppeln sich Schulden in 9 Jahren"
 
 ## Tabellarische Darstellung
 

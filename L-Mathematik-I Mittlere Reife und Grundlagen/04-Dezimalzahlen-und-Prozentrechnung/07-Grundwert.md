@@ -15,7 +15,7 @@ tags:
   - grundwert
   - berechnung
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 ---
 
 # Grundwert
@@ -29,6 +29,19 @@ modified: 2026-10-13
 ## Überblick
 
 Der **Grundwert (G)** ist das Ganze, auf das sich eine Prozentangabe bezieht. Er entspricht immer 100%. Die Grundwertberechnung beantwortet die Frage: "Wie groß ist das Ganze, wenn ein Teil und dessen Prozentsatz bekannt sind?"
+
+### Alltagsrelevanz
+
+Die Grundwertberechnung ist besonders wichtig bei Rückrechnungen:
+- **Originalpreis ermitteln:** „Nach 30% Rabatt kostet die Jacke 70 € – was war der Originalpreis?"
+- **Netto aus Brutto:** „Der Bruttopreis mit 19% MwSt. ist 119 € – wie hoch ist der Nettopreis?"
+- **Ursprüngliches Gehalt:** „Nach 5% Erhöhung verdiene ich 2100 € – wie viel war es vorher?"
+
+Diese „Rückwärts-Denkweise" ist anfangs ungewohnt, aber mit Übung wird sie zur Routine.
+
+### Die Denkrichtung verstehen
+
+Während wir bei Prozentwert und Prozentsatz „vorwärts" rechnen (vom Ganzen zum Teil), rechnen wir beim Grundwert „rückwärts" (vom Teil zum Ganzen). Wir kennen einen Ausschnitt und wollen das Gesamtbild rekonstruieren – wie ein Archäologe, der aus einer Scherbe auf die Größe des ganzen Gefäßes schließt.
 
 ## Definition und Formel
 
@@ -141,7 +154,7 @@ $$G = \frac{119 \times 100}{119} = 100$$
 
 ### Die Falle: Was sind 100%?
 
-> [!warning] Achtung bei Änderungen!
+> [!warning] **Häufiger Fehler: Falscher Prozentsatz bei Änderungen**
 > Bei Preiserhöhungen/Rabatten ist der gegebene Wert oft NICHT 100%!
 
 | Situation | Gegebener Wert entspricht |
@@ -150,6 +163,13 @@ $$G = \frac{119 \times 100}{119} = 100$$
 | Nach 15% Erhöhung | 115% |
 | Inkl. 19% MwSt. | 119% |
 | 10% fehlen noch | 90% |
+
+> [!tip] **Merkregel: Vor- und Nachdenken**
+> Frage dich immer: „Ist der gegebene Wert das Ergebnis einer Veränderung?"
+> - **Rabatt von 20%:** Der Preis wurde um 20% reduziert → übrig bleiben 100% - 20% = 80%
+> - **Erhöhung um 15%:** Zum Ursprung wurden 15% addiert → jetzt sind es 100% + 15% = 115%
+> 
+> Der gegebene Wert ist dann **nicht** der Grundwert, sondern bereits ein veränderter Wert!
 
 ## Typische Aufgabentypen
 

@@ -15,7 +15,7 @@ tags:
   - stellenwert
   - zahlensysteme
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 ---
 
 # Dezimalzahlen
@@ -29,6 +29,16 @@ modified: 2026-10-13
 ## Überblick
 
 Dezimalzahlen sind eine alternative Schreibweise für Brüche, die auf dem Stellenwertsystem mit der Basis 10 aufbaut. Sie ermöglichen eine einheitliche Darstellung von Zahlen und vereinfachen viele Rechenoperationen.
+
+### Historischer Hintergrund
+
+Die Dezimalschreibweise, wie wir sie heute kennen, wurde 1585 vom flämischen Mathematiker **Simon Stevin** (1548–1620) in seinem Werk *De Thiende* systematisch eingeführt. Stevin war ein praktisch denkender Ingenieur, der erkannte, dass Kaufleute und Handwerker eine einfachere Methode zum Rechnen mit Brüchen brauchten als die komplizierten Bruchdarstellungen seiner Zeit.
+
+Interessanterweise verwendeten bereits die Babylonier vor über 4000 Jahren ein Stellenwertsystem – allerdings zur Basis 60 (Sexagesimalsystem), dessen Spuren wir heute noch bei der Zeitmessung (60 Sekunden, 60 Minuten) und der Winkelangabe (360°) finden. Die Idee, das vertraute Zehnersystem auch „hinter dem Komma" fortzusetzen, war jedoch Stevins entscheidender Beitrag.
+
+### Warum Dezimalzahlen so praktisch sind
+
+Im Alltag begegnen uns Dezimalzahlen ständig: Preise (3,99 €), Temperaturen (36,5 °C), Sportergebnisse (9,58 Sekunden für 100 m). Der große Vorteil liegt darin, dass wir mit Dezimalzahlen genauso rechnen können wie mit ganzen Zahlen – wir müssen nur auf die Kommastellung achten. Bei Brüchen hingegen müssen wir oft erst einen gemeinsamen Nenner finden, bevor wir addieren können.
 
 ## Das Stellenwertsystem
 
@@ -70,7 +80,14 @@ Die Zahl 45,372 bedeutet:
 
 **Summe:** 40 + 5 + 0,3 + 0,07 + 0,002 = 45,372
 
+> [!tip] **Merkregel: Links groß, rechts klein**
+> Je weiter links eine Ziffer steht, desto größer ist ihr Stellenwert. Je weiter rechts (nach dem Komma), desto kleiner. Das Komma ist die „Grenze" – links davon werden die Zahlen größer (×10), rechts davon kleiner (÷10).
+
 ## Lesen und Schreiben von Dezimalzahlen
+
+### Unterschiedliche Schreibweisen weltweit
+
+In Deutschland und vielen europäischen Ländern verwenden wir das **Komma** als Dezimaltrennzeichen (3,14). In englischsprachigen Ländern und in der Wissenschaft wird hingegen der **Punkt** verwendet (3.14). Dies kann bei Taschenrechnern, Computerprogrammen und internationalen Dokumenten zu Verwechslungen führen.
 
 ### Sprechweisen
 
@@ -88,6 +105,13 @@ Die Zahl 45,372 bedeutet:
 
 - **Führende Nullen** nach dem Komma sind bedeutsam: 0,07 ≠ 0,7
 - **Endständige Nullen** ändern den Wert nicht: 3,50 = 3,5
+
+> [!warning] **Häufiger Fehler: Nullen ignorieren**
+> Die Null in 0,07 ist entscheidend! Sie zeigt an, dass die 7 an der Hundertstel-Stelle steht, nicht an der Zehntel-Stelle. 
+> - 0,7 = sieben Zehntel = 7/10
+> - 0,07 = sieben Hundertstel = 7/100
+> 
+> Das ist ein Unterschied um den Faktor 10!
 
 ## Umwandlung zwischen Brüchen und Dezimalzahlen
 
@@ -140,6 +164,10 @@ Enthält der Nenner andere Primfaktoren, entsteht eine **periodische** Dezimalza
 > [!note] Notation
 > Der sich wiederholende Teil (Periode) wird mit einem Überstrich gekennzeichnet: $0,\overline{3}$
 
+### Die Entdeckung der irrationalen Zahlen
+
+Eine der erschütterndsten Entdeckungen der antiken Mathematik war, dass nicht alle Zahlen als Bruch darstellbar sind. Die Pythagoreer entdeckten um 500 v. Chr., dass $\sqrt{2}$ (die Diagonale eines Einheitsquadrats) sich nicht als Bruch schreiben lässt – und damit auch nicht als abbrechende oder periodische Dezimalzahl. Solche Zahlen nennen wir heute **irrational**. Auch die Kreiszahl $\pi = 3,14159...$ ist irrational: Ihre Dezimalstellen gehen endlos weiter, ohne sich je zu wiederholen.
+
 ## Dezimalzahlen am Zahlenstrahl
 
 ### Einordnung
@@ -171,18 +199,36 @@ Vergleiche 0,8 und 0,75:
 2. Vergleichen: 80 Hundertstel > 75 Hundertstel
 3. **Ergebnis:** 0,8 > 0,75
 
+> [!warning] **Häufiger Fehler: Mehr Stellen = größere Zahl?**
+> Viele denken intuitiv: „0,75 hat mehr Ziffern als 0,8, also muss es größer sein." Das ist falsch!
+> 
+> Der Trick: Ergänze Nullen, bis beide Zahlen gleich viele Nachkommastellen haben:
+> - 0,8 = 0,80
+> - 0,75 = 0,75
+> 
+> Jetzt ist klar: 80 Hundertstel > 75 Hundertstel, also 0,8 > 0,75
+
+> [!tip] **Anschauliche Vorstellung**
+> Stell dir Geldbeträge vor: 0,80 € sind 80 Cent, 0,75 € sind 75 Cent. Was ist mehr? Natürlich 80 Cent!
+
 ## Zusammenhänge
 
 ### Beziehung zu anderen Themen
 
-- **Bruchrechnung:** Dezimalzahlen sind eine alternative Darstellung von Brüchen
-- **Stellenwertsystem:** Erweiterung des Systems für natürliche Zahlen
-- **Prozentrechnung:** Prozente werden oft als Dezimalzahlen dargestellt (50% = 0,5)
+- **Bruchrechnung:** Dezimalzahlen sind eine alternative Darstellung von Brüchen – jede endliche oder periodische Dezimalzahl lässt sich als Bruch schreiben
+- **Stellenwertsystem:** Erweiterung des Systems für natürliche Zahlen auf Werte kleiner als 1
+- **Prozentrechnung:** Prozente werden oft als Dezimalzahlen dargestellt (50% = 0,5) – dies vereinfacht das Rechnen erheblich
+- **Wissenschaftliche Notation:** Sehr große oder kleine Dezimalzahlen werden mit Zehnerpotenzen geschrieben (z.B. $3,5 \times 10^{-6}$)
 
 ### Voraussetzungen
 
 - [[02-Grundrechenarten-und-Rechengesetze/00-Grundrechenarten-Index|Grundrechenarten]] - Division
 - [[03-Bruchrechnung/00-Bruchrechnung-Index|Bruchrechnung]] - Grundverständnis
+
+### Weiterführende Konzepte
+
+- [[04-Einfuehrung-in-die-Prozentrechnung|Prozentrechnung]] – baut direkt auf Dezimalzahlen auf
+- [[06-Potenzen-Wurzeln-und-Zahlendarstellung/10-Wissenschaftliche-Schreibweise|Wissenschaftliche Schreibweise]] – für sehr große und kleine Zahlen
 
 ## Prüfungsrelevanz
 
