@@ -7,7 +7,7 @@ tags:
   - mathematik
   - rechengesetze
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-26
 ---
 
 # Überschlagsrechnung
@@ -23,6 +23,18 @@ modified: 2026-10-13
 ## Überblick
 
 Die **Überschlagsrechnung** ist eine schnelle, ungefähre Berechnung, bei der die Zahlen gerundet werden. Sie dient dazu, das ungefähre Ergebnis abzuschätzen und grobe Rechenfehler zu erkennen.
+
+### Warum ist Überschlagsrechnung wichtig?
+
+In Zeiten von Taschenrechnern und Computern könnte man meinen, dass Überschlagsrechnung überflüssig ist. Das Gegenteil ist der Fall: Gerade weil wir uns auf Technik verlassen, ist es wichtig, Ergebnisse schnell auf Plausibilität prüfen zu können. Ein Tippfehler bei der Eingabe kann zu völlig falschen Ergebnissen führen – mit einem schnellen Überschlag erkennt man das sofort.
+
+### Anwendungen im Alltag
+
+- **Einkaufen**: „Habe ich genug Geld dabei?"
+- **Kochen**: „Reicht die doppelte Menge für 8 Personen?"
+- **Reisen**: „Wie lange dauert die Fahrt ungefähr?"
+- **Beruf**: Kostenvoranschläge, Materialmengen schätzen
+- **Prüfungen**: Ergebnisse kontrollieren, bevor man abgibt
 
 ---
 
@@ -76,10 +88,22 @@ Die **Überschlagsrechnung** ist eine schnelle, ungefähre Berechnung, bei der d
 
 ## Wann ist Überschlag sinnvoll?
 
+Die Überschlagsrechnung ist ein mächtiges Werkzeug in vielen Situationen:
+
 - **Kontrolle** von Taschenrechner-Ergebnissen
 - **Einkaufen** (Reicht mein Budget?)
 - **Zeitplanung** (Ungefähre Dauer)
 - **Plausibilitätsprüfung** von Lösungen
+
+> [!tip] **Der schnelle Drei-Sekunden-Check**
+> Nach jeder Taschenrechner-Eingabe: Stimmt die Größenordnung? Hat das Ergebnis ungefähr so viele Stellen wie erwartet?
+> 
+> Beispiel: $487 \cdot 312$ 
+> - Überschlag: $500 \cdot 300 = 150.000$
+> - Wenn der Taschenrechner $15.194.400$ anzeigt, hast du eine Stelle zu viel eingegeben!
+
+> [!warning] **Häufiger Fehler**
+> Zu genau runden wollen! Beim Überschlag geht es um Schnelligkeit, nicht um Präzision. Runde großzügig auf „schöne" Zahlen: 487 → 500, 312 → 300. Das Ergebnis soll nur zeigen, ob die Größenordnung stimmt.
 
 ---
 

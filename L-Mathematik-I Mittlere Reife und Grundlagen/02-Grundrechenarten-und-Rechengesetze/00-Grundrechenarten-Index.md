@@ -8,7 +8,7 @@ tags:
   - grundrechenarten
   - rechengesetze
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-26
 ---
 
 # Modul 2: Grundrechenarten und Rechengesetze
@@ -16,6 +16,10 @@ modified: 2026-10-13
 ## Übersicht
 
 Dieses Modul behandelt die vier Grundrechenarten – Addition, Subtraktion, Multiplikation und Division – sowie die fundamentalen Rechengesetze, die das Fundament für alle weiteren mathematischen Operationen bilden. Das sichere Beherrschen dieser Grundlagen ist essentiell für den Erfolg in der Mathematik.
+
+Die Grundrechenarten gehören zu den ältesten mathematischen Errungenschaften der Menschheit. Bereits vor über 5.000 Jahren entwickelten die Sumerer in Mesopotamien erste Rechenmethoden für Handel und Verwaltung. Die Symbole, die wir heute verwenden ($+$, $-$, $\times$, $\div$), entstanden jedoch erst viel später: Das Pluszeichen wurde im 15. Jahrhundert in Deutschland eingeführt, das Gleichheitszeichen 1557 vom walisischen Mathematiker Robert Recorde.
+
+Im Alltag begegnen uns die Grundrechenarten ständig: beim Einkaufen (Preise zusammenrechnen), beim Kochen (Mengen anpassen), bei der Zeitplanung (Dauer berechnen) oder beim Teilen (Pizza gerecht aufteilen). Wer diese Operationen sicher beherrscht, hat das Werkzeug für nahezu alle mathematischen Herausforderungen in der Hand.
 
 ## Lernziele des Moduls
 

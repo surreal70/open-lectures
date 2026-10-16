@@ -7,7 +7,7 @@ tags:
   - mathematik
   - rechengesetze
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-26
 ---
 
 # Punkt-vor-Strich-Rechnung
@@ -23,6 +23,14 @@ modified: 2026-10-13
 ## Überblick
 
 Die Regel „**Punkt vor Strich**" legt fest, dass Multiplikation und Division (Punktrechnung) vor Addition und Subtraktion (Strichrechnung) ausgeführt werden.
+
+### Warum heißt es „Punkt vor Strich"?
+
+Die Bezeichnung kommt von den Rechenzeichen: Der Malpunkt „$\cdot$" und der Doppelpunkt „$:$" sind **Punkt**-Zeichen, während Plus „$+$" und Minus „$-$" **Strich**-Zeichen sind. Diese einfache Eselsbrücke hilft, die Regel zu behalten.
+
+### Historischer Hintergrund
+
+Die Regel ist keine willkürliche Festlegung, sondern ergibt sich aus der Natur der Multiplikation als wiederholte Addition. Sie wurde im 17. Jahrhundert international standardisiert, um Missverständnisse zu vermeiden. Ohne diese Konvention müssten wir jeden Ausdruck vollständig klammern, was sehr umständlich wäre.
 
 ---
 
@@ -61,6 +69,15 @@ Die Regel ergibt sich aus der Definition der Multiplikation als wiederholte Addi
 $3 + 4 \cdot 2$ bedeutet: $3 + (4 + 4)$
 
 Das ist $3 + 8 = 11$, nicht $(3 + 4) + (3 + 4) = 14$.
+
+> [!note] **Anschauliches Beispiel**
+> „Ich habe 3 € und kaufe 4 Brötchen für je 2 €."
+> 
+> Richtig: $3 + 4 \cdot 2 = 3 + 8 = 11$ € (ich gebe 8 € für Brötchen aus, habe vorher 3 € → insgesamt 11 € sind im Spiel)
+> 
+> Falsch wäre: $(3 + 4) \cdot 2 = 14$ € (das würde bedeuten: 7 Dinge à 2 €)
+
+Die „Punkt vor Strich"-Regel sorgt dafür, dass solche Alltagssituationen korrekt berechnet werden, ohne dass wir ständig Klammern setzen müssen.
 
 ---
 

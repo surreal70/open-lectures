@@ -8,7 +8,7 @@ tags:
   - grundrechenarten
   - division
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-26
 ---
 
 # Division
@@ -26,6 +26,18 @@ modified: 2026-10-13
 ## Überblick
 
 Die **Division** (lat. „dividere" = teilen) ist die Umkehroperation der Multiplikation. Sie beantwortet Fragen wie „Wie oft passt eine Zahl in eine andere?" oder „Wie groß ist jeder Teil, wenn ich gerecht aufteile?".
+
+### Historischer Hintergrund
+
+Die Division ist die jüngste und komplexeste der vier Grundrechenarten. Das Divisionszeichen „$\div$" wurde 1659 vom Schweizer Mathematiker Johann Heinrich Rahn eingeführt. In Deutschland verwendet man traditionell den Doppelpunkt „$:$", während im englischsprachigen Raum der Schrägstrich „$/$" oder das Obelus-Zeichen „$\div$" üblich ist. Die Bruchschreibweise $\frac{a}{b}$ hat sich in der höheren Mathematik durchgesetzt, weil sie am übersichtlichsten ist.
+
+### Division im Alltag
+
+Division begegnet uns häufiger als man denkt:
+- **Gerecht teilen**: 12 Bonbons auf 4 Kinder verteilen → $12 : 4 = 3$ Bonbons pro Kind
+- **Preisvergleich**: Welcher Joghurt ist günstiger? Preis durch Menge teilen ergibt den Kilopreis
+- **Durchschnitte**: Notendurchschnitt = Summe aller Noten geteilt durch Anzahl der Noten
+- **Geschwindigkeit**: 150 km in 2 Stunden → $150 : 2 = 75$ km/h
 
 ---
 
@@ -143,6 +155,8 @@ Die Regeln sind identisch zur Multiplikation:
 > [!danger] **Verboten: Division durch Null**
 > $$a : 0 \text{ ist nicht definiert!}$$
 
+Dies ist eine der wichtigsten Regeln der Mathematik und hat tiefgreifende Gründe.
+
 ### Warum?
 
 Angenommen, $6 : 0 = x$. Dann müsste gelten: $x \cdot 0 = 6$.
@@ -157,9 +171,13 @@ Auch $0 : 0$ ist nicht definiert, denn $x \cdot 0 = 0$ gilt für **jedes** $x$.
 
 → Unendlich viele „Lösungen" = keine eindeutige Lösung.
 
+> [!note] **Anschauliche Erklärung**
+> Stell dir vor, du sollst 12 Äpfel auf 0 Kinder verteilen. Das macht keinen Sinn – es gibt niemanden, der etwas bekommen könnte! Oder anders: „Wie oft passt 0 in 12?" – Egal wie oft du 0 addierst, du erreichst nie 12.
+
 > [!warning] **Merke**
-> - $0 : a = 0$ (für $a \neq 0$) ist erlaubt
+> - $0 : a = 0$ (für $a \neq 0$) ist erlaubt – null Äpfel auf 5 Kinder verteilt ergibt 0 Äpfel pro Kind
 > - $a : 0$ ist **verboten** (undefiniert)
+> - In Taschenrechnern und Programmen führt Division durch 0 zu Fehlermeldungen („Error" oder „undefined")
 
 ---
 

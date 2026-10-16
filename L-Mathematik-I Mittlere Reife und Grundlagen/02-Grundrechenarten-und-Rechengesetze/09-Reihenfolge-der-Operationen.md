@@ -7,7 +7,7 @@ tags:
   - mathematik
   - rechengesetze
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-26
 ---
 
 # Reihenfolge von Rechenoperationen
@@ -23,6 +23,18 @@ modified: 2026-10-13
 ## Überblick
 
 Bei komplexen Rechenausdrücken mit mehreren Operationen muss eine eindeutige Reihenfolge eingehalten werden. Diese Hierarchie ist international standardisiert.
+
+### Warum brauchen wir eine feste Reihenfolge?
+
+Ohne klare Regeln wäre der Ausdruck $2 + 3 \cdot 4$ mehrdeutig: Ist das Ergebnis $20$ (erst addieren, dann multiplizieren) oder $14$ (erst multiplizieren, dann addieren)? Die international vereinbarte Prioritätsreihenfolge sorgt dafür, dass jeder Mathematiker auf der Welt zum selben Ergebnis kommt. Auch Computer und Taschenrechner folgen diesen Regeln.
+
+### Die Regel im englischsprachigen Raum: PEMDAS/BODMAS
+
+Im englischen Sprachraum gibt es die Merkregel **PEMDAS** (USA) oder **BODMAS** (UK):
+- **P**arentheses / **B**rackets (Klammern)
+- **E**xponents / **O**rder (Potenzen)
+- **M**ultiplication & **D**ivision (von links nach rechts)
+- **A**ddition & **S**ubtraction (von links nach rechts)
 
 ---
 
@@ -75,12 +87,24 @@ $$= \frac{20}{4} + 3 = 5 + 3 = 8$$
 
 ## Bruchstriche und Wurzeln
 
+Bruchstriche und Wurzelzeichen sind „unsichtbare Klammern" – sie fassen alles zusammen, was unter bzw. über ihnen steht.
+
 - **Bruchstrich:** Zähler und Nenner zuerst vollständig berechnen
 - **Wurzel:** Ausdruck unter der Wurzel zuerst berechnen
 
 **Beispiel:** $\sqrt{9 + 16}$
 $$= \sqrt{25} = 5$$
 (Nicht $\sqrt{9} + \sqrt{16} = 3 + 4 = 7$!)
+
+> [!warning] **Häufiger Fehler**
+> Die Wurzel darf **nicht** auf einzelne Summanden aufgeteilt werden:
+> - $\sqrt{a + b} \neq \sqrt{a} + \sqrt{b}$
+> - $\sqrt{9 + 16} = \sqrt{25} = 5$, aber $\sqrt{9} + \sqrt{16} = 3 + 4 = 7$
+> 
+> Dasselbe gilt für Brüche: $\frac{a + b}{c} = \frac{a}{c} + \frac{b}{c}$ (das geht), aber $\frac{a}{b + c} \neq \frac{a}{b} + \frac{a}{c}$ (das geht nicht!)
+
+> [!tip] **Merkregel für Bruchstriche**
+> Der Bruchstrich wirkt wie eine große Klammer um Zähler und Nenner. Berechne immer erst oben und unten komplett, bevor du teilst.
 
 ---
 

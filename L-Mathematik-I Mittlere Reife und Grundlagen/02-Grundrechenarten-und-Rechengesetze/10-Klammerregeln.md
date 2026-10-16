@@ -7,7 +7,7 @@ tags:
   - mathematik
   - rechengesetze
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-26
 ---
 
 # Klammerregeln
@@ -23,6 +23,16 @@ modified: 2026-10-13
 ## Überblick
 
 Klammern gruppieren Rechenausdrücke und bestimmen die Reihenfolge der Berechnung. Das Auflösen von Klammern folgt bestimmten Regeln, besonders wenn ein Vorzeichen vor der Klammer steht.
+
+### Warum gibt es Klammern?
+
+Klammern sind wie Regieanweisungen in der Mathematik: Sie sagen uns, was zuerst berechnet werden soll. Ohne Klammern müssten wir uns strikt an die „Punkt vor Strich"-Regel halten. Mit Klammern können wir diese Reihenfolge überschreiben.
+
+Im Alltag nutzen wir Klammern ständig, auch wenn wir sie nicht immer aufschreiben: „Ich kaufe 3 Äpfel und 2 Birnen, jeweils für 50 Cent" bedeutet mathematisch $(3 + 2) \cdot 0{,}50$ €.
+
+### Historischer Hintergrund
+
+Klammern wurden erst im 16. Jahrhundert in die mathematische Notation eingeführt. Davor mussten Mathematiker komplizierte Ausdrücke umständlich in Worten beschreiben. Die Einführung von Klammern war ein großer Fortschritt für die Übersichtlichkeit mathematischer Texte.
 
 ---
 
@@ -63,6 +73,16 @@ $$-(a - b) = -a + b$$
 $$7 - (3 + 2) = 7 - 3 - 2 = 2$$
 $$10 - (8 - 5) = 10 - 8 + 5 = 7$$
 $$-(−4 + 3) = +4 - 3 = 1$$
+
+> [!note] **Warum werden alle Vorzeichen umgekehrt?**
+> Das Minuszeichen vor der Klammer bedeutet „das Gegenteil von allem in der Klammer". Wenn in der Klammer „$+3$" steht, wird daraus „$-3$". Wenn „$-5$" steht, wird daraus „$+5$".
+> 
+> Mathematisch: $-(a + b) = (-1) \cdot (a + b) = (-1) \cdot a + (-1) \cdot b = -a - b$
+
+> [!tip] **Strategie: Vorzeichen systematisch ändern**
+> Gehe Term für Term durch und ändere jedes Vorzeichen:
+> - $-(+3 - 7 + 2)$ wird zu $-3 + 7 - 2$
+> - Plus wird Minus, Minus wird Plus
 
 ---
 

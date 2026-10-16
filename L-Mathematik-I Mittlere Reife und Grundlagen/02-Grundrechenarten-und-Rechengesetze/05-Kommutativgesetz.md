@@ -7,7 +7,7 @@ tags:
   - mathematik
   - rechengesetze
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-26
 ---
 
 # Kommutativgesetz
@@ -23,6 +23,14 @@ modified: 2026-10-13
 ## Überblick
 
 Das **Kommutativgesetz** (Vertauschungsgesetz) besagt, dass bei Addition und Multiplikation die Reihenfolge der Zahlen vertauscht werden darf, ohne das Ergebnis zu ändern.
+
+### Historischer Hintergrund
+
+Der Begriff „kommutativ" stammt vom lateinischen „commutare" (= vertauschen). Das Gesetz war schon den alten Griechen bekannt, wurde aber erst im 19. Jahrhundert durch den französischen Mathematiker François Servois formal benannt. Es ist eines der fundamentalen Axiome der Algebra und bildet zusammen mit dem Assoziativ- und Distributivgesetz die Grundlage für alle algebraischen Strukturen.
+
+### Warum ist das wichtig?
+
+Das Kommutativgesetz ermöglicht flexibles Rechnen. Ohne es müssten wir jeden Ausdruck streng in der gegebenen Reihenfolge berechnen – mit ihm können wir Zahlen so umordnen, dass die Rechnung einfacher wird.
 
 ---
 
@@ -78,11 +86,20 @@ $$a - b \neq b - a$$
 
 **Beispiel:** $7 - 3 = 4$, aber $3 - 7 = -4$
 
+> [!note] **Anschaulich**
+> „7 € haben und 3 € ausgeben" ist etwas völlig anderes als „3 € haben und 7 € ausgeben". Im zweiten Fall hast du Schulden!
+
 ### Division
 
 $$a : b \neq b : a$$
 
 **Beispiel:** $8 : 2 = 4$, aber $2 : 8 = 0{,}25$
+
+> [!tip] **Eselsbrücke**
+> Bei Subtraktion und Division spielt die **Reihenfolge eine Rolle**. Merke dir: „Reihenfolge ist wichtig bei Minus und Geteilt!"
+
+> [!warning] **Häufiger Fehler**
+> Viele Schüler wenden das Kommutativgesetz fälschlicherweise auch auf Subtraktion und Division an. Das führt zu falschen Ergebnissen! Prüfe immer, ob die Operation wirklich kommutativ ist.
 
 ---
 
