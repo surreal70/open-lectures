@@ -15,7 +15,7 @@ tags:
   - anwendung
   - modellierung
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-23
 ---
 
 # Anwendungen der Algebra
@@ -30,7 +30,18 @@ modified: 2026-10-13
 
 Die Algebra ermöglicht es, reale Problemstellungen mathematisch zu beschreiben und zu lösen.
 
+In der Praxis ist die Algebra kein Selbstzweck, sondern ein mächtiges Werkzeug zur Lösung realer Probleme. Der Prozess vom praktischen Problem zur Lösung wird **mathematische Modellierung** genannt. Dabei werden Sachverhalte aus dem Alltag in mathematische Terme und Gleichungen „übersetzt".
+
+> [!info] **Der Modellierungskreislauf**
+> 1. **Realität verstehen:** Was ist gegeben? Was ist gesucht?
+> 2. **Modell aufstellen:** Variablen definieren, Term oder Gleichung aufstellen
+> 3. **Mathematisch lösen:** Rechnen, Umformen, Vereinfachen
+> 4. **Interpretieren:** Was bedeutet das Ergebnis im Sachkontext?
+> 5. **Prüfen:** Ist das Ergebnis sinnvoll?
+
 ## Geometrische Anwendungen
+
+Die Geometrie ist ein klassisches Anwendungsgebiet der Algebra. Formeln für Umfang, Fläche und Volumen sind nichts anderes als algebraische Terme.
 
 ### Rechteck
 
@@ -47,7 +58,16 @@ Die Algebra ermöglicht es, reale Problemstellungen mathematisch zu beschreiben 
 - Volumen: $V = a \cdot b \cdot c$
 - Oberfläche: $O = 2(ab + bc + ac)$
 
+> [!example] **Praktisches Beispiel: Gartenplanung**
+> Ein rechteckiger Garten soll mit einem Zaun umgeben werden. Die Länge ist 5 m mehr als die Breite.
+> 
+> **Modellierung:** Breite = $x$, Länge = $x + 5$
+> - Umfang (= Zaunlänge): $U = 2x + 2(x+5) = 4x + 10$
+> - Fläche: $A = x \cdot (x+5) = x^2 + 5x$
+
 ## Alltagsbeispiele
+
+Algebraische Terme begegnen uns im Alltag häufiger, als wir denken:
 
 ### Preisberechnung
 
@@ -62,12 +82,26 @@ $$s = v \cdot t$$
 
 $$W = G \cdot \frac{p}{100}$$
 
+> [!tip] **Algebra in der Berufswelt**
+> - **Handwerk:** Materialberechnung, Kostenvoranschläge
+> - **Kaufleute:** Rabatte, Margen, Steuern berechnen
+> - **IT:** Algorithmen, Datenstrukturen, Formeln in Tabellenkalkulationen
+> - **Technik:** Physikalische Formeln, Dimensionierung
+
 ## Textaufgaben
+
+Textaufgaben sind die Königsdisziplin der Algebra: Hier zeigt sich, ob man wirklich verstanden hat, wie man reale Probleme in mathematische Sprache übersetzt.
 
 **Beispiel:** Die Seite b eines Rechtecks ist 3 cm länger als Seite a. Drücke den Umfang durch a aus.
 
 $$b = a + 3$$
 $$U = 2a + 2b = 2a + 2(a + 3) = 2a + 2a + 6 = 4a + 6$$
+
+> [!warning] **Häufiger Fehler bei Textaufgaben**
+> Variablen nicht klar definieren! Schreibe immer zuerst auf:
+> - Was ist die Variable? (z.B. „Sei $x$ die Anzahl der Äpfel")
+> - Was ist gesucht?
+> - Welche Beziehungen bestehen zwischen den Größen?
 
 ## Zusammenhänge
 

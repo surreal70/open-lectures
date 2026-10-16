@@ -15,7 +15,7 @@ tags:
   - einsetzen
   - termwert
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-23
 ---
 
 # Einsetzen von Variablen
@@ -29,6 +29,11 @@ modified: 2026-10-13
 ## Überblick
 
 Das **Einsetzen** von Zahlen für Variablen ermöglicht die Berechnung konkreter Termwerte.
+
+Das Einsetzen ist der entscheidende Schritt, der abstrakte Mathematik mit der Realität verbindet. Ein Term wie $U = 2a + 2b$ für den Umfang eines Rechtecks ist zunächst nur eine allgemeine Formel. Erst wenn wir konkrete Maße einsetzen (z.B. $a = 5$ cm und $b = 3$ cm), erhalten wir ein praktisches Ergebnis: $U = 16$ cm.
+
+> [!info] **Warum Klammern beim Einsetzen?**
+> Beim Einsetzen sollte man die Zahl immer in Klammern setzen. Das verhindert Fehler, besonders bei negativen Zahlen oder wenn Potenzen vorkommen. Aus $x^2$ mit $x = -3$ wird so $(-3)^2 = 9$, nicht $-3^2 = -9$.
 
 ## Methode
 
@@ -62,7 +67,16 @@ $$T = (3)^2 + 2 \cdot (3) = 9 + 6 = 15$$
 Für x = −2:
 $$T = (-2)^2 + 2 \cdot (-2) = 4 - 4 = 0$$
 
+> [!warning] **Häufiger Fehler: Negative Zahlen in Potenzen**
+> Bei negativen Zahlen ist die Klammer entscheidend:
+> - $(-2)^2 = (-2) \cdot (-2) = +4$ ✓ (minus mal minus = plus)
+> - $-2^2 = -(2^2) = -4$ ✗ (hier wird nur die 2 quadriert, dann das Minus davor gesetzt)
+> 
+> Immer Klammern setzen, um Fehler zu vermeiden!
+
 ## Wertetabellen
+
+Wertetabellen sind ein wichtiges Werkzeug, um das Verhalten eines Terms für verschiedene Werte zu untersuchen. Sie bilden die Grundlage für das Zeichnen von Funktionsgraphen (→ [[09-Funktionen-und-Koordinatensysteme/04-Funktionstabellen-und-Graphen|Funktionstabellen und Graphen]]).
 
 | x | x² | 2x | x² + 2x |
 |---|----|----|---------|
@@ -71,6 +85,12 @@ $$T = (-2)^2 + 2 \cdot (-2) = 4 - 4 = 0$$
 | 0 | 0 | 0 | 0 |
 | 1 | 1 | 2 | 3 |
 | 2 | 4 | 4 | 8 |
+
+> [!tip] **Praktischer Tipp: Spaltenweise rechnen**
+> Bei Wertetabellen ist es oft einfacher, zuerst eine ganze Spalte zu berechnen, bevor man zur nächsten geht. So behält man den Überblick und macht weniger Fehler.
+
+> [!example] **Anwendung: Tabellenkalkulation**
+> In Programmen wie Excel oder LibreOffice Calc funktionieren Formeln genauso: Eine Zelle enthält einen Term (z.B. `=A1*2+3`), und das Programm setzt automatisch den Wert aus Zelle A1 ein.
 
 ## Zusammenhänge
 

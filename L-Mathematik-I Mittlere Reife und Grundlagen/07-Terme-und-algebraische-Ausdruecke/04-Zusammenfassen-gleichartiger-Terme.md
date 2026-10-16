@@ -15,7 +15,7 @@ tags:
   - zusammenfassen
   - gleichartig
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-23
 ---
 
 # Zusammenfassen gleichartiger Terme
@@ -29,6 +29,16 @@ modified: 2026-10-13
 ## Überblick
 
 **Gleichartige Terme** haben dieselben Variablen mit denselben Exponenten. Nur solche Terme können addiert oder subtrahiert werden.
+
+Das Zusammenfassen gleichartiger Terme ist wie das Zählen von Gegenständen: 3 Äpfel plus 5 Äpfel ergibt 8 Äpfel. Genauso gilt $3x + 5x = 8x$. Aber 3 Äpfel und 5 Birnen kann man nicht einfach zusammenzählen – genauso wenig wie $3x$ und $5y$.
+
+> [!info] **Anschauliche Vorstellung**
+> Stell dir $x$ als „Schachtel mit unbekanntem Inhalt" vor:
+> - $3x$ bedeutet: 3 Schachteln
+> - $5x$ bedeutet: 5 Schachteln  
+> - $3x + 5x = 8x$ bedeutet: zusammen 8 Schachteln
+> 
+> Aber $x$ und $x^2$ sind **verschiedene** Schachteltypen – die kann man nicht zusammenzählen!
 
 ## Definition
 
@@ -59,11 +69,17 @@ $$3a + 2b - a + 5b = 3a - a + 2b + 5b = 2a + 7b$$
 
 ## Häufige Fehler
 
-| Falsch | Richtig |
-|--------|---------|
-| $3x + 2x = 5x^2$ | $3x + 2x = 5x$ |
-| $x^2 + x = x^3$ | Nicht zusammenfassbar |
-| $2a + 3b = 5ab$ | Nicht zusammenfassbar |
+> [!warning] **Häufiger Fehler: Exponenten beim Zusammenfassen**
+> Beim Zusammenfassen werden nur die **Koeffizienten** addiert, **nicht** die Exponenten!
+
+| Falsch | Richtig | Erklärung |
+|--------|---------|-----------|
+| $3x + 2x = 5x^2$ | $3x + 2x = 5x$ | Die Exponenten bleiben unverändert |
+| $x^2 + x = x^3$ | Nicht zusammenfassbar | $x^2$ und $x$ sind nicht gleichartig |
+| $2a + 3b = 5ab$ | Nicht zusammenfassbar | $a$ und $b$ sind verschiedene Variablen |
+
+> [!tip] **Merkregel**
+> Nur Terme mit **exakt gleichen** Variablenteilen dürfen zusammengefasst werden. Der Variablenteil bleibt dabei unverändert – nur die Koeffizienten werden addiert oder subtrahiert.
 
 ## Zusammenhänge
 

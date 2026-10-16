@@ -9,7 +9,7 @@ tags:
   - algebra
   - index
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-23
 ---
 
 # Terme und algebraische Ausdrücke
@@ -17,6 +17,13 @@ modified: 2026-10-13
 ## Überblick
 
 Dieses Kapitel führt in die Welt der Algebra ein: Variablen, Terme und ihre Umformungen bilden die Grundlage für das Lösen von Gleichungen und mathematisches Modellieren.
+
+Das Wort **Algebra** stammt vom arabischen Begriff *al-jabr* (الجبر), was „Wiederherstellen" oder „Ergänzen" bedeutet. Der persische Mathematiker **Muhammad ibn Musa al-Chwarizmi** verwendete diesen Begriff um 825 n. Chr. in seinem einflussreichen Werk „Kitab al-jabr wa-l-muqabala" (Buch der Vervollständigung und des Ausgleichens). Dieses Werk gilt als Geburtsstunde der Algebra als eigenständige mathematische Disziplin.
+
+Die Algebra revolutionierte das mathematische Denken: Anstatt nur mit konkreten Zahlen zu rechnen, können wir mit **Variablen** allgemeine Zusammenhänge beschreiben. Eine Formel wie $A = a \cdot b$ für die Fläche eines Rechtecks gilt für jedes Rechteck – egal ob es 2 cm × 3 cm oder 100 m × 200 m groß ist.
+
+> [!info] **Warum ist Algebra wichtig?**
+> Die Algebra ist das Werkzeug, mit dem Wissenschaftler und Ingenieure die Welt beschreiben. Jede physikalische Formel, jede Programmiersprache und jedes Tabellenkalkulationsprogramm basiert auf algebraischen Prinzipien. Wer Terme versteht und umformen kann, hat den Schlüssel zu unzähligen Anwendungen in der Hand.
 
 ## Kapitelstruktur
 

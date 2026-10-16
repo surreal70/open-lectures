@@ -15,7 +15,7 @@ tags:
   - vereinfachen
   - systematisch
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-23
 ---
 
 # Vereinfachen von Termen
@@ -30,18 +30,35 @@ modified: 2026-10-13
 
 **Terme vereinfachen** bedeutet, einen Ausdruck in seine einfachste Form zu bringen.
 
+Das Vereinfachen ist wie „Aufräumen" eines mathematischen Ausdrucks. So wie man in einem unordentlichen Zimmer zusammengehörige Dinge sortiert und ordnet, fasst man in einem Term gleichartige Bestandteile zusammen. Das Ziel: ein möglichst kurzer, übersichtlicher Ausdruck.
+
+> [!info] **Wann ist ein Term „vereinfacht"?**
+> Ein Term gilt als vollständig vereinfacht, wenn:
+> - Alle Klammern aufgelöst sind
+> - Alle gleichartigen Terme zusammengefasst sind
+> - Kein gemeinsamer Faktor mehr ausgeklammert werden kann
+> - Die Terme sinnvoll geordnet sind (meist nach absteigenden Potenzen)
+
 ## Schritte zum Vereinfachen
 
 1. **Klammern auflösen** (ausmultiplizieren)
 2. **Gleichartige Terme zusammenfassen**
 3. **Ordnen** (nach Potenzen, alphabetisch)
 
+> [!tip] **Merkregel für die Reihenfolge**
+> Die Reihenfolge ist wichtig! Erst alle Klammern weg, dann sortieren und zusammenfassen. Wenn man zu früh zusammenfasst, übersieht man leicht Terme, die noch in Klammern versteckt sind.
+
 ## Beispiel komplett
+
+Hier ein vollständiges Beispiel mit allen Schritten:
 
 $$3(x + 2) - 2(x - 1)$$
 $$= 3x + 6 - 2x + 2$$ (ausmultiplizieren)
 $$= 3x - 2x + 6 + 2$$ (ordnen)
 $$= x + 8$$ (zusammenfassen)
+
+> [!example] **Praxistipp: Zwischenschritte aufschreiben**
+> Auch wenn es mehr Platz braucht: Schreibe jeden Schritt einzeln auf! Das vermeidet Flüchtigkeitsfehler und macht es einfacher, Fehler zu finden.
 
 ## Komplexere Beispiele
 

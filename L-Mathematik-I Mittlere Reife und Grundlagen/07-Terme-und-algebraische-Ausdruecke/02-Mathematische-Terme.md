@@ -15,7 +15,7 @@ tags:
   - koeffizient
   - struktur
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-23
 ---
 
 # Mathematische Terme
@@ -29,6 +29,13 @@ modified: 2026-10-13
 ## Überblick
 
 Ein **Term** ist ein sinnvoller mathematischer Ausdruck, der aus Zahlen, Variablen und Rechenzeichen besteht.
+
+Der Begriff „Term" kommt vom lateinischen *terminus* (Grenze, Ausdruck). In der Mathematik bezeichnet er einen „abgeschlossenen" Ausdruck, der einen Wert hat. Terme sind die Bausteine der Algebra – so wie Wörter die Bausteine von Sätzen sind. Und genau wie Wörter zu Sätzen zusammengefügt werden, können Terme durch Gleichheitszeichen zu Gleichungen verbunden werden.
+
+> [!info] **Term vs. Gleichung**
+> Ein Term enthält **kein** Gleichheitszeichen. Sobald ein Gleichheitszeichen vorkommt, sprechen wir von einer **Gleichung**:
+> - $3x + 5$ ist ein Term
+> - $3x + 5 = 11$ ist eine Gleichung (zwei Terme, verbunden durch $=$)
 
 ## Definition
 
@@ -52,6 +59,8 @@ Ein **Term** ist ein sinnvoller mathematischer Ausdruck, der aus Zahlen, Variabl
 
 ### Begriffe
 
+Die einzelnen Bestandteile eines Terms haben spezielle Namen. Es lohnt sich, diese Fachbegriffe zu kennen – sie werden in der gesamten Mathematik verwendet:
+
 | Begriff | Bedeutung | Beispiel in 3x² + 5x − 7 |
 |---------|-----------|--------------------------|
 | Koeffizient | Zahl vor der Variablen | 3, 5 |
@@ -60,7 +69,12 @@ Ein **Term** ist ein sinnvoller mathematischer Ausdruck, der aus Zahlen, Variabl
 | Konstante | Zahl ohne Variable | −7 |
 | Summand | Durch + oder − getrennt | 3x², 5x, −7 |
 
+> [!tip] **Merkregel für Koeffizienten**
+> Das Wort „Koeffizient" kommt aus dem Lateinischen und bedeutet „Mitwirkender". Der Koeffizient „wirkt mit" bei der Bestimmung des Termwerts – er gibt an, wie oft der Variablenteil genommen wird. Bei $5x$ ist der Koeffizient 5, also wird $x$ fünfmal genommen.
+
 ## Terme aus Texten
+
+Eine wichtige Fähigkeit ist es, Alltagssprache in mathematische Terme zu übersetzen. Dabei helfen bestimmte Schlüsselwörter:
 
 | Text | Term |
 |------|------|
@@ -71,14 +85,32 @@ Ein **Term** ist ein sinnvoller mathematischer Ausdruck, der aus Zahlen, Variabl
 | "Das Quadrat von x" | x² |
 | "Das Produkt aus a und b" | a · b |
 
+> [!example] **Alltagsbeispiel: Handytarif**
+> Ein Handytarif kostet 10 € Grundgebühr plus 0,09 € pro Minute. Wie lautet der Term für die monatlichen Kosten?
+> 
+> - Grundgebühr: 10 €
+> - Variable: Anzahl der Minuten = $m$
+> - Kosten pro Minute: 0,09 €
+> - **Term:** $K = 10 + 0{,}09m$ (Kosten in Euro)
+
+> [!warning] **Häufiger Fehler: Reihenfolge beachten**
+> „x vermindert um 3" bedeutet $x - 3$, **nicht** $3 - x$!
+> „5 weniger als x" bedeutet $x - 5$, **nicht** $5 - x$!
+> 
+> Tipp: Überlege immer, was „größer" und was „kleiner" ist.
+
 ## Arten von Termen
 
-| Art | Beispiel |
-|-----|----------|
-| Monom | 3x², 5a |
-| Binom | x + 2, 3a − b |
-| Trinom | x² + 2x + 1 |
-| Polynom | allg. Summe von Monomen |
+Die Fachbegriffe für verschiedene Termarten stammen aus dem Griechischen und beziehen sich auf die Anzahl der Summanden:
+
+| Art | Bedeutung | Beispiel |
+|-----|-----------|----------|
+| Monom | Ein Summand (griech. *monos* = allein) | 3x², 5a |
+| Binom | Zwei Summanden (griech. *bi* = zwei) | x + 2, 3a − b |
+| Trinom | Drei Summanden (griech. *tri* = drei) | x² + 2x + 1 |
+| Polynom | Beliebig viele Summanden (griech. *poly* = viel) | allg. Summe von Monomen |
+
+Der Begriff **Binom** ist besonders wichtig – er taucht bei den berühmten **binomischen Formeln** wieder auf (→ [[08-Binomische-Formeln]]).
 
 ## Zusammenhänge
 
