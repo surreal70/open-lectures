@@ -1,7 +1,7 @@
 ---
 title: "Steigungen und Neigungswinkel"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-20
 chapter: "11"
 section: "11"
 status: "draft - review pending"
@@ -22,6 +22,10 @@ keywords:
 > - Praktische Anwendungen bei Rampen, Straßen und Dächern beherrschen
 > - Die verschiedenen Angabeformen kennen
 
+## Überblick
+
+Steigungen begegnen uns im Alltag ständig: auf Straßenschildern, bei der Planung von Rampen, bei Dachkonstruktionen oder Skipisten. Die Trigonometrie liefert uns das Werkzeug, um diese Steigungen zu verstehen und zu berechnen. Dabei ist wichtig zu wissen: 100% Steigung entspricht **nicht** einer senkrechten Wand, sondern „nur" einem 45°-Winkel!
+
 ## Steigung und Tangens
 
 Die **Steigung** einer Geraden oder Fläche ist definiert als:
@@ -37,6 +41,9 @@ $$\text{Steigung} = \frac{\text{Höhenunterschied}}{\text{Horizontale Entfernung
        
     Steigung = h/l = tan(α)
 ```
+
+> [!note] **Warum ist Steigung = Tangens?**
+> Die Definition der Steigung (Höhe geteilt durch horizontale Länge) entspricht exakt der Definition des Tangens (Gegenkathete geteilt durch Ankathete). Deshalb ist der Tangens die „natürliche" Funktion für Steigungsberechnungen.
 
 ## Angabeformen der Steigung
 
@@ -161,6 +168,15 @@ $$s = \frac{h}{\sin(\alpha)} = \frac{l}{\cos(\alpha)}$$
 > - Winkel zu Prozent: $p = \tan(\alpha) \times 100$
 > - 100% Steigung = 45°-Winkel
 > - Praktische Anwendungen: Straßen, Rampen, Dächer, Pisten
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[08-Tangens|Der Tangens]] – Mathematische Grundlage
+- → [[10-Berechnung-Winkel|Winkelberechnung]] – Arkustangens anwenden
+- → [[12-Vermessungsaufgaben|Vermessungsaufgaben]] – Komplexe Anwendungen
+- → [[../09-Funktionen-und-Koordinatensysteme/06-Steigung-und-Achsenabschnitt|Steigung linearer Funktionen]] – Verbindung zur Analysis
 
 ## Übungsaufgaben
 

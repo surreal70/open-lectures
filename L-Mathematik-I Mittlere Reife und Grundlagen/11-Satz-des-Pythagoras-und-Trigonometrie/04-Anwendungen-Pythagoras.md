@@ -1,7 +1,7 @@
 ---
 title: "Anwendungen des Satzes des Pythagoras"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-20
 chapter: "11"
 section: "04"
 status: "draft - review pending"
@@ -21,17 +21,30 @@ keywords:
 > - Die Raumdiagonale berechnen können
 > - Sachaufgaben systematisch lösen
 
+## Überblick
+
+Der wahre Wert des Satzes des Pythagoras zeigt sich in seinen vielfältigen Anwendungen. Von der Berechnung von Diagonalen über Höhenbestimmungen bis hin zur Entfernungsmessung – überall, wo rechtwinklige Dreiecke verborgen sind, hilft uns Pythagoras weiter. In diesem Abschnitt lernst du, solche Dreiecke in praktischen Situationen zu erkennen und zu nutzen.
+
 ## Diagonalen
+
+Diagonalen in Rechtecken und Quadern sind klassische Anwendungen des Satzes des Pythagoras. Sie begegnen uns täglich – bei Bildschirmen, Türen, Regalen und vielem mehr.
 
 ### Diagonale im Rechteck
 
 $$d = \sqrt{l^2 + b^2}$$
 
+> [!tip] **Alltagsanwendung**
+> Passt ein langer Gegenstand diagonal in einen Raum? Passt ein Bild durch eine Tür? Diese Fragen beantwortet die Diagonalenformel!
+
 ### Diagonale im Quadrat
 
 $$d = a\sqrt{2}$$
 
+Bei einem Quadrat mit Seitenlänge $a$ ist die Diagonale immer $a \cdot \sqrt{2} \approx 1{,}414 \cdot a$. Das bedeutet: Die Diagonale ist etwa 41% länger als die Seite.
+
 ### Raumdiagonale im Quader
+
+Die Raumdiagonale verbindet zwei gegenüberliegende Ecken eines Quaders und durchquert den gesamten Körper. Die Berechnung erfolgt durch zweimalige Anwendung des Pythagoras – oder mit der eleganten Formel:
 
 ```
         ┌─────────────────┐
@@ -50,16 +63,30 @@ $$d = a\sqrt{2}$$
 
 $$d = \sqrt{a^2 + b^2 + c^2}$$
 
+> [!note] **Herleitung**
+> Die Formel entsteht durch zweimalige Anwendung des Pythagoras:
+> 1. Erst die Flächendiagonale der Grundfläche: $d_1 = \sqrt{a^2 + b^2}$
+> 2. Dann die Raumdiagonale mit $d_1$ und der Höhe $c$: $d = \sqrt{d_1^2 + c^2} = \sqrt{a^2 + b^2 + c^2}$
+
 > [!example] Beispiel
 > Quader mit $a = 3$ cm, $b = 4$ cm, $c = 12$ cm
 > 
 > $d = \sqrt{9 + 16 + 144} = \sqrt{169} = 13$ cm
+> 
+> *Interessant: (3, 4, 12, 13) bildet ein „räumliches pythagoreisches Quadrupel"!*
 
 ### Raumdiagonale im Würfel
 
 $$d = a\sqrt{3}$$
 
+Ein Würfel mit Kantenlänge $a$ hat eine Raumdiagonale von $a \cdot \sqrt{3} \approx 1{,}732 \cdot a$. Die Raumdiagonale ist also etwa 73% länger als die Kante.
+
+> [!tip] **Praktische Anwendung: Möbeltransport**
+> Willst du wissen, ob ein langer Gegenstand durch ein Zimmer passt? Die Raumdiagonale gibt die längste gerade Strecke im Raum an.
+
 ## Höhenberechnung im gleichschenkligen Dreieck
+
+Im gleichschenkligen Dreieck halbiert die Höhe die Basis und erzeugt zwei kongruente rechtwinklige Dreiecke. Diese Eigenschaft macht die Höhenberechnung mit Pythagoras besonders elegant.
 
 ```
            A
@@ -77,16 +104,32 @@ Die Höhe $h$ im gleichschenkligen Dreieck:
 
 $$h = \sqrt{a^2 - \left(\frac{c}{2}\right)^2}$$
 
+> [!tip] **Warum funktioniert das?**
+> Die Höhe teilt das gleichschenklige Dreieck exakt in der Mitte. Es entstehen zwei rechtwinklige Dreiecke mit:
+> - Hypotenuse = Schenkel $a$
+> - Eine Kathete = Höhe $h$
+> - Andere Kathete = halbe Basis $\frac{c}{2}$
+
 > [!example] Beispiel
 > Gleichschenkliges Dreieck mit $a = 5$ cm, $c = 6$ cm
 > 
 > $h = \sqrt{25 - 9} = \sqrt{16} = 4$ cm
+> 
+> *Prüfung: Die Fläche beträgt $\frac{1}{2} \cdot 6 \cdot 4 = 12$ cm²*
 
 ## Höhe im gleichseitigen Dreieck
 
 Im gleichseitigen Dreieck mit Seitenlänge $a$:
 
 $$h = \frac{a\sqrt{3}}{2}$$
+
+Diese Formel ergibt sich direkt aus der allgemeinen Höhenformel, da im gleichseitigen Dreieck alle Seiten gleich lang sind ($a = c$).
+
+> [!note] **Wichtige Verhältnisse**
+> Im gleichseitigen Dreieck mit Seitenlänge $a$ gilt:
+> - Höhe: $h = \frac{a\sqrt{3}}{2} \approx 0{,}866 \cdot a$
+> - Fläche: $A = \frac{a^2\sqrt{3}}{4}$
+> - Der Schwerpunkt teilt die Höhe im Verhältnis 2:1
 
 ## Praktische Anwendungen
 
@@ -96,6 +139,9 @@ $$h = \frac{a\sqrt{3}}{2}$$
 > Eine Leiter soll bis zu einem 4 m hohen Fenster reichen. Der Neigungswinkel erfordert einen Fußabstand von 1,5 m. Wie lang muss die Leiter sein?
 > 
 > $$l = \sqrt{4^2 + 1{,}5^2} = \sqrt{16 + 2{,}25} = \sqrt{18{,}25} \approx 4{,}27 \text{ m}$$
+
+> [!warning] **Sicherheit bei Leitern**
+> Die Berufsgenossenschaft empfiehlt: Der Fußabstand sollte etwa ein Viertel der Leiterlänge betragen. Das entspricht einem Anstellwinkel von etwa 75°. Bei zu steilem Winkel kann die Leiter nach hinten kippen!
 
 ### Dachkonstruktionen
 
@@ -150,6 +196,15 @@ Manchmal muss der Satz mehrfach angewendet werden.
 > - Höhe im gleichschenkligen Dreieck durch Pythagoras berechenbar
 > - Koordinatenabstand: Differenzen quadrieren und Wurzel ziehen
 > - Bei komplexen Aufgaben: Problem in Teilprobleme zerlegen
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[02-Satz-des-Pythagoras|Satz des Pythagoras]] – Die theoretische Grundlage
+- → [[03-Berechnung-unbekannter-Seiten|Berechnung unbekannter Seiten]] – Grundlegende Berechnungen
+- → [[../12-Koerpergeometrie/03-Quader|Quader]] – Raumdiagonalen bei Körpern
+- → [[../09-Funktionen-und-Koordinatensysteme/02-Punkte-und-Koordinaten|Koordinatensystem]] – Abstandsberechnungen
 
 ## Übungsaufgaben
 

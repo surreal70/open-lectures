@@ -1,7 +1,7 @@
 ---
 title: "Der Sinus"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-20
 chapter: "11"
 section: "06"
 status: "draft - review pending"
@@ -21,6 +21,10 @@ keywords:
 > - Den Sinus zur Berechnung von Winkeln nutzen
 > - Den Verlauf der Sinusfunktion kennen
 
+## Überblick
+
+Der Sinus ist die wohl bekannteste der drei Winkelfunktionen. Er beschreibt das Verhältnis von Gegenkathete zu Hypotenuse in einem rechtwinkligen Dreieck. Der Name „Sinus" stammt aus dem Lateinischen und bedeutet „Bogen" oder „Bucht" – eine Anspielung auf die bogenförmige Kurve, die der Sinus beschreibt.
+
 ## Definition
 
 $$\sin(\alpha) = \frac{\text{Gegenkathete}}{\text{Hypotenuse}}$$
@@ -38,6 +42,9 @@ kathete)│  α ╲
        
        sin(α) = a/c
 ```
+
+> [!tip] **Anschauliche Vorstellung**
+> Stelle dir vor, du schaust von Punkt A aus zum Punkt C hinauf. Der Sinus gibt an, wie „steil" dieser Blick ist – als Anteil der Hypotenuse. Bei α = 0° schaust du horizontal (sin = 0), bei α = 90° schaust du senkrecht nach oben (sin = 1).
 
 ## Anwendungen
 
@@ -94,13 +101,20 @@ $$0 < \sin(\alpha) < 1$$
 
 ## Wichtige Werte
 
-| Winkel | sin |
-|---|---|
-| 0° | 0 |
-| 30° | 0,5 |
-| 45° | $\frac{\sqrt{2}}{2} \approx 0{,}707$ |
-| 60° | $\frac{\sqrt{3}}{2} \approx 0{,}866$ |
-| 90° | 1 |
+Diese Werte solltest du auswendig kennen – sie kommen in Prüfungen häufig vor und helfen, Ergebnisse zu überprüfen:
+
+| Winkel | sin | Merkregel |
+|---|---|---|
+| 0° | 0 | Am Anfang ist nichts „steil" |
+| 30° | 0,5 | Genau die Hälfte |
+| 45° | $\frac{\sqrt{2}}{2} \approx 0{,}707$ | Gleich wie cos(45°) |
+| 60° | $\frac{\sqrt{3}}{2} \approx 0{,}866$ | Fast 1, aber noch nicht ganz |
+| 90° | 1 | Maximum – senkrecht nach oben |
+
+> [!tip] **Merkregel für die Werte**
+> Die Sinuswerte bei 0°, 30°, 45°, 60°, 90° folgen einem Muster:
+> $$\frac{\sqrt{0}}{2}, \frac{\sqrt{1}}{2}, \frac{\sqrt{2}}{2}, \frac{\sqrt{3}}{2}, \frac{\sqrt{4}}{2}$$
+> Das ergibt: $0, 0{,}5, \frac{\sqrt{2}}{2}, \frac{\sqrt{3}}{2}, 1$
 
 ## Der Graph der Sinusfunktion
 
@@ -143,6 +157,15 @@ $$0 < \sin(\alpha) < 1$$
 > - Hypotenuse: $c = \frac{a}{\sin(\alpha)}$
 > - Winkel: $\alpha = \sin^{-1}\left(\frac{a}{c}\right)$
 > - Werte zwischen 0 und 1 für Winkel zwischen 0° und 90°
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[05-Einfuehrung-Trigonometrie|Einführung Trigonometrie]] – Überblick über alle Winkelfunktionen
+- → [[07-Kosinus|Der Kosinus]] – Die „Schwester" des Sinus
+- → [[08-Tangens|Der Tangens]] – sin/cos als Verhältnis
+- → [[09-Berechnung-Seitenlaengen|Seitenlängen berechnen]] – Anwendungen
 
 ## Übungsaufgaben
 

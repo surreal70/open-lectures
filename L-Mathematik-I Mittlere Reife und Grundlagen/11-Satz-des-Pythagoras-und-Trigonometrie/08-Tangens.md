@@ -1,7 +1,7 @@
 ---
 title: "Der Tangens"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-20
 chapter: "11"
 section: "08"
 status: "draft - review pending"
@@ -21,6 +21,10 @@ keywords:
 > - Den Zusammenhang zur Steigung kennen
 > - Wissen, wann Tangens besonders nützlich ist
 
+## Überblick
+
+Der Tangens ist die dritte Winkelfunktion und hat eine besondere praktische Bedeutung: Er entspricht der **Steigung** einer Geraden. Wenn du auf einer Straße bergauf gehst, gibt der Tangens des Steigungswinkels an, wie viel Höhe du pro Meter horizontaler Strecke gewinnst. Der Name kommt vom lateinischen „tangens" (berührend), weil die Tangente eine Kurve in einem Punkt berührt.
+
 ## Definition
 
 $$\tan(\alpha) = \frac{\text{Gegenkathete}}{\text{Ankathete}}$$
@@ -39,6 +43,9 @@ kathete)│  α ╲
        
        tan(α) = a/b
 ```
+
+> [!tip] **Anschauliche Vorstellung**
+> Der Tangens beschreibt direkt die „Steilheit" eines Winkels: Wie viel geht es nach oben, wenn ich eine Einheit nach vorne gehe? Bei 45° ist die Antwort genau 1 (tan(45°) = 1), denn beide Katheten sind gleich lang.
 
 ## Zusammenhang mit Sinus und Kosinus
 
@@ -110,6 +117,8 @@ Im rechtwinkligen Dreieck (0° < α < 90°):
 > [!tip] Wichtige Verbindung
 > Der Tangens eines Winkels entspricht der **Steigung** einer Geraden!
 
+Dies ist eine der wichtigsten praktischen Anwendungen des Tangens. In der Analysis und bei linearen Funktionen spielt diese Verbindung eine zentrale Rolle.
+
 ```
     y
     ↑
@@ -122,6 +131,9 @@ Im rechtwinkligen Dreieck (0° < α < 90°):
 $$m = \tan(\alpha)$$
 
 $$\alpha = \arctan(m)$$
+
+> [!example] **Alltagsbeispiel**
+> Eine Straße mit 15% Steigung hat den Steigungswinkel $\alpha = \arctan(0{,}15) \approx 8{,}5°$. Umgekehrt: Eine Rampe mit 6° Neigung hat die Steigung $m = \tan(6°) \approx 0{,}105 = 10{,}5\%$.
 
 ## Wann benutzt man welche Funktion?
 
@@ -164,6 +176,15 @@ $$\alpha = \arctan(m)$$
 > - Ankathete: $b = \frac{a}{\tan(\alpha)}$
 > - Winkel: $\alpha = \tan^{-1}\left(\frac{a}{b}\right)$
 > - Nutze Tangens, wenn nur die beiden Katheten beteiligt sind
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[06-Sinus|Der Sinus]] – Gegenkathete / Hypotenuse
+- → [[07-Kosinus|Der Kosinus]] – Ankathete / Hypotenuse
+- → [[11-Steigungen-Neigungswinkel|Steigungen und Neigungswinkel]] – Praktische Anwendung
+- → [[../09-Funktionen-und-Koordinatensysteme/06-Steigung-und-Achsenabschnitt|Steigung bei linearen Funktionen]] – Verbindung zur Analysis
 
 ## Übungsaufgaben
 

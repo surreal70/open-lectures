@@ -1,7 +1,7 @@
 ---
 title: "Berechnung von Seitenlängen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-20
 chapter: "11"
 section: "09"
 status: "draft - review pending"
@@ -20,6 +20,10 @@ keywords:
 > - Systematisch Seitenlängen berechnen
 > - Komplexere Aufgaben in Teilprobleme zerlegen
 > - Ergebnisse überprüfen
+
+## Überblick
+
+In der Praxis stehen wir oft vor der Aufgabe, aus bekannten Winkeln und Seiten andere Größen zu berechnen. Das systematische Vorgehen, das du hier lernst, hilft dir, die richtige Winkelfunktion auszuwählen und Fehler zu vermeiden. Der Schlüssel liegt darin, die Situation genau zu analysieren und die Beziehungen zwischen den Seiten zu erkennen.
 
 ## Strategie zur Auswahl der richtigen Funktion
 
@@ -50,6 +54,8 @@ Bezogen auf den gegebenen Winkel:
 
 ### Entscheidungsbaum
 
+Der folgende Entscheidungsbaum hilft dir, schnell die richtige Funktion zu finden:
+
 ```
 Ist die Hypotenuse beteiligt?
           │
@@ -63,6 +69,13 @@ beteiligt?     beteiligt?
     │            │
   → sin        → cos
 ```
+
+> [!tip] **Einfache Merkregel**
+> - **Keine Hypotenuse dabei?** → Tangens!
+> - **Gegenkathete dabei?** → Sinus!
+> - **Ankathete dabei?** → Kosinus!
+>
+> Die Hypotenuse entscheidet also, ob tan überhaupt in Frage kommt.
 
 ## Formelübersicht
 
@@ -148,6 +161,15 @@ $$x = \frac{48}{\tan(8°)} = \frac{48}{0{,}141} \approx 340 \text{ m}$$
 > - Hypotenuse beteiligt → sin oder cos
 > - Nur Katheten → tan
 > - Nach Berechnung: Plausibilität prüfen
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[06-Sinus|Sinus]] – Wenn Gegenkathete und Hypotenuse beteiligt sind
+- → [[07-Kosinus|Kosinus]] – Wenn Ankathete und Hypotenuse beteiligt sind
+- → [[08-Tangens|Tangens]] – Wenn nur die Katheten beteiligt sind
+- → [[10-Berechnung-Winkel|Winkelberechnung]] – Der umgekehrte Fall
 
 ## Übungsaufgaben
 

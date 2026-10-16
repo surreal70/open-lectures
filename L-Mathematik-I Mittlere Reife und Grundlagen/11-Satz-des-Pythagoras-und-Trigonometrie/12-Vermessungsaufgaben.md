@@ -1,7 +1,7 @@
 ---
 title: "Praktische Vermessungsaufgaben"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-20
 chapter: "11"
 section: "12"
 status: "draft - review pending"
@@ -21,6 +21,15 @@ keywords:
 > - Unzugängliche Höhen und Entfernungen berechnen
 > - Mit Peil- und Sichtwinkeln arbeiten
 > - Mehrstufige Berechnungen durchführen
+
+## Überblick
+
+Die Vermessung ist eine der ältesten Anwendungen der Trigonometrie. Schon die alten Ägypter nutzten trigonometrische Prinzipien, um die Pyramiden zu bauen und das Land nach den Nilüberschwemmungen neu zu vermessen. Heute ist die Vermessung ein Beruf, der von Landvermessern über Architekten bis zu Satellitennavigationsingenieuren reicht.
+
+Das Besondere an Vermessungsaufgaben: Wir können oft nicht direkt messen, was uns interessiert. Die Höhe eines Turms, die Breite eines Flusses, die Entfernung zu einem Berggipfel – all das lässt sich nicht mit einem Maßband bestimmen. Aber mit Trigonometrie können wir diese „unzugänglichen" Größen berechnen!
+
+> [!note] **Historischer Kontext**
+> Der griechische Mathematiker Thales (ca. 600 v. Chr.) soll die Höhe der Pyramiden von Gizeh mit einem einfachen Trick gemessen haben: Er wartete, bis sein eigener Schatten genauso lang war wie er selbst (also bei 45° Sonnenstand), und maß dann den Schatten der Pyramide. Die Trigonometrie macht heute weit präzisere Messungen möglich – zu jeder Tageszeit!
 
 ## Höhenmessung durch Anvisieren
 
@@ -149,10 +158,16 @@ $$\text{Entfernung von A} = \frac{b \cdot \sin(\beta)}{\sin(180° - \alpha - \be
 
 ## Hilfsmittel in der Praxis
 
-- **Theodolit**: Präzisionsinstrument zur Winkelmessung
-- **Neigungsmesser**: Für Steigungen und einfache Winkel
-- **Entfernungsmesser**: Laserbasiert für direkte Messungen
-- **Geodreieck/Kompass**: Für einfache Peilungen
+Moderne Vermessungstechnik nutzt hochpräzise Instrumente, aber die mathematischen Grundlagen bleiben dieselben:
+
+- **Theodolit**: Präzisionsinstrument zur Winkelmessung (horizontal und vertikal), erreicht Genauigkeiten von Winkelsekunden
+- **Neigungsmesser**: Für Steigungen und einfache Winkel, oft als Smartphone-App verfügbar
+- **Entfernungsmesser**: Laserbasiert für direkte Messungen bis zu mehreren hundert Metern
+- **Geodreieck/Kompass**: Für einfache Peilungen und Kartenarbeit
+- **GPS**: Nutzt Triangulation zu mindestens 4 Satelliten, um Positionen weltweit zu bestimmen
+
+> [!tip] **Moderne Anwendung**
+> Die GPS-Navigation in deinem Smartphone basiert auf denselben trigonometrischen Prinzipien! Durch die Laufzeitmessung von Signalen mehrerer Satelliten wird deine Position per Triangulation berechnet.
 
 ## Zusammenfassung
 
@@ -162,6 +177,15 @@ $$\text{Entfernung von A} = \frac{b \cdot \sin(\beta)}{\sin(180° - \alpha - \be
 > - Bei unbekannter Entfernung: zwei Messungen von verschiedenen Punkten
 > - Augenhöhe bei Höhenmessungen berücksichtigen
 > - Ergebnisse auf Plausibilität prüfen
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[08-Tangens|Der Tangens]] – Grundlage der meisten Vermessungsberechnungen
+- → [[10-Berechnung-Winkel|Winkelberechnung]] – Arkusfunktionen anwenden
+- → [[11-Steigungen-Neigungswinkel|Steigungen und Neigungswinkel]] – Verwandte Anwendungen
+- → [[02-Satz-des-Pythagoras|Satz des Pythagoras]] – Oft kombiniert mit Trigonometrie
 
 ## Übungsaufgaben
 

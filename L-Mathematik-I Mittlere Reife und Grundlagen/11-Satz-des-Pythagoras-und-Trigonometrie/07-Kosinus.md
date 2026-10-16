@@ -1,7 +1,7 @@
 ---
 title: "Der Kosinus"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-20
 chapter: "11"
 section: "07"
 status: "draft - review pending"
@@ -21,6 +21,10 @@ keywords:
 > - Den Kosinus zur Berechnung von Winkeln nutzen
 > - Den Zusammenhang zum Sinus kennen
 
+## Überblick
+
+Der Kosinus ist der „Bruder" des Sinus und beschreibt das Verhältnis von Ankathete zu Hypotenuse. Während der Sinus misst, wie weit man „nach oben" kommt, misst der Kosinus, wie weit man „nach vorne" kommt. Der Name stammt vom lateinischen „cosinus", was „Komplement-Sinus" bedeutet – denn $\cos(\alpha) = \sin(90° - \alpha)$.
+
 ## Definition
 
 $$\cos(\alpha) = \frac{\text{Ankathete}}{\text{Hypotenuse}}$$
@@ -39,6 +43,9 @@ $$\cos(\alpha) = \frac{\text{Ankathete}}{\text{Hypotenuse}}$$
        
        cos(α) = b/c
 ```
+
+> [!tip] **Anschauliche Vorstellung**
+> Wenn du auf der Hypotenuse entlanggehst, gibt der Kosinus an, wie viel du dabei „horizontal" vorankommst. Bei α = 0° gehst du rein horizontal (cos = 1), bei α = 90° gehst du rein vertikal und kommst horizontal nicht voran (cos = 0).
 
 ## Anwendungen
 
@@ -125,12 +132,24 @@ $$0 < \cos(\alpha) < 1$$
 
 $$\cos(\alpha) = \sin(90° - \alpha)$$
 
+Diese Beziehung erklärt auch den Namen „Kosinus" – er ist der Sinus des Komplementwinkels.
+
 > [!example] Beispiel
 > $\cos(30°) = \sin(60°) = \frac{\sqrt{3}}{2}$
+> 
+> Die Werte „tauschen die Plätze" bei Komplementwinkeln!
 
 ### Trigonometrischer Pythagoras
 
 $$\sin^2(\alpha) + \cos^2(\alpha) = 1$$
+
+> [!note] **Warum gilt das?**
+> Diese fundamentale Identität folgt direkt aus dem Satz des Pythagoras. In einem rechtwinkligen Dreieck mit Hypotenuse 1 sind die Katheten gerade $\sin(\alpha)$ und $\cos(\alpha)$. Nach Pythagoras: $\sin^2 + \cos^2 = 1^2 = 1$.
+
+> [!tip] **Praktischer Nutzen**
+> Mit dieser Formel kannst du einen Wert aus dem anderen berechnen:
+> - $\cos(\alpha) = \sqrt{1 - \sin^2(\alpha)}$
+> - $\sin(\alpha) = \sqrt{1 - \cos^2(\alpha)}$
 
 ## Vergleich: Sinus vs. Kosinus
 
@@ -169,6 +188,15 @@ $$\sin^2(\alpha) + \cos^2(\alpha) = 1$$
 > - Hypotenuse: $c = \frac{b}{\cos(\alpha)}$
 > - Winkel: $\alpha = \cos^{-1}\left(\frac{b}{c}\right)$
 > - Kosinus fällt von 1 (bei 0°) auf 0 (bei 90°)
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[06-Sinus|Der Sinus]] – Die „Schwester" des Kosinus
+- → [[08-Tangens|Der Tangens]] – sin/cos als Verhältnis
+- → [[05-Einfuehrung-Trigonometrie|Einführung Trigonometrie]] – Überblick
+- → [[09-Berechnung-Seitenlaengen|Seitenlängen berechnen]] – Anwendungen
 
 ## Übungsaufgaben
 

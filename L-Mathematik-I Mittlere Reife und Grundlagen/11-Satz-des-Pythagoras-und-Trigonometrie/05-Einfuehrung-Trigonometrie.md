@@ -1,7 +1,7 @@
 ---
 title: "Einführung in die Trigonometrie"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-20
 chapter: "11"
 section: "05"
 status: "draft - review pending"
@@ -22,12 +22,21 @@ keywords:
 > - Die Bezeichnungen im rechtwinkligen Dreieck sicher verwenden
 > - Den Zusammenhang zwischen Winkeln und Seitenverhältnissen verstehen
 
+## Überblick
+
+Die Trigonometrie erweitert unsere Möglichkeiten, mit Dreiecken zu arbeiten, erheblich. Während der Satz des Pythagoras nur Seitenlängen miteinander verknüpft, stellt die Trigonometrie eine Verbindung zwischen **Winkeln und Seiten** her. Das macht sie zu einem unverzichtbaren Werkzeug in Vermessung, Navigation, Architektur und Technik.
+
 ## Was ist Trigonometrie?
 
 **Trigonometrie** (griech. „Dreiecksmessung") beschäftigt sich mit den Beziehungen zwischen Winkeln und Seiten in Dreiecken.
 
+> [!note] **Historischer Kontext**
+> Die Trigonometrie entstand aus praktischen Bedürfnissen: Die alten Griechen brauchten sie für die Astronomie, um Sternpositionen und Planetenbahnen zu berechnen. Der Astronom Hipparchos (ca. 190–120 v. Chr.) gilt als „Vater der Trigonometrie". Er erstellte die ersten Sehnentafeln – Vorläufer unserer heutigen Sinustabellen.
+> 
+> Im arabischen Raum wurde die Trigonometrie im Mittelalter weiterentwickelt. Der Begriff „Sinus" stammt von einer fehlerhaften Übersetzung des arabischen Wortes „jayb" (Tasche, Bucht) ins Lateinische.
+
 > [!note] Kernidee
-> Die Winkelfunktionen beschreiben, wie sich die **Seitenverhältnisse** eines rechtwinkligen Dreiecks bei verschiedenen Winkeln ändern.
+> Die Winkelfunktionen beschreiben, wie sich die **Seitenverhältnisse** eines rechtwinkligen Dreiecks bei verschiedenen Winkeln ändern. Ein Dreieck mit einem 30°-Winkel hat immer dieselben Seitenverhältnisse – egal wie groß es ist!
 
 ## Das rechtwinklige Dreieck als Grundlage
 
@@ -73,17 +82,24 @@ $$\tan(\alpha) = \frac{\text{Gegenkathete}}{\text{Ankathete}} = \frac{a}{b}$$
 
 > [!tip] Merksprüche für die Winkelfunktionen
 > 
-> **GAGA HüHü AG**:
-> - **G**egenkathete **A**nkathete für Tangens (**GA**)
-> - **G**egenkathete und **A**nkathete für die (**GA**)
-> - **Hü**potenuse bei Sinus (**Hü**)
-> - **Hü**potenuse bei Kosinus (**Hü**)
+> **SOH-CAH-TOA** (international bekannt):
+> - **S**ine = **O**pposite / **H**ypotenuse (sin = Gegenkathete / Hypotenuse)
+> - **C**osine = **A**djacent / **H**ypotenuse (cos = Ankathete / Hypotenuse)
+> - **T**angent = **O**pposite / **A**djacent (tan = Gegenkathete / Ankathete)
+> 
+> **Deutsche Variante: „GAGA HüHü AG"**:
+> - **G**egenkathete, **A**nkathete für Tangens (**GA**)
+> - **G**egenkathete, **A**nkathete – eine davon durch (**GA**)
+> - **Hü**potenuse bei Sinus und Kosinus (**Hü** **Hü**)
 > - **A**nkathete bei Kosinus, **G**egenkathete bei Sinus (**AG**)
 > 
-> Oder einfacher:
-> - **sin** = **G**egen / **H**ypotenuse
-> - **cos** = **A**n / **H**ypotenuse  
-> - **tan** = **G**egen / **A**n
+> **Oder ganz einfach als Tabelle merken**:
+> - **sin** = **G**egen / **H**ypotenuse → „Gegen H"
+> - **cos** = **A**n / **H**ypotenuse → „An H"
+> - **tan** = **G**egen / **A**n → „Gegen An"
+
+> [!warning] **Häufiger Fehler**
+> Viele verwechseln Ankathete und Gegenkathete. Denke daran: Diese Begriffe sind immer **relativ zum betrachteten Winkel**! Die Ankathete liegt **am** Winkel an, die Gegenkathete liegt ihm **gegenüber**.
 
 ## Werte spezieller Winkel
 
@@ -103,9 +119,14 @@ $$\sin^2(\alpha) + \cos^2(\alpha) = 1$$
 
 (Dies ist der Satz des Pythagoras in trigonometrischer Form!)
 
+> [!tip] **Anschauliche Erklärung**
+> Diese Identität folgt direkt aus dem Satz des Pythagoras: Wenn die Hypotenuse die Länge 1 hat, dann ist $\sin(\alpha)$ die Länge der Gegenkathete und $\cos(\alpha)$ die Länge der Ankathete. Nach Pythagoras gilt dann: Gegenkathete² + Ankathete² = Hypotenuse² → $\sin^2 + \cos^2 = 1$.
+
 ### Zwischen Tangens, Sinus und Kosinus
 
 $$\tan(\alpha) = \frac{\sin(\alpha)}{\cos(\alpha)}$$
+
+Diese Beziehung ist logisch: Tangens = Gegenkathete/Ankathete, und wenn man Zähler und Nenner jeweils durch die Hypotenuse teilt, erhält man sin/cos.
 
 ### Komplementärwinkel
 
@@ -113,6 +134,9 @@ Für Winkel $\alpha$ und $\beta$ mit $\alpha + \beta = 90°$:
 
 $$\sin(\alpha) = \cos(\beta)$$
 $$\cos(\alpha) = \sin(\beta)$$
+
+> [!note] **Warum ist das so?**
+> Bei Komplementärwinkeln tauschen Ankathete und Gegenkathete ihre Rollen. Was für den einen Winkel die Gegenkathete ist, ist für den anderen die Ankathete – und umgekehrt.
 
 > [!example] Beispiel
 > $\sin(30°) = \cos(60°) = 0{,}5$
@@ -133,6 +157,16 @@ $$\cos(\alpha) = \sin(\beta)$$
 > - Jede Funktion ist ein Verhältnis zweier Seiten
 > - Ankathete und Gegenkathete sind immer bezogen auf einen bestimmten Winkel
 > - Die Funktionswerte können mit dem Taschenrechner bestimmt werden
+
+## Querverweise
+
+Verwandte Themen in diesem Kapitel:
+
+- → [[06-Sinus|Der Sinus]] – Detaillierte Behandlung
+- → [[07-Kosinus|Der Kosinus]] – Detaillierte Behandlung
+- → [[08-Tangens|Der Tangens]] – Detaillierte Behandlung
+- → [[01-Rechtwinklige-Dreiecke|Rechtwinklige Dreiecke]] – Grundlagen
+- → [[02-Satz-des-Pythagoras|Satz des Pythagoras]] – Die fundamentale Beziehung
 
 ## Übungsaufgaben
 

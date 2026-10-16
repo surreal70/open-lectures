@@ -47,32 +47,8 @@ Im Gegensatz zum theoretischen OSI-Modell wurde TCP/IP **praxisorientiert** entw
 
 ## Das TCP/IP-Modell im Überblick
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DAS TCP/IP-MODELL (DoD)                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Nr.   Schicht              Auch genannt        Dateneinheit   │
-│   ───   ───────              ───────────         ──────────     │
-│                                                                 │
-│    4    Anwendung            Application         Daten          │
-│         (Application)        Process Layer       Nachrichten    │
-│                                                                 │
-│   ─────────────────────────────────────────────────────────     │
-│    3    Transport            Host-to-Host        Segmente (TCP) │
-│         (Transport)          Transport           Datagramme(UDP)│
-│                                                                 │
-│   ─────────────────────────────────────────────────────────     │
-│    2    Internet             Internetwork        Pakete         │
-│         (Internet)           Network Layer       Datagramme     │
-│                                                                 │
-│   ─────────────────────────────────────────────────────────     │
-│    1    Netzzugang           Network Access      Frames         │
-│         (Network Access)     Link Layer          Bits           │
-│                              Host-to-Network                    │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[tcpip-modell.png]]
+*<span class="fig-id">03-03-02-tcpip-modell</span>: Die vier Schichten des TCP/IP-Modells mit Anwendungs- und Transportorientierung.*
 
 ## Die vier Schichten im Detail
 
@@ -82,35 +58,27 @@ Im Gegensatz zum theoretischen OSI-Modell wurde TCP/IP **praxisorientiert** entw
 
 **Aufgabe:** Physikalische Übertragung und Zugang zum lokalen Netzwerk.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                SCHICHT 1 – NETZZUGANG                           │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Aufgaben:                                                     │
-│   • Physikalische Adressierung (MAC-Adressen)                  │
-│   • Rahmenbildung (Framing)                                    │
-│   • Medienzugriffskontrolle                                    │
-│   • Fehlererkennung auf Frame-Ebene                            │
-│   • Signalübertragung                                          │
-│                                                                 │
-│   Protokolle/Standards:                                         │
-│   • Ethernet (IEEE 802.3)                                      │
-│   • WLAN (IEEE 802.11)                                         │
-│   • PPP (Point-to-Point Protocol)                              │
-│   • PPPoE (PPP over Ethernet)                                  │
-│   • L2TP (Layer 2 Tunneling Protocol)                          │
-│   • Token Ring (historisch)                                    │
-│                                                                 │
-│   Besonderheit im TCP/IP-Modell:                               │
-│   • Nicht detailliert spezifiziert                             │
-│   • "Beliebige" Netzwerktechnologie verwendbar                 │
-│   • Fokus liegt auf den höheren Schichten                      │
-│                                                                 │
-│   Verbindungstyp: Punkt-zu-Punkt                               │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Aufgaben:**
+- Physikalische Adressierung (MAC-Adressen)
+- Rahmenbildung (Framing)
+- Medienzugriffskontrolle
+- Fehlererkennung auf Frame-Ebene
+- Signalübertragung
+
+**Protokolle/Standards:**
+- Ethernet (IEEE 802.3)
+- WLAN (IEEE 802.11)
+- PPP (Point-to-Point Protocol)
+- PPPoE (PPP over Ethernet)
+- L2TP (Layer 2 Tunneling Protocol)
+- Token Ring (historisch)
+
+**Besonderheit im TCP/IP-Modell:**
+- Nicht detailliert spezifiziert
+- "Beliebige" Netzwerktechnologie verwendbar
+- Fokus liegt auf den höheren Schichten
+
+**Verbindungstyp:** Punkt-zu-Punkt
 
 ### Schicht 2 – Internet (Internet Layer)
 
@@ -118,37 +86,29 @@ Im Gegensatz zum theoretischen OSI-Modell wurde TCP/IP **praxisorientiert** entw
 
 **Aufgabe:** Logische Adressierung und Routing über Netzwerkgrenzen hinweg.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                SCHICHT 2 – INTERNET                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Aufgaben:                                                     │
-│   • Logische Adressierung (IP-Adressen)                        │
-│   • Routing zwischen Netzwerken                                │
-│   • Fragmentierung und Reassemblierung                         │
-│   • Verbindungsloses Paket-Switching                           │
-│                                                                 │
-│   Kernprotokolle:                                               │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │  IP (Internet Protocol)                                 │  │
-│   │  • IPv4 (RFC 791) – 32-Bit-Adressen                    │  │
-│   │  • IPv6 (RFC 8200) – 128-Bit-Adressen                  │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                 │
-│   Hilfssprotokolle:                                             │
-│   • ICMP – Fehlermeldungen, Diagnose (Ping, Traceroute)       │
-│   • IGMP – Multicast-Gruppenverwaltung                         │
-│   • ARP – Adressauflösung IP → MAC (streng genommen L2)       │
-│   • IPsec – Verschlüsselung auf IP-Ebene                      │
-│                                                                 │
-│   Routing-Protokolle (auf dieser Ebene):                       │
-│   • OSPF, BGP, RIP, EIGRP                                      │
-│                                                                 │
-│   Geräte: Router                                               │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Aufgaben:**
+- Logische Adressierung (IP-Adressen)
+- Routing zwischen Netzwerken
+- Fragmentierung und Reassemblierung
+- Verbindungsloses Paket-Switching
+
+**Kernprotokolle:**
+
+| Protokoll | Beschreibung |
+|-----------|--------------|
+| **IPv4** | RFC 791 – 32-Bit-Adressen |
+| **IPv6** | RFC 8200 – 128-Bit-Adressen |
+
+**Hilfsprotokolle:**
+- ICMP – Fehlermeldungen, Diagnose (Ping, Traceroute)
+- IGMP – Multicast-Gruppenverwaltung
+- ARP – Adressauflösung IP → MAC (streng genommen L2)
+- IPsec – Verschlüsselung auf IP-Ebene
+
+**Routing-Protokolle (auf dieser Ebene):**
+- OSPF, BGP, RIP, EIGRP
+
+**Geräte:** Router
 
 ### Schicht 3 – Transport (Transport Layer)
 
@@ -156,43 +116,30 @@ Im Gegensatz zum theoretischen OSI-Modell wurde TCP/IP **praxisorientiert** entw
 
 **Aufgabe:** Ende-zu-Ende-Kommunikation zwischen Prozessen.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                SCHICHT 3 – TRANSPORT                            │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Aufgaben:                                                     │
-│   • Ende-zu-Ende-Verbindung zwischen Anwendungen               │
-│   • Multiplexing über Ports (0-65535)                          │
-│   • Segmentierung und Reassemblierung                          │
-│   • Flusskontrolle und Staukontrolle (bei TCP)                │
-│                                                                 │
-│   Die zwei Hauptprotokolle:                                     │
-│                                                                 │
-│   ┌──────────────────────┬──────────────────────┐              │
-│   │         TCP          │         UDP          │              │
-│   ├──────────────────────┼──────────────────────┤              │
-│   │ Verbindungsorientiert│ Verbindungslos       │              │
-│   │ Zuverlässig          │ Best-Effort          │              │
-│   │ Reihenfolgegarantie  │ Keine Garantien      │              │
-│   │ Flusskontrolle       │ Kein Overhead        │              │
-│   │ 3-Way-Handshake      │ Fire-and-Forget      │              │
-│   │ Segmente             │ Datagramme           │              │
-│   ├──────────────────────┼──────────────────────┤              │
-│   │ HTTP, HTTPS, FTP,    │ DNS, DHCP, NTP,      │              │
-│   │ SMTP, SSH, Telnet    │ VoIP, Streaming,     │              │
-│   │                      │ Gaming, SNMP         │              │
-│   └──────────────────────┴──────────────────────┘              │
-│                                                                 │
-│   Weitere Protokolle:                                           │
-│   • SCTP (Stream Control Transmission Protocol)                │
-│   • QUIC (Quick UDP Internet Connections)                      │
-│   • DCCP (Datagram Congestion Control Protocol)                │
-│                                                                 │
-│   Verbindungstyp: Ende-zu-Ende                                 │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Aufgaben:**
+- Ende-zu-Ende-Verbindung zwischen Anwendungen
+- Multiplexing über Ports (0-65535)
+- Segmentierung und Reassemblierung
+- Flusskontrolle und Staukontrolle (bei TCP)
+
+**Die zwei Hauptprotokolle:**
+
+| Eigenschaft | TCP | UDP |
+|-------------|-----|-----|
+| Verbindung | Verbindungsorientiert | Verbindungslos |
+| Zuverlässigkeit | Zuverlässig | Best-Effort |
+| Reihenfolge | Garantiert | Keine Garantie |
+| Flusskontrolle | Ja | Nein |
+| Verbindungsaufbau | 3-Way-Handshake | Fire-and-Forget |
+| Dateneinheit | Segmente | Datagramme |
+| **Anwendungen** | HTTP, HTTPS, FTP, SMTP, SSH, Telnet | DNS, DHCP, NTP, VoIP, Streaming, Gaming, SNMP |
+
+**Weitere Protokolle:**
+- SCTP (Stream Control Transmission Protocol)
+- QUIC (Quick UDP Internet Connections)
+- DCCP (Datagram Congestion Control Protocol)
+
+**Verbindungstyp:** Ende-zu-Ende
 
 ### Schicht 4 – Anwendung (Application Layer)
 
@@ -200,165 +147,63 @@ Im Gegensatz zum theoretischen OSI-Modell wurde TCP/IP **praxisorientiert** entw
 
 **Aufgabe:** Netzwerkdienste für Anwendungsprogramme.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                SCHICHT 4 – ANWENDUNG                            │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Aufgaben (vereint OSI-Schichten 5-7):                        │
-│   • Sitzungsverwaltung                                         │
-│   • Datenformatierung und -konvertierung                       │
-│   • Verschlüsselung (TLS)                                      │
-│   • Netzwerkdienste für Anwendungen                            │
-│                                                                 │
-│   Protokolle nach Anwendungsbereich:                            │
-│                                                                 │
-│   Web:          HTTP, HTTPS, WebSocket                         │
-│   E-Mail:       SMTP, POP3, IMAP                               │
-│   Dateitransfer: FTP, SFTP, TFTP, SCP                          │
-│   Namensauflösung: DNS                                         │
-│   Fernzugriff:  SSH, Telnet, RDP                               │
-│   Netzwerkdienste: DHCP, NTP, SNMP, LDAP                       │
-│   Sicherheit:   TLS/SSL, Kerberos                              │
-│   Medien:       RTP, RTSP, SIP                                 │
-│                                                                 │
-│   Geräte:                                                       │
-│   • Application Gateway                                        │
-│   • Proxy Server                                               │
-│   • Layer-7-Load-Balancer                                      │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Aufgaben (vereint OSI-Schichten 5-7):**
+- Sitzungsverwaltung
+- Datenformatierung und -konvertierung
+- Verschlüsselung (TLS)
+- Netzwerkdienste für Anwendungen
+
+**Protokolle nach Anwendungsbereich:**
+
+| Bereich | Protokolle |
+|---------|------------|
+| Web | HTTP, HTTPS, WebSocket |
+| E-Mail | SMTP, POP3, IMAP |
+| Dateitransfer | FTP, SFTP, TFTP, SCP |
+| Namensauflösung | DNS |
+| Fernzugriff | SSH, Telnet, RDP |
+| Netzwerkdienste | DHCP, NTP, SNMP, LDAP |
+| Sicherheit | TLS/SSL, Kerberos |
+| Medien | RTP, RTSP, SIP |
+
+**Geräte:**
+- Application Gateway
+- Proxy Server
+- Layer-7-Load-Balancer
 
 ## Kommunikationsarten
 
 Das TCP/IP-Modell unterstützt verschiedene Kommunikationsformen:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                   KOMMUNIKATIONSARTEN                           │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Art          Beziehung   Beschreibung        Maßgeblich       │
-│   ───          ─────────   ───────────         ──────────       │
-│                                                                 │
-│   Unicast      1:1         One-to-One          Adresse          │
-│                            An genau einen                       │
-│                            Empfänger                            │
-│                                                                 │
-│   Broadcast    1:n         One-to-All          Topologie        │
-│                            An alle im                           │
-│                            Netzwerk                             │
-│                                                                 │
-│   Multicast    1:m         One-to-Many         Abonnement       │
-│                            An eine Gruppe                       │
-│                            (Subscription)                       │
-│                                                                 │
-│   Anycast      1:1*        One-to-Nearest      Routing          │
-│                            An den nächsten                      │
-│                            aus einer Gruppe                     │
-│                                                                 │
-│   ─────────────────────────────────────────────────────────     │
-│                                                                 │
-│      ┌───┐                  ┌───┐   ┌───┐   ┌───┐              │
-│      │ S │──────────────────│ E │   │   │   │   │   Unicast    │
-│      └───┘                  └───┘   └───┘   └───┘              │
-│                                                                 │
-│      ┌───┐                  ┌───┐   ┌───┐   ┌───┐              │
-│      │ S │──────────────────│ E │───│ E │───│ E │   Broadcast  │
-│      └───┘                  └───┘   └───┘   └───┘              │
-│                                                                 │
-│      ┌───┐                  ┌───┐   ┌───┐   ┌───┐              │
-│      │ S │──────────────────│ E │───│   │───│ E │   Multicast  │
-│      └───┘                  └───┘   └───┘   └───┘              │
-│                              (Mitglieder der Gruppe)           │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Art | Beziehung | Beschreibung | Maßgeblich |
+|-----|-----------|--------------|------------|
+| **Unicast** | 1:1 | One-to-One – An genau einen Empfänger | Adresse |
+| **Broadcast** | 1:n | One-to-All – An alle im Netzwerk | Topologie |
+| **Multicast** | 1:m | One-to-Many – An eine Gruppe (Subscription) | Abonnement |
+| **Anycast** | 1:1* | One-to-Nearest – An den nächsten aus einer Gruppe | Routing |
+
+![[kommunikationsarten.png]]
+*<span class="fig-id">03-03-02-kommunikationsarten</span>: Vergleich der Kommunikationsarten – Unicast, Broadcast und Multicast.*
 
 ## Datenkapselung im TCP/IP-Modell
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              DATENKAPSELUNG IM TCP/IP-MODELL                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Anwendung        │     HTTP-Request (Daten)      │           │
-│                    └──────────────┬────────────────┘           │
-│                                   ▼                             │
-│   Transport        │ TCP │    HTTP-Request          │          │
-│                    │ Hdr │      (Daten)             │          │
-│                    └─────┴───────────┬──────────────┘          │
-│                                      ▼                          │
-│   Internet         │ IP  │ TCP │  HTTP-Request      │          │
-│                    │ Hdr │ Hdr │    (Daten)         │          │
-│                    └─────┴─────┴─────────┬──────────┘          │
-│                                          ▼                      │
-│   Netzzugang   │Eth│ IP  │ TCP │ HTTP-Request │FCS│            │
-│                │Hdr│ Hdr │ Hdr │   (Daten)    │   │            │
-│                └───┴─────┴─────┴──────────────┴───┘            │
-│                                   ▼                             │
-│   Physikalisch     01101001010110110100...                     │
-│                                                                 │
-│   ─────────────────────────────────────────────────────────    │
-│                                                                 │
-│   Typische Header-Größen:                                      │
-│   • Ethernet: 14 Bytes (+ 4 Bytes FCS)                        │
-│   • IPv4: 20-60 Bytes                                          │
-│   • TCP: 20-60 Bytes                                           │
-│   • UDP: 8 Bytes                                               │
-│                                                                 │
-│   Maximale Ethernet-Frame-Größe: 1518 Bytes                    │
-│   → MTU (Maximum Transmission Unit): 1500 Bytes Nutzdaten      │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[datenkapselung.png]]
+*<span class="fig-id">03-03-02-datenkapselung</span>: Datenkapselung im TCP/IP-Modell – jede Schicht fügt ihren eigenen Header hinzu.*
+
+**Typische Header-Größen:**
+- Ethernet: 14 Bytes (+ 4 Bytes FCS)
+- IPv4: 20-60 Bytes
+- TCP: 20-60 Bytes
+- UDP: 8 Bytes
+
+**Maximale Ethernet-Frame-Größe:** 1518 Bytes → **MTU (Maximum Transmission Unit):** 1500 Bytes Nutzdaten
 
 ## Protokoll-Stack in der Praxis
 
 ### Beispiel: Web-Request
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│           PROTOKOLL-STACK: HTTPS-ANFRAGE                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Browser                                                       │
-│      │                                                          │
-│      ▼                                                          │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │  Anwendung: HTTP/2 + TLS 1.3                            │  │
-│   │  GET /index.html HTTP/2                                 │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│      │                                                          │
-│      ▼                                                          │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │  Transport: TCP                                         │  │
-│   │  Src Port: 52431, Dst Port: 443                        │  │
-│   │  Seq: 1000, Ack: 1, Flags: PSH,ACK                     │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│      │                                                          │
-│      ▼                                                          │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │  Internet: IPv4                                         │  │
-│   │  Src: 192.168.1.100, Dst: 93.184.216.34                │  │
-│   │  TTL: 64, Protocol: TCP (6)                            │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│      │                                                          │
-│      ▼                                                          │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │  Netzzugang: Ethernet                                   │  │
-│   │  Src MAC: aa:bb:cc:dd:ee:ff                            │  │
-│   │  Dst MAC: 11:22:33:44:55:66 (Gateway)                  │  │
-│   │  EtherType: 0x0800 (IPv4)                              │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│      │                                                          │
-│      ▼                                                          │
-│   ═══════════════════════════════════════════════════════════  │
-│                        Netzwerk                                 │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[https-protokollstack.png]]
+*<span class="fig-id">03-03-02-https-protokollstack</span>: Protokoll-Stack einer HTTPS-Anfrage – vom Browser durch alle TCP/IP-Schichten.*
 
 ## Vorteile des TCP/IP-Modells
 

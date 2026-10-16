@@ -1,7 +1,7 @@
 ---
 title: "Satz des Pythagoras und Trigonometrie"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-20
 chapter: "11"
 status: "draft - review pending"
 type: index
@@ -17,6 +17,15 @@ keywords:
 
 > [!info] Kapitelübersicht
 > Dieses Kapitel behandelt zwei fundamentale Werkzeuge zur Berechnung von Längen und Winkeln in Dreiecken: den Satz des Pythagoras und die Winkelfunktionen der Trigonometrie. Diese Kenntnisse sind unverzichtbar in Technik, Vermessung und Naturwissenschaften.
+
+## Warum dieses Kapitel wichtig ist
+
+Der Satz des Pythagoras und die Trigonometrie gehören zu den ältesten und gleichzeitig praktisch nützlichsten Werkzeugen der Mathematik. Während Pythagoras bereits vor über 2500 Jahren formuliert wurde, finden seine Prinzipien heute täglich Anwendung – vom Handwerker, der prüft, ob eine Ecke rechtwinklig ist, bis zum Ingenieur, der Brücken konstruiert.
+
+Die Trigonometrie entstand ursprünglich aus dem Bedürfnis, Himmelskörper zu beobachten und Entfernungen zu bestimmen, die man nicht direkt messen kann. Heute nutzen wir sie bei der Navigation, in der Architektur, beim Bau von Rampen und Treppen, und sogar in der Computergrafik für Videospiele.
+
+> [!tip] **Alltagsbezug**
+> Jedes Mal, wenn du dich fragst, ob eine Leiter lang genug ist, wie steil ein Dach wird, oder wie hoch ein Gebäude ist – die Antwort findest du mit den Methoden dieses Kapitels.
 
 ## Lernpfad
 

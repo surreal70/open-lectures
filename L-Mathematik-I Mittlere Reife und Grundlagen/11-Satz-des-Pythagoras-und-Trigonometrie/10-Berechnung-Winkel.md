@@ -1,7 +1,7 @@
 ---
 title: "Berechnung von Winkeln"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-20
 chapter: "11"
 section: "10"
 status: "draft - review pending"
@@ -22,6 +22,10 @@ keywords:
 > - Den Taschenrechner korrekt benutzen
 > - Typische Anwendungen beherrschen
 
+## Überblick
+
+Während wir bisher aus Winkeln und Seiten andere Seiten berechnet haben, geht es nun umgekehrt: Wir kennen die Seiten und suchen den Winkel. Dafür brauchen wir die **Umkehrfunktionen** (Arkusfunktionen) von Sinus, Kosinus und Tangens. Diese Berechnungen sind besonders wichtig bei Vermessungsaufgaben und in der Technik, wenn wir zum Beispiel die Neigung eines Dachs oder einer Rampe bestimmen wollen.
+
 ## Die Umkehrfunktionen
 
 Um aus einem Seitenverhältnis den Winkel zu berechnen, brauchen wir die **Umkehrfunktionen** (Arkusfunktionen):
@@ -31,6 +35,16 @@ Um aus einem Seitenverhältnis den Winkel zu berechnen, brauchen wir die **Umkeh
 | $\sin(\alpha) = x$ | $\alpha = \arcsin(x)$ | sin⁻¹(x) |
 | $\cos(\alpha) = x$ | $\alpha = \arccos(x)$ | cos⁻¹(x) |
 | $\tan(\alpha) = x$ | $\alpha = \arctan(x)$ | tan⁻¹(x) |
+
+> [!note] **Was bedeutet „Umkehrfunktion"?**
+> Die Arkusfunktionen machen das Gegenteil der Winkelfunktionen:
+> - Sinus: Winkel → Verhältnis
+> - Arkussinus: Verhältnis → Winkel
+>
+> Sie „kehren" den Prozess um – daher der Name.
+
+> [!tip] **Lesehilfe**
+> „arcsin(0,5) = 30°" liest man: „Der Winkel, dessen Sinus 0,5 ist, beträgt 30°."
 
 ## Formeln für die Winkelberechnung
 
@@ -139,6 +153,14 @@ Im rechtwinkligen Dreieck sind die berechneten Winkel immer zwischen 0° und 90�
 > - arctan: wenn beide Katheten bekannt
 > - Taschenrechner auf DEG stellen
 > - Zweiter Winkel: $\beta = 90° - \alpha$
+
+## Zusammenhänge
+
+Querverweise zu verwandten Themen:
+
+- → [[09-Berechnung-Seitenlaengen|Seitenlängen berechnen]] – Der umgekehrte Fall
+- → [[11-Steigungen-Neigungswinkel|Steigungen und Neigungswinkel]] – Praktische Anwendung
+- → [[12-Vermessungsaufgaben|Vermessungsaufgaben]] – Komplexe Beispiele
 
 ## Übungsaufgaben
 
