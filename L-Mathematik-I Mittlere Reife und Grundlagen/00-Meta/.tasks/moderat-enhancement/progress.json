@@ -1,6 +1,6 @@
 {
   "complete": false,
-  "next_chapter": "02",
-  "chapters_done": [],
+  "next_chapter": "03",
+  "chapters_done": ["02"],
   "notes": ""
 }
