@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.9"
 type: lecture
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-23
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -25,10 +25,14 @@ tags:
 
 ## Übersicht aller Volumenformeln
 
+Die Volumenberechnung ist eines der zentralen Themen der Körpergeometrie. Schon in der Antike war es wichtig, Volumina zu berechnen – etwa um Getreide in Silos zu messen, Bausteine für Pyramiden zu planen oder Schiffe zu konstruieren. Heute begegnen uns Volumenberechnungen beim Tanken, Kochen, Bauen und in zahllosen technischen Anwendungen.
+
 ### Säulenförmige Körper (Prismen)
 
 > [!note] Grundprinzip
 > $$V = \text{Grundfläche} \times \text{Höhe} = G \cdot h$$
+
+Dieses Prinzip gilt für alle Körper, bei denen die Grundfläche „nach oben gestapelt" wird – also für alle Prismen und den Zylinder. Die Idee geht auf Bonaventura Cavalieri (1598–1647) zurück und wird als **Prinzip von Cavalieri** bezeichnet.
 
 | Körper | Formel | Grundfläche |
 |--------|--------|-------------|
@@ -42,10 +46,15 @@ tags:
 > [!note] Grundprinzip
 > $$V = \frac{1}{3} \cdot \text{Grundfläche} \times \text{Höhe} = \frac{1}{3} G \cdot h$$
 
+Der Faktor $\frac{1}{3}$ ist charakteristisch für alle spitzen Körper. Er ergibt sich daraus, dass der Körper zur Spitze hin „immer weniger Platz" hat.
+
 | Körper | Formel |
 |--------|--------|
 | [[06-Pyramide\|Pyramide]] | $V = \frac{1}{3} G \cdot h$ |
 | [[07-Kegel\|Kegel]] | $V = \frac{1}{3} \pi r^2 h$ |
+
+> [!warning] **Häufiger Fehler: Faktor $\frac{1}{3}$ vergessen**
+> Bei Pyramiden und Kegeln wird oft der Faktor $\frac{1}{3}$ vergessen. Ohne diesen Faktor berechnet man das Volumen eines Prismas bzw. Zylinders – das wäre dreimal zu viel!
 
 ### Kugel
 
@@ -53,6 +62,8 @@ tags:
 |--------|--------|
 | [[08-Kugel\|Kugel]] | $V = \frac{4}{3} \pi r^3$ |
 | Halbkugel | $V = \frac{2}{3} \pi r^3$ |
+
+Die Kugelformel steht für sich allein – sie folgt weder dem Prisma- noch dem Pyramidenprinzip. Archimedes entdeckte sie durch einen genialen geometrischen Vergleich mit Zylinder und Kegel.
 
 ## Volumeneinheiten
 

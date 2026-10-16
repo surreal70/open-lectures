@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.5"
 type: lecture
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-23
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -34,6 +34,8 @@ tags:
 > - Zwei kongruenten, parallelen kreisförmigen Grundflächen
 > - Einer gekrümmten Mantelfläche, die beide Grundflächen verbindet
 
+Der Begriff „Zylinder" stammt vom griechischen Wort „kylindros" (= Rolle, Walze). Zylinder sind in der Technik und im Alltag allgegenwärtig: Getränkedosen, Rohre, Säulen, Baumstämme, Kerzen – die zylindrische Form verbindet praktische Vorteile wie gute Stapelbarkeit, gleichmäßige Materialverteilung und einfache Herstellung.
+
 ### Eigenschaften
 
 | Eigenschaft | Beschreibung |
@@ -45,6 +47,9 @@ tags:
 
 > [!tip] Der Zylinder als "rundes Prisma"
 > Der Zylinder verhält sich zum [[04-Prisma|Prisma]] wie der Kreis zum Vieleck – man kann ihn als Prisma mit unendlich vielen Seitenflächen betrachten.
+
+> [!info] **Warum sind Dosen zylindrisch?**
+> Die Zylinderform hat handfeste Vorteile: Sie ist stabil (der Druck verteilt sich gleichmäßig), leicht herzustellen (Blech wird gerollt), transportfreundlich (rollt auf Förderbändern) und bietet ein günstiges Verhältnis von Volumen zu Material. Bei gleichem Umfang fasst ein Kreis mehr Fläche als jede andere Form – und damit auch mehr Volumen bei gleicher Blechmenge.
 
 ## Volumen des Zylinders
 
@@ -139,6 +144,15 @@ Ein Zylindernetz besteht aus:
 Das Rechteck hat:
 - **Breite:** Umfang des Kreises $= 2\pi r$
 - **Höhe:** Zylinderhöhe $= h$
+
+> [!tip] **Anschauliche Vorstellung**
+> Wenn du das Etikett einer Dose ablöst und flach hinlegst, erhältst du ein Rechteck – das ist die abgewickelte Mantelfläche. Die Breite des Rechtecks entspricht genau dem Umfang der Dose.
+
+> [!warning] **Häufiger Fehler: Mantelfläche und Oberfläche verwechseln**
+> - **Mantelfläche $M$:** Nur die „Rundseite" (das abgewickelte Rechteck) → $M = 2\pi r h$
+> - **Oberfläche $O$:** Mantelfläche PLUS beide Kreisflächen → $O = 2\pi r(r + h)$
+> 
+> Bei einem Etikett (nur die Seite) brauchst du die Mantelfläche. Bei einer kompletten Dose (rundum einpacken) brauchst du die Oberfläche.
 
 ## Praktische Anwendungen
 

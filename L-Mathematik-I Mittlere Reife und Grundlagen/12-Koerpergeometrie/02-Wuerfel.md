@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.2"
 type: lecture
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-23
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -32,6 +32,8 @@ tags:
 > [!note] Definition
 > Ein **Würfel** (auch Hexaeder) ist ein regelmäßiger Körper, bei dem alle sechs Begrenzungsflächen kongruente Quadrate sind.
 
+Der Würfel ist einer der fünf platonischen Körper und gilt seit der Antike als Symbol für Stabilität und Vollkommenheit. Platon (ca. 428–348 v. Chr.) ordnete ihn dem Element Erde zu, weil er so fest und unverrückbar erscheint. Das Wort „Hexaeder" kommt aus dem Griechischen: „hexa" = sechs und „hedra" = Fläche.
+
 ### Eigenschaften
 
 | Eigenschaft | Wert |
@@ -46,6 +48,9 @@ tags:
 - alle Winkel rechte Winkel sind
 - alle Flächen gleich groß sind
 
+> [!info] **Der Würfel in der Kultur**
+> Der Würfel begegnet uns überall: als Spielwürfel (seit mindestens 5000 Jahren verwendet), als Zuckerwürfel, als Rubik's Cube (1974 erfunden) oder in der Architektur (z.B. die Kaaba in Mekka). Die regelmäßige Form macht ihn zum idealen Symbol für Ordnung und Struktur.
+
 ## Volumen des Würfels
 
 ### Formel
@@ -54,7 +59,10 @@ tags:
 > $$V = a^3$$
 > wobei $a$ die Kantenlänge ist.
 
-Das Volumen ist die dritte Potenz der Kantenlänge – daher auch der Name "Kubikzahl" für $a^3$.
+Das Volumen ist die dritte Potenz der Kantenlänge – daher auch der Name "Kubikzahl" für $a^3$. Das Wort „Kubus" ist die lateinische Bezeichnung für Würfel, und „kubieren" bedeutet „hoch drei nehmen". Wenn wir von Kubikzentimetern (cm³) sprechen, meinen wir damit das Volumen eines Würfels mit 1 cm Kantenlänge.
+
+> [!tip] **Anschauliche Vorstellung**
+> Ein Würfel mit 1 cm Kantenlänge hat das Volumen 1 cm³. Ein Würfel mit 2 cm Kantenlänge besteht aus $2 \times 2 \times 2 = 8$ solcher kleinen Würfel. Bei 3 cm Kantenlänge sind es bereits $3^3 = 27$ Einheitswürfel. Das Volumen wächst also viel schneller als die Kantenlänge!
 
 ### Beispielrechnungen
 
@@ -80,6 +88,14 @@ Das Volumen ist die dritte Potenz der Kantenlänge – daher auch der Name "Kubi
 | 1 dm³ | = 1 Liter = 1000 cm³ |
 | 1 m³ | = 1000 Liter = 1.000.000 cm³ |
 
+> [!warning] **Häufiger Fehler: Einheitenumrechnung**
+> Bei Volumeneinheiten verschiebt sich das Komma um **drei** Stellen pro Einheitenstufe, nicht um eine! Das liegt daran, dass Volumen = Länge × Länge × Länge.
+> 
+> - Von cm³ zu dm³: durch 1000 teilen (drei Stellen)
+> - Von dm³ zu m³: durch 1000 teilen (drei Stellen)
+> 
+> **Beispiel:** 5000 cm³ = 5 dm³ = 5 Liter = 0,005 m³
+
 ## Oberfläche des Würfels
 
 ### Formel
@@ -87,6 +103,14 @@ Das Volumen ist die dritte Potenz der Kantenlänge – daher auch der Name "Kubi
 > [!note] Oberflächenformel
 > $$O = 6a^2$$
 > (6 Quadrate mit Fläche $a^2$)
+
+Die Formel ist leicht zu verstehen: Ein Würfel hat sechs Flächen, und jede Fläche ist ein Quadrat mit Seitenlänge $a$. Die Fläche eines Quadrats ist $a^2$, also ist die Gesamtoberfläche $6 \cdot a^2$.
+
+> [!tip] **Merkregel**
+> **V**olumen: **d**rei Faktoren → $a \cdot a \cdot a = a^3$
+> **O**berfläche: **s**echs Flächen → $6 \cdot a^2$
+> 
+> Die Zahlen 3 und 6 stecken in den Formeln: Volumen hat Exponent 3, Oberfläche hat Faktor 6.
 
 ### Beispielrechnungen
 
@@ -199,6 +223,17 @@ Bei wachsender Kantenlänge wächst das Volumen schneller als die Oberfläche:
 
 > [!tip] Merke
 > Je größer der Würfel, desto günstiger das Verhältnis von Volumen zu Oberfläche. Das erklärt, warum große Tiere relativ weniger Wärme verlieren als kleine.
+
+> [!info] **Anwendung in der Biologie**
+> Das Oberflächen-Volumen-Verhältnis erklärt viele biologische Phänomene: Kleine Tiere (wie Mäuse) haben relativ viel Oberfläche und verlieren schnell Wärme – daher müssen sie viel fressen. Große Tiere (wie Elefanten) haben relativ wenig Oberfläche und können Wärme besser speichern. Auch Zellen können nicht beliebig groß werden, weil sie Nährstoffe über ihre Oberfläche aufnehmen müssen.
+
+### Verdoppelung der Kantenlänge
+
+Wenn man die Kantenlänge eines Würfels verdoppelt:
+- Die **Oberfläche** vervierfacht sich: $(2a)^2 = 4a^2$ pro Fläche
+- Das **Volumen** verachtfacht sich: $(2a)^3 = 8a^3$
+
+Diese Gesetzmäßigkeit gilt für alle ähnlichen Körper und ist als **Ähnlichkeitssatz** bekannt.
 
 ## Zusammenfassung
 

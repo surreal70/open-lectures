@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.3"
 type: lecture
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-23
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -32,6 +32,8 @@ tags:
 > [!note] Definition
 > Ein **Quader** ist ein Körper mit sechs rechteckigen Flächen. Gegenüberliegende Flächen sind parallel und kongruent. Alle Winkel sind rechte Winkel (90°).
 
+Der Quader ist die häufigste Körperform in unserer gebauten Umwelt: Räume, Möbel, Bücher, Smartphones, Verpackungen – fast alles hat Quaderform. Der Grund ist einfach: Quader lassen sich optimal stapeln ohne Lücken, und rechteckige Formen sind leicht herzustellen und zu vermessen.
+
 ### Eigenschaften
 
 | Eigenschaft | Wert |
@@ -51,6 +53,9 @@ Die drei verschiedenen Kantenlängen werden bezeichnet als:
 > [!tip] Der Würfel als Spezialfall
 > Ein [[02-Wuerfel|Würfel]] ist ein spezieller Quader mit $a = b = c$.
 
+> [!info] **Quader im Bauwesen**
+> Die meisten Räume sind quaderförmig. Das macht das Berechnen von Raumvolumen (für Heizung, Klimaanlage) und Wandflächen (für Tapeten, Farbe) besonders einfach. Architekten sprechen vom „Kubus", wenn sie einen würfelförmigen Baukörper meinen.
+
 ## Volumen des Quaders
 
 ### Formel
@@ -62,6 +67,11 @@ Die drei verschiedenen Kantenlängen werden bezeichnet als:
 Alternative Schreibweise:
 $$V = G \cdot h$$
 wobei $G = a \cdot b$ die Grundfläche und $h = c$ die Höhe ist.
+
+Diese Formel ist die Grundlage für alle Prismenvolumina: Grundfläche mal Höhe. Anschaulich kann man sich vorstellen, dass der Quader aus vielen dünnen Scheiben besteht, die übereinandergestapelt werden.
+
+> [!tip] **Merkregel für Volumen**
+> Das Volumen eines Quaders (und jedes Prismas) entspricht dem „Stapeln" der Grundfläche: Wie viele Schichten von 1 cm Höhe passen übereinander? Jede Schicht hat das Volumen der Grundfläche in cm³.
 
 ### Beispielrechnungen
 
@@ -125,10 +135,17 @@ Auf jeder Seitenfläche:
 - Vorderseite: $d_2 = \sqrt{a^2 + c^2}$
 - Seitenfläche: $d_3 = \sqrt{b^2 + c^2}$
 
+Die Flächendiagonalen werden mit dem [[11-Satz-des-Pythagoras-und-Trigonometrie/02-Satz-des-Pythagoras|Satz des Pythagoras]] berechnet, da jede Seitenfläche ein Rechteck ist.
+
 ### Raumdiagonale
 
 > [!note] Raumdiagonale
 > $$d_R = \sqrt{a^2 + b^2 + c^2}$$
+
+Die Raumdiagonale verbindet zwei gegenüberliegende Ecken des Quaders und ist die längste Strecke innerhalb des Körpers. Die Formel erhält man durch zweimalige Anwendung des Satzes des Pythagoras: Erst berechnet man die Flächendiagonale der Grundfläche, dann bildet diese mit der Höhe und der Raumdiagonale ein rechtwinkliges Dreieck.
+
+> [!tip] **Praktische Bedeutung der Raumdiagonale**
+> Die Raumdiagonale gibt an, wie lang ein Gegenstand maximal sein darf, um diagonal in einen Karton zu passen. Das ist wichtig beim Verpacken von langen, dünnen Gegenständen wie Schirmen, Angelruten oder Poster-Rollen.
 
 > [!example] Beispiel 5: Raumdiagonale berechnen
 > Ein Quader hat die Maße 4 cm × 3 cm × 2 cm.

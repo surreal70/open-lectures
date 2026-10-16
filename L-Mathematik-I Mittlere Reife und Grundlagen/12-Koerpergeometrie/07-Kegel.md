@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.7"
 type: lecture
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-23
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -34,6 +34,10 @@ tags:
 > - Einer kreisförmigen Grundfläche
 > - Einer gekrümmten Mantelfläche, die in einem Punkt (Spitze) zusammenläuft
 
+Der Kegel begegnet uns im Alltag überall: als Eistüte, Verkehrshütchen, Partyhut oder Trichter. In der Natur findet man kegelförmige Strukturen bei Vulkanen (Stratovulkane), Ameisenhaufen oder bestimmten Muscheln.
+
+Das Wort „Kegel" kommt vom lateinischen „conus" (Keil, Zapfen). In der Optik spielen Lichtkegel eine wichtige Rolle, und in der Geometrie entstehen aus Kegelschnitten die berühmten Kurven Ellipse, Parabel und Hyperbel.
+
 ### Bezeichnungen
 
 | Symbol | Bedeutung |
@@ -53,6 +57,8 @@ Mit dem [[11-Satz-des-Pythagoras-und-Trigonometrie/02-Satz-des-Pythagoras|Satz d
 
 > [!note] Mantellinie
 > $$s = \sqrt{r^2 + h^2}$$
+
+Die Mantellinie $s$ ist die Strecke von einem Punkt auf dem Grundkreis zur Spitze. Sie bildet mit dem Radius und der Höhe ein rechtwinkliges Dreieck – daher die Anwendung des Satzes des Pythagoras.
 
 ```
       Spitze

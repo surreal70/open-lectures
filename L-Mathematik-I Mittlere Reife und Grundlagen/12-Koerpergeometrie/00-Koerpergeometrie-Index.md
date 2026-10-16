@@ -4,7 +4,7 @@ chapter: "12"
 section: "Index"
 type: index
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-23
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -18,6 +18,10 @@ tags:
 ## Kapitelübersicht
 
 Dieses Kapitel behandelt dreidimensionale geometrische Körper, ihre Eigenschaften sowie die Berechnung von Volumen und Oberflächen. Die Körpergeometrie erweitert das Verständnis der [[10-Grundlagen-der-Geometrie/00-Geometrie-Index|ebenen Geometrie]] in den Raum.
+
+Die Raumgeometrie (auch Stereometrie genannt, vom griechischen „stereos" = fest, körperlich) ist eine der ältesten mathematischen Disziplinen. Bereits die alten Ägypter benötigten sie für den Pyramidenbau, und der griechische Mathematiker Archimedes (287–212 v. Chr.) entdeckte fundamentale Zusammenhänge zwischen Kugel, Zylinder und Kegel, die er für so bedeutend hielt, dass er sie auf seinem Grabstein verewigen ließ.
+
+Im Alltag begegnen uns geometrische Körper überall: Von der zylindrischen Getränkedose über den quaderförmigen Kühlschrank bis zur kugelförmigen Orange – das Verständnis ihrer Eigenschaften hilft uns, Verpackungen zu optimieren, Materialverbrauch zu berechnen und technische Probleme zu lösen.
 
 > [!info] Lernziele
 > Nach Abschluss dieses Kapitels können Sie:
@@ -63,6 +67,9 @@ Dieses Kapitel behandelt dreidimensionale geometrische Körper, ihre Eigenschaft
 > - **Oberflächenberechnungen** aller Grundkörper
 > - **Zusammengesetzte Körper** analysieren und berechnen
 > - **Praktische Textaufgaben** zu Füllmengen, Verpackungen, Bauwerken
+
+> [!tip] **Merkregel für spitze Körper**
+> Pyramide und Kegel haben immer den Faktor $\frac{1}{3}$ in der Volumenformel. Merksatz: „Spitze Körper fassen nur ein Drittel" – verglichen mit dem entsprechenden Säulenkörper (Prisma bzw. Zylinder) mit gleicher Grundfläche und Höhe.
 
 ## Voraussetzungen
 

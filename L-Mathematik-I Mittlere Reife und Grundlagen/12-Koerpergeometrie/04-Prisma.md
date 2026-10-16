@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.4"
 type: lecture
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-23
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -33,6 +33,8 @@ tags:
 > - Zwei kongruenten, parallelen Grundflächen (Vielecke)
 > - Seitenflächen, die Parallelogramme sind (bei geraden Prismen: Rechtecke)
 
+Der Begriff „Prisma" kommt aus dem Griechischen und bedeutet „das Gesägte" – eine Anspielung auf die Form, die entsteht, wenn man einen Körper mit parallelen Schnitten bearbeitet. In der Optik kennen wir das Glasprisma, das weißes Licht in seine Spektralfarben zerlegt – auch dieses hat meist eine dreieckige Grundfläche.
+
 ### Arten von Prismen
 
 **Nach der Grundfläche:**
@@ -47,6 +49,9 @@ tags:
 > [!tip] Der Quader als Prisma
 > Der [[03-Quader|Quader]] ist ein gerades Prisma mit rechteckiger Grundfläche.
 
+> [!info] **Prismen im Alltag**
+> Viele Alltagsgegenstände sind Prismen: Toblerone-Verpackungen (Dreiecksprisma), Bleistifte (Sechsecksprisma), Zeltdächer (Dreiecksprisma). Die Sechseckform von Bleistiften verhindert das Wegrollen und liegt gut in der Hand.
+
 ## Volumen des Prismas
 
 ### Formel
@@ -58,6 +63,11 @@ tags:
 > - $h$ = Höhe des Prismas (senkrechter Abstand der Grundflächen)
 
 Diese Formel gilt für **alle** Prismen, unabhängig von der Form der Grundfläche!
+
+Das Prinzip ist einfach und anschaulich: Stell dir vor, du stapelst viele dünne Scheiben der Grundfläche übereinander. Die Anzahl der Scheiben entspricht der Höhe, und jede Scheibe hat den Flächeninhalt der Grundfläche. Dieses Prinzip wurde bereits von dem griechischen Mathematiker Cavalieri (1598–1647) erkannt und wird daher auch als **Prinzip von Cavalieri** bezeichnet.
+
+> [!tip] **Universelle Anwendung**
+> Diese Formel ist universell einsetzbar: Egal ob die Grundfläche ein Dreieck, Viereck, Fünfeck oder ein beliebiges Vieleck ist – du berechnest einfach die Grundfläche und multiplizierst mit der Höhe.
 
 ### Beispielrechnungen
 

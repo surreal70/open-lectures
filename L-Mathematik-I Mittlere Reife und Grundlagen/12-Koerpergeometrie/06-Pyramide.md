@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.6"
 type: lecture
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-23
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -33,6 +33,10 @@ tags:
 > - Einer vieleckigen Grundfläche
 > - Dreieckigen Seitenflächen, die in einem gemeinsamen Punkt (Spitze) zusammenlaufen
 
+Die Pyramide ist wohl der geschichtsträchtigste aller geometrischen Körper. Die Pyramiden von Gizeh in Ägypten, erbaut vor über 4500 Jahren, sind das einzige erhaltene der Sieben Weltwunder der Antike. Die größte, die Cheops-Pyramide, hatte ursprünglich eine Höhe von 147 m und war über 3800 Jahre lang das höchste Bauwerk der Welt.
+
+Das Wort „Pyramide" kommt vermutlich vom griechischen „pyramis" (Weizengebäck in spitzer Form) oder vom ägyptischen „per-em-us" (was aus dem Urhügel hervorgeht).
+
 ### Bezeichnungen
 
 | Begriff | Bedeutung |
@@ -54,6 +58,9 @@ tags:
 - **Gerade Pyramide:** Spitze liegt senkrecht über dem Mittelpunkt der Grundfläche
 - **Schiefe Pyramide:** Spitze ist seitlich verschoben
 
+> [!info] **Die ägyptischen Pyramiden**
+> Die Pyramiden von Gizeh haben alle eine quadratische Grundfläche. Die Cheops-Pyramide hat eine Grundseitenlänge von ca. 230 m – fast so lang wie 2,5 Fußballfelder! Ihre Baumeister beherrschten die Mathematik der Pyramide meisterhaft: Die Seiten weichen nur um wenige Zentimeter von der perfekten Ausrichtung ab.
+
 ## Volumen der Pyramide
 
 ### Formel
@@ -66,6 +73,13 @@ tags:
 
 Drei kongruente Pyramiden mit quadratischer Grundfläche können zu einem Würfel zusammengesetzt werden. Daher:
 $$V_{Pyramide} = \frac{1}{3} \cdot V_{Würfel} = \frac{1}{3} \cdot G \cdot h$$
+
+Diese Tatsache war bereits den alten Ägyptern bekannt und wurde von Euklid (ca. 300 v. Chr.) bewiesen. Anschaulich kann man sich vorstellen, dass die Pyramide nach oben hin „immer weniger Platz" hat als ein Prisma – und genau dieser Faktor $\frac{1}{3}$ beschreibt diesen Effekt.
+
+> [!warning] **Häufiger Fehler: Den Faktor $\frac{1}{3}$ vergessen**
+> Der häufigste Fehler bei Pyramiden ist, den Faktor $\frac{1}{3}$ in der Formel zu vergessen. Ohne ihn berechnet man das Volumen eines Prismas statt einer Pyramide!
+> 
+> **Merkregel:** „Spitze Körper fassen nur ein Drittel" – Pyramide und [[07-Kegel|Kegel]] haben beide den Faktor $\frac{1}{3}$.
 
 ### Beispielrechnungen
 

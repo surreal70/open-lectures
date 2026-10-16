@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.8"
 type: lecture
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-23
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -31,6 +31,10 @@ tags:
 > [!note] Definition
 > Eine **Kugel** ist die Menge aller Punkte im Raum, die von einem festen Punkt (Mittelpunkt) den gleichen Abstand (Radius) haben.
 
+Die Kugel ist der perfekteste aller Körper – sie hat keine Ecken, keine Kanten, keine ausgezeichnete Richtung. In der Natur entstehen Kugeln überall dort, wo Kräfte gleichmäßig aus allen Richtungen wirken: Seifenblasen, Wassertropfen im freien Fall, Planeten und Sterne. 
+
+Der griechische Mathematiker Archimedes (287–212 v. Chr.) war so stolz auf seine Entdeckung des Zusammenhangs zwischen Kugel und Zylinder, dass er wünschte, eine Kugel in einem Zylinder auf seinem Grabstein abgebildet zu bekommen. Er hatte bewiesen, dass eine Kugel genau zwei Drittel des Volumens eines umschriebenen Zylinders einnimmt.
+
 ### Eigenschaften
 
 | Eigenschaft | Beschreibung |
@@ -43,6 +47,9 @@ tags:
 > [!tip] Die Kugel ist besonders
 > Die Kugel ist der Körper mit dem kleinsten Oberflächen-zu-Volumen-Verhältnis. Bei gleichem Volumen hat die Kugel die kleinste Oberfläche.
 
+> [!info] **Warum ist die Kugel so effizient?**
+> Die Kugel minimiert die Oberfläche bei gegebenem Volumen – das ist ein mathematisches Optimum! Deshalb sind Seifenblasen kugelförmig (minimale Oberflächenspannung), Planeten kugelförmig (Gravitation wirkt gleichmäßig) und Wassertropfen im Weltraum kugelförmig (keine Schwerkraft, nur Oberflächenspannung).
+
 ## Volumen der Kugel
 
 ### Formel
@@ -52,6 +59,14 @@ tags:
 > 
 > Mit Durchmesser:
 > $$V = \frac{\pi d^3}{6}$$
+
+Diese Formel wurde von Archimedes entdeckt. Er bewies, dass das Volumen einer Kugel genau zwei Drittel des Volumens eines umschriebenen Zylinders (gleicher Radius, Höhe = Durchmesser) beträgt. Dieser Zusammenhang war ihm so wichtig, dass er ihn auf seinem Grabstein verewigen ließ.
+
+> [!tip] **Merkregel für die Kugelformel**
+> Die Kugelformel enthält drei „magische" Elemente: $\frac{4}{3}$, $\pi$ und $r^3$. 
+> - Der Faktor $\frac{4}{3}$ kommt aus der Integration (höhere Mathematik)
+> - $\pi$ erscheint, weil Kreise beteiligt sind
+> - $r^3$ zeigt, dass es ein Volumen ist (dritte Potenz)
 
 ### Beispielrechnungen
 
