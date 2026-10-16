@@ -15,7 +15,7 @@ tags:
   - karten
   - verhaeltnis
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-16
 ---
 
 # Maßstäbe
@@ -29,6 +29,22 @@ modified: 2026-10-13
 ## Überblick
 
 Ein **Maßstab** gibt das Verhältnis zwischen einer Abbildung (Karte, Plan, Modell) und der Wirklichkeit an.
+
+### Historischer Hintergrund
+
+Die Geschichte der Kartografie reicht bis in die Antike. Schon **Ptolemäus** (ca. 100–170 n. Chr.) zeichnete Karten der bekannten Welt mit Angabe von Maßstäben. Im Zeitalter der großen Entdeckungen (15.–17. Jahrhundert) wurden Seekarten lebenswichtig für Seefahrer, und genaue Maßstäbe entschieden über Erfolg oder Scheitern von Expeditionen.
+
+Auch im Modellbau haben Maßstäbe eine lange Tradition. Leonardo da Vinci fertigte maßstabsgetreue Modelle seiner Erfindungen an, bevor er sie in voller Größe bauen ließ. Heute arbeiten Architekten mit Modellen im Maßstab 1:100 oder 1:200, um ihren Kunden einen Eindruck vom geplanten Gebäude zu vermitteln.
+
+### Maßstäbe im Alltag
+
+Maßstäbe begegnen uns häufiger, als wir denken:
+
+- **Wanderkarten**: 1:25.000 – ideal für Wanderungen, jedes Detail erkennbar
+- **Straßenkarten**: 1:200.000 – für Autofahrten geeignet
+- **Architekturpläne**: 1:100 – jeder Zentimeter im Plan entspricht 1 Meter in der Realität
+- **Modelleisenbahn**: Spur H0 ist 1:87, Spur N ist 1:160
+- **Spielzeugautos**: Oft 1:18, 1:43 oder 1:64
 
 ## Definition
 
@@ -63,12 +79,31 @@ $$\text{Karte} = \frac{\text{Wirklichkeit}}{\text{Maßstabszahl}}$$
 **Beispiel:** 3 km bei Maßstab 1:50.000
 $$\frac{300.000}{50.000} = 6 \text{ cm}$$
 
+> [!tip] **Merkregel: Vergrößerung vs. Verkleinerung**
+> - **Karte → Wirklichkeit**: Multiplizieren (die Wirklichkeit ist größer!)
+> - **Wirklichkeit → Karte**: Dividieren (die Karte ist kleiner!)
+> 
+> Denk daran: Eine Karte ist immer eine **Verkleinerung** der Realität. Daher ist die Maßstabszahl (z.B. 50.000) der Faktor, um den verkleinert wurde.
+
+> [!warning] **Häufiger Fehler: Einheiten vergessen**
+> Bei Maßstabsberechnungen werden die Einheiten oft durcheinander gebracht.
+> 
+> **Falsch:** 4 cm × 50.000 = 200.000 → „200.000 m" (Einheit falsch!)
+> **Richtig:** 4 cm × 50.000 = 200.000 cm = 2.000 m = 2 km
+> 
+> Tipp: Rechne immer erst in der kleinsten Einheit (cm) und wandle dann um!
+
 ## Zusammenhänge
 
 ### Voraussetzungen
 
-- [[01-Verhaeltnisse]]
-- [[06-Umrechnungen-von-Einheiten]]
+- [[01-Verhaeltnisse]] – Maßstäbe sind spezielle Verhältnisse
+- [[06-Umrechnungen-von-Einheiten]] – Wichtig für die Umrechnung cm → km
+
+### Weiterführende Themen
+
+- [[10-Grundlagen-der-Geometrie/11-Aehnlichkeit|Ähnlichkeit]] – Maßstabsgetreue Figuren sind ähnlich
+- [[08-Geschwindigkeit-Strecke-und-Zeit]] – Entfernungen auf Karten und Fahrzeiten
 
 ## Prüfungsrelevanz
 

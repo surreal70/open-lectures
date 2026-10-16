@@ -15,7 +15,7 @@ tags:
   - gleichung
   - kreuzprodukt
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-16
 ---
 
 # Proportionen
@@ -29,6 +29,20 @@ modified: 2026-10-13
 ## Überblick
 
 Eine **Proportion** ist eine Gleichung, die aussagt, dass zwei Verhältnisse gleich sind. Sie ist das mathematische Werkzeug hinter dem Dreisatz.
+
+### Historischer Hintergrund
+
+Der Begriff „Proportion" stammt vom lateinischen *proportio* (Verhältnis, Ebenmaß). Schon **Euklid** definierte in seinen „Elementen" (ca. 300 v. Chr.) Proportionen und entwickelte die Grundlagen der Proportionenlehre. Die Griechen unterschieden zwischen verschiedenen Arten von Proportionen und nutzten sie für geometrische Beweise.
+
+Im Mittelalter lernten Kaufleute die „Regula de Tri" (Regel von Dreien) – den Vorläufer unseres Dreisatzes. Diese Methode zur Lösung von Proportionen wurde in Handelsbüchern weitergegeben und war für den Fernhandel unverzichtbar: Wie rechnet man verschiedene Währungen um? Wie viel kosten 50 Ellen Stoff, wenn 12 Ellen 8 Gulden kosten?
+
+### Proportionen im Alltag
+
+Proportionen begegnen uns täglich, oft ohne dass wir es merken:
+
+- **Rezepte umrechnen**: Wenn 4 Portionen 300 g Mehl brauchen, wie viel brauchen 6 Portionen?
+- **Preisvergleiche**: Sind 750 ml für 2,25 € günstiger als 500 ml für 1,60 €?
+- **Foto-Vergrößerung**: Ein Bild soll von 10 × 15 cm auf Postergröße vergrößert werden – ohne Verzerrung
 
 ## Definition
 
@@ -50,6 +64,20 @@ In der Proportion a : b = c : d heißen:
 > In einer Proportion ist das Produkt der äußeren Glieder gleich dem Produkt der inneren Glieder:
 > $$a \times d = b \times c$$
 
+### Warum funktioniert das Kreuzprodukt?
+
+Die Kreuzproduktregel ist keine willkürliche Rechenregel, sondern folgt direkt aus der Mathematik der Brüche. Wenn zwei Brüche gleich sind:
+
+$$\frac{a}{b} = \frac{c}{d}$$
+
+Dann können wir beide Seiten mit $b \cdot d$ multiplizieren:
+
+$$\frac{a}{b} \cdot b \cdot d = \frac{c}{d} \cdot b \cdot d$$
+
+$$a \cdot d = c \cdot b$$
+
+Das ist die Kreuzproduktregel! Sie ist also kein Trick, sondern eine Konsequenz der Bruchrechnung.
+
 ### Visualisierung
 
 ```
@@ -65,11 +93,21 @@ In der Proportion a : b = c : d heißen:
       ╱   ╲
 ```
 
+> [!tip] **Merkregel: Über Kreuz multiplizieren**
+> Stell dir vor, du zeichnest ein X durch die Proportion. Dann multiplizierst du die Zahlen, die auf einer Linie liegen: oben-links mit unten-rechts und oben-rechts mit unten-links.
+
 ### Beispiel
 
 $$\frac{3}{4} = \frac{6}{8}$$
 
 Kreuzprodukt: 3 × 8 = 4 × 6 → 24 = 24 ✓
+
+> [!warning] **Häufiger Fehler**
+> Das Kreuzprodukt funktioniert nur bei Gleichungen mit **einem** Gleichheitszeichen zwischen zwei Brüchen.
+> 
+> **Falsch angewendet:** Bei $\frac{a}{b} + \frac{c}{d} = 1$ kann man NICHT einfach kreuz multiplizieren!
+> 
+> Das Kreuzprodukt gilt nur für Proportionen der Form $\frac{a}{b} = \frac{c}{d}$
 
 ## Unbekannte in Proportionen finden
 
@@ -112,8 +150,14 @@ $$x = 450 \text{ g}$$
 
 ### Voraussetzungen
 
-- [[01-Verhaeltnisse]]
-- [[03-Bruchrechnung/00-Bruchrechnung-Index|Bruchrechnung]]
+- [[01-Verhaeltnisse]] – Verhältnisse sind die Bausteine von Proportionen
+- [[03-Bruchrechnung/00-Bruchrechnung-Index|Bruchrechnung]] – Proportionen sind Bruchgleichungen
+
+### Weiterführende Themen
+
+- [[03-Dreisatz]] – Die praktische Anwendung der Proportionen
+- [[04-Direkte-Proportionalitaet]] – Wenn Verhältnisse konstant bleiben
+- [[07-Massstaebe]] – Proportionen bei Karten und Modellen
 
 ## Prüfungsrelevanz
 

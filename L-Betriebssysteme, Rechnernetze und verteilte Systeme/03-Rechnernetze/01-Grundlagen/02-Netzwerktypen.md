@@ -217,30 +217,8 @@ Ein LAN verbindet Geräte innerhalb eines begrenzten geografischen Bereichs (Geb
 | WiFi 6 | 802.11ax | bis 9,6 Gbps | Funk (2,4/5/6 GHz) |
 | WiFi 7 | 802.11be | bis 46 Gbps | Funk (2,4/5/6 GHz) |
 
-```
-        ┌─────────────────────────────────────────┐
-        │              LAN-Struktur               │
-        └─────────────────────────────────────────┘
-                          │
-                    ┌─────┴─────┐
-                    │  Router   │ ←── Verbindung zum WAN
-                    └─────┬─────┘
-                          │
-                    ┌─────┴─────┐
-                    │  Switch   │
-                    └─────┬─────┘
-              ┌───────┬───┴───┬───────┐
-              │       │       │       │
-           ┌──┴──┐ ┌──┴──┐ ┌──┴──┐ ┌──┴──┐
-           │ PC1 │ │ PC2 │ │ PC3 │ │ AP  │
-           └─────┘ └─────┘ └─────┘ └──┬──┘
-                                      │
-                              ┌───────┴───────┐
-                              │               │
-                           ┌──┴──┐         ┌──┴──┐
-                           │Phone│         │ NB  │
-                           └─────┘         └─────┘
-```
+![[lan-struktur.png]]
+*<span class="fig-id">03-01-02-lan-struktur</span>: Typische LAN-Struktur mit Router, Switch, kabelgebundenen PCs und WLAN-Anbindung über Access Point.*
 
 ### Metropolitan Area Network (MAN)
 
