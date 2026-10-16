@@ -1,0 +1,3 @@
+# Symmetrie
+
+< TODO: Inhalt ergänzen -->

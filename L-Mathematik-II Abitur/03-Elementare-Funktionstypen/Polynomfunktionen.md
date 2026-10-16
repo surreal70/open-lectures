@@ -1,0 +1,3 @@
+# Polynomfunktionen
+
+< TODO: Inhalt ergänzen -->

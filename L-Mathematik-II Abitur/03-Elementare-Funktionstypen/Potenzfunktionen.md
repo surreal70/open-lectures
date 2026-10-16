@@ -1,0 +1,3 @@
+# Potenzfunktionen
+
+< TODO: Inhalt ergänzen -->

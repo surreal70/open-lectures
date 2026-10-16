@@ -406,7 +406,6 @@ Erst wenn Eltern- oder Kindprozess schreibt:
 > - Unterschied Swapping vs. Demand Paging
 > - Page Fault: Arten und Behandlung
 > - Speicherhierarchie (Zugriffszeiten kennen!)
-> - Seitenersetzungsstrategien (FIFO, LRU, Clock)
 > - Working Set und Thrashing
 
 > [!question] **Häufige Prüfungsfragen**

@@ -51,12 +51,12 @@ Ein alltägliches Beispiel: Zwei Autos treffen an einer engen Brücke aufeinande
 
 Ein Deadlock kann **nur** auftreten, wenn **alle vier** Bedingungen gleichzeitig erfüllt sind. Das ist entscheidend: Verhindere eine einzige Bedingung, und Deadlocks werden unmöglich.
 
-| Bedingung | Englisch | Beschreibung |
-|-----------|----------|--------------|
+| Bedingung                    | Englisch         | Beschreibung                                                        |
+| ---------------------------- | ---------------- | ------------------------------------------------------------------- |
 | **Gegenseitiger Ausschluss** | Mutual Exclusion | Ressourcen können nur von einem Prozess gleichzeitig genutzt werden |
-| **Halten und Warten** | Hold and Wait | Ein Prozess hält Ressourcen und wartet auf weitere |
-| **Keine Entziehbarkeit** | No Preemption | Ressourcen können nur freiwillig freigegeben werden |
-| **Zyklisches Warten** | Circular Wait | Es existiert eine zyklische Kette wartender Prozesse |
+| **Halten und Warten**        | Hold and Wait    | Ein Prozess hält Ressourcen und wartet auf weitere                  |
+| **Keine Entziehbarkeit**     | No Preemption    | Ressourcen können nur freiwillig freigegeben werden                 |
+| **Zyklisches Warten**        | Circular Wait    | Es existiert eine zyklische Kette wartender Prozesse                |
 
 ### Warum alle vier?
 
@@ -238,8 +238,6 @@ Das bekannteste Deadlock-Problem wurde 1965 von Dijkstra formuliert und später 
 > [!warning] **Prüfungsrelevant**
 > - Die vier Coffman-Bedingungen (auswendig!)
 > - Unterschied Prevention, Avoidance, Detection, Ignorance
-> - Banker's Algorithm verstehen und anwenden
-> - Resource Allocation Graph interpretieren
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Nennen und erklären Sie die vier notwendigen Bedingungen für einen Deadlock!

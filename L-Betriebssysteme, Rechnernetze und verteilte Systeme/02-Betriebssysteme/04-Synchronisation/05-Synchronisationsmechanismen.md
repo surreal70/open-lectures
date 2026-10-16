@@ -314,13 +314,13 @@ void consumer() {
 
 Obwohl ein binärer Semaphor wie ein Mutex aussieht, gibt es konzeptuelle Unterschiede, die in der Praxis wichtig sind:
 
-| Eigenschaft | Mutex | Semaphor |
-|-------------|-------|----------|
-| **Wertebereich** | 0 oder 1 | 0 bis N |
-| **Ownership** | Nur der Besitzer kann freigeben | Jeder kann V aufrufen |
-| **Zweck** | Gegenseitiger Ausschluss | Ressourcenzählung, Signalisierung |
-| **Typischer Einsatz** | Kritische Abschnitte schützen | Begrenzte Ressourcen, Producer-Consumer |
-| **Rekursion** | Oft rekursiv (reentrant) | Nie rekursiv |
+| Eigenschaft           | Mutex                           | Semaphor                                |
+| --------------------- | ------------------------------- | --------------------------------------- |
+| **Wertebereich**      | 0 oder 1                        | 0 bis N                                 |
+| **Ownership**         | Nur der Besitzer kann freigeben | Jeder kann V aufrufen                   |
+| **Zweck**             | Gegenseitiger Ausschluss        | Ressourcenzählung, Signalisierung       |
+| **Typischer Einsatz** | Kritische Abschnitte schützen   | Begrenzte Ressourcen, Producer-Consumer |
+| **Rekursion**         | Oft rekursiv (reentrant)        | Nie rekursiv                            |
 
 > [!warning] **Das Ownership-Problem**
 > Bei Semaphoren kann ein anderer Thread V aufrufen als derjenige, der P aufgerufen hat. Das ist gewollt (z.B. für Signalisierung), kann aber zu Bugs führen, wenn man versehentlich einen binären Semaphor wie einen Mutex verwendet. Echte Mutexe erzwingen, dass nur der Besitzer freigeben kann.
@@ -615,7 +615,6 @@ while (count == 0) {
 > [!warning] **Prüfungsrelevant**
 > - P und V Operationen verstehen und anwenden
 > - Unterschied binärer vs. Counting Semaphor
-> - Monitor-Konzept erklären
 > - Unterschied Spinlock vs. Mutex
 
 > [!question] **Häufige Prüfungsfragen**

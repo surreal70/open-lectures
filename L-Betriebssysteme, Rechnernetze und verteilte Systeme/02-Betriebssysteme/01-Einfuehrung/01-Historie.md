@@ -1397,7 +1397,6 @@ Alle Bilder befinden sich im Ordner `assets/`:
 > - Unterschied zwischen Batch-Verarbeitung und Time-Sharing
 > - Bedeutung von Multiprogramming und Interrupts
 > - **Übergang vom Einprogramm- zum Mehrprogrammbetrieb** (Uniprogramming → Multiprogramming)
-> - **CPU-Auslastung**: Formel $1 - p^n$ (p = I/O-Warteanteil, n = Anzahl Prozesse)
 > - **Time-Slicing**: Periodischer CPU-Wechsel durch Timer-Interrupt
 > - Die Bedeutung offener vs. proprietärer Systeme
 > - Wichtige Konzepte der BS-Entwicklung (Direkte Ausführung → Batch → Time-Sharing)

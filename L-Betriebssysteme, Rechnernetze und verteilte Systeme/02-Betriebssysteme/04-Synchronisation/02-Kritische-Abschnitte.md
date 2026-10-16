@@ -148,11 +148,11 @@ Nicht jeder Zugriff auf gemeinsame Daten erfordert Synchronisation:
 
 Es gibt mehrere Ebenen, auf denen kritische Abschnitte geschützt werden können:
 
-| Ebene | Mechanismen | Charakteristik |
-|-------|-------------|----------------|
-| **Hardware** | Unterbrechungssperre, Test-and-Set, CAS | Schnell, aber low-level |
-| **Betriebssystem** | Semaphore, Mutexe | Blockierend, effizient |
-| **Programmiersprache** | Monitore, `synchronized`, `lock` | Komfortabel, weniger fehleranfällig |
+| Ebene                  | Mechanismen                             | Charakteristik                      |
+| ---------------------- | --------------------------------------- | ----------------------------------- |
+| **Hardware**           | Unterbrechungssperre, Test-and-Set, CAS | Schnell, aber low-level             |
+| **Betriebssystem**     | Semaphore, Mutexe                       | Blockierend, effizient              |
+| **Programmiersprache** | Monitore, `synchronized`, `lock`        | Komfortabel, weniger fehleranfällig |
 
 Die Wahl hängt vom Anwendungsfall ab: Kernel-Entwickler nutzen Hardware-Primitiven, Anwendungsentwickler greifen zu Sprachkonstrukten.
 

@@ -58,6 +58,7 @@ Moderne Prozessoren enthalten Milliarden von Transistoren, die miteinander kommu
 - NoC ermöglicht parallele Kommunikation zwischen vielen Komponenten
 
 **Herausforderungen:**
+
 | Herausforderung | Beschreibung |
 |-----------------|--------------|
 | **Latenz** | Wenige Nanosekunden tolerierbar |
@@ -91,6 +92,7 @@ Ein spezialisiertes Netzwerk, das Tausende von Rechenknoten in einem Cluster ver
 - Jeder Knoten muss ständig mit anderen kommunizieren (MPI)
 
 **Herausforderungen:**
+
 | Herausforderung | Beschreibung |
 |-----------------|--------------|
 | **Ultra-Low Latency** | < 1 µs für Message Passing |
@@ -100,6 +102,7 @@ Ein spezialisiertes Netzwerk, das Tausende von Rechenknoten in einem Cluster ver
 | **Kosten** | Spezial-Hardware, teuer |
 
 **Technologien:**
+
 | Technologie | Bandbreite | Latenz | Anmerkung |
 |-------------|------------|--------|-----------|
 | **InfiniBand HDR** | 200 Gbps | < 1 µs | HPC-Standard |
@@ -216,6 +219,7 @@ Ein PAN verbindet Geräte im unmittelbaren persönlichen Umfeld (typisch 10 m Re
 - Fitness-Tracker
 
 **Technologien:**
+
 | Technologie | Reichweite | Bandbreite | Energieverbrauch |
 |-------------|------------|------------|------------------|
 | Bluetooth Classic | 10-100 m | 1-3 Mbps | Mittel |
@@ -238,6 +242,7 @@ Ein LAN verbindet Geräte innerhalb eines begrenzten geografischen Bereichs (Geb
 - Private IP-Adressierung
 
 **Technologien:**
+
 | Technologie | Standard | Bandbreite | Medium |
 |-------------|----------|------------|--------|
 | Fast Ethernet | 802.3u | 100 Mbps | Kupfer (Cat5) |
@@ -302,14 +307,15 @@ Ein WAN erstreckt sich über große geografische Distanzen (Länder, Kontinente)
 - Öffentliche oder gemietete Leitungen
 
 **Technologien:**
-| Technologie | Beschreibung | Typische Nutzung |
-|-------------|--------------|------------------|
-| **MPLS** | Multi-Protocol Label Switching | Enterprise-WANs |
-| **SD-WAN** | Software-Defined WAN | Moderne Unternehmen |
-| **Leased Lines** | Dedizierte Verbindungen | Kritische Anwendungen |
-| **VPN** | Virtual Private Network | Sichere Verbindungen |
-| **Frame Relay** | Legacy-Technologie | (veraltet) |
-| **ATM** | Asynchronous Transfer Mode | (veraltet) |
+
+| Technologie      | Beschreibung                   | Typische Nutzung      |
+| ---------------- | ------------------------------ | --------------------- |
+| **MPLS**         | Multi-Protocol Label Switching | Enterprise-WANs       |
+| **SD-WAN**       | Software-Defined WAN           | Moderne Unternehmen   |
+| **Leased Lines** | Dedizierte Verbindungen        | Kritische Anwendungen |
+| **VPN**          | Virtual Private Network        | Sichere Verbindungen  |
+| **Frame Relay**  | Legacy-Technologie             | (veraltet)            |
+| **ATM**          | Asynchronous Transfer Mode     | (veraltet)            |
 
 ### Global Area Network (GAN) / Internet
 

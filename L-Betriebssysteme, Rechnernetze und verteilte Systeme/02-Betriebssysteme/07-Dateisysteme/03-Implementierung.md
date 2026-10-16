@@ -322,24 +322,24 @@ Die folgende Tabelle fasst die wichtigsten Unterschiede der drei verbreitetsten 
 
 Die folgende Tabelle gibt einen umfassenden Überblick über die wichtigsten Dateisysteme, ihre technischen Grenzen und typischen Einsatzgebiete:
 
-| Dateisystem | Max. Dateigröße | Max. Volumegröße | Journaling | Typische Anwendung |
-|-------------|-----------------|------------------|------------|-------------------|
-| **FAT16** | 2 GB | 2 GB | Nein | Legacy-Systeme, kleine Speicherkarten |
-| **FAT32** | 4 GB | 2 TB | Nein | USB-Sticks, SD-Karten, Spielekonsolen |
-| **exFAT** | 16 EB | 128 PB | Nein | Große SD-Karten (SDXC), Kamera-Speicher |
-| **NTFS** | 16 TB | 256 TB | Ja | Windows-Systeme, externe Festplatten |
-| **ReFS** | 35 PB | 35 PB | Ja | Windows Server, Hyper-V, Speicherpools |
-| **ext2** | 2 TB | 32 TB | Nein | Boot-Partitionen, Flash-Speicher (wenig Writes) |
-| **ext3** | 2 TB | 32 TB | Ja | Ältere Linux-Systeme |
-| **ext4** | 16 TB | 1 EB | Ja | Standard-Linux, Server, Desktops |
-| **XFS** | 8 EB | 8 EB | Ja | Große Dateien, Medienserver, Enterprise |
-| **Btrfs** | 16 EB | 16 EB | Ja (CoW) | Snapshots, RAID, Container-Hosts |
-| **ZFS** | 16 EB | 256 ZB | Ja (CoW) | NAS, Datenspeicher, Deduplizierung |
-| **HFS+** | 8 EB | 8 EB | Ja | macOS (bis Mojave), Time Machine |
-| **APFS** | 8 EB | 8 EB | Ja (CoW) | macOS (ab High Sierra), iOS, SSDs |
-| **F2FS** | 4 TB | 16 TB | Ja | Android, Flash-Speicher, SSDs |
-| **ISO 9660** | 4 GB | 8 TB | Nein | CD-ROMs, DVD-ROMs |
-| **UDF** | 16 EB | 2 TB | Nein | DVDs, Blu-rays, Wechselmedien |
+| Dateisystem  | Max. Dateigröße | Max. Volumegröße | Journaling | Typische Anwendung                              |
+| ------------ | --------------- | ---------------- | ---------- | ----------------------------------------------- |
+| **FAT16**    | 2 GB            | 2 GB             | Nein       | Legacy-Systeme, kleine Speicherkarten           |
+| **FAT32**    | 4 GB            | 2 TB             | Nein       | USB-Sticks, SD-Karten, Spielekonsolen           |
+| **exFAT**    | 16 EB           | 128 PB           | Nein       | Große SD-Karten (SDXC), Kamera-Speicher         |
+| **NTFS**     | 16 TB           | 256 TB           | Ja         | Windows-Systeme, externe Festplatten            |
+| **ReFS**     | 35 PB           | 35 PB            | Ja         | Windows Server, Hyper-V, Speicherpools          |
+| **ext2**     | 2 TB            | 32 TB            | Nein       | Boot-Partitionen, Flash-Speicher (wenig Writes) |
+| **ext3**     | 2 TB            | 32 TB            | Ja         | Ältere Linux-Systeme                            |
+| **ext4**     | 16 TB           | 1 EB             | Ja         | Standard-Linux, Server, Desktops                |
+| **XFS**      | 8 EB            | 8 EB             | Ja         | Große Dateien, Medienserver, Enterprise         |
+| **Btrfs**    | 16 EB           | 16 EB            | Ja (CoW)   | Snapshots, RAID, Container-Hosts                |
+| **ZFS**      | 16 EB           | 256 ZB           | Ja (CoW)   | NAS, Datenspeicher, Deduplizierung              |
+| **HFS+**     | 8 EB            | 8 EB             | Ja         | macOS (bis Mojave), Time Machine                |
+| **APFS**     | 8 EB            | 8 EB             | Ja (CoW)   | macOS (ab High Sierra), iOS, SSDs               |
+| **F2FS**     | 4 TB            | 16 TB            | Ja         | Android, Flash-Speicher, SSDs                   |
+| **ISO 9660** | 4 GB            | 8 TB             | Nein       | CD-ROMs, DVD-ROMs                               |
+| **UDF**      | 16 EB           | 2 TB             | Nein       | DVDs, Blu-rays, Wechselmedien                   |
 
 > [!info] **Legende**
 > - **EB** = Exabyte (10¹⁸ Bytes), **PB** = Petabyte (10¹⁵ Bytes), **ZB** = Zettabyte (10²¹ Bytes)

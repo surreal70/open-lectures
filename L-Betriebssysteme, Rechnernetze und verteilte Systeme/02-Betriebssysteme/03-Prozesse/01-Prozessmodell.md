@@ -506,9 +506,8 @@ graph LR
 > - **Prozessmodell als CPU-Abstraktion** (Virtualisierung der CPU)
 > - Definition von Prozess vs. Programm (mit Analogie)
 > - Aufbau und Inhalte des PCB (alle Kategorien)
-> - Die drei/fünf Prozesszustände und ihre Übergänge
+> - Die drei Prozesszustände und ihre Übergänge
 > - Unterschied Systemprozesse vs. Benutzerprozesse
-> - Speicherlayout eines Prozesses (Text, Data, BSS, Heap, Stack)
 > - Kontextwechsel-Mechanismus
 
 > [!question] **Häufige Prüfungsfragen**

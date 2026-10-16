@@ -391,8 +391,7 @@ Bei `fork()` werden alle Pages als **read-only** markiert und geteilt. Erst beim
 
 > [!warning] **Prüfungsrelevant**
 > - Page und Frame Konzept
-> - Aufbau und Inhalt der Page Table (Flags!)
-> - Page-Ersetzungsalgorithmen (FIFO, LRU, Clock)
+
 
 
 > [!question] **Häufige Prüfungsfragen**

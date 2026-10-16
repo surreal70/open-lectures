@@ -1,0 +1,11 @@
+{
+  "showLineNumber": true,
+  "spellcheck": true,
+  "spellcheckLanguages": [
+    "de-DE"
+  ],
+  "defaultViewMode": "preview",
+  "attachmentFolderPath": "assets",
+  "newFileLocation": "current",
+  "newLinkFormat": "shortest"
+}

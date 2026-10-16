@@ -1,0 +1,110 @@
+---
+title: "Direkte Proportionalität"
+chapter: "05"
+section: "04"
+type: topic
+status: "draft - review pending"
+learning_objectives:
+  - "Direkte Proportionalität erkennen"
+  - "Den Proportionalitätsfaktor bestimmen"
+  - "Direkt proportionale Zuordnungen graphisch darstellen"
+  - "Mit der Formel y = k · x arbeiten"
+tags:
+  - mathematik
+  - proportionalitaet
+  - direkt
+  - linear
+created: 2026-10-13
+modified: 2026-10-13
+---
+
+# Direkte Proportionalität
+
+> [!info] Lernziele
+> - Direkte Proportionalität erkennen
+> - Den Proportionalitätsfaktor bestimmen
+> - Direkt proportionale Zuordnungen graphisch darstellen
+> - Mit der Formel y = k · x arbeiten
+
+## Überblick
+
+Zwei Größen sind **direkt proportional**, wenn sich ihr Verhältnis nicht ändert: Verdoppelt sich die eine, verdoppelt sich auch die andere.
+
+## Definition
+
+> [!tip] Definition
+> Zwei Größen x und y sind **direkt proportional**, wenn gilt:
+> $$\frac{y}{x} = k \text{ (konstant)}$$
+> oder: $y = k \cdot x$
+
+Der Wert k heißt **Proportionalitätsfaktor**.
+
+## Kennzeichen
+
+- "Je mehr x, desto mehr y"
+- Der Quotient y/x ist immer gleich
+- Der Graph ist eine Gerade durch den Ursprung
+
+## Beispiel: Preis und Menge
+
+| Menge (kg) | Preis (€) | Preis/Menge |
+|------------|-----------|-------------|
+| 1 | 2,50 | 2,50 |
+| 2 | 5,00 | 2,50 |
+| 3 | 7,50 | 2,50 |
+| 5 | 12,50 | 2,50 |
+
+**Proportionalitätsfaktor:** k = 2,50 €/kg
+
+**Formel:** Preis = 2,50 · Menge
+
+## Graph
+
+```
+  y (Preis)
+  ↑
+12│          ·
+10│        ·
+ 8│      ·
+ 6│    ·
+ 4│  ·
+ 2│·
+  └───────────────→ x (Menge)
+    1 2 3 4 5
+```
+
+Die Gerade geht durch den **Ursprung (0|0)**.
+
+## Proportionalitätsfaktor berechnen
+
+$$k = \frac{y}{x}$$
+
+**Beispiel:** 4 Liter Benzin kosten 7,20 €
+$$k = \frac{7,20}{4} = 1,80 \text{ €/Liter}$$
+
+## Zusammenhänge
+
+### Voraussetzungen
+
+- [[03-Dreisatz]]
+- [[02-Proportionen]]
+
+## Prüfungsrelevanz
+
+> [!warning] Prüfungsrelevanz: Hoch
+> Direkte Proportionalität muss erkannt und rechnerisch behandelt werden können.
+
+## Typische Prüfungsfragen
+
+1. Prüfe, ob die Zuordnung direkt proportional ist: (2;6), (3;9), (5;15)
+2. Bestimme k, wenn y = 24 für x = 8.
+3. Zeichne den Graphen von y = 1,5x.
+
+## Quellen
+
+- Lambacher Schweizer Mathematik 7
+
+## Weiterführende Links
+
+- [[05-Indirekte-Proportionalitaet]]
+- [[08-Geschwindigkeit-Strecke-und-Zeit]]

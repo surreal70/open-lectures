@@ -1,0 +1,3 @@
+# Wachstumsmodelle
+
+< TODO: Inhalt ergänzen -->

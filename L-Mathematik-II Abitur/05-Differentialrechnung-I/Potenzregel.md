@@ -1,0 +1,3 @@
+# Potenzregel
+
+< TODO: Inhalt ergänzen -->

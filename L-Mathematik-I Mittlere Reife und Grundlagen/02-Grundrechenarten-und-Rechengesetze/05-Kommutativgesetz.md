@@ -1,0 +1,119 @@
+---
+author: Open Lectures
+title: Kommutativgesetz
+status: draft - review pending
+tags:
+  - content
+  - mathematik
+  - rechengesetze
+created: 2026-10-13
+modified: 2026-10-13
+---
+
+# Kommutativgesetz
+
+> [!info] **Lernziele**
+> Nach diesem Kapitel solltest du:
+> - Das Kommutativgesetz für Addition und Multiplikation kennen
+> - Wissen, warum es für Subtraktion und Division nicht gilt
+> - Das Gesetz zum Vereinfachen von Rechnungen nutzen können
+
+---
+
+## Überblick
+
+Das **Kommutativgesetz** (Vertauschungsgesetz) besagt, dass bei Addition und Multiplikation die Reihenfolge der Zahlen vertauscht werden darf, ohne das Ergebnis zu ändern.
+
+---
+
+## Definition
+
+### Für die Addition
+
+$$a + b = b + a$$
+
+**Beispiele:**
+- $3 + 5 = 5 + 3 = 8$
+- $(-2) + 7 = 7 + (-2) = 5$
+
+### Für die Multiplikation
+
+$$a \cdot b = b \cdot a$$
+
+**Beispiele:**
+- $4 \cdot 6 = 6 \cdot 4 = 24$
+- $(-3) \cdot 5 = 5 \cdot (-3) = -15$
+
+---
+
+## Anschauliche Erklärung
+
+### Addition
+
+Ob ich erst 3 rote und dann 5 blaue Kugeln in eine Schale lege, oder erst 5 blaue und dann 3 rote – am Ende sind es immer 8 Kugeln.
+
+### Multiplikation
+
+Ein Rechteck mit 3 Reihen und 4 Spalten hat genauso viele Felder wie eines mit 4 Reihen und 3 Spalten:
+
+```
+3 × 4 = 12          4 × 3 = 12
+
+● ● ● ●             ● ● ●
+● ● ● ●             ● ● ●
+● ● ● ●             ● ● ●
+                    ● ● ●
+```
+
+---
+
+## Nicht kommutativ: Subtraktion und Division
+
+> [!warning] **Achtung**
+> Das Kommutativgesetz gilt **nicht** für Subtraktion und Division!
+
+### Subtraktion
+
+$$a - b \neq b - a$$
+
+**Beispiel:** $7 - 3 = 4$, aber $3 - 7 = -4$
+
+### Division
+
+$$a : b \neq b : a$$
+
+**Beispiel:** $8 : 2 = 4$, aber $2 : 8 = 0{,}25$
+
+---
+
+## Anwendung: Geschicktes Rechnen
+
+Das Kommutativgesetz erlaubt es, Zahlen so umzuordnen, dass die Rechnung einfacher wird:
+
+**Beispiel 1:** $17 + 28 + 3 + 2$
+
+$$= 17 + 3 + 28 + 2 = 20 + 30 = 50$$
+
+**Beispiel 2:** $25 \cdot 7 \cdot 4$
+
+$$= 25 \cdot 4 \cdot 7 = 100 \cdot 7 = 700$$
+
+---
+
+## Zusammenhänge
+
+- → [[06-Assoziativgesetz|Assoziativgesetz]] – Klammerung vertauschen
+- → [[07-Distributivgesetz|Distributivgesetz]] – Verbindung von Addition und Multiplikation
+
+> [!warning] **Prüfungsrelevant**
+> - Kommutativgesetz gilt für Addition und Multiplikation
+> - Gilt **nicht** für Subtraktion und Division
+> - Nutzen: Zahlen geschickt umordnen
+
+> [!question] **Typische Prüfungsfragen**
+> - Welches Rechengesetz erlaubt $5 \cdot 8 = 8 \cdot 5$?
+> - Warum gilt $10 - 3 \neq 3 - 10$?
+
+## Quellen
+
+- Padberg, Friedhelm: *Didaktik der Arithmetik*. Springer, 2017.

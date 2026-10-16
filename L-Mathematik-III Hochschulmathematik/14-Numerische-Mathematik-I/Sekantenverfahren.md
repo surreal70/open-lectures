@@ -1,0 +1,3 @@
+# Sekantenverfahren
+
+< TODO: Inhalt ergänzen -->
