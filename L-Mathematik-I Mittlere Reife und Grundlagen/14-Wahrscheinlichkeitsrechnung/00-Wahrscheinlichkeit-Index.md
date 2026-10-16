@@ -4,7 +4,7 @@ chapter: "14"
 section: "Index"
 type: index
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 status: draft - review pending
 tags:
   - mathematik/wahrscheinlichkeit
@@ -17,12 +17,18 @@ tags:
 
 Dieses Kapitel führt in die Grundlagen der Wahrscheinlichkeitsrechnung ein. Sie lernen, Zufallsexperimente zu beschreiben und Wahrscheinlichkeiten zu berechnen.
 
-> [!info] Lernziele
+Die Wahrscheinlichkeitsrechnung – auch Stochastik genannt – ist eines der jüngsten Gebiete der Mathematik. Während Geometrie und Arithmetik bereits in der Antike entwickelt wurden, entstand die mathematische Behandlung des Zufalls erst im 17. Jahrhundert. Der Anstoß kam aus einer überraschenden Richtung: dem Glücksspiel. Im Jahr 1654 wandte sich der französische Adlige Chevalier de Méré mit einer Frage an den Mathematiker Blaise Pascal: Wie teilt man den Einsatz gerecht auf, wenn ein Würfelspiel vorzeitig abgebrochen wird? Pascal tauschte Briefe mit seinem Kollegen Pierre de Fermat, und aus diesem Briefwechsel entstand die mathematische Wahrscheinlichkeitstheorie.
+
+Heute ist die Wahrscheinlichkeitsrechnung aus unserem Leben nicht mehr wegzudenken. Sie bildet die Grundlage für Wettervorhersagen, medizinische Diagnosen, Versicherungsprämien, Qualitätskontrollen in der Industrie und moderne Verschlüsselungsverfahren. Selbst Ihr Smartphone nutzt wahrscheinlichkeitsbasierte Algorithmen, etwa bei der Autokorrektur oder bei Sprachassistenten.
+
+> [!info] **Lernziele**
 > Nach Abschluss dieses Kapitels können Sie:
 > - Zufallsexperimente und Ergebnismengen beschreiben
 > - Wahrscheinlichkeiten mit Laplace berechnen
 > - Baumdiagramme erstellen und die Pfadregeln anwenden
 > - Einfache kombinatorische Probleme lösen
+
+---
 
 ## Themen in diesem Kapitel
 
@@ -43,11 +49,24 @@ Dieses Kapitel führt in die Grundlagen der Wahrscheinlichkeitsrechnung ein. Sie
 
 ## Prüfungsrelevanz
 
-> [!warning] Prüfungsschwerpunkte
+> [!warning] **Prüfungsschwerpunkte**
 > - Laplace-Wahrscheinlichkeiten berechnen
 > - Baumdiagramme mit Pfadregeln
 > - Gegenereignisse nutzen
 > - Einfache kombinatorische Aufgaben
+
+---
+
+## Zusammenhänge
+
+Die Wahrscheinlichkeitsrechnung baut auf mehreren Gebieten auf, die Sie bereits kennengelernt haben:
+
+- → [[../03-Bruchrechnung/00-Bruchrechnung-Index|Bruchrechnung]] – Wahrscheinlichkeiten werden als Brüche dargestellt
+- → [[../05-Verhaeltnisse-und-Proportionalitaet/00-Verhaeltnisse-Index|Verhältnisse und Proportionalität]] – Die Laplace-Formel ist ein Verhältnis
+- → [[../13-Statistik-und-Datenanalyse/00-Statistik-Index|Statistik und Datenanalyse]] – Relative Häufigkeiten nähern sich Wahrscheinlichkeiten an
+
+> [!tip] **Lernstrategie**
+> Die Wahrscheinlichkeitsrechnung erscheint vielen Schülern anfangs abstrakt. Ein bewährter Ansatz: Führen Sie die Experimente (Würfeln, Münzwerfen, Kartenziehen) tatsächlich durch! Das praktische Erleben hilft enorm beim Verständnis. Notieren Sie Ihre Ergebnisse und vergleichen Sie die beobachteten Häufigkeiten mit den berechneten Wahrscheinlichkeiten.
 
 ---
 

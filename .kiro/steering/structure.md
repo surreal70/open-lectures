@@ -22,6 +22,7 @@ open-lectures/
 ## Vault Naming
 
 Lecture vaults use `L-` prefix: `L-Betriebssysteme, Rechnernetze und verteilte Systeme/`
+Howto vaults use `H-` prefix: `H-Coffee and Tee`
 
 ## Vault Internal Structure
 
