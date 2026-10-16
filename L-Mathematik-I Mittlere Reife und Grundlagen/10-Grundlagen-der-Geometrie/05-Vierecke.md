@@ -1,7 +1,7 @@
 ---
 title: "Vierecke"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 chapter: "10"
 section: "05"
 status: "draft - review pending"
@@ -21,6 +21,25 @@ keywords:
 > - Die Innenwinkelsumme anwenden
 > - Hierarchie der Vierecke verstehen
 > - Vierecke anhand ihrer Eigenschaften identifizieren
+
+---
+
+## Einführung
+
+Vierecke sind in unserer gebauten Umwelt allgegenwärtig: Fenster, Türen, Tische, Bücher, Bildschirme – fast alles hat vier Ecken. Diese Dominanz hat praktische Gründe: Rechteckige Formen lassen sich effizient anordnen, stapeln und kombinieren, ohne dass Lücken entstehen.
+
+### Vierecke in Architektur und Alltag
+
+- **Rechtecke**: Zimmer, Fenster, Papierformate (DIN A4 usw.)
+- **Quadrate**: Fliesen, Schachbretter, QR-Codes
+- **Parallelogramme**: Schiefe Schokoladenriegel, manche Türformen
+- **Trapeze**: Handtaschen, Lampenschirme, Eimer (von oben)
+- **Rauten**: Warnschilder, Spielkartensymbole
+
+> [!note] **Warum keine Kreise?**
+> Rechteckige Formen „passen" besser zusammen: Man kann sie lückenlos aneinanderreihen (Parkettierung). Kreise dagegen hinterlassen immer Zwischenräume – deshalb sind Bienenwaben sechseckig und nicht rund.
+
+---
 
 ## Allgemeines Viereck
 
@@ -203,6 +222,19 @@ Das **Quadrat** ist das regelmäßigste Viereck.
 > - Raute: alle Seiten gleich (wie Quadrat, aber ohne rechte Winkel)
 > - Trapez: genau ein Paar paralleler Seiten
 > - Vierecke bilden eine Hierarchie von allgemein zu speziell
+
+## Zusammenhänge
+
+Die Viereckfamilie verknüpft viele geometrische Konzepte:
+
+- → [[04-Dreiecke|Dreiecke]] – Jedes Viereck lässt sich in zwei Dreiecke zerlegen (daher 2 × 180° = 360°)
+- → [[08-Flaechenberechnungen|Flächenberechnungen]] – Verschiedene Formeln je nach Vierecktyp
+- → [[09-Symmetrie|Symmetrie]] – Quadrate haben die meisten Symmetrien
+- → [[07-Umfangsberechnungen|Umfangsberechnungen]] – Vereinfachte Formeln für regelmäßige Vierecke
+- → [[01-Kartesisches-Koordinatensystem|Koordinatensystem]] – Rechtecke als Grundlage des Koordinatengitters
+
+> [!tip] **Die Viereckhierarchie merken**
+> Von oben nach unten werden die Eigenschaften spezieller: Viereck → Trapez/Parallelogramm → Rechteck/Raute → Quadrat. Das Quadrat „erbt" alle Eigenschaften der darüberliegenden Vierecke.
 
 ## Übungsaufgaben
 

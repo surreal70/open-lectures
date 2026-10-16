@@ -1,7 +1,7 @@
 ---
 title: "Dreiecke"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 chapter: "10"
 section: "04"
 status: "draft - review pending"
@@ -21,6 +21,26 @@ keywords:
 > - Die Innenwinkelsumme anwenden können
 > - Besondere Linien im Dreieck kennen
 > - Dreiecke konstruieren können
+
+---
+
+## Einführung
+
+Das Dreieck ist die einfachste geschlossene Figur mit geraden Seiten – und gleichzeitig eine der wichtigsten Formen in Mathematik, Natur und Technik. Mit nur drei Punkten, die nicht auf einer Geraden liegen, ist ein Dreieck eindeutig bestimmt.
+
+### Warum sind Dreiecke so besonders?
+
+Das Dreieck hat eine einzigartige Eigenschaft: Es ist **formstabil**. Während sich ein Viereck zu einem Parallelogramm „verbiegen" lässt, behält ein Dreieck immer seine Form. Deshalb finden wir Dreiecke überall, wo Stabilität gefragt ist:
+
+- **Brückenbau**: Fachwerkbrücken bestehen aus Dreiecken
+- **Kräne und Gerüste**: Dreiecksstrukturen verhindern das Umkippen
+- **Dachstühle**: Dreieckige Verstrebungen tragen das Gewicht
+- **Fahrradrahmen**: Das klassische „Diamant"-Rahmen besteht aus zwei Dreiecken
+
+> [!note] **Euklids Dreiecksgeometrie**
+> Euklids „Elemente" widmen dem Dreieck besondere Aufmerksamkeit. Viele seiner 465 Sätze handeln von Dreiecken – vom berühmten Satz des Pythagoras bis zu den Kongruenzsätzen. Das Dreieck ist das Fundament, auf dem die gesamte euklidische Geometrie aufbaut.
+
+---
 
 ## Definition und Bezeichnung
 
@@ -54,12 +74,20 @@ Ein **Dreieck** ist eine geschlossene Figur aus drei Seiten und drei Ecken.
 > Die Summe der Innenwinkel eines Dreiecks beträgt immer **180°**:
 > $$\alpha + \beta + \gamma = 180°$$
 
+Dieser Satz ist einer der wichtigsten in der Geometrie. Er gilt für **jedes** Dreieck – egal ob klein oder groß, spitz oder stumpfwinklig.
+
+> [!note] **Warum ist die Winkelsumme 180°?**
+> Der Beweis nutzt die [[03-Winkelberechnungen|Winkelsätze am Parallelenschnitt]]: Zeichnet man durch einen Eckpunkt eine Parallele zur gegenüberliegenden Seite, entstehen Wechselwinkel, die zeigen, dass die drei Winkel zusammen einen gestreckten Winkel (180°) bilden.
+
 ### Anwendung
 
 > [!example] Beispiel
 > Gegeben: $\alpha = 45°$, $\beta = 70°$
 > 
 > $\gamma = 180° - 45° - 70° = 65°$
+
+> [!warning] **Häufiger Fehler**
+> Manche Schüler verwechseln die Innenwinkelsumme des Dreiecks (180°) mit der des Vierecks (360°). Merkregel: Dreieck = **drei**mal 60° = 180°.
 
 ## Dreieckarten nach Seiten
 
@@ -194,6 +222,17 @@ Die **Winkelhalbierende** teilt einen Winkel in zwei gleich große Teile.
 > - Einteilung nach Winkeln: spitz-, recht-, stumpfwinklig
 > - Besondere Linien: Höhen, Seitenhalbierende, Mittelsenkrechte, Winkelhalbierende
 > - Die Dreiecksungleichung muss erfüllt sein
+
+## Zusammenhänge
+
+Das Dreieck ist das zentrale Objekt der ebenen Geometrie und verknüpft viele Themen:
+
+- → [[02-Satz-des-Pythagoras|Satz des Pythagoras]] – Fundamentaler Satz für rechtwinklige Dreiecke
+- → [[05-Einfuehrung-Trigonometrie|Trigonometrie]] – Sinus, Kosinus, Tangens im rechtwinkligen Dreieck
+- → [[10-Kongruenz|Kongruenzsätze]] – Wann sind zwei Dreiecke deckungsgleich?
+- → [[11-Aehnlichkeit|Ähnlichkeit]] – Gleiche Form, verschiedene Größe
+- → [[08-Flaechenberechnungen|Flächenberechnung]] – $A = \frac{1}{2} \cdot g \cdot h$
+- → [[12-Geometrische-Konstruktionen|Konstruktionen]] – Dreiecke mit Zirkel und Lineal konstruieren
 
 ## Übungsaufgaben
 

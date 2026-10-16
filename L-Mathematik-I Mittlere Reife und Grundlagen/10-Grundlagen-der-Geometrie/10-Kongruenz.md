@@ -1,7 +1,7 @@
 ---
 title: "Kongruenz"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 chapter: "10"
 section: "10"
 status: "draft - review pending"
@@ -21,6 +21,26 @@ keywords:
 > - Die Kongruenzsätze für Dreiecke kennen und anwenden
 > - Kongruenz nachweisen können
 > - Dreiecke konstruieren können
+
+---
+
+## Einführung
+
+Kongruenz bedeutet „Deckungsgleichheit" – zwei Figuren sind kongruent, wenn sie exakt gleich groß und gleich geformt sind. Man könnte die eine Figur ausschneiden und passgenau auf die andere legen.
+
+### Praktische Bedeutung
+
+Das Konzept der Kongruenz ist grundlegend für viele praktische Anwendungen:
+- **Industrie**: Massenproduktion identischer Bauteile
+- **Qualitätskontrolle**: Prüfen, ob ein Werkstück der Vorlage entspricht
+- **Kartografie**: Übertragen von Formen auf Karten
+- **Architektur**: Symmetrische Bauelemente müssen kongruent sein
+- **Beweise**: Die Kongruenzsätze ermöglichen strenge geometrische Beweise
+
+> [!note] **Euklids Kongruenzbegriff**
+> Euklid verwendete den Begriff „gleich" für kongruente Figuren. Die Kongruenzsätze für Dreiecke gehören zu den frühesten mathematischen Erkenntnissen und bilden die Grundlage vieler Beweise in seinen „Elementen".
+
+---
 
 ## Definition
 
@@ -155,6 +175,19 @@ Konstruiere ein Dreieck mit $a = 4$ cm, $b = 3$ cm, $c = 5$ cm.
 > - WWW ist **kein** Kongruenzsatz (nur Ähnlichkeit)
 > - Mit Kongruenzsätzen kann man Dreiecke eindeutig konstruieren
 > - Kongruenzsätze helfen beim Beweisen in der Geometrie
+
+## Zusammenhänge
+
+Die Kongruenzsätze sind fundamental für viele geometrische Themen:
+
+- → [[11-Aehnlichkeit|Ähnlichkeit]] – Kongruenz ist der Spezialfall mit Streckfaktor $k = 1$
+- → [[12-Geometrische-Konstruktionen|Konstruktionen]] – Die Kongruenzsätze bestimmen, welche Dreiecke konstruierbar sind
+- → [[04-Dreiecke|Dreiecke]] – Eigenschaften und Klassifikation von Dreiecken
+- → [[02-Satz-des-Pythagoras|Satz des Pythagoras]] – Basiert auf Kongruenzbeweisen
+- → [[09-Symmetrie|Symmetrie]] – Gespiegelte Figuren sind kongruent
+
+> [!tip] **Die vier Kongruenzsätze merken**
+> Merke dir: **S**eite, **W**inkel – und die Kombinationen SSS, SWS, WSW, SsW. WWW reicht nicht (nur gleiche Form, nicht Größe)!
 
 ## Übungsaufgaben
 

@@ -1,7 +1,7 @@
 ---
 title: "Ähnlichkeit"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 chapter: "10"
 section: "11"
 status: "draft - review pending"
@@ -21,6 +21,25 @@ keywords:
 > - Den Streckfaktor bestimmen und anwenden
 > - Die Strahlensätze kennen und nutzen
 > - Ähnlichkeit in praktischen Situationen erkennen
+
+---
+
+## Einführung
+
+Ähnlichkeit ist ein grundlegendes Konzept, das uns im Alltag ständig begegnet: Ein Foto und sein verkleinerter Ausdruck, eine Landkarte und die reale Landschaft, ein Modellflugzeug und ein echtes Flugzeug – all das sind Beispiele für ähnliche Figuren.
+
+### Anwendungen der Ähnlichkeit
+
+- **Fotografie**: Vergrößern und Verkleinern von Bildern
+- **Kartografie**: Maßstabsgetreue Karten und Pläne
+- **Modellbau**: Miniaturversionen von Gebäuden, Fahrzeugen, Schiffen
+- **Architektur**: Bauzeichnungen und Modelle vor dem eigentlichen Bau
+- **Vermessung**: Höhen messen ohne direkten Zugang (Bäume, Gebäude)
+
+> [!note] **Der griechische Ursprung**
+> Die Griechen erkannten früh, dass ähnliche Dreiecke dieselben Verhältnisse haben. Thales von Milet (ca. 624–547 v. Chr.) soll mit Hilfe ähnlicher Dreiecke die Höhe der ägyptischen Pyramiden bestimmt haben – indem er den Schatten der Pyramide mit seinem eigenen Schatten verglich.
+
+---
 
 ## Definition
 
@@ -159,6 +178,20 @@ $$\frac{A'}{A} = k^2$$
 > - Der Streckfaktor $k$ gibt das Vergrößerungs-/Verkleinerungsverhältnis an
 > - Die Strahlensätze liefern Verhältnisgleichungen bei Parallelenschnitt
 > - Flächen ändern sich mit $k^2$
+
+## Zusammenhänge
+
+Ähnlichkeit verbindet viele mathematische Konzepte:
+
+- → [[10-Kongruenz|Kongruenz]] – Kongruenz ist Ähnlichkeit mit $k = 1$
+- → [[07-Massstaebe|Maßstäbe]] – Praktische Anwendung der Ähnlichkeit
+- → [[03-Winkelberechnungen|Winkelberechnungen]] – Die Strahlensätze nutzen Parallelenschnitte
+- → [[05-Einfuehrung-Trigonometrie|Trigonometrie]] – Alle rechtwinkligen Dreiecke mit gleichem Winkel sind ähnlich
+- → [[08-Flaechenberechnungen|Flächenberechnungen]] – Flächen skalieren mit $k^2$
+- → [[09-Volumenberechnung|Volumenberechnung]] – Volumen skalieren mit $k^3$
+
+> [!warning] **Häufiger Fehler: Flächen und Streckfaktor**
+> Wenn alle Längen mit $k$ multipliziert werden, wird die Fläche mit $k^2$ multipliziert! Ein Quadrat mit doppelter Seitenlänge ($k = 2$) hat die **vierfache** Fläche ($2^2 = 4$), nicht die doppelte.
 
 ## Übungsaufgaben
 

@@ -1,7 +1,7 @@
 ---
 title: "Geometrische Konstruktionen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 chapter: "10"
 section: "12"
 status: "draft - review pending"
@@ -22,6 +22,25 @@ keywords:
 > - Mittelsenkrechte und Winkelhalbierende konstruieren
 > - Dreiecke nach verschiedenen Vorgaben konstruieren
 
+---
+
+## Einführung
+
+Geometrische Konstruktionen mit Zirkel und Lineal haben eine über 2500 Jahre alte Tradition. Die alten Griechen entwickelten diese Kunst zu hoher Perfektion – und stellten dabei Fragen, die erst Jahrhunderte später beantwortet werden konnten.
+
+### Historischer Hintergrund
+
+> [!note] **Euklid und die Konstruktionswerkzeuge**
+> In Euklids „Elementen" (ca. 300 v. Chr.) sind nur zwei Werkzeuge erlaubt: ein **Zirkel** zum Zeichnen von Kreisen und ein **Lineal ohne Skala** zum Zeichnen von Geraden. Diese Einschränkung führte zu berühmten „unlösbaren" Problemen:
+> 
+> - **Quadratur des Kreises**: Kann man ein Quadrat mit gleichem Flächeninhalt wie ein Kreis konstruieren? Nein – erst 1882 bewies Ferdinand von Lindemann, dass dies unmöglich ist, weil π transzendent ist.
+> - **Würfelverdopplung**: Kann man einen Würfel konstruieren, der das doppelte Volumen hat? Nein – dies führt auf $\sqrt[3]{2}$, das nicht konstruierbar ist.
+> - **Winkeldreiteilung**: Kann man jeden Winkel in drei gleiche Teile teilen? Nein – im Allgemeinen nicht.
+
+Diese „Unmöglichkeitsbeweise" gehören zu den tiefsten Erkenntnissen der Mathematik.
+
+---
+
 ## Werkzeuge und Regeln
 
 ### Erlaubte Werkzeuge
@@ -30,8 +49,10 @@ Bei klassischen Konstruktionen sind nur erlaubt:
 - **Lineal** (ohne Maßeinteilung) zum Zeichnen von Geraden
 - **Zirkel** zum Zeichnen von Kreisen und Abtragen von Strecken
 
-> [!note] Historischer Hintergrund
-> Diese Beschränkung geht auf die griechischen Mathematiker zurück (Euklid, ~300 v. Chr.).
+> [!tip] **Warum diese Einschränkung?**
+> Die Griechen wollten Konstruktionen, die **exakt** sind – unabhängig von Messfehlern. Ein Lineal mit Skala kann verrutschen, aber der Schnittpunkt zweier Kreise ist eindeutig definiert.
+
+In der Praxis (und im Unterricht) werden oft auch Geodreieck, Winkelmesser und markiertes Lineal verwendet – aber die „klassischen" Konstruktionen bleiben ein faszinierendes Gebiet.
 
 ## Grundkonstruktionen
 
@@ -167,6 +188,20 @@ Eine vollständige Konstruktionsbeschreibung enthält:
 > - Winkelhalbierende: Kreisbögen mit gleichem Radius
 > - Dreieckskonstruktionen nach SSS, SWS, WSW
 > - Der Thaleskreis erzeugt rechte Winkel
+
+## Zusammenhänge
+
+Konstruktionen verbinden viele geometrische Konzepte:
+
+- → [[10-Kongruenz|Kongruenzsätze]] – Bestimmen, welche Dreiecke konstruierbar sind
+- → [[01-Punkte-Strecken-Geraden|Punkte, Strecken, Geraden]] – Die Grundelemente jeder Konstruktion
+- → [[02-Winkel-und-Winkelarten|Winkel]] – Winkel konstruieren und halbieren
+- → [[06-Kreise|Kreise]] – Zirkel als Hauptwerkzeug
+- → [[04-Dreiecke|Dreiecke]] – Besondere Punkte (Um-, Inkreis) durch Konstruktion finden
+- → [[09-Symmetrie|Symmetrie]] – Spiegelungen lassen sich konstruieren
+
+> [!tip] **Konstruktion üben**
+> Konstruktionen lassen sich nicht nur aus dem Buch lernen – man muss sie selbst durchführen! Jede Konstruktion mehrfach üben, bis die Handgriffe sitzen.
 
 ## Übungsaufgaben
 

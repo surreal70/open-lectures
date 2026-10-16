@@ -1,7 +1,7 @@
 ---
 title: "Winkelberechnungen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 chapter: "10"
 section: "03"
 status: "draft - review pending"
@@ -21,6 +21,22 @@ keywords:
 > - Stufenwinkel und Wechselwinkel am Parallelenschnitt anwenden
 > - Unbekannte Winkel systematisch berechnen
 > - Die Winkelsätze in Aufgaben anwenden
+
+---
+
+## Einführung
+
+Wenn Geraden sich schneiden oder eine Gerade parallele Linien kreuzt, entstehen Winkelbeziehungen, die wir nutzen können, um unbekannte Winkel zu berechnen. Diese Zusammenhänge sind grundlegend für viele geometrische Beweise und praktische Anwendungen.
+
+### Praktische Bedeutung
+
+Die Winkelsätze am Parallelenschnitt sind mehr als abstrakte Mathematik:
+- **Architektur**: Parallele Balken in Dachkonstruktionen bilden gleiche Winkel
+- **Straßenbau**: Kreuzungen mit parallelen Fahrspuren
+- **Kartografie**: Breitengrade sind parallel, Längengrade schneiden sie
+- **Handwerk**: Beim Sägen paralleler Schnitte entstehen gleiche Winkel
+
+---
 
 ## Winkel an sich schneidenden Geraden
 
@@ -56,8 +72,16 @@ $$\alpha_1 = \alpha_3 \quad \text{und} \quad \alpha_2 = \alpha_4$$
 
 Scheitelwinkel sind **gleich groß**.
 
+> [!note] **Warum sind Scheitelwinkel gleich?**
+> $\alpha_1$ und $\alpha_2$ sind Nebenwinkel, also $\alpha_1 + \alpha_2 = 180°$.
+> $\alpha_2$ und $\alpha_3$ sind ebenfalls Nebenwinkel, also $\alpha_2 + \alpha_3 = 180°$.
+> Daraus folgt: $\alpha_1 = \alpha_3$.
+
 > [!example] Beispiel
 > Wenn $\alpha_1 = 70°$, dann auch $\alpha_3 = 70°$.
+
+> [!tip] **Merkregel**
+> Scheitelwinkel liegen „über Kreuz" am Schnittpunkt und sind immer gleich groß – wie zwei gegenüberliegende Zacken eines X.
 
 ## Winkel am Parallelenschnitt
 
@@ -184,6 +208,11 @@ Also: $\alpha = \beta = 3 \cdot 15 + 10 = 55°$
 > 4. Entsprechende Regel anwenden
 > 5. Ergebnis überprüfen
 
+> [!warning] **Häufige Fehler**
+> - **Parallelität vergessen**: Stufenwinkel und Wechselwinkel sind nur bei **parallelen** Geraden gleich groß!
+> - **Verwechslung**: Nebenwinkel ergänzen sich zu 180°, Scheitelwinkel sind gleich – nicht verwechseln!
+> - **Fehlende Prüfung**: Nach der Berechnung prüfen, ob alle Winkel zusammen 360° ergeben (am Schnittpunkt)
+
 ## Zusammenfassung
 
 > [!abstract] Kernpunkte
@@ -193,6 +222,16 @@ Also: $\alpha = \beta = 3 \cdot 15 + 10 = 55°$
 >   - Stufenwinkel (F-Winkel): gleich groß
 >   - Wechselwinkel (Z-Winkel): gleich groß
 > - Diese Regeln ermöglichen die Berechnung unbekannter Winkel
+
+## Zusammenhänge
+
+Diese Winkelsätze sind die Grundlage für viele weitere geometrische Erkenntnisse:
+
+- → [[02-Winkel-und-Winkelarten|Winkelarten]] – Grundlegende Winkelbegriffe
+- → [[04-Dreiecke|Dreiecke]] – Die Innenwinkelsumme 180° folgt aus den Winkelsätzen
+- → [[05-Vierecke|Vierecke]] – Die Innenwinkelsumme 360° lässt sich damit beweisen
+- → [[11-Aehnlichkeit|Ähnlichkeit]] – Die Strahlensätze nutzen Parallelenschnitte
+- → [[01-Punkte-Strecken-Geraden|Parallele Geraden]] – Grundlage für Stufenwinkel und Wechselwinkel
 
 ## Übungsaufgaben
 

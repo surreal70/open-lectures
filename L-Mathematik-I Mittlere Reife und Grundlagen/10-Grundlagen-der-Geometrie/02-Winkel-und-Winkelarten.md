@@ -1,7 +1,7 @@
 ---
 title: "Winkel und Winkelarten"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 chapter: "10"
 section: "02"
 status: "draft - review pending"
@@ -21,6 +21,21 @@ keywords:
 > - Winkel korrekt bezeichnen und messen
 > - Die verschiedenen Winkelarten unterscheiden
 > - Winkel mit dem Geodreieck messen und zeichnen
+
+---
+
+## Einführung
+
+Winkel sind in unserem Alltag allgegenwärtig, auch wenn wir sie oft nicht bewusst wahrnehmen: Das Aufklappen eines Laptops, das Öffnen einer Tür, die Neigung einer Straße, der Anstellwinkel eines Flugzeugflügels – all das sind Winkel. Die Fähigkeit, Winkel zu messen und zu berechnen, war schon in der Antike entscheidend für Navigation, Astronomie und Architektur.
+
+### Historischer Hintergrund
+
+Die **Einteilung des Vollwinkels in 360°** geht auf die **Babylonier** zurück (ca. 2000 v. Chr.). Sie verwendeten ein Zahlensystem auf Basis von 60 (Sexagesimalsystem) – daher auch unsere Einteilung der Stunde in 60 Minuten und der Minute in 60 Sekunden. Die Wahl von 360 war praktisch: Diese Zahl lässt sich durch viele Zahlen teilen (2, 3, 4, 5, 6, 8, 9, 10, 12, ...), was das Rechnen vereinfacht.
+
+> [!note] **Warum 360°?**
+> Die Babylonier beobachteten, dass ein Jahr etwa 360 Tage hat. Da die Sonne täglich etwa 1° am Himmel wandert (bezogen auf den Sternenhintergrund), lag es nahe, den Vollkreis in 360 Teile zu unterteilen.
+
+---
 
 ## Was ist ein Winkel?
 
@@ -108,17 +123,22 @@ Gestreckter Winkel     Überstumpfer       Vollwinkel
 
 ### Tabelle der Winkelarten
 
-| Winkelart | Größe |
-|---|---|
-| **Nullwinkel** | $0°$ |
-| **Spitzer Winkel** | $0° < \alpha < 90°$ |
-| **Rechter Winkel** | $\alpha = 90°$ |
-| **Stumpfer Winkel** | $90° < \alpha < 180°$ |
-| **Gestreckter Winkel** | $\alpha = 180°$ |
-| **Überstumpfer Winkel** | $180° < \alpha < 360°$ |
-| **Vollwinkel** | $\alpha = 360°$ |
+| Winkelart | Größe | Alltags-Beispiel |
+|---|---|---|
+| **Nullwinkel** | $0°$ | Geschlossene Schere |
+| **Spitzer Winkel** | $0° < \alpha < 90°$ | Dachneigung, Pizza-Stück |
+| **Rechter Winkel** | $\alpha = 90°$ | Zimmerecke, Buchseiten |
+| **Stumpfer Winkel** | $90° < \alpha < 180°$ | Weit geöffnete Tür |
+| **Gestreckter Winkel** | $\alpha = 180°$ | Geöffnetes Taschenmesser |
+| **Überstumpfer Winkel** | $180° < \alpha < 360°$ | Drehung über 180° |
+| **Vollwinkel** | $\alpha = 360°$ | Vollständige Umdrehung |
+
+> [!tip] **Der rechte Winkel ist besonders wichtig**
+> In Architektur, Handwerk und Technik ist der rechte Winkel (90°) allgegenwärtig. Ein Haus mit schiefen Wänden wäre instabil. Das kleine Quadrat-Symbol (┐) kennzeichnet rechte Winkel in Zeichnungen.
 
 ## Winkel messen und zeichnen
+
+Das präzise Messen und Zeichnen von Winkeln ist eine wichtige praktische Fähigkeit. Im Alltag und Beruf (Handwerk, Architektur, Technik) werden Winkel ständig gemessen und konstruiert.
 
 ### Winkel messen mit dem Geodreieck
 
@@ -126,8 +146,11 @@ Gestreckter Winkel     Überstumpfer       Vollwinkel
 2. Eine **Grundlinie** liegt auf einem Schenkel
 3. Den Wert am anderen Schenkel ablesen
 
-> [!tip] Tipp
-> Achte auf die richtige Skala! Bei spitzen Winkeln die innere, bei stumpfen die äußere Skala verwenden.
+> [!tip] **Richtige Skala wählen**
+> Das Geodreieck hat zwei Skalen! Bei spitzen Winkeln die innere, bei stumpfen die äußere Skala verwenden. Prüfe immer, ob dein Ergebnis zur erwarteten Winkelart passt.
+
+> [!warning] **Häufiger Fehler**
+> Viele Schüler lesen am falschen Schenkel ab oder verwechseln die Skalen. Bei einem offensichtlich spitzen Winkel kann das Ergebnis nicht größer als 90° sein!
 
 ### Winkel zeichnen
 
@@ -136,6 +159,8 @@ Gestreckter Winkel     Überstumpfer       Vollwinkel
 3. Geodreieck anlegen (Nullpunkt auf Scheitel, Grundlinie auf Schenkel)
 4. Gewünschten Winkel markieren
 5. Zweiten Schenkel durch die Markierung zeichnen
+
+---
 
 ## Besondere Winkel
 
@@ -171,6 +196,16 @@ $$\alpha + \beta = 180°$$
 > - Winkelarten: spitz (< 90°), recht (= 90°), stumpf (> 90°), gestreckt (= 180°)
 > - Komplementwinkel ergänzen sich zu 90°
 > - Supplementwinkel ergänzen sich zu 180°
+
+## Zusammenhänge
+
+Winkel sind ein zentrales Konzept, das in vielen weiteren Themen auftaucht:
+
+- → [[03-Winkelberechnungen|Winkelberechnungen]] – Scheitel-, Neben-, Stufen- und Wechselwinkel
+- → [[04-Dreiecke|Dreiecke]] – Die Innenwinkelsumme beträgt 180°
+- → [[05-Vierecke|Vierecke]] – Die Innenwinkelsumme beträgt 360°
+- → [[06-Steigung-und-Achsenabschnitt|Steigung]] – Winkel zwischen Gerade und x-Achse
+- → [[05-Einfuehrung-Trigonometrie|Trigonometrie]] – Sinus, Kosinus und Tangens beschreiben Winkel in Dreiecken
 
 ## Übungsaufgaben
 

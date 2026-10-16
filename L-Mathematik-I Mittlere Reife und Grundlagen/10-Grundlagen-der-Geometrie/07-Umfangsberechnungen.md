@@ -1,7 +1,7 @@
 ---
 title: "Umfangsberechnungen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 chapter: "10"
 section: "07"
 status: "draft - review pending"
@@ -22,14 +22,27 @@ keywords:
 > - Formeln korrekt anwenden
 > - Praktische Aufgaben lösen
 
+---
+
+## Einführung
+
+Der Umfang ist ein grundlegendes Maß in der Geometrie und im praktischen Leben unverzichtbar. Immer wenn wir etwas „umranden", „einzäunen" oder „einfassen" wollen, benötigen wir den Umfang.
+
 ## Der Begriff Umfang
 
-Der **Umfang** einer Figur ist die Gesamtlänge ihrer Begrenzungslinie.
+Der **Umfang** einer Figur ist die Gesamtlänge ihrer Begrenzungslinie. Stellt euch vor, eine Ameise läuft einmal um die Figur herum – die Strecke, die sie zurücklegt, ist der Umfang.
 
-> [!tip] Praktische Bedeutung
-> - Länge eines Zauns um ein Grundstück
-> - Länge einer Bordsteinkante
-> - Material für den Rahmen eines Bildes
+> [!tip] **Praktische Bedeutung**
+> - Länge eines **Zauns** um ein Grundstück
+> - Länge einer **Bordsteinkante** um einen Parkplatz
+> - Material für den **Rahmen** eines Bildes
+> - Länge des **Gummibands** um ein Kartenspiel
+> - **Stoffmenge** für den Saum eines Kleidungsstücks
+
+> [!warning] **Häufiger Fehler: Umfang vs. Fläche**
+> Umfang und Fläche sind grundverschiedene Größen! Der Umfang ist eine **Länge** (in cm, m), die Fläche ein **Flächeninhalt** (in cm², m²). Ein großer Umfang bedeutet nicht automatisch eine große Fläche – ein langes, schmales Rechteck hat viel Umfang, aber wenig Fläche.
+
+---
 
 ## Umfang von Dreiecken
 
@@ -177,6 +190,13 @@ $$U = 10 + 12 + 4 + 3\pi = 26 + 3\pi \approx 35{,}42 \text{ cm}$$
 > - Bei zusammengesetzten Figuren: nur äußere Begrenzung zählt
 > - Kreisumfang enthält immer $\pi$
 > - Formeln lassen sich nach gesuchten Größen umstellen
+
+## Zusammenhänge
+
+- → [[08-Flaechenberechnungen|Flächenberechnungen]] – Umfang und Fläche sind verschiedene Konzepte
+- → [[06-Kreise|Kreise]] – Der Kreisumfang führt zur Kreiszahl π
+- → [[04-Dreiecke|Dreiecke]] und [[05-Vierecke|Vierecke]] – Die Figuren, deren Umfang wir berechnen
+- → [[11-Aehnlichkeit|Ähnlichkeit]] – Bei Streckfaktor $k$ ändert sich der Umfang um Faktor $k$
 
 ## Übungsaufgaben
 

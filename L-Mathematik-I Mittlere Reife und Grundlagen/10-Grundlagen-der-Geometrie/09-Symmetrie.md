@@ -1,7 +1,7 @@
 ---
 title: "Symmetrie"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 chapter: "10"
 section: "09"
 status: "draft - review pending"
@@ -21,6 +21,26 @@ keywords:
 > - Punktsymmetrie verstehen und prüfen
 > - Symmetrieachsen und -zentren bestimmen
 > - Symmetrische Figuren konstruieren
+
+---
+
+## Einführung
+
+Symmetrie ist eines der grundlegendsten Konzepte in Mathematik, Natur und Kunst. Das Wort kommt vom griechischen *symmetria* (Ebenmaß, Gleichmaß). Symmetrische Formen empfinden wir oft als besonders schön und harmonisch.
+
+### Symmetrie in Natur und Technik
+
+Symmetrie begegnet uns überall:
+- **Biologie**: Schmetterlingsflügel, menschliches Gesicht, Blütenblätter
+- **Kristalle**: Schneeflocken (6-fache Symmetrie), Diamanten, Salzkristalle
+- **Architektur**: Schloss Versailles, Taj Mahal, gotische Kirchenfenster
+- **Technik**: Räder, Propeller, Flugzeugdesign
+- **Kunst**: Mandalas, islamische Ornamente, M.C. Eschers Bilder
+
+> [!note] **Warum ist Symmetrie so verbreitet?**
+> In der Natur entsteht Symmetrie oft aus Effizienzgründen: Ein symmetrischer Körper ist stabiler, eine symmetrische Fortbewegung ist energiesparender. Auch unser Gehirn bevorzugt symmetrische Formen – wir empfinden sie als „richtig" und ästhetisch ansprechend.
+
+---
 
 ## Achsensymmetrie (Spiegelsymmetrie)
 
@@ -161,6 +181,20 @@ Beispiel: $f(x) = x^3$
 > - Drehsymmetrie: Deckung bei Drehung um bestimmten Winkel
 > - Im Koordinatensystem: Achsensymmetrie (y-Achse) ↔ $f(-x) = f(x)$
 > - Im Koordinatensystem: Punktsymmetrie (Ursprung) ↔ $f(-x) = -f(x)$
+
+## Zusammenhänge
+
+Symmetrie verbindet Geometrie mit anderen mathematischen Bereichen:
+
+- → [[05-Vierecke|Vierecke]] – Quadrate haben die meisten Symmetrien
+- → [[04-Dreiecke|Dreiecke]] – Gleichseitige Dreiecke sind 3-fach drehsymmetrisch
+- → [[06-Kreise|Kreise]] – Der Kreis ist unendlich-fach symmetrisch
+- → [[05-Lineare-Funktionen|Lineare Funktionen]] – Punktsymmetrie bei Ursprungsgeraden
+- → [[08-Quadratische-Funktionen|Quadratische Funktionen]] – Achsensymmetrie zur Scheitelgeraden
+- → [[12-Geometrische-Konstruktionen|Konstruktionen]] – Symmetrische Punkte konstruieren
+
+> [!tip] **Symmetrie als Rechenhilfe**
+> Wenn du weißt, dass eine Figur symmetrisch ist, musst du oft nur die Hälfte berechnen und kannst das Ergebnis spiegeln. Das spart Arbeit!
 
 ## Übungsaufgaben
 

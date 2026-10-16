@@ -1,7 +1,7 @@
 ---
 title: "Grundlagen der Geometrie"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 chapter: "10"
 status: "draft - review pending"
 type: index
@@ -17,6 +17,31 @@ keywords:
 
 > [!info] Kapitelübersicht
 > Dieses Kapitel führt in die ebene Geometrie ein. Wir untersuchen Punkte, Geraden, Winkel und Figuren in der Ebene. Die Geometrie verbindet anschauliches Denken mit präzisem Rechnen und ist Grundlage für Architektur, Design, Technik und Naturwissenschaften.
+
+---
+
+## Einführung
+
+Die Geometrie (von griechisch *geo* = Erde und *metron* = Maß) ist eine der ältesten Disziplinen der Mathematik. Ihr Name verrät ihren Ursprung: Im alten Ägypten mussten nach jeder Nilüberschwemmung die Felder neu vermessen werden – die „Erdmessung" war geboren.
+
+### Euklid und die Elemente
+
+Der griechische Mathematiker **Euklid von Alexandria** (ca. 300 v. Chr.) fasste das geometrische Wissen seiner Zeit in einem monumentalen Werk zusammen: den **„Elementen"** (griechisch: *Stoicheia*). Dieses Buch ist nach der Bibel das meistgedruckte Werk der Geschichte und diente über 2000 Jahre als Grundlage des Mathematikunterrichts. Euklids Methode – vom Einfachen zum Komplexen, vom Bekannten zum Unbekannten, alles streng bewiesen – prägt die Mathematik bis heute.
+
+> [!note] **Euklids Vermächtnis**
+> Die „euklidische Geometrie", die wir in diesem Kapitel behandeln, beschreibt die Welt auf einer flachen Ebene – so wie wir sie im Alltag erleben. Für gekrümmte Räume (etwa die Erdoberfläche oder das Weltall) gibt es andere Geometrien, die erst im 19. Jahrhundert entwickelt wurden.
+
+### Geometrie im Alltag und in der Natur
+
+Geometrie umgibt uns überall:
+
+- **Architektur**: Vom einfachen Hausgiebel (Dreieck) über Fenster (Rechteck) bis zu modernen Kuppelbauten (Kugel) – ohne Geometrie wäre kein Bauwerk stabil
+- **Natur**: Bienenwaben sind Sechsecke (optimal für Materialersparnis), Schneeflocken zeigen sechsfache Symmetrie, Kristalle bilden geometrische Formen
+- **Technik**: Zahnräder, Schrauben, Platinen – alle technischen Bauteile beruhen auf präzisen geometrischen Berechnungen
+- **Kunst**: Der goldene Schnitt, Perspektive in Gemälden, symmetrische Muster – Geometrie und Ästhetik sind eng verbunden
+
+> [!tip] **Geometrie trainiert das räumliche Vorstellungsvermögen**
+> Die Fähigkeit, sich Formen und ihre Veränderungen vorzustellen, ist nicht angeboren – sie lässt sich trainieren. Dieses Kapitel hilft dabei, von einfachen Punkten und Geraden bis hin zu komplexen Konstruktionen.
 
 ## Lernpfad
 

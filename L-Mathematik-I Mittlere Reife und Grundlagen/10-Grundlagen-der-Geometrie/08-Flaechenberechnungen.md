@@ -1,7 +1,7 @@
 ---
 title: "Flächenberechnungen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-01-20
 chapter: "10"
 section: "08"
 status: "draft - review pending"
@@ -22,9 +22,25 @@ keywords:
 > - Zusammengesetzte Flächen berechnen
 > - Einheiten korrekt verwenden
 
+---
+
+## Einführung
+
+Die Flächenberechnung ist eine der ältesten und praktisch wichtigsten mathematischen Fähigkeiten. Schon im alten Ägypten mussten nach jeder Nilüberschwemmung die Felder neu vermessen werden – so entstand das Wort „Geometrie" (griechisch: Erdmessung).
+
+### Praktische Anwendungen heute
+
+- **Immobilien**: Wohnfläche bestimmt Miete und Kaufpreis
+- **Landwirtschaft**: Feldgröße bestimmt Saatgut- und Düngemenge
+- **Handwerk**: Materialbedarf für Bodenbeläge, Tapeten, Farbe
+- **Architektur**: Raumplanung und Grundrissgestaltung
+- **Alltag**: Wie viel Rasen muss gemäht werden? Wie viel Stoff brauche ich?
+
+---
+
 ## Der Begriff Flächeninhalt
 
-Der **Flächeninhalt** gibt an, wie viel „Platz" eine ebene Figur einnimmt.
+Der **Flächeninhalt** gibt an, wie viel „Platz" eine ebene Figur einnimmt. Man kann ihn sich vorstellen als die Anzahl der Einheitsquadrate (z.B. 1 cm × 1 cm), die in die Figur passen.
 
 ### Flächeneinheiten
 
@@ -37,6 +53,15 @@ Der **Flächeninhalt** gibt an, wie viel „Platz" eine ebene Figur einnimmt.
 | Ar | a | 1 a = 100 m² |
 | Hektar | ha | 1 ha = 100 a = 10.000 m² |
 | Quadratkilometer | km² | 1 km² = 100 ha |
+
+> [!warning] **Häufiger Fehler: Einheitenumrechnung**
+> Bei Flächen verdoppelt sich der Umrechnungsfaktor im Exponenten:
+> - Länge: 1 m = 100 cm
+> - Fläche: 1 m² = 100² cm² = **10.000 cm²**
+> 
+> Viele Schüler rechnen fälschlich 1 m² = 100 cm² – das ist um den Faktor 100 falsch!
+
+---
 
 ## Rechteck und Quadrat
 
@@ -210,6 +235,20 @@ Die Figur zu einer einfacheren ergänzen und dann subtrahieren.
 > - Trapez: Mittelwert der parallelen Seiten × Höhe
 > - Kreis: $\pi r^2$
 > - Zusammengesetzte Flächen: zerlegen oder ergänzen
+
+## Zusammenhänge
+
+Die Flächenberechnung verbindet viele geometrische Konzepte:
+
+- → [[07-Umfangsberechnungen|Umfangsberechnungen]] – Umfang und Fläche sind verschiedene Maße
+- → [[04-Dreiecke|Dreiecke]] – Die Dreiecksfläche ist fundamental
+- → [[05-Vierecke|Vierecke]] – Verschiedene Formeln je nach Vierecktyp
+- → [[06-Kreise|Kreise]] – Kreisfläche mit der Zahl π
+- → [[11-Aehnlichkeit|Ähnlichkeit]] – Flächen ändern sich mit $k^2$
+- → [[09-Volumenberechnung|Volumenberechnung]] – Vom 2D zum 3D
+
+> [!tip] **Formeln ableiten statt auswendig lernen**
+> Alle Flächenformeln lassen sich aus dem Rechteck ableiten: Das Dreieck ist das halbe Rechteck, das Parallelogramm ein „verschobenes" Rechteck, das Trapez der Mittelwert zweier Rechtecke. Wer das versteht, muss weniger auswendig lernen.
 
 ## Übungsaufgaben
 

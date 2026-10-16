@@ -247,8 +247,8 @@ Das **Open Systems Interconnection (OSI)** Modell wurde 1984 von der [[07-Anhang
 
 Beim Durchlaufen der Schichten werden die Daten **gekapselt** – jede Schicht fügt ihren eigenen Header (und ggf. Trailer) hinzu:
 
-![[datenkapselung.png]]
-*<span class="fig-id">03-03-01-datenkapselung</span>: Datenkapselung beim Durchlaufen der OSI-Schichten – jede Schicht fügt ihren eigenen Header hinzu.*
+![[osi-kapselung-isdn.png]]
+*<span class="fig-id">03-03-01-osi-kapselung-isdn</span>: Datenkapselung im OSI-Modell am Beispiel von ISDN – jede der 7 Schichten fügt ihren eigenen Header hinzu.*
 
 ## Netzwerkgeräte und ihre Schichten
 
