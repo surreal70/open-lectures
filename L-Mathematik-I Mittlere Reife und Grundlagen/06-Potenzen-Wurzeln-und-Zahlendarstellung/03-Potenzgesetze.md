@@ -15,7 +15,7 @@ tags:
   - potenzgesetze
   - rechenregeln
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-26
 ---
 
 # Potenzgesetze
@@ -30,6 +30,10 @@ modified: 2026-10-13
 
 Die **Potenzgesetze** sind fundamentale Rechenregeln, die das Arbeiten mit Potenzen systematisch ermöglichen.
 
+Diese Gesetze sind keine willkürlichen Vereinbarungen, sondern ergeben sich logisch aus der Definition der Potenz als wiederholte Multiplikation. Wenn man versteht, **warum** die Regeln so lauten, braucht man sie nicht auswendig zu lernen – man kann sie jederzeit selbst herleiten.
+
+Die Potenzgesetze wurden im 17. Jahrhundert systematisiert, als die Algebra sich zu einer exakten Wissenschaft entwickelte. **John Wallis** (1616–1703) und später **Leonhard Euler** (1707–1783) erweiterten die Regeln auf gebrochene und negative Exponenten. Heute bilden die Potenzgesetze das Fundament für höhere Mathematik, Physik und Technik.
+
 ## Die fünf Potenzgesetze
 
 ### 1. Multiplikation (gleiche Basis)
@@ -39,6 +43,11 @@ $$a^m \cdot a^n = a^{m+n}$$
 **Beispiel:** $2^3 \cdot 2^4 = 2^{3+4} = 2^7 = 128$
 
 **Merkregel:** Gleiche Basis → Exponenten addieren
+
+> [!tip] **Warum addiert man die Exponenten?**
+> Schreibe die Potenzen aus:
+> $$2^3 \cdot 2^4 = (2 \cdot 2 \cdot 2) \cdot (2 \cdot 2 \cdot 2 \cdot 2) = 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 \cdot 2 = 2^7$$
+> Die Anzahl der Faktoren (Exponenten) addiert sich: $3 + 4 = 7$.
 
 ### 2. Division (gleiche Basis)
 
@@ -80,11 +89,20 @@ $$\left(\frac{a}{b}\right)^n = \frac{a^n}{b^n}$$
 
 ## Häufige Fehler
 
-| Falsch | Richtig |
-|--------|---------|
-| $a^m \cdot a^n = a^{m \cdot n}$ | $a^m \cdot a^n = a^{m+n}$ |
-| $a^m + a^n = a^{m+n}$ | Nicht vereinfachbar! |
-| $(a + b)^2 = a^2 + b^2$ | $(a + b)^2 = a^2 + 2ab + b^2$ |
+> [!warning] **Häufiger Fehler: Die drei gefährlichsten Verwechslungen**
+
+| Falsch | Richtig | Erklärung |
+|--------|---------|-----------|
+| $a^m \cdot a^n = a^{m \cdot n}$ | $a^m \cdot a^n = a^{m+n}$ | Exponenten werden **addiert**, nicht multipliziert! |
+| $a^m + a^n = a^{m+n}$ | Nicht vereinfachbar! | Potenzgesetze gelten nur bei Multiplikation/Division |
+| $(a + b)^2 = a^2 + b^2$ | $(a + b)^2 = a^2 + 2ab + b^2$ | Das ist die 1. binomische Formel! |
+
+> [!tip] **Merkregel: Gleiche Basis prüfen**
+> Die ersten beiden Potenzgesetze (Multiplikation und Division) funktionieren **nur bei gleicher Basis**:
+> - $2^3 \cdot 2^5 = 2^8$ ✓ (gleiche Basis 2)
+> - $2^3 \cdot 3^5 = ?$ ✗ (verschiedene Basen – nicht vereinfachbar!)
+>
+> Bei Gesetz 4 und 5 muss dagegen der **Exponent gleich** sein.
 
 ## Zusammenhänge
 

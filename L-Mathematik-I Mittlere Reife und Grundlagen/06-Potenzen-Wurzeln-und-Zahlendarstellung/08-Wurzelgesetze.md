@@ -15,7 +15,7 @@ tags:
   - wurzelgesetze
   - rechenregeln
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-26
 ---
 
 # Wurzelgesetze
@@ -29,6 +29,12 @@ modified: 2026-10-13
 ## Überblick
 
 Die **Wurzelgesetze** sind die Entsprechung der Potenzgesetze für Wurzeln.
+
+Da Wurzeln nichts anderes als Potenzen mit gebrochenen Exponenten sind ($\sqrt{a} = a^{1/2}$), leiten sich die Wurzelgesetze direkt aus den [[03-Potenzgesetze|Potenzgesetzen]] ab. Diese Verbindung ist fundamental: Wer die Potenzgesetze versteht, kann die Wurzelgesetze jederzeit selbst herleiten.
+
+Die systematische Behandlung der Wurzelgesetze geht auf die Arbeiten von **Leonhard Euler** (1707–1783) zurück, der als Erster eine vollständige Theorie der Potenzen und Wurzeln mit beliebigen Exponenten entwickelte. Seine Erkenntnisse bilden noch heute die Grundlage für das Rechnen mit Wurzeln.
+
+In der Praxis helfen uns die Wurzelgesetze, komplizierte Wurzelausdrücke zu **vereinfachen**, Gleichungen zu lösen und Terme umzuformen – unverzichtbare Fähigkeiten für Algebra und Geometrie.
 
 ## Die Wurzelgesetze
 
@@ -63,10 +69,26 @@ $$\sqrt[n]{a} = a^{1/n}$$
 
 ## Häufige Fehler
 
-| Falsch | Richtig |
-|--------|---------|
-| $\sqrt{a+b} = \sqrt{a} + \sqrt{b}$ | Gilt nicht! |
-| $\sqrt{a^2} = a$ | $\sqrt{a^2} = |a|$ |
+> [!warning] **Häufiger Fehler: Die gefährlichste Verwechslung**
+
+| Falsch | Richtig | Erklärung |
+|--------|---------|-----------|
+| $\sqrt{a+b} = \sqrt{a} + \sqrt{b}$ | Gilt nicht! | Die Wurzel einer Summe ist NICHT die Summe der Wurzeln |
+| $\sqrt{a^2} = a$ | $\sqrt{a^2} = |a|$ | Der Betrag ist nötig, falls $a$ negativ sein könnte |
+
+> [!tip] **Gegenbeispiel zum Merken**
+> $\sqrt{9 + 16} = \sqrt{25} = 5$
+> 
+> Aber: $\sqrt{9} + \sqrt{16} = 3 + 4 = 7$
+> 
+> $5 \neq 7$ → Die Wurzel einer Summe ist **nicht** die Summe der Wurzeln!
+
+> [!note] **Warum $\sqrt{a^2} = |a|$?**
+> Betrachte $a = -3$: Dann ist $a^2 = 9$ und $\sqrt{9} = 3$ (nicht $-3$!).
+> 
+> Da die Quadratwurzel per Definition **immer nicht-negativ** ist, brauchen wir den Betrag:
+> - $\sqrt{(-3)^2} = \sqrt{9} = 3 = |-3|$
+> - $\sqrt{3^2} = \sqrt{9} = 3 = |3|$
 
 ## Zusammenhänge
 

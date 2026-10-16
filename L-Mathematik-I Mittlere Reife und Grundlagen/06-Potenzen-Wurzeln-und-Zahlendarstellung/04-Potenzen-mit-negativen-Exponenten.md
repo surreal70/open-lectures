@@ -15,7 +15,7 @@ tags:
   - negative-exponenten
   - kehrwert
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-26
 ---
 
 # Potenzen mit negativen Exponenten
@@ -29,6 +29,22 @@ modified: 2026-10-13
 ## Überblick
 
 Ein **negativer Exponent** bedeutet, dass man den Kehrwert der Potenz mit positivem Exponenten bildet.
+
+Diese Erweiterung der Potenzschreibweise auf negative Exponenten ist keine willkürliche Definition, sondern eine logische Konsequenz der Potenzgesetze. Sie ermöglicht es, Brüche elegant als Potenzen zu schreiben und macht die Rechenregeln konsistenter.
+
+Historisch entwickelte sich das Konzept im 17. Jahrhundert. **John Wallis** und **Isaac Newton** erkannten, dass die Potenzgesetze auch für negative (und sogar gebrochene) Exponenten gelten sollten. Die Definition $a^{-n} = \frac{1}{a^n}$ ist die einzige, die alle Potenzgesetze erhält.
+
+> [!tip] **Warum ist $a^{-n} = \frac{1}{a^n}$?**
+> Betrachte die Potenzreihe: $a^3, a^2, a^1, a^0, a^{-1}, a^{-2}, ...$
+> 
+> Wenn wir den Exponenten um 1 verringern, **dividieren wir durch a**:
+> - $a^3 : a = a^2$
+> - $a^2 : a = a^1$  
+> - $a^1 : a = a^0 = 1$
+> - $a^0 : a = a^{-1} = \frac{1}{a}$
+> - $a^{-1} : a = a^{-2} = \frac{1}{a^2}$
+> 
+> Das Muster setzt sich logisch fort!
 
 ## Definition
 
@@ -68,6 +84,20 @@ Wenn m < n: Ergebnis hat negativen Exponenten.
 | $10^{-2}$ | 0,01 |
 | $10^{-3}$ | 0,001 |
 | $10^{-6}$ | 0,000001 |
+
+> [!note] **Anschauliche Deutung**
+> Der negative Exponent zeigt an, wie viele Stellen das Komma **nach links** verschoben wird:
+> - $10^{-1}$: eine Stelle nach links → $0,1$
+> - $10^{-3}$: drei Stellen nach links → $0,001$
+>
+> Umgekehrt bedeutet ein positiver Exponent eine Verschiebung nach rechts.
+
+> [!warning] **Häufiger Fehler**
+> Verwechsle nicht:
+> - $10^{-2} = 0,01$ (positiv, sehr klein)
+> - $-10^2 = -100$ (negativ, groß)
+>
+> Der negative Exponent macht die Zahl **klein**, nicht negativ!
 
 ## Potenzgesetze gelten weiterhin
 

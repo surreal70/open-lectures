@@ -42,19 +42,8 @@ Eine wichtige Unterscheidung:
 
 Alle Geräte sind an ein gemeinsames Übertragungsmedium angeschlossen.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│   ══════════════════════════════════════════════════════   │
-│        │         │         │         │         │           │
-│      ┌─┴─┐     ┌─┴─┐     ┌─┴─┐     ┌─┴─┐     ┌─┴─┐        │
-│      │PC1│     │PC2│     │PC3│     │PC4│     │PC5│        │
-│      └───┘     └───┘     └───┘     └───┘     └───┘        │
-│                                                             │
-│   Terminator ─────────────────────────────── Terminator    │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+![[bus-topologie.png]]
+*<span class="fig-id">03-01-03-bus-topologie</span>: Bus-Topologie mit Terminatoren an beiden Enden.*
 
 **Eigenschaften:**
 - Alle Geräte empfangen alle Signale
@@ -77,26 +66,8 @@ Alle Geräte sind an ein gemeinsames Übertragungsmedium angeschlossen.
 
 Geräte sind in einer geschlossenen Schleife verbunden. Daten fließen in eine Richtung.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│                    ┌─────────────┐                         │
-│               ┌────┤     PC1     ├────┐                    │
-│               │    └─────────────┘    │                    │
-│               ▼                       │                    │
-│        ┌──────┴──────┐         ┌──────┴──────┐            │
-│        │     PC5     │         │     PC2     │            │
-│        └──────┬──────┘         └──────┬──────┘            │
-│               │                       │                    │
-│               │                       ▼                    │
-│        ┌──────┴──────┐         ┌──────┴──────┐            │
-│        │     PC4     ├────────►│     PC3     │            │
-│        └─────────────┘         └─────────────┘            │
-│                                                             │
-│              ← Datenfluss im Uhrzeigersinn →               │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+![[ring-topologie.png]]
+*<span class="fig-id">03-01-03-ring-topologie</span>: Ring-Topologie mit unidirektionalem Datenfluss.*
 
 **Eigenschaften:**
 - Jedes Gerät hat genau zwei Nachbarn
@@ -115,21 +86,8 @@ Geräte sind in einer geschlossenen Schleife verbunden. Daten fließen in eine R
 - **Single Ring**: Einfacher Ring, anfällig für Ausfälle
 - **Dual Ring (FDDI)**: Zwei gegenläufige Ringe für Redundanz
 
-```
-DUAL RING (FDDI):
-         ───────────────►  Primärer Ring
-   ┌───┐     ┌───┐     ┌───┐
-   │ A │─────│ B │─────│ C │
-   └───┘     └───┘     └───┘
-         ◄───────────────  Sekundärer Ring
-         
-Bei Ausfall von B: Automatisches Wrapping
-         ──────────►
-   ┌───┐            ┌───┐
-   │ A │────────────│ C │
-   └───┘            └───┘
-         ◄──────────
-```
+![[dual-ring-fddi.png]]
+*<span class="fig-id">03-01-03-dual-ring-fddi</span>: Dual Ring (FDDI) mit primärem und sekundärem Ring für Ausfallsicherheit.*
 
 **Anwendungen:**
 - Token Ring (IBM, historisch)
@@ -140,24 +98,8 @@ Bei Ausfall von B: Automatisches Wrapping
 
 Alle Geräte sind mit einem zentralen Knoten (Hub, Switch) verbunden.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│                         ┌───┐                              │
-│                         │PC1│                              │
-│                         └─┬─┘                              │
-│                           │                                │
-│        ┌───┐          ┌───┴───┐          ┌───┐            │
-│        │PC2├──────────┤Switch ├──────────┤PC3│            │
-│        └───┘          └───┬───┘          └───┘            │
-│                      ┌────┼────┐                          │
-│                      │    │    │                          │
-│                    ┌─┴─┐┌─┴─┐┌─┴─┐                        │
-│                    │PC4││PC5││PC6│                        │
-│                    └───┘└───┘└───┘                        │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+![[stern-topologie.png]]
+*<span class="fig-id">03-01-03-stern-topologie</span>: Stern-Topologie mit zentralem Switch und radialen Verbindungen zu den Endgeräten.*
 
 **Eigenschaften:**
 - Zentrale Komponente koordiniert Kommunikation
@@ -173,6 +115,7 @@ Alle Geräte sind mit einem zentralen Knoten (Hub, Switch) verbunden.
 | Einfache Verwaltung | |
 
 **Hub vs. Switch:**
+
 | Aspekt | Hub | Switch |
 |--------|-----|--------|
 | Logische Topologie | Bus | Stern |
@@ -190,30 +133,8 @@ Alle Geräte sind mit einem zentralen Knoten (Hub, Switch) verbunden.
 
 Erweiterung der Stern-Topologie mit mehreren Ebenen.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│                      ┌──────────┐                          │
-│                      │Core Switch│   ← Wurzel              │
-│                      └─────┬────┘                          │
-│                    ┌───────┼───────┐                       │
-│                    │       │       │                       │
-│              ┌─────┴──┐┌───┴───┐┌──┴────┐                 │
-│              │Distrib.││Distrib││Distrib│ ← Verteilung    │
-│              │Switch 1││Switch2││Switch3│                  │
-│              └────┬───┘└───┬───┘└───┬───┘                 │
-│              ┌────┴───┐    │   ┌────┴───┐                 │
-│              │        │    │   │        │                 │
-│           ┌──┴──┐ ┌───┴┐ ┌─┴─┐ ┌┴──┐ ┌──┴─┐              │
-│           │Acc.1│ │Acc2│ │Acc│ │Acc│ │Acc5│ ← Access     │
-│           └──┬──┘ └──┬─┘ └─┬─┘ └─┬─┘ └──┬─┘              │
-│              │       │     │     │      │                 │
-│           ┌──┴──┐ ┌──┴─┐ ┌─┴─┐ ┌─┴─┐ ┌──┴─┐              │
-│           │PCs  │ │PCs │ │PCs│ │PCs│ │PCs │ ← Endgeräte  │
-│           └─────┘ └────┘ └───┘ └───┘ └────┘              │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+![[baum-topologie.png]]
+*<span class="fig-id">03-01-03-baum-topologie</span>: Hierarchische Baum-Topologie mit Core-, Distribution- und Access-Ebene.*
 
 **Eigenschaften:**
 - Hierarchische Struktur (Core → Distribution → Access)
@@ -236,29 +157,8 @@ Erweiterung der Stern-Topologie mit mehreren Ebenen.
 
 Jeder Knoten ist mit mehreren anderen verbunden. Bietet Redundanz.
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│   VOLLVERMASCHT (Full Mesh)         TEILVERMASCHT          │
-│                                     (Partial Mesh)          │
-│        ┌───┐                            ┌───┐              │
-│        │ A │                            │ A │              │
-│       ╱│   │╲                          ╱│   │              │
-│      ╱ └─┬─┘ ╲                        ╱ └─┬─┘              │
-│     ╱    │    ╲                      ╱    │               │
-│   ┌┴──┐  │  ┌──┴┐                 ┌─┴─┐  │  ┌───┐        │
-│   │ B │──┼──│ C │                 │ B │──┼──│ C │        │
-│   └─┬─┘  │  └─┬─┘                 └───┘  │  └─┬─┘        │
-│     ╲    │    ╱                          │    │          │
-│      ╲ ┌─┴─┐ ╱                         ┌─┴─┐  │          │
-│       ╲│ D │╱                          │ D │──┘          │
-│        └───┘                           └───┘              │
-│                                                             │
-│   Verbindungen: n(n-1)/2           Weniger Verbindungen    │
-│   Für n=4: 6 Verbindungen          aber Redundanz          │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+![[mesh-topologie.png]]
+*<span class="fig-id">03-01-03-mesh-topologie</span>: Vermaschte Topologie – links vollvermascht (alle 10 Verbindungen), rechts teilvermascht (6 von 10 Verbindungen).*
 
 **Eigenschaften:**
 - Vollvermascht: Jeder mit jedem verbunden
@@ -305,52 +205,8 @@ Stern-Topologie mit Ring-Verbindung der zentralen Switches.
 
 Moderne Rechenzentren nutzen eine spezielle Mesh-Variante:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                        SPINE-LEAF                           │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│   SPINE:    ┌───────┐       ┌───────┐       ┌───────┐      │
-│             │Spine 1│       │Spine 2│       │Spine 3│      │
-│             └┬──┬──┬┘       └┬──┬──┬┘       └┬──┬──┬┘      │
-│              │  │  │         │  │  │         │  │  │       │
-│              │  │  └─────────┼──┼──┼─────────┼──┼──┤       │
-│              │  └────────────┼──┼──┼─────────┼──┤  │       │
-│              └───────────────┼──┼──┼─────────┤  │  │       │
-│              ┌───────────────┼──┼──┼─────────┤  │  │       │
-│              │  ┌────────────┼──┼──┼─────────┼──┤  │       │
-│              │  │  ┌─────────┼──┼──┼─────────┼──┼──┤       │
-│              │  │  │         │  │  │         │  │  │       │
-│             ┌┴──┴──┴┐       ┌┴──┴──┴┐       ┌┴──┴──┴┐      │
-│   LEAF:     │Leaf 1 │       │Leaf 2 │       │Leaf 3 │      │
-│             └───┬───┘       └───┬───┘       └───┬───┘      │
-│                 │               │               │          │
-│              ┌──┴──┐         ┌──┴──┐         ┌──┴──┐       │
-│              │Servr│         │Servr│         │Servr│       │
-│              └─────┘         └─────┘         └─────┘       │
-│                                                             │
-│   Jeder Leaf ist mit JEDEM Spine verbunden (Full-Mesh      │
-│   zwischen den Ebenen) → max. 2 Hops zwischen allen Servern│
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-**Vereinfachte Darstellung der Verbindungen:**
-
-```
-            Spine 1         Spine 2         Spine 3
-               │               │               │
-       ┌───────┼───────┬───────┼───────┬───────┼───────┐
-       │       │       │       │       │       │       │
-       │   ┌───┼───┐   │   ┌───┼───┐   │   ┌───┼───┐   │
-       │   │   │   │   │   │   │   │   │   │   │   │   │
-     Leaf 1 ───┴───┴───┴─ Leaf 2 ─┴───┴───┴─ Leaf 3   │
-       │                   │                   │       │
-    Server              Server              Server     │
-
-  Verbindungen: Jeder Leaf hat 3 Uplinks (zu allen Spines)
-  Pfad Server→Server: immer genau 2 Hops (Leaf→Spine→Leaf)
-```
+![[spine-leaf.png]]
+*<span class="fig-id">03-01-03-spine-leaf</span>: Spine-Leaf-Architektur – jeder Leaf-Switch ist mit allen Spine-Switches verbunden (Full-Mesh zwischen den Ebenen), wodurch maximal 2 Hops zwischen beliebigen Servern entstehen.*
 
 ## Vergleich der Topologien
 

@@ -15,7 +15,7 @@ tags:
   - notation
   - zehnerpotenzen
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-26
 ---
 
 # Wissenschaftliche Schreibweise
@@ -29,6 +29,16 @@ modified: 2026-10-13
 ## Überblick
 
 Die **wissenschaftliche Schreibweise** (Exponentialschreibweise) stellt Zahlen als Produkt einer Zahl zwischen 1 und 10 und einer Zehnerpotenz dar.
+
+Diese Notation ist unverzichtbar in Wissenschaft und Technik, wo man regelmäßig mit extrem großen oder kleinen Zahlen arbeitet. Statt 299.792.458 m/s (Lichtgeschwindigkeit) schreibt man kompakt $2{,}998 \times 10^8$ m/s. Statt 0,000000000001 m (Durchmesser eines Wasserstoffatoms) schreibt man $1 \times 10^{-12}$ m.
+
+Die wissenschaftliche Schreibweise wurde im 20. Jahrhundert mit dem Aufkommen der modernen Physik populär, als Wissenschaftler wie **Albert Einstein** und **Niels Bohr** mit atomaren und kosmischen Größenordnungen arbeiteten. Heute ist sie Standard in allen Naturwissenschaften und auf jedem wissenschaftlichen Taschenrechner zu finden (oft als „SCI" oder „EXP" Modus).
+
+> [!note] **Vorteile der wissenschaftlichen Schreibweise**
+> - **Kompaktheit**: Sehr große/kleine Zahlen werden übersichtlich
+> - **Genauigkeit**: Die Anzahl signifikanter Stellen ist sofort erkennbar
+> - **Rechenfreundlichkeit**: Multiplikation/Division wird einfacher
+> - **Vergleichbarkeit**: Größenordnungen lassen sich schnell einschätzen
 
 ## Definition
 
@@ -79,6 +89,29 @@ $$\frac{a \times 10^m}{b \times 10^n} = \frac{a}{b} \times 10^{m-n}$$
 | Lichtgeschwindigkeit | $3 \times 10^8$ m/s |
 | Erdumfang | $4 \times 10^7$ m |
 | Wasserstoffatom | $1 \times 10^{-10}$ m |
+
+> [!note] **Größenordnungen im Universum**
+> Die wissenschaftliche Schreibweise macht die unvorstellbaren Dimensionen des Universums handhabbar:
+>
+> | Objekt/Entfernung | Größe |
+> |-------------------|-------|
+> | Durchmesser eines Protons | $\approx 10^{-15}$ m |
+> | Durchmesser eines Atoms | $\approx 10^{-10}$ m |
+> | Durchmesser eines Haares | $\approx 10^{-4}$ m |
+> | Höhe eines Menschen | $\approx 10^{0}$ m = 1 m |
+> | Höhe des Mt. Everest | $\approx 10^{4}$ m |
+> | Entfernung zum Mond | $\approx 10^{8}$ m |
+> | Entfernung zur Sonne | $\approx 10^{11}$ m |
+> | Durchmesser der Milchstraße | $\approx 10^{21}$ m |
+>
+> Vom Proton bis zur Galaxis – 36 Größenordnungen Unterschied!
+
+> [!tip] **Taschenrechner-Eingabe**
+> Auf Taschenrechnern wird die wissenschaftliche Schreibweise oft verkürzt dargestellt:
+> - $3{,}2 \times 10^5$ erscheint als `3.2E5` oder `3.2×10⁵`
+> - $4{,}5 \times 10^{-3}$ erscheint als `4.5E-3`
+>
+> Die Taste heißt oft „EXP", „EE" oder „×10ˣ".
 
 ## Zusammenhänge
 

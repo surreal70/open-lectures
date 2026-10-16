@@ -15,7 +15,7 @@ tags:
   - kubikwurzel
   - dritte-wurzel
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-26
 ---
 
 # Kubikwurzeln Grundlagen
@@ -29,6 +29,12 @@ modified: 2026-10-13
 ## Überblick
 
 Die **Kubikwurzel** (dritte Wurzel) ist die Umkehroperation des Kubierens (hoch 3).
+
+Während die Quadratwurzel fragt „Welche Zahl ergibt quadriert den Radikanden?", fragt die Kubikwurzel: „Welche Zahl ergibt **dreimal mit sich selbst multipliziert** den Radikanden?" Die Kubikwurzel von 8 ist also 2, weil $2 \cdot 2 \cdot 2 = 8$.
+
+Historisch spielten Kubikwurzeln eine wichtige Rolle bei einem der berühmtesten Probleme der Antike: der **Würfelverdopplung** (auch „Delisches Problem" genannt). Die Aufgabe war, einen Würfel zu konstruieren, dessen Volumen doppelt so groß ist wie ein gegebener Würfel. Dafür muss die Kantenlänge mit $\sqrt[3]{2}$ multipliziert werden – doch die Griechen konnten zeigen, dass dies mit Zirkel und Lineal **unmöglich** ist.
+
+In der Praxis begegnen uns Kubikwurzeln bei **Volumenberechnungen**: Wenn ein Würfel ein bestimmtes Volumen haben soll, berechnet man die Kantenlänge mit der Kubikwurzel. Beispielsweise hat ein Würfel mit 1 Liter Volumen (= 1000 cm³) die Kantenlänge $\sqrt[3]{1000} = 10$ cm.
 
 ## Definition
 
@@ -54,6 +60,19 @@ Die **Kubikwurzel** (dritte Wurzel) ist die Umkehroperation des Kubierens (hoch 
 | Nur für a ≥ 0 definiert | Für alle reellen Zahlen definiert |
 | $\sqrt{-4}$ existiert nicht | $\sqrt[3]{-8} = -2$ ✓ |
 | Ergebnis ≥ 0 | Ergebnis kann negativ sein |
+
+> [!note] **Warum kann die Kubikwurzel negativ sein?**
+> Der entscheidende Unterschied: Eine **negative Zahl hoch 3** ergibt wieder eine **negative Zahl**:
+> - $(-2)^3 = (-2) \cdot (-2) \cdot (-2) = 4 \cdot (-2) = -8$
+>
+> Daher existiert zu jeder negativen Zahl eine (negative) Kubikwurzel.
+>
+> Bei Quadraten ist das anders: $(-2)^2 = 4$ und $2^2 = 4$ – beide Ergebnisse sind positiv. Daher gibt es keine reelle Quadratwurzel aus negativen Zahlen.
+
+> [!tip] **Merkregel: Ungerade Exponenten erhalten das Vorzeichen**
+> - Quadratwurzel ($\sqrt{\phantom{x}}$): nur für $a \geq 0$, Ergebnis immer $\geq 0$
+> - Kubikwurzel ($\sqrt[3]{\phantom{x}}$): für alle reellen Zahlen, Vorzeichen bleibt erhalten
+> - Allgemein: Wurzeln mit **ungeradem** Index ($\sqrt[3]{\phantom{x}}, \sqrt[5]{\phantom{x}}, ...$) erlauben negative Radikanden
 
 ## Negative Radikanden
 

@@ -15,7 +15,7 @@ tags:
   - quadratwurzel
   - radikand
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-06-26
 ---
 
 # Quadratwurzeln
@@ -29,6 +29,12 @@ modified: 2026-10-13
 ## Überblick
 
 Die **Quadratwurzel** ist die Umkehroperation des Quadrierens: Welche Zahl ergibt quadriert den Radikanden?
+
+Die Entdeckung der Quadratwurzeln war ein Meilenstein der Mathematikgeschichte – und führte zu einer echten Krise. Die **Pythagoreer** (ca. 500 v. Chr.) glaubten, alle Zahlen seien als Brüche darstellbar. Doch als sie versuchten, $\sqrt{2}$ (die Diagonale eines Einheitsquadrats) als Bruch zu schreiben, scheiterten sie. Der Beweis, dass $\sqrt{2}$ **irrational** ist, erschütterte ihr Weltbild so sehr, dass sie ihn angeblich geheim halten wollten.
+
+Das **Wurzelzeichen** $\sqrt{\phantom{x}}$ entwickelte sich aus dem Buchstaben „r" für das lateinische *radix* (= Wurzel). Der deutsche Mathematiker **Christoph Rudolff** führte 1525 in seinem Buch „Coss" eine frühe Form des Symbols ein. Die heutige Schreibweise mit dem waagerechten Strich über dem Radikanden etablierte **René Descartes** im 17. Jahrhundert.
+
+Im Alltag begegnen uns Quadratwurzeln bei Abstandsberechnungen ([[11-Satz-des-Pythagoras-und-Trigonometrie/02-Satz-des-Pythagoras|Satz des Pythagoras]]), bei der Diagonale eines Bildschirms oder Zimmers, und sogar beim Kochen – wenn ein quadratischer Kuchen für doppelt so viele Gäste reichen soll, muss die Seitenlänge mit $\sqrt{2} \approx 1,41$ multipliziert werden.
 
 ## Definition
 
@@ -77,6 +83,17 @@ Nicht alle Wurzeln sind ganze Zahlen:
 | $\sqrt{10}$ | 3,162... |
 
 Diese Zahlen sind **irrational** – unendliche, nicht-periodische Dezimalzahlen.
+
+> [!note] **Was bedeutet „irrational"?**
+> Eine irrationale Zahl lässt sich **nicht als Bruch** $\frac{p}{q}$ mit ganzen Zahlen p und q darstellen. Ihre Dezimaldarstellung geht unendlich weiter, ohne sich jemals zu wiederholen:
+> - $\sqrt{2} = 1,41421356237309504880168872420969807856967187537694...$
+>
+> Man kann so viele Nachkommastellen berechnen wie man will – ein Ende oder Muster gibt es nie.
+
+> [!tip] **Welche Wurzeln sind rational?**
+> $\sqrt{n}$ ist genau dann eine rationale Zahl (sogar eine ganze Zahl), wenn $n$ eine **Quadratzahl** ist: $1, 4, 9, 16, 25, 36, ...$
+>
+> Alle anderen Wurzeln aus natürlichen Zahlen sind irrational!
 
 ## Definitionsbereich
 
