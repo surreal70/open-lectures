@@ -1,7 +1,7 @@
 ---
 title: "Quadratische Funktionen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-18
 chapter: "09"
 section: "08"
 status: "draft - review pending"
@@ -35,7 +35,17 @@ $$f(x) = ax^2 + bx + c \quad \text{mit } a \neq 0$$
 | $c$ | y-Achsenabschnitt |
 
 > [!note] Merkmal
-> Der Graph einer quadratischen Funktion ist eine **Parabel**.
+> Der Graph einer quadratischen Funktion ist eine **Parabel**. Der Name kommt vom griechischen *parabole* (Nebeneinanderwerfen, Gleichnis).
+
+> [!info] **Warum sind quadratische Funktionen wichtig?**
+> Quadratische Funktionen beschreiben viele Phänomene in Natur und Technik:
+> - **Wurfbewegung**: Die Flugbahn eines geworfenen Balls ist eine Parabel
+> - **Bremsweg**: Der Bremsweg eines Autos wächst quadratisch mit der Geschwindigkeit
+> - **Flächen**: Die Fläche eines Quadrats mit Seitenlänge $x$ ist $x^2$
+> - **Fallbewegung**: Die Höhe eines fallenden Objekts folgt einer quadratischen Funktion
+> - **Parabolspiegel**: Satellitenschüsseln und Autoscheinwerfer nutzen die Parabelform
+>
+> Galileo Galilei entdeckte im 17. Jahrhundert, dass Kanonenkugeln Parabelbahnen fliegen – ein Durchbruch für die Ballistik!
 
 ## Die Normalparabel
 
@@ -113,6 +123,11 @@ Scheitelpunkt: $S(d, e)$
 
 > [!tip] Merkhilfe
 > In der Klammer steht $(x - d)$, der Scheitelpunkt hat aber $x = d$ (nicht $-d$!).
+>
+> **Eselsbrücke**: Das Vorzeichen in der Klammer ist „umgedreht" – bei $(x - 3)^2$ liegt der Scheitelpunkt bei $x = +3$, bei $(x + 2)^2$ bei $x = -2$.
+
+> [!warning] **Häufiger Fehler**
+> Bei der Scheitelpunktform wird oft das Vorzeichen verwechselt. Merke: $(x - d)^2$ bedeutet, der Scheitelpunkt liegt bei $x = d$. Das Minus in der Klammer „dreht" das Vorzeichen um!
 
 ### 3. Faktorisierte Form (Nullstellenform)
 
@@ -188,6 +203,16 @@ $$x_{1,2} = -\frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q}$$
 > - $|a|$ bestimmt die Weite der Parabel
 > - Scheitelpunktform: $f(x) = a(x - d)^2 + e$ mit $S(d, e)$
 > - Scheitelpunkt: $x_S = -\frac{b}{2a}$
+
+## Zusammenhänge
+
+Quadratische Funktionen sind eng verbunden mit:
+
+- → [[09-Parabeln|Parabeln]] – Detaillierte Analyse von Parabeleigenschaften
+- → [[10-Schnittpunkte|Schnittpunkte]] – Schnittpunkte quadratischer Funktionen
+- → [[../08-Gleichungen-und-Ungleichungen/08-Quadratische-Gleichungen|Quadratische Gleichungen]] – Nullstellen berechnen
+- → [[11-Anwendungen-Funktionen|Anwendungen]] – Wurfparabeln und Optimierung
+- → [[../07-Terme-und-algebraische-Ausdruecke/08-Binomische-Formeln|Binomische Formeln]] – Wichtig für die Scheitelpunktform
 
 ## Übungsaufgaben
 

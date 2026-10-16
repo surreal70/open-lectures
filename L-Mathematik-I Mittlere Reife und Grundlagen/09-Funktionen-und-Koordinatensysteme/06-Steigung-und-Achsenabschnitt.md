@@ -1,7 +1,7 @@
 ---
 title: "Steigung und y-Achsenabschnitt"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-18
 chapter: "09"
 section: "06"
 status: "draft - review pending"
@@ -25,9 +25,16 @@ keywords:
 
 ### Definition
 
-Die **Steigung** $m$ einer Geraden gibt an, wie stark die Gerade ansteigt oder fällt.
+Die **Steigung** $m$ einer Geraden gibt an, wie stark die Gerade ansteigt oder fällt. Sie beschreibt das Verhältnis von vertikaler zu horizontaler Änderung.
 
 $$m = \frac{\text{Änderung in } y}{\text{Änderung in } x} = \frac{\Delta y}{\Delta x}$$
+
+> [!info] **Anschauliche Bedeutung**
+> Die Steigung beantwortet die Frage: „Wenn ich eine Einheit nach rechts gehe, wie viele Einheiten gehe ich dann nach oben (oder unten)?"
+>
+> - Bei $m = 2$: Für jede Einheit nach rechts geht es 2 Einheiten nach oben
+> - Bei $m = -3$: Für jede Einheit nach rechts geht es 3 Einheiten nach **unten**
+> - Bei $m = 0{,}5$: Für jede Einheit nach rechts geht es nur eine halbe Einheit nach oben
 
 ### Das Steigungsdreieck
 
@@ -69,6 +76,21 @@ $$\text{Steigung in \%} = m \cdot 100\%$$
 > 
 > Pro 100 m horizontal fällt die Straße um 12 m.
 
+> [!info] **Steigung im Alltag**
+> Die Steigung begegnet uns überall:
+>
+> | Kontext | Typische Steigung |
+> |---|---|
+> | Rollstuhlrampe (barrierefrei) | max. 6% |
+> | Normale Straße | bis 10% |
+> | Passstraße in den Alpen | 10–15% |
+> | Skipiste (leicht, blau) | ca. 25% |
+> | Skipiste (schwer, schwarz) | über 40% |
+> | Hausdach (flach) | ca. 20–30% |
+> | Hausdach (steil) | 50–100% |
+>
+> Für Rollstuhlfahrer und Menschen mit Gehbehinderung ist die maximale Steigung von Rampen gesetzlich geregelt – hier hat Mathematik direkte Auswirkungen auf Barrierefreiheit!
+
 ## Steigung berechnen
 
 ### Aus zwei Punkten
@@ -84,6 +106,9 @@ $$m = \frac{y_2 - y_1}{x_2 - x_1}$$
 > Die Punkte können in beliebiger Reihenfolge eingesetzt werden, aber **konsistent**:
 > $$m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{y_1 - y_2}{x_1 - x_2}$$
 > Nicht mischen!
+
+> [!warning] **Häufiger Fehler**
+> Ein klassischer Fehler ist das Vertauschen von Zähler und Nenner: $\frac{\Delta x}{\Delta y}$ statt $\frac{\Delta y}{\Delta x}$. Merke: Die Steigung beschreibt, wie stark die **y-Werte** (vertikal) sich ändern – also muss $\Delta y$ **oben** stehen!
 
 ### Aus der Funktionsgleichung
 
@@ -198,6 +223,13 @@ $$x = c$$
 > - Aus der Gleichung $f(x) = mx + b$ sind beide direkt ablesbar
 > - Steigung aus zwei Punkten: $m = \frac{y_2 - y_1}{x_2 - x_1}$
 > - y-Achsenabschnitt aus Punkt und Steigung: $b = y - mx$
+
+## Zusammenhänge
+
+- → [[05-Lineare-Funktionen|Lineare Funktionen]] – Die Grundlagen linearer Funktionen
+- → [[07-Geradengleichungen|Geradengleichungen]] – Gleichungen aufstellen
+- → [[../05-Verhaeltnisse-und-Proportionalitaet/04-Direkte-Proportionalitaet|Direkte Proportionalität]] – Steigung als Proportionalitätsfaktor
+- → [[../11-Satz-des-Pythagoras-und-Trigonometrie/11-Steigungen-Neigungswinkel|Steigungen und Neigungswinkel]] – Zusammenhang mit Trigonometrie
 
 ## Übungsaufgaben
 

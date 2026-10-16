@@ -1,7 +1,7 @@
 ---
 title: "Einführung in Funktionen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-18
 chapter: "09"
 section: "03"
 status: "draft - review pending"
@@ -25,6 +25,21 @@ keywords:
 ## Was ist eine Funktion?
 
 Eine **Funktion** ist eine eindeutige Zuordnung, die jedem Element einer Menge **genau ein** Element einer anderen Menge zuordnet.
+
+> [!tip] **Die Automaten-Metapher**
+> Stell dir eine Funktion wie einen Automaten vor: Du wirfst etwas hinein (den Input, $x$), und der Automat spuckt genau eine Sache aus (den Output, $f(x)$). Ein Getränkeautomat, dem du 2 € gibst, gibt dir **ein** bestimmtes Getränk – nicht manchmal Cola, manchmal Wasser. Das wäre keine Funktion!
+>
+> ```
+>    ┌─────────────┐
+>  x │             │ f(x)
+> ───►  Funktion   ├───►
+>    │   f         │
+>    └─────────────┘
+> ```
+
+### Der historische Kontext
+
+Der Funktionsbegriff, wie wir ihn heute kennen, wurde im 18. Jahrhundert von **Leonhard Euler** (1707–1783) geprägt. Er führte die Schreibweise $f(x)$ ein, die bis heute weltweit verwendet wird. Die Idee, Zusammenhänge zwischen Größen mathematisch zu beschreiben, geht aber auf **Gottfried Wilhelm Leibniz** (1646–1716) zurück, einen der Begründer der Infinitesimalrechnung.
 
 ### Formale Definition
 
@@ -57,12 +72,26 @@ Funktion:            Keine Funktion:
 
 ## Alltagsbeispiele für Funktionen
 
+Funktionen begegnen uns ständig im Alltag – oft ohne dass wir es merken:
+
 | Zuordnung | Funktion? | Begründung |
 |---|---|---|
 | Alter → Körpergröße | Ja | Jedes Alter hat eine Größe |
 | Ort → Temperatur (zu einem Zeitpunkt) | Ja | Jeder Ort hat eine Temperatur |
 | Person → Telefonnummer | Nein | Eine Person kann mehrere haben |
 | Artikel → Preis | Ja | Jeder Artikel hat einen Preis |
+| Zeit → Position eines fahrenden Autos | Ja | Zu jedem Zeitpunkt ist das Auto an einem Ort |
+| Schüler → Note in Mathe | Ja | Jeder Schüler hat genau eine Note |
+
+> [!info] **Funktionen im täglichen Leben**
+> - **Strom- oder Handyrechnung**: Die Kosten sind eine Funktion des Verbrauchs
+> - **Körpertemperatur**: Die Temperatur ist eine Funktion der Tageszeit
+> - **Autofahrt**: Die zurückgelegte Strecke ist eine Funktion der Zeit
+> - **Bankguthaben**: Das Geld auf dem Konto ist eine Funktion der Zeit
+> - **Geschwindigkeit**: Die Geschwindigkeit eines fallenden Objekts ist eine Funktion der Fallzeit
+
+> [!warning] **Häufiger Fehler: Verwechslung mit Relationen**
+> Nicht jede Zuordnung ist eine Funktion! Der Unterschied: Bei einer Funktion darf zu jedem x-Wert **nur ein** y-Wert gehören. Die Zuordnung „Schüler → Telefonnummern ihrer Eltern" ist keine Funktion, wenn manche Schüler mehrere Nummern haben.
 
 ## Schreibweisen
 
@@ -96,15 +125,21 @@ Hier wird $y$ als abhängige Variable verwendet.
 
 Die Menge aller **erlaubten Eingabewerte** ($x$-Werte).
 
+Der Definitionsbereich gibt an, welche Werte du in die Funktion „hineinstecken" darfst. In der reinen Mathematik sind die Einschränkungen meist technischer Natur, im Alltag oft durch den Sachkontext bedingt.
+
 **Einschränkungen können entstehen durch**:
 - Division durch Null (Nenner ≠ 0)
 - Negative Werte unter der Wurzel
-- Sachkontext (z.B. nur positive Längen)
+- Sachkontext (z.B. nur positive Längen, keine negativen Zeiten)
 
 > [!example] Beispiele
-> - $f(x) = x^2$: $D = \mathbb{R}$
-> - $f(x) = \frac{1}{x}$: $D = \mathbb{R} \setminus \{0\}$
-> - $f(x) = \sqrt{x}$: $D = \mathbb{R}^+_0 = \{x \in \mathbb{R} \mid x \geq 0\}$
+> - $f(x) = x^2$: $D = \mathbb{R}$ (alle reellen Zahlen erlaubt)
+> - $f(x) = \frac{1}{x}$: $D = \mathbb{R} \setminus \{0\}$ (alle außer 0, weil Division durch 0 verboten)
+> - $f(x) = \sqrt{x}$: $D = \mathbb{R}^+_0 = \{x \in \mathbb{R} \mid x \geq 0\}$ (nur nicht-negative Zahlen)
+> - Alter → Körpergröße: $D = \{0, 1, 2, ..., 120\}$ (nur sinnvolle Altersangaben in Jahren)
+
+> [!warning] **Häufiger Fehler**
+> Viele vergessen, den Definitionsbereich bei Bruchfunktionen zu prüfen. Bei $f(x) = \frac{1}{x-3}$ muss $x \neq 3$ gelten, da sonst der Nenner Null wird!
 
 ### Wertebereich $W$
 
@@ -158,6 +193,15 @@ Funktion:              Keine Funktion:
 > - Der Definitionsbereich enthält alle erlaubten Eingabewerte
 > - Der Wertebereich enthält alle möglichen Ausgabewerte
 > - Darstellungsformen: Gleichung, Tabelle, Graph, verbal
+
+## Zusammenhänge
+
+Funktionen sind ein zentrales Konzept, das mit vielen anderen Themen verknüpft ist:
+
+- → [[04-Funktionstabellen-und-Graphen|Funktionstabellen und Graphen]] – Visualisierung von Funktionen
+- → [[05-Lineare-Funktionen|Lineare Funktionen]] – Der einfachste Funktionstyp
+- → [[08-Quadratische-Funktionen|Quadratische Funktionen]] – Funktionen mit Parabeln als Graph
+- → [[../08-Gleichungen-und-Ungleichungen/01-Grundlagen-von-Gleichungen|Gleichungen]] – Funktionswerte bestimmen
 
 ## Übungsaufgaben
 

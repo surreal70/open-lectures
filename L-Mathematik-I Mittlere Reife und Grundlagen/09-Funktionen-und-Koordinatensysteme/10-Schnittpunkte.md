@@ -1,7 +1,7 @@
 ---
 title: "Schnittpunkte berechnen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-18
 chapter: "09"
 section: "10"
 status: "draft - review pending"
@@ -20,6 +20,16 @@ keywords:
 > - Schnittpunkte zweier Funktionen bestimmen
 > - Das Gleichsetzungsverfahren sicher anwenden
 > - Ergebnisse grafisch interpretieren
+
+## Warum Schnittpunkte wichtig sind
+
+Schnittpunkte beantworten praktische Fragen:
+- **Wann sind die Kosten gedeckt?** (Schnittpunkt von Kosten- und Erlösfunktion = Break-Even)
+- **Wann überholt Auto A das Auto B?** (Schnittpunkt der Weg-Zeit-Funktionen)
+- **Wo trifft ein geworfener Ball den Boden?** (Schnittpunkt der Wurfparabel mit der x-Achse)
+- **Bei welchem Preis sind Angebot und Nachfrage gleich?** (Marktgleichgewicht)
+
+Die Berechnung von Schnittpunkten ist daher eine der wichtigsten praktischen Anwendungen von Funktionen.
 
 ## Schnittpunkt mit der y-Achse
 
@@ -149,6 +159,13 @@ Die Lösung $x$ wird in eine der Funktionen eingesetzt, um $y$ zu berechnen.
 | $D = 0$ | 1 (Tangente) |
 | $D < 0$ | 0 (Passante) |
 
+> [!info] **Geometrische Bedeutung**
+> - Eine **Sekante** schneidet die Parabel in zwei Punkten – wie ein Messer durch einen Apfel
+> - Eine **Tangente** berührt die Parabel in genau einem Punkt – sie „streift" die Kurve
+> - Eine **Passante** verfehlt die Parabel komplett – sie „geht vorbei"
+>
+> Diese Begriffe stammen aus dem Lateinischen: *secare* (schneiden), *tangere* (berühren), *passare* (vorbeigehen).
+
 ```
     y
     ↑
@@ -161,6 +178,9 @@ Die Lösung $x$ wird in eine der Funktionen eingesetzt, um $y$ zu berechnen.
     │           ╲
     │    ─────── Passante (0 Schnittpunkte)
 ```
+
+> [!warning] **Häufiger Fehler**
+> Beim Berechnen von Schnittpunkten vergessen viele, die gefundenen x-Werte auch noch in eine der Funktionen einzusetzen, um die y-Koordinate zu erhalten. Ein Schnittpunkt besteht aus **zwei** Koordinaten!
 
 ## Grafische Interpretation
 
@@ -182,6 +202,17 @@ Berechnete Schnittpunkte in **beide** Funktionen einsetzen – die y-Werte müss
 > - Zwei Funktionen: $f(x) = g(x)$ lösen (Gleichsetzen)
 > - x-Wert in eine Funktion einsetzen für y-Wert
 > - Anzahl der Schnittpunkte hängt vom Funktionstyp und der Diskriminante ab
+
+## Zusammenhänge
+
+- → [[05-Lineare-Funktionen|Lineare Funktionen]] – Schnittpunkte von Geraden
+- → [[08-Quadratische-Funktionen|Quadratische Funktionen]] – Schnittpunkte mit Parabeln
+- → [[../08-Gleichungen-und-Ungleichungen/04-Lineare-Gleichungen|Lineare Gleichungen]] – Lösen der Gleichsetzung
+- → [[../08-Gleichungen-und-Ungleichungen/08-Quadratische-Gleichungen|Quadratische Gleichungen]] – Nullstellen von Parabeln
+- → [[11-Anwendungen-Funktionen|Anwendungen]] – Break-Even-Analysen und mehr
+
+> [!tip] **Praxis-Tipp: Grafische Kontrolle**
+> Skizziere die Funktionen grob, bevor du rechnest. So siehst du sofort, wie viele Schnittpunkte zu erwarten sind – und ob deine berechneten Werte plausibel sind.
 
 ## Übungsaufgaben
 

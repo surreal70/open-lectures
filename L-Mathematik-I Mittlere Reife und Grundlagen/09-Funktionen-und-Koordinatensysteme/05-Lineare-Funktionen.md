@@ -1,7 +1,7 @@
 ---
 title: "Lineare Funktionen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-18
 chapter: "09"
 section: "05"
 status: "draft - review pending"
@@ -34,7 +34,16 @@ $$f(x) = mx + b$$
 | $b$ | **y-Achsenabschnitt** | Ordinatenabschnitt |
 
 > [!note] Eigenschaft
-> Der Graph einer linearen Funktion ist immer eine **Gerade**.
+> Der Graph einer linearen Funktion ist immer eine **Gerade**. Daher auch der Name „linear" – von lateinisch *linea* (Linie).
+
+> [!info] **Warum sind lineare Funktionen so wichtig?**
+> Lineare Funktionen sind die einfachsten und zugleich häufigsten Funktionen in der Praxis:
+> - **Telefonrechnung**: Grundgebühr + Kosten pro Minute
+> - **Taxifahrt**: Grundpreis + Kosten pro Kilometer
+> - **Lohn**: Stundenlohn × Arbeitsstunden (bei gleichem Stundensatz)
+> - **Temperaturumrechnung**: Celsius ↔ Fahrenheit
+>
+> Selbst komplizierte Zusammenhänge werden oft durch lineare Funktionen angenähert – eine Technik, die in Wissenschaft und Technik als „Linearisierung" bekannt ist.
 
 ## Proportionale Funktionen (Sonderfall)
 
@@ -135,7 +144,10 @@ $$b = f(0)$$
 ```
 
 > [!note] Beobachtung
-> Geraden mit **gleicher Steigung** sind **parallel** zueinander.
+> Geraden mit **gleicher Steigung** sind **parallel** zueinander. Sie verlaufen in dieselbe Richtung, schneiden sich aber nie (außer sie sind identisch).
+
+> [!warning] **Häufiger Fehler**
+> Die Steigung $m$ wird oft mit dem y-Achsenabschnitt $b$ verwechselt. Merke: $m$ steht **vor** dem $x$ (Multiplikation), $b$ steht **alleine** (Addition). In $f(x) = 3x + 5$ ist $m = 3$ und $b = 5$, nicht umgekehrt!
 
 ## Gleichung aufstellen
 
@@ -184,6 +196,16 @@ $$x = -\frac{b}{m}$$
 > - $b$ = y-Achsenabschnitt (wo die Gerade die y-Achse schneidet)
 > - Proportionale Funktionen gehen durch den Ursprung ($b = 0$)
 > - Parallele Geraden haben die gleiche Steigung
+
+## Zusammenhänge
+
+Lineare Funktionen sind verbunden mit:
+
+- → [[06-Steigung-und-Achsenabschnitt|Steigung und Achsenabschnitt]] – Detaillierte Analyse der Parameter
+- → [[07-Geradengleichungen|Geradengleichungen]] – Gleichungen aus Punkten aufstellen
+- → [[../05-Verhaeltnisse-und-Proportionalitaet/04-Direkte-Proportionalitaet|Direkte Proportionalität]] – Zusammenhang zu proportionalen Funktionen
+- → [[10-Schnittpunkte|Schnittpunkte]] – Wo sich Geraden schneiden
+- → [[11-Anwendungen-Funktionen|Anwendungen]] – Praktische Nutzung linearer Funktionen
 
 ## Übungsaufgaben
 

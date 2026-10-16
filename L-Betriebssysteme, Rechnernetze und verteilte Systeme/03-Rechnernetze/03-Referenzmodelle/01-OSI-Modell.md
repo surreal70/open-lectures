@@ -47,31 +47,8 @@ Schichtenmodelle bieten mehrere Vorteile:
 
 Das **Open Systems Interconnection (OSI)** Modell wurde 1984 von der [[07-Anhang/IT-Related-Organisations/ISO|ISO]] als Referenzmodell veröffentlicht (ISO/IEC 7498).
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DAS OSI-REFERENZMODELL                       │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Nr.   Schicht              Englisch           Dateneinheit    │
-│   ───   ───────              ────────           ──────────      │
-│                                                                 │
-│    7    Anwendung            Application        Daten           │
-│    6    Darstellung          Presentation       Daten           │
-│    5    Sitzung              Session            Daten           │
-│   ─────────────────────────────────────────────────────────     │
-│    4    Transport            Transport          Segmente        │
-│   ─────────────────────────────────────────────────────────     │
-│    3    Vermittlung          Network            Pakete          │
-│   ─────────────────────────────────────────────────────────     │
-│    2    Sicherung            Data Link          Rahmen/Frames   │
-│    1    Bitübertragung       Physical           Bits/Symbole    │
-│                                                                 │
-│   ═════════════════════════════════════════════════════════     │
-│         Anwendungsorientiert (5-7)                              │
-│         Transportorientiert (1-4)                               │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[osi-referenzmodell.png]]
+*<span class="fig-id">03-03-01-osi-referenzmodell</span>: Die sieben Schichten des OSI-Referenzmodells mit deutschen und englischen Bezeichnungen sowie den jeweiligen Dateneinheiten.*
 
 ### Eselsbrücken
 
@@ -93,32 +70,24 @@ Das **Open Systems Interconnection (OSI)** Modell wurde 1984 von der [[07-Anhang
 
 **Aufgabe:** Übertragung einzelner Bits über das physikalische Medium.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    SCHICHT 1 – PHYSICAL                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Aufgaben:                                                     │
-│   • Umwandlung von Bits in physikalische Signale               │
-│   • Leitungscodierung (z.B. Manchester, 4B5B, 8B10B)           │
-│   • Signalverstärkung und Taktrückgewinnung                    │
-│   • Definition von Steckern, Kabeln, Spannungspegeln           │
-│                                                                 │
-│   Protokolle/Standards:                                         │
-│   • Ethernet Physical Layer (10BASE-T, 1000BASE-T, etc.)       │
-│   • Token Ring Physical                                         │
-│   • RS-232, V.24                                                │
-│                                                                 │
-│   Geräte:                                                       │
-│   • Hub, Repeater                                               │
-│   • Kabel, Stecker                                              │
-│   • MAU (Media Access Unit)                                     │
-│   • Transceiver, Netzwerkkarte (physisch)                      │
-│                                                                 │
-│   Dateneinheit: Bits / Symbole                                 │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Aufgaben:**
+- Umwandlung von Bits in physikalische Signale
+- Leitungscodierung (z.B. Manchester, 4B5B, 8B10B)
+- Signalverstärkung und Taktrückgewinnung
+- Definition von Steckern, Kabeln, Spannungspegeln
+
+**Protokolle/Standards:**
+- Ethernet Physical Layer (10BASE-T, 1000BASE-T, etc.)
+- Token Ring Physical
+- RS-232, V.24
+
+**Geräte:**
+- Hub, Repeater
+- Kabel, Stecker
+- MAU (Media Access Unit)
+- Transceiver, Netzwerkkarte (physisch)
+
+**Dateneinheit:** Bits / Symbole
 
 ### Schicht 2 – Sicherung (Data Link Layer)
 
@@ -126,43 +95,30 @@ Das **Open Systems Interconnection (OSI)** Modell wurde 1984 von der [[07-Anhang
 
 **Aufgabe:** Zuverlässige Übertragung von Datenrahmen zwischen direkt verbundenen Knoten.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    SCHICHT 2 – DATA LINK                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Zwei Unterschichten:                                          │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │  LLC (Logical Link Control) – IEEE 802.2                │  │
-│   │  • Flusskontrolle                                       │  │
-│   │  • Multiplexing höherer Protokolle                     │  │
-│   ├─────────────────────────────────────────────────────────┤  │
-│   │  MAC (Media Access Control) – IEEE 802.3/11/etc.       │  │
-│   │  • Medienzugriffskontrolle (CSMA/CD, CSMA/CA)         │  │
-│   │  • MAC-Adressierung                                    │  │
-│   │  • Frame-Aufbau und Prüfsummen                        │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                 │
-│   Aufgaben:                                                     │
-│   • Rahmenbildung (Framing)                                    │
-│   • MAC-Adressierung (48-Bit Hardware-Adressen)               │
-│   • Fehlererkennung (CRC/FCS)                                  │
-│   • Medienzugriffskontrolle                                    │
-│                                                                 │
-│   Protokolle/Standards:                                         │
-│   • IEEE 802.3 (Ethernet)                                      │
-│   • IEEE 802.11 (WLAN)                                         │
-│   • IEEE 802.5 (Token Ring)                                    │
-│   • PPP, HDLC                                                  │
-│                                                                 │
-│   Geräte:                                                       │
-│   • Switch, Bridge                                              │
-│   • Netzwerkkarte (MAC-Ebene)                                  │
-│                                                                 │
-│   Dateneinheit: Rahmen (Frames)                                │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Zwei Unterschichten:**
+
+| Unterschicht | Standard | Aufgaben |
+|--------------|----------|----------|
+| **LLC** (Logical Link Control) | IEEE 802.2 | Flusskontrolle, Multiplexing höherer Protokolle |
+| **MAC** (Media Access Control) | IEEE 802.3/11/etc. | Medienzugriffskontrolle (CSMA/CD, CSMA/CA), MAC-Adressierung, Frame-Aufbau und Prüfsummen |
+
+**Aufgaben:**
+- Rahmenbildung (Framing)
+- MAC-Adressierung (48-Bit Hardware-Adressen)
+- Fehlererkennung (CRC/FCS)
+- Medienzugriffskontrolle
+
+**Protokolle/Standards:**
+- IEEE 802.3 (Ethernet)
+- IEEE 802.11 (WLAN)
+- IEEE 802.5 (Token Ring)
+- PPP, HDLC
+
+**Geräte:**
+- Switch, Bridge
+- Netzwerkkarte (MAC-Ebene)
+
+**Dateneinheit:** Rahmen (Frames)
 
 ### Schicht 3 – Vermittlung (Network Layer)
 
@@ -170,32 +126,24 @@ Das **Open Systems Interconnection (OSI)** Modell wurde 1984 von der [[07-Anhang
 
 **Aufgabe:** Wegewahl (Routing) und logische Adressierung über Netzwerkgrenzen hinweg.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    SCHICHT 3 – NETWORK                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Aufgaben:                                                     │
-│   • Logische Adressierung (IP-Adressen)                        │
-│   • Routing zwischen Netzwerken                                │
-│   • Fragmentierung und Reassemblierung                         │
-│   • Paketweiterleitung (Forwarding)                            │
-│                                                                 │
-│   Protokolle:                                                   │
-│   • IP (IPv4, IPv6)                                            │
-│   • ICMP (Fehlermeldungen, Ping)                               │
-│   • IGMP (Multicast)                                           │
-│   • IPsec (Verschlüsselung auf L3)                             │
-│   • Routing-Protokolle: OSPF, BGP, RIP                         │
-│                                                                 │
-│   Geräte:                                                       │
-│   • Router                                                      │
-│   • Layer-3-Switch                                              │
-│                                                                 │
-│   Dateneinheit: Pakete (Packets)                               │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Aufgaben:**
+- Logische Adressierung (IP-Adressen)
+- Routing zwischen Netzwerken
+- Fragmentierung und Reassemblierung
+- Paketweiterleitung (Forwarding)
+
+**Protokolle:**
+- IP (IPv4, IPv6)
+- ICMP (Fehlermeldungen, Ping)
+- IGMP (Multicast)
+- IPsec (Verschlüsselung auf L3)
+- Routing-Protokolle: OSPF, BGP, RIP
+
+**Geräte:**
+- Router
+- Layer-3-Switch
+
+**Dateneinheit:** Pakete (Packets)
 
 ### Schicht 4 – Transport (Transport Layer)
 
@@ -203,94 +151,70 @@ Das **Open Systems Interconnection (OSI)** Modell wurde 1984 von der [[07-Anhang
 
 **Aufgabe:** Ende-zu-Ende-Kommunikation zwischen Anwendungen.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    SCHICHT 4 – TRANSPORT                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Aufgaben:                                                     │
-│   • Segmentierung und Reassemblierung                          │
-│   • Ende-zu-Ende-Verbindung                                    │
-│   • Flusskontrolle                                             │
-│   • Fehlerkorrektur (bei TCP)                                  │
-│   • Multiplexing über Ports                                    │
-│                                                                 │
-│   Protokolle:                                                   │
-│   • TCP (verbindungsorientiert, zuverlässig)                   │
-│   • UDP (verbindungslos, best-effort)                          │
-│   • SCTP (Stream Control)                                      │
-│   • QUIC (UDP-basiert, multiplexed)                            │
-│                                                                 │
-│   Geräte:                                                       │
-│   • (Endgeräte – Software-basiert)                             │
-│   • Load Balancer (Layer 4)                                    │
-│                                                                 │
-│   Dateneinheit: Segmente (TCP) / Datagramme (UDP)              │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Aufgaben:**
+- Segmentierung und Reassemblierung
+- Ende-zu-Ende-Verbindung
+- Flusskontrolle
+- Fehlerkorrektur (bei TCP)
+- Multiplexing über Ports
+
+**Protokolle:**
+- TCP (verbindungsorientiert, zuverlässig)
+- UDP (verbindungslos, best-effort)
+- SCTP (Stream Control)
+- QUIC (UDP-basiert, multiplexed)
+
+**Geräte:**
+- (Endgeräte – Software-basiert)
+- Load Balancer (Layer 4)
+
+**Dateneinheit:** Segmente (TCP) / Datagramme (UDP)
 
 ### Schicht 5 – Sitzung (Session Layer)
 
 **Aufgabe:** Verwaltung von Dialogsteuerung und Synchronisation.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    SCHICHT 5 – SESSION                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Aufgaben:                                                     │
-│   • Auf- und Abbau von Sitzungen                               │
-│   • Dialogsteuerung (Simplex, Half-Duplex, Full-Duplex)       │
-│   • Synchronisation (Checkpoints)                              │
-│   • Token-Verwaltung                                           │
-│                                                                 │
-│   Protokolle/Technologien:                                      │
-│   • RPC (Remote Procedure Call)                                │
-│   • NetBIOS                                                    │
-│   • PPTP (teilweise)                                           │
-│   • SIP (Session Initiation Protocol – teilweise)             │
-│                                                                 │
-│   In der Praxis:                                                │
-│   • Oft in Anwendungsprotokollen integriert                    │
-│   • Im TCP/IP-Modell Teil der Anwendungsschicht               │
-│                                                                 │
-│   Dateneinheit: Daten                                          │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Aufgaben:**
+- Auf- und Abbau von Sitzungen
+- Dialogsteuerung (Simplex, Half-Duplex, Full-Duplex)
+- Synchronisation (Checkpoints)
+- Token-Verwaltung
+
+**Protokolle/Technologien:**
+- RPC (Remote Procedure Call)
+- NetBIOS
+- PPTP (teilweise)
+- SIP (Session Initiation Protocol – teilweise)
+
+**In der Praxis:**
+- Oft in Anwendungsprotokollen integriert
+- Im TCP/IP-Modell Teil der Anwendungsschicht
+
+**Dateneinheit:** Daten
 
 ### Schicht 6 – Darstellung (Presentation Layer)
 
 **Aufgabe:** Datenformatierung, Verschlüsselung und Komprimierung.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    SCHICHT 6 – PRESENTATION                     │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Aufgaben:                                                     │
-│   • Datenformatkonvertierung                                   │
-│   • Zeichensatzumwandlung (ASCII ↔ EBCDIC, UTF-8)             │
-│   • Datenkomprimierung                                         │
-│   • Verschlüsselung/Entschlüsselung                           │
-│   • Serialisierung                                             │
-│                                                                 │
-│   Protokolle/Formate:                                           │
-│   • SSL/TLS (Verschlüsselung – teilweise)                      │
-│   • JPEG, GIF, PNG (Bildformate)                               │
-│   • MPEG, H.264 (Videoformate)                                 │
-│   • ASCII, Unicode                                             │
-│   • ASN.1, XDR                                                 │
-│                                                                 │
-│   In der Praxis:                                                │
-│   • Oft in Anwendungsprotokollen integriert                    │
-│   • TLS wird heute meist der Transportschicht zugerechnet     │
-│                                                                 │
-│   Dateneinheit: Daten                                          │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Aufgaben:**
+- Datenformatkonvertierung
+- Zeichensatzumwandlung (ASCII ↔ EBCDIC, UTF-8)
+- Datenkomprimierung
+- Verschlüsselung/Entschlüsselung
+- Serialisierung
+
+**Protokolle/Formate:**
+- SSL/TLS (Verschlüsselung – teilweise)
+- JPEG, GIF, PNG (Bildformate)
+- MPEG, H.264 (Videoformate)
+- ASCII, Unicode
+- ASN.1, XDR
+
+**In der Praxis:**
+- Oft in Anwendungsprotokollen integriert
+- TLS wird heute meist der Transportschicht zugerechnet
+
+**Dateneinheit:** Daten
 
 ### Schicht 7 – Anwendung (Application Layer)
 
@@ -298,65 +222,33 @@ Das **Open Systems Interconnection (OSI)** Modell wurde 1984 von der [[07-Anhang
 
 **Aufgabe:** Schnittstelle zwischen Netzwerk und Anwendungsprozessen.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    SCHICHT 7 – APPLICATION                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Aufgaben:                                                     │
-│   • Bereitstellung von Netzwerkdiensten für Anwendungen        │
-│   • Identifikation von Kommunikationspartnern                  │
-│   • Ressourcenverfügbarkeit prüfen                             │
-│   • Synchronisation der Kommunikation                          │
-│                                                                 │
-│   Protokolle:                                                   │
-│   • HTTP/HTTPS (Web)                                           │
-│   • SMTP, POP3, IMAP (E-Mail)                                  │
-│   • DNS (Namensauflösung)                                      │
-│   • FTP, SFTP (Dateitransfer)                                  │
-│   • SSH (Secure Shell)                                         │
-│   • SNMP (Netzwerkmanagement)                                  │
-│   • DHCP (Adressvergabe)                                       │
-│                                                                 │
-│   Geräte:                                                       │
-│   • Application Gateway, Proxy                                  │
-│   • Layer-7-Load-Balancer                                      │
-│                                                                 │
-│   Dateneinheit: Daten / Nachrichten                            │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Aufgaben:**
+- Bereitstellung von Netzwerkdiensten für Anwendungen
+- Identifikation von Kommunikationspartnern
+- Ressourcenverfügbarkeit prüfen
+- Synchronisation der Kommunikation
+
+**Protokolle:**
+- HTTP/HTTPS (Web)
+- SMTP, POP3, IMAP (E-Mail)
+- DNS (Namensauflösung)
+- FTP, SFTP (Dateitransfer)
+- SSH (Secure Shell)
+- SNMP (Netzwerkmanagement)
+- DHCP (Adressvergabe)
+
+**Geräte:**
+- Application Gateway, Proxy
+- Layer-7-Load-Balancer
+
+**Dateneinheit:** Daten / Nachrichten
 
 ## Datenkapselung (Encapsulation)
 
 Beim Durchlaufen der Schichten werden die Daten **gekapselt** – jede Schicht fügt ihren eigenen Header (und ggf. Trailer) hinzu:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                      DATENKAPSELUNG                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Anwendung         │          Daten          │                │
-│                     └───────────┬─────────────┘                │
-│                                 ▼                               │
-│   Transport         │ TCP │     Daten          │   = Segment   │
-│                     └─────┴─────┬──────────────┘               │
-│                                 ▼                               │
-│   Netzwerk          │ IP │ TCP │     Daten     │   = Paket     │
-│                     └────┴─────┴───────┬───────┘               │
-│                                        ▼                        │
-│   Sicherung     │ETH│ IP │ TCP │ Daten │FCS│      = Frame      │
-│                 └───┴────┴─────┴───────┴───┘                   │
-│                                 ▼                               │
-│   Physikalisch       01101001010110...           = Bits        │
-│                                                                 │
-│   ─────────────────────────────────────────────────────────    │
-│                                                                 │
-│   Sender: Kapselung (Encapsulation) – von oben nach unten      │
-│   Empfänger: Entkapselung (Decapsulation) – von unten nach oben│
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[datenkapselung.png]]
+*<span class="fig-id">03-03-01-datenkapselung</span>: Datenkapselung beim Durchlaufen der OSI-Schichten – jede Schicht fügt ihren eigenen Header hinzu.*
 
 ## Netzwerkgeräte und ihre Schichten
 

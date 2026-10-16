@@ -1,7 +1,7 @@
 ---
 title: "Funktionstabellen und graphische Darstellung"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-18
 chapter: "09"
 section: "04"
 status: "draft - review pending"
@@ -26,11 +26,14 @@ keywords:
 
 ### Grundprinzip
 
-Eine **Wertetabelle** zeigt Paare von Eingabe- und Ausgabewerten.
+Eine **Wertetabelle** zeigt Paare von Eingabe- und Ausgabewerten. Sie ist wie ein „Fahrplan" für die Funktion: Für jeden gewählten x-Wert wird der zugehörige Funktionswert berechnet.
 
 | $x$ | Berechnung | $f(x)$ |
 |---|---|---|
 | gewählt | Formel anwenden | Ergebnis |
+
+> [!info] **Historischer Hintergrund**
+> Vor der Erfindung des Taschenrechners waren Wertetabellen von enormer praktischer Bedeutung. Wissenschaftler wie Johannes Kepler verbrachten Jahre damit, umfangreiche Logarithmentafeln zu berechnen. Diese Tabellen waren so wertvoll, dass sie in speziellen Büchern veröffentlicht wurden, die Generationen von Ingenieuren und Wissenschaftlern dienten.
 
 ### Schritt-für-Schritt
 
@@ -177,11 +180,29 @@ $$f(0) = ?$$
 
 ### Häufige Fehler
 
-> [!warning] Zu vermeiden
+> [!warning] **Zu vermeiden**
 > - Punkte mit Lineal bei Kurven verbinden (nur bei Geraden!)
 > - Zu wenige Punkte berechnen
 > - Punkte falsch einzeichnen (x und y vertauscht)
 > - Graph über den sinnvollen Bereich hinaus zeichnen
+> - Bei negativen x-Werten die Vorzeichen beim Einsetzen vergessen
+
+> [!tip] **Kontrolle durch Probe**
+> Prüfe nach dem Zeichnen: Liegt ein einfach zu berechnender Punkt (z.B. $x = 0$ oder $x = 1$) tatsächlich auf deinem Graphen? Das hilft, Flüchtigkeitsfehler zu entdecken.
+
+## Graphen im Alltag
+
+Funktionsgraphen begegnen uns überall:
+
+| Kontext | x-Achse | y-Achse |
+|---|---|---|
+| Aktienkurs | Zeit | Preis in € |
+| Fieberkurve | Zeit | Temperatur in °C |
+| Tacho im Auto | Zeit | Geschwindigkeit in km/h |
+| Klimadiagramm | Monat | Temperatur / Niederschlag |
+| Fitness-Tracker | Tag | Schritte |
+
+Die Fähigkeit, Graphen zu lesen und zu interpretieren, ist eine wichtige Kompetenz in vielen Lebensbereichen – von der Zeitung bis zum Arztbesuch.
 
 ## Zusammenfassung
 
@@ -191,6 +212,13 @@ $$f(0) = ?$$
 > - Aus Graphen ablesen: Nullstellen, y-Abschnitt, Steigung
 > - Lineare Funktionen: Gerade; quadratische: Parabel
 > - Die Skalierung dem Problem anpassen
+
+## Zusammenhänge
+
+- → [[03-Einfuehrung-Funktionen|Einführung Funktionen]] – Grundbegriffe des Funktionsbegriffs
+- → [[05-Lineare-Funktionen|Lineare Funktionen]] – Graphen als Geraden
+- → [[08-Quadratische-Funktionen|Quadratische Funktionen]] – Graphen als Parabeln
+- → [[10-Schnittpunkte|Schnittpunkte]] – Ablesen und Berechnen von Schnittpunkten
 
 ## Übungsaufgaben
 

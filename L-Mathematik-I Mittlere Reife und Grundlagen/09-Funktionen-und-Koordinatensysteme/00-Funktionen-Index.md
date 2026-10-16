@@ -1,7 +1,7 @@
 ---
 title: "Funktionen und Koordinatensysteme"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-18
 chapter: "09"
 status: "draft - review pending"
 type: index
@@ -17,6 +17,18 @@ keywords:
 
 > [!info] Kapitelübersicht
 > Dieses Kapitel führt in das Konzept der Funktion ein – eines der wichtigsten Konzepte der Mathematik. Wir lernen, Funktionen zu definieren, darzustellen und zu analysieren, beginnend mit dem Koordinatensystem als Werkzeug zur grafischen Darstellung.
+
+## Warum Funktionen so wichtig sind
+
+Das Konzept der Funktion ist das Herzstück der modernen Mathematik. Im 17. Jahrhundert gelang dem französischen Philosophen und Mathematiker **René Descartes** (1596–1650) ein Durchbruch, der die Mathematik für immer verändern sollte: Er verband die bis dahin getrennten Welten der Geometrie und der Algebra. Sein kartesisches Koordinatensystem ermöglichte es erstmals, geometrische Formen durch Gleichungen zu beschreiben – und umgekehrt Gleichungen zu visualisieren.
+
+Funktionen begegnen uns überall im Alltag, oft ohne dass wir es bemerken:
+- Der **Benzinverbrauch** deines Autos ist eine Funktion der gefahrenen Kilometer
+- Die **Temperatur** des Kaffees ist eine Funktion der Zeit seit dem Einschenken
+- Der **Preis** eines Produkts ist (meist) eine Funktion der Menge
+- Die **Flugbahn** eines Balls folgt einer quadratischen Funktion
+
+Das Verständnis von Funktionen ist der Schlüssel zu vielen anderen mathematischen Gebieten und praktisch allen Naturwissenschaften. In der Physik beschreiben Funktionen Bewegungen, in der Wirtschaft modellieren sie Kosten und Gewinne, in der Informatik steuern sie Algorithmen.
 
 ## Lernpfad
 

@@ -1,7 +1,7 @@
 ---
 title: "Parabeln und ihre Eigenschaften"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-18
 chapter: "09"
 section: "09"
 status: "draft - review pending"
@@ -21,6 +21,19 @@ keywords:
 > - Verschiebungen und Streckungen verstehen
 > - Aus dem Graphen die Funktionsgleichung ableiten
 > - Parabeln skizzieren können
+
+## Die Parabel in Alltag und Technik
+
+Die Parabelform begegnet uns überall – oft ohne dass wir es bemerken:
+
+- **Satellitenschüsseln**: Die Parabelform bündelt eintreffende Signale im Brennpunkt
+- **Autoscheinwerfer**: Eine Lampe im Brennpunkt erzeugt parallele Lichtstrahlen
+- **Hängebrücken**: Die Kabel hängen in einer Form, die der Parabel sehr ähnelt
+- **Springbrunnen**: Wasserstrahlen beschreiben Parabelbahnen
+- **Basketball-Wurf**: Der Ball fliegt auf einer Parabelbahn zum Korb
+
+> [!info] **Die Physik dahinter**
+> Die Parabel hat eine besondere physikalische Eigenschaft: Alle parallel zur Achse eintreffenden Strahlen werden im **Brennpunkt** (Fokus) gebündelt. Diese Eigenschaft nutzen Parabolantennen, Spiegel in Teleskopen und Solaröfen.
 
 ## Verschiebungen der Normalparabel
 
@@ -52,6 +65,11 @@ Die Parabel wird um $d$ Einheiten **nach rechts** (wenn $d > 0$) oder **nach lin
 > [!warning] Achtung: Vorzeichen!
 > $(x - 3)^2$ verschiebt nach **rechts** (zu $x = 3$)
 > $(x + 2)^2 = (x - (-2))^2$ verschiebt nach **links** (zu $x = -2$)
+>
+> Das Vorzeichen in der Klammer ist „umgekehrt" zur Verschiebungsrichtung – ein häufiger Stolperstein!
+
+> [!tip] **Merkregel für Verschiebungen**
+> Denke an die Klammer als „Verzögerung": Bei $(x - 3)^2$ erreicht die Funktion den Wert, den $x^2$ bei $x = 0$ hatte, erst bei $x = 3$ – also 3 Einheiten später/weiter rechts.
 
 ```
     y
@@ -185,6 +203,16 @@ Für $f(x) = a(x - d)^2 + e$:
 > - Scheitelpunkt: $S(d, e)$
 > - Symmetrieachse: $x = d$
 > - Zur Bestimmung der Gleichung: Scheitelpunkt + 1 weiterer Punkt genügen
+
+## Zusammenhänge
+
+- → [[08-Quadratische-Funktionen|Quadratische Funktionen]] – Allgemeine Form und Grundlagen
+- → [[10-Schnittpunkte|Schnittpunkte]] – Wo Parabeln Geraden oder andere Parabeln schneiden
+- → [[11-Anwendungen-Funktionen|Anwendungen]] – Wurfparabeln und Optimierung
+- → [[../08-Gleichungen-und-Ungleichungen/09-Loesungsformel-quadratische-Gleichungen|Lösungsformel]] – Nullstellen von Parabeln berechnen
+
+> [!tip] **Praxis-Tipp**
+> Bei Prüfungsaufgaben lohnt es sich, die Parabel schnell zu skizzieren. Der Scheitelpunkt und die Öffnungsrichtung geben bereits einen guten Überblick, ob die berechneten Werte plausibel sind.
 
 ## Übungsaufgaben
 

@@ -1,7 +1,7 @@
 ---
 title: "Anwendungen von Funktionen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-18
 chapter: "09"
 section: "11"
 status: "draft - review pending"
@@ -22,7 +22,16 @@ keywords:
 > - Berechnete Ergebnisse im Kontext interpretieren
 > - Optimierungsprobleme mit quadratischen Funktionen lösen
 
+## Warum mathematische Modellierung?
+
+Funktionen sind nicht nur abstrakte mathematische Objekte – sie sind mächtige Werkzeuge, um die reale Welt zu beschreiben und vorherzusagen. Der Prozess, ein reales Problem in mathematische Sprache zu übersetzen, heißt **Modellierung**.
+
+> [!info] **Geschichte der mathematischen Modellierung**
+> Schon Galileo Galilei (1564–1642) erkannte, dass die Natur in der Sprache der Mathematik geschrieben ist. Er entdeckte, dass fallende Körper und geworfene Objekte mathematischen Gesetzen folgen. Seitdem nutzen Wissenschaftler und Ingenieure Funktionen, um alles zu modellieren – von Planetenbahnen bis zu Börsenkursen.
+
 ## Lineare Funktionen in der Praxis
+
+Lineare Funktionen beschreiben Situationen mit **konstantem Zuwachs** oder **konstanter Rate**. Das Schema ist immer ähnlich: Grundgebühr (Fixkosten) plus variable Kosten.
 
 ### Beispiel 1: Taxikosten
 
@@ -170,6 +179,23 @@ $p_1 = 10$ €, $p_2 = 30$ €
 > - **Antwort im Kontext** formulieren: Nicht nur „$x = 25$", sondern „Die optimale Länge beträgt 25 m"
 > - **Plausibilität** prüfen: Ist das Ergebnis realistisch?
 
+> [!tip] **Strategie für Textaufgaben**
+> 1. **Lesen**: Aufgabe zweimal lesen, wichtige Informationen markieren
+> 2. **Variablen**: Was ist gesucht? Was ist gegeben? Variablen festlegen und aufschreiben
+> 3. **Gleichung**: Zusammenhang als Funktion formulieren
+> 4. **Rechnen**: Mathematisch lösen (Nullstellen, Scheitelpunkt, etc.)
+> 5. **Antworten**: Ergebnis im Sachzusammenhang interpretieren und mit Einheit angeben
+> 6. **Prüfen**: Ist das Ergebnis plausibel? Probe machen!
+
+## Typische Anwendungsgebiete
+
+| Bereich | Lineare Funktionen | Quadratische Funktionen |
+|---|---|---|
+| **Wirtschaft** | Fixkosten + variable Kosten | Gewinnmaximierung, Preiselastizität |
+| **Physik** | Gleichförmige Bewegung | Wurfbewegung, Fallbewegung |
+| **Technik** | Proportionale Zusammenhänge | Optimale Abmessungen |
+| **Alltag** | Handytarife, Mietkosten | Flächenoptimierung |
+
 ## Zusammenfassung
 
 > [!abstract] Kernpunkte
@@ -178,6 +204,15 @@ $p_1 = 10$ €, $p_2 = 30$ €
 > - Scheitelpunkt einer Parabel = Maximum oder Minimum
 > - Nullstellen = Break-Even-Punkte, Reichweiten
 > - Ergebnisse immer im Sachkontext interpretieren
+
+## Zusammenhänge
+
+- → [[05-Lineare-Funktionen|Lineare Funktionen]] – Grundlagen für Kostenberechnungen
+- → [[08-Quadratische-Funktionen|Quadratische Funktionen]] – Grundlagen für Optimierung
+- → [[09-Parabeln|Parabeln]] – Scheitelpunktform für Maximum/Minimum
+- → [[10-Schnittpunkte|Schnittpunkte]] – Break-Even-Analysen
+- → [[../04-Dezimalzahlen-und-Prozentrechnung/10-Zinsrechnung|Zinsrechnung]] – Finanzielle Anwendungen
+- → [[../05-Verhaeltnisse-und-Proportionalitaet/03-Dreisatz|Dreisatz]] – Alternative Lösungsmethode für proportionale Probleme
 
 ## Übungsaufgaben
 

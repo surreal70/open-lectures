@@ -1,7 +1,7 @@
 ---
 title: "Geradengleichungen aufstellen"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-18
 chapter: "09"
 section: "07"
 status: "draft - review pending"
@@ -21,7 +21,18 @@ keywords:
 > - Die Zwei-Punkte-Form beherrschen
 > - Zwischen verschiedenen Darstellungsformen umwandeln
 
+## Warum verschiedene Methoden?
+
+In der Praxis haben wir oft unterschiedliche Informationen über eine Gerade:
+- Manchmal kennen wir zwei Punkte, durch die sie verläuft
+- Manchmal wissen wir, wo sie die y-Achse schneidet und wie steil sie ist
+- Manchmal ist eine parallele Gerade bekannt und ein Punkt
+
+Für jede Situation gibt es die passende Methode. Das Ziel ist immer dasselbe: die Gleichung $y = mx + b$ (oder eine andere Form) zu finden.
+
 ## Formen der Geradengleichung
+
+Jede Gerade lässt sich auf verschiedene Weisen darstellen. Diese Formen sind äquivalent – sie beschreiben dieselbe Gerade, betonen aber unterschiedliche Aspekte.
 
 ### Normalform (Hauptform)
 
@@ -137,6 +148,9 @@ Diese Formel liefert direkt die Geradengleichung.
 - Senkrechte Geraden: $m_h = -\frac{1}{m_g}$ (negative Kehrwert)
 - Neue Gerade mit Methode 2 bestimmen
 
+> [!info] **Warum der negative Kehrwert?**
+> Wenn zwei Geraden senkrecht aufeinander stehen, gilt für ihre Steigungen: $m_1 \cdot m_2 = -1$. Das bedeutet: Die Steigung der senkrechten Geraden ist der **negative Kehrwert** der Originalsteigung. Bei $m_g = 2$ ist also $m_h = -\frac{1}{2}$.
+
 > [!example] Beispiel
 > $g: y = 2x + 1$, Punkt $P(4, 3)$
 > 
@@ -147,6 +161,9 @@ Diese Formel liefert direkt die Geradengleichung.
 > $b = 3 - (-\frac{1}{2}) \cdot 4 = 3 + 2 = 5$
 > 
 > $h: y = -\frac{1}{2}x + 5$
+
+> [!warning] **Häufiger Fehler**
+> Beim negativen Kehrwert wird oft nur der Kehrwert gebildet und das Minuszeichen vergessen. Bei $m = 3$ ist der negative Kehrwert $-\frac{1}{3}$, nicht $\frac{1}{3}$!
 
 ## Übersicht: Was ist gegeben?
 
@@ -182,6 +199,16 @@ $$y = mx + b \quad \Rightarrow \quad mx - y + b = 0$$
 > - Aus zwei Punkten: erst Steigung, dann y-Achsenabschnitt
 > - Parallele Geraden: gleiche Steigung
 > - Senkrechte Geraden: Steigungen sind negative Kehrwerte
+
+## Zusammenhänge
+
+- → [[05-Lineare-Funktionen|Lineare Funktionen]] – Die Grundlagen
+- → [[06-Steigung-und-Achsenabschnitt|Steigung und Achsenabschnitt]] – Die Parameter im Detail
+- → [[10-Schnittpunkte|Schnittpunkte]] – Wo sich Geraden treffen
+- → [[../10-Grundlagen-der-Geometrie/01-Punkte-Strecken-Geraden|Geometrie: Geraden]] – Geometrische Perspektive
+
+> [!tip] **Praxis-Tipp: Probe machen**
+> Setze nach dem Aufstellen der Gleichung die gegebenen Punkte ein. Wenn die Gleichung stimmt, müssen beide Punkte sie erfüllen. Das ist eine schnelle Kontrolle gegen Rechenfehler!
 
 ## Übungsaufgaben
 

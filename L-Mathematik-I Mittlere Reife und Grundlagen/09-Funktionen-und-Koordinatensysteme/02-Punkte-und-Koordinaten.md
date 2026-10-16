@@ -1,7 +1,7 @@
 ---
 title: "Punkte und Koordinaten"
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2025-07-18
 chapter: "09"
 section: "02"
 status: "draft - review pending"
@@ -28,14 +28,21 @@ Jeder Punkt in der Ebene wird durch ein **geordnetes Zahlenpaar** beschrieben:
 
 $$P(x | y) \quad \text{oder} \quad P(x, y)$$
 
+Die Idee ist einfach: Um einen Punkt eindeutig zu bestimmen, braucht man zwei Informationen – wie weit nach rechts/links und wie weit nach oben/unten. Dies ist vergleichbar mit einer Adresse, die aus Straße und Hausnummer besteht.
+
 | Komponente | Name | Bedeutung |
 |---|---|---|
 | $x$ | **Abszisse** (x-Koordinate) | Horizontaler Abstand vom Ursprung |
 | $y$ | **Ordinate** (y-Koordinate) | Vertikaler Abstand vom Ursprung |
 
+> [!info] **Herkunft der Begriffe**
+> Das Wort „Abszisse" kommt vom lateinischen *abscindere* (abschneiden) – man „schneidet" sozusagen den Abstand auf der x-Achse ab. „Ordinate" stammt von *ordinare* (ordnen) – die vertikale Koordinate ordnet den Punkt in seiner Höhe ein.
+
 > [!warning] Wichtig: Reihenfolge beachten!
 > Die x-Koordinate steht **immer zuerst**, dann die y-Koordinate.
 > $P(3, 5) \neq P(5, 3)$
+>
+> **Eselsbrücke**: Im Alphabet kommt „x" vor „y" – also auch in den Koordinaten!
 
 ## Punkte einzeichnen
 
@@ -151,10 +158,18 @@ Für beliebige Punkte $P_1(x_1, y_1)$ und $P_2(x_2, y_2)$:
 
 $$d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}$$
 
+Diese Formel ist eine direkte Anwendung des [[../11-Satz-des-Pythagoras-und-Trigonometrie/02-Satz-des-Pythagoras|Satzes des Pythagoras]]. Man kann sich die Strecke zwischen zwei Punkten als Hypotenuse eines rechtwinkligen Dreiecks vorstellen, dessen Katheten parallel zu den Achsen verlaufen.
+
+> [!info] **Warum funktioniert das?**
+> Die horizontale Kathete hat die Länge $|x_2 - x_1|$, die vertikale Kathete $|y_2 - y_1|$. Nach Pythagoras gilt: Hypotenuse² = Kathete₁² + Kathete₂². Da wir quadrieren, sind die Betragsstriche nicht nötig – negative Werte werden automatisch positiv.
+
 > [!example] Beispiel
 > $A(1, 2)$ und $B(4, 6)$
 > 
 > $$d = \sqrt{(4-1)^2 + (6-2)^2} = \sqrt{9 + 16} = \sqrt{25} = 5$$
+
+> [!tip] **Praxis-Tipp**
+> Diese Formel ist auch die Grundlage für GPS-Navigation: Dein Smartphone berechnet Entfernungen nach demselben Prinzip (allerdings auf einer Kugeloberfläche, was die Rechnung etwas komplizierter macht).
 
 ## Mittelpunkt einer Strecke
 
@@ -162,10 +177,15 @@ Der **Mittelpunkt** $M$ der Strecke $\overline{P_1P_2}$ hat die Koordinaten:
 
 $$M\left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$$
 
+Die Formel ist intuitiv: Der Mittelpunkt liegt genau „in der Mitte" – also beim Durchschnitt der x-Koordinaten und beim Durchschnitt der y-Koordinaten.
+
 > [!example] Beispiel
 > $P_1(2, 4)$ und $P_2(6, 8)$
 > 
 > $$M\left(\frac{2+6}{2}, \frac{4+8}{2}\right) = M(4, 6)$$
+
+> [!tip] **Anschaulich verstehen**
+> Stell dir vor, du hast zwei Freunde, einer steht bei $x = 2$, der andere bei $x = 6$. Wo müsstet ihr euch treffen, damit beide den gleichen Weg haben? Genau in der Mitte bei $x = 4$. Das Gleiche gilt für die y-Koordinate.
 
 ## Zusammenfassung
 
@@ -175,6 +195,15 @@ $$M\left(\frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$$
 > - Punkte auf der x-Achse haben $y = 0$, auf der y-Achse $x = 0$
 > - Der Abstand zweier Punkte wird mit dem Satz des Pythagoras berechnet
 > - Der Mittelpunkt hat den Durchschnitt beider Koordinaten
+
+## Zusammenhänge
+
+Dieses Thema ist eng verbunden mit:
+
+- → [[01-Kartesisches-Koordinatensystem|Kartesisches Koordinatensystem]] – Die Grundlage für das Arbeiten mit Punkten
+- → [[03-Einfuehrung-Funktionen|Funktionen]] – Punkte als Teil von Funktionsgraphen
+- → [[../10-Grundlagen-der-Geometrie/04-Dreiecke|Dreiecke]] – Konstruktion von Dreiecken mit gegebenen Eckpunkten
+- → [[../11-Satz-des-Pythagoras-und-Trigonometrie/02-Satz-des-Pythagoras|Satz des Pythagoras]] – Herleitung der Abstandsformel
 
 ## Übungsaufgaben
 
