@@ -47,13 +47,8 @@ $$\frac{2}{3} = \frac{2 \cdot 4}{3 \cdot 4} = \frac{8}{12}$$
 
 $\frac{1}{2}$ erweitert auf $\frac{2}{4}$:
 
-```
-┌───────┬───────┐     ┌───┬───┬───┬───┐
-│  ▓▓▓  │       │     │ ▓ │ ▓ │   │   │
-│  ▓▓▓  │       │  =  │ ▓ │ ▓ │   │   │
-└───────┴───────┘     └───┴───┴───┴───┘
-     ½    =    ²⁄₄
-```
+![[bruch-erweitern.png]]
+*<span class="fig-id">01-03-04-bruch-erweitern</span>: Erweitern von ½ auf 2/4 – dieselbe Fläche, nur feiner unterteilt: links 1 von 2 Teilen, rechts 2 von 4 Teilen gefüllt.*
 
 Beide zeigen dieselbe Menge – nur feiner unterteilt! Das linke Rechteck ist in 2 Teile geteilt, davon ist 1 gefüllt. Das rechte ist in 4 Teile geteilt, davon sind 2 gefüllt. Die gefüllte Fläche ist identisch.
 
