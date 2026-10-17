@@ -40,18 +40,9 @@ $$\frac{2}{5} + \frac{1}{5} = \frac{2 + 1}{5} = \frac{3}{5}$$
 > [!note] **Anschauliche Erklärung**
 > Stell dir vor, du hast 2 Fünftel einer Pizza und bekommst noch 1 Fünftel dazu. Dann hast du 3 Fünftel – die Stücke sind gleich groß, also zählst du sie einfach zusammen.
 >
-> ```
-> ┌───┬───┬───┬───┬───┐     ┌───┬───┬───┬───┬───┐
-> │ ▓ │ ▓ │   │   │   │  +  │ ▓ │   │   │   │   │
-> └───┴───┴───┴───┴───┘     └───┴───┴───┴───┴───┘
->        ²⁄₅          +            ¹⁄₅
 >
->                    ↓
->
-> ┌───┬───┬───┬───┬───┐
-> │ ▓ │ ▓ │ ▓ │   │   │  =  ³⁄₅
-> └───┴───┴───┴───┴───┘
-> ```
+> ![[bruch-addition.png]]
+> *<span class="fig-id">01-03-07-bruch-addition</span>: Addition gleichnamiger Brüche – 2/5 und 1/5 ergeben zusammen 3/5; nur die Zähler werden addiert, der Nenner bleibt gleich.*
 
 > [!warning] **Achtung**
 > Nur die **Zähler** werden addiert! Der Nenner bleibt gleich.

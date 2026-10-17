@@ -38,16 +38,9 @@ $$\frac{5}{7} - \frac{2}{7} = \frac{5 - 2}{7} = \frac{3}{7}$$
 > [!note] **Anschauliche Erklärung**
 > Wenn du 5 Siebentel hast und 2 Siebentel wegnimmst, bleiben 3 Siebentel übrig. Die Stücke sind gleich groß, also zählst du einfach die Differenz.
 >
-> ```
-> ┌───┬───┬───┬───┬───┬───┬───┐
-> │ ▓ │ ▓ │ ▓ │ ▓ │ ▓ │   │   │  =  ⁵⁄₇
-> └───┴───┴───┴───┴───┴───┴───┘
->        minus ²⁄₇
->            ↓
-> ┌───┬───┬───┬───┬───┬───┬───┐
-> │ ▓ │ ▓ │ ▓ │   │   │   │   │  =  ³⁄₇
-> └───┴───┴───┴───┴───┴───┴───┘
-> ```
+>
+> ![[bruch-subtraktion.png]]
+> *<span class="fig-id">01-03-08-bruch-subtraktion</span>: Subtraktion gleichnamiger Brüche – von 5/7 werden 2/7 weggenommen, es bleiben 3/7; nur die Zähler werden subtrahiert, der Nenner bleibt gleich.*
 
 ---
 
