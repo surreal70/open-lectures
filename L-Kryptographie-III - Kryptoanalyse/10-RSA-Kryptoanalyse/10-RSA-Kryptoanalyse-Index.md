@@ -1,0 +1,42 @@
+---
+title: "10 - RSA-Kryptoanalyse"
+date: 2026-10-13
+modified: 2026-10-13
+tags:
+  - kryptoanalyse
+  - kernmodul
+  - index
+---
+# 10 - RSA-Kryptoanalyse
+
+> [!info] Kernmodul
+
+## Lernziele
+
+> [!tip] Nach diesem Modul können Sie...
+> - TODO: Lernziel 1
+> - TODO: Lernziel 2
+> - TODO: Lernziel 3
+
+## Themen
+
+- [[01-Unsichere-Parameter|Unsichere Parameter]]
+- [[02-Gemeinsame-Primfaktoren|Gemeinsame Primfaktoren]]
+- [[03-Kleine-Exponenten|Kleine Exponenten]]
+- [[04-Broadcast-Textbook-RSA|Broadcast bei Textbook RSA]]
+- [[05-OAEP-PSS|OAEP und PSS]]
+
+## Praxis / Experiment
+
+> [!example] Übung
+> TODO: Praktische Aufgabe für dieses Modul
+
+## Kontrollfragen
+
+1. TODO: Frage 1
+2. TODO: Frage 2
+3. TODO: Frage 3
+
+## Historische Einordnung
+
+TODO: Geschichtlicher Kontext

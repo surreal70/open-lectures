@@ -1,0 +1,42 @@
+---
+title: "04 - Angreifermodelle und Sicherheitsbegriffe"
+date: 2026-10-13
+modified: 2026-10-13
+tags:
+  - kryptoanalyse
+  - kernmodul
+  - index
+---
+# 04 - Angreifermodelle und Sicherheitsbegriffe
+
+> [!info] Kernmodul
+
+## Lernziele
+
+> [!tip] Nach diesem Modul können Sie...
+> - TODO: Lernziel 1
+> - TODO: Lernziel 2
+> - TODO: Lernziel 3
+
+## Themen
+
+- [[01-COA-KPA-CPA|Ciphertext-Only, Known-Plaintext, Chosen-Plaintext]]
+- [[02-CCA|Chosen-Ciphertext Attack]]
+- [[03-IND-CPA-IND-CCA|IND-CPA und IND-CCA]]
+- [[04-Security-Games|Security Games]]
+- [[05-Reduktionen|Reduktionen]]
+
+## Praxis / Experiment
+
+> [!example] Übung
+> TODO: Praktische Aufgabe für dieses Modul
+
+## Kontrollfragen
+
+1. TODO: Frage 1
+2. TODO: Frage 2
+3. TODO: Frage 3
+
+## Historische Einordnung
+
+TODO: Geschichtlicher Kontext
