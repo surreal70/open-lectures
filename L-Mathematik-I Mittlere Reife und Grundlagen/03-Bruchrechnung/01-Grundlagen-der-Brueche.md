@@ -59,26 +59,15 @@ $$\frac{\text{Zähler}}{\text{Nenner}} = \frac{a}{b}$$
 
 $\frac{3}{4}$ einer Pizza:
 
-```
-    ┌─────────┐
-    │▓▓▓│▓▓▓│
-    │▓▓▓│▓▓▓│
-    ├───┼───┤
-    │▓▓▓│   │   ← 3 von 4 Teilen sind gefüllt
-    │▓▓▓│   │
-    └─────────┘
-```
+![[bruch-flaeche.png]]
+*<span class="fig-id">01-03-01-bruch-flaeche</span>: Der Bruch ¾ als Fläche – eine in vier gleiche Teile geteilte Pizza, von der drei Teile gefüllt sind.*
 
 Die Visualisierung als Fläche hilft besonders beim Verstehen: Stell dir vor, du teilst einen Kuchen, eine Schokolade oder ein Blatt Papier. Diese „Kuchenmodell"-Vorstellung macht abstrakte Brüche greifbar.
 
 ### Auf dem Zahlenstrahl
 
-```
-    ←──┬────┬────┬────┬────┬────┬────┬────┬──→
-       0   ¼   ½   ¾    1   1¼  1½  1¾   2
-               ↑    ↑
-              ²⁄₄  ³⁄₄
-```
+![[bruch-zahlenstrahl.png]]
+*<span class="fig-id">01-03-01-bruch-zahlenstrahl</span>: Der Bruch ¾ auf dem Zahlenstrahl – drei Viertel des Weges von 0 nach 1, also zwischen ½ und 1.*
 
 Auf dem Zahlenstrahl sehen wir: $\frac{3}{4}$ liegt zwischen 0 und 1, genauer: drei Viertel des Weges von 0 nach 1. Diese Darstellung zeigt auch, dass verschiedene Brüche denselben Punkt bezeichnen können: $\frac{1}{2}$ und $\frac{2}{4}$ liegen an derselben Stelle.
 
