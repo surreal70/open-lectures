@@ -2,7 +2,7 @@
   "complete": false,
   "chapters": [
     { "dir": "01-Vertiefung-der-Algebra", "done": true },
-    { "dir": "02-Funktionen-und-ihre-Eigenschaften", "done": false },
+    { "dir": "02-Funktionen-und-ihre-Eigenschaften", "done": true },
     { "dir": "03-Elementare-Funktionstypen", "done": false },
     { "dir": "04-Folgen-Reihen-und-Grenzwerte", "done": false },
     { "dir": "05-Differentialrechnung-I", "done": false },
