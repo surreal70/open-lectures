@@ -96,18 +96,8 @@ $$\text{Wenn } a : b = c, \text{ dann } c \cdot b = a$$
 
 ### Beispiel: $7524 : 12$
 
-```
-  7524 : 12 = 627
- -72           ↓
-  ────
-   32
-  -24
-  ────
-    84
-   -84
-   ────
-     0
-```
+![[schriftliche-division.png]]
+*<span class="fig-id">01-02-04-schriftliche-division</span>: Schriftliche Division 7524 : 12 = 627 – schrittweises Teilen und Herunterholen der nächsten Ziffer, bis der Rest 0 erreicht ist.*
 
 **Schritte:**
 1. $75 : 12 = 6$ Rest $3$ (da $6 \cdot 12 = 72$)
