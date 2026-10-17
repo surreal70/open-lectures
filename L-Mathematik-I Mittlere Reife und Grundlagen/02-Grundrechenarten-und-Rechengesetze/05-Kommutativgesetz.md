@@ -64,14 +64,8 @@ Ob ich erst 3 rote und dann 5 blaue Kugeln in eine Schale lege, oder erst 5 blau
 
 Ein Rechteck mit 3 Reihen und 4 Spalten hat genauso viele Felder wie eines mit 4 Reihen und 3 Spalten:
 
-```
-3 × 4 = 12          4 × 3 = 12
-
-● ● ● ●             ● ● ●
-● ● ● ●             ● ● ●
-● ● ● ●             ● ● ●
-                    ● ● ●
-```
+![[kommutativ-multiplikation.png]]
+*<span class="fig-id">01-02-05-kommutativ-multiplikation</span>: Kommutativgesetz der Multiplikation – ein Feld aus 3 Reihen × 4 Spalten hat gleich viele Punkte wie eines aus 4 Reihen × 3 Spalten: 3 · 4 = 4 · 3 = 12.*
 
 ---
 
