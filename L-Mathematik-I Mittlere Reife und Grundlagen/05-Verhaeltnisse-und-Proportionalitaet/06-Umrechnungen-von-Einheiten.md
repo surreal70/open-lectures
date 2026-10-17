@@ -50,10 +50,8 @@ Einheitenfehler können katastrophale Folgen haben! 1999 stürzte die NASA-Raums
 
 ### Faktor 10er-Kette
 
-```
-km ──×1000──→ m ──×100──→ cm ──×10──→ mm
-   ←──÷1000──   ←──÷100──   ←──÷10──
-```
+![[einheiten-kette.png]]
+*<span class="fig-id">01-05-06-einheiten-kette</span>: Umrechnungskette der Längeneinheiten – nach rechts (zur kleineren Einheit) wird multipliziert, nach links (zur größeren Einheit) dividiert.*
 
 ## Flächeneinheiten
 
