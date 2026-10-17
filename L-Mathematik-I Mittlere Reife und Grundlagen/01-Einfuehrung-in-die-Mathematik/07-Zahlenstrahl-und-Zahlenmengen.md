@@ -8,7 +8,7 @@ tags:
   - zahlenmengen
   - zahlenstrahl
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-16
 ---
 
 # Zahlenstrahl und Zahlenmengen
@@ -34,10 +34,8 @@ Die Idee, Zahlen als Punkte auf einer Linie darzustellen, geht auf das 17. Jahrh
 
 Der **Zahlenstrahl** ist eine gerade Linie, auf der Zahlen als Punkte dargestellt werden. Jeder Punkt entspricht genau einer reellen Zahl, und jede reelle Zahl entspricht genau einem Punkt:
 
-```
-    ←──┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬──→
-      -3   -2   -1    0    1    2    3    4    5    6    7
-```
+![[zahlenstrahl-basis.png]]
+*<span class="fig-id">01-01-07-zahlenstrahl-basis</span>: Der Zahlenstrahl – eine gerade Linie mit gleichmäßigen Abständen, 0 als Ursprung, positive Zahlen rechts, negative links.*
 
 ### Eigenschaften des Zahlenstrahls
 
@@ -63,11 +61,8 @@ Um eine Zahl auf dem Zahlenstrahl einzutragen:
 
 **Beispiel:** Die Zahlen $-1{,}5$, $\frac{1}{2}$ und $2{,}75$ eintragen:
 
-```
-    ←──┬────┬────┬──┬─┬────┬────┬──┬─┬────┬──→
-      -2  -1,5  -1   0  ½   1    2  2,75  3
-           ●            ●          ●
-```
+![[zahlenstrahl-beispielpunkte.png]]
+*<span class="fig-id">01-01-07-zahlenstrahl-beispielpunkte</span>: Die Zahlen −1,5, ½ und 2,75 auf dem Zahlenstrahl eingetragen – zwischen den ganzzahligen Markierungen positioniert.*
 
 > [!tip] **Hilfstechnik: Intervallhalbierung**
 > Um Brüche wie $\frac{1}{4}$ oder $\frac{3}{4}$ einzutragen, halbiere zunächst den Abstand zwischen zwei ganzen Zahlen (das ergibt $\frac{1}{2}$), dann halbiere erneut (das ergibt $\frac{1}{4}$ und $\frac{3}{4}$).
@@ -111,52 +106,29 @@ Jede Zahlenmenge hat eine charakteristische Art, wie sie auf dem Zahlenstrahl er
 
 ### Natürliche Zahlen $\mathbb{N}$: Isolierte Punkte
 
-```
-    ←──────────────────┬────┬────┬────┬────┬────┬──→
-                       0    1    2    3    4    5
-                            ●    ●    ●    ●    ●
-                            ↑
-                       Einzelne Punkte (diskret)
-                       Null nicht dabei!
-```
+![[mengen-n.png]]
+*<span class="fig-id">01-01-07-mengen-n</span>: Die natürlichen Zahlen ℕ bilden isolierte Punkte mit Lücken dazwischen; die Null ist nicht enthalten (leerer Kreis).*
 
 Die natürlichen Zahlen bilden **isolierte Punkte** mit Lücken dazwischen. Zwischen 2 und 3 gibt es keine natürliche Zahl.
 
 ### Ganze Zahlen $\mathbb{Z}$: Punkte auf beiden Seiten
 
-```
-    ←──┬────┬────┬────┬────┬────┬────┬────┬──→
-      -3   -2   -1    0    1    2    3    4
-       ●    ●    ●    ●    ●    ●    ●    ●
-                      ↑
-                  Null gehört dazu
-                  Punkte auch links
-```
+![[mengen-z.png]]
+*<span class="fig-id">01-01-07-mengen-z</span>: Die ganzen Zahlen ℤ erweitern ℕ um die Null und die negativen Zahlen – weiterhin isolierte Punkte, nun auch links der Null.*
 
 Die ganzen Zahlen erweitern die natürlichen um die Null und die negativen Zahlen. Trotzdem sind es immer noch isolierte Punkte mit Lücken.
 
 ### Rationale Zahlen $\mathbb{Q}$: Dicht, aber mit Lücken
 
-```
-    ←──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──→
-      -1 -¾ -½ -¼  0  ¼  ½  ¾  1  ...
-       ●  ●  ●  ●  ●  ●  ●  ●  ●
-                   ↑
-          Unendlich viele Punkte
-          zwischen je zwei Zahlen
-```
+![[mengen-q.png]]
+*<span class="fig-id">01-01-07-mengen-q</span>: Die rationalen Zahlen ℚ liegen dicht – zwischen je zwei rationalen Zahlen liegt immer eine weitere; trotzdem bleiben „unsichtbare Lücken" (z. B. √2).*
 
 Die rationalen Zahlen liegen **dicht**: Zwischen je zwei rationalen Zahlen liegt immer eine weitere. Trotzdem gibt es „unsichtbare Lücken" – Punkte wie $\sqrt{2}$, die von keiner rationalen Zahl getroffen werden.
 
 ### Reelle Zahlen $\mathbb{R}$: Durchgezogene Linie
 
-```
-    ←══════════════════════════════════════════→
-     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-                     ↑
-          Durchgezogene Linie ohne Lücken
-          Jeder Punkt entspricht einer Zahl
-```
+![[mengen-r.png]]
+*<span class="fig-id">01-01-07-mengen-r</span>: Die reellen Zahlen ℝ füllen den Zahlenstrahl vollständig aus – eine durchgezogene Linie ohne Lücken; jeder Punkt entspricht genau einer Zahl.*
 
 Die reellen Zahlen „füllen" den Zahlenstrahl vollständig aus. Es gibt keine Lücken – zu jedem Punkt gehört genau eine Zahl.
 
@@ -168,22 +140,8 @@ Die reellen Zahlen „füllen" den Zahlenstrahl vollständig aus. Es gibt keine 
 
 Um zu bestimmen, in welchen Zahlenmengen eine Zahl liegt, kann man systematisch vorgehen:
 
-```
-Gegeben: Eine Zahl x
-
-Ist x eine positive ganze Zahl (1, 2, 3, ...)?
-├── Ja → x ∈ ℕ (und damit auch ∈ ℤ, ℚ, ℝ)
-│
-└── Nein
-    Ist x eine ganze Zahl (..., -2, -1, 0)?
-    ├── Ja → x ∈ ℤ (und damit auch ∈ ℚ, ℝ)
-    │
-    └── Nein
-        Ist x ein Bruch oder eine abbrechende/periodische Dezimalzahl?
-        ├── Ja → x ∈ ℚ (und damit auch ∈ ℝ)
-        │
-        └── Nein → x ∈ ℝ \ ℚ (nur reell, irrational)
-```
+![[entscheidungsbaum.png]]
+*<span class="fig-id">01-01-07-entscheidungsbaum</span>: Entscheidungsbaum zur systematischen Einordnung einer Zahl x in die passende Zahlenmenge – jede „ja"-Antwort führt zum Ergebnis, jede „nein"-Antwort zur nächsten Prüfung.*
 
 ### Praktische Übungstabelle
 
@@ -214,6 +172,9 @@ Die Schnittmenge enthält alle Elemente, die in **beiden** Mengen liegen:
 
 $$A \cap B = \{x \mid x \in A \text{ und } x \in B\}$$
 
+![[venn-schnittmenge.png]]
+*<span class="fig-id">01-01-07-venn-schnittmenge</span>: Die Schnittmenge A ∩ B (hervorgehoben) umfasst nur die Elemente, die sowohl zu A als auch zu B gehören.*
+
 **Beispiele:**
 - $\mathbb{N} \cap \mathbb{Z}^- = \emptyset$ (Natürliche Zahlen und negative ganze Zahlen haben keine gemeinsamen Elemente)
 - $\mathbb{Z} \cap \mathbb{Q} = \mathbb{Z}$ (Alle ganzen Zahlen sind auch rational)
@@ -224,6 +185,9 @@ Die Vereinigung enthält alle Elemente, die in **mindestens einer** der Mengen l
 
 $$A \cup B = \{x \mid x \in A \text{ oder } x \in B\}$$
 
+![[venn-vereinigung.png]]
+*<span class="fig-id">01-01-07-venn-vereinigung</span>: Die Vereinigung A ∪ B (hervorgehoben) umfasst alle Elemente, die zu A oder zu B (oder zu beiden) gehören.*
+
 **Beispiel:**
 $$\mathbb{Z}^+ \cup \mathbb{Z}^- \cup \{0\} = \mathbb{Z}$$
 (Positive, negative ganze Zahlen und Null ergeben zusammen alle ganzen Zahlen)
@@ -233,6 +197,9 @@ $$\mathbb{Z}^+ \cup \mathbb{Z}^- \cup \{0\} = \mathbb{Z}$$
 Die Differenz $A \setminus B$ enthält alle Elemente von $A$, die **nicht** in $B$ liegen:
 
 $$A \setminus B = \{x \mid x \in A \text{ und } x \notin B\}$$
+
+![[venn-differenz.png]]
+*<span class="fig-id">01-01-07-venn-differenz</span>: Die Differenz A ∖ B (hervorgehoben) umfasst die Elemente von A, die nicht gleichzeitig in B liegen.*
 
 **Wichtiges Beispiel:**
 $$\mathbb{R} \setminus \mathbb{Q} = \text{irrationale Zahlen}$$
