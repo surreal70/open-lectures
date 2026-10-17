@@ -1,14 +1,14 @@
 ---
 author: Open Lectures
 title: "Modul 1: Einführung in die Mathematik"
-status: draft - review pending
+status: final
 tags:
   - index
   - mathematik
   - grundlagen
   - zahlenmengen
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-16
 ---
 
 # Modul 1: Einführung in die Mathematik
