@@ -35,34 +35,8 @@ Die Physikalische Schicht ist die unterste Schicht des OSI-Modells und der TCP/I
 
 ## Aufgaben der Physikalischen Schicht
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              PHYSIKALISCHE SCHICHT – AUFGABEN                   │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Daten (Bits)                                                  │
-│        │                                                        │
-│        ▼                                                        │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │              LEITUNGSCODIERUNG                          │  │
-│   │   • Umwandlung von Bits in elektrische/optische Signale│  │
-│   │   • Manchester, 4B5B, 8B10B, PAM-5                     │  │
-│   │   • Gleichstromfreiheit und Taktrückgewinnung          │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│        │                                                        │
-│        ▼                                                        │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │              SIGNALÜBERTRAGUNG                          │  │
-│   │   • Physikalische Signale auf dem Medium               │  │
-│   │   • Spannung, Licht, Funk                              │  │
-│   │   • Signalverstärkung bei Bedarf                       │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│        │                                                        │
-│        ▼                                                        │
-│   Physikalisches Medium (Kupfer, Glas, Funk)                   │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[physikalische-schicht-aufgaben.png]]
+*<span class="fig-id">03-03-04-00-physikalische-schicht-aufgaben</span>: Datenfluss durch die Physikalische Schicht – von Bits über Leitungscodierung und Signalübertragung zum physikalischen Medium.*
 
 ## Geräte auf Layer 1
 
