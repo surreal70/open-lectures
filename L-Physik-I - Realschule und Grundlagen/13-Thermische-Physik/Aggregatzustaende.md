@@ -1,0 +1,3 @@
+# Aggregatzustaende
+
+<!-- TODO: Inhalt ergänzen -->

@@ -1,0 +1,3 @@
+# Bericht
+
+<!-- TODO: Inhalt ergänzen -->

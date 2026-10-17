@@ -1,0 +1,3 @@
+# Amplitude
+
+<!-- TODO: Inhalt ergänzen -->

@@ -1,0 +1,3 @@
+# Kooperation
+
+<!-- TODO: Inhalt ergänzen -->

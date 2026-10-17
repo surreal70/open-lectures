@@ -1,0 +1,3 @@
+# Stromstaerke
+
+<!-- TODO: Inhalt ergänzen -->

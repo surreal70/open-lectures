@@ -1,0 +1,3 @@
+# Wirkungsgrad
+
+<!-- TODO: Inhalt ergänzen -->

@@ -1,0 +1,3 @@
+# Skelett
+
+<!-- TODO: Inhalt ergänzen -->

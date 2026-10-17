@@ -1,0 +1,3 @@
+# Diagnostik
+
+<!-- TODO: Inhalt ergänzen -->

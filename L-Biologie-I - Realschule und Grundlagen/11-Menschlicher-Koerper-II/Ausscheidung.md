@@ -1,0 +1,3 @@
+# Ausscheidung
+
+<!-- TODO: Inhalt ergänzen -->

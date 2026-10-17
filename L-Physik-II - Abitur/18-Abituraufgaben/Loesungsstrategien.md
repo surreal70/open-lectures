@@ -1,0 +1,3 @@
+# Loesungsstrategien
+
+<!-- TODO: Inhalt ergänzen -->

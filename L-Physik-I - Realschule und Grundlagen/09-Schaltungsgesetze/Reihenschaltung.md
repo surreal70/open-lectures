@@ -1,0 +1,3 @@
+# Reihenschaltung
+
+<!-- TODO: Inhalt ergänzen -->

@@ -1,0 +1,3 @@
+# Konkurrenz
+
+<!-- TODO: Inhalt ergänzen -->

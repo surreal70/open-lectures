@@ -1,0 +1,3 @@
+# Ethik
+
+<!-- TODO: Inhalt ergänzen -->

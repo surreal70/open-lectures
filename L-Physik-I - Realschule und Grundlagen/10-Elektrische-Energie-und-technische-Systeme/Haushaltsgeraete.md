@@ -1,0 +1,3 @@
+# Haushaltsgeraete
+
+<!-- TODO: Inhalt ergänzen -->

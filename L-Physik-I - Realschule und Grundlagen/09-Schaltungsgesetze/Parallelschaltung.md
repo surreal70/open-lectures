@@ -1,0 +1,3 @@
+# Parallelschaltung
+
+<!-- TODO: Inhalt ergänzen -->

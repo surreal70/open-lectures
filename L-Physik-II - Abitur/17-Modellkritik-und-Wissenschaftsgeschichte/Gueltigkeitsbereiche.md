@@ -1,0 +1,3 @@
+# Gueltigkeitsbereiche
+
+<!-- TODO: Inhalt ergänzen -->

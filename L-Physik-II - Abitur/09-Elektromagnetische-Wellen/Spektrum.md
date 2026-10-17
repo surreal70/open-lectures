@@ -1,0 +1,3 @@
+# Spektrum
+
+<!-- TODO: Inhalt ergänzen -->

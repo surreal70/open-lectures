@@ -1,0 +1,3 @@
+# Schutzstrategien
+
+<!-- TODO: Inhalt ergänzen -->

@@ -1,0 +1,3 @@
+# Potentialbegriff
+
+<!-- TODO: Inhalt ergänzen -->

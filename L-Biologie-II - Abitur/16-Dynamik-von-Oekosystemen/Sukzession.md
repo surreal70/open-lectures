@@ -1,0 +1,3 @@
+# Sukzession
+
+<!-- TODO: Inhalt ergänzen -->
