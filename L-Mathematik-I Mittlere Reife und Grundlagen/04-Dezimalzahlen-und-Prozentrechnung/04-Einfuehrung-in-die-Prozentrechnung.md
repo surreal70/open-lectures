@@ -15,7 +15,7 @@ tags:
   - prozentrechnung
   - grundlagen
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-16
 ---
 
 # Einführung in die Prozentrechnung
@@ -59,13 +59,8 @@ Wenn etwas in 100 gleiche Teile geteilt wird:
 - 25 Teile = 25%
 - 100 Teile = 100% (das Ganze)
 
-```
-100% = ████████████████████████████████████████████████████
- 50% = ██████████████████████████
- 25% = █████████████
- 10% = █████
-  1% = ▌
-```
+![[prozent-balken.png]]
+*<span class="fig-id">01-04-04-prozent-balken</span>: Prozent als Anteil des Ganzen – die Balkenlänge zeigt den Anteil: 100 % füllt das Ganze, 50 % die Hälfte, 1 % nur einen schmalen Streifen.*
 
 ## Die drei Grundgrößen
 
@@ -147,21 +142,8 @@ Der **Prozentwert** ist das Ergebnis der Prozentrechnung – der tatsächliche A
 
 ### Formeldreieck
 
-```
-        ┌─────┐
-        │  W  │
-        └──┬──┘
-           │
-    ┌──────┴──────┐
-    │             │
-┌───┴───┐   ┌─────┴─────┐
-│ G × p │   │    100    │
-└───────┘   └───────────┘
-
-W = G × p ÷ 100
-G = W × 100 ÷ p  
-p = W × 100 ÷ G
-```
+![[prozent-formeldreieck.png]]
+*<span class="fig-id">01-04-04-prozent-formeldreieck</span>: Formeldreieck der Prozentrechnung – deckt man die gesuchte Größe ab, ergibt sich die passende Formel für Prozentwert W, Grundwert G oder Prozentsatz p.*
 
 ### Die drei Grundformeln
 
