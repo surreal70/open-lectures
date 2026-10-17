@@ -9,7 +9,7 @@
     { "dir": "06-Differentialrechnung-II", "done": true },
     { "dir": "07-Integralrechnung-I", "done": true },
     { "dir": "08-Integralrechnung-II", "done": true },
-    { "dir": "09-Trigonometrie-und-periodische-Funktionen", "done": false },
+    { "dir": "09-Trigonometrie-und-periodische-Funktionen", "done": true },
     { "dir": "10-Vektorrechnung", "done": false },
     { "dir": "11-Analytische-Geometrie", "done": false },
     { "dir": "12-Einfuehrung-in-die-lineare-Algebra", "done": false },
