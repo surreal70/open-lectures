@@ -11,7 +11,7 @@
     { "dir": "08-Integralrechnung-II", "done": true },
     { "dir": "09-Trigonometrie-und-periodische-Funktionen", "done": true },
     { "dir": "10-Vektorrechnung", "done": true },
-    { "dir": "11-Analytische-Geometrie", "done": false },
+    { "dir": "11-Analytische-Geometrie", "done": true },
     { "dir": "12-Einfuehrung-in-die-lineare-Algebra", "done": false },
     { "dir": "13-Kombinatorik-und-Wahrscheinlichkeitsrechnung", "done": false },
     { "dir": "14-Wahrscheinlichkeitsverteilungen", "done": false },
