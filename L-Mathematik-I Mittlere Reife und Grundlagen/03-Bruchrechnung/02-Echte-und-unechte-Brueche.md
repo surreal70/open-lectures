@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: Echte und unechte Brüche
 status: draft - review pending
 tags:

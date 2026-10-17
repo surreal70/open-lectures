@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: Betrag einer Zahl
 status: final
 tags:

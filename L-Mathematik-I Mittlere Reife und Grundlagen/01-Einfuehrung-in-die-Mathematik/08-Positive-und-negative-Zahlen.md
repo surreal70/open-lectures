@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: Positive und negative Zahlen
 status: final
 tags:

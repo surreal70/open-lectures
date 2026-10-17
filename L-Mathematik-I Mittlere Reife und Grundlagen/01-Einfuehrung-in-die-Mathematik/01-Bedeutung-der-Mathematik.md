@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: Bedeutung der Mathematik in Wissenschaft und Technik
 status: final
 tags:

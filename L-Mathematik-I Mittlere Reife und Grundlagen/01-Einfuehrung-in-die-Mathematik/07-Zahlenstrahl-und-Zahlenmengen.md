@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: Zahlenstrahl und Zahlenmengen
 status: final
 tags:

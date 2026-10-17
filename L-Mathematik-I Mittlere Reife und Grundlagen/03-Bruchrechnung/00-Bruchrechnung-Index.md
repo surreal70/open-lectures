@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: "Modul 3: Bruchrechnung"
 status: draft - review pending
 tags:

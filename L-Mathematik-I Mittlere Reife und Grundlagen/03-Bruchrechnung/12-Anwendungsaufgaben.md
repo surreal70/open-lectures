@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: Anwendungsaufgaben zur Bruchrechnung
 status: draft - review pending
 tags:

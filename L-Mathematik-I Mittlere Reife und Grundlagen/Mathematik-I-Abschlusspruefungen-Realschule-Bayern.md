@@ -1,8 +1,8 @@
 ---
 title: "Mathematik I – Abschlussprüfungen Realschule Bayern"
-author: "Open Lectures"
+author: Andreas Hümmer
 created: 2026-10-15
-modified: 2026-10-15
+modified: 2026-10-16
 tags:
   - mathematik
   - pruefung
@@ -79,4 +79,4 @@ Für diese Jahrgänge stellt das ISB pro Jahr ein **Sammel-PDF** mit Haupt- und 
 > Wähle einen Jahrgang und öffne zunächst **Aufgaben**. Nach der Bearbeitung kann das zugehörige **Lösungs-PDF** zur Selbstkontrolle verwendet werden.
 
 ---
-*Open Lectures – Externe Prüfungslinks; keine Wiederveröffentlichung der Originalprüfungen.*
+*Andreas Hümmer – Externe Prüfungslinks; keine Wiederveröffentlichung der Originalprüfungen.*

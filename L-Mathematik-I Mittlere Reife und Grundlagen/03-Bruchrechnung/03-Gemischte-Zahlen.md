@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: Gemischte Zahlen
 status: draft - review pending
 tags:

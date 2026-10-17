@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: "Modul 2: Grundrechenarten und Rechengesetze"
 status: draft - review pending
 tags:
@@ -8,7 +8,7 @@ tags:
   - grundrechenarten
   - rechengesetze
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Modul 2: Grundrechenarten und Rechengesetze

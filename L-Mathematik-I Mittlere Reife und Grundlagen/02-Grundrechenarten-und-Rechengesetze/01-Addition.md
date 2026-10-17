@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: Addition
 status: draft - review pending
 tags:
@@ -8,7 +8,7 @@ tags:
   - grundrechenarten
   - addition
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Addition

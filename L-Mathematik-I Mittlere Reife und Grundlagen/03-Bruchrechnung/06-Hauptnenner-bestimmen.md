@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: Hauptnenner bestimmen
 status: draft - review pending
 tags:

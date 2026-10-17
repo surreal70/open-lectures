@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: Mathematische Schreibweisen und Symbole
 status: final
 tags:

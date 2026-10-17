@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: Division von Brüchen
 status: draft - review pending
 tags:

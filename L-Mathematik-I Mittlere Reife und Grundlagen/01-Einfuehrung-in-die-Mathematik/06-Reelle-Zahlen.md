@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: Reelle Zahlen – eine erste Einführung
 status: final
 tags:

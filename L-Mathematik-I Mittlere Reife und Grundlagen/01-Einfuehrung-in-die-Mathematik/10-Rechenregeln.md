@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: Mathematische Notation und Rechenregeln
 status: final
 tags:

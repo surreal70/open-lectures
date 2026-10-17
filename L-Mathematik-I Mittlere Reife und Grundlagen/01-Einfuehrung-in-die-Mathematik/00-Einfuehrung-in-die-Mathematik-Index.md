@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: "Modul 1: Einführung in die Mathematik"
 status: final
 tags:

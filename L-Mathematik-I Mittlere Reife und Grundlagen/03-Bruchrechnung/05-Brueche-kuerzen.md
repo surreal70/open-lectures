@@ -1,5 +1,5 @@
 ---
-author: Open Lectures
+author: Andreas Hümmer
 title: Brüche kürzen
 status: draft - review pending
 tags:
