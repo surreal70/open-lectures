@@ -8,7 +8,7 @@ tags:
   - zahlenmengen
   - reelle-zahlen
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-16
 ---
 
 # Reelle Zahlen – eine erste Einführung
@@ -48,24 +48,8 @@ Der Name „reell" (von lat. „res" = Sache, Ding) soll ausdrücken, dass diese
 
 Die verschiedenen Zahlenmengen bauen wie Matroschka-Puppen aufeinander auf:
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    Reelle Zahlen ℝ                      │
-│  ┌───────────────────────────────────────────────────┐  │
-│  │              Rationale Zahlen ℚ                   │  │
-│  │  ┌─────────────────────────────────────────────┐  │  │
-│  │  │            Ganze Zahlen ℤ                   │  │  │
-│  │  │  ┌───────────────────────────────────────┐  │  │  │
-│  │  │  │       Natürliche Zahlen ℕ             │  │  │  │
-│  │  │  │       1, 2, 3, 4, ...                 │  │  │  │
-│  │  │  └───────────────────────────────────────┘  │  │  │
-│  │  │  ..., -2, -1, 0, 1, 2, ...                  │  │  │
-│  │  └─────────────────────────────────────────────┘  │  │
-│  │  ..., -½, ⅓, 0,75, ...                           │  │
-│  └───────────────────────────────────────────────────┘  │
-│  √2, π, e, ...  (irrationale Zahlen)                    │
-└─────────────────────────────────────────────────────────┘
-```
+![[zahlenmengen-hierarchie.png]]
+*<span class="fig-id">01-01-06-zahlenmengen-hierarchie</span>: Die Zahlenmengen bauen wie Matroschka-Puppen aufeinander auf – jede Erweiterung umschließt die vorherige: ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ.*
 
 Die Hierarchie als mathematische Formel:
 
@@ -169,16 +153,8 @@ Ein fundamentaler Unterschied zwischen $\mathbb{Q}$ und $\mathbb{R}$ ist die **V
 
 ### Visualisierung
 
-```
-Zahlenstrahl:
-←────────┼────────┼────────┼────────┼────────┼────────→
-         0        1       √2       2        3
-
-         ↑                 ↑
-    Rationale          Irrationale
-      Zahl                Zahl
-    (in ℚ und ℝ)        (nur in ℝ)
-```
+![[zahlenstrahl-reell.png]]
+*<span class="fig-id">01-01-06-zahlenstrahl-reell</span>: Auf dem Zahlenstrahl liegen rationale Zahlen (z. B. 1, in ℚ und ℝ) und irrationale Zahlen (z. B. √2, nur in ℝ) nebeneinander – zusammen füllen sie die Linie lückenlos.*
 
 Die rationalen Zahlen sind wie Perlen auf einer Schnur verteilt – dicht, aber mit winzigen Lücken dazwischen. Die reellen Zahlen füllen diese Lücken und ergeben eine durchgehende Linie.
 
