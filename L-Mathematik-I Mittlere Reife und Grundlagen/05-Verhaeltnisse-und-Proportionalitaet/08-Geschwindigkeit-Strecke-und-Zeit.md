@@ -65,16 +65,8 @@ $$v = \frac{s}{t}$$
 
 ### Formeldreieck
 
-```
-      ┌───┐
-      │ s │
-      └─┬─┘
-    ────┼────
-   │    │    │
-┌──┴──┐ │ ┌──┴──┐
-│  v  │×│ │  t  │
-└─────┘ │ └─────┘
-```
+![[geschwindigkeit-dreieck.png]]
+*<span class="fig-id">01-05-08-geschwindigkeit-dreieck</span>: Formeldreieck für Geschwindigkeit, Strecke und Zeit – die Strecke s steht oben, Geschwindigkeit v und Zeit t darunter: s = v · t.*
 
 > [!tip] **Das Formeldreieck als Merkhelfe**
 > Das Dreieck hilft dir, die richtige Formel zu finden:
