@@ -15,7 +15,7 @@ tags:
   - stellenwert
   - zahlensysteme
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-16
 ---
 
 # Dezimalzahlen
@@ -46,17 +46,8 @@ Im Alltag begegnen uns Dezimalzahlen ständig: Preise (3,99 €), Temperaturen (
 
 Eine Dezimalzahl besteht aus einem **Vorkommateil** (ganzer Teil) und einem **Nachkommateil** (dezimaler Teil), getrennt durch ein Komma:
 
-```
-    123,456
-    ↑↑↑ ↑↑↑
-    │││ │││
-    │││ ││└── Tausendstel (1/1000)
-    │││ │└─── Hundertstel (1/100)
-    │││ └──── Zehntel (1/10)
-    ││└────── Einer (1)
-    │└─────── Zehner (10)
-    └──────── Hunderter (100)
-```
+![[dezimal-stellenwert.png]]
+*<span class="fig-id">01-04-01-dezimal-stellenwert</span>: Stellenwerte der Zahl 123,456 – links vom Komma Hunderter, Zehner und Einer, rechts davon Zehntel, Hundertstel und Tausendstel.*
 
 ### Stellenwerttabelle
 
@@ -172,12 +163,8 @@ Eine der erschütterndsten Entdeckungen der antiken Mathematik war, dass nicht a
 
 ### Einordnung
 
-```
-    0    0,5    1    1,5    2    2,5    3
-    |-----|-----|-----|-----|-----|-----|
-              ↑
-            1,25
-```
+![[dezimal-zahlenstrahl.png]]
+*<span class="fig-id">01-04-01-dezimal-zahlenstrahl</span>: Die Dezimalzahl 1,25 auf dem Zahlenstrahl – zwischen 1 und 1,5, genauer bei einem Viertel des Abstands von 1 nach 2.*
 
 ### Zwischen zwei Dezimalzahlen
 
