@@ -15,7 +15,7 @@ tags:
   - runden
   - genauigkeit
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-16
 ---
 
 # Rundungsregeln
@@ -56,15 +56,8 @@ Die **erste wegfallende Ziffer** (rechts von der Rundungsstelle) bestimmt die Ri
 
 ### Schema
 
-```
-    Rundungsstelle
-         ↓
-    23,4 | 7 2
-         ↑
-    Entscheidungsziffer (7 ≥ 5 → aufrunden)
-    
-    Ergebnis: 23,5
-```
+![[rundungs-schema.png]]
+*<span class="fig-id">01-04-03-rundungs-schema</span>: Rundungs-Schema – die Rundungsstelle (4) und die Entscheidungsziffer (7) bestimmen das Runden; da 7 ≥ 5, wird aufgerundet: 23,472 → 23,5.*
 
 ## Runden auf verschiedene Stellenwerte
 
@@ -185,13 +178,8 @@ Der **relative Rundungsfehler** setzt den absoluten Fehler ins Verhältnis zum W
 
 Bei mehreren Rundungen können sich Fehler aufaddieren:
 
-```
-1,4 × 2,3 × 1,7 = ?
-
-Exakt: 1,4 × 2,3 × 1,7 = 5,474
-Mit Zwischenrundung: 1,4 × 2,3 = 3,2 → 3,2 × 1,7 = 5,44
-Differenz: 0,034
-```
+![[rundungs-fehler.png]]
+*<span class="fig-id">01-04-03-rundungs-fehler</span>: Rundungsfehler bei Kettenrechnungen – frühes Zwischenrunden (5,44) weicht vom exakten Ergebnis (5,474) ab; die Differenz von 0,034 lässt sich durch Runden erst am Ende vermeiden.*
 
 > [!tip] Empfehlung
 > Bei Kettenrechnungen erst am Ende runden!
