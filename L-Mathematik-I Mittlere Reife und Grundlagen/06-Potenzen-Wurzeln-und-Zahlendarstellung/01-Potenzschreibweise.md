@@ -15,7 +15,7 @@ tags:
   - basis
   - exponent
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Potenzschreibweise
@@ -47,14 +47,8 @@ Im Alltag begegnen uns Potenzen ständig, oft ohne dass wir es bemerken: Die Fl�
 
 ## Begriffe
 
-```
-    ┌─ Exponent (Hochzahl)
-    │
-   2³ = 8
-   │    │
-   │    └─ Potenzwert
-   └─ Basis (Grundzahl)
-```
+![[potenz-begriffe.png]]
+*<span class="fig-id">01-06-01-potenz-begriffe</span>: Aufbau einer Potenz am Beispiel 2³ = 8 – die Basis (Grundzahl) 2, der Exponent (Hochzahl) 3 und der Potenzwert 8.*
 
 ## Sprechweisen
 
