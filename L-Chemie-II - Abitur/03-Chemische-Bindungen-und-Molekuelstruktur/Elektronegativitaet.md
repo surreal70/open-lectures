@@ -1,0 +1,3 @@
+# Elektronegativität
+
+< TODO: Inhalt ergänzen -->

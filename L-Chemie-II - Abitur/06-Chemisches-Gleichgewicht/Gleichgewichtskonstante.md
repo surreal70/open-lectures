@@ -1,0 +1,3 @@
+# Gleichgewichtskonstante
+
+< TODO: Inhalt ergänzen -->

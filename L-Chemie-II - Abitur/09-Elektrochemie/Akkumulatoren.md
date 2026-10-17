@@ -1,0 +1,3 @@
+# Akkumulatoren
+
+< TODO: Inhalt ergänzen -->

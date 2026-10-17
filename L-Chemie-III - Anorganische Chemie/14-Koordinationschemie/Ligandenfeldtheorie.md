@@ -1,0 +1,3 @@
+# Ligandenfeldtheorie
+
+< TODO: Inhalt ergänzen -->

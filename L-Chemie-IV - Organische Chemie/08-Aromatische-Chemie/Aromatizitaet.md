@@ -1,0 +1,3 @@
+# Aromatizität
+
+< TODO: Inhalt ergänzen -->

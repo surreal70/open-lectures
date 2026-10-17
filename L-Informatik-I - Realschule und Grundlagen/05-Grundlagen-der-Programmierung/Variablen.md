@@ -1,0 +1,3 @@
+# Variablen
+
+< TODO: Inhalt ergänzen -->

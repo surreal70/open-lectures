@@ -1,0 +1,3 @@
+# Strukturaufklärung
+
+< TODO: Inhalt ergänzen -->

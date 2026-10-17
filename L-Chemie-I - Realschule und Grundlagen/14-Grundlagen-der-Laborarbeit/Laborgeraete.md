@@ -1,0 +1,3 @@
+# Laborgeräte
+
+< TODO: Inhalt ergänzen -->

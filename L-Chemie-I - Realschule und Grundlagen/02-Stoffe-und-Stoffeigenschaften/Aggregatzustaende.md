@@ -1,0 +1,3 @@
+# Aggregatzustände
+
+< TODO: Inhalt ergänzen -->

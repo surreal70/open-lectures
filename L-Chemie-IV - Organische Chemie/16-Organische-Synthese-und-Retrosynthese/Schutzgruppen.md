@@ -1,0 +1,3 @@
+# Schutzgruppen
+
+< TODO: Inhalt ergänzen -->

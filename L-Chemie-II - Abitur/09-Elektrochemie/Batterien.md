@@ -1,0 +1,3 @@
+# Batterien
+
+< TODO: Inhalt ergänzen -->

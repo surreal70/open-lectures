@@ -1,0 +1,3 @@
+# Duroplaste
+
+< TODO: Inhalt ergänzen -->

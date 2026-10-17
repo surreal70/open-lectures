@@ -1,0 +1,3 @@
+# Massenwirkungsgesetz
+
+< TODO: Inhalt ergänzen -->

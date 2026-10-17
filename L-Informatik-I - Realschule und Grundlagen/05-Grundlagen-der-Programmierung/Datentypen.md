@@ -1,0 +1,3 @@
+# Datentypen
+
+< TODO: Inhalt ergänzen -->
