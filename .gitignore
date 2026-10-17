@@ -14,15 +14,27 @@
 # Noch nicht fertige Vaults (werden später hinzugefügt)
 L-Zufallszahlenerzeugung/
 L-Python/
-L-Chemie-I/
-L-Chemie-II/
-L-Chemie-III/
-L-Chemie-IV/
-L-Informatik-I/
-L-Informatik-II/
+
+# Chemie Vaults (in Arbeit)
+L-Chemie-I - Realschule und Grundlagen/
+L-Chemie-II - Abitur/
+L-Chemie-III - Anorganische Chemie/
+L-Chemie-IV - Organische Chemie/
+
+# Informatik Vaults (in Arbeit)
+L-Informatik-I - Realschule und Grundlagen/
+L-Informatik-II - Abitur/
 L-Informatik-III/
 L-Informatik-IV/
 L-Informatik-V/
+
+# Physik Vaults (in Arbeit)
+L-Physik-I - Realschule und Grundlagen/
+L-Physik-II - Abitur/
+
+# Biologie Vaults (in Arbeit)
+L-Biologie-I - Realschule und Grundlagen/
+L-Biologie-II - Abitur/
 
 # Temporäre Quellmaterialien
 /tmp/
