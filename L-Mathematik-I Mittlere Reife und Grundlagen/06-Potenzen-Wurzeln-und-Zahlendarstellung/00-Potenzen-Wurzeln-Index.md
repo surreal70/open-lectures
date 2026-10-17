@@ -9,7 +9,7 @@ tags:
   - wurzeln
   - index
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Potenzen, Wurzeln und Zahlendarstellung
@@ -46,16 +46,18 @@ Im Alltag begegnen uns Potenzen und Wurzeln häufiger, als wir denken: Die Speic
 
 ## Lernpfad
 
-```
-Potenzschreibweise (01) → Natürliche Exponenten (02) → Potenzgesetze (03)
-                                    ↓
-                    Negative Exponenten (04) → Zehnerpotenzen (05)
-                                    ↓
-              Quadratwurzeln (06) → Rechnen mit Wurzeln (07)
-                                    ↓
-              Wurzelgesetze (08) → Kubikwurzeln (09)
-                                    ↓
-         Wissenschaftliche Schreibweise (10) → Anwendungen (11-12)
+```mermaid
+graph TD
+    A[Potenzschreibweise 01] --> B[Natürliche Exponenten 02]
+    B --> C[Potenzgesetze 03]
+    C --> D[Negative Exponenten 04]
+    D --> E[Zehnerpotenzen 05]
+    E --> F[Quadratwurzeln 06]
+    F --> G[Rechnen mit Wurzeln 07]
+    G --> H[Wurzelgesetze 08]
+    H --> I[Kubikwurzeln 09]
+    I --> J[Wiss. Schreibweise 10]
+    J --> K[Anwendungen 11–12]
 ```
 
 ## Verbindungen zu anderen Kapiteln

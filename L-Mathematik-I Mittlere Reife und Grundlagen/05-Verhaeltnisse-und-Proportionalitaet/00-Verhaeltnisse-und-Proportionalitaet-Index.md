@@ -46,20 +46,21 @@ Im Alltag begegnen uns Verhältnisse ständig: beim Kochen (Mischungsverhältnis
 
 ## Lernpfad
 
-```
-Verhältnisse (01) → Proportionen (02) → Dreisatz (03)
-                           ↓
-           ┌───────────────┴───────────────┐
-           ↓                               ↓
-Direkte Proportionalität (04)    Indirekte Proportionalität (05)
-           ↓                               ↓
-           └───────────────┬───────────────┘
-                           ↓
-              ┌────────────┼────────────┐
-              ↓            ↓            ↓
-       Einheiten (06)  Maßstäbe (07)  Bewegung (08)
-              ↓            ↓            ↓
-           Dichte (09)          Technik (10)
+```mermaid
+graph TD
+    A[Verhältnisse 01] --> B[Proportionen 02]
+    B --> C[Dreisatz 03]
+    C --> D[Direkte Prop. 04]
+    C --> E[Indirekte Prop. 05]
+    D --> F[Einheiten 06]
+    D --> G[Maßstäbe 07]
+    D --> H[Bewegung 08]
+    E --> F
+    E --> G
+    E --> H
+    F --> I[Dichte 09]
+    G --> J[Technik 10]
+    H --> J
 ```
 
 ## Verbindungen zu anderen Kapiteln

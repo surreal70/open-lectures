@@ -9,7 +9,7 @@ tags:
   - algebra
   - index
 created: 2026-10-13
-modified: 2025-07-23
+modified: 2026-10-16
 ---
 
 # Terme und algebraische Ausdrücke
@@ -48,16 +48,18 @@ Die Algebra revolutionierte das mathematische Denken: Anstatt nur mit konkreten 
 
 ## Lernpfad
 
-```
-Variablen (01) → Terme (02) → Einsetzen (03)
-                     ↓
-Zusammenfassen (04) → Ausmultiplizieren (05) → Ausklammern (06)
-                     ↓
-         Vereinfachen (07)
-                     ↓
-         Binomische Formeln (08) → Faktorisierung (09)
-                     ↓
-    Formeln umstellen (10) → Anwendungen (11)
+```mermaid
+graph TD
+    A[Variablen 01] --> B[Terme 02]
+    B --> C[Einsetzen 03]
+    C --> D[Zusammenfassen 04]
+    D --> E[Ausmultiplizieren 05]
+    E --> F[Ausklammern 06]
+    F --> G[Vereinfachen 07]
+    G --> H[Binomische Formeln 08]
+    H --> I[Faktorisierung 09]
+    I --> J[Formeln umstellen 10]
+    J --> K[Anwendungen 11]
 ```
 
 ## Verbindungen

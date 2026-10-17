@@ -4,7 +4,7 @@ chapter: "15"
 section: "Index"
 type: index
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-16
 status: draft - review pending
 tags:
   - mathematik/anwendung
@@ -65,21 +65,12 @@ Die Trennung von „Schulmathe" und „echter Mathematik" ist ein weit verbreite
 
 Praktische Mathematik folgt einem immer wiederkehrenden Muster:
 
-```
-    ┌─────────────────────────────────────────────┐
-    │                                             │
-    ▼                                             │
-┌──────────┐    ┌───────────────┐    ┌────────┐  │
-│ Reales   │───▶│ Mathematisches│───▶│Lösung  │  │
-│ Problem  │    │ Modell        │    │berechnen│ │
-└──────────┘    └───────────────┘    └────────┘  │
-                                          │      │
-                                          ▼      │
-                                     ┌─────────┐ │
-                                     │Ergebnis │ │
-                                     │inter-   │─┘
-                                     │pretieren│
-                                     └─────────┘
+```mermaid
+graph TD
+    A[Reales Problem] --> B[Mathematisches Modell]
+    B --> C[Lösung berechnen]
+    C --> D[Ergebnis interpretieren]
+    D --> A
 ```
 
 Dieser Kreislauf zeigt: Mathematik endet nicht bei der Berechnung. Das Ergebnis muss immer zurück in die Realität übersetzt und auf Plausibilität geprüft werden.
