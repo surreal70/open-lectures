@@ -8,7 +8,7 @@ tags:
   - zahlenmengen
   - vorzeichen
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-16
 ---
 
 # Positive und negative Zahlen
@@ -56,15 +56,8 @@ Die **Null** nimmt eine Sonderstellung ein – sie ist der **neutrale Punkt**, d
 - Ist weder positiv noch negativ
 - Wird manchmal als „Ursprung" bezeichnet
 
-```
-    negative Zahlen          positive Zahlen
-           ↓                       ↓
-    ←──┬────┬────┬────┬────┬────┬────┬────┬──→
-      -3   -2   -1    0    1    2    3    4
-                      ↑
-                weder positiv
-                noch negativ
-```
+![[vorzeichen-null.png]]
+*<span class="fig-id">01-01-08-vorzeichen-null</span>: Die Null trennt als neutraler Punkt die negativen Zahlen (links) von den positiven (rechts) – sie ist selbst weder positiv noch negativ.*
 
 > [!note] **Warum ist Null nicht positiv?**
 > Per Konvention ist die Null neutral. Das macht mathematisch Sinn: Wenn man eine Zahl und ihre Gegenzahl addiert, erhält man Null. Die Null ist also der „Ausgleichspunkt" zwischen Positiv und Negativ.
@@ -164,14 +157,8 @@ Der Schlüssel ist das Vorzeichen: $-5$ ist weiter von null entfernt **in negati
 
 ### Visualisierung auf dem Zahlenstrahl
 
-```
-    ←──┬────┬────┬────┬────┬────┬────┬────┬──→
-      -5   -3   -1    0    1    3    5    7
-       ↑                                   ↑
-    kleiner                             größer
-
-    -5 < -3 < -1 < 0 < 1 < 3 < 5 < 7
-```
+![[vergleich-zahlenstrahl.png]]
+*<span class="fig-id">01-01-08-vergleich-zahlenstrahl</span>: Auf dem Zahlenstrahl gilt „weiter rechts = größer": −5 < −3 < −1 < 0 < 1 < 3 < 5 < 7.*
 
 > [!tip] **Merkregel: Rechts ist größer**
 > Auf dem Zahlenstrahl gilt immer: **Weiter rechts = größer**.
@@ -220,18 +207,8 @@ Die gleichen Regeln gelten für die Division.
 
 ### Zusammenfassung als Übersicht
 
-```
-Multiplikation/Division:
-
-  +  ·  +  =  +       "Plus mal Plus ergibt Plus"
-  +  ·  -  =  -       "Plus mal Minus ergibt Minus"
-  -  ·  +  =  -       "Minus mal Plus ergibt Minus"
-  -  ·  -  =  +       "Minus mal Minus ergibt Plus"
-
-Kurzform:
-  Gleiche Vorzeichen → Ergebnis positiv
-  Verschiedene Vorzeichen → Ergebnis negativ
-```
+![[vorzeichenregeln.png]]
+*<span class="fig-id">01-01-08-vorzeichenregeln</span>: Vorzeichenregeln für Multiplikation und Division als Matrix – gleiche Vorzeichen ergeben ein positives, verschiedene ein negatives Ergebnis.*
 
 ---
 
