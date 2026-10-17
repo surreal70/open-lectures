@@ -1,7 +1,7 @@
 ---
 author: Andreas Hümmer
 title: Umwandlung von Brüchen in Dezimalzahlen
-status: draft - review pending
+status: final
 tags:
   - content
   - mathematik

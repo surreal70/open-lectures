@@ -1,7 +1,7 @@
 ---
 author: Andreas Hümmer
 title: "Modul 3: Bruchrechnung"
-status: draft - review pending
+status: final
 tags:
   - index
   - mathematik
