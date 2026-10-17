@@ -51,21 +51,8 @@ $$\frac{2}{3} \cdot \frac{4}{5} = \frac{2 \cdot 4}{3 \cdot 5} = \frac{8}{15}$$
 
 $\frac{1}{2} \cdot \frac{1}{3}$ = „die Hälfte von einem Drittel"
 
-```
-    1/3 des Ganzen:
-    ┌───────┬───────┬───────┐
-    │   ▓   │       │       │
-    │   ▓   │       │       │
-    └───────┴───────┴───────┘
-    
-    1/2 davon (obere Hälfte des gefärbten Drittels):
-    ┌───────┬───────┬───────┐
-    │  ▓▓▓  │       │       │
-    ├───────┼───────┼───────┤
-    │       │       │       │
-    └───────┴───────┴───────┘
-          = 1/6 des Ganzen
-```
+![[bruch-multiplikation.png]]
+*<span class="fig-id">01-03-09-bruch-multiplikation</span>: Bruchmultiplikation als Flächenmodell – das Ganze wird in 3 Spalten (⅓) und 2 Zeilen (½) geteilt; die markierte Zelle ist ½ · ⅓ = ⅙.*
 
 Das Ganze wurde in 6 Teile geteilt (2 Zeilen × 3 Spalten), und wir haben 1 davon markiert: $\frac{1}{2} \cdot \frac{1}{3} = \frac{1}{6}$
 
