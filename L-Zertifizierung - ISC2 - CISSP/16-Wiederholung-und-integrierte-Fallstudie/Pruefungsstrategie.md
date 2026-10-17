@@ -1,0 +1,3 @@
+# Pruefungsstrategie
+
+<!-- TODO: Inhalt ergänzen -->

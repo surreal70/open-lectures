@@ -1,0 +1,3 @@
+# Verantwortlichkeiten
+
+<!-- TODO: Inhalt ergänzen -->

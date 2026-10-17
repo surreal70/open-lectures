@@ -1,0 +1,3 @@
+# Glossar
+
+<!-- TODO: Sicherheitsbegriffe ergänzen -->
