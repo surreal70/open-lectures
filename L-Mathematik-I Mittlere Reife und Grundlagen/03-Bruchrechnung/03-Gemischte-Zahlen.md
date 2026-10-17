@@ -99,15 +99,8 @@ $$\frac{17}{5} = 17 : 5 = 3 \text{ Rest } 2 = 3\frac{2}{5}$$
 
 $2\frac{1}{4}$:
 
-```
-┌───────────┐  ┌───────────┐  ┌───┬───┬───┬───┐
-│           │  │           │  │ ▓ │   │   │   │
-│  1 Ganzes │  │  1 Ganzes │  │   │   │   │   │
-│           │  │           │  └───┴───┴───┴───┘
-└───────────┘  └───────────┘      ¼
-      ↓              ↓              ↓
-      1      +       1      +      ¼     = 2¼
-```
+![[gemischte-zahl.png]]
+*<span class="fig-id">01-03-03-gemischte-zahl</span>: Die gemischte Zahl 2¼ – zwei ganze Einheiten plus ein Viertel: 1 + 1 + ¼ = 2¼.*
 
 Die Visualisierung zeigt klar: Eine gemischte Zahl besteht aus vollständigen Einheiten plus einem Bruchteil. Bei $2\frac{1}{4}$ haben wir zwei ganze Rechtecke und zusätzlich noch ein Viertel eines dritten.
 
