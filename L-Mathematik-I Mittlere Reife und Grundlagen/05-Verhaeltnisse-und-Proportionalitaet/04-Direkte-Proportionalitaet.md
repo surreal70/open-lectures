@@ -75,20 +75,13 @@ Der Wert k heißt **Proportionalitätsfaktor**.
 
 ## Graph
 
-```
-  y (Preis)
-  ↑
-12│          ·
-10│        ·
- 8│      ·
- 6│    ·
- 4│  ·
- 2│·
-  └───────────────→ x (Menge)
-    1 2 3 4 5
-```
+![[direkte-proportionalitaet.png]]
+*<span class="fig-id">01-05-04-direkte-proportionalitaet</span>: Graph einer direkten Proportionalität (Preis = 2,50 · Menge) – eine Gerade durch den Ursprung; zu doppelter Menge gehört doppelter Preis.*
 
 Die Gerade geht durch den **Ursprung (0|0)**.
+
+> [!info] **Darstellung im Koordinatensystem**
+> Das Koordinatensystem wird hier zur Veranschaulichung genutzt. Wie man Funktionen und ihre Graphen systematisch aufstellt und liest, wird ausführlich in → [[00-Funktionen-Index|Modul 9: Funktionen und Koordinatensysteme]] behandelt.
 
 > [!tip] **Erkennungsmerkmal im Graphen**
 > Eine direkte Proportionalität erkennst du immer daran, dass der Graph:
