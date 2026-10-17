@@ -28,33 +28,24 @@ bereich: RN
 
 ### Bandbreite und Datenrate
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    GRUNDBEGRIFFE                                │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Bandbreite (B)                                                │
-│   • Frequenzbereich eines Übertragungskanals                   │
-│   • Einheit: Hertz (Hz)                                        │
-│   • Beispiel: Telefonleitung ≈ 3100 Hz (300-3400 Hz)          │
-│                                                                 │
-│   Baudrate (Symbolrate)                                         │
-│   • Anzahl der Signaländerungen pro Sekunde                    │
-│   • Einheit: Baud (Bd)                                         │
-│   • 1 Symbol kann mehrere Bits kodieren                        │
-│                                                                 │
-│   Bitrate (Datenrate)                                           │
-│   • Anzahl übertragener Bits pro Sekunde                       │
-│   • Einheit: bit/s (bps)                                       │
-│   • Bitrate = Baudrate × Bits pro Symbol                       │
-│                                                                 │
-│   Beispiel:                                                     │
-│   100 MBaud mit 2 Bit/Symbol = 200 Mbit/s                      │
-│   1000BASE-T: 125 MBaud mit PAM-5 → 250 Mbit/s pro Paar       │
-│               × 4 Paare × 2 (Vollduplex) = 1000 Mbit/s         │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Bandbreite (B)**
+- Frequenzbereich eines Übertragungskanals
+- Einheit: Hertz (Hz)
+- Beispiel: Telefonleitung ≈ 3100 Hz (300–3400 Hz)
+
+**Baudrate (Symbolrate)**
+- Anzahl der Signaländerungen pro Sekunde
+- Einheit: Baud (Bd)
+- 1 Symbol kann mehrere Bits kodieren
+
+**Bitrate (Datenrate)**
+- Anzahl übertragener Bits pro Sekunde
+- Einheit: bit/s (bps)
+- Bitrate = Baudrate × Bits pro Symbol
+
+> [!beispiel] Rechenbeispiel
+> - 100 MBaud mit 2 Bit/Symbol = 200 Mbit/s
+> - 1000BASE-T: 125 MBaud mit PAM-5 → 250 Mbit/s pro Paar × 4 Paare × 2 (Vollduplex) = 1000 Mbit/s
 
 ### Shannon-Theorem
 
@@ -85,44 +76,31 @@ Die **Leitungscodierung** wandelt digitale Daten in übertragbare Signale um.
 
 ### Wichtige Codierungsverfahren
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                 LEITUNGSCODIERUNGEN                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   NRZ (Non-Return-to-Zero)                                      │
-│   ┌───┐   ┌───────┐       ┌───┐                                │
-│   │   │   │       │       │   │                                │
-│   ┘   └───┘       └───────┘   └──                              │
-│     1   0     1       0     1   0                               │
-│   Problem: Keine Taktrückgewinnung bei langen 0/1-Folgen       │
-│                                                                 │
-│   Manchester (10BASE-T Ethernet)                                │
-│   ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐                                     │
-│   │ └─┘ └─┘ └─┘ └─┘ └─┘ │                                      │
-│   └─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┐ ┌─┘                                      │
-│     1   0   1   1   0   1                                       │
-│   Flanke in der Mitte jedes Bits = Takt + Daten                │
-│   0 = High→Low, 1 = Low→High                                   │
-│   Nachteil: 2× Bandbreite nötig (50% Effizienz)               │
-│                                                                 │
-│   4B5B + NRZI (100BASE-TX)                                      │
-│   • 4 Datenbits → 5 Codebits                                   │
-│   • Garantiert max. 3 aufeinanderfolgende Nullen               │
-│   • 80% Effizienz                                              │
-│                                                                 │
-│   8B10B (1000BASE-X)                                            │
-│   • 8 Datenbits → 10 Codebits                                  │
-│   • DC-Balance und Taktrückgewinnung                           │
-│   • 80% Effizienz                                              │
-│                                                                 │
-│   PAM-5 (1000BASE-T)                                            │
-│   • 5 Spannungspegel: -2, -1, 0, +1, +2                        │
-│   • 2 Bit pro Symbol (4 Datenpegel + 1 Fehlererkennung)       │
-│   • Alle 4 Adernpaare bidirektional                           │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[leitungscodierung-nrz-manchester.png]]
+*<span class="fig-id">03-03-04-02-leitungscodierung</span>: NRZ- und Manchester-Codierung im Vergleich. Bei NRZ fehlt die Taktrückgewinnung bei langen 0/1-Folgen. Manchester codiert den Takt durch eine Flanke in der Bitmitte.*
+
+**4B5B + NRZI (100BASE-TX)**
+- 4 Datenbits → 5 Codebits
+- Garantiert max. 3 aufeinanderfolgende Nullen
+- 80% Effizienz
+
+**8B10B (1000BASE-X, Fibre Channel)**
+- 8 Datenbits → 10 Codebits
+- DC-Balance und Taktrückgewinnung
+- 80% Effizienz
+
+**PAM-5 (1000BASE-T)**
+- 5 Spannungspegel: −2, −1, 0, +1, +2
+- 2 Bit pro Symbol (4 Datenpegel + 1 Fehlererkennung)
+- Alle 4 Adernpaare bidirektional
+
+> [!info] Gleichstromfreiheit (DC-Balance)
+> Ein wichtiges Ziel vieler Leitungscodierungen ist die **Gleichstromfreiheit** – das Signal enthält keinen DC-Anteil (Mittelwert = 0). Dies ist notwendig, weil:
+> - **Transformatorkopplung**: Übertrager (z.B. in Ethernet-Buchsen) können keinen Gleichstrom übertragen
+> - **Kapazitive Kopplung**: Kondensatoren blockieren DC-Anteile
+> - **Baseline Wander**: Ein DC-Anteil verschiebt den Referenzpegel und erschwert die Dekodierung
+> 
+> Manchester erreicht dies durch garantierte Flanken, 8B10B durch spezielle Codeworte mit ausgeglichener Anzahl von Einsen und Nullen.
 
 ### Vergleich der Codierungen
 
@@ -156,38 +134,29 @@ Die **Kanalcodierung** fügt Redundanz hinzu, um Fehler zu erkennen und zu korri
 
 Bei der **Modulation** wird ein hochfrequenter Träger durch das Nutzsignal verändert.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    MODULATIONSARTEN                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Träger:  ∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿                            │
-│                                                                 │
-│   AM (Amplitudenmodulation)                                     │
-│   • Amplitude des Trägers wird verändert                       │
-│   • Einfach, aber störanfällig                                 │
-│   ∿∿∿∿∿∿                  ∿∿∿∿∿∿                               │
-│   klein (0)              groß (1)                               │
-│                                                                 │
-│   FM (Frequenzmodulation)                                       │
-│   • Frequenz des Trägers wird verändert                        │
-│   • Robuster als AM                                            │
-│   ∿∿∿∿∿∿∿∿∿∿             ∿∿∿∿∿∿∿∿∿∿∿∿∿∿∿                      │
-│   niedrig (0)            hoch (1)                               │
-│                                                                 │
-│   PM (Phasenmodulation)                                         │
-│   • Phase des Trägers wird verändert                           │
-│   • Basis für digitale Modulation                              │
-│   ∿∿∿∿│∿∿∿∿              Phasensprung = Bitwechsel             │
-│                                                                 │
-│   QAM (Quadrature Amplitude Modulation)                         │
-│   • Kombination aus AM und PM                                  │
-│   • Mehrere Bits pro Symbol möglich                            │
-│   • QAM-16 = 4 Bit/Symbol, QAM-256 = 8 Bit/Symbol             │
-│   • Verwendet in DSL, Kabel, WLAN                              │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[modulationsarten.png]]
+*<span class="fig-id">03-03-04-02-modulationsarten</span>: Modulationsarten im Vergleich – AM, FM, PM und QAM-Konstellationsdiagramme.*
+
+**AM (Amplitudenmodulation)**
+- Amplitude des Trägers wird verändert
+- Einfach zu implementieren, aber störanfällig
+- Anwendung: Rundfunk (Mittelwelle)
+
+**FM (Frequenzmodulation)**
+- Frequenz des Trägers wird verändert
+- Robuster gegenüber Störungen als AM
+- Anwendung: UKW-Radio, analoges TV-Audio
+
+**PM (Phasenmodulation)**
+- Phase des Trägers wird verändert
+- Basis für digitale Modulationsverfahren
+- Anwendung: BPSK, QPSK in WLAN und Satellit
+
+**QAM (Quadrature Amplitude Modulation)**
+- Kombination aus Amplituden- und Phasenmodulation
+- Mehrere Bits pro Symbol durch verschiedene Signalpunkte im I/Q-Diagramm
+- Je mehr Punkte im Konstellationsdiagramm, desto mehr Bits/Symbol – aber auch höhere Fehleranfälligkeit
+- Anwendung: DSL, Kabel-Internet, WLAN, LTE/5G
 
 ### Digitale Modulationsverfahren
 
@@ -203,34 +172,28 @@ Bei der **Modulation** wird ein hochfrequenter Träger durch das Nutzsignal ver�
 
 ## Duplex-Verfahren
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DUPLEX-VERFAHREN                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Simplex                                                       │
-│   ────────────────────────────►                                │
-│   Nur in eine Richtung (z.B. Radio)                            │
-│                                                                 │
-│   Half-Duplex (HDX)                                             │
-│   ◄───────────────────────────►                                │
-│   Abwechselnd in beide Richtungen (z.B. Walkie-Talkie)        │
-│   Früher: Ethernet über Koax, Hub                              │
-│                                                                 │
-│   Full-Duplex (FDX)                                             │
-│   ────────────────────────────►                                │
-│   ◄────────────────────────────                                │
-│   Gleichzeitig in beide Richtungen                             │
-│   Heute: Ethernet über Switch mit Twisted Pair                 │
-│                                                                 │
-│   Technische Umsetzung:                                         │
-│   • Separate Leitungen (100BASE-TX: 2 Paare)                   │
-│   • Echo-Cancellation (1000BASE-T: 4 Paare bidirektional)     │
-│   • Frequenztrennung (FDD)                                     │
-│   • Zeitmultiplex (TDD)                                        │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[duplex-verfahren.png]]
+*<span class="fig-id">03-03-04-02-duplex</span>: Duplex-Verfahren – Simplex, Half-Duplex und Full-Duplex im Vergleich.*
+
+**Simplex**
+- Übertragung nur in eine Richtung
+- Beispiele: Radio, TV-Broadcast, Sensordaten
+
+**Half-Duplex (HDX)**
+- Abwechselnd in beide Richtungen
+- Zu einem Zeitpunkt kann nur eine Station senden
+- Beispiele: Walkie-Talkie, frühere Ethernet-Netze über Koax/Hub
+
+**Full-Duplex (FDX)**
+- Gleichzeitig in beide Richtungen
+- Beide Stationen können simultan senden und empfangen
+- Beispiele: Telefon, Ethernet über Switch mit Twisted Pair
+
+**Technische Umsetzung von Full-Duplex:**
+- **Separate Leitungen**: 100BASE-TX nutzt 2 Adernpaare (je eins pro Richtung)
+- **Echo-Cancellation**: 1000BASE-T nutzt alle 4 Paare bidirektional und filtert das eigene Signal heraus
+- **Frequenztrennung (FDD)**: Unterschiedliche Frequenzbänder für Senden/Empfangen (z.B. LTE)
+- **Zeitmultiplex (TDD)**: Schneller Wechsel zwischen Senden und Empfangen (z.B. WLAN)
 
 ## Zusammenfassung
 
@@ -247,8 +210,6 @@ Bei der **Modulation** wird ein hochfrequenter Träger durch das Nutzsignal ver�
 > [!pruefung] Prüfungstipps
 > - Verstehen Sie den Unterschied zwischen Leitungs- und Kanalcodierung
 > - Kennen Sie die Manchester-Codierung und warum sie verwendet wird
-> - Können Sie das Shannon-Theorem erklären
-> - Wissen Sie, was QAM ist und wozu es verwendet wird
 
 ## Verwandte Themen
 

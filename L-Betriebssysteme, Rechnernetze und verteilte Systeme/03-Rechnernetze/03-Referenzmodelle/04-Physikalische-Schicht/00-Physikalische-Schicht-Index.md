@@ -32,6 +32,8 @@ Die Physikalische Schicht ist die unterste Schicht des OSI-Modells und der TCP/I
 |-----|-------|--------------|
 | 01 | [[01-Uebertragungsmedien]] | Kupfer, Glasfaser, Funk |
 | 02 | [[02-Signale]] | Codierung, Modulation, Signalqualität |
+| 03 | [[03-Power-over-Ethernet]] | PoE-Standards, Stromversorgung über Ethernet |
+| 04 | [[04-Auto-MDI-X]] | Automatische Kabeltyperkennung |
 
 ## Aufgaben der Physikalischen Schicht
 

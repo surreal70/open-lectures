@@ -350,7 +350,6 @@ Die **MAU** (Media Access Unit) war ein wichtiges Gerät in frühen Ethernet-Net
 > [!pruefung] Prüfungstipps
 > - Kennen Sie die Kabelkategorien (Cat5e, Cat6, Cat6a) und ihre Geschwindigkeiten
 > - Verstehen Sie den Unterschied Singlemode vs. Multimode
-> - Können Sie T568A/B Pinbelegung erklären
 > - Wissen Sie, welche Reichweiten die verschiedenen Medien haben
 
 ## Verwandte Themen
