@@ -14,7 +14,7 @@
     { "dir": "11-Analytische-Geometrie", "done": true },
     { "dir": "12-Einfuehrung-in-die-lineare-Algebra", "done": true },
     { "dir": "13-Kombinatorik-und-Wahrscheinlichkeitsrechnung", "done": true },
-    { "dir": "14-Wahrscheinlichkeitsverteilungen", "done": false },
+    { "dir": "14-Wahrscheinlichkeitsverteilungen", "done": true },
     { "dir": "15-Statistik-und-Hypothesentests", "done": false },
     { "dir": "16-Mathematische-Modellierung-und-Abschlussprojekt", "done": false }
   ]
