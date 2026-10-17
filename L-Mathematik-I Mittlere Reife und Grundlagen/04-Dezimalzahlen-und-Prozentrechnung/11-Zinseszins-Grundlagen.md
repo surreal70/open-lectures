@@ -195,8 +195,25 @@ Die 72er-Regel ist eine Näherung, die aus der Zinseszinsformel abgeleitet wird.
 
 ### Visualisierung
 
+Am anschaulichsten wird der Zinseszinseffekt, wenn man die Kapitalentwicklung Jahr für Jahr in einer **Wertetabelle** gegenüberstellt. Beispiel: 10.000 € Startkapital bei 5 % pro Jahr.
+
+| Jahr $n$ | Einfache Zinsen: $K_0 \cdot (1 + p \cdot n)$ | Zinseszins: $K_0 \cdot (1+p)^n$ |
+|----------|-----------------------------------------------|----------------------------------|
+| 0 | 10.000 € | 10.000 € |
+| 5 | 12.500 € | 12.763 € |
+| 10 | 15.000 € | 16.289 € |
+| 15 | 17.500 € | 20.789 € |
+| 20 | 20.000 € | 26.533 € |
+
+Beide Spalten starten beim selben Anfangskapital. In Jahr 0 stimmen sie überein; danach zieht der Zinseszins immer weiter davon, weil die bereits gutgeschriebenen Zinsen selbst wieder Zinsen erbringen.
+
+Trägt man die Werte dieser Tabelle als Punkte auf und verbindet sie, liefert die Visualisierung das folgende Bild – eine **Gerade** für die einfachen Zinsen und eine nach oben gekrümmte **Kurve** für den Zinseszins:
+
 ![[zinseszins-wachstum.png]]
 *<span class="fig-id">01-04-11-zinseszins-wachstum</span>: Zinseszins (exponentiell, K₀·(1+p)ⁿ) wächst schneller als einfache Zinsen (linear, K₀·(1+p·n)) – beide starten bei K₀, die Zinseszinskurve liegt stets auf oder über der Geraden.*
+
+> [!info] **Darstellung im Koordinatensystem**
+> Diese grafische Darstellung von Werten in einem Koordinatensystem – Zeit auf der waagerechten, Kapital auf der senkrechten Achse – ist hier nur zur Veranschaulichung vorweggenommen. Wie man Funktionen und ihre Graphen systematisch aufstellt und liest, wird ausführlich in → [[00-Funktionen-Index|Modul 9: Funktionen und Koordinatensysteme]] behandelt.
 
 ### Langfristige Wirkung
 
