@@ -1,3 +1,0 @@
-# Zufallsvariablen
-
-< TODO: Inhalt ergänzen -->

@@ -1,3 +1,0 @@
-# Erwartungswert
-
-< TODO: Inhalt ergänzen -->

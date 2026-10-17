@@ -1,3 +1,0 @@
-# Koordinatentransformationen
-
-< TODO: Inhalt ergänzen -->

@@ -1,3 +1,0 @@
-# Matrizen
-
-< TODO: Inhalt ergänzen -->

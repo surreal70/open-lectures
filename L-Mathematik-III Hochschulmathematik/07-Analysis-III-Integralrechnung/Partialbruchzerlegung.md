@@ -1,3 +1,0 @@
-# Partialbruchzerlegung
-
-< TODO: Inhalt ergänzen -->

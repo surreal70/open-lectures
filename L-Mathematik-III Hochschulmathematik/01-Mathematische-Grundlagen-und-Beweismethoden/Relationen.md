@@ -1,3 +1,0 @@
-# Relationen
-
-< TODO: Inhalt ergänzen -->

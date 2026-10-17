@@ -1,3 +1,0 @@
-# Faltung
-
-< TODO: Inhalt ergänzen -->

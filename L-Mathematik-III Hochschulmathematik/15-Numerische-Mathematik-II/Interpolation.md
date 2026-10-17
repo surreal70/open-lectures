@@ -1,3 +1,0 @@
-# Interpolation
-
-< TODO: Inhalt ergänzen -->

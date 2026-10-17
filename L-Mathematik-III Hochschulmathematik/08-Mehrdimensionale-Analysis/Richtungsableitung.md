@@ -1,3 +1,0 @@
-# Richtungsableitung
-
-< TODO: Inhalt ergänzen -->

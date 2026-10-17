@@ -1,3 +1,0 @@
-# Differentialgleichungssysteme
-
-< TODO: Inhalt ergänzen -->

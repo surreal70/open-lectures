@@ -1,3 +1,0 @@
-# Wärmeleitungsgleichung
-
-< TODO: Inhalt ergänzen -->

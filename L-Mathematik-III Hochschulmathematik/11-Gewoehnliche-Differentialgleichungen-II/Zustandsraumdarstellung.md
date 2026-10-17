@@ -1,3 +1,0 @@
-# Zustandsraumdarstellung
-
-< TODO: Inhalt ergänzen -->

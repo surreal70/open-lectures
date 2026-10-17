@@ -1,3 +1,0 @@
-# Exponentialdarstellung
-
-< TODO: Inhalt ergänzen -->

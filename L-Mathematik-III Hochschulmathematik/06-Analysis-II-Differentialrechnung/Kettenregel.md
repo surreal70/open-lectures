@@ -1,3 +1,0 @@
-# Kettenregel
-
-< TODO: Inhalt ergänzen -->

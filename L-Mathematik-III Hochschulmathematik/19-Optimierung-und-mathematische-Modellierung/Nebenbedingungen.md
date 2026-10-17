@@ -1,3 +1,0 @@
-# Nebenbedingungen
-
-< TODO: Inhalt ergänzen -->

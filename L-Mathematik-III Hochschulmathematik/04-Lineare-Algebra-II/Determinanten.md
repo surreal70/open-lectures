@@ -1,3 +1,0 @@
-# Determinanten
-
-< TODO: Inhalt ergänzen -->

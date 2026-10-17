@@ -1,3 +1,0 @@
-# Skalarprodukte
-
-< TODO: Inhalt ergänzen -->

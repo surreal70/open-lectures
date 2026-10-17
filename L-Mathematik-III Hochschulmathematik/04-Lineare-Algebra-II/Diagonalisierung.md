@@ -1,3 +1,0 @@
-# Diagonalisierung
-
-< TODO: Inhalt ergänzen -->

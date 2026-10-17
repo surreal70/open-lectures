@@ -1,3 +1,0 @@
-# Untervektorräume
-
-< TODO: Inhalt ergänzen -->

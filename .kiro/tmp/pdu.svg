@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480">
+  <rect x="0" y="0" width="720" height="480" fill="#1A1A1A"/>
+  <text x="360" y="30" fill="#E8E8E8" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">PDU (Protocol Data Unit) pro Schicht</text>
+  <rect x="20" y="50" width="680" height="415" fill="#2D2D2D" stroke="#4A9EFF" rx="8" stroke-width="2"/>
+  <text x="45" y="80" fill="#888888" font-family="monospace" font-size="11">DoD-Schicht</text>
+  <text x="200" y="80" fill="#888888" font-family="monospace" font-size="11">PDU-Name</text>
+  <text x="420" y="80" fill="#888888" font-family="monospace" font-size="11">Enthält</text>
+  <line x1="35" y1="90" x2="685" y2="90" stroke="#444444" stroke-width="1"/>
+  <rect x="35" y="110" width="650" height="32" fill="#F39C12" stroke="none" rx="3" fill-opacity="0.15"/>
+  <text x="45" y="132" fill="#CCCCCC" font-family="monospace" font-size="12" font-weight="bold">Anwendung</text>
+  <text x="200" y="132" fill="#F39C12" font-family="monospace" font-size="11">Daten / Message</text>
+  <text x="420" y="132" fill="#888888" font-family="monospace" font-size="11">Nutzdaten</text>
+  <rect x="35" y="145" width="650" height="32" fill="#2ECC71" stroke="none" rx="3" fill-opacity="0.15"/>
+  <text x="45" y="167" fill="#CCCCCC" font-family="monospace" font-size="12" font-weight="bold">Transport</text>
+  <text x="200" y="167" fill="#2ECC71" font-family="monospace" font-size="11">Segment (TCP) / Datagramm (UDP)</text>
+  <text x="420" y="167" fill="#888888" font-family="monospace" font-size="11">TCP/UDP-Header + Daten</text>
+  <rect x="35" y="180" width="650" height="32" fill="#9B59B6" stroke="none" rx="3" fill-opacity="0.15"/>
+  <text x="45" y="202" fill="#CCCCCC" font-family="monospace" font-size="12" font-weight="bold">Internet</text>
+  <text x="200" y="202" fill="#9B59B6" font-family="monospace" font-size="11">Paket / IP-Datagramm</text>
+  <text x="420" y="202" fill="#888888" font-family="monospace" font-size="11">IP-Header + Segment</text>
+  <rect x="35" y="215" width="650" height="32" fill="#4A9EFF" stroke="none" rx="3" fill-opacity="0.15"/>
+  <text x="45" y="237" fill="#CCCCCC" font-family="monospace" font-size="12" font-weight="bold">Netzzugang</text>
+  <text x="200" y="237" fill="#4A9EFF" font-family="monospace" font-size="11">Frame / Rahmen</text>
+  <text x="420" y="237" fill="#888888" font-family="monospace" font-size="11">Eth-Header + Paket + FCS</text>
+  <rect x="35" y="250" width="650" height="32" fill="#E74C3C" stroke="none" rx="3" fill-opacity="0.15"/>
+  <text x="45" y="272" fill="#CCCCCC" font-family="monospace" font-size="12" font-weight="bold">(Physikalisch)</text>
+  <text x="200" y="272" fill="#E74C3C" font-family="monospace" font-size="11">Bits</text>
+  <text x="420" y="272" fill="#888888" font-family="monospace" font-size="11">0 und 1 auf Medium</text>
+  <text x="45" y="300" fill="#E8E8E8" font-family="monospace" font-size="12" font-weight="bold">Visuelle Einkapselung:</text>
+  <rect x="45" y="320" width="620" height="120" fill="#4A9EFF" stroke="#4A9EFF" rx="4" fill-opacity="0.2" stroke-width="2"/>
+  <rect x="65" y="335" width="560" height="90" fill="#9B59B6" stroke="#9B59B6" rx="4" fill-opacity="0.2" stroke-width="2"/>
+  <rect x="85" y="350" width="500" height="60" fill="#2ECC71" stroke="#2ECC71" rx="4" fill-opacity="0.2" stroke-width="2"/>
+  <rect x="105" y="365" width="440" height="30" fill="#F39C12" stroke="#F39C12" rx="4" fill-opacity="0.2" stroke-width="2"/>
+  <text x="55" y="430" fill="#4A9EFF" font-family="monospace" font-size="10" font-weight="bold">Eth</text>
+  <text x="75" y="415" fill="#9B59B6" font-family="monospace" font-size="10" font-weight="bold">IP</text>
+  <text x="95" y="400" fill="#2ECC71" font-family="monospace" font-size="10" font-weight="bold">TCP</text>
+  <text x="310" y="383" fill="#F39C12" font-family="monospace" font-size="10" font-weight="bold">Daten</text>
+  <text x="605" y="430" fill="#4A9EFF" font-family="monospace" font-size="10" font-weight="bold">FCS</text>
+</svg>

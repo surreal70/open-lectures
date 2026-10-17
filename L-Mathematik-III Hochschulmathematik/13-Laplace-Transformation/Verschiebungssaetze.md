@@ -1,3 +1,0 @@
-# Verschiebungssätze
-
-< TODO: Inhalt ergänzen -->

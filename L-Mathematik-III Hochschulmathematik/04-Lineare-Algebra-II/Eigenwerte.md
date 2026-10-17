@@ -1,3 +1,0 @@
-# Eigenwerte
-
-< TODO: Inhalt ergänzen -->

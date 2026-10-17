@@ -1,3 +1,0 @@
-# Mengenlehre
-
-< TODO: Inhalt ergänzen -->

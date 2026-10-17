@@ -1,3 +1,0 @@
-# Transformationsregeln
-
-< TODO: Inhalt ergänzen -->

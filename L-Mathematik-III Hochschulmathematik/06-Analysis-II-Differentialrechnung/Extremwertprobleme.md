@@ -1,3 +1,0 @@
-# Extremwertprobleme
-
-< TODO: Inhalt ergänzen -->

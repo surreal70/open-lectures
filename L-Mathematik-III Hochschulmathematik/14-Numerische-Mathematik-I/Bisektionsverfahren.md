@@ -1,3 +1,0 @@
-# Bisektionsverfahren
-
-< TODO: Inhalt ergänzen -->

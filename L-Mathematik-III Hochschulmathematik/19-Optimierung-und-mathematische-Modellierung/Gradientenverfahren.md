@@ -1,3 +1,0 @@
-# Gradientenverfahren
-
-< TODO: Inhalt ergänzen -->

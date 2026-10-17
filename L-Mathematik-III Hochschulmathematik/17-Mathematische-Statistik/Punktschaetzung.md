@@ -1,3 +1,0 @@
-# Punktschätzung
-
-< TODO: Inhalt ergänzen -->

@@ -1,3 +1,0 @@
-# Linearkombinationen
-
-< TODO: Inhalt ergänzen -->

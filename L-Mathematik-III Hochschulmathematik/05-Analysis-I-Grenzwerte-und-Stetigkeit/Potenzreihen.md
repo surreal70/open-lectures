@@ -1,3 +1,0 @@
-# Potenzreihen
-
-< TODO: Inhalt ergänzen -->

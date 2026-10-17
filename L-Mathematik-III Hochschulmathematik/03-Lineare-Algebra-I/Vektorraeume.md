@@ -1,3 +1,0 @@
-# Vektorräume
-
-< TODO: Inhalt ergänzen -->

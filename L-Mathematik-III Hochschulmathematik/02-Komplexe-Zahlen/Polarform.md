@@ -1,3 +1,0 @@
-# Polarform
-
-< TODO: Inhalt ergänzen -->

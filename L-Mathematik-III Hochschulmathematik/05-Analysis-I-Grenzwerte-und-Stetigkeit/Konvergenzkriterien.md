@@ -1,3 +1,0 @@
-# Konvergenzkriterien
-
-< TODO: Inhalt ergänzen -->

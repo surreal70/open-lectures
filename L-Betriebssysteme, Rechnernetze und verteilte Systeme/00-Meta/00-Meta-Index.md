@@ -28,8 +28,8 @@ bereich: Meta
 | Bereich               | Version | Status         |
 | --------------------- | ------- | -------------- |
 | **Betriebssysteme**   | 1.0.0   | Final          |
-| **Rechnernetze**      | 0.6.4   | In Bearbeitung |
-| **Verteilte Systeme** | 0.3.0   | In Bearbeitung |
+| **Rechnernetze**      | 0.8.4   | In Bearbeitung |
+| **Verteilte Systeme** | 0.6.3   | In Bearbeitung |
 
 ## Struktur
 

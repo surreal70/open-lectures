@@ -1,3 +1,0 @@
-# Aussagenlogik
-
-< TODO: Inhalt ergänzen -->

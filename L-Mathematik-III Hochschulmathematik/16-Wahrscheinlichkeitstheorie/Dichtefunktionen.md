@@ -1,3 +1,0 @@
-# Dichtefunktionen
-
-< TODO: Inhalt ergänzen -->

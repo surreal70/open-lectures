@@ -1,3 +1,0 @@
-# Randbedingungen
-
-< TODO: Inhalt ergänzen -->

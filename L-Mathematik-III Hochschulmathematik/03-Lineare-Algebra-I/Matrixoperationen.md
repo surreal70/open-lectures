@@ -1,3 +1,0 @@
-# Matrixoperationen
-
-< TODO: Inhalt ergänzen -->

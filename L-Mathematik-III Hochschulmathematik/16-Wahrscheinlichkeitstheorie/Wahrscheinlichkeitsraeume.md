@@ -1,3 +1,0 @@
-# Wahrscheinlichkeitsräume
-
-< TODO: Inhalt ergänzen -->

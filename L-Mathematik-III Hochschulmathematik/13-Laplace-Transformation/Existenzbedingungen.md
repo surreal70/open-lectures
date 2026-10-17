@@ -1,3 +1,0 @@
-# Existenzbedingungen
-
-< TODO: Inhalt ergänzen -->

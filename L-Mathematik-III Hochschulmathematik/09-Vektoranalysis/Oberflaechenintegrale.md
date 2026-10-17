@@ -1,3 +1,0 @@
-# Oberflächenintegrale
-
-< TODO: Inhalt ergänzen -->

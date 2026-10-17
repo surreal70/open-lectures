@@ -1,3 +1,0 @@
-# Kurvenintegrale
-
-< TODO: Inhalt ergänzen -->

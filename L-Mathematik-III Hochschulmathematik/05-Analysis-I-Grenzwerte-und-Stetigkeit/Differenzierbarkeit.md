@@ -1,3 +1,0 @@
-# Differenzierbarkeit
-
-< TODO: Inhalt ergänzen -->

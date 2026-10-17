@@ -1,3 +1,0 @@
-# Varianz
-
-< TODO: Inhalt ergänzen -->

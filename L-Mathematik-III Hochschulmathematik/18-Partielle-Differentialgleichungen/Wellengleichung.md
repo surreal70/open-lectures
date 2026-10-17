@@ -1,3 +1,0 @@
-# Wellengleichung
-
-< TODO: Inhalt ergänzen -->

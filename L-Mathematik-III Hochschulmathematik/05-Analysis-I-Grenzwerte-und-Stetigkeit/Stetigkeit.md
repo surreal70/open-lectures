@@ -1,3 +1,0 @@
-# Stetigkeit
-
-< TODO: Inhalt ergänzen -->

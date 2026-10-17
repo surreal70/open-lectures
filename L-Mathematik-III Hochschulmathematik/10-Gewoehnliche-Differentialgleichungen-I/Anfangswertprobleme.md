@@ -1,3 +1,0 @@
-# Anfangswertprobleme
-
-< TODO: Inhalt ergänzen -->

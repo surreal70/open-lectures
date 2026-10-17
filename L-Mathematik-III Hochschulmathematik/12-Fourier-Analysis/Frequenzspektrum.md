@@ -1,3 +1,0 @@
-# Frequenzspektrum
-
-< TODO: Inhalt ergänzen -->

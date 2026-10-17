@@ -1,3 +1,0 @@
-# Korrelationsanalyse
-
-< TODO: Inhalt ergänzen -->

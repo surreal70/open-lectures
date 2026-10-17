@@ -1,3 +1,0 @@
-# Unabhängigkeit
-
-< TODO: Inhalt ergänzen -->

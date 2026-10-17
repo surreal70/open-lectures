@@ -1,3 +1,0 @@
-# Zielfunktionen
-
-< TODO: Inhalt ergänzen -->

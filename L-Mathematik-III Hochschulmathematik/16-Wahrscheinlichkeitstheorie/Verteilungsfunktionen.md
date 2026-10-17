@@ -1,3 +1,0 @@
-# Verteilungsfunktionen
-
-< TODO: Inhalt ergänzen -->

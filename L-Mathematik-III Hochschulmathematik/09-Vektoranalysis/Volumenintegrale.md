@@ -1,3 +1,0 @@
-# Volumenintegrale
-
-< TODO: Inhalt ergänzen -->

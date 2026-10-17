@@ -1,3 +1,0 @@
-# Resonanz
-
-< TODO: Inhalt ergänzen -->

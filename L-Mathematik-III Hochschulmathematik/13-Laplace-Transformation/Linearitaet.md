@@ -1,3 +1,0 @@
-# Linearität
-
-< TODO: Inhalt ergänzen -->

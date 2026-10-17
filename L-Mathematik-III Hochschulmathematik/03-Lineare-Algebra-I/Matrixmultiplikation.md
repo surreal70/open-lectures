@@ -1,3 +1,0 @@
-# Matrixmultiplikation
-
-< TODO: Inhalt ergänzen -->

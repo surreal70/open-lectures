@@ -1,3 +1,0 @@
-# Integrationstechniken
-
-< TODO: Inhalt ergänzen -->

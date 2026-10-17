@@ -1,3 +1,0 @@
-# Quantoren
-
-< TODO: Inhalt ergänzen -->

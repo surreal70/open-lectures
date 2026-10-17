@@ -1,3 +1,0 @@
-# Eigenvektoren
-
-< TODO: Inhalt ergänzen -->

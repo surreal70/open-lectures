@@ -1,3 +1,0 @@
-# Rücktransformation
-
-< TODO: Inhalt ergänzen -->

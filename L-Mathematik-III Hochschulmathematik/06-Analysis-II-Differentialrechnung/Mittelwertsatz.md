@@ -1,3 +1,0 @@
-# Mittelwertsatz
-
-< TODO: Inhalt ergänzen -->

@@ -1,3 +1,0 @@
-# Differentiationsregeln
-
-< TODO: Inhalt ergänzen -->

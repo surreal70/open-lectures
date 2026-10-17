@@ -1,3 +1,0 @@
-# Regressionsanalyse
-
-< TODO: Inhalt ergänzen -->

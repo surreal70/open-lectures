@@ -1,3 +1,0 @@
-# Abkühlungsmodelle
-
-< TODO: Inhalt ergänzen -->

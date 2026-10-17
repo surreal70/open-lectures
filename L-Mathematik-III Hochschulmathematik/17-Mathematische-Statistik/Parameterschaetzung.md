@@ -1,3 +1,0 @@
-# Parameterschätzung
-
-< TODO: Inhalt ergänzen -->

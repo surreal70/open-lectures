@@ -1,3 +1,0 @@
-# Substitution
-
-< TODO: Inhalt ergänzen -->

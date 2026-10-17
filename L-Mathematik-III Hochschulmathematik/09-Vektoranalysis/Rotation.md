@@ -1,3 +1,0 @@
-# Rotation
-
-< TODO: Inhalt ergänzen -->

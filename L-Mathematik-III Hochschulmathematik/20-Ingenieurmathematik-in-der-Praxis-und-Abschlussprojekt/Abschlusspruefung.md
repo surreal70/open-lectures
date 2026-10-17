@@ -1,3 +1,0 @@
-# Abschlussprüfung
-
-< TODO: Inhalt ergänzen -->

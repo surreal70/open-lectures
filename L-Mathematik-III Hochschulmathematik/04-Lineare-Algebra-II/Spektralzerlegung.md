@@ -1,3 +1,0 @@
-# Spektralzerlegung
-
-< TODO: Inhalt ergänzen -->

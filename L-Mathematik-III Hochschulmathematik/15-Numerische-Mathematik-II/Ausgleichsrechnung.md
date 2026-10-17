@@ -1,3 +1,0 @@
-# Ausgleichsrechnung
-
-< TODO: Inhalt ergänzen -->

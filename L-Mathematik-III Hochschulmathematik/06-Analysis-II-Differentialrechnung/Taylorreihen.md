@@ -1,3 +1,0 @@
-# Taylorreihen
-
-< TODO: Inhalt ergänzen -->

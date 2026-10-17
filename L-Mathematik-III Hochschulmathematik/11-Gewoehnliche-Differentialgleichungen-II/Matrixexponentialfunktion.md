@@ -1,3 +1,0 @@
-# Matrixexponentialfunktion
-
-< TODO: Inhalt ergänzen -->

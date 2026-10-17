@@ -1,3 +1,0 @@
-# Übertragungsfunktionen
-
-< TODO: Inhalt ergänzen -->

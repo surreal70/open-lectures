@@ -1,3 +1,0 @@
-# Parameterintegrale
-
-< TODO: Inhalt ergänzen -->

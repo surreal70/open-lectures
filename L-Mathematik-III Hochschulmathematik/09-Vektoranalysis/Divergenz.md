@@ -1,3 +1,0 @@
-# Divergenz
-
-< TODO: Inhalt ergänzen -->

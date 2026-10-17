@@ -1,3 +1,0 @@
-# Anfangsbedingungen
-
-< TODO: Inhalt ergänzen -->

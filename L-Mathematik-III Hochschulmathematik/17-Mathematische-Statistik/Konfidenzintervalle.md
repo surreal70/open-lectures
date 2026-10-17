@@ -1,3 +1,0 @@
-# Konfidenzintervalle
-
-< TODO: Inhalt ergänzen -->

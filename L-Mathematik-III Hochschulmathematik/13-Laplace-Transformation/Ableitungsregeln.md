@@ -1,3 +1,0 @@
-# Ableitungsregeln
-
-< TODO: Inhalt ergänzen -->

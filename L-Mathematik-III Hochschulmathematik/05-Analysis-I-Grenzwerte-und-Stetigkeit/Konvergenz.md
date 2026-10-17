@@ -1,3 +1,0 @@
-# Konvergenz
-
-< TODO: Inhalt ergänzen -->

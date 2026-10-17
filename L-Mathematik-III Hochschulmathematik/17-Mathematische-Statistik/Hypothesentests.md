@@ -1,3 +1,0 @@
-# Hypothesentests
-
-< TODO: Inhalt ergänzen -->

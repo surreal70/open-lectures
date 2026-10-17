@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="850" viewBox="0 0 750 850">
+  <rect x="0" y="0" width="750" height="850" fill="#1A1A1A"/>
+  <text x="375" y="30" fill="#E8E8E8" font-family="monospace" font-size="16" font-weight="bold" text-anchor="middle">SERVER – ENTKAPSELUNG IM DETAIL</text>
+  <rect x="20" y="50" width="710" height="785" fill="#2D2D2D" stroke="#4A9EFF" rx="8" stroke-width="2"/>
+  <rect x="35" y="70" width="680" height="178" fill="#1E3A5F" stroke="#4A9EFF" rx="5" stroke-width="1"/>
+  <text x="50" y="92" fill="#FFB347" font-family="monospace" font-size="13" font-weight="bold">SCHRITT 1: Netzzugangsschicht</text>
+  <line x1="50" y1="100" x2="700" y2="100" stroke="#444444" stroke-width="1"/>
+  <text x="60" y="118" fill="#CCCCCC" font-family="monospace" font-size="11">✓ Frame vom Medium empfangen (elektrische Signale)</text>
+  <text x="60" y="136" fill="#CCCCCC" font-family="monospace" font-size="11">✓ Preamble/SFD erkennen (Synchronisation)</text>
+  <text x="60" y="154" fill="#CCCCCC" font-family="monospace" font-size="11">✓ Destination MAC prüfen: CC:CC:CC:CC:CC:CC = eigene? → JA</text>
+  <text x="60" y="172" fill="#CCCCCC" font-family="monospace" font-size="11">✓ FCS/CRC prüfen → Keine Übertragungsfehler</text>
+  <text x="60" y="190" fill="#CCCCCC" font-family="monospace" font-size="11">✓ EtherType 0x0800 → IPv4, an IP-Stack übergeben</text>
+  <text x="60" y="208" fill="#CCCCCC" font-family="monospace" font-size="11">✓ Ethernet-Header und FCS entfernen</text>
+  <text x="50" y="233" fill="#888888" font-family="monospace" font-size="11" font-style="italic">Verbleibend: IP-Paket (240 Bytes)</text>
+  <rect x="35" y="263" width="680" height="160" fill="#1E3A5F" stroke="#4A9EFF" rx="5" stroke-width="1"/>
+  <text x="50" y="285" fill="#FFB347" font-family="monospace" font-size="13" font-weight="bold">SCHRITT 2: Internetschicht</text>
+  <line x1="50" y1="293" x2="700" y2="293" stroke="#444444" stroke-width="1"/>
+  <text x="60" y="311" fill="#CCCCCC" font-family="monospace" font-size="11">✓ IP-Version prüfen: 4 → IPv4</text>
+  <text x="60" y="329" fill="#CCCCCC" font-family="monospace" font-size="11">✓ Header Checksum validieren → OK</text>
+  <text x="60" y="347" fill="#CCCCCC" font-family="monospace" font-size="11">✓ Destination IP prüfen: 10.0.0.5 = eigene? → JA</text>
+  <text x="60" y="365" fill="#CCCCCC" font-family="monospace" font-size="11">✓ Protocol-Feld auslesen: 6 → TCP</text>
+  <text x="60" y="383" fill="#CCCCCC" font-family="monospace" font-size="11">✓ IP-Header entfernen, an TCP-Stack übergeben</text>
+  <text x="50" y="408" fill="#888888" font-family="monospace" font-size="11" font-style="italic">Verbleibend: TCP-Segment (220 Bytes)</text>
+  <rect x="35" y="438" width="680" height="196" fill="#1E3A5F" stroke="#4A9EFF" rx="5" stroke-width="1"/>
+  <text x="50" y="460" fill="#FFB347" font-family="monospace" font-size="13" font-weight="bold">SCHRITT 3: Transportschicht</text>
+  <line x1="50" y1="468" x2="700" y2="468" stroke="#444444" stroke-width="1"/>
+  <text x="60" y="486" fill="#CCCCCC" font-family="monospace" font-size="11">✓ TCP Checksum validieren → OK</text>
+  <text x="60" y="504" fill="#CCCCCC" font-family="monospace" font-size="11">✓ Destination Port: 80 → HTTP-Dienst</text>
+  <text x="60" y="522" fill="#CCCCCC" font-family="monospace" font-size="11">✓ Socket-Zuordnung: (TCP, 192.168.1.10, 52345, 10.0.0.5, 80)</text>
+  <text x="60" y="540" fill="#CCCCCC" font-family="monospace" font-size="11">✓ Sequenznummer prüfen (Reihenfolge)</text>
+  <text x="60" y="558" fill="#CCCCCC" font-family="monospace" font-size="11">✓ ACK senden (Bestätigung)</text>
+  <text x="60" y="576" fill="#CCCCCC" font-family="monospace" font-size="11">✓ TCP-Header entfernen</text>
+  <text x="60" y="594" fill="#CCCCCC" font-family="monospace" font-size="11">✓ Daten an Port 80 (Webserver-Prozess) übergeben</text>
+  <text x="50" y="619" fill="#888888" font-family="monospace" font-size="11" font-style="italic">Verbleibend: HTTP-Request (~200 Bytes)</text>
+  <rect x="35" y="649" width="680" height="181" fill="#1E3A5F" stroke="#4A9EFF" rx="5" stroke-width="1"/>
+  <text x="50" y="671" fill="#FFB347" font-family="monospace" font-size="13" font-weight="bold">SCHRITT 4: Anwendungsschicht</text>
+  <line x1="50" y1="679" x2="700" y2="679" stroke="#444444" stroke-width="1"/>
+  <text x="60" y="697" fill="#CCCCCC" font-family="monospace" font-size="11">✓ Webserver (z.B. Apache, nginx) empfängt Request</text>
+  <text x="60" y="715" fill="#CCCCCC" font-family="monospace" font-size="11">✓ HTTP-Request parsen:</text>
+  <text x="60" y="733" fill="#AAAAAA" font-family="monospace" font-size="11">    - Methode: GET</text>
+  <text x="60" y="751" fill="#AAAAAA" font-family="monospace" font-size="11">    - Pfad: /index.html</text>
+  <text x="60" y="769" fill="#AAAAAA" font-family="monospace" font-size="11">    - Headers: Host, User-Agent, Accept, ...</text>
+  <text x="60" y="787" fill="#CCCCCC" font-family="monospace" font-size="11">✓ Datei /var/www/html/index.html laden</text>
+  <text x="60" y="805" fill="#CCCCCC" font-family="monospace" font-size="11">✓ HTTP-Response generieren</text>
+</svg>
