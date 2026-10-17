@@ -1,0 +1,3 @@
+# Vererbung
+
+<!-- TODO: Inhalt ergänzen -->

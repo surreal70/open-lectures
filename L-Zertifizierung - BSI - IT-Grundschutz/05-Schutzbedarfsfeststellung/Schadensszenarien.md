@@ -1,0 +1,3 @@
+# Schadensszenarien
+
+<!-- TODO: Inhalt ergänzen -->

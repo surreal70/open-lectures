@@ -1,0 +1,3 @@
+# Kommunikationsverbindungen
+
+<!-- TODO: Inhalt ergänzen -->
