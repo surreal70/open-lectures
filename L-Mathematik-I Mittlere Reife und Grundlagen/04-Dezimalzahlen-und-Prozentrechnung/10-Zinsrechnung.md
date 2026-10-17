@@ -16,7 +16,7 @@ tags:
   - kapital
   - finanzen
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-16
 ---
 
 # Zinsrechnung
@@ -153,16 +153,8 @@ $$Z = K \times \frac{p}{100} \times \frac{t}{360}$$
 
 ### Formeldreieck
 
-```
-           ┌──────────┐
-           │    Z     │
-           └────┬─────┘
-      ┌─────────┼─────────┐
-      │         │         │
-┌─────┴─────┐ ┌─┴──┐ ┌────┴────┐
-│   K × p   │ │ × │ │ t / 360 │
-└───────────┘ └────┘ └─────────┘
-```
+![[zins-formeldreieck.png]]
+*<span class="fig-id">01-04-10-zins-formeldreieck</span>: Formeldreieck der Zinsrechnung – der Zins Z ergibt sich aus Kapital K, Zinssatz p und Laufzeit t: Z = K · p ÷ 100 · t/360.*
 
 ### Umgestellte Formeln
 
