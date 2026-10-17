@@ -185,6 +185,42 @@ Diese Mengen bauen aufeinander auf: Jede natürliche Zahl ist auch eine ganze Za
 
 ---
 
+## Das griechische Alphabet
+
+In der Mathematik, Physik und Technik werden griechische Buchstaben als Variablen und Konstanten verwendet – oft dort, wo das lateinische Alphabet nicht ausreicht oder wo sich eine bestimmte Bedeutung eingebürgert hat (z. B. $\pi$ für die Kreiszahl oder $\rho$ für die Dichte). Es lohnt sich, die Namen zu kennen, um Formeln korrekt vorlesen und notieren zu können.
+
+| Klein | Groß | Name | Häufige Verwendung in der Mathematik |
+|-------|------|------|--------------------------------------|
+| $\alpha$ | $\mathrm{A}$ | Alpha | Winkel |
+| $\beta$ | $\mathrm{B}$ | Beta | Winkel |
+| $\gamma$ | $\Gamma$ | Gamma | Winkel; Gammafunktion $\Gamma$ |
+| $\delta$ | $\Delta$ | Delta | Differenz/Änderung ($\Delta x$); kleine Größe ($\delta$) |
+| $\epsilon$ | $\mathrm{E}$ | Epsilon | sehr kleine positive Zahl |
+| $\zeta$ | $\mathrm{Z}$ | Zeta | Zeta-Funktion |
+| $\eta$ | $\mathrm{H}$ | Eta | Wirkungsgrad |
+| $\theta$ | $\Theta$ | Theta | Winkel |
+| $\iota$ | $\mathrm{I}$ | Iota | (selten) |
+| $\kappa$ | $\mathrm{K}$ | Kappa | Krümmung |
+| $\lambda$ | $\Lambda$ | Lambda | Eigenwert; Wellenlänge |
+| $\mu$ | $\mathrm{M}$ | My (Mü) | Mittelwert; Reibungszahl; Mikro ($10^{-6}$) |
+| $\nu$ | $\mathrm{N}$ | Ny (Nü) | Frequenz |
+| $\xi$ | $\Xi$ | Xi | Variable, Zufallsgröße |
+| $\omicron$ | $\mathrm{O}$ | Omikron | (selten) |
+| $\pi$ | $\Pi$ | Pi | Kreiszahl $\pi \approx 3{,}14159$; Produktzeichen $\Pi$ |
+| $\rho$ | $\mathrm{P}$ | Rho | Dichte; Korrelationskoeffizient |
+| $\sigma$ | $\Sigma$ | Sigma | Standardabweichung; Summenzeichen $\Sigma$ |
+| $\tau$ | $\mathrm{T}$ | Tau | Zeitkonstante |
+| $\upsilon$ | $\Upsilon$ | Ypsilon | (selten) |
+| $\phi$ | $\Phi$ | Phi | Winkel; Goldener Schnitt $\varphi$ |
+| $\chi$ | $\mathrm{X}$ | Chi | Chi-Quadrat-Test $\chi^2$ |
+| $\psi$ | $\Psi$ | Psi | Wellenfunktion |
+| $\omega$ | $\Omega$ | Omega | Winkelgeschwindigkeit; Ohm $\Omega$ |
+
+> [!tip] **Groß- und Kleinschreibung**
+> Bei vielen griechischen Buchstaben sieht der Großbuchstabe genauso aus wie ein lateinischer (z. B. Alpha $\mathrm{A}$, Beta $\mathrm{B}$). Deshalb werden in der Mathematik vor allem die **Kleinbuchstaben** und die klar eigenständigen **Großbuchstaben** wie $\Delta$, $\Sigma$, $\Pi$, $\Omega$ oder $\Phi$ verwendet.
+
+---
+
 ## Zusammenhänge
 
 Querverweise zu verwandten Themen:
