@@ -80,18 +80,8 @@ Das ist die Kreuzproduktregel! Sie ist also kein Trick, sondern eine Konsequenz 
 
 ### Visualisierung
 
-```
-    a     c
-    ─  =  ─
-    b     d
-    
-    a × d = b × c
-      ╲   ╱
-       ╲ ╱
-        ╳
-       ╱ ╲
-      ╱   ╲
-```
+![[ueber-kreuz.png]]
+*<span class="fig-id">01-05-02-ueber-kreuz</span>: Über-Kreuz-Multiplizieren bei einer Proportion a/b = c/d – die diagonal verbundenen Glieder ergeben die Gleichung a · d = b · c.*
 
 > [!tip] **Merkregel: Über Kreuz multiplizieren**
 > Stell dir vor, du zeichnest ein X durch die Proportion. Dann multiplizierst du die Zahlen, die auf einer Linie liegen: oben-links mit unten-rechts und oben-rechts mit unten-links.
