@@ -12,7 +12,7 @@
     { "dir": "09-Trigonometrie-und-periodische-Funktionen", "done": true },
     { "dir": "10-Vektorrechnung", "done": true },
     { "dir": "11-Analytische-Geometrie", "done": true },
-    { "dir": "12-Einfuehrung-in-die-lineare-Algebra", "done": false },
+    { "dir": "12-Einfuehrung-in-die-lineare-Algebra", "done": true },
     { "dir": "13-Kombinatorik-und-Wahrscheinlichkeitsrechnung", "done": false },
     { "dir": "14-Wahrscheinlichkeitsverteilungen", "done": false },
     { "dir": "15-Statistik-und-Hypothesentests", "done": false },
