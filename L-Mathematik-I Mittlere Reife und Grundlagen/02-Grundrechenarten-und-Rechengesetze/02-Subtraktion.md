@@ -57,16 +57,8 @@ $$\underbrace{a}_{\text{Minuend}} - \underbrace{b}_{\text{Subtrahend}} = \underb
 
 Subtraktion bedeutet auf dem Zahlenstrahl: **nach links gehen**.
 
-```
-    8 - 5 = 3
-    
-    Start bei 8, gehe 5 Schritte nach links:
-    
-    ←──┬────┬────┬────┬────┬────┬────┬────┬────┬────┬──→
-       0    1    2    3    4    5    6    7    8    9
-                      ●━━━━━━━━━━━━━━━━━━━━━━━━●
-                   Ergebnis       -5          Start
-```
+![[subtraktion-zahlenstrahl.png]]
+*<span class="fig-id">01-02-02-subtraktion-zahlenstrahl</span>: Subtraktion auf dem Zahlenstrahl – von der Start­zahl 8 aus 5 Schritte nach links führen zum Ergebnis 3.*
 
 ---
 
@@ -76,12 +68,8 @@ Bei größeren Zahlen hilft die schriftliche Subtraktion. Es gibt zwei verbreite
 
 ### Methode: Abziehen mit Entbündeln
 
-```
-    523
-  - 287
-  ─────
-    236
-```
+![[schriftliche-subtraktion.png]]
+*<span class="fig-id">01-02-02-schriftliche-subtraktion</span>: Schriftliche Subtraktion 523 − 287 = 236 – stellengerecht untereinander, mit Entbündeln an den Einer- und Zehnerstellen.*
 
 **Schritte:**
 1. Einer: $3 - 7$ geht nicht → entbündeln: $13 - 7 = 6$
@@ -95,14 +83,8 @@ Bei größeren Zahlen hilft die schriftliche Subtraktion. Es gibt zwei verbreite
 
 Diese in Österreich und der Schweiz verbreitete Methode fragt: „Was muss ich zu 287 addieren, um 523 zu erhalten?"
 
-```
-  287 + ? = 523
-  287 + 3 = 290    (Ergänzen zu vollem Zehner)
-  290 + 10 = 300   (Ergänzen zu vollem Hunderter)
-  300 + 223 = 523  (Ergänzen zur Zielzahl)
-  ─────────────────
-  3 + 10 + 223 = 236
-```
+![[ergaenzungsmethode.png]]
+*<span class="fig-id">01-02-02-ergaenzungsmethode</span>: Ergänzungsmethode – schrittweises Auffüllen von 287 bis 523 (zum Zehner, zum Hunderter, zur Zielzahl); die Summe der Ergänzungen ergibt 236.*
 
 > [!tip] **Welche Methode ist besser?**
 > Beide führen zum selben Ergebnis. Die Ergänzungsmethode ist beim Kopfrechnen oft einfacher, die Entbündelungsmethode beim schriftlichen Rechnen übersichtlicher. Wähle die Methode, mit der du dich sicherer fühlst.
@@ -140,16 +122,8 @@ $$a - (-b) = a + b$$
 
 Subtraktion einer **negativen** Zahl bedeutet: **nach rechts gehen**.
 
-```
-    2 - (-4) = 6
-    
-    Start bei 2, gehe 4 Schritte nach rechts (weil --):
-    
-    ←──┬────┬────┬────┬────┬────┬────┬────┬──→
-       0    1    2    3    4    5    6    7
-                 ●━━━━━━━━━━━━━━━━━━━━●
-               Start      +4       Ergebnis
-```
+![[subtraktion-negativ.png]]
+*<span class="fig-id">01-02-02-subtraktion-negativ</span>: Subtraktion einer negativen Zahl – doppeltes Minus wird Plus: von der Start­zahl 2 aus 4 Schritte nach rechts führen zum Ergebnis 6 (2 − (−4) = 6).*
 
 > [!warning] **Häufiger Fehler**
 > Viele verwechseln das Vorzeichen einer Zahl mit dem Rechenzeichen:
