@@ -41,14 +41,8 @@ Jeder Bruch ist eine Division. Um die Dezimalzahl zu erhalten, führe die Divisi
 **Beispiel:** $\frac{3}{4} = 3 : 4 = 0{,}75$
 
 **Schriftlich:**
-```
-  3 : 4 = 0,75
-  3,00
-  -2 8   (4 × 7 = 28)
-    20
-   -20   (4 × 5 = 20)
-     0
-```
+![[umwandlung-dezimal.png]]
+*<span class="fig-id">01-03-11-umwandlung-dezimal</span>: Umwandlung eines Bruchs in eine Dezimalzahl durch schriftliche Division: 3 : 4 = 0,75.*
 
 ### Abbrechende Dezimalzahlen
 
