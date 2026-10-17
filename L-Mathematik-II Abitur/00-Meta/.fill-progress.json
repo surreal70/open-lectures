@@ -1,5 +1,5 @@
 {
-  "complete": false,
+  "complete": true,
   "chapters": [
     { "dir": "01-Vertiefung-der-Algebra", "done": true },
     { "dir": "02-Funktionen-und-ihre-Eigenschaften", "done": true },
@@ -16,6 +16,6 @@
     { "dir": "13-Kombinatorik-und-Wahrscheinlichkeitsrechnung", "done": true },
     { "dir": "14-Wahrscheinlichkeitsverteilungen", "done": true },
     { "dir": "15-Statistik-und-Hypothesentests", "done": true },
-    { "dir": "16-Mathematische-Modellierung-und-Abschlussprojekt", "done": false }
+    { "dir": "16-Mathematische-Modellierung-und-Abschlussprojekt", "done": true }
   ]
 }
