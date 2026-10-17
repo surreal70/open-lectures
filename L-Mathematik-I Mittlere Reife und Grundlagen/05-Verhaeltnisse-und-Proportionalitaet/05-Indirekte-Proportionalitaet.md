@@ -71,18 +71,11 @@ Anders als die direkte Proportionalität wirkt die indirekte oft weniger intuiti
 
 ## Graph
 
-```
-  y (Tage)
-  ↑
-12│·
-10│ ·
- 8│  ·
- 6│    ·
- 4│       ·
- 2│            ·
-  └───────────────→ x (Arbeiter)
-    1 2 3 4 5 6
-```
+![[indirekte-proportionalitaet.png]]
+*<span class="fig-id">01-05-05-indirekte-proportionalitaet</span>: Graph einer indirekten Proportionalität (Tage = 24 ÷ Arbeiter) – eine Hyperbel, die sich den Achsen annähert, sie aber nie berührt; mehr Arbeiter bedeuten weniger Tage.*
+
+> [!info] **Darstellung im Koordinatensystem**
+> Das Koordinatensystem wird hier zur Veranschaulichung genutzt. Wie man Funktionen und ihre Graphen systematisch aufstellt und liest, wird ausführlich in → [[00-Funktionen-Index|Modul 9: Funktionen und Koordinatensysteme]] behandelt.
 
 > [!note] **Der Graph ist eine Hyperbel**
 > Anders als bei der direkten Proportionalität (Gerade) ist der Graph der indirekten Proportionalität eine **Hyperbel** – eine Kurve, die sich den Achsen annähert, sie aber nie berührt.
