@@ -64,11 +64,8 @@ $$4 \cdot 3 = 4 + 4 + 4 = 12$$
 
 $3 \cdot 4 = 12$ als Rechteck:
 
-```
-● ● ● ●
-● ● ● ●     3 Reihen × 4 Spalten = 12 Punkte
-● ● ● ●
-```
+![[multiplikation-rechteck.png]]
+*<span class="fig-id">01-02-03-multiplikation-rechteck</span>: Multiplikation als Rechteckmodell – 3 Reihen zu je 4 Punkten ergeben 3 · 4 = 12 Punkte.*
 
 ---
 
@@ -104,14 +101,8 @@ Das kleine Einmaleins ist das Fundament des Rechnens. Es wurde bereits im antike
 
 ### Beispiel: $347 \cdot 23$
 
-```
-      347 · 23
-    ─────────
-      1041       (347 · 3)
-     6940        (347 · 20, also 347 · 2 mit einer Null)
-    ─────────
-     7981
-```
+![[schriftliche-multiplikation.png]]
+*<span class="fig-id">01-02-03-schriftliche-multiplikation</span>: Schriftliche Multiplikation 347 · 23 = 7981 – zuerst 347 · 3, dann 347 · 20 (um eine Stelle versetzt), anschließend die Teilprodukte addieren.*
 
 ### Schritte:
 1. Multipliziere mit der Einerziffer: $347 \cdot 3 = 1041$
