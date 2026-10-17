@@ -60,22 +60,15 @@ $$\text{Zähler} \geq \text{Nenner} \quad \Rightarrow \quad \frac{a}{b} \geq 1$$
 
 ### Echter Bruch: $\frac{3}{4}$
 
-```
-┌───┬───┬───┬───┐
-│ ▓ │ ▓ │ ▓ │   │   weniger als ein Ganzes
-└───┴───┴───┴───┘
-```
+![[echter-bruch.png]]
+*<span class="fig-id">01-03-02-echter-bruch</span>: Echter Bruch ¾ – drei von vier Teilen sind gefüllt, also weniger als ein Ganzes (Zähler kleiner als Nenner).*
 
 Drei von vier Teilen sind gefüllt – das ist weniger als das ganze Rechteck.
 
 ### Unechter Bruch: $\frac{5}{4}$
 
-```
-┌───┬───┬───┬───┐   ┌───┬───┬───┬───┐
-│ ▓ │ ▓ │ ▓ │ ▓ │   │ ▓ │   │   │   │   mehr als ein Ganzes
-└───┴───┴───┴───┘   └───┴───┴───┴───┘
-      1 Ganzes    +    ¼ = 1¼
-```
+![[unechter-bruch.png]]
+*<span class="fig-id">01-03-02-unechter-bruch</span>: Unechter Bruch 5/4 – ein volles Ganzes plus ein weiteres Viertel ergeben 5/4 = 1¼, also mehr als ein Ganzes (Zähler größer als Nenner).*
 
 Wir brauchen mehr als ein Rechteck, um $\frac{5}{4}$ darzustellen. Das erste ist komplett gefüllt (4 Viertel), vom zweiten ein Viertel – zusammen 5 Viertel.
 
@@ -122,14 +115,8 @@ $$\frac{7}{4} = 7 : 4 = 1 \text{ Rest } 3 = 1\frac{3}{4}$$
 
 ## Auf dem Zahlenstrahl
 
-```
-    echte Brüche          unechte Brüche
-         ↓                      ↓
-    ←──┬────┬────┬────┬────┬────┬────┬────┬──→
-       0   ¼   ½   ¾    1   5/4  3/2  7/4   2
-                        ↑
-              Grenze: Zähler = Nenner
-```
+![[echte-unechte-zahlenstrahl.png]]
+*<span class="fig-id">01-03-02-echte-unechte-zahlenstrahl</span>: Auf dem Zahlenstrahl markiert die 1 die Grenze – links davon liegen die echten Brüche, rechts davon die unechten.*
 
 Der Zahlenstrahl zeigt deutlich: Die Zahl 1 ist die Grenze zwischen echten und unechten Brüchen. Links von 1 liegen alle echten Brüche, rechts davon alle unechten Brüche (außer denen, die genau 1 ergeben).
 
