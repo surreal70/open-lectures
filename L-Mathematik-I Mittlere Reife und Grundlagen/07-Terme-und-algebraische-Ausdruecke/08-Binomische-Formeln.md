@@ -15,7 +15,7 @@ tags:
   - formeln
   - quadrat
 created: 2026-10-13
-modified: 2025-07-23
+modified: 2026-10-16
 ---
 
 # Binomische Formeln
@@ -101,20 +101,8 @@ Diese Formel ist besonders nützlich, weil das mittlere Glied komplett wegfällt
 
 Die binomischen Formeln lassen sich geometrisch verstehen. Wenn wir ein Quadrat mit der Seitenlänge $(a+b)$ betrachten, hat es die Fläche $(a+b)^2$. Dieses Quadrat lässt sich in vier Teile zerlegen:
 
-```
-       a           b
-   ┌─────────┬─────────┐
-   │         │         │
- a │   a²    │   ab    │
-   │         │         │
-   ├─────────┼─────────┤
-   │         │         │
- b │   ab    │   b²    │
-   │         │         │
-   └─────────┴─────────┘
-   
-   Gesamtfläche = a² + ab + ab + b² = a² + 2ab + b²
-```
+![[binom-quadrat.png]]
+*<span class="fig-id">01-07-08-binom-quadrat</span>: Geometrische Deutung der 1. binomischen Formel – das Quadrat mit Seitenlänge (a + b) zerfällt in die Teilflächen a², a·b, a·b und b², zusammen (a + b)² = a² + 2ab + b².*
 
 > [!info] **Geometrische Deutung**
 > Das große Quadrat mit Seitenlänge $(a+b)$ besteht aus:
