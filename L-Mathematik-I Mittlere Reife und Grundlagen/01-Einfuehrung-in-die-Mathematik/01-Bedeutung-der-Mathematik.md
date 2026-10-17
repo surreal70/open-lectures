@@ -1,14 +1,14 @@
 ---
 author: Open Lectures
 title: Bedeutung der Mathematik in Wissenschaft und Technik
-status: draft - review pending
+status: final
 tags:
   - content
   - mathematik
   - grundlagen
   - motivation
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-16
 ---
 
 # Bedeutung der Mathematik in Wissenschaft und Technik

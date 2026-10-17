@@ -1,7 +1,7 @@
 ---
 author: Open Lectures
 title: Reelle Zahlen – eine erste Einführung
-status: draft - review pending
+status: final
 tags:
   - content
   - mathematik

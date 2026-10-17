@@ -1,7 +1,7 @@
 ---
 author: Open Lectures
 title: Betrag einer Zahl
-status: draft - review pending
+status: final
 tags:
   - content
   - mathematik

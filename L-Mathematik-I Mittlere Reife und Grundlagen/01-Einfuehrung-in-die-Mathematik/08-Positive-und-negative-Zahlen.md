@@ -1,7 +1,7 @@
 ---
 author: Open Lectures
 title: Positive und negative Zahlen
-status: draft - review pending
+status: final
 tags:
   - content
   - mathematik

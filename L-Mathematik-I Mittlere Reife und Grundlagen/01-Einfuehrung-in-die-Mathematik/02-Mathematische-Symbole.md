@@ -1,7 +1,7 @@
 ---
 author: Open Lectures
 title: Mathematische Schreibweisen und Symbole
-status: draft - review pending
+status: final
 tags:
   - content
   - mathematik

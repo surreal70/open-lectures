@@ -1,14 +1,14 @@
 ---
 author: Open Lectures
 title: Mathematische Notation und Rechenregeln
-status: draft - review pending
+status: final
 tags:
   - content
   - mathematik
   - rechenregeln
   - notation
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-16
 ---
 
 # Mathematische Notation und Rechenregeln
@@ -268,25 +268,8 @@ Jede Grundrechenart hat besondere Elemente mit speziellen Eigenschaften:
 
 ## Zusammenfassung: Übersichtstafel
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    RECHENGESETZE                        │
-├─────────────────────────────────────────────────────────┤
-│ Kommutativgesetz (Vertauschen):                         │
-│   a + b = b + a       a · b = b · a                    │
-│                                                         │
-│ Assoziativgesetz (Klammern beliebig):                  │
-│   (a + b) + c = a + (b + c)                            │
-│   (a · b) · c = a · (b · c)                            │
-│                                                         │
-│ Distributivgesetz (Verteilen/Ausklammern):             │
-│   a · (b + c) = a · b + a · c                          │
-│                                                         │
-│ Reihenfolge der Operationen:                           │
-│   Klammer → Potenz → Punkt → Strich                    │
-│   Bei gleicher Priorität: von links nach rechts        │
-└─────────────────────────────────────────────────────────┘
-```
+![[rechengesetze.png]]
+*<span class="fig-id">01-01-10-rechengesetze</span>: Übersicht der grundlegenden Rechengesetze – Kommutativ-, Assoziativ- und Distributivgesetz sowie die Reihenfolge der Operationen (Klammer → Potenz → Punkt → Strich).*
 
 ---
 

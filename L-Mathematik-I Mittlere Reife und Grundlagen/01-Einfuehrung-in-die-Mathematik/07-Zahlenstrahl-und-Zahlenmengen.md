@@ -1,7 +1,7 @@
 ---
 author: Open Lectures
 title: Zahlenstrahl und Zahlenmengen
-status: draft - review pending
+status: final
 tags:
   - content
   - mathematik
