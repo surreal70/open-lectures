@@ -3,7 +3,7 @@ title: "Mathematische Terme"
 chapter: "07"
 section: "02"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Den Aufbau von Termen verstehen"
   - "Terme aus Texten aufstellen"

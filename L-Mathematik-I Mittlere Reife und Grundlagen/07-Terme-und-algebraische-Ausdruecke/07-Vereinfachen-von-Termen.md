@@ -3,7 +3,7 @@ title: "Vereinfachen von Termen"
 chapter: "07"
 section: "07"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Terme systematisch vereinfachen"
   - "Die richtige Reihenfolge der Operationen einhalten"
@@ -15,7 +15,7 @@ tags:
   - vereinfachen
   - systematisch
 created: 2026-10-13
-modified: 2025-07-23
+modified: 2026-10-16
 ---
 
 # Vereinfachen von Termen

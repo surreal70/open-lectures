@@ -3,7 +3,7 @@ title: "Anwendungen der Algebra"
 chapter: "07"
 section: "11"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Sachsituationen in Terme übersetzen"
   - "Terme zur Problemlösung nutzen"
@@ -15,7 +15,7 @@ tags:
   - anwendung
   - modellierung
 created: 2026-10-13
-modified: 2025-07-23
+modified: 2026-10-16
 ---
 
 # Anwendungen der Algebra

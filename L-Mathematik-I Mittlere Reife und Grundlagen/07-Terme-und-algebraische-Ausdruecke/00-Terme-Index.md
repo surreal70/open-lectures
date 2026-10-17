@@ -2,7 +2,7 @@
 title: "Terme und algebraische Ausdrücke"
 chapter: "07"
 type: index
-status: "draft - review pending"
+status: final
 tags:
   - mathematik
   - terme

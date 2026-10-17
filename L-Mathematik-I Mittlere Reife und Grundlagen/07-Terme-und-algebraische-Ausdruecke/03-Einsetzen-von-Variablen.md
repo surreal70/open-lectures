@@ -3,7 +3,7 @@ title: "Einsetzen von Variablen"
 chapter: "07"
 section: "03"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Zahlenwerte für Variablen einsetzen"
   - "Termwerte berechnen"
@@ -15,7 +15,7 @@ tags:
   - einsetzen
   - termwert
 created: 2026-10-13
-modified: 2025-07-23
+modified: 2026-10-16
 ---
 
 # Einsetzen von Variablen

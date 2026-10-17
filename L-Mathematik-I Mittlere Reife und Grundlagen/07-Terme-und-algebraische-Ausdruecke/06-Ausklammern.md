@@ -3,7 +3,7 @@ title: "Ausklammern"
 chapter: "07"
 section: "06"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Den größten gemeinsamen Faktor erkennen"
   - "Terme ausklammern können"
@@ -15,7 +15,7 @@ tags:
   - ausklammern
   - faktor
 created: 2026-10-13
-modified: 2025-07-23
+modified: 2026-10-16
 ---
 
 # Ausklammern

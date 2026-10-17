@@ -3,7 +3,7 @@ title: "Zusammenfassen gleichartiger Terme"
 chapter: "07"
 section: "04"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Gleichartige Terme erkennen"
   - "Terme addieren und subtrahieren"
@@ -15,7 +15,7 @@ tags:
   - zusammenfassen
   - gleichartig
 created: 2026-10-13
-modified: 2025-07-23
+modified: 2026-10-16
 ---
 
 # Zusammenfassen gleichartiger Terme

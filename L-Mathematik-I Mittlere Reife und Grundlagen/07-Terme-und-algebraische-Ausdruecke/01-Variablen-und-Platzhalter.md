@@ -3,7 +3,7 @@ title: "Variablen und Platzhalter"
 chapter: "07"
 section: "01"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Den Begriff Variable verstehen"
   - "Variablen als Platzhalter für Zahlen erkennen"
@@ -15,7 +15,7 @@ tags:
   - algebra
   - platzhalter
 created: 2026-10-13
-modified: 2025-07-23
+modified: 2026-10-16
 ---
 
 # Variablen und Platzhalter

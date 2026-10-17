@@ -3,7 +3,7 @@ title: "Ausmultiplizieren"
 chapter: "07"
 section: "05"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Das Distributivgesetz anwenden"
   - "Klammern mit einem Faktor ausmultiplizieren"
@@ -15,7 +15,7 @@ tags:
   - ausmultiplizieren
   - distributiv
 created: 2026-10-13
-modified: 2025-07-23
+modified: 2026-10-16
 ---
 
 # Ausmultiplizieren

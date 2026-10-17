@@ -3,7 +3,7 @@ title: "Faktorisierung"
 chapter: "07"
 section: "09"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Terme in Produkte zerlegen"
   - "Binomische Formeln rückwärts anwenden"
@@ -15,7 +15,7 @@ tags:
   - terme
   - produkt
 created: 2026-10-13
-modified: 2025-07-23
+modified: 2026-10-16
 ---
 
 # Faktorisierung

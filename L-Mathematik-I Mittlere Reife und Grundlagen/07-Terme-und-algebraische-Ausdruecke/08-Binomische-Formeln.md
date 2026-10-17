@@ -3,7 +3,7 @@ title: "Binomische Formeln"
 chapter: "07"
 section: "08"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Die drei binomischen Formeln kennen"
   - "Binomische Formeln vorwärts anwenden"

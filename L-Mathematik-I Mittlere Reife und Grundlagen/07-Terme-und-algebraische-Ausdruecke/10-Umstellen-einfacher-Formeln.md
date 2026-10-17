@@ -3,7 +3,7 @@ title: "Umstellen einfacher Formeln"
 chapter: "07"
 section: "10"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Formeln nach einer Variablen auflösen"
   - "Die Umkehroperation richtig anwenden"
@@ -15,7 +15,7 @@ tags:
   - umstellen
   - aufloesen
 created: 2026-10-13
-modified: 2025-07-23
+modified: 2026-10-16
 ---
 
 # Umstellen einfacher Formeln
