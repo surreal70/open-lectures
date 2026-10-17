@@ -60,26 +60,22 @@ Das Verständnis dieser Konzepte ist nicht nur für Prüfungen wichtig, sondern 
 
 ## Lernpfad
 
-```
-Dezimalzahlen (01) → Rechnen (02) → Runden (03)
-        ↓
-Prozent-Einführung (04)
-        ↓
-┌───────┼───────┐
-↓       ↓       ↓
-Prozentwert  Prozentsatz  Grundwert
-(05)         (06)         (07)
-└───────┬───────┘
-        ↓
-Prozentuale Änderungen (08)
-        ↓
-┌───────┴───────┐
-↓               ↓
-Rabatte (09)    Zinsen (10)
-        ↓
-Zinseszins (11)
-        ↓
-Anwendungen (12)
+```mermaid
+graph TD
+    A[Dezimalzahlen 01] --> B[Rechnen 02]
+    B --> C[Runden 03]
+    C --> D[Prozent-Einführung 04]
+    D --> E[Prozentwert 05]
+    D --> F[Prozentsatz 06]
+    D --> G[Grundwert 07]
+    E --> H[Prozentuale Änderungen 08]
+    F --> H
+    G --> H
+    H --> I[Rabatte 09]
+    H --> J[Zinsen 10]
+    J --> K[Zinseszins 11]
+    I --> L[Anwendungen 12]
+    K --> L
 ```
 
 ## Verbindungen zu anderen Kapiteln
