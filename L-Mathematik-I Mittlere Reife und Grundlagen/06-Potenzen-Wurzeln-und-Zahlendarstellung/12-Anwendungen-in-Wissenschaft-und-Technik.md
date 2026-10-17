@@ -3,7 +3,7 @@ title: "Anwendungen in Wissenschaft und Technik"
 chapter: "06"
 section: "12"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Potenzen und Wurzeln in Sachkontexten anwenden"
   - "Physikalische Formeln mit Potenzen verstehen"
@@ -15,7 +15,7 @@ tags:
   - physik
   - technik
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Anwendungen in Wissenschaft und Technik

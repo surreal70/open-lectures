@@ -2,7 +2,7 @@
 title: "Potenzen, Wurzeln und Zahlendarstellung"
 chapter: "06"
 type: index
-status: "draft - review pending"
+status: final
 tags:
   - mathematik
   - potenzen

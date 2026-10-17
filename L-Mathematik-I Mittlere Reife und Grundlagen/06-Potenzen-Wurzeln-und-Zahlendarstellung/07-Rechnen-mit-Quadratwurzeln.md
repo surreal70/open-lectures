@@ -3,7 +3,7 @@ title: "Rechnen mit Quadratwurzeln"
 chapter: "06"
 section: "07"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Wurzeln addieren und subtrahieren (gleichartige)"
   - "Wurzeln multiplizieren und dividieren"
@@ -15,7 +15,7 @@ tags:
   - rechnen
   - vereinfachen
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Rechnen mit Quadratwurzeln

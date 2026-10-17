@@ -3,7 +3,7 @@ title: "Potenzen mit natürlichen Exponenten"
 chapter: "06"
 section: "02"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Potenzen mit natürlichen Exponenten berechnen"
   - "Vorzeichen bei Potenzen verstehen"
@@ -15,7 +15,7 @@ tags:
   - natuerliche-zahlen
   - berechnung
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Potenzen mit natürlichen Exponenten

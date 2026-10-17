@@ -3,7 +3,7 @@ title: "Potenzen mit negativen Exponenten"
 chapter: "06"
 section: "04"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Negative Exponenten als Kehrwert verstehen"
   - "Potenzen mit negativen Exponenten berechnen"
@@ -15,7 +15,7 @@ tags:
   - negative-exponenten
   - kehrwert
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Potenzen mit negativen Exponenten

@@ -3,7 +3,7 @@ title: "Kubikwurzeln Grundlagen"
 chapter: "06"
 section: "09"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Den Begriff Kubikwurzel verstehen"
   - "Einfache Kubikwurzeln berechnen"
@@ -15,7 +15,7 @@ tags:
   - kubikwurzel
   - dritte-wurzel
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Kubikwurzeln Grundlagen

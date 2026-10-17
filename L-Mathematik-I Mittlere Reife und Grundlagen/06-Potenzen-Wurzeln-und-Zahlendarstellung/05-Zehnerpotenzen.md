@@ -3,7 +3,7 @@ title: "Zehnerpotenzen"
 chapter: "06"
 section: "05"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Die Bedeutung von Zehnerpotenzen verstehen"
   - "Große und kleine Zahlen mit Zehnerpotenzen darstellen"
@@ -15,7 +15,7 @@ tags:
   - zehnerpotenzen
   - vorsaetze
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Zehnerpotenzen

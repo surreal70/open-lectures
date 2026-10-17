@@ -3,7 +3,7 @@ title: "Quadratwurzeln"
 chapter: "06"
 section: "06"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Den Begriff Quadratwurzel verstehen"
   - "Quadratwurzeln berechnen und abschätzen"

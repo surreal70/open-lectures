@@ -3,7 +3,7 @@ title: "Wissenschaftliche Schreibweise"
 chapter: "06"
 section: "10"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Zahlen in wissenschaftlicher Schreibweise darstellen"
   - "Von wissenschaftlicher in Dezimalschreibweise umwandeln"
@@ -15,7 +15,7 @@ tags:
   - notation
   - zehnerpotenzen
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Wissenschaftliche Schreibweise

@@ -3,7 +3,7 @@ title: "Potenzgesetze"
 chapter: "06"
 section: "03"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Die fünf Potenzgesetze kennen und anwenden"
   - "Potenzen mit gleicher Basis multiplizieren/dividieren"
@@ -15,7 +15,7 @@ tags:
   - potenzgesetze
   - rechenregeln
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Potenzgesetze

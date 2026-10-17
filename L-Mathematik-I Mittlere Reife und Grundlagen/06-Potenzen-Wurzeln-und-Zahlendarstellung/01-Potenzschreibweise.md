@@ -3,7 +3,7 @@ title: "Potenzschreibweise"
 chapter: "06"
 section: "01"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Die Potenzschreibweise als Kurzform verstehen"
   - "Basis und Exponent unterscheiden"

@@ -3,7 +3,7 @@ title: "Wurzelgesetze"
 chapter: "06"
 section: "08"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Die Wurzelgesetze kennen und anwenden"
   - "Den Zusammenhang zwischen Wurzeln und Potenzen verstehen"
@@ -15,7 +15,7 @@ tags:
   - wurzelgesetze
   - rechenregeln
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Wurzelgesetze

@@ -3,7 +3,7 @@ title: "Näherungsverfahren"
 chapter: "06"
 section: "11"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Wurzeln durch Intervallschachtelung approximieren"
   - "Das Heron-Verfahren anwenden können"
@@ -15,7 +15,7 @@ tags:
   - approximation
   - heron
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Näherungsverfahren
