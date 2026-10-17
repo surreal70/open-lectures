@@ -8,7 +8,7 @@ tags:
   - zahlenmengen
   - natuerliche-zahlen
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-16
 ---
 
 # Natürliche Zahlen
@@ -144,10 +144,8 @@ Berechnung:   3×1000     7×100     4×10     2×1
 
 Natürliche Zahlen lassen sich auf einem Zahlenstrahl darstellen. Der Zahlenstrahl ist eine gerade Linie, auf der Zahlen als Punkte markiert werden:
 
-```
-    ←──┬────┬────┬────┬────┬────┬────┬────┬────┬────┬──→
-       1    2    3    4    5    6    7    8    9   10  ...
-```
+![[zahlenstrahl-natuerliche.png]]
+*<span class="fig-id">01-01-03-zahlenstrahl-natuerliche</span>: Zahlenstrahl der natürlichen Zahlen ℕ. Der Strahl beginnt bei 1 und setzt sich nach rechts unbegrenzt fort (Pfeil); die Abstände zwischen benachbarten Zahlen sind stets gleich groß.*
 
 ### Was der Zahlenstrahl zeigt
 

@@ -8,7 +8,7 @@ tags:
   - notation
   - symbole
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-16
 ---
 
 # Mathematische Schreibweisen und Symbole
@@ -146,19 +146,8 @@ Mengen sind Sammlungen von Objekten (Elementen). Die Mengenlehre bildet das Fund
 
 Mengenoperationen lassen sich gut mit Venn-Diagrammen visualisieren. Zwei überlappende Kreise zeigen, welche Elemente zu welcher Menge gehören:
 
-```
-    Menge A           Menge B
-   ┌──────┐         ┌──────┐
-   │  1   │         │      │
-   │    ╔═╧═════════╧═╗  3 │
-   │    ║     2     ║    │
-   │    ╚═╤═════════╤═╝    │
-   │      │         │      │
-   └──────┘         └──────┘
-
-   A ∩ B = {2} (Schnittmenge: nur das gemeinsame Element)
-   A ∪ B = {1, 2, 3} (Vereinigung: alle Elemente)
-```
+![[venn-mengen.png]]
+*<span class="fig-id">01-01-02-venn-mengen</span>: Venn-Diagramm der Mengen A = {1, 2} und B = {2, 3}. Die Schnittmenge A ∩ B = {2} enthält nur das gemeinsame Element, die Vereinigung A ∪ B = {1, 2, 3} alle Elemente.*
 
 ---
 

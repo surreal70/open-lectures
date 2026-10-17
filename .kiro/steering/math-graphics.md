@@ -33,6 +33,16 @@ Vor dem Erstellen einer PNG-Grafik in einem Mathematik-Vault **MUSS** folgende F
 
 Erst nach Beantwortung dieser Frage wird die Grafik erstellt.
 
+**Ausnahme (siehe Vault-spezifische Defaults unten):** Ist für den betreffenden Vault ein Standard festgelegt, entfällt die Rückfrage und der Standard wird direkt angewendet.
+
+## Vault-spezifische Defaults
+
+### `L-Mathematik-I Mittlere Reife und Grundlagen`
+- **Standard-Farbwahl: mehrfarbig** (2–3 Blau-Variationen).
+- Die oben genannte Pflicht-Rückfrage **entfällt** für diesen Vault; Grafiken werden standardmäßig mehrfarbig erstellt.
+- **Begründung:** Für die didaktischen Darstellungen in diesem Grundlagen-Vault (z. B. Venn-Diagramme mit Schnitt-/Vereinigungsmengen, Flächen- und Konstruktionsskizzen) verbessern mehrere Blau-Variationen die Unterscheidbarkeit und das Verständnis deutlich. Mehrfarbig ist daher die bevorzugte, als sinnvoll bestätigte Voreinstellung.
+- Abweichung bleibt möglich: Wird im Einzelfall ausdrücklich „einfarbig" gewünscht, gilt diese Einzelanweisung vor dem Default.
+
 ## Anwendungsbeispiele
 
 ### Einfarbig (empfohlen für einfache Grafiken)

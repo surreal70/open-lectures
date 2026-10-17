@@ -206,6 +206,37 @@ Die Unterlagen verwenden verschiedene Callout-Boxen:
 
 ---
 
+## CSS-Snippets (Darstellung anpassen)
+
+Einige Vaults enthalten **CSS-Snippets**, die die Darstellung verbessern – etwa die Breite von Abbildungen begrenzen oder Bildunterschriften formatieren. Snippets liegen im Vault unter `.obsidian/snippets/` und müssen **einmalig aktiviert** werden.
+
+### Snippet aktivieren
+
+1. Einstellungen → **Erscheinungsbild**
+2. Abschnitt **CSS-Snippets** nach unten scrollen
+3. Auf das **Neu-laden-Symbol** klicken, damit vorhandene Snippets erscheinen
+4. Das gewünschte Snippet per Schalter **einschalten**
+
+### Snippet `lecture-figures`
+
+Dieses Snippet (sofern im Vault vorhanden) bewirkt:
+
+- **Abbildungen** werden auf **75 % der Inhaltsbreite** begrenzt und zentriert – so passen Grafiken proportional zum Text und nehmen nicht die volle Seitenbreite ein.
+- **Figur-Identifier** (`<span class="fig-id">…</span>` unter Abbildungen) werden blau und fett dargestellt.
+
+> [!note] **Figur-Identifier und Bildunterschriften**
+> Abbildungen werden mit einer Bildunterschrift und einem eindeutigen Identifier versehen, z. B.:
+> ```markdown
+> ![[zahlenstrahl-natuerliche.png]]
+> *<span class="fig-id">01-01-03-zahlenstrahl-natuerliche</span>: Zahlenstrahl der natürlichen Zahlen.*
+> ```
+> Der Identifier (`<topic>-<kapitel>-<datei>-<bildname>`) ist vault-weit eindeutig. Ohne aktiviertes Snippet wird er einfach als normaler Text angezeigt.
+
+> [!tip] **Eigene Breite pro Bild**
+> Unabhängig vom Snippet kann die Anzeigebreite einzelner Bilder direkt im Link gesetzt werden: `![[bild.png|600]]` (Breite in Pixel). Das Snippet wirkt vault-weit, die Pixelangabe nur für das jeweilige Bild.
+
+---
+
 ## Empfohlene Plugins (optional)
 
 Diese Community-Plugins verbessern das Lernerlebnis:

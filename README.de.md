@@ -45,6 +45,9 @@ Siehe [LICENSE](LICENSE) für den vollständigen Lizenztext.
 | `Mathematik I – Mittlere Reife und Grundlagen` | Mathematik I – Mittlere Reife und Grundlagen. Arithmetik, Algebra, Geometrie, Funktionen, Proportionen und Prüfungsvorbereitung | Andreas Hümmer | Entwurf |
 | `Mathematik II – Abitur` | Mathematik II – Abiturniveau. Weiterführende Algebra, Analysis, Stochastik | Andreas Hümmer | früher Entwurf |
 | `Kryptografie I` | Kryptografie I – Grundlagen der Kryptografie, symmetrische und asymmetrische Verschlüsselung, Hashfunktionen, digitale Signaturen | Andreas Hümmer | Entwurf |
+| `Zertifizierung – BSI – IT-Grundschutz` | Vorbereitung auf die BSI-IT-Grundschutz-Qualifizierung: ISMS, Grundschutz-Methodik (BSI 200-1/-2/-3), Strukturanalyse, Schutzbedarf, Modellierung, Risikoanalyse, Notfallmanagement/BCM sowie Praktiker- und Berater-Prüfungsvorbereitung | Andreas Hümmer | früher Entwurf |
+| `Zertifizierung – Datenschutz` | Datenschutz-Zertifizierung (DSGVO/BDSG): Rechtsgrundlagen, Betroffenenrechte, Verarbeitungsverzeichnis, Auftragsverarbeitung, internationale Datenübermittlung, TOMs, DSFA, Privacy-Program-Management und Prüfungsvorbereitung | Andreas Hümmer | früher Entwurf |
+| `Zertifizierung – ISC2 – CISSP` | CISSP-Prüfungsvorbereitung (ISC2): Security Governance und Risikomanagement, Asset Security, Sicherheitsarchitektur, Kryptographie, Netzwerk- und Kommunikationssicherheit, IAM, Security Operations, Incident Response und Secure Software Development | Andreas Hümmer | früher Entwurf |
 
 ## Mitwirken
 

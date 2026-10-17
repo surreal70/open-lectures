@@ -1,0 +1,21 @@
+/* Lecture-Figures Snippet
+   - Begrenzt eingebettete Abbildungen auf 75 % der Inhaltsbreite und zentriert sie
+   - Stilisiert die Figur-Identifier (.fig-id) in Blau (aus den Steering-Regeln)
+   Aktivierung: Einstellungen -> Erscheinungsbild -> CSS-Snippets -> einschalten
+*/
+
+/* Eingebettete Bilder (Lese- und Bearbeitungsansicht) auf 75 % der Breite */
+.markdown-rendered .internal-embed.image-embed img,
+.markdown-source-view.mod-cm6 .internal-embed.image-embed img {
+  max-width: 75%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Figur-Identifier blau und fett (gemaess Obsidian-Markdown-Steering) */
+.fig-id {
+  color: #4a86e8;
+  font-weight: bold;
+}

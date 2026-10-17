@@ -234,6 +234,37 @@ If images suddenly stop working after moving files, try:
 
 ---
 
+## CSS Snippets (Customising Appearance)
+
+Some vaults ship **CSS snippets** that improve presentation — for example constraining figure width or styling figure captions. Snippets live in the vault under `.obsidian/snippets/` and must be **enabled once**.
+
+### Enabling a snippet
+
+1. Settings → **Appearance**
+2. Scroll down to the **CSS snippets** section
+3. Click the **reload icon** so existing snippets appear
+4. Toggle the desired snippet **on**
+
+### The `lecture-figures` snippet
+
+Where present, this snippet does the following:
+
+- **Figures** are constrained to **75% of the content width** and centered, so graphics stay proportional to the text instead of filling the whole page width.
+- **Figure identifiers** (`<span class="fig-id">…</span>` below figures) are shown in bold blue.
+
+> [!note] **Figure identifiers and captions**
+> Figures are given a caption and a unique identifier, e.g.:
+> ```markdown
+> ![[zahlenstrahl-natuerliche.png]]
+> *<span class="fig-id">01-01-03-zahlenstrahl-natuerliche</span>: Number line of the natural numbers.*
+> ```
+> The identifier (`<topic>-<chapter>-<file>-<image-name>`) is unique across the vault. Without the snippet enabled, it simply renders as plain text.
+
+> [!tip] **Per-image width**
+> Independent of the snippet, the display width of a single image can be set directly in the link: `![[image.png|600]]` (width in pixels). The snippet applies vault-wide; the pixel value applies only to that one image.
+
+---
+
 ## Further Resources
 
 - [Obsidian Help](https://help.obsidian.md/)

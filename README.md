@@ -45,6 +45,9 @@ See [LICENSE](LICENSE) for the full license text.
 | `Mathematik I – Mittlere Reife und Grundlagen` | Mathematics I – Middle school level and foundations. Arithmetic, algebra, geometry, functions, proportions, and exam preparation | Andreas Hümmer | draft |
 | `Mathematik II – Abitur` | Mathematics II – High school graduation level. Advanced algebra, calculus, analysis, stochastics | Andreas Hümmer | early draft |
 | `Kryptografie I` | Cryptography I – Fundamentals of cryptography, symmetric and asymmetric encryption, hash functions, digital signatures | Andreas Hümmer | draft |
+| `Zertifizierung – BSI – IT-Grundschutz` | Preparation for the BSI IT-Grundschutz qualification: ISMS, Grundschutz methodology (BSI 200-1/-2/-3), structure analysis, protection requirements, modelling, risk analysis, emergency management/BCM, plus practitioner and consultant exam preparation | Andreas Hümmer | early draft |
+| `Zertifizierung – Datenschutz` | Data protection certification (GDPR/BDSG): legal foundations, data subject rights, records of processing, data processing agreements, international data transfers, TOMs, DPIA, privacy program management, and exam preparation | Andreas Hümmer | early draft |
+| `Zertifizierung – ISC2 – CISSP` | CISSP exam preparation (ISC2): security governance and risk management, asset security, security architecture, cryptography, network and communication security, IAM, security operations, incident response, and secure software development | Andreas Hümmer | early draft |
 
 ## Contributing
 
