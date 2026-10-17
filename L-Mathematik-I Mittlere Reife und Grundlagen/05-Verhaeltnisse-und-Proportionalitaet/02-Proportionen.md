@@ -3,7 +3,7 @@ title: "Proportionen"
 chapter: "05"
 section: "02"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Proportionen erkennen und aufstellen"
   - "Die Proportionsgleichung lösen"

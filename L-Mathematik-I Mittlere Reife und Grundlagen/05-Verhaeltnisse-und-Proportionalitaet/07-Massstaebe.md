@@ -3,7 +3,7 @@ title: "Maßstäbe"
 chapter: "05"
 section: "07"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Den Maßstabsbegriff verstehen"
   - "Vom Plan auf die Wirklichkeit rechnen"

@@ -3,7 +3,7 @@ title: "Dreisatz"
 chapter: "05"
 section: "03"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Den Dreisatz als Lösungsmethode anwenden"
   - "Zwischen direktem und indirektem Dreisatz unterscheiden"

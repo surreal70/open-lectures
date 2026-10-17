@@ -3,7 +3,7 @@ title: "Umrechnungen von Einheiten"
 chapter: "05"
 section: "06"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Längen-, Flächen- und Volumeneinheiten umrechnen"
   - "Zeiteinheiten umrechnen"

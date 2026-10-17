@@ -2,7 +2,7 @@
 title: "Verhältnisse und Proportionalität"
 chapter: "05"
 type: index
-status: "draft - review pending"
+status: final
 tags:
   - mathematik
   - verhaeltnisse

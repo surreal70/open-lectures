@@ -3,7 +3,7 @@ title: "Technische Verhältnisberechnungen"
 chapter: "05"
 section: "10"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Mischungsrechnungen durchführen"
   - "Übersetzungsverhältnisse bei Zahnrädern berechnen"

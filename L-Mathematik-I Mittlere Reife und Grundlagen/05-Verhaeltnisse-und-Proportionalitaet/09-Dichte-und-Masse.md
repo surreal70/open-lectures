@@ -3,7 +3,7 @@ title: "Dichte und Masse"
 chapter: "05"
 section: "09"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Den Zusammenhang ρ = m/V verstehen"
   - "Masse, Volumen und Dichte berechnen"

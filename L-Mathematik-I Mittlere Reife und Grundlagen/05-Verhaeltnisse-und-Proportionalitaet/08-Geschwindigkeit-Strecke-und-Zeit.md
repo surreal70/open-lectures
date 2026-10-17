@@ -3,7 +3,7 @@ title: "Geschwindigkeit, Strecke und Zeit"
 chapter: "05"
 section: "08"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Den Zusammenhang v = s/t verstehen"
   - "Alle drei Größen berechnen können"

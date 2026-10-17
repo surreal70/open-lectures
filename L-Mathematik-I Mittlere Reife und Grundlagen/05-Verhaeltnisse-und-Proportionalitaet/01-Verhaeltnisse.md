@@ -3,7 +3,7 @@ title: "Verhältnisse"
 chapter: "05"
 section: "01"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Den Begriff Verhältnis verstehen"
   - "Verhältnisse aufstellen und vereinfachen"

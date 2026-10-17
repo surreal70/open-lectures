@@ -3,7 +3,7 @@ title: "Direkte Proportionalität"
 chapter: "05"
 section: "04"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Direkte Proportionalität erkennen"
   - "Den Proportionalitätsfaktor bestimmen"

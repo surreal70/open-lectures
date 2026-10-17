@@ -3,7 +3,7 @@ title: "Indirekte Proportionalität"
 chapter: "05"
 section: "05"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Indirekte Proportionalität erkennen"
   - "Mit dem konstanten Produkt arbeiten"
