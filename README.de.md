@@ -41,7 +41,10 @@ Siehe [LICENSE](LICENSE) für den vollständigen Lizenztext.
 
 | Vault | Beschreibung | Autor | Status |
 |-------|--------------|-------|--------|
-| `Betriebssysteme, Rechnernetze und verteilte Systeme` | Betriebssysteme, Rechnernetze und Verteilte Systeme – IU-Kursmaterialien. **BS** (Prozesse, Scheduling, Speicher, Synchronisation, E/A, Dateisysteme), **RN** (OSI/TCP-IP-Modelle, alle Schichten, Sicherheit), **VS** (Grundlagen, Kommunikation, Konsistenz, Koordination) | Andreas Hümmer | in Entwicklung (BS: v0.9.3, RN: v0.1, VS: v0.1) |
+| `Betriebssysteme, Rechnernetze und verteilte Systeme` | Betriebssysteme, Rechnernetze und Verteilte Systeme – IU-Kursmaterialien. **BS** (Prozesse, Scheduling, Speicher, Synchronisation, E/A, Dateisysteme), **RN** (OSI/TCP-IP-Modelle, alle Schichten, Sicherheit), **VS** (Grundlagen, Kommunikation, Konsistenz, Koordination) | Andreas Hümmer | in Entwicklung (BS: v1.0.0, RN: v0.8.4, VS: v0.6.3) |
+| `Mathematik I – Mittlere Reife und Grundlagen` | Mathematik I – Mittlere Reife und Grundlagen. Arithmetik, Algebra, Geometrie, Funktionen, Proportionen und Prüfungsvorbereitung | Andreas Hümmer | Entwurf |
+| `Mathematik II – Abitur` | Mathematik II – Abiturniveau. Weiterführende Algebra, Analysis, Stochastik | Andreas Hümmer | früher Entwurf |
+| `Kryptografie I` | Kryptografie I – Grundlagen der Kryptografie, symmetrische und asymmetrische Verschlüsselung, Hashfunktionen, digitale Signaturen | Andreas Hümmer | Entwurf |
 
 ## Mitwirken
 
