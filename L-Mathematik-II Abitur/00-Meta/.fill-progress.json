@@ -1,0 +1,21 @@
+{
+  "complete": false,
+  "chapters": [
+    { "dir": "01-Vertiefung-der-Algebra", "done": true },
+    { "dir": "02-Funktionen-und-ihre-Eigenschaften", "done": false },
+    { "dir": "03-Elementare-Funktionstypen", "done": false },
+    { "dir": "04-Folgen-Reihen-und-Grenzwerte", "done": false },
+    { "dir": "05-Differentialrechnung-I", "done": false },
+    { "dir": "06-Differentialrechnung-II", "done": false },
+    { "dir": "07-Integralrechnung-I", "done": false },
+    { "dir": "08-Integralrechnung-II", "done": false },
+    { "dir": "09-Trigonometrie-und-periodische-Funktionen", "done": false },
+    { "dir": "10-Vektorrechnung", "done": false },
+    { "dir": "11-Analytische-Geometrie", "done": false },
+    { "dir": "12-Einfuehrung-in-die-lineare-Algebra", "done": false },
+    { "dir": "13-Kombinatorik-und-Wahrscheinlichkeitsrechnung", "done": false },
+    { "dir": "14-Wahrscheinlichkeitsverteilungen", "done": false },
+    { "dir": "15-Statistik-und-Hypothesentests", "done": false },
+    { "dir": "16-Mathematische-Modellierung-und-Abschlussprojekt", "done": false }
+  ]
+}
