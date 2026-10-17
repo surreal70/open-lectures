@@ -54,28 +54,15 @@ $$\underbrace{a}_{\text{1. Summand}} + \underbrace{b}_{\text{2. Summand}} = \und
 
 Addition bedeutet auf dem Zahlenstrahl: **nach rechts gehen**.
 
-```
-    3 + 5 = 8
-    
-    Start bei 3, gehe 5 Schritte nach rechts:
-    
-    ←──┬────┬────┬────┬────┬────┬────┬────┬────┬────┬──→
-       0    1    2    3    4    5    6    7    8    9
-                      ●━━━━━━━━━━━━━━━━━━━━━━━━●
-                      Start        +5         Ergebnis
-```
+![[addition-zahlenstrahl.png]]
+*<span class="fig-id">01-02-01-addition-zahlenstrahl</span>: Addition auf dem Zahlenstrahl – von der Start­zahl 3 aus 5 Schritte nach rechts führen zum Ergebnis 8.*
 
 ### Schriftliche Addition
 
 Bei der schriftlichen Addition werden die Zahlen stellengerecht untereinander geschrieben:
 
-```
-    347
-  + 285
-  ─────
-    632
-    ¹¹
-```
+![[schriftliche-addition.png]]
+*<span class="fig-id">01-02-01-schriftliche-addition</span>: Schriftliche Addition von 347 + 285 = 632 – stellengerecht untereinander, mit den Überträgen unter den Zehner- und Hunderterspalten.*
 
 **Schritte:**
 1. Einer addieren: $7 + 5 = 12$ → schreibe $2$, merke $1$
@@ -125,16 +112,8 @@ Negative Zahlen wurden lange Zeit als „absurd" oder „unmöglich" angesehen. 
 
 Addition einer **negativen** Zahl bedeutet: **nach links gehen**.
 
-```
-    5 + (-3) = 2
-    
-    Start bei 5, gehe 3 Schritte nach links:
-    
-    ←──┬────┬────┬────┬────┬────┬────┬────┬──→
-       0    1    2    3    4    5    6    7
-                 ●━━━━━━━━━━━━━━●
-              Ergebnis   -3    Start
-```
+![[addition-negativ.png]]
+*<span class="fig-id">01-02-01-addition-negativ</span>: Addition einer negativen Zahl – von der Start­zahl 5 aus 3 Schritte nach links führen zum Ergebnis 2 (5 + (−3) = 2).*
 
 ---
 
