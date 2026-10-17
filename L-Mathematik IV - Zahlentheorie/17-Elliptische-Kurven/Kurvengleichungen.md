@@ -1,0 +1,3 @@
+# Kurvengleichungen
+
+<!-- TODO: Inhalt ergänzen -->

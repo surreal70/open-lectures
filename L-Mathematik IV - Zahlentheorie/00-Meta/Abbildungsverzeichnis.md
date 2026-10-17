@@ -1,0 +1,3 @@
+# Abbildungsverzeichnis
+
+<!-- TODO: Abbildungen ergänzen -->

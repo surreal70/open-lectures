@@ -1,0 +1,3 @@
+# Seitenkanaldaten
+
+<!-- TODO: Inhalt ergänzen -->

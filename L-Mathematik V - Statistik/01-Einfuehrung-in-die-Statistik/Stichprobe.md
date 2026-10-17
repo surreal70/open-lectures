@@ -1,0 +1,3 @@
+# Stichprobe
+
+<!-- TODO: Inhalt ergänzen -->

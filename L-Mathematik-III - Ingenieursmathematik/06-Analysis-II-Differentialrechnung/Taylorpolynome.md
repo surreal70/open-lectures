@@ -1,0 +1,3 @@
+# Taylorpolynome
+
+< TODO: Inhalt ergänzen -->

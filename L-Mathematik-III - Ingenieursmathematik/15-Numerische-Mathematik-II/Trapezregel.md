@@ -1,0 +1,3 @@
+# Trapezregel
+
+< TODO: Inhalt ergänzen -->

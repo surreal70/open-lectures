@@ -1,0 +1,3 @@
+# ARIMA
+
+<!-- TODO: Inhalt ergänzen -->

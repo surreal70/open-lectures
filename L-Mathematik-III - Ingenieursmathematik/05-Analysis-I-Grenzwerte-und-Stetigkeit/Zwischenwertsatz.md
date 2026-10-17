@@ -1,0 +1,3 @@
+# Zwischenwertsatz
+
+< TODO: Inhalt ergänzen -->

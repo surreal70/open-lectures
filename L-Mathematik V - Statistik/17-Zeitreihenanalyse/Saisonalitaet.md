@@ -1,0 +1,3 @@
+# Saisonalitaet
+
+<!-- TODO: Inhalt ergänzen -->

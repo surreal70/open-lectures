@@ -1,0 +1,3 @@
+# Glossar
+
+<!-- TODO: Fachbegriffe ergänzen -->

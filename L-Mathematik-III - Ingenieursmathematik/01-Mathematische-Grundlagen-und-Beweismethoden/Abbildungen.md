@@ -1,0 +1,3 @@
+# Abbildungen
+
+< TODO: Inhalt ergänzen -->

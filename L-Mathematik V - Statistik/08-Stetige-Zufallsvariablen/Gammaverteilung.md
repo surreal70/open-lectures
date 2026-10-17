@@ -1,0 +1,3 @@
+# Gammaverteilung
+
+<!-- TODO: Inhalt ergänzen -->

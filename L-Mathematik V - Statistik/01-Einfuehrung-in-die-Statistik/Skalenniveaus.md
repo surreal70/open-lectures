@@ -1,0 +1,3 @@
+# Skalenniveaus
+
+<!-- TODO: Inhalt ergänzen -->

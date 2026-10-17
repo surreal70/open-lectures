@@ -1,0 +1,3 @@
+# Trend
+
+<!-- TODO: Inhalt ergänzen -->

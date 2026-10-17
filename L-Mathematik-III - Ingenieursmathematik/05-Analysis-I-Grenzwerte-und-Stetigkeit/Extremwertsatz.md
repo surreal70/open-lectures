@@ -1,0 +1,3 @@
+# Extremwertsatz
+
+< TODO: Inhalt ergänzen -->

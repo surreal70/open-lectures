@@ -1,0 +1,3 @@
+# Histogramm
+
+<!-- TODO: Inhalt ergänzen -->

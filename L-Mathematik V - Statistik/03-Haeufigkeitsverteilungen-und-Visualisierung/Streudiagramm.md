@@ -1,0 +1,3 @@
+# Streudiagramm
+
+<!-- TODO: Inhalt ergänzen -->
