@@ -15,7 +15,7 @@ tags:
   - rechnen
   - grundrechenarten
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-16
 ---
 
 # Rechnen mit Dezimalzahlen
@@ -47,13 +47,8 @@ Die gute Nachricht: Die Regeln sind logisch und konsistent. Wer sie einmal verst
 
 **Beispiel:** 12,45 + 3,7 + 0,125
 
-```
-   12,450
-    3,700
-+   0,125
-─────────
-   16,275
-```
+![[dezimal-addition.png]]
+*<span class="fig-id">01-04-02-dezimal-addition</span>: Schriftliche Addition 12,45 + 3,7 + 0,125 = 16,275 – Komma unter Komma, fehlende Stellen mit Nullen aufgefüllt.*
 
 **Schritte:**
 1. Zahlen untereinander schreiben (Komma unter Komma)
@@ -64,12 +59,8 @@ Die gute Nachricht: Die Regeln sind logisch und konsistent. Wer sie einmal verst
 
 **Beispiel:** 25,3 − 8,47
 
-```
-   25,30
-−   8,47
-────────
-   16,83
-```
+![[dezimal-subtraktion.png]]
+*<span class="fig-id">01-04-02-dezimal-subtraktion</span>: Schriftliche Subtraktion 25,3 − 8,47 = 16,83 – auf gleiche Stellenzahl gebracht, Komma unter Komma.*
 
 ### Häufige Fehler vermeiden
 
@@ -80,21 +71,16 @@ Die gute Nachricht: Die Regeln sind logisch und konsistent. Wer sie einmal verst
 
 > [!warning] **Häufiger Fehler: Stellen verwechseln**
 > Bei der Addition 12,45 + 3,7 schreiben manche:
-> ```
->    12,45
-> +   3,7
-> ────────
->    12,82  ✗ FALSCH!
-> ```
+>
+> ![[dezimal-fehler-falsch.png]]
+> *<span class="fig-id">01-04-02-dezimal-fehler-falsch</span>: Falsch – die 7 wird an den Hundertsteln statt an den Zehnteln ausgerichtet, dadurch entsteht das falsche Ergebnis 12,82.*
+>
 > Das Problem: Die 7 wurde zu den Hundertsteln addiert statt zu den Zehnteln.
 > 
 > **Richtig:** Erst auf gleiche Stellenzahl bringen:
-> ```
->    12,45
-> +   3,70
-> ────────
->    16,15  ✓ RICHTIG!
-> ```
+>
+> ![[dezimal-fehler-richtig.png]]
+> *<span class="fig-id">01-04-02-dezimal-fehler-richtig</span>: Richtig – erst mit Nullen auf gleiche Stellenzahl gebracht (3,70), dann ergibt die stellengerechte Addition das korrekte Ergebnis 16,15.*
 
 > [!tip] **Praktischer Tipp**
 > Schreibe immer zuerst alle Zahlen untereinander, mit dem Komma exakt ausgerichtet. Fülle dann fehlende Stellen mit Nullen auf, bevor du zu rechnen beginnst.
@@ -119,14 +105,8 @@ Wir multiplizieren die Zahlen ohne Komma (25 × 14 = 350) und teilen dann durch 
 
 **Berechne:** 2,5 × 1,4
 
-```
-    25 × 14 = 350
-    
-    2,5  → 1 Nachkommastelle
-  × 1,4  → 1 Nachkommastelle
-  ─────
-    3,50 → 2 Nachkommastellen
-```
+![[dezimal-multiplikation-1.png]]
+*<span class="fig-id">01-04-02-dezimal-multiplikation-1</span>: Multiplikation 2,5 × 1,4 – ohne Komma rechnen (25 × 14 = 350), dann so viele Nachkommastellen setzen wie beide Faktoren zusammen haben: 3,50 = 3,5.*
 
 **Ergebnis:** 2,5 × 1,4 = 3,5
 
@@ -134,14 +114,8 @@ Wir multiplizieren die Zahlen ohne Komma (25 × 14 = 350) und teilen dann durch 
 
 **Berechne:** 3,25 × 0,4
 
-```
-    325 × 4 = 1300
-    
-    3,25 → 2 Nachkommastellen
-  × 0,4  → 1 Nachkommastelle
-  ─────
-    1,300 → 3 Nachkommastellen
-```
+![[dezimal-multiplikation-2.png]]
+*<span class="fig-id">01-04-02-dezimal-multiplikation-2</span>: Multiplikation 3,25 × 0,4 – 325 × 4 = 1300, dann drei Nachkommastellen (2 + 1): 1,300 = 1,3.*
 
 **Ergebnis:** 3,25 × 0,4 = 1,3
 
@@ -174,28 +148,20 @@ Das Verschieben des Kommas bei Multiplikation/Division mit Zehnerpotenzen ist ei
 
 **Berechne:** 15,6 ÷ 4
 
-```
-    15,6 ÷ 4 = ?
-    
-    15 ÷ 4 = 3 Rest 3
-    36 ÷ 4 = 9
-    
-    Ergebnis: 3,9
-```
+![[dezimal-division.png]]
+*<span class="fig-id">01-04-02-dezimal-division</span>: Division 15,6 ÷ 4 = 3,9 – stellenweise teilen (15 ÷ 4 = 3 Rest 3, dann 36 ÷ 4 = 9), das Komma wird aus dem Dividenden übernommen.*
 
 ### Beispiel 2: Dezimalzahl ÷ Dezimalzahl
 
 **Berechne:** 7,2 ÷ 0,3
 
 **Schritt 1:** Divisor zur ganzen Zahl machen
-```
-    7,2 ÷ 0,3 = 72 ÷ 3  (beide × 10)
-```
+
+$$7{,}2 \div 0{,}3 = 72 \div 3 \quad (\text{beide} \times 10)$$
 
 **Schritt 2:** Division ausführen
-```
-    72 ÷ 3 = 24
-```
+
+$$72 \div 3 = 24$$
 
 **Ergebnis:** 7,2 ÷ 0,3 = 24
 
