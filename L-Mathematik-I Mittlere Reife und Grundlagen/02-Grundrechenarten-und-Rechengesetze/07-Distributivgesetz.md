@@ -77,16 +77,8 @@ $$4x + 4y = 4 \cdot (x + y)$$
 
 Ein Rechteck mit Breite $a$ und Länge $(b + c)$:
 
-```
-        b       c
-    ┌───────┬───────┐
-    │       │       │
-  a │   ab  │  ac   │
-    │       │       │
-    └───────┴───────┘
-    
-Fläche = a · (b + c) = a·b + a·c
-```
+![[distributiv-flaeche.png]]
+*<span class="fig-id">01-02-07-distributiv-flaeche</span>: Distributivgesetz als Flächenmodell – ein Rechteck der Höhe a und Länge (b + c) zerfällt in die Teilflächen a·b und a·c: a · (b + c) = a·b + a·c.*
 
 ---
 
