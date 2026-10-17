@@ -1,7 +1,7 @@
 ---
 author: Andreas Hümmer
 title: Überschlagsrechnung
-status: draft - review pending
+status: final
 tags:
   - content
   - mathematik

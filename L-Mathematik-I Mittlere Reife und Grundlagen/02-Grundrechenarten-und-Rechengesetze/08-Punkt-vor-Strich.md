@@ -1,7 +1,7 @@
 ---
 author: Andreas Hümmer
 title: Punkt-vor-Strich-Rechnung
-status: draft - review pending
+status: final
 tags:
   - content
   - mathematik

@@ -1,7 +1,7 @@
 ---
 author: Andreas Hümmer
 title: "Modul 2: Grundrechenarten und Rechengesetze"
-status: draft - review pending
+status: final
 tags:
   - index
   - mathematik
