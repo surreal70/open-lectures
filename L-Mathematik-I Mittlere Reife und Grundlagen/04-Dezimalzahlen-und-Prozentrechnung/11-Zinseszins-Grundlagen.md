@@ -16,7 +16,7 @@ tags:
   - exponentiell
   - wachstum
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-16
 ---
 
 # Zinseszins-Grundlagen
@@ -195,18 +195,8 @@ Die 72er-Regel ist eine Näherung, die aus der Zinseszinsformel abgeleitet wird.
 
 ### Visualisierung
 
-```
-Kapital
-  ↑
-  │                          ·····
-  │                    ·····
-  │               ·····     Zinseszins
-  │          ·····          (exponentiell)
-  │     ·····
-  │····──────────────────── Einfache Zinsen
-  │                         (linear)
-  └─────────────────────────────→ Zeit
-```
+![[zinseszins-wachstum.png]]
+*<span class="fig-id">01-04-11-zinseszins-wachstum</span>: Zinseszins (exponentiell, K₀·(1+p)ⁿ) wächst schneller als einfache Zinsen (linear, K₀·(1+p·n)) – beide starten bei K₀, die Zinseszinskurve liegt stets auf oder über der Geraden.*
 
 ### Langfristige Wirkung
 
