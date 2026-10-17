@@ -15,7 +15,7 @@ tags:
   - koeffizient
   - struktur
 created: 2026-10-13
-modified: 2025-07-23
+modified: 2026-10-16
 ---
 
 # Mathematische Terme
@@ -47,15 +47,8 @@ Der Begriff „Term" kommt vom lateinischen *terminus* (Grenze, Ausdruck). In de
 
 ## Bestandteile
 
-```
-    ┌─ Koeffizient (Vorzahl)
-    │
-   3x² + 5x - 7
-    │    │    │
-    │    │    └─ Konstantes Glied
-    │    └─ Term 2. Grades
-    └─ Variable mit Exponent
-```
+![[term-bestandteile.png]]
+*<span class="fig-id">01-07-02-term-bestandteile</span>: Bestandteile eines Terms am Beispiel 3x² + 5x − 7 – der Koeffizient (Vorzahl), die Variable mit Exponent, das lineare Glied und das konstante Glied.*
 
 ### Begriffe
 
