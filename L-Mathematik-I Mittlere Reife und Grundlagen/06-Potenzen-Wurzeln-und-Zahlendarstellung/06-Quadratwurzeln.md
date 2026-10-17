@@ -15,7 +15,7 @@ tags:
   - quadratwurzel
   - radikand
 created: 2026-10-13
-modified: 2025-06-26
+modified: 2026-10-16
 ---
 
 # Quadratwurzeln
@@ -45,14 +45,8 @@ Im Alltag begegnen uns Quadratwurzeln bei Abstandsberechnungen ([[11-Satz-des-Py
 
 ## Begriffe
 
-```
-    ┌─ Wurzelzeichen
-    │
-   √25 = 5
-    │    │
-    │    └─ Wurzelwert
-    └─ Radikand
-```
+![[wurzel-begriffe.png]]
+*<span class="fig-id">01-06-06-wurzel-begriffe</span>: Aufbau einer Quadratwurzel am Beispiel √25 = 5 – das Wurzelzeichen, der Radikand 25 und der Wurzelwert 5.*
 
 ## Wichtige Quadratwurzeln
 
