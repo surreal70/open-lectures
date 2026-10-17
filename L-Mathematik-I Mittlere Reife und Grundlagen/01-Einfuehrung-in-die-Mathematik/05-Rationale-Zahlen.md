@@ -8,7 +8,7 @@ tags:
   - zahlenmengen
   - rationale-zahlen
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-16
 ---
 
 # Rationale Zahlen
@@ -66,11 +66,8 @@ Die Definition sagt:
 
 Ein Bruch besteht aus drei Teilen, die jeweils eine eigene Bedeutung haben:
 
-```
-       Zähler (Dividend)      ← „Wie viele Teile nehme ich?"
-      ─────────────────       ← Bruchstrich (= Divisionszeichen)
-       Nenner (Divisor)       ← „In wie viele Teile ist das Ganze geteilt?"
-```
+![[bruch-aufbau.png]]
+*<span class="fig-id">01-01-05-bruch-aufbau</span>: Aufbau eines Bruchs am Beispiel ¾. Der Zähler (oben) gibt an, wie viele Teile genommen werden, der Nenner (unten), in wie viele Teile das Ganze geteilt ist; der Bruchstrich entspricht dem Divisionszeichen (3 : 4).*
 
 | Begriff | Symbol | Bedeutung | Beispiel bei $\frac{3}{4}$ |
 |---------|--------|-----------|---------------------------|
@@ -161,16 +158,12 @@ Der Überstrich markiert die sich wiederholende Ziffernfolge.
 
 Rationale Zahlen liegen **dicht** auf dem Zahlenstrahl – das bedeutet, zwischen je zwei verschiedenen rationalen Zahlen liegt immer mindestens eine weitere:
 
-```
-    ←──┬────┬────┬────┬────┬────┬────┬────┬────┬──→
-      -1  -½    0   ¼   ½   ¾    1   1¼  1½   2
-           │         │   │   │        │
-          -0,5      0,25 0,5 0,75    1,25
-```
+![[zahlenstrahl-rational.png]]
+*<span class="fig-id">01-01-05-zahlenstrahl-rational</span>: Zahlenstrahl der rationalen Zahlen ℚ mit Brüchen (oben) und ihren Dezimalwerten (unten). Zwischen je zwei rationalen Zahlen liegt stets eine weitere – ℚ liegt dicht.*
 
-### Die Dichtheit der rationalen Zahlen
+### Die Dichte der rationalen Zahlen
 
-> [!note] **Mathematische Eigenschaft: Dichtheit**
+> [!note] **Mathematische Eigenschaft: Dichte**
 > Zwischen je zwei verschiedenen rationalen Zahlen $a$ und $b$ liegt immer eine weitere rationale Zahl.
 > 
 > **Beweis:** Wenn $a < b$, dann liegt der Mittelwert $\frac{a+b}{2}$ genau zwischen $a$ und $b$:

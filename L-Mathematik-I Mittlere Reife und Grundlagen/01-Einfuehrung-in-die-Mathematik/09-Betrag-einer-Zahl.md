@@ -8,7 +8,7 @@ tags:
   - zahlenmengen
   - betrag
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-16
 ---
 
 # Betrag einer Zahl
@@ -68,16 +68,8 @@ Das Negative einer negativen Zahl ist positiv: $-(-5) = 5$. Daher ist der Betrag
 
 Der Betrag ist der **Abstand zur Null** auf dem Zahlenstrahl. Diese geometrische Sichtweise ist oft intuitiver als die algebraische Definition.
 
-```
-                    Abstand = 5              Abstand = 5
-                    ←─────────→              ←─────────→
-    ←──┬────┬────┬────┬────┬────┬────┬────┬────┬────┬──→
-      -6   -5   -4   -3   -2   -1    0    1    2    3    4    5
-            ●                        ●                        ●
-           -5                        0                        5
-
-                      |-5| = 5               |5| = 5
-```
+![[betrag-abstand.png]]
+*<span class="fig-id">01-01-09-betrag-abstand</span>: Der Betrag als Abstand zur Null. Sowohl −5 als auch 5 haben den Abstand 5 zur Null, also |−5| = 5 und |5| = 5.*
 
 ### Symmetrie zur Null
 
@@ -165,13 +157,8 @@ Antwort: $x = 3$ (drei Einheiten rechts) oder $x = -3$ (drei Einheiten links)
 
 Lösungsmenge: $\mathbb{L} = \{-3, 3\}$
 
-```
-    ←──┬────┬────┬────┬────┬────┬────┬──→
-      -4   -3   -2   -1    0    1    2    3    4
-            ●                        ●
-           -3                        3
-           ←───── Abstand 3 ─────→
-```
+![[betrag-gleichung.png]]
+*<span class="fig-id">01-01-09-betrag-gleichung</span>: Lösung von |x| = 3. Die beiden Lösungen −3 und 3 haben jeweils den Abstand 3 zur Null; die Lösungsmenge ist L = {−3, 3}.*
 
 > [!warning] **Sonderfall: $|x| = a$ mit $a < 0$**
 > Wenn $a$ negativ ist, hat die Gleichung **keine Lösung**: Der Betrag kann nie negativ sein!
