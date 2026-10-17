@@ -85,16 +85,10 @@ $$m = 7,9 \times 125 = 987,5 \text{ g}$$
 
 > [!tip] **Formeldreieck für die Dichte**
 > Genau wie bei Geschwindigkeit-Strecke-Zeit funktioniert auch hier ein Dreieck:
-> ```
->       ┌───┐
->       │ m │
->       └─┬─┘
->     ────┼────
->    │    │    │
-> ┌──┴──┐ │ ┌──┴──┐
-> │  ρ  │×│ │  V  │
-> └─────┘ │ └─────┘
-> ```
+>
+> ![[dichte-dreieck.png]]
+> *<span class="fig-id">01-05-09-dichte-dreieck</span>: Formeldreieck für Dichte, Masse und Volumen – die Masse m steht oben, Dichte ρ und Volumen V darunter: m = ρ · V.*
+>
 > Decke die gesuchte Größe ab und lies die Formel ab!
 
 ### Beispiel 2: Schwimmen oder Sinken?
