@@ -3,7 +3,7 @@ title: "Einführung in die Prozentrechnung"
 chapter: "04"
 section: "04"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Den Begriff 'Prozent' verstehen und erklären können"
   - "Die Grundbegriffe Grundwert, Prozentwert und Prozentsatz unterscheiden"

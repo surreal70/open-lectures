@@ -3,7 +3,7 @@ title: "Zinseszins-Grundlagen"
 chapter: "04"
 section: "11"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Den Unterschied zwischen einfachen Zinsen und Zinseszins verstehen"
   - "Die Zinseszinsformel anwenden können"

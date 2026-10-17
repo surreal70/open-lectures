@@ -3,7 +3,7 @@ title: "Prozentwert"
 chapter: "04"
 section: "05"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Den Prozentwert berechnen können"
   - "Verschiedene Lösungswege anwenden können"
@@ -15,7 +15,7 @@ tags:
   - prozentwert
   - berechnung
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-16
 ---
 
 # Prozentwert

@@ -3,7 +3,7 @@ title: "Rabatte und Preisberechnungen"
 chapter: "04"
 section: "09"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Rabatte und reduzierte Preise berechnen können"
   - "Mit Mehrwertsteuer rechnen (Netto ↔ Brutto)"
@@ -16,7 +16,7 @@ tags:
   - mehrwertsteuer
   - kaufmaennisch
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-16
 ---
 
 # Rabatte und Preisberechnungen

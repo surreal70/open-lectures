@@ -3,7 +3,7 @@ title: "Prozentuale Änderungen"
 chapter: "04"
 section: "08"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Prozentuale Zunahme und Abnahme berechnen können"
   - "Den neuen Wert nach prozentualer Änderung bestimmen"
@@ -16,7 +16,7 @@ tags:
   - zunahme
   - abnahme
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-16
 ---
 
 # Prozentuale Änderungen

@@ -3,7 +3,7 @@ title: "Rechnen mit Dezimalzahlen"
 chapter: "04"
 section: "02"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Dezimalzahlen addieren und subtrahieren können"
   - "Dezimalzahlen multiplizieren können"

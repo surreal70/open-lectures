@@ -2,14 +2,14 @@
 title: "Dezimalzahlen und Prozentrechnung"
 chapter: "04"
 type: index
-status: "draft - review pending"
+status: final
 tags:
   - mathematik
   - dezimalzahlen
   - prozent
   - index
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-16
 ---
 
 # Dezimalzahlen und Prozentrechnung

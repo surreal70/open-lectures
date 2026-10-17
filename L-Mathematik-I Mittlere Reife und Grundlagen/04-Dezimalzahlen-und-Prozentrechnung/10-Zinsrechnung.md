@@ -3,7 +3,7 @@ title: "Zinsrechnung"
 chapter: "04"
 section: "10"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Die Begriffe Kapital, Zinssatz und Zinsen verstehen"
   - "Zinsen für verschiedene Zeiträume berechnen können"

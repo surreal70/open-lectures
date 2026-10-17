@@ -3,7 +3,7 @@ title: "Rundungsregeln"
 chapter: "04"
 section: "03"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Die Rundungsregeln korrekt anwenden können"
   - "Auf verschiedene Stellenwerte runden können"

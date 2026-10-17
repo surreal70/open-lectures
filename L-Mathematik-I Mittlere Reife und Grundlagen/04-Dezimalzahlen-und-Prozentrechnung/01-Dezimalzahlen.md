@@ -3,7 +3,7 @@ title: "Dezimalzahlen"
 chapter: "04"
 section: "01"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Das Stellenwertsystem der Dezimalzahlen verstehen"
   - "Dezimalzahlen lesen und schreiben können"

@@ -3,7 +3,7 @@ title: "Prozentsatz"
 chapter: "04"
 section: "06"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Den Prozentsatz berechnen können"
   - "Verhältnisse als Prozent ausdrücken"
@@ -15,7 +15,7 @@ tags:
   - prozentsatz
   - berechnung
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-16
 ---
 
 # Prozentsatz

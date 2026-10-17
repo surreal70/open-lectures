@@ -3,7 +3,7 @@ title: "Praktische wirtschaftliche Anwendungen"
 chapter: "04"
 section: "12"
 type: topic
-status: "draft - review pending"
+status: final
 learning_objectives:
   - "Komplexe Alltagsaufgaben mit Prozentrechnung lösen"
   - "Wirtschaftliche Zusammenhänge mathematisch erfassen"
@@ -16,7 +16,7 @@ tags:
   - wirtschaft
   - alltag
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-16
 ---
 
 # Praktische wirtschaftliche Anwendungen
