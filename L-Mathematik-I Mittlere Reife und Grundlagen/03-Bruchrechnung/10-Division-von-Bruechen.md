@@ -71,19 +71,8 @@ $$\frac{3}{4} : \frac{2}{5} = \frac{3}{4} \cdot \frac{5}{2} = \frac{15}{8} = 1\f
 
 Die Frage $\frac{1}{2} : \frac{1}{4}$ bedeutet: „Wie oft passt $\frac{1}{4}$ in $\frac{1}{2}$?"
 
-```
-    1/2:    ┌───────────┬───────────┐
-            │    ▓▓▓    │           │
-            │    ▓▓▓    │           │
-            └───────────┴───────────┘
-            
-    1/4:    ┌─────┬─────┬─────┬─────┐
-            │  ▓  │     │     │     │
-            │  ▓  │     │     │     │
-            └─────┴─────┴─────┴─────┘
-            
-    Antwort: 2 mal → 1/2 : 1/4 = 2
-```
+![[bruch-division.png]]
+*<span class="fig-id">01-03-10-bruch-division</span>: Bruchdivision als Frage „Wie oft passt ¼ in ½?" – die ersten zwei Viertel decken genau die Hälfte ab, also ½ : ¼ = 2.*
 
 Ein Halbes enthält zwei Viertel. Daher: $\frac{1}{2} : \frac{1}{4} = 2$
 
