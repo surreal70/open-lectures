@@ -5,7 +5,7 @@
     { "dir": "02-Funktionen-und-ihre-Eigenschaften", "done": true },
     { "dir": "03-Elementare-Funktionstypen", "done": true },
     { "dir": "04-Folgen-Reihen-und-Grenzwerte", "done": true },
-    { "dir": "05-Differentialrechnung-I", "done": false },
+    { "dir": "05-Differentialrechnung-I", "done": true },
     { "dir": "06-Differentialrechnung-II", "done": false },
     { "dir": "07-Integralrechnung-I", "done": false },
     { "dir": "08-Integralrechnung-II", "done": false },
