@@ -8,7 +8,7 @@ tags:
   - zahlenmengen
   - ganze-zahlen
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-16
 ---
 
 # Ganze Zahlen
@@ -90,15 +90,8 @@ Diese Beispiele zeigen: Negative Zahlen beschreiben Situationen, in denen etwas 
 
 Die ganzen Zahlen liegen auf einem **Zahlenstrahl**, der in beide Richtungen unendlich ist:
 
-```
-    ←──┬────┬────┬────┬────┬────┬────┬────┬────┬────┬──→
-      -4   -3   -2   -1    0    1    2    3    4    5
-                         
-       negative Zahlen    │    positive Zahlen
-                          ↑
-                        Null
-                (trennt positiv von negativ)
-```
+![[zahlenstrahl-ganze.png]]
+*<span class="fig-id">01-01-04-zahlenstrahl-ganze</span>: Zahlenstrahl der ganzen Zahlen ℤ. Die Null trennt die negativen Zahlen (links) von den positiven (rechts); der Strahl setzt sich in beide Richtungen unbegrenzt fort (Pfeile).*
 
 ### Eigenschaften der Darstellung
 
