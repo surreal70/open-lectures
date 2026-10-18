@@ -1,7 +1,7 @@
 ---
 title: "Textaufgaben"
 created: 2026-10-13
-modified: 2025-07-21
+modified: 2026-10-16
 chapter: "08"
 section: "12"
 status: "draft - review pending"
@@ -69,6 +69,8 @@ Dieses Schema hat sich über Jahrhunderte bewährt und wird von erfolgreichen Pr
 > Viele Schüler stürzen sich sofort auf die Zahlen im Text und versuchen, irgendwie zu rechnen. Das führt oft zu falschen Gleichungen. Nimm dir Zeit für Schritt 1 und 2!
 
 ## Typische Aufgabentypen
+
+So verschieden Textaufgaben auf den ersten Blick wirken, sie lassen sich in einige wenige Grundmuster einordnen. Wer diese Muster kennt, erkennt schneller, welche Variable sich anbietet und wie die Gleichung aufzustellen ist. Die folgenden Typen decken die häufigsten Aufgabenstellungen ab – vom einfachen Zahlenrätsel bis zur Preisaufgabe mit zwei Unbekannten, bei der ein Gleichungssystem entsteht.
 
 ### Typ 1: Zahlenrätsel
 
@@ -178,6 +180,8 @@ Also: $y = 5 - 3 = 2$
 
 ## Schlüsselwörter übersetzen
 
+Der schwierigste Schritt bei einer Textaufgabe ist meist das Aufstellen der Gleichung. Hier hilft es, auf bestimmte Signalwörter zu achten: Sie lassen sich fast wörtlich in Rechenoperationen übertragen. Die folgende Übersicht sammelt die häufigsten Formulierungen und ihre mathematische Entsprechung – eine Art kleines Wörterbuch zwischen Alltagssprache und Mathematik.
+
 | Textformulierung | Mathematisch |
 |---|---|
 | „um ... mehr" | $+ ...$ |
@@ -190,6 +194,8 @@ Also: $y = 5 - 3 = 2$
 | „Unterschied" | Differenz |
 
 ## Häufige Fehler vermeiden
+
+Gerade weil Textaufgaben den Umweg über die Sprache nehmen, passieren hier andere Fehler als beim reinen Rechnen. Oft stimmt die Rechnung, aber die Variable war unklar definiert, die Einheit fehlt oder das Ergebnis ist im Sachzusammenhang gar nicht möglich. Die folgenden Punkte zeigen, worauf man deshalb besonders achten sollte.
 
 > [!warning] **Typische Fehler**
 > 
