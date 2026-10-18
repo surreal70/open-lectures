@@ -1,7 +1,7 @@
 ---
 title: "Äquivalenzumformungen"
 created: 2026-10-13
-modified: 2025-07-21
+modified: 2026-10-16
 chapter: "08"
 section: "02"
 status: "draft - review pending"
@@ -97,14 +97,11 @@ Auf beiden Seiten darf mit derselben Zahl multipliziert oder dividiert werden, *
 
 ### Strategie
 
-```
-Ausgangsgleichung
-      ↓
-Konstanten auf eine Seite bringen (+/-)
-      ↓
-Variable isolieren (·/:)
-      ↓
-x = Lösung
+```mermaid
+graph TD
+    A[Ausgangsgleichung] --> B[Konstanten auf eine Seite bringen -  mit + / −]
+    B --> C[Variable isolieren -  mit · / :]
+    C --> D[x = Lösung]
 ```
 
 > [!tip] **Merkregel: Umgekehrte Reihenfolge**
