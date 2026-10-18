@@ -1,7 +1,7 @@
 ---
 title: "Bruchgleichungen (einfache Fälle)"
 created: 2026-10-13
-modified: 2025-07-21
+modified: 2026-10-16
 chapter: "08"
 section: "06"
 status: "draft - review pending"
@@ -163,27 +163,12 @@ Die Gleichung hat **keine Lösung**.
 
 ## Zusammenfassung des Lösungswegs
 
-```
-┌─────────────────────────────────────┐
-│ 1. Definitionsbereich bestimmen     │
-│    (Nenner ≠ 0)                     │
-└──────────────┬──────────────────────┘
-               ↓
-┌─────────────────────────────────────┐
-│ 2. Hauptnenner finden               │
-└──────────────┬──────────────────────┘
-               ↓
-┌─────────────────────────────────────┐
-│ 3. Mit Hauptnenner multiplizieren   │
-└──────────────┬──────────────────────┘
-               ↓
-┌─────────────────────────────────────┐
-│ 4. Entstandene Gleichung lösen      │
-└──────────────┬──────────────────────┘
-               ↓
-┌─────────────────────────────────────┐
-│ 5. Lösung im D-Bereich? → Probe     │
-└─────────────────────────────────────┘
+```mermaid
+graph TD
+    A[1. Definitionsbereich bestimmen -  Nenner ≠ 0] --> B[2. Hauptnenner finden]
+    B --> C[3. Mit Hauptnenner multiplizieren]
+    C --> D[4. Entstandene Gleichung lösen]
+    D --> E[5. Lösung im Definitionsbereich? Probe durchführen]
 ```
 
 ## Typische Fehler
