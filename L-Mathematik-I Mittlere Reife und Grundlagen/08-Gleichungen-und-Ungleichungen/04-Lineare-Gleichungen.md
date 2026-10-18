@@ -1,7 +1,7 @@
 ---
 title: "Lineare Gleichungen"
 created: 2026-10-13
-modified: 2025-07-21
+modified: 2026-10-16
 chapter: "08"
 section: "04"
 status: "draft - review pending"
@@ -57,6 +57,8 @@ $$ax + b = cx + d$$
 
 ## Lösungsverfahren
 
+Der große Vorteil linearer Gleichungen ist, dass sich alle nach demselben festen Schema lösen lassen. Man muss nicht raten oder probieren wie die alten Ägypter, sondern kann Schritt für Schritt vorgehen, bis die Variable allein steht. Dieses Standardvorgehen funktioniert unabhängig davon, ob Klammern, Brüche oder Dezimalzahlen auftreten – die folgenden Beispiele zeigen es in steigender Schwierigkeit.
+
 ### Standardvorgehen
 
 1. Vereinfachen (Klammern auflösen, zusammenfassen)
@@ -96,6 +98,8 @@ $$x = 6 \quad | :2$$
 
 ## Sonderfälle
 
+Nicht jede lineare Gleichung führt auf genau eine Zahl als Lösung. Manchmal fällt die Variable beim Umformen vollständig weg, und zurück bleibt eine reine Aussage über Zahlen. Ob diese Aussage wahr oder falsch ist, entscheidet dann über die Lösungsmenge. Es lohnt sich, diese beiden Sonderfälle zu kennen, damit man sie beim Rechnen nicht als Fehler missversteht.
+
 ### Fall 1: Keine Lösung (Widerspruch)
 
 $$2x + 5 = 2x - 3$$
@@ -130,6 +134,8 @@ $$\mathbb{L} = \mathbb{R}$$
 | Falsche Aussage ($5 = 3$) | Widerspruch | $\mathbb{L} = \emptyset$ |
 
 ## Komplexere Beispiele
+
+Auch wenn Brüche oder Dezimalzahlen auftauchen, ändert sich am Grundprinzip nichts. Es kommt lediglich ein vorbereitender Schritt hinzu: Man beseitigt zunächst die Brüche oder Kommas und bringt die Gleichung damit auf eine einfache Form, die sich dann wie gewohnt lösen lässt. Die folgenden beiden Beispiele zeigen genau diesen Zwischenschritt.
 
 ### Mit mehreren Brüchen
 
