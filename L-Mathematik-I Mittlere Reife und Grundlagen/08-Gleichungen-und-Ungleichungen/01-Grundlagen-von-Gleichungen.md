@@ -62,12 +62,39 @@ Eine **Variable** ist ein Symbol (meist ein Buchstabe), das als Platzhalter für
 
 ### Definitionsbereich
 
-Der **Definitionsbereich** gibt an, welche Werte die Variable annehmen darf.
+Der **Definitionsbereich** $\mathbb{D}$ (auch *Definitionsmenge* oder *Grundmenge*) ist die Menge aller Werte, die man für die Variable **einsetzen darf**. Erst wenn der Definitionsbereich feststeht, ist eine Gleichung vollständig bestimmt – denn er legt fest, welche Einsetzungen überhaupt sinnvoll und erlaubt sind.
+
+Man schreibt ihn meist als $\mathbb{D} = \ldots$ vor oder neben die Gleichung, zum Beispiel:
+$$\frac{1}{x} = 2, \quad \mathbb{D} = \mathbb{R} \setminus \{0\}$$
+
+### Warum braucht man den Definitionsbereich?
+
+Nicht jeder Wert ist für jede Gleichung zulässig. Setzt man einen verbotenen Wert ein, entsteht ein undefinierter oder sinnloser Ausdruck. Der Definitionsbereich schließt genau diese Werte von vornherein aus. Das ist aus zwei Gründen wichtig:
+
+- **Mathematisch:** Manche Rechenoperationen sind nur für bestimmte Zahlen definiert (z. B. keine Division durch Null).
+- **Inhaltlich (Sachkontext):** In Anwendungsaufgaben sind oft nur bestimmte Zahlen sinnvoll (z. B. keine negative Personenzahl).
+
+### Typische Einschränkungen
+
+| Situation | Bedingung | Ausgeschlossen wird | Beispiel-Definitionsbereich |
+|-----------|-----------|---------------------|------------------------------|
+| Bruch mit Variable im Nenner | Nenner $\neq 0$ | Nullstellen des Nenners | $\frac{1}{x-2}=5 \Rightarrow \mathbb{D} = \mathbb{R}\setminus\{2\}$ |
+| Quadratwurzel mit Variable | Radikand $\geq 0$ | negative Radikanden | $\sqrt{x}=4 \Rightarrow \mathbb{D} = \{x \mid x \geq 0\}$ |
+| Logarithmus (später) | Argument $> 0$ | null und negative Werte | $\mathbb{D} = \{x \mid x > 0\}$ |
+| Sachaufgabe (Anzahl) | nur sinnvolle Werte | negative/gebrochene Anzahlen | $\mathbb{D} = \mathbb{N}_0$ |
 
 > [!example] Beispiele für Definitionsbereiche
-> - Bei $x + 3 = 7$: $x \in \mathbb{R}$ (alle reellen Zahlen erlaubt)
-> - Bei $\frac{1}{x} = 2$: $x \in \mathbb{R} \setminus \{0\}$ (Division durch Null ausgeschlossen)
-> - Bei Altersberechnungen: $x \in \mathbb{N}_0$ (nur nicht-negative ganze Zahlen sinnvoll)
+> - Bei $x + 3 = 7$: $\mathbb{D} = \mathbb{R}$ (alle reellen Zahlen erlaubt)
+> - Bei $\frac{1}{x} = 2$: $\mathbb{D} = \mathbb{R} \setminus \{0\}$ (Division durch Null ausgeschlossen)
+> - Bei $\frac{5}{x-2} = 1$: $\mathbb{D} = \mathbb{R} \setminus \{2\}$ (für $x=2$ wäre der Nenner null)
+> - Bei $\sqrt{x} = 4$: $\mathbb{D} = \{x \mid x \geq 0\}$ (keine Wurzel aus negativen Zahlen)
+> - Bei Altersberechnungen: $\mathbb{D} = \mathbb{N}_0$ (nur nicht-negative ganze Zahlen sinnvoll)
+
+> [!warning] **Definitionsbereich zuerst bestimmen!**
+> Bestimme den Definitionsbereich **immer vor dem Lösen** – nicht erst danach. Sonst kann es passieren, dass du einen Wert als „Lösung" erhältst, der gar nicht eingesetzt werden darf. Solche Werte heißen **Scheinlösungen** und müssen am Ende verworfen werden (siehe Bruchgleichungen).
+
+> [!note] **Zusammenhang mit der Lösungsmenge**
+> Der Definitionsbereich sagt, was man einsetzen **darf**; die Lösungsmenge sagt, was die Gleichung tatsächlich **löst**. Die Lösungsmenge ist deshalb immer eine Teilmenge des Definitionsbereichs: $\mathbb{L} \subseteq \mathbb{D}$.
 
 ## Lösungen und Lösungsmengen
 
@@ -85,7 +112,8 @@ Eine **Lösung** einer Gleichung ist ein Wert für die Variable, der die Gleichu
 
 ### Lösungsmenge
 
-Die **Lösungsmenge** $\mathbb{L}$ enthält alle Lösungen einer Gleichung.
+Die **Lösungsmenge** $\mathbb{L}$ enthält alle Werte aus dem Definitionsbereich, die die Gleichung zu einer wahren Aussage machen. Sie ist damit stets eine Teilmenge des Definitionsbereichs:
+$$\mathbb{L} \subseteq \mathbb{D}$$
 
 **Mögliche Fälle**:
 
@@ -94,6 +122,19 @@ Die **Lösungsmenge** $\mathbb{L}$ enthält alle Lösungen einer Gleichung.
 | Genau eine Lösung | Eindeutig lösbar | $2x = 6$ | $\mathbb{L} = \{3\}$ |
 | Unendlich viele Lösungen | Identität | $x + 1 = 1 + x$ | $\mathbb{L} = \mathbb{R}$ |
 | Keine Lösung | Widerspruch | $x + 1 = x$ | $\mathbb{L} = \{\}$ |
+
+> [!important] **Die Lösungsmenge hängt vom Definitionsbereich ab**
+> Eine Lösungsmenge ist nur zusammen mit dem zugrunde gelegten Definitions- bzw. Grundbereich eindeutig. **Dieselbe Gleichung kann über verschiedenen Grundmengen verschiedene Lösungsmengen haben.** Daher gehört der Definitionsbereich zur vollständigen Angabe einer Lösung dazu.
+>
+> **Beispiel** $x + 5 = 2$:
+> - über $\mathbb{D} = \mathbb{N}$:  $\mathbb{L} = \{\}$ (denn $-3 \notin \mathbb{N}$)
+> - über $\mathbb{D} = \mathbb{Z}$:  $\mathbb{L} = \{-3\}$
+>
+> Man gibt die Lösung deshalb sauber **mit Bezug auf den Definitionsbereich** an, z. B.:
+> $$\frac{5}{x-2} = 1, \quad \mathbb{D} = \mathbb{R}\setminus\{2\} \;\Rightarrow\; \mathbb{L} = \{7\}$$
+
+> [!tip] **Grundmenge $\mathbb{G}$ und Definitionsbereich $\mathbb{D}$**
+> Genau genommen legt die **Grundmenge $\mathbb{G}$** fest, in welchem Zahlbereich man überhaupt sucht (z. B. $\mathbb{N}$, $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$), während der **Definitionsbereich $\mathbb{D}$** diese zusätzlich auf die erlaubten Einsetzungen einschränkt (z. B. Nenner $\neq 0$). Die Lösungsmenge wird dann bezogen auf $\mathbb{D}$ angegeben. In der Mittelstufe werden $\mathbb{G}$ und $\mathbb{D}$ oft vereinfachend gleichgesetzt.
 
 ## Arten von Gleichungen
 
@@ -121,13 +162,8 @@ Die **Lösungsmenge** $\mathbb{L}$ enthält alle Lösungen einer Gleichung.
 
 Eine Gleichung kann als **Waage im Gleichgewicht** verstanden werden. Diese Vorstellung ist nicht nur eine moderne Lehrmethode – schon die alten Ägypter verwendeten Waagen als Symbol für Gerechtigkeit und Ausgewogenheit, und die mathematische Interpretation liegt nahe:
 
-```
-    ┌───────┴───────┐
-    │               │
- ┌──┴──┐         ┌──┴──┐
- │3x+5 │         │ 17  │
- └─────┘         └─────┘
-```
+![[gleichung-waage.png]]
+*<span class="fig-id">01-08-01-gleichung-waage</span>: Eine Gleichung als Waage im Gleichgewicht – die linke Seite (3x + 5) und die rechte Seite (17) halten sich die Waage; was man auf einer Seite tut, muss man auch auf der anderen tun.*
 
 Das Waagen-Prinzip macht die Grundregel des Gleichungslösens anschaulich: Die Waage bleibt nur im Gleichgewicht, wenn wir auf beiden Seiten dasselbe tun.
 
