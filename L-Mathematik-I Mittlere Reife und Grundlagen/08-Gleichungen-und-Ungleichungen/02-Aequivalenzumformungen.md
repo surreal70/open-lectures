@@ -45,6 +45,8 @@ Der Begriff kommt vom lateinischen „aequivalere" (gleichwertig sein) – die u
 
 ## Erlaubte Äquivalenzumformungen
 
+Nicht jede Rechenoperation ist eine Äquivalenzumformung. Erlaubt sind genau diejenigen, die sich auf beiden Seiten gleich auswirken und dabei das Gleichgewicht der „Waage" nicht stören. Die folgenden vier Grundoperationen bilden deshalb das Handwerkszeug, mit dem sich praktisch jede lineare Gleichung Schritt für Schritt zur Lösung umformen lässt.
+
 ### 1. Addition und Subtraktion
 
 Auf beiden Seiten darf dieselbe Zahl addiert oder subtrahiert werden.
@@ -145,6 +147,8 @@ Wenn die Variable auf beiden Seiten vorkommt, müssen alle Terme mit der Variabl
 
 ## Nicht-äquivalente Umformungen
 
+So verlässlich die erlaubten Umformungen sind, so wichtig ist es zu wissen, wo die Grenze verläuft. Manche Operationen sehen harmlos aus, verändern aber die Lösungsmenge – sie fügen Lösungen hinzu oder lassen welche verschwinden. Wer sie unbedacht einsetzt, erhält am Ende ein falsches Ergebnis, ohne es zu merken. Gerade deshalb lohnt sich der Blick auf die folgenden Fälle.
+
 > [!danger] Vorsicht: Diese Umformungen verändern die Lösungsmenge!
 
 ### Quadrieren
@@ -171,6 +175,8 @@ $$0 = 0$$
 Diese Aussage ist immer wahr – die Information über $x$ geht verloren!
 
 ## Notation der Umformungsschritte
+
+Damit ein Lösungsweg nachvollziehbar bleibt, schreibt man die einzelnen Umformungen übersichtlich auf. Welche Schreibweise man wählt, ist Geschmackssache – wichtig ist nur, dass bei jedem Schritt klar wird, welche Operation auf beide Seiten angewendet wurde. Die folgenden drei Varianten sind dafür gleichermaßen gebräuchlich.
 
 Es gibt verschiedene Schreibweisen:
 
