@@ -176,17 +176,11 @@ $$y = 3$$
 
 Jede lineare Gleichung mit zwei Variablen beschreibt eine **Gerade** im Koordinatensystem. Die Lösung des Gleichungssystems ist der **Schnittpunkt** der Geraden.
 
-```
-  y
-  ↑
-  │     ╱
-  │    ╱  Gerade 2
-  │   ●───── Schnittpunkt (Lösung)
-  │  ╱╲
-  │ ╱  ╲ Gerade 1
-  │╱    ╲
-──┼───────→ x
-```
+![[gleichungssystem-grafisch.png]]
+*<span class="fig-id">01-08-11-gleichungssystem-grafisch</span>: Grafische Lösung eines linearen Gleichungssystems – jede Gleichung ist eine Gerade; ihr Schnittpunkt ist die gemeinsame Lösung.*
+
+> [!info] **Darstellung im Koordinatensystem**
+> Das Koordinatensystem wird hier zur Veranschaulichung genutzt. Wie man Geraden und ihre Graphen systematisch aufstellt und liest, wird ausführlich in → [[00-Funktionen-Index|Modul 9: Funktionen und Koordinatensysteme]] behandelt.
 
 ## Sonderfälle
 
