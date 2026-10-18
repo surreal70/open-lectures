@@ -58,6 +58,8 @@ Bruchgleichungen erfordern besondere Vorsicht, weil sie einen **eingeschränkten
 
 ## Lösungsverfahren
 
+Die eigentliche Schwierigkeit bei Bruchgleichungen liegt im Nenner. Der entscheidende Trick besteht deshalb darin, die Brüche gleich zu Beginn verschwinden zu lassen: Multipliziert man mit dem Hauptnenner, bleibt eine gewöhnliche Gleichung übrig, die man mit den bekannten Mitteln lösen kann. Wichtig ist nur, den Definitionsbereich vorher festzuhalten und am Ende die Probe nicht zu vergessen.
+
 ### Grundprinzip
 
 1. **Definitionsbereich** bestimmen
@@ -98,6 +100,8 @@ $$x = 1$$
 $$\mathbb{L} = \{1\}$$
 
 ## Bruchgleichungen mit mehreren Brüchen
+
+Treten mehrere Brüche auf, reicht es nicht mehr, mit einem einzelnen Nenner zu multiplizieren. Man braucht einen gemeinsamen Nenner, der zu allen Brüchen passt – den Hauptnenner. Hat man ihn gefunden, lassen sich alle Brüche in einem Schritt beseitigen, und das Vorgehen entspricht wieder dem bekannten Grundprinzip.
 
 ### Hauptnenner finden
 
@@ -141,6 +145,8 @@ $$x = \frac{1}{2}$$
 **Probe**: $\frac{3}{\frac{1}{2}} + \frac{2}{\frac{1}{2}} = 6 + 4 = 10$ ✓
 
 ## Scheinlösungen
+
+Gerade weil man beim Lösen die Brüche wegmultipliziert, kann am Ende ein Wert herauskommen, der ursprünglich gar nicht erlaubt war. Die umgeformte Gleichung „weiß" nämlich nichts mehr vom verbotenen Nenner. Deshalb ist der Abgleich mit dem Definitionsbereich kein überflüssiger Formalismus, sondern genau der Schritt, der echte Lösungen von Scheinlösungen trennt.
 
 > [!danger] Wichtig
 > Eine **Scheinlösung** ist ein berechneter Wert, der nicht im Definitionsbereich liegt. Sie muss ausgeschlossen werden!
