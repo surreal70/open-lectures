@@ -4,7 +4,7 @@ created: 2026-10-13
 modified: 2026-10-16
 chapter: "08"
 section: "11"
-status: "draft - review pending"
+status: final
 type: lecture
 keywords:
   - Gleichungssystem
