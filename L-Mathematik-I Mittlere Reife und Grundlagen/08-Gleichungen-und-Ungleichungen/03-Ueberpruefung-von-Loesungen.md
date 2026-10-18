@@ -1,7 +1,7 @@
 ---
 title: "Überprüfung von Lösungen"
 created: 2026-10-13
-modified: 2025-07-21
+modified: 2026-10-16
 chapter: "08"
 section: "03"
 status: "draft - review pending"
@@ -61,18 +61,17 @@ $$\text{LS} = \text{RS} \checkmark$$
 
 ### Schreibweise der Probe
 
-**Variante 1: Ausführlich**
-```
-Probe: x = 5 in 4x - 7 = 13
-LS: 4 · 5 - 7 = 20 - 7 = 13
-RS: 13
-LS = RS ✓
-```
+**Variante 1: Ausführlich** – linke und rechte Seite getrennt einsetzen und vergleichen.
 
-**Variante 2: Kompakt**
-```
-Probe: 4 · 5 - 7 = 13 ✓
-```
+Probe $x = 5$ in $4x - 7 = 13$:
+
+$$\text{LS}: 4 \cdot 5 - 7 = 20 - 7 = 13$$
+$$\text{RS}: 13$$
+$$\text{LS} = \text{RS} \quad \checkmark$$
+
+**Variante 2: Kompakt** – direkt einsetzen und bestätigen.
+
+$$4 \cdot 5 - 7 = 13 \quad \checkmark$$
 
 ## Beispiele für Proben
 
