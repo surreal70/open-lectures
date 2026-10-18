@@ -1,7 +1,7 @@
 ---
 title: "Punkte und Koordinaten"
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-16
 chapter: "09"
 section: "02"
 status: "draft - review pending"
@@ -56,18 +56,8 @@ Die Idee ist einfach: Um einen Punkt eindeutig zu bestimmen, braucht man zwei In
 
 Punkt $P(3, 2)$ einzeichnen:
 
-```
-    y
-    ↑
-  3 ┤
-    │
-  2 ┤· · · · · · ● P(3,2)
-    │            ·
-  1 ┤            ·
-    │            ·
-────┼───┬───┬───┬───→ x
-    0   1   2   3
-```
+![[punkt-einzeichnen.png]]
+*<span class="fig-id">01-09-02-punkt-einzeichnen</span>: Den Punkt P(3, 2) einzeichnen – zuerst auf der x-Achse zu 3 gehen, dann senkrecht nach oben zu y = 2; die Hilfslinien treffen sich im Punkt P.*
 
 1. Auf der x-Achse zu $x = 3$ gehen
 2. Von dort senkrecht nach oben zu $y = 2$
@@ -82,16 +72,8 @@ Punkt $P(3, 2)$ einzeichnen:
 
 ### Beispiel
 
-```
-    y
-    ↑
-  4 ┤───────────● Q
-    │           │
-  2 ┤           │
-    │           │
-────┼───┬───┬───┬───→ x
-    0   2   4   6
-```
+![[koordinaten-ablesen.png]]
+*<span class="fig-id">01-09-02-koordinaten-ablesen</span>: Koordinaten ablesen – vom Punkt Q senkrecht zur x-Achse (x = 6) und waagerecht zur y-Achse (y = 4) führen zu den Koordinaten Q(6, 4).*
 
 Punkt $Q$: $x = 6$, $y = 4$ → $Q(6, 4)$
 
@@ -99,19 +81,8 @@ Punkt $Q$: $x = 6$, $y = 4$ → $Q(6, 4)$
 
 Punkte können auch negative Koordinaten haben:
 
-```
-        y
-        ↑
-      3 ┤
-        │
-    ● A │
-      1 ┤
-────┬───┼───┬───→ x
-   -3  -1   1   3
-        │
-     -2 ┤        ● B
-        │
-```
+![[negative-koordinaten.png]]
+*<span class="fig-id">01-09-02-negative-koordinaten</span>: Punkte mit negativen Koordinaten – A(−3, 1) liegt im zweiten Quadranten (links oben), B(2, −2) im vierten Quadranten (rechts unten).*
 
 - $A(-3, 1)$: 3 Einheiten nach links, 1 nach oben
 - $B(2, -2)$: 2 Einheiten nach rechts, 2 nach unten
