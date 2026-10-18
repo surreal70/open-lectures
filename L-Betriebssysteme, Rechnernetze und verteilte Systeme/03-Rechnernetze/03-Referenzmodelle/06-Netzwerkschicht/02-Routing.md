@@ -11,7 +11,7 @@ tags:
   - ospf
   - bgp
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-18'
 bereich: RN
 ---
 
@@ -35,39 +35,14 @@ bereich: RN
 
 ### Routing-Entscheidung
 
-```
-                    Eingehendes Paket
-                           │
-                           ▼
-                ┌─────────────────────┐
-                │  Ziel-IP auslesen   │
-                └──────────┬──────────┘
-                           │
-                           ▼
-                ┌─────────────────────┐
-                │  Routing-Tabelle    │
-                │     durchsuchen     │
-                └──────────┬──────────┘
-                           │
-              ┌────────────┼────────────┐
-              ▼            ▼            ▼
-        ┌──────────┐ ┌──────────┐ ┌──────────┐
-        │ Direkt   │ │ Route    │ │ Default  │
-        │ verbund. │ │ gefunden │ │ Route    │
-        └────┬─────┘ └────┬─────┘ └────┬─────┘
-             │            │            │
-             ▼            ▼            ▼
-        ┌─────────────────────────────────────┐
-        │     Paket an Next-Hop weiterleiten  │
-        │         (TTL dekrementieren)        │
-        └─────────────────────────────────────┘
-```
+![[routing-entscheidung.png]]
+*<span class="fig-id">03-03-06-routing-entscheidung</span>: Ablauf einer Routing-Entscheidung im Router.*
 
 ## Routing-Tabelle
 
 ### Aufbau einer Routing-Tabelle
 
-```
+```shell
 Destination     Gateway         Genmask         Flags   Interface
 ─────────────────────────────────────────────────────────────────
 0.0.0.0         192.168.1.1     0.0.0.0         UG      eth0
@@ -118,14 +93,8 @@ route add 10.0.0.0 mask 255.0.0.0 192.168.1.254
 
 Router tauschen automatisch Routing-Informationen aus:
 
-```
-┌────────────┐                         ┌────────────┐
-│  Router A  │ ◄─── Routing-Updates ──►│  Router B  │
-│            │                         │            │
-│ Netz 1     │                         │     Netz 2 │
-│ Netz 2 (B) │                         │ Netz 1 (A) │
-└────────────┘                         └────────────┘
-```
+![[routing-updates.png]]
+*<span class="fig-id">03-03-06-routing-updates</span>: Austausch von Routing-Informationen zwischen Routern.*
 
 **Vorteile:**
 - Automatische Anpassung bei Änderungen
@@ -141,26 +110,8 @@ Router tauschen automatisch Routing-Informationen aus:
 
 ### Interior vs. Exterior Gateway Protocols
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                         INTERNET                                 │
-│                                                                  │
-│     AS 100              AS 200              AS 300              │
-│   ┌─────────┐         ┌─────────┐         ┌─────────┐          │
-│   │  ISP A  │◄──BGP──►│  ISP B  │◄──BGP──►│  ISP C  │          │
-│   │         │         │         │         │         │          │
-│   │  OSPF   │         │ IS-IS   │         │  OSPF   │          │
-│   │ (IGP)   │         │ (IGP)   │         │ (IGP)   │          │
-│   └─────────┘         └─────────┘         └─────────┘          │
-│                                                                  │
-│   ◄─────────── EGP (BGP) ───────────►                          │
-│   ◄── IGP ──► ◄── IGP ──► ◄── IGP ──►                          │
-└─────────────────────────────────────────────────────────────────┘
-
-IGP = Interior Gateway Protocol (innerhalb eines AS)
-EGP = Exterior Gateway Protocol (zwischen AS)
-AS  = Autonomous System
-```
+![[igp-egp-struktur.png]]
+*<span class="fig-id">03-03-06-igp-egp-struktur</span>: Interior Gateway Protocols (IGP) innerhalb von Autonomous Systems, Exterior Gateway Protocols (EGP/BGP) zwischen AS.*
 
 ### Distance-Vector vs. Link-State
 
@@ -202,22 +153,8 @@ Hop-Count-Metrik:
 > - **Algorithmus:** Dijkstra (Shortest Path First)
 > - **Standard:** [[A-RFC-Index|RFC 2328]]
 
-```
-OSPF-Hierarchie:
-
-┌─────────────────────────────────────────────────────────────┐
-│                    OSPF-Domäne                              │
-│                                                             │
-│    ┌─────────┐     ┌─────────┐     ┌─────────┐            │
-│    │ Area 1  │     │ Area 0  │     │ Area 2  │            │
-│    │         │─────│(Backbone)│─────│         │            │
-│    │         │ ABR │         │ ABR │         │            │
-│    └─────────┘     └─────────┘     └─────────┘            │
-│                                                             │
-│    ABR = Area Border Router                                │
-│    Area 0 = Backbone Area (Pflicht)                        │
-└─────────────────────────────────────────────────────────────┘
-```
+![[ospf-hierarchie.png]]
+*<span class="fig-id">03-03-06-ospf-hierarchie</span>: OSPF-Domäne mit Backbone Area 0 und Area Border Routern (ABR).*
 
 **OSPF-Nachbarschaftszustände:**
 1. **Down** - Keine Verbindung
@@ -236,8 +173,7 @@ OSPF-Hierarchie:
 > - **Port:** TCP 179
 > - **Standard:** [[A-RFC-Index|RFC 4271]]
 
-```
-BGP Path Selection (vereinfacht):
+**BGP Path Selection (vereinfacht):**
 
 1. Höchstes Weight (Cisco-spezifisch)
 2. Höchste Local Preference
@@ -247,7 +183,6 @@ BGP Path Selection (vereinfacht):
 6. Niedrigster MED
 7. eBGP vor iBGP
 8. Niedrigste Router-ID
-```
 
 **AS-Path-Beispiel:**
 ```
@@ -290,37 +225,20 @@ $$\text{Cost} = \frac{10^8}{\text{Bandbreite (bps)}}$$
 
 Die Default-Route (0.0.0.0/0) wird verwendet, wenn keine spezifischere Route existiert:
 
-```
-┌──────────────────────────────────────────────────────────┐
-│                    Routing-Entscheidung                  │
-├──────────────────────────────────────────────────────────┤
-│                                                          │
-│   Ziel-IP: 8.8.8.8                                      │
-│                                                          │
-│   Routing-Tabelle:                                       │
-│   ┌──────────────────┬─────────────────┐                │
-│   │ Netzwerk         │ Gateway         │                │
-│   ├──────────────────┼─────────────────┤                │
-│   │ 192.168.1.0/24   │ direkt          │  ✗ Passt nicht│
-│   │ 10.0.0.0/8       │ 192.168.1.254   │  ✗ Passt nicht│
-│   │ 0.0.0.0/0        │ 192.168.1.1     │  ✓ Default    │
-│   └──────────────────┴─────────────────┘                │
-│                                                          │
-│   → Paket an 192.168.1.1 (Default Gateway)              │
-│                                                          │
-└──────────────────────────────────────────────────────────┘
-```
+![[default-route-entscheidung.png]]
+*<span class="fig-id">03-03-06-default-route-entscheidung</span>: Routing-Tabellen-Lookup mit Fallback auf Default-Route.*
 
 ## Prüfungsrelevante Themen
 
-> [!warning] Klausurrelevanz: Hoch
->
-> **Häufige Prüfungsthemen:**
-> 1. Statisches vs. dynamisches Routing
-> 2. Distance-Vector vs. Link-State erklären
-> 3. IGP vs. EGP unterscheiden
-> 4. Longest Prefix Match anwenden
-> 5. OSPF-Areas und Hierarchie
+> [!warning] **Prüfungsrelevant**
+> Routing ist ein zentrales Thema in der Netzwerktechnik und wird regelmäßig in Prüfungen abgefragt.
+
+> [!question] **Typische Prüfungsfragen**
+> 1. Erklären Sie den Unterschied zwischen statischem und dynamischem Routing.
+> 2. Vergleichen Sie Distance-Vector- und Link-State-Protokolle.
+> 3. Was unterscheidet IGP von EGP? Nennen Sie je zwei Beispiele.
+> 4. Wie funktioniert der Longest Prefix Match?
+> 5. Beschreiben Sie die OSPF-Area-Hierarchie und die Rolle von Area 0.
 
 ### Vergleichstabelle der Routing-Protokolle
 
