@@ -175,29 +175,16 @@ Die Klammer ist wichtig: Erst die Division, dann das Quadrieren – und das Quad
 
 ## Lösungsschema
 
-```
-┌─────────────────────────────────────┐
-│ Gleichung auf Normalform bringen    │
-│ (durch a dividieren, falls a ≠ 1)   │
-└──────────────┬──────────────────────┘
-               ↓
-┌─────────────────────────────────────┐
-│ p und q ablesen                     │
-└──────────────┬──────────────────────┘
-               ↓
-┌─────────────────────────────────────┐
-│ Diskriminante berechnen             │
-│ D = (p/2)² - q                      │
-└──────────────┬──────────────────────┘
-               ↓
-       ┌───────┼───────┐
-       ↓       ↓       ↓
-   D > 0    D = 0    D < 0
-   2 Lös.   1 Lös.   0 Lös.
-       ↓       ↓
-┌─────────────────────────────────────┐
-│ Formel anwenden, Probe machen       │
-└─────────────────────────────────────┘
+```mermaid
+graph TD
+    A[Gleichung auf Normalform bringen -  durch a dividieren, falls a ≠ 1] --> B[p und q ablesen]
+    B --> C["Diskriminante berechnen: D = -  p/2 -² − q"]
+    C --> D{D ?}
+    D -->|D > 0| E[2 Lösungen]
+    D -->|D = 0| F[1 Lösung -  Doppellösung]
+    D -->|D < 0| G[0 reelle Lösungen]
+    E --> H[Formel anwenden, Probe machen]
+    F --> H
 ```
 
 ## Zusammenfassung
