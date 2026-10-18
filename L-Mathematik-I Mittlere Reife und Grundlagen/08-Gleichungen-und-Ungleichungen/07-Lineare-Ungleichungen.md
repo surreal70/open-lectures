@@ -1,7 +1,7 @@
 ---
 title: "Lineare Ungleichungen"
 created: 2026-10-13
-modified: 2025-07-21
+modified: 2026-10-16
 chapter: "08"
 section: "07"
 status: "draft - review pending"
@@ -128,18 +128,13 @@ $$\mathbb{L} = \{x \in \mathbb{R} \mid x > 2\}$$
 
 **Beispiel**: $x \geq 2$
 
-```
-────────┬────────────────────→
-       [●========================>
-        2
-```
+![[ungleichung-x-groesser-gleich-2.png]]
+*<span class="fig-id">01-08-07-ungleichung-x-groesser-gleich-2</span>: Lösungsmenge von x ≥ 2 auf dem Zahlenstrahl – ausgefüllter Punkt bei 2 (gehört dazu), Strahl nach rechts.*
 
 **Beispiel**: $x < -1$
 
-```
-←════════════════●)─────────────→
-                 -1
-```
+![[ungleichung-x-kleiner-minus1.png]]
+*<span class="fig-id">01-08-07-ungleichung-x-kleiner-minus1</span>: Lösungsmenge von x < −1 auf dem Zahlenstrahl – offener Punkt bei −1 (gehört nicht dazu), Strahl nach links.*
 
 - Ausgefüllter Punkt ($\bullet$): Wert gehört dazu ($\leq$ oder $\geq$)
 - Offener Punkt ($\circ$): Wert gehört nicht dazu ($<$ oder $>$)
@@ -171,10 +166,8 @@ $$-2 < x \leq 3$$
 
 **Lösungsmenge**: $\mathbb{L} = (-2, 3]$
 
-```
-────────(○───────────────●]────────→
-       -2                 3
-```
+![[ungleichung-intervall.png]]
+*<span class="fig-id">01-08-07-ungleichung-intervall</span>: Lösungsmenge des Intervalls (−2, 3] – offener Punkt bei −2 (gehört nicht dazu), ausgefüllter Punkt bei 3 (gehört dazu).*
 
 ## Sonderfälle
 
