@@ -138,13 +138,21 @@ $$\mathbb{L} \subseteq \mathbb{D}$$
 
 ## Arten von Gleichungen
 
+Gleichungen lassen sich nach verschiedenen Merkmalen ordnen. Diese Einteilung ist nicht bloß Selbstzweck: Der Typ einer Gleichung entscheidet darüber, **welches Lösungsverfahren** zum Ziel führt. Eine lineare Gleichung löst man anders als eine quadratische, und eine Bruchgleichung verlangt zusätzliche Vorsicht beim Definitionsbereich. Wer eine Gleichung richtig einordnet, weiß deshalb schon, welchen Werkzeugkasten er öffnen muss.
+
 ### Nach Variablenanzahl
+
+Je mehr verschiedene Unbekannte eine Gleichung enthält, desto mehr Informationen (bzw. weitere Gleichungen) braucht man in der Regel, um sie eindeutig zu lösen.
 
 - **Eine Variable**: $3x + 5 = 14$
 - **Zwei Variablen**: $2x + 3y = 12$
 - **Mehrere Variablen**: $x + y + z = 10$
 
+Eine einzelne Gleichung mit zwei Unbekannten hat meist unendlich viele Lösungen – erst ein **Gleichungssystem** mit genügend vielen Gleichungen legt die Werte fest.
+
 ### Nach höchster Potenz
+
+Der **Grad** einer Gleichung ist die höchste auftretende Potenz der Variablen. Er bestimmt nicht nur das Lösungsverfahren, sondern auch, wie viele Lösungen höchstens möglich sind: Eine Gleichung $n$-ten Grades hat höchstens $n$ reelle Lösungen.
 
 | Gleichungstyp | Höchste Potenz | Beispiel |
 |---|---|---|
@@ -153,6 +161,8 @@ $$\mathbb{L} \subseteq \mathbb{D}$$
 | Kubisch | 3 | $x^3 - x = 0$ |
 
 ### Spezielle Gleichungstypen
+
+Manche Gleichungen werden nicht nach ihrem Grad, sondern danach benannt, **wo die Variable steht**. Diese Lage hat unmittelbare Folgen für den Definitionsbereich und das Vorgehen beim Lösen.
 
 - **Bruchgleichungen**: Enthalten Variable im Nenner: $\frac{3}{x} = 6$
 - **Wurzelgleichungen**: Enthalten Variable unter Wurzel: $\sqrt{x} = 3$
