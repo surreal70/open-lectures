@@ -1,7 +1,7 @@
 ---
 title: "Lösungsformel für quadratische Gleichungen"
 created: 2026-10-13
-modified: 2025-07-21
+modified: 2026-10-16
 chapter: "08"
 section: "09"
 status: "draft - review pending"
