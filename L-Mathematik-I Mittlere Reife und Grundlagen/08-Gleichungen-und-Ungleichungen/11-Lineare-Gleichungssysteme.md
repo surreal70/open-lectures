@@ -1,7 +1,7 @@
 ---
 title: "Einfache lineare Gleichungssysteme"
 created: 2026-10-13
-modified: 2025-07-21
+modified: 2026-10-16
 chapter: "08"
 section: "11"
 status: "draft - review pending"
@@ -46,6 +46,8 @@ $$\begin{cases} 2x + y = 7 \\ x - y = 2 \end{cases}$$
 **Lösung**: Das Wertepaar $(x, y)$, das **beide** Gleichungen erfüllt.
 
 ## Das Einsetzungsverfahren
+
+Eine einzelne Gleichung mit zwei Unbekannten lässt sich nicht eindeutig lösen – erst die zweite Gleichung legt die Werte fest. Die Grundidee aller Lösungsverfahren ist deshalb dieselbe: Man nutzt die eine Gleichung, um eine Variable loszuwerden, und erhält so eine gewöhnliche Gleichung mit nur noch einer Unbekannten. Beim Einsetzungsverfahren geschieht das, indem man einen Ausdruck für eine Variable in die andere Gleichung einträgt.
 
 ### Prinzip
 
@@ -107,6 +109,8 @@ $$y = 7 - 3 = 4$$
 **Lösung**: $(x, y) = (3, 4)$
 
 ## Das Additionsverfahren
+
+Das dritte Verfahren verfolgt dasselbe Ziel – eine Variable zu eliminieren –, erreicht es aber auf einem anderen Weg: Man addiert oder subtrahiert die beiden Gleichungen so, dass sich eine Variable von selbst aufhebt. Damit das klappt, müssen die Koeffizienten dieser Variablen vorher passend gemacht werden, notfalls durch Multiplizieren einer Gleichung. Das Verfahren gilt als besonders systematisch.
 
 ### Prinzip
 
@@ -185,6 +189,8 @@ Jede lineare Gleichung mit zwei Variablen beschreibt eine **Gerade** im Koordina
 ```
 
 ## Sonderfälle
+
+Nicht jedes Gleichungssystem besitzt genau einen Schnittpunkt. Die grafische Deutung macht das anschaulich: Zwei Geraden können sich kreuzen, aber auch parallel verlaufen oder sogar aufeinanderliegen. Entsprechend kann ein System genau eine, keine oder unendlich viele Lösungen haben – und beim Rechnen erkennt man die beiden Sonderfälle wieder daran, dass die Variablen vollständig wegfallen.
 
 ### Keine Lösung (parallele Geraden)
 
