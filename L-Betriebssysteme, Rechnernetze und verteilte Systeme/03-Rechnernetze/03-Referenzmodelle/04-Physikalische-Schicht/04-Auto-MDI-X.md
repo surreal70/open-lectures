@@ -9,7 +9,7 @@ tags:
   - kabel
   - crossover
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-14'
 bereich: RN
 ---
 
@@ -52,35 +52,18 @@ Bei Ethernet über Twisted-Pair-Kabel gibt es zwei Anschlussarten:
 
 ## Kabeltypen
 
+![[mdi-kabeltypen.png]]
+*<span class="fig-id">03-03-04-04-mdi-kabeltypen</span>: Patch-Kabel (1:1 Verbindung) vs. Crossover-Kabel (gekreuzte Verbindung).*
+
 ### Patch-Kabel (Straight-Through)
 
 Ein **Patch-Kabel** verbindet beide Enden 1:1 – Pin 1 auf Pin 1, Pin 2 auf Pin 2, usw.
-
-```
-MDI (PC)          Patch-Kabel          MDI-X (Switch)
-┌────────┐        ═══════════          ┌────────┐
-│ TX+ (1)├────────────────────────────►│ RX+ (1)│
-│ TX- (2)├────────────────────────────►│ RX- (2)│
-│ RX+ (3)│◄────────────────────────────┤ TX+ (3)│
-│ RX- (6)│◄────────────────────────────┤ TX- (6)│
-└────────┘                             └────────┘
-```
 
 **Verwendung**: MDI ↔ MDI-X (PC zu Switch, Router zu Switch)
 
 ### Crossover-Kabel
 
-Ein **Crossover-Kabel** kreuzt die Sende- und Empfangspaare:
-
-```
-MDI (PC 1)        Crossover-Kabel       MDI (PC 2)
-┌────────┐        ═══════╳═════          ┌────────┐
-│ TX+ (1)├────────────────╲─────────────►│ RX+ (3)│
-│ TX- (2)├─────────────────╲────────────►│ RX- (6)│
-│ RX+ (3)│◄─────────────────╱───────────┤ TX+ (1)│
-│ RX- (6)│◄────────────────╱────────────┤ TX- (2)│
-└────────┘                             └────────┘
-```
+Ein **Crossover-Kabel** kreuzt die Sende- und Empfangspaare – TX wird mit RX verbunden.
 
 **Verwendung**: MDI ↔ MDI oder MDI-X ↔ MDI-X (PC zu PC, Switch zu Switch)
 

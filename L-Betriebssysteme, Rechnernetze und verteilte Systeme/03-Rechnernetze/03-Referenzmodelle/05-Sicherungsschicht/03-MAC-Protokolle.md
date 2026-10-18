@@ -28,69 +28,36 @@ bereich: RN
 
 Bei geteilten Medien (Shared Media) müssen Regeln festlegen, **wer wann senden darf**:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              MEDIENZUGRIFFSVERFAHREN                            │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   DETERMINISTISCH                 PROBABILISTISCH               │
-│   ──────────────                  ───────────────               │
-│                                                                 │
-│   Token Passing                   CSMA/CD (Ethernet)            │
-│   • Token Ring                    • Carrier Sense              │
-│   • Token Bus                     • Kollisionserkennung        │
-│   • FDDI                          • Backoff bei Kollision      │
-│                                                                 │
-│   Polling                         CSMA/CA (WLAN)                │
-│   • Master fragt Slaves           • Carrier Sense              │
-│                                   • Kollisionsvermeidung       │
-│   TDMA (Zeitmultiplex)            • RTS/CTS optional           │
-│   • Feste Zeitschlitze                                         │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Kategorie | Verfahren | Beschreibung |
+|-----------|-----------|--------------|
+| **Deterministisch** | Token Passing | Token Ring, Token Bus, FDDI |
+| | Polling | Master fragt Slaves |
+| | TDMA | Feste Zeitschlitze (Zeitmultiplex) |
+| **Probabilistisch** | CSMA/CD | Carrier Sense, Kollisionserkennung, Backoff (Ethernet) |
+| | CSMA/CA | Carrier Sense, Kollisionsvermeidung, RTS/CTS optional (WLAN) |
 
 ## CSMA/CD – Carrier Sense Multiple Access / Collision Detection
 
 ### Funktionsweise
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    CSMA/CD ABLAUF                               │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   1. CARRIER SENSE (Träger abhören)                            │
-│      • Station prüft, ob Medium frei ist                       │
-│      • Wenn belegt → warten                                    │
-│                                                                 │
-│   2. MULTIPLE ACCESS (Mehrfachzugriff)                         │
-│      • Wenn frei → senden beginnen                             │
-│      • Mehrere Stationen können gleichzeitig starten           │
-│                                                                 │
-│   3. COLLISION DETECTION (Kollisionserkennung)                 │
-│      • Während des Sendens: Medium weiter abhören              │
-│      • Kollision erkannt → Jam-Signal senden (32 Bit)         │
-│      • Senden abbrechen                                        │
-│                                                                 │
-│   4. BACKOFF (Wartezeit)                                       │
-│      • Zufällige Wartezeit nach Kollision                      │
-│      • Binary Exponential Backoff:                             │
-│        Wartezeit = random(0, 2^n - 1) × Slot-Time             │
-│        n = Anzahl der Kollisionen (max. 10)                   │
-│      • Nach 16 Kollisionen: Übertragung aufgeben              │
-│                                                                 │
-│   ┌─────┐     ┌─────┐                                          │
-│   │  A  │═════│  B  │  A und B senden gleichzeitig            │
-│   └─────┘     └─────┘                                          │
-│        ╲     ╱                                                  │
-│         ╲   ╱   KOLLISION!                                     │
-│          ╲ ╱                                                    │
-│           ╳                                                     │
-│          ╱ ╲                                                    │
-│         ╱   ╲   Jam → Backoff → Retry                          │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**1. Carrier Sense (Träger abhören)**
+- Station prüft, ob Medium frei ist
+- Wenn belegt → warten
+
+**2. Multiple Access (Mehrfachzugriff)**
+- Wenn frei → senden beginnen
+- Mehrere Stationen können gleichzeitig starten
+
+**3. Collision Detection (Kollisionserkennung)**
+- Während des Sendens: Medium weiter abhören
+- Kollision erkannt → Jam-Signal senden (32 Bit)
+- Senden abbrechen
+
+**4. Backoff (Wartezeit)**
+- Zufällige Wartezeit nach Kollision
+- Binary Exponential Backoff: $\text{Wartezeit} = \text{random}(0, 2^n - 1) \times \text{Slot-Time}$
+- $n$ = Anzahl der Kollisionen (max. 10)
+- Nach 16 Kollisionen: Übertragung aufgeben
 
 ### Slot-Time und Kollisionsdomäne
 
@@ -114,35 +81,26 @@ Bei geteilten Medien (Shared Media) müssen Regeln festlegen, **wer wann senden 
 
 WLAN kann Kollisionen nicht erkennen (Sender übertönt schwache Signale), daher **Vermeidung** statt Erkennung:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    CSMA/CA ABLAUF                               │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   1. Carrier Sense                                              │
-│      • Prüfen, ob Medium frei                                  │
-│                                                                 │
-│   2. Wenn frei: DIFS warten                                    │
-│      • Distributed Inter-Frame Space                           │
-│      • Sicherstellen, dass wirklich frei                       │
-│                                                                 │
-│   3. Backoff-Counter                                            │
-│      • Zufällige Wartezeit herunterzählen                      │
-│      • Nur wenn Medium frei                                    │
-│                                                                 │
-│   4. Senden                                                     │
-│      • Wenn Counter = 0 → senden                               │
-│                                                                 │
-│   5. ACK erwarten                                               │
-│      • Empfänger bestätigt nach SIFS                           │
-│      • Keine ACK → Kollision vermutet → Retry                  │
-│                                                                 │
-│   Optional: RTS/CTS (Request to Send / Clear to Send)          │
-│   • Löst Hidden-Node-Problem                                   │
-│   • Overhead für kurze Frames                                  │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**1. Carrier Sense**
+- Prüfen, ob Medium frei
+
+**2. DIFS warten (Distributed Inter-Frame Space)**
+- Wenn frei: Wartezeit einhalten
+- Sicherstellen, dass wirklich frei
+
+**3. Backoff-Counter**
+- Zufällige Wartezeit herunterzählen
+- Nur wenn Medium frei
+
+**4. Senden**
+- Wenn Counter = 0 → senden
+
+**5. ACK erwarten**
+- Empfänger bestätigt nach SIFS (Short Inter-Frame Space)
+- Keine ACK → Kollision vermutet → Retry
+
+> [!info] RTS/CTS (optional)
+> **Request to Send / Clear to Send** löst das Hidden-Node-Problem, verursacht aber Overhead für kurze Frames.
 
 ## Spanning Tree Protocol (STP)
 
@@ -150,64 +108,37 @@ WLAN kann Kollisionen nicht erkennen (Sender übertönt schwache Signale), daher
 
 Redundante Verbindungen zwischen Switches können zu **Endlosschleifen** führen:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              PROBLEM: LAYER-2-SCHLEIFE                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│        ┌──────────┐          ┌──────────┐                      │
-│        │ Switch A │══════════│ Switch B │                      │
-│        └────┬─────┘          └─────┬────┘                      │
-│             │                      │                            │
-│             │    ┌──────────┐      │                            │
-│             └────│ Switch C │──────┘                            │
-│                  └──────────┘                                   │
-│                                                                 │
-│   Ein Broadcast-Frame kreist endlos!                           │
-│   → Broadcast-Sturm → Netzwerk kollabiert                      │
-│                                                                 │
-│   Lösung: Spanning Tree Protocol (STP)                         │
-│   • Erkennt Schleifen                                          │
-│   • Blockiert redundante Ports                                 │
-│   • Behält Redundanz für Failover                             │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[layer2-schleife.png]]
+*<span class="fig-id">03-03-05-03-layer2-schleife</span>: Layer-2-Schleife durch redundante Switch-Verbindungen führt zu Broadcast-Stürmen.*
 
 ### STP-Funktionsweise
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              SPANNING TREE PROTOCOL                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   1. ROOT BRIDGE WAHL                                           │
-│      • Switch mit niedrigster Bridge-ID wird Root              │
-│      • Bridge-ID = Priorität (2 Byte) + MAC (6 Byte)          │
-│      • Default-Priorität: 32768                                │
-│                                                                 │
-│   2. PFADKOSTEN BERECHNEN                                       │
-│      • Kosten basieren auf Linkgeschwindigkeit                 │
-│      • Jeder Switch ermittelt besten Pfad zur Root             │
-│                                                                 │
-│   3. PORT-ROLLEN ZUWEISEN                                       │
-│      • Root Port: Bester Weg zur Root Bridge                   │
-│      • Designated Port: Bester Weg vom Segment zur Root        │
-│      • Blocked Port: Redundante Ports werden blockiert         │
-│                                                                 │
-│   Port-Zustände:                                                │
-│   ┌────────────┬─────────────────────────────────────────────┐ │
-│   │ Disabled   │ Administrativ deaktiviert                   │ │
-│   │ Blocking   │ Empfängt BPDUs, leitet keine Frames         │ │
-│   │ Listening  │ Verarbeitet BPDUs, lernt keine MACs         │ │
-│   │ Learning   │ Lernt MACs, leitet noch keine Frames        │ │
-│   │ Forwarding │ Normaler Betrieb                            │ │
-│   └────────────┴─────────────────────────────────────────────┘ │
-│                                                                 │
-│   Konvergenzzeit bei Topologieänderung: 30-50 Sekunden!       │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**1. Root Bridge Wahl**
+- Switch mit niedrigster Bridge-ID wird Root
+- Bridge-ID = Priorität (2 Byte) + MAC (6 Byte)
+- Default-Priorität: 32768
+
+**2. Pfadkosten berechnen**
+- Kosten basieren auf Linkgeschwindigkeit
+- Jeder Switch ermittelt besten Pfad zur Root
+
+**3. Port-Rollen zuweisen**
+- **Root Port**: Bester Weg zur Root Bridge
+- **Designated Port**: Bester Weg vom Segment zur Root
+- **Blocked Port**: Redundante Ports werden blockiert
+
+**Port-Zustände:**
+
+| Zustand | Beschreibung |
+|---------|--------------|
+| Disabled | Administrativ deaktiviert |
+| Blocking | Empfängt BPDUs, leitet keine Frames |
+| Listening | Verarbeitet BPDUs, lernt keine MACs |
+| Learning | Lernt MACs, leitet noch keine Frames |
+| Forwarding | Normaler Betrieb |
+
+> [!warning] Konvergenzzeit
+> Bei Topologieänderung: **30–50 Sekunden** (klassisches STP). RSTP reduziert dies auf **1–2 Sekunden**.
 
 ### STP-Varianten
 
@@ -221,38 +152,18 @@ Redundante Verbindungen zwischen Switches können zu **Endlosschleifen** führen
 
 ## Kollisions- und Broadcast-Domänen
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│         KOLLISIONS- vs. BROADCAST-DOMÄNE                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   KOLLISIONSDOMÄNE                                              │
-│   • Bereich, in dem Kollisionen auftreten können               │
-│   • Getrennt durch: Switch, Bridge, Router                     │
-│   • NICHT getrennt durch: Hub, Repeater                        │
-│                                                                 │
-│   BROADCAST-DOMÄNE                                              │
-│   • Bereich, den ein Broadcast erreicht                        │
-│   • Getrennt durch: Router, VLAN                               │
-│   • NICHT getrennt durch: Hub, Switch, Bridge                  │
-│                                                                 │
-│        ┌─────┐     ┌─────┐     ┌─────┐                        │
-│        │ PC1 │─────│ Hub │─────│ PC2 │                        │
-│        └─────┘     └──┬──┘     └─────┘                        │
-│                       │                                         │
-│              ┌────────┴────────┐                               │
-│              │     Switch      │                               │
-│              └────────┬────────┘                               │
-│                       │                                         │
-│        ┌─────┐     ┌──┴──┐     ┌─────┐                        │
-│        │ PC3 │─────│     │─────│ PC4 │                        │
-│        └─────┘     └─────┘     └─────┘                        │
-│                                                                 │
-│   Kollisionsdomänen: 3 (Hub-Segment, PC3-Port, PC4-Port)      │
-│   Broadcast-Domäne: 1 (alle PCs)                               │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[kollisions-broadcast-domaene.png]]
+*<span class="fig-id">03-03-05-03-kollisions-broadcast-domaene</span>: Unterschied zwischen Kollisions- und Broadcast-Domänen in einem Netzwerk mit Hub und Switch.*
+
+**Kollisionsdomäne:**
+- Bereich, in dem Kollisionen auftreten können
+- Getrennt durch: Switch, Bridge, Router
+- **Nicht** getrennt durch: Hub, Repeater
+
+**Broadcast-Domäne:**
+- Bereich, den ein Broadcast erreicht
+- Getrennt durch: Router, VLAN
+- **Nicht** getrennt durch: Hub, Switch, Bridge
 
 ## Zusammenfassung
 

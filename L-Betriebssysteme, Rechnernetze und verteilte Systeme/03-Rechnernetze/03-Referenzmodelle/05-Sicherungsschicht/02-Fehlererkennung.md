@@ -35,32 +35,22 @@ Bei der Datenübertragung können verschiedene Fehler auftreten:
 
 ## Fehlererkennung vs. Fehlerkorrektur
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│          FEHLERERKENNUNG vs. FEHLERKORREKTUR                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   FEHLERERKENNUNG (Error Detection)                            │
-│   ─────────────────────────────────                            │
-│   • Erkennt, DASS ein Fehler aufgetreten ist                   │
-│   • Frame wird verworfen                                       │
-│   • Neuübertragung durch höhere Schicht (z.B. TCP)            │
-│   • Weniger Redundanz nötig                                    │
-│   • Beispiel: CRC, Prüfsumme                                   │
-│                                                                 │
-│   FEHLERKORREKTUR (Error Correction / FEC)                     │
-│   ────────────────────────────────────────                     │
-│   • Erkennt UND korrigiert Fehler                              │
-│   • Keine Neuübertragung nötig                                 │
-│   • Mehr Redundanz erforderlich                                │
-│   • Beispiel: Hamming-Code, Reed-Solomon                       │
-│   • Einsatz: Speicher (ECC-RAM), CDs, Satellit                │
-│                                                                 │
-│   Ethernet verwendet Fehlererkennung (CRC) –                   │
-│   Korrektur übernimmt TCP durch Retransmission                 │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Fehlererkennung (Error Detection)**
+- Erkennt, **dass** ein Fehler aufgetreten ist
+- Frame wird verworfen
+- Neuübertragung durch höhere Schicht (z.B. TCP)
+- Weniger Redundanz nötig
+- Beispiele: CRC, Prüfsumme
+
+**Fehlerkorrektur (Error Correction / FEC)**
+- Erkennt **und korrigiert** Fehler
+- Keine Neuübertragung nötig
+- Mehr Redundanz erforderlich
+- Beispiele: Hamming-Code, Reed-Solomon
+- Einsatz: Speicher (ECC-RAM), CDs, Satellitenkommunikation
+
+> [!info] Ethernet-Strategie
+> Ethernet verwendet **Fehlererkennung** (CRC) — die Korrektur übernimmt TCP durch Retransmission.
 
 ## CRC – Cyclic Redundancy Check
 
@@ -68,36 +58,27 @@ Bei der Datenübertragung können verschiedene Fehler auftreten:
 
 CRC behandelt die Daten als großes Polynom und dividiert durch ein Generator-Polynom. Der Rest dieser Division ist die Prüfsumme.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    CRC PRINZIP                                  │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   1. Sender                                                     │
-│      • Daten als Polynom D(x) interpretieren                   │
-│      • Mit x^n multiplizieren (n Nullbits anhängen)            │
-│      • Division durch Generator G(x) mittels XOR               │
-│      • Rest R(x) = CRC-Wert                                    │
-│      • Übertragen: D(x) · x^n + R(x)                          │
-│                                                                 │
-│   2. Empfänger                                                  │
-│      • Empfangene Daten durch G(x) dividieren                  │
-│      • Rest = 0 → Kein Fehler erkannt                          │
-│      • Rest ≠ 0 → Fehler erkannt, Frame verwerfen             │
-│                                                                 │
-│   Beispiel mit CRC-4 (vereinfacht):                            │
-│   ─────────────────────────────────                            │
-│   Daten:     1101011                                           │
-│   Generator: 10011 (CRC-4 Polynom)                             │
-│                                                                 │
-│   11010110000 ÷ 10011                                          │
-│   = ... (XOR-Division)                                         │
-│   Rest: 1110 → CRC                                             │
-│                                                                 │
-│   Übertragen: 11010111110                                      │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Sender:**
+1. Daten als Polynom $D(x)$ interpretieren
+2. Mit $x^n$ multiplizieren ($n$ Nullbits anhängen, wobei $n$ = Grad des Generators)
+3. Division durch Generator-Polynom $G(x)$ mittels XOR
+4. Rest $R(x)$ = CRC-Wert
+5. Übertragen: $D(x) \cdot x^n + R(x)$
+
+**Empfänger:**
+- Empfangene Daten durch $G(x)$ dividieren
+- Rest $= 0$ → Kein Fehler erkannt
+- Rest $\neq 0$ → Fehler erkannt, Frame verwerfen
+
+**Beispiel mit CRC-4 (vereinfacht):**
+
+| Schritt | Wert |
+|---------|------|
+| Daten | `1101011` |
+| Generator $G(x)$ | `10011` (Grad 4) |
+| Daten × $x^4$ | `11010110000` |
+| XOR-Division | Rest: `1110` |
+| **Übertragen** | `11010111110` |
 
 ### CRC-Varianten
 
@@ -127,26 +108,18 @@ CRC behandelt die Daten als großes Polynom und dividiert durch ein Generator-Po
 
 ### Parität
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    PARITÄT                                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Gerade Parität (Even Parity):                                │
-│   • Anzahl der 1-Bits + Paritätsbit = gerade                   │
-│   • Daten: 1101001 → Parität: 0 → 11010010                    │
-│   • Daten: 1101011 → Parität: 1 → 11010111                    │
-│                                                                 │
-│   Ungerade Parität (Odd Parity):                               │
-│   • Anzahl der 1-Bits + Paritätsbit = ungerade                 │
-│                                                                 │
-│   Einschränkungen:                                              │
-│   • Erkennt nur Einzelbitfehler                                │
-│   • Erkennt keine geradzahligen Mehrbitfehler                  │
-│   • Keine Korrektur möglich                                    │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Gerade Parität (Even Parity):**
+- Anzahl der 1-Bits + Paritätsbit = **gerade**
+- Daten: `1101001` (4 Einsen) → Parität: `0` → `11010010`
+- Daten: `1101011` (5 Einsen) → Parität: `1` → `11010111`
+
+**Ungerade Parität (Odd Parity):**
+- Anzahl der 1-Bits + Paritätsbit = **ungerade**
+
+> [!warning] Einschränkungen
+> - Erkennt nur **Einzelbitfehler**
+> - Erkennt **keine** geradzahligen Mehrbitfehler
+> - Keine Korrektur möglich
 
 ### Prüfsummen (Checksum)
 
@@ -164,29 +137,15 @@ CRC behandelt die Daten als großes Polynom und dividiert durch ein Generator-Po
 
 ## Fehlererkennung in der Praxis
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│          FEHLERBEHANDLUNG IM PROTOKOLL-STACK                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Schicht      Prüfung          Bei Fehler                      │
-│   ──────      ────────          ──────────                      │
-│                                                                 │
-│   L2 (Eth)    CRC-32 (FCS)     Frame verwerfen                 │
-│                                                                 │
-│   L3 (IP)     Header Checksum   Paket verwerfen                │
-│               (nur Header!)                                     │
-│                                                                 │
-│   L4 (TCP)    Checksum          Segment verwerfen,             │
-│               (Header+Daten)    Retransmission anfordern       │
-│                                                                 │
-│   L4 (UDP)    Checksum          Datagramm verwerfen            │
-│               (optional v4)     (keine Retransmission)         │
-│                                                                 │
-│   Mehrfache Prüfung erhöht Zuverlässigkeit!                    │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Schicht | Prüfung | Bei Fehler |
+|---------|---------|------------|
+| **L2 (Ethernet)** | CRC-32 (FCS) | Frame verwerfen |
+| **L3 (IP)** | Header Checksum (nur Header!) | Paket verwerfen |
+| **L4 (TCP)** | Checksum (Header + Daten) | Segment verwerfen, Retransmission anfordern |
+| **L4 (UDP)** | Checksum (optional in IPv4) | Datagramm verwerfen (keine Retransmission) |
+
+> [!tip] Mehrfache Prüfung
+> Die mehrfache Prüfung auf verschiedenen Schichten erhöht die Zuverlässigkeit der Datenübertragung.
 
 ## Zusammenfassung
 
