@@ -42,6 +42,8 @@ Historisch gesehen war die Probe schon bei den babylonischen Mathematikern übli
 
 ## Durchführung der Probe
 
+Die Probe folgt immer demselben einfachen Ablauf, egal um welchen Gleichungstyp es sich handelt. Im Kern geht es darum, den gefundenen Wert zurück in die Gleichung einzusetzen und zu prüfen, ob die Behauptung „linke Seite gleich rechte Seite" tatsächlich stimmt. Die folgenden Schritte halten dieses Vorgehen fest.
+
 ### Grundprinzip
 
 1. Den berechneten Wert in die **Ausgangsgleichung** einsetzen
@@ -74,6 +76,8 @@ $$\text{LS} = \text{RS} \quad \checkmark$$
 $$4 \cdot 5 - 7 = 13 \quad \checkmark$$
 
 ## Beispiele für Proben
+
+Das Grundprinzip bleibt gleich, doch je nach Bauart der Gleichung sieht die Rechnung beim Einsetzen etwas anders aus. Die beiden folgenden Fälle zeigen, wie die Probe aussieht, wenn Klammern oder Brüche im Spiel sind – die Schritte sind dieselben, nur die Zwischenrechnungen unterscheiden sich.
 
 ### Lineare Gleichung mit Klammern
 
@@ -120,6 +124,8 @@ $$\text{LS} = \text{RS} \checkmark$$
 ## Scheinlösungen erkennen
 
 Bei bestimmten Umformungen (Quadrieren, Multiplikation mit Variablen) können **Scheinlösungen** entstehen – Werte, die mathematisch berechnet wurden, aber die Originalgleichung nicht erfüllen.
+
+Hier zeigt sich der eigentliche Wert der Probe: Nicht jeder berechnete Wert ist automatisch eine echte Lösung. Gerade weil manche Umformungen zusätzliche Werte ins Spiel bringen, ist das Einsetzen in die Ausgangsgleichung das einzige verlässliche Mittel, um echte Lösungen von Scheinlösungen zu trennen.
 
 ### Beispiel: Bruchgleichung
 
