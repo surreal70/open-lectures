@@ -69,6 +69,8 @@ Dabei ist $p = \frac{b}{a}$ und $q = \frac{c}{a}$.
 
 ## Reinquadratische Gleichungen
 
+Bevor man zur allgemeinen Lösungsformel greift, lohnt es sich, die einfacheren Sonderformen gesondert zu betrachten. Fehlt der lineare $x$-Term, lässt sich die Gleichung nämlich direkt durch Wurzelziehen lösen – ganz ohne Formel. Dabei zeigt sich auch gut, warum eine quadratische Gleichung typischerweise zwei Lösungen hat: Zu jedem positiven Quadrat gehören eine positive und eine negative Wurzel.
+
 Diese sind am einfachsten zu lösen, da nur $x^2$ und eine Konstante vorkommen.
 
 ### Lösungsmethode: Wurzelziehen
@@ -104,6 +106,8 @@ $$x = \pm 4$$
 
 ## Gemischt ohne absolutes Glied
 
+Fehlt dagegen die Konstante, hat jeder Term die Variable als Faktor. Das eröffnet einen eigenen, besonders bequemen Lösungsweg: das Ausklammern. Es führt die quadratische Gleichung auf ein Produkt zurück, das genau dann null ist, wenn einer der Faktoren null wird. Gerade hier lauert allerdings ein verbreiteter Fehler, auf den im Anschluss noch eigens hingewiesen wird.
+
 Gleichungen der Form $ax^2 + bx = 0$ können durch **Ausklammern** gelöst werden.
 
 $$x^2 - 6x = 0$$
@@ -127,6 +131,8 @@ $$x_1 = 0, \quad x_2 = 6$$
 > Merke: Nie durch die Variable dividieren – dabei können Lösungen verloren gehen!
 
 ## Anzahl der Lösungen und Diskriminante
+
+Anders als lineare Gleichungen können quadratische Gleichungen zwei, eine oder gar keine reelle Lösung haben. Welcher Fall vorliegt, muss man nicht erst durch vollständiges Lösen herausfinden – ein einziger Term, die Diskriminante, verrät es im Voraus. Damit lässt sich schon vor dem Rechnen abschätzen, was einen erwartet.
 
 Die **Diskriminante** $D$ bestimmt die Anzahl der Lösungen:
 
