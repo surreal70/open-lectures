@@ -39,30 +39,12 @@ Die berühmten „Rechenaufgaben" von **Adam Ries** (1492–1559), dem bedeutend
 
 Dieses Schema hat sich über Jahrhunderte bewährt und wird von erfolgreichen Problemlösern intuitiv angewendet:
 
-```
-┌─────────────────────────────────────┐
-│ 1. LESEN - Text sorgfältig lesen    │
-│    (mindestens zweimal!)            │
-└──────────────┬──────────────────────┘
-               ↓
-┌─────────────────────────────────────┐
-│ 2. VARIABLE - Was ist gesucht?      │
-│    Variable definieren (x = ...)    │
-└──────────────┬──────────────────────┘
-               ↓
-┌─────────────────────────────────────┐
-│ 3. GLEICHUNG - Beziehungen in       │
-│    mathematische Sprache übersetzen │
-└──────────────┬──────────────────────┘
-               ↓
-┌─────────────────────────────────────┐
-│ 4. LÖSEN - Gleichung lösen          │
-└──────────────┬──────────────────────┘
-               ↓
-┌─────────────────────────────────────┐
-│ 5. ANTWORT - Ergebnis interpretieren│
-│    Im Sachkontext formulieren       │
-└─────────────────────────────────────┘
+```mermaid
+graph TD
+    A[1. LESEN -  Text sorgfältig lesen, mindestens zweimal] --> B[2. VARIABLE -  Was ist gesucht? Variable definieren -  x = ...]
+    B --> C[3. GLEICHUNG -  Beziehungen in mathematische Sprache übersetzen]
+    C --> D[4. LÖSEN -  Gleichung lösen]
+    D --> E[5. ANTWORT -  Ergebnis im Sachkontext interpretieren]
 ```
 
 > [!warning] **Häufiger Fehler: Zu schnell rechnen**
