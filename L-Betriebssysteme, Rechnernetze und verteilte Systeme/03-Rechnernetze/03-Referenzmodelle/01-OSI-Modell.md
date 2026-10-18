@@ -297,12 +297,18 @@ Dennoch ist das OSI-Modell als **Referenzmodell für das Verständnis** von Netz
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Kennen Sie alle 7 Schichten **in der richtigen Reihenfolge**
-> - Können Sie **Protokolle** den Schichten zuordnen (z.B. HTTP=L7, TCP=L4, IP=L3)
-> - Verstehen Sie die **Datenkapselung** (Frame enthält Paket enthält Segment...)
-> - Wissen Sie, auf welcher Schicht **Geräte** arbeiten
-> - Kennen Sie die **Dateneinheiten** jeder Schicht
+> [!warning] **Prüfungsrelevant**
+> - Alle 7 OSI-Schichten in der richtigen Reihenfolge (1=Physical bis 7=Application)
+> - Protokolle den Schichten zuordnen (HTTP=L7, TCP=L4, IP=L3, Ethernet=L2)
+> - Datenkapselung verstehen (Frame enthält Paket enthält Segment)
+> - Geräte und ihre Arbeitsschichten (Hub=L1, Switch=L2, Router=L3)
+> - Dateneinheiten jeder Schicht (Bit, Frame, Paket, Segment, Daten)
+
+> [!question] **Typische Prüfungsfragen**
+> - Nennen Sie alle 7 OSI-Schichten von unten nach oben
+> - Auf welcher Schicht arbeitet ein Switch/Router?
+> - Welche Dateneinheit verwendet die Transportschicht?
+> - Ordnen Sie folgende Protokolle den OSI-Schichten zu: HTTP, TCP, IP, Ethernet
 
 ## Verwandte Themen
 

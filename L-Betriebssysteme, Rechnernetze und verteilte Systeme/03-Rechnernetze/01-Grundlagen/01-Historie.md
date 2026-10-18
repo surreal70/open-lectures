@@ -232,12 +232,18 @@ Entwickelt bei **XEROX PARC** als „Distributed Packet Switching":
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Nennen Sie die fundamentalen Aspekte jeder Kommunikation (Alphabet, Reichweite, Bandbreite, Partner, Zuverlässigkeit)
-> - Erklären Sie, warum ARPANET als Vorläufer des Internets gilt
-> - Verstehen Sie den Zusammenhang zwischen ALOHA und Ethernet (CSMA/CD)
-> - Kennen Sie die wichtigsten Meilensteine der Netzwerkentwicklung
-> - Unterscheiden Sie RS-232 und RS-485
+> [!warning] **Prüfungsrelevant**
+> - Fundamentale Aspekte jeder Kommunikation (Alphabet, Reichweite, Bandbreite, Partner, Zuverlässigkeit)
+> - ARPANET als Vorläufer des Internets und dessen Bedeutung
+> - Zusammenhang zwischen ALOHA und Ethernet (CSMA/CD)
+> - Wichtige Meilensteine der Netzwerkentwicklung (1969: ARPANET, 1970: ALOHA, 1977: Ethernet)
+> - Unterschied RS-232 und RS-485
+
+> [!question] **Typische Prüfungsfragen**
+> - Nennen Sie die fünf fundamentalen Aspekte jeder Kommunikation
+> - Warum gilt ARPANET als Vorläufer des Internets?
+> - Welchen Einfluss hatte das ALOHA-Protokoll auf die Entwicklung von Ethernet?
+> - Ordnen Sie folgende Technologien chronologisch: Ethernet, ARPANET, optische Telegraphie
 
 ## Verwandte Themen
 

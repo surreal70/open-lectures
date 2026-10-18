@@ -181,8 +181,11 @@ Manche älteren Switches haben einen speziellen **Uplink-Port**:
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-N/A
+> [!warning] **Prüfungsrelevant**
+> N/A
+
+> [!question] **Typische Prüfungsfragen**
+> - Keine typischen Prüfungsfragen zu diesem Thema
 
 ## Verwandte Themen
 

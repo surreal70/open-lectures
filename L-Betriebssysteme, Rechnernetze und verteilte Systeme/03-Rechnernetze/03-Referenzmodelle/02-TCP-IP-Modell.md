@@ -228,12 +228,18 @@ Das TCP/IP-Modell unterstützt verschiedene Kommunikationsformen:
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Kennen Sie die **4 Schichten** und ihre Aufgaben
-> - Können Sie **Protokolle** zuordnen (HTTP=Anwendung, TCP=Transport, IP=Internet)
-> - Verstehen Sie den **Unterschied TCP vs. UDP**
-> - Kennen Sie die **Kommunikationsarten** (Unicast, Broadcast, Multicast)
-> - Wissen Sie, warum TCP/IP "DoD-Modell" heißt
+> [!warning] **Prüfungsrelevant**
+> - Die 4 TCP/IP-Schichten und ihre Aufgaben (Netzzugang, Internet, Transport, Anwendung)
+> - Protokollzuordnung: HTTP=Anwendung, TCP/UDP=Transport, IP=Internet
+> - Unterschied TCP vs. UDP (verbindungsorientiert vs. verbindungslos)
+> - Kommunikationsarten: Unicast, Broadcast, Multicast, Anycast
+> - Warum TCP/IP auch "DoD-Modell" heißt (Department of Defense, ARPANET)
+
+> [!question] **Typische Prüfungsfragen**
+> - Nennen Sie die 4 Schichten des TCP/IP-Modells
+> - Welche Schicht des TCP/IP-Modells entspricht OSI-Schicht 3?
+> - Nennen Sie 3 Unterschiede zwischen TCP und UDP
+> - Was ist der Unterschied zwischen Multicast und Broadcast?
 
 ## Verwandte Themen
 

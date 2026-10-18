@@ -166,12 +166,18 @@ Das Schichtenmodell hilft bei der systematischen Fehlersuche:
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Können Sie die **Entsprechungen** zwischen OSI und TCP/IP aufzeigen?
-> - Kennen Sie die **Vor- und Nachteile** beider Modelle?
-> - Können Sie **Protokolle** in beiden Modellen korrekt einordnen?
-> - Wissen Sie, welche **Geräte** auf welcher Schicht arbeiten?
-> - Kennen Sie die **PDU-Namen** (Daten, Segment, Paket, Frame, Bit)?
+> [!warning] **Prüfungsrelevant**
+> - Entsprechungen zwischen OSI (7 Schichten) und TCP/IP (4 Schichten)
+> - Vor- und Nachteile beider Modelle
+> - Protokolle in beiden Modellen korrekt einordnen
+> - Geräte und ihre Arbeitsschichten (Hub=L1, Switch=L2, Router=L3)
+> - PDU-Namen: Daten, Segment, Paket, Frame, Bit
+
+> [!question] **Typische Prüfungsfragen**
+> - Welchen OSI-Schichten entspricht die TCP/IP-Anwendungsschicht?
+> - Nennen Sie je 2 Vor- und Nachteile des OSI- und TCP/IP-Modells
+> - Auf welcher Schicht arbeitet ein Layer-3-Switch?
+> - Was ist eine PDU und wie heißt sie auf Schicht 4?
 
 ## Verwandte Themen
 

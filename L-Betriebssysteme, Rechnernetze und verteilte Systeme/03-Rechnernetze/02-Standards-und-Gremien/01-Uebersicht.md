@@ -225,11 +225,16 @@ Die [[07-Anhang/IT-Related-Organisations/ECMA|ECMA]] standardisiert Informations
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Kennen Sie die vier Hauptgremien (IEEE, IETF, ISO, ITU) und ihre Zuständigkeiten
-> - Verstehen Sie den Unterschied zwischen De-facto und De-jure
-> - Wissen Sie, dass IEEE 802.x für lokale Netze zuständig ist
-> - Kennen Sie den groben Ablauf eines Standardisierungsprozesses
+> [!warning] **Prüfungsrelevant**
+> - Die vier Hauptgremien (IEEE, IETF, ISO, ITU) und ihre Zuständigkeiten
+> - Unterschied De-facto vs. De-jure Standards
+> - IEEE 802.x für LAN/WLAN-Standards
+
+> [!question] **Typische Prüfungsfragen**
+> - Welches Gremium ist für Internet-Protokolle zuständig? (IETF)
+> - Nennen Sie ein Beispiel für einen De-facto-Standard
+> - Was standardisiert die IEEE 802 Arbeitsgruppe?
+> - Warum ist Standardisierung für Netzwerke wichtig?
 
 ## Verwandte Themen
 

@@ -363,12 +363,18 @@ Die Art der Datenübertragung hängt von der Anzahl der Empfänger ab:
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Kennen Sie die Unterschiede zwischen PAN, LAN, MAN, WAN bezüglich Reichweite und Technologie
-> - Nennen Sie typische Bandbreiten für jede Netzwerkklasse
-> - Erklären Sie den Unterschied zwischen Client-Server und P2P
-> - Unterscheiden Sie Unicast, Broadcast, Multicast und Anycast mit Beispielen
-> - Wissen Sie, was ein VPN ist und wofür es eingesetzt wird
+> [!warning] **Prüfungsrelevant**
+> - Unterschiede zwischen PAN, LAN, MAN, WAN bezüglich Reichweite und Technologie
+> - Typische Bandbreiten und Technologien für jede Netzwerkklasse
+> - Unterschied zwischen Client-Server und Peer-to-Peer Architekturen
+> - Kommunikationsarten: Unicast, Broadcast, Multicast und Anycast
+> - VPN-Grundkonzept und Einsatzzweck
+
+> [!question] **Typische Prüfungsfragen**
+> - Ordnen Sie folgende Netzwerktypen nach Reichweite: PAN, WAN, LAN, MAN
+> - Nennen Sie je eine typische Technologie für LAN und WAN
+> - Was ist der Unterschied zwischen Multicast und Broadcast?
+> - In welchen Szenarien ist eine P2P-Architektur sinnvoller als Client-Server?
 
 ## Verwandte Themen
 

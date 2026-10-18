@@ -379,11 +379,16 @@ wobei:
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Kennen Sie die Felder eines Ethernet-Frames
-> - Verstehen Sie MAC-Adressen (48 Bit, OUI + NIC)
-> - Wissen Sie, was Broadcast und Multicast bedeuten
-> - Können Sie 802.1Q VLAN-Tagging erklären
+> [!warning] **Prüfungsrelevant**
+> - Felder eines Ethernet-Frames (Präambel, SFD, MAC-Adressen, Type, Payload, FCS)
+> - MAC-Adressen: 48 Bit, Aufbau OUI (Hersteller) + NIC (Geräte-ID)
+> - Broadcast-Adresse: FF:FF:FF:FF:FF:FF
+
+> [!question] **Typische Prüfungsfragen**
+> - Nennen Sie die Felder eines Ethernet-Frames in der richtigen Reihenfolge
+> - Wie groß ist eine MAC-Adresse und wie ist sie aufgebaut?
+> - Wie lautet die Broadcast-MAC-Adresse?
+> - Was bewirkt ein 802.1Q VLAN-Tag?
 
 ## Verwandte Themen
 

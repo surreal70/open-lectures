@@ -9,7 +9,7 @@ tags:
   - ssl
   - verschluesselung
 created: '2026-10-07'
-modified: '2026-10-07'
+modified: '2026-10-13'
 bereich: RN
 ---
 
@@ -42,11 +42,17 @@ TLS (früher SSL) sichert die Kommunikation zwischen Anwendungen durch Verschlü
 - [[VPN]]
 - [[Firewalls]]
 
-## Prüfungstipps
+## Prüfungsrelevanz
 
-- TLS-Handshake-Ablauf
-- Unterschied TLS 1.2 vs. TLS 1.3
-- Rolle von Zertifikaten
+> [!warning] **Prüfungsrelevant**
+> - TLS-Handshake-Ablauf (vereinfacht)
+> - Unterschied TLS 1.2 vs. TLS 1.3
+> - Rolle von Zertifikaten bei der Server-Authentifizierung
+
+> [!question] **Typische Prüfungsfragen**
+> - Was ist der Unterschied zwischen symmetrischer und asymmetrischer Verschlüsselung bei TLS?
+> - Wofür werden Zertifikate bei TLS verwendet?
+> - Auf welchem Port läuft HTTPS?
 
 ## Quellen
 

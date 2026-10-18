@@ -8,7 +8,7 @@ tags:
   - firewall
   - paketfilter
 created: '2026-10-07'
-modified: '2026-10-07'
+modified: '2026-10-13'
 bereich: RN
 ---
 
@@ -42,10 +42,16 @@ Firewalls kontrollieren den Datenverkehr zwischen Netzwerkzonen (z.B. Internet u
 - [[IP-Protokoll]]
 - [[Ports]]
 
-## Prüfungstipps
+## Prüfungsrelevanz
 
-- Unterschied Paketfilter vs. Stateful Firewall
-- Typische Firewall-Regeln
+> [!warning] **Prüfungsrelevant**
+> - Unterschied Paketfilter vs. Stateful Firewall
+> - Typische Firewall-Regeln und deren Aufbau
+> - Firewall-Positionierung im Netzwerk
+
+> [!question] **Typische Prüfungsfragen**
+> - Was ist der Unterschied zwischen einem Paketfilter und einer Stateful Firewall?
+> - Was bedeutet "Default Deny" bei einer Firewall?
 
 ## Quellen
 

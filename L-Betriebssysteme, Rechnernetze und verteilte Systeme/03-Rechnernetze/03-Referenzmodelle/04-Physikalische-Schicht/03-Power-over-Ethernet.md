@@ -197,8 +197,11 @@ Bevor Strom geliefert wird, führt das PSE einen **Erkennungsprozess** durch:
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-N/A
+> [!warning] **Prüfungsrelevant**
+> N/A
+
+> [!question] **Typische Prüfungsfragen**
+> - Keine typischen Prüfungsfragen zu diesem Thema
 
 ## Verwandte Themen
 

@@ -207,9 +207,13 @@ Bei der **Modulation** wird ein hochfrequenter Träger durch das Nutzsignal ver�
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Verstehen Sie den Unterschied zwischen Leitungs- und Kanalcodierung
-> - Kennen Sie die Manchester-Codierung und warum sie verwendet wird
+> [!warning] **Prüfungsrelevant**
+> - Unterschied Leitungscodierung (Bits→Signale) vs. Kanalcodierung (Fehlerschutz)
+
+> [!question] **Typische Prüfungsfragen**
+> - Was ist der Unterschied zwischen Leitungs- und Kanalcodierung?
+> - Warum wird bei 10BASE-T Manchester-Codierung verwendet?
+> - Was bedeutet Gleichstromfreiheit und warum ist sie wichtig?
 
 ## Verwandte Themen
 

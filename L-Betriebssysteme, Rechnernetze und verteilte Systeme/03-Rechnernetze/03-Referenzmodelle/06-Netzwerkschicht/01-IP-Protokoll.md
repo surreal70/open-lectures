@@ -38,23 +38,8 @@ IPv4 ist durch folgende Merkmale charakterisiert:
 
 Der IPv4-Header ist mindestens 20 Bytes lang (ohne Optionen):
 
-```
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|Version|  IHL  |Type of Service|          Total Length         |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|         Identification        |Flags|      Fragment Offset    |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|  Time to Live |    Protocol   |         Header Checksum       |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                       Source Address                          |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                    Destination Address                        |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                    Options (falls vorhanden)                  |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-```
+![[ipv4-header.png]]
+*<span class="fig-id">03-03-06-01-ipv4-header</span>: Aufbau des IPv4-Headers mit allen Feldern und ihrer Bitbreite.*
 
 ### Header-Felder im Detail
 
@@ -91,18 +76,8 @@ Dezimal:    192     .168     .1       .10
 
 Jede IP-Adresse besteht aus zwei Teilen:
 
-```
-        ┌─────────────────────┬─────────────────────┐
-        │    Netzwerkanteil   │     Hostanteil      │
-        └─────────────────────┴─────────────────────┘
-        
-Beispiel: 192.168.1.10 /24
-        
-        ┌───────────────────────────┬───────────────┐
-        │      192.168.1            │      .10      │
-        │    (Netzwerk-ID)          │   (Host-ID)   │
-        └───────────────────────────┴───────────────┘
-```
+![[ip-netzwerk-host.png]]
+*<span class="fig-id">03-03-06-01-ip-netzwerk-host</span>: Aufteilung einer IPv4-Adresse in Netzwerk- und Hostanteil am Beispiel 192.168.1.10/24.*
 
 ### Subnetzmaske und CIDR
 
@@ -130,33 +105,15 @@ Die Subnetzmaske definiert die Grenze zwischen Netzwerk- und Hostanteil:
 
 **Aufgabe:** Teile das Netzwerk 192.168.1.0/24 in 4 Subnetze
 
-```
 Originalnetzwerk: 192.168.1.0/24 (254 Hosts)
+Subnetting auf /26 ergibt 4 Subnetze mit je 62 Hosts:
 
-Subnetting auf /26 (4 Subnetze à 62 Hosts):
-
-┌─────────────────────────────────────────────────────────┐
-│ Subnetz 1: 192.168.1.0/26                               │
-│   Netzwerkadresse: 192.168.1.0                          │
-│   Hostbereich:     192.168.1.1 - 192.168.1.62           │
-│   Broadcast:       192.168.1.63                         │
-├─────────────────────────────────────────────────────────┤
-│ Subnetz 2: 192.168.1.64/26                              │
-│   Netzwerkadresse: 192.168.1.64                         │
-│   Hostbereich:     192.168.1.65 - 192.168.1.126         │
-│   Broadcast:       192.168.1.127                        │
-├─────────────────────────────────────────────────────────┤
-│ Subnetz 3: 192.168.1.128/26                             │
-│   Netzwerkadresse: 192.168.1.128                        │
-│   Hostbereich:     192.168.1.129 - 192.168.1.190        │
-│   Broadcast:       192.168.1.191                        │
-├─────────────────────────────────────────────────────────┤
-│ Subnetz 4: 192.168.1.192/26                             │
-│   Netzwerkadresse: 192.168.1.192                        │
-│   Hostbereich:     192.168.1.193 - 192.168.1.254        │
-│   Broadcast:       192.168.1.255                        │
-└─────────────────────────────────────────────────────────┘
-```
+| Subnetz | Netzwerkadresse | Hostbereich | Broadcast |
+|---------|-----------------|-------------|-----------|
+| 1 | 192.168.1.0/26 | 192.168.1.1 – 192.168.1.62 | 192.168.1.63 |
+| 2 | 192.168.1.64/26 | 192.168.1.65 – 192.168.1.126 | 192.168.1.127 |
+| 3 | 192.168.1.128/26 | 192.168.1.129 – 192.168.1.190 | 192.168.1.191 |
+| 4 | 192.168.1.192/26 | 192.168.1.193 – 192.168.1.254 | 192.168.1.255 |
 
 ## IP-Adressklassen (historisch)
 
@@ -212,96 +169,49 @@ Die IANA hat verschiedene Adressbereiche für spezielle Zwecke reserviert:
 
 #### Wichtige Kategorien
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                 Private Adressbereiche                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   10.0.0.0/8       ████████████████████████████  16.777.216    │
-│   172.16.0.0/12    ██████████                     1.048.576    │
-│   192.168.0.0/16   ███                               65.536    │
-│                                                                 │
-│   Gesamt: ~18 Millionen private Adressen                       │
-│   → Nicht im Internet routbar                                   │
-│   → Benötigen NAT für Internetzugang                           │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[private-adressbereiche.png]]
+*<span class="fig-id">03-03-06-01-private-adressbereiche</span>: Die drei privaten IPv4-Adressbereiche nach RFC 1918 im Größenvergleich.*
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              Dokumentations-Adressbereiche                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   ┌───────────────────┐   Verwendung in:                       │
-│   │ 192.0.2.0/24      │   • Dokumentation                      │
-│   │ TEST-NET-1        │   • Büchern, RFCs                      │
-│   └───────────────────┘   • Beispielkonfigurationen            │
-│                                                                 │
-│   ┌───────────────────┐   Diese Adressen sollten nie           │
-│   │ 198.51.100.0/24   │   in produktiven Netzen oder           │
-│   │ TEST-NET-2        │   im Internet auftauchen.              │
-│   └───────────────────┘                                         │
-│                                                                 │
-│   ┌───────────────────┐                                         │
-│   │ 203.0.113.0/24    │                                         │
-│   │ TEST-NET-3        │                                         │
-│   └───────────────────┘                                         │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+#### Dokumentations-Adressbereiche
+
+Für Dokumentation, Bücher und Beispielkonfigurationen sind drei TEST-NET-Bereiche reserviert (siehe auch Tabelle „Spezielle und reservierte IPv4-Adressbereiche" oben):
+
+- **192.0.2.0/24** (TEST-NET-1)
+- **198.51.100.0/24** (TEST-NET-2)
+- **203.0.113.0/24** (TEST-NET-3)
+
+> [!warning] Niemals produktiv nutzen
+> Diese Adressen sollten nie in produktiven Netzen oder im Internet auftauchen.
 
 #### Carrier-Grade NAT (CGNAT)
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    CGNAT (100.64.0.0/10)                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Problem: IPv4-Erschöpfung bei ISPs                           │
-│                                                                 │
-│   ┌──────────┐    ┌─────────────┐    ┌────────────────┐        │
-│   │ Kunde A  │    │             │    │                │        │
-│   │100.64.0.1│───►│   CGNAT     │───►│   Internet     │        │
-│   └──────────┘    │   (ISP)     │    │  203.0.113.1   │        │
-│   ┌──────────┐    │             │    │                │        │
-│   │ Kunde B  │───►│100.64.0.0/10│───►│                │        │
-│   │100.64.0.2│    │             │    │                │        │
-│   └──────────┘    └─────────────┘    └────────────────┘        │
-│                                                                 │
-│   Nachteile:                                                    │
-│   • Doppeltes NAT (Kunde-NAT + ISP-NAT)                        │
-│   • Probleme mit Portweiterleitung                             │
-│   • Peer-to-Peer erschwert                                     │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[cgnat.png]]
+*<span class="fig-id">03-03-06-01-cgnat</span>: CGNAT ermöglicht ISPs, mehrere Kunden hinter einer öffentlichen IP-Adresse zu betreiben.*
+
+**Nachteile von CGNAT:**
+- Doppeltes NAT (Kunde-NAT + ISP-NAT)
+- Probleme mit Portweiterleitung
+- Peer-to-Peer-Verbindungen erschwert
+- Einschränkungen bei Online-Gaming und VoIP
 
 #### Link-Local (APIPA)
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                  Link-Local (169.254.0.0/16)                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│   Automatische Zuweisung wenn:                                  │
-│   • Kein DHCP-Server erreichbar                                │
-│   • Statische IP nicht konfiguriert                            │
-│                                                                 │
-│   ┌────────────┐        ┌────────────┐                         │
-│   │    PC1     │────────│    PC2     │   Direkte Verbindung    │
-│   │169.254.x.x │        │169.254.y.y │   ohne Router/DHCP      │
-│   └────────────┘        └────────────┘                         │
-│                                                                 │
-│   Reservierte Bereiche:                                         │
-│   • 169.254.0.0/24   → Reserviert                              │
-│   • 169.254.255.0/24 → Reserviert                              │
-│   • 169.254.1.0 - 169.254.254.255 → Nutzbar                    │
-│                                                                 │
-│   Hinweis: Nicht routbar, nur lokales Segment!                 │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+#### Link-Local (APIPA)
+
+**Automatische Zuweisung wenn:**
+- Kein DHCP-Server erreichbar
+- Statische IP nicht konfiguriert
+
+![[link-local.png]]
+*<span class="fig-id">03-03-06-01-link-local</span>: Zwei PCs mit automatisch zugewiesenen Link-Local-Adressen.*
+
+**Reservierte Bereiche:**
+- 169.254.0.0/24 → Reserviert
+- 169.254.255.0/24 → Reserviert
+- 169.254.1.0 – 169.254.254.255 → Nutzbar
+
+> [!info] Nicht routbar
+> Link-Local-Adressen sind nur im lokalen Segment gültig und können nicht über Router weitergeleitet werden.
 
 #### Multicast-Adressbereiche
 
@@ -327,25 +237,16 @@ Die IANA hat verschiedene Adressbereiche für spezielle Zwecke reserviert:
 
 NAT ermöglicht die Nutzung privater Adressen hinter einer öffentlichen IP:
 
-```
-┌─────────────────────────────┐         ┌─────────────────┐
-│      Privates Netzwerk      │         │    Internet     │
-│                             │         │                 │
-│   PC1: 192.168.1.10         │         │                 │
-│   PC2: 192.168.1.11  ───────┼── NAT ──┼── 203.0.113.5   │
-│   PC3: 192.168.1.12         │  Router │                 │
-│                             │         │                 │
-└─────────────────────────────┘         └─────────────────┘
+![[nat-schema.png]]
+*<span class="fig-id">03-03-06-01-nat-schema</span>: NAT übersetzt private Adressen in eine öffentliche IP-Adresse.*
 
-NAT-Tabelle:
-┌──────────────────┬──────────────────┬──────────────────┐
-│ Interne Adresse  │ Externe Adresse  │ Port             │
-├──────────────────┼──────────────────┼──────────────────┤
-│ 192.168.1.10:4521│ 203.0.113.5:10001│ TCP              │
-│ 192.168.1.11:3389│ 203.0.113.5:10002│ TCP              │
-│ 192.168.1.12:8080│ 203.0.113.5:10003│ TCP              │
-└──────────────────┴──────────────────┴──────────────────┘
-```
+**Beispiel NAT-Tabelle:**
+
+| Interne Adresse | Externe Adresse | Protokoll |
+|-----------------|-----------------|-----------|
+| 192.168.1.10:4521 | 203.0.113.5:10001 | TCP |
+| 192.168.1.11:3389 | 203.0.113.5:10002 | TCP |
+| 192.168.1.12:8080 | 203.0.113.5:10003 | TCP |
 
 ### NAT-Varianten
 
@@ -372,26 +273,11 @@ ICMP dient der Fehler- und Statusmeldung auf Netzwerkebene:
 
 ARP löst IP-Adressen zu MAC-Adressen im lokalen Netzwerk auf:
 
-```
-┌────────────────────────────────────────────────────────────┐
-│                      ARP-Ablauf                            │
-├────────────────────────────────────────────────────────────┤
-│                                                            │
-│   PC1 (192.168.1.10)              PC2 (192.168.1.20)      │
-│   MAC: AA:BB:CC:DD:EE:01          MAC: AA:BB:CC:DD:EE:02  │
-│                                                            │
-│   1. ARP Request (Broadcast):                              │
-│      "Wer hat 192.168.1.20?"                              │
-│      ──────────────────────────►                          │
-│                                                            │
-│   2. ARP Reply (Unicast):                                  │
-│      "192.168.1.20 ist bei AA:BB:CC:DD:EE:02"             │
-│      ◄──────────────────────────                          │
-│                                                            │
-│   3. Eintrag in ARP-Cache                                 │
-│                                                            │
-└────────────────────────────────────────────────────────────┘
-```
+![[arp-ablauf.png]]
+*<span class="fig-id">03-03-06-01-arp-ablauf</span>: ARP-Ablauf zur Auflösung von IP- zu MAC-Adressen.*
+
+> [!info] Weiterführend
+> Details zu ARP und weiteren Basisprotokollen siehe [[../04-Basisprotokolle/01-ARP|ARP]].
 
 > [!tip] ARP-Cache anzeigen
 > ```bash
@@ -402,16 +288,20 @@ ARP löst IP-Adressen zu MAC-Adressen im lokalen Netzwerk auf:
 > ip neigh show
 > ```
 
-## Prüfungsrelevante Themen
+## Prüfungsrelevanz
 
-> [!warning] Klausurrelevanz: Hoch
-> 
-> **Häufige Prüfungsaufgaben:**
-> 1. IPv4-Header-Felder erklären
-> 2. Subnetting-Berechnungen durchführen
-> 3. Private vs. öffentliche Adressen unterscheiden
-> 4. NAT-Funktionsweise erklären
-> 5. ARP-Ablauf beschreiben
+> [!warning] **Prüfungsrelevant**
+> - Subnetting-Berechnungen durchführen (Netzwerkadresse, Broadcast, Hostbereich)
+> - Private vs. öffentliche Adressen unterscheiden (RFC 1918)
+> - NAT-Funktionsweise und PAT erklären
+> - Spezielle Adressbereiche kennen (Loopback, Link-Local, CGNAT)
+
+> [!question] **Typische Prüfungsfragen**
+> - Berechnen Sie für das Netzwerk X.X.X.X/Y: Netzwerkadresse, Broadcast, Hostbereich
+> - Erklären Sie den Unterschied zwischen statischem NAT und PAT
+> - Warum sind private IP-Adressen nicht im Internet routbar?
+> - Was passiert mit einem IP-Paket, wenn TTL den Wert 0 erreicht?
+> - Welche Aufgabe hat das Protocol-Feld im IPv4-Header?
 
 ### Merkregeln
 

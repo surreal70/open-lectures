@@ -158,10 +158,14 @@ CRC behandelt die Daten als großes Polynom und dividiert durch ein Generator-Po
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Verstehen Sie den Unterschied Fehlererkennung vs. -korrektur
-> - Wissen Sie, dass Ethernet CRC-32 verwendet
-> - Kennen Sie die Position des FCS im Frame (am Ende)
+> [!warning] **Prüfungsrelevant**
+> - Unterschied Fehlererkennung (CRC) vs. Fehlerkorrektur (Hamming, Reed-Solomon)
+
+
+> [!question] **Typische Prüfungsfragen**
+> - Was ist der Unterschied zwischen Fehlererkennung und Fehlerkorrektur?
+> - Welches Prüfsummenverfahren verwendet Ethernet?
+> - Was passiert bei Ethernet, wenn ein CRC-Fehler erkannt wird?
 
 ## Verwandte Themen
 

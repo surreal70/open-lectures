@@ -297,12 +297,14 @@ Die [[07-Anhang/IT-Related-Organisations/IANA|IANA]] verwaltet zentrale Internet
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Wissen Sie, was ein RFC ist und wer sie veröffentlicht
-> - Kennen Sie die RFC 2119 Schlüsselwörter und ihre Bedeutung
-> - Können Sie den Unterschied zwischen Proposed/Internet Standard erklären
-> - Kennen Sie einige wichtige RFC-Nummern (791=IPv4, 793=TCP, 8200=IPv6)
-> - Verstehen Sie die Rolle der IANA
+> [!warning] **Prüfungsrelevant**
+> - RFC: Request for Comments – verbindliche Internet-Spezifikationen der IETF
+
+> [!question] **Typische Prüfungsfragen**
+> - Was bedeutet MUST in einem RFC laut RFC 2119?
+> - Wer veröffentlicht RFCs und wie heißt die Organisation?
+> - Welcher RFC spezifiziert IPv4?
+> - Was verwaltet die IANA?
 
 ## Verwandte Themen
 

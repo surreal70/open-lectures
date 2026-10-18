@@ -347,10 +347,15 @@ Die **MAU** (Media Access Unit) war ein wichtiges Gerät in frühen Ethernet-Net
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Kennen Sie die Kabelkategorien (Cat5e, Cat6, Cat6a) und ihre Geschwindigkeiten
-> - Verstehen Sie den Unterschied Singlemode vs. Multimode
-> - Wissen Sie, welche Reichweiten die verschiedenen Medien haben
+> [!warning] **Prüfungsrelevant**
+> - Kabelkategorien (Cat5e: 1 Gbit/s, Cat6: 10G bei 55m, Cat6a: 10G bei 100m)
+> - Unterschied Singlemode vs. Multimode Glasfaser (Reichweite)
+> - Reichweiten der verschiedenen Medien (Kupfer: 100m, Multimode: 2km, Singlemode: 100km)
+
+> [!question] **Typische Prüfungsfragen**
+> - Welche Kabelkategorie benötigen Sie für 10 Gbit/s Ethernet über 100m?
+> - Was ist der Unterschied zwischen Singlemode und Multimode Glasfaser?
+> - Welches Medium hat die größte Reichweite?
 
 ## Verwandte Themen
 

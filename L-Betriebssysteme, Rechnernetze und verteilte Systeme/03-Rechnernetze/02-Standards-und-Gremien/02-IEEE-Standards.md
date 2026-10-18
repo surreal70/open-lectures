@@ -271,12 +271,17 @@ Die 802.1 Arbeitsgruppe definiert höhere Protokolle für geswitchte Netzwerke.
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Kennen Sie die drei wichtigsten 802-Gruppen (802.1, 802.3, 802.11)
-> - Können Sie die Ethernet-Namenskonvention erklären
-> - Wissen Sie, welche Kabelkategorie für welche Geschwindigkeit nötig ist
-> - Kennen Sie die WiFi-Generationen und ihre ungefähren Geschwindigkeiten
-> - Verstehen Sie den Zweck von 802.1Q (VLANs) und 802.1X (Authentifizierung)
+> [!warning] **Prüfungsrelevant**
+> - Die drei wichtigsten 802-Gruppen: 802.1 (Bridging/VLANs), 802.3 (Ethernet), 802.11 (WLAN)
+> - Ethernet-Namenskonvention (z.B. 1000BASE-T = Geschwindigkeit-Signalart-Medium)
+> - Kabelkategorien und Geschwindigkeiten (Cat5e: 1G, Cat6a: 10G)
+> - WiFi-Generationen (WiFi 4=802.11n, WiFi 5=802.11ac, WiFi 6=802.11ax)
+
+> [!question] **Typische Prüfungsfragen**
+> - Erklären Sie die Bezeichnung 1000BASE-T
+> - Welche Kabelkategorie benötigen Sie für 10 Gbit/s Ethernet?
+> - Was ist der Unterschied zwischen WiFi 5 und WiFi 6?
+> - Wofür wird IEEE 802.1Q verwendet?
 
 ## Verwandte Themen
 

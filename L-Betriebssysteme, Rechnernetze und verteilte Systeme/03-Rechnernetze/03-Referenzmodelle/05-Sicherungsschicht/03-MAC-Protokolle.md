@@ -177,11 +177,17 @@ Redundante Verbindungen zwischen Switches können zu **Endlosschleifen** führen
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Verstehen Sie CSMA/CD und warum es heute selten relevant ist
-> - Kennen Sie den Unterschied CSMA/CD vs. CSMA/CA
-> - Wissen Sie, warum STP notwendig ist (Schleifen verhindern)
-> - Können Sie Kollisions-/Broadcast-Domänen bestimmen
+> [!warning] **Prüfungsrelevant**
+> - CSMA/CD: Carrier Sense Multiple Access / Collision Detection (Half-Duplex Ethernet)
+> - Unterschied CSMA/CD (Kollisionserkennung, Ethernet) vs. CSMA/CA (Kollisionsvermeidung, WLAN)
+> - STP verhindert Schleifen bei redundanten Layer-2-Verbindungen
+> - Kollisionsdomäne vs. Broadcast-Domäne und was sie trennt
+
+> [!question] **Typische Prüfungsfragen**
+> - Wofür stehen die Abkürzungen in CSMA/CD?
+> - Warum verwendet WLAN CSMA/CA statt CSMA/CD?
+> - Warum ist Spanning Tree Protocol notwendig?
+> - Welches Gerät trennt Kollisionsdomänen, welches Broadcast-Domänen?
 
 ## Verwandte Themen
 

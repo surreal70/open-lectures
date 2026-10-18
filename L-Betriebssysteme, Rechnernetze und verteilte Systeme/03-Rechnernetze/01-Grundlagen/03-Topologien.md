@@ -233,13 +233,18 @@ Moderne Rechenzentren nutzen eine spezielle Mesh-Variante:
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Zeichnen Sie jede Grundtopologie aus dem Gedächtnis
-> - Nennen Sie je 3 Vor- und Nachteile pro Topologie
-> - Erklären Sie das Ausfallverhalten jeder Topologie
-> - Berechnen Sie die Anzahl der Verbindungen bei Full-Mesh
-> - Unterscheiden Sie physische und logische Topologie am Beispiel Ethernet
-> - Kennen Sie die 3-Tier-Architektur (Core-Distribution-Access)
+> [!warning] **Prüfungsrelevant**
+> - Grundtopologien: Bus, Ring, Stern, Baum, Mesh (zeichnen können)
+> - Vor- und Nachteile jeder Topologie (je 3)
+> - Ausfallverhalten der verschiedenen Topologien
+> - Unterschied physische vs. logische Topologie
+
+
+> [!question] **Typische Prüfungsfragen**
+> - Zeichnen Sie eine Stern-Topologie und nennen Sie 3 Vorteile
+> - Wie viele Verbindungen hat ein vollvermaschtes Netz mit 10 Knoten?
+> - Warum ist die physische Topologie bei Ethernet oft ein Stern, die logische aber ein Bus?
+> - Welche Topologie bietet die höchste Ausfallsicherheit und warum?
 
 ## Verwandte Themen
 

@@ -473,11 +473,17 @@ Eine **Broadcast-Domäne** ist der Netzwerkbereich, in dem ein Broadcast-Frame (
 
 ## Prüfungsrelevanz
 
-> [!pruefung] Prüfungstipps
-> - Verstehen Sie den Unterschied zwischen beiden Domänen
-> - Wissen Sie, welches Gerät was trennt
-> - Können Sie die Anzahl der Domänen in einem Netzwerkdiagramm zählen
-> - Kennen Sie die Probleme großer Broadcast-Domänen
+> [!warning] **Prüfungsrelevant**
+> - Kollisionsdomäne: Layer 1/2 Konzept, getrennt durch Switch/Bridge
+> - Broadcast-Domäne: Layer 2/3 Konzept, getrennt durch Router
+> - Anzahl der Domänen in Netzwerkdiagrammen zählen können
+> - Probleme großer Broadcast-Domänen (Broadcast-Stürme, Skalierung)
+
+> [!question] **Typische Prüfungsfragen**
+> - Was ist der Unterschied zwischen Kollisions- und Broadcast-Domäne?
+> - Welches Gerät trennt Kollisionsdomänen? Welches trennt Broadcast-Domänen?
+> - Ein Netzwerk hat 2 Switches (je 10 PCs) verbunden durch einen Router. Wie viele Kollisions- und Broadcast-Domänen gibt es?
+> - Warum sind große Broadcast-Domänen problematisch?
 
 ### Typische Prüfungsaufgabe
 
