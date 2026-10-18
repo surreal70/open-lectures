@@ -1,7 +1,7 @@
 ---
 title: "Quadratische Gleichungen"
 created: 2026-10-13
-modified: 2025-07-21
+modified: 2026-10-16
 chapter: "08"
 section: "08"
 status: "draft - review pending"
@@ -151,33 +151,11 @@ $$D = p^2 - 4q \quad \text{(für Normalform)} \quad \text{oder} \quad D = b^2 - 
 
 Die Lösungen einer quadratischen Gleichung $ax^2 + bx + c = 0$ sind die **Nullstellen** der Parabel $y = ax^2 + bx + c$.
 
-```
-      y
-      ↑
-      │    ╭─╮
-      │   ╱   ╲      D > 0: zwei Nullstellen
- ─────┼──●─────●──→ x
-      │
-```
+![[diskriminante-nullstellen.png]]
+*<span class="fig-id">01-08-08-diskriminante-nullstellen</span>: Die Diskriminante D bestimmt die Anzahl der Nullstellen – bei D > 0 schneidet die Parabel die x-Achse zweimal, bei D = 0 berührt sie sie einmal, bei D < 0 gar nicht.*
 
-```
-      y
-      ↑
-      │    ╭─╮
-      │   ╱   ╲      D = 0: eine Nullstelle
- ─────┼────●──────→ x
-      │
-```
-
-```
-      y
-      ↑
-      │    ╭─╮
-      │   ╱   ╲      D < 0: keine Nullstelle
-      │  ╱     ╲
- ─────┼──────────→ x
-      │
-```
+> [!info] **Darstellung im Koordinatensystem**
+> Parabeln und ihre Graphen werden hier zur Veranschaulichung genutzt. Wie man Funktionen und ihre Graphen systematisch untersucht, wird ausführlich in → [[00-Funktionen-Index|Modul 9: Funktionen und Koordinatensysteme]] behandelt.
 
 ## Zusammenfassung
 
