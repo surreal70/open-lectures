@@ -1,7 +1,7 @@
 ---
 title: "Gleichungen mit Klammern"
 created: 2026-10-13
-modified: 2025-07-21
+modified: 2026-10-16
 chapter: "08"
 section: "05"
 status: "draft - review pending"
@@ -36,6 +36,8 @@ Das Wort „distributiv" kommt vom lateinischen „distribuere" (verteilen) – 
 > Du hast 18 Früchte – egal ob du erst zusammenzählst und dann multiplizierst, oder erst multiplizierst und dann addierst.
 
 ## Einfache Klammern
+
+Am einfachsten lässt sich das Distributivgesetz nachvollziehen, wenn nur eine einzelne Zahl vor der Klammer steht. Entscheidend ist dabei allein, welches Vorzeichen dieser Faktor hat – denn es überträgt sich beim Ausmultiplizieren auf jeden Term in der Klammer. Die beiden folgenden Fälle, positiver und negativer Faktor, decken schon die wichtigsten Stolperstellen ab.
 
 ### Positiver Faktor vor der Klammer
 
@@ -124,6 +126,8 @@ Dies ist ein **Widerspruch** → keine Lösung: $\mathbb{L} = \emptyset$
 
 ## Verschachtelte Klammern
 
+Steckt eine Klammer in einer anderen, scheint die Aufgabe zunächst unübersichtlich. Tatsächlich ändert sich aber nichts am Vorgehen: Man wendet das Distributivgesetz einfach mehrfach an und arbeitet sich dabei schrittweise vor. Die feste Reihenfolge – von innen nach außen – sorgt dafür, dass man dabei den Überblick behält.
+
 Bei verschachtelten Klammern: **von innen nach außen** auflösen.
 
 $$2[3(x + 1) - 4] = 10$$
@@ -162,6 +166,8 @@ $$5 - (x - 2) = 5 - x - 2$$ ✗ (richtig: $5 - x + 2$)
 > 5. **Probe** durchführen
 
 ## Komplexes Beispiel
+
+Das folgende Beispiel führt alle bisherigen Techniken zusammen: eine Minusklammer, ein negativer Faktor und eine Verschachtelung in einer einzigen Gleichung. Es zeigt, dass auch ein auf den ersten Blick abschreckender Ausdruck beherrschbar bleibt, wenn man die Schritt-für-Schritt-Methode konsequent anwendet und besonders auf die Vorzeichen achtet.
 
 $$4 - 2[x - 3(1 - x)] = 5(x + 2) - 7$$
 
