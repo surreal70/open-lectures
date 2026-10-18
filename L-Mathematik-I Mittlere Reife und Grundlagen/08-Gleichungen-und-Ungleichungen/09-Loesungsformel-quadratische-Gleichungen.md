@@ -31,6 +31,8 @@ Die moderne symbolische Schreibweise der Formel entstand erst im 16. Jahrhundert
 
 ## Die p-q-Formel
 
+Während sich reinquadratische Gleichungen noch durch Wurzelziehen und Ausklammern lösen lassen, braucht man für den allgemeinen Fall ein verlässliches Universalwerkzeug. Genau das leistet die Lösungsformel: Sie liefert zu jeder quadratischen Gleichung auf einen Schlag beide Lösungen, ohne dass man einen geschickten Umformungstrick finden muss. Die p-q-Formel ist dabei die Variante für die Normalform.
+
 Für eine quadratische Gleichung in **Normalform**:
 
 $$x^2 + px + q = 0$$
@@ -74,6 +76,8 @@ $$x_2 = 3 - 2 = 1$$
 
 ## Die Mitternachtsformel (abc-Formel)
 
+Die p-q-Formel setzt voraus, dass der Koeffizient vor $x^2$ bereits 1 ist. Oft ist das nicht der Fall, und man müsste erst durch diesen Koeffizienten teilen. Die Mitternachtsformel erspart diesen Zwischenschritt: Sie arbeitet direkt mit den Koeffizienten der allgemeinen Form und ist damit die flexiblere der beiden Formeln.
+
 Für die **allgemeine Form**:
 
 $$ax^2 + bx + c = 0$$
@@ -114,6 +118,8 @@ $$x_2 = \frac{-8 - 12}{4} = \frac{-20}{4} = -5$$
 > - Große oder komplizierte Koeffizienten → Mitternachtsformel direkt
 
 ## Die Diskriminante
+
+Ob eine quadratische Gleichung zwei, eine oder keine Lösung besitzt, entscheidet sich genau an einer Stelle der Formel: unter der Wurzel. Steht dort eine positive Zahl, gibt es zwei Lösungen; steht dort null, fallen beide zusammen; ist der Ausdruck negativ, lässt sich keine reelle Wurzel ziehen. Dieser Ausdruck trägt deshalb einen eigenen Namen und verdient besondere Aufmerksamkeit.
 
 Der Ausdruck unter der Wurzel heißt **Diskriminante** $D$:
 
