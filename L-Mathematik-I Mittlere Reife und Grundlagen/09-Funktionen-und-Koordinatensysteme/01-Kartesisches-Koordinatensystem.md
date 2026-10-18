@@ -1,7 +1,7 @@
 ---
 title: "Das kartesische Koordinatensystem"
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-16
 chapter: "09"
 section: "01"
 status: "draft - review pending"
@@ -42,18 +42,8 @@ Der Legende nach kam Descartes auf diese Idee, als er im Bett lag und eine Flieg
 
 Das kartesische Koordinatensystem besteht aus zwei **senkrecht aufeinander stehenden** Zahlengeraden:
 
-```
-          y
-          ↑
-          │
-          │      Positive y-Werte
-          │
-──────────┼──────────→ x
-   Neg.   │   Positive x-Werte
-   x-Werte│
-          │      Negative y-Werte
-          │
-```
+![[koordinatensystem-aufbau.png]]
+*<span class="fig-id">01-09-01-koordinatensystem-aufbau</span>: Aufbau des kartesischen Koordinatensystems – x-Achse (waagerecht, nach rechts positiv) und y-Achse (senkrecht, nach oben positiv) schneiden sich im Ursprung O.*
 
 | Achse | Name | Richtung |
 |---|---|---|
@@ -68,17 +58,8 @@ Der **Ursprung** (auch **Nullpunkt**) ist der Schnittpunkt beider Achsen. Er hat
 
 Das Koordinatensystem wird durch die Achsen in vier Bereiche geteilt:
 
-```
-          y
-          ↑
-    II    │    I
-          │
-  (−,+)   │  (+,+)
-──────────┼──────────→ x
-  (−,−)   │  (+,−)
-          │
-   III    │    IV
-```
+![[koordinatensystem-quadranten.png]]
+*<span class="fig-id">01-09-01-koordinatensystem-quadranten</span>: Die vier Quadranten – gegen den Uhrzeigersinn nummeriert, beginnend rechts oben (I); jeder Quadrant hat ein charakteristisches Vorzeichenpaar (x, y).*
 
 | Quadrant | x-Werte | y-Werte | Beispiel |
 |---|---|---|---|
@@ -101,15 +82,8 @@ Das Koordinatensystem wird durch die Achsen in vier Bereiche geteilt:
 
 Auf beiden Achsen wird eine **Einheitsstrecke** festgelegt. Diese Einheitsstrecke ist willkürlich wählbar – in der Praxis richtet sie sich nach dem Problem, das dargestellt werden soll.
 
-```
-    y
-    ↑
-  3 ┼
-  2 ┼
-  1 ┼
-    ┼───┼───┼───→ x
-    0   1   2   3
-```
+![[koordinatensystem-einheiten.png]]
+*<span class="fig-id">01-09-01-koordinatensystem-einheiten</span>: Einheitsstrecken – auf beiden Achsen wird eine gleichmäßige Einheit abgetragen; die hervorgehobene Strecke zeigt eine Einheit auf der x-Achse.*
 
 - Die Einheitsstrecken können auf beiden Achsen **gleich** oder **unterschiedlich** sein
 - Bei unterschiedlichen Einheiten spricht man von verschiedenen **Maßstäben**
@@ -150,19 +124,8 @@ Koordinatensysteme begegnen uns überall:
 
 ### Beispiel eines vollständigen Koordinatensystems
 
-```
-        y
-        ↑
-      4 ┤
-        │
-      2 ┤
-        │
-────┬───┼───┬───┬───→ x
-   -2   O   2   4
-        │
-     -2 ┤
-        │
-```
+![[koordinatensystem-vollstaendig.png]]
+*<span class="fig-id">01-09-01-koordinatensystem-vollstaendig</span>: Ein vollständig beschriftetes Koordinatensystem – mit Achsenpfeilen, Ursprung O und regelmäßig beschrifteten Werten auf beiden Achsen.*
 
 ## Punkte auf den Achsen
 
