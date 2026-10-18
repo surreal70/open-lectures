@@ -1,7 +1,7 @@
 ---
 title: "Faktorisierung quadratischer Gleichungen"
 created: 2026-10-13
-modified: 2025-07-21
+modified: 2026-10-16
 chapter: "08"
 section: "10"
 status: "draft - review pending"
@@ -45,6 +45,8 @@ Dieses Prinzip basiert auf dem **Nullproduktsatz**: Ein Produkt ist genau dann N
 
 ## Der Satz von Vieta
 
+Besonders praktisch wird die Faktorisierung durch eine Beobachtung, die bereits Viète machte: Zwischen den Lösungen einer Gleichung und ihren Koeffizienten $p$ und $q$ besteht ein fester Zusammenhang. Kennt man diesen, muss man die Lösungen nicht immer mühsam ausrechnen, sondern kann sie bei passenden Zahlen direkt ablesen oder zumindest überprüfen.
+
 Für eine quadratische Gleichung in Normalform $x^2 + px + q = 0$ mit den Lösungen $x_1$ und $x_2$ gilt:
 
 $$\boxed{x_1 + x_2 = -p}$$
@@ -65,6 +67,8 @@ Vergleich mit $x^2 + px + q$:
 - $q = x_1 \cdot x_2$
 
 ## Anwendungen des Satzes von Vieta
+
+Der Zusammenhang zwischen Summe, Produkt und Koeffizienten ist nicht nur theoretisch schön, sondern lässt sich auf drei ganz unterschiedliche Weisen nutzen. Je nachdem, was man bereits weiß, hilft Vieta beim Finden, beim Überprüfen oder beim Ergänzen von Lösungen. Die folgenden drei Anwendungen zeigen das jeweils an einem Beispiel.
 
 ### 1. Lösungen durch Raten finden
 
@@ -108,6 +112,8 @@ Wenn eine Lösung bekannt ist, kann die andere mit Vieta gefunden werden.
 > $$x_2 = 5$$
 
 ## Faktorisierung durchführen
+
+Sind die Lösungen erst einmal bekannt, ist die Zerlegung in Linearfaktoren nur noch ein kleiner Schritt. Man kann dabei zwei Wege gehen: entweder man bestimmt die Lösungen zuerst und setzt sie in die Faktorform ein, oder man sucht direkt das passende Zahlenpaar. Beide Methoden führen zum selben Ergebnis und ergänzen sich gut.
 
 ### Methode 1: Über die Lösungen
 
