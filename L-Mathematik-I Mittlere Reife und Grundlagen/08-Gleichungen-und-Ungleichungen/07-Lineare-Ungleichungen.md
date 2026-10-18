@@ -103,6 +103,8 @@ Betrachte die wahre Aussage: $3 < 5$
 
 ## Darstellung der Lösungsmenge
 
+Weil eine Ungleichung meist einen ganzen Bereich und nicht nur eine einzelne Zahl beschreibt, braucht man geeignete Schreibweisen, um dieses Ergebnis festzuhalten. Dieselbe Lösungsmenge lässt sich auf drei Weisen ausdrücken: als Menge, als Intervall und als Bild auf der Zahlengeraden. Alle drei meinen dasselbe, betonen aber unterschiedliche Aspekte – die grafische Darstellung macht etwa besonders anschaulich, ob eine Grenze dazugehört oder nicht.
+
 ### Mengennotation
 
 $$\mathbb{L} = \{x \in \mathbb{R} \mid x > 2\}$$
@@ -154,6 +156,8 @@ $$x > 4$$
 
 ## Doppelungleichungen
 
+Manchmal soll ein Wert nicht nur über oder unter einer Schranke liegen, sondern zwischen zwei Grenzen eingeschlossen sein. Dafür fasst man zwei Ungleichungen zu einer Doppelungleichung zusammen. Der Vorteil: Man muss nicht zwei getrennte Rechnungen führen, sondern kann alle drei Teile gleichzeitig umformen – solange man jede Operation konsequent auf alle drei anwendet.
+
 Eine **Doppelungleichung** gibt einen Bereich an:
 
 $$-3 < 2x + 1 \leq 7$$
@@ -170,6 +174,8 @@ $$-2 < x \leq 3$$
 *<span class="fig-id">01-08-07-ungleichung-intervall</span>: Lösungsmenge des Intervalls (−2, 3] – offener Punkt bei −2 (gehört nicht dazu), ausgefüllter Punkt bei 3 (gehört dazu).*
 
 ## Sonderfälle
+
+Wie bei linearen Gleichungen kann auch bei Ungleichungen die Variable beim Umformen vollständig wegfallen. Übrig bleibt dann ein Vergleich zweier fester Zahlen. Ist dieser Vergleich immer wahr, lösen alle reellen Zahlen die Ungleichung; ist er nie wahr, gibt es gar keine Lösung. Diese beiden Grenzfälle treten selten auf, sollten aber richtig gedeutet werden.
 
 ### Alle reellen Zahlen als Lösung
 
