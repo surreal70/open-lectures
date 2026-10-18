@@ -113,3 +113,53 @@ Tunnel:     [Neuer IP] [ESP/AH] [Orig. IP] [TCP] [Daten]
 - [[A-RFC-Index#RFC 4303|RFC 4303]] - ESP
 - [[A-RFC-Index#RFC 4302|RFC 4302]] - AH
 
+## Nützliche IPsec-Befehle
+
+> [!info] IPsec-Status anzeigen
+> ```bash
+> # Linux (mit strongSwan)
+> ipsec status                       # Tunnel-Status
+> ipsec statusall                    # Detaillierter Status
+> ip xfrm state                      # SA (Security Associations)
+> ip xfrm policy                     # Policies anzeigen
+> 
+> # Linux (mit Libreswan)
+> ipsec whack --status               # Verbindungsstatus
+> ipsec auto --status                # Alle Verbindungen
+> ```
+
+> [!info] IPsec-Traffic analysieren
+> ```bash
+> # Linux - ESP-Pakete anzeigen
+> tcpdump -i eth0 esp                # ESP-Traffic
+> tcpdump -i eth0 'ip proto 50'      # ESP (Protocol 50)
+> tcpdump -i eth0 'ip proto 51'      # AH (Protocol 51)
+> tcpdump -i eth0 port 500 or port 4500  # IKE-Handshake
+> 
+> # Wireshark Filter
+> # esp, ah, isakmp, ikev2
+> ```
+
+> [!info] Windows IPsec
+> ```powershell
+> # Windows - IPsec-Policies anzeigen
+> netsh ipsec static show all        # Statische Policies
+> netsh ipsec dynamic show all       # Dynamische Policies
+> 
+> # Windows - IPsec-Statistiken
+> netsh ipsec dynamic show stats
+> 
+> # Windows Firewall mit Advanced Security (GUI)
+> # wf.msc → Connection Security Rules
+> ```
+
+> [!info] IKE-Debugging
+> ```bash
+> # Linux - IKE-Verhandlung debuggen
+> journalctl -u strongswan -f        # strongSwan Logs
+> ipsec stroke loglevel ike 4        # Debug-Level erhöhen
+> 
+> # Windows - Event Viewer
+> # Applications and Services → Microsoft → Windows → IPSEC-SRV
+> ```
+

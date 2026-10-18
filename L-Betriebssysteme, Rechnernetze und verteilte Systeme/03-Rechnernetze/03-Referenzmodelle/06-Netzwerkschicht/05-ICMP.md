@@ -390,6 +390,63 @@ ICMPv6 ersetzt ARP vollständig durch NDP:
 | **pathping** (Windows) | Kombination ping + tracert | Echo, Time Exceeded |
 | **mtr** (Linux) | Kontinuierliches Traceroute | Echo, Time Exceeded |
 
+## Nützliche ICMP-Befehle
+
+> [!info] Ping mit Optionen
+> ```bash
+> # Linux
+> ping -c 5 google.com              # 5 Pakete senden
+> ping -i 0.2 google.com            # Intervall 0.2 Sekunden
+> ping -s 1472 google.com           # Paketgröße (MTU-Test)
+> ping -t 10 google.com             # TTL auf 10 setzen
+> ping -f google.com                # Flood-Ping (root, Vorsicht!)
+> 
+> # Windows
+> ping -n 5 google.com              # 5 Pakete senden
+> ping -t google.com                # Endlos-Ping (Strg+C stoppt)
+> ping -l 1472 google.com           # Paketgröße
+> ping -i 10 google.com             # TTL auf 10 setzen
+> ```
+
+> [!info] Traceroute mit Optionen
+> ```bash
+> # Linux
+> traceroute google.com             # UDP-basiert (Standard)
+> traceroute -I google.com          # ICMP-basiert
+> traceroute -T google.com          # TCP-basiert (Port 80)
+> traceroute -n google.com          # Keine DNS-Auflösung
+> traceroute -m 15 google.com       # Max. 15 Hops
+> mtr google.com                    # Kontinuierlich mit Statistik
+> mtr -r -c 10 google.com           # Report-Modus, 10 Zyklen
+> 
+> # Windows
+> tracert google.com                # ICMP-basiert
+> tracert -d google.com             # Keine DNS-Auflösung
+> tracert -h 15 google.com          # Max. 15 Hops
+> pathping google.com               # Ausführliche Analyse
+> ```
+
+> [!info] MTU und Path MTU Discovery testen
+> ```bash
+> # Linux - MTU finden (1472 + 28 Byte Header = 1500 MTU)
+> ping -M do -s 1472 google.com     # -M do = Don't Fragment
+> 
+> # Windows - MTU finden
+> ping -f -l 1472 google.com        # -f = Don't Fragment
+> 
+> # Bei "Packet needs to be fragmented" → Größe reduzieren
+> ```
+
+> [!info] ICMP-Traffic analysieren
+> ```bash
+> # Linux (mit tcpdump)
+> tcpdump -i eth0 icmp              # Alle ICMP-Pakete
+> tcpdump -i eth0 'icmp[icmptype] = icmp-echo'  # Nur Echo Request
+> 
+> # Mit Wireshark (beide Systeme)
+> # Filter: icmp oder icmpv6
+> ```
+
 ## Prüfungsrelevante Themen
 
 > [!warning] Klausurrelevanz: Hoch

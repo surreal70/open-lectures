@@ -281,11 +281,48 @@ ARP löst IP-Adressen zu MAC-Adressen im lokalen Netzwerk auf:
 
 > [!tip] ARP-Cache anzeigen
 > ```bash
-> # Windows
-> arp -a
-> 
 > # Linux
 > ip neigh show
+> arp -n
+> 
+> # Windows
+> arp -a
+> ```
+
+## Nützliche Befehle
+
+> [!info] IP-Konfiguration anzeigen
+> ```bash
+> # Linux
+> ip addr show              # Alle Interfaces mit IP-Adressen
+> ip -4 addr show           # Nur IPv4-Adressen
+> hostname -I               # Alle IP-Adressen des Hosts
+> 
+> # Windows
+> ipconfig                  # Kurzübersicht
+> ipconfig /all             # Detaillierte Ausgabe mit MAC, DNS, DHCP
+> ```
+
+> [!info] Routing-Tabelle anzeigen
+> ```bash
+> # Linux
+> ip route show             # Routing-Tabelle anzeigen
+> ip route get 8.8.8.8      # Route zu einem Ziel ermitteln
+> 
+> # Windows
+> route print               # Routing-Tabelle anzeigen
+> route print -4            # Nur IPv4-Routen
+> ```
+
+> [!info] Netzwerkstatistiken
+> ```bash
+> # Linux
+> ss -tuln                  # Offene TCP/UDP-Ports
+> netstat -i                # Interface-Statistiken
+> 
+> # Windows
+> netstat -an               # Alle Verbindungen und Ports
+> netstat -e                # Ethernet-Statistiken
 > ```
 
 ## Prüfungsrelevanz

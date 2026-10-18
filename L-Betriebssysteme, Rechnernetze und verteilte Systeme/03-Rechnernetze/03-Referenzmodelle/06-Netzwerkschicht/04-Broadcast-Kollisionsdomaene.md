@@ -471,6 +471,43 @@ Eine **Broadcast-Domäne** ist der Netzwerkbereich, in dem ein Broadcast-Frame (
 > - Bei Switches: Viele Kollisions-D., eine Broadcast-D.
 > - Bei Routern: Beide getrennt
 
+## Nützliche Diagnose-Befehle
+
+> [!info] Netzwerkgeräte und Interfaces anzeigen
+> ```bash
+> # Linux
+> ip link show                       # Alle Interfaces
+> ip -s link show                    # Mit Statistiken (Kollisionen!)
+> ethtool eth0                       # Interface-Details (Duplex, Speed)
+> bridge fdb show                    # MAC-Adresstabelle (bei Linux-Bridge)
+> 
+> # Windows
+> ipconfig /all                      # Alle Interfaces
+> netsh interface show interface     # Interface-Status
+> getmac /v                          # MAC-Adressen aller Interfaces
+> ```
+
+> [!info] ARP/Neighbor-Tabelle (zeigt lokale Broadcast-Domäne)
+> ```bash
+> # Linux
+> ip neigh show                      # ARP-Cache (IPv4 + IPv6)
+> arp -n                             # Nur IPv4 ARP
+> 
+> # Windows
+> arp -a                             # ARP-Cache anzeigen
+> netsh interface ipv6 show neighbors # IPv6 Neighbor Cache
+> ```
+
+> [!info] Switch-ähnliche Informationen
+> ```bash
+> # Linux (wenn als Bridge konfiguriert)
+> brctl showmacs br0                 # MAC-Tabelle der Bridge
+> bridge link show                   # Bridge-Ports
+> 
+> # Windows
+> # Auf managed Switches: Web-Interface oder CLI (show mac-address-table)
+> ```
+
 ## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**

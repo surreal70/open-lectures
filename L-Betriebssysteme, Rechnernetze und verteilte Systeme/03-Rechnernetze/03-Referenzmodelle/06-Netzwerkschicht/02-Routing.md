@@ -11,7 +11,7 @@ tags:
   - ospf
   - bgp
 created: '2026-10-07'
-modified: '2026-10-18'
+modified: '2026-10-13'
 bereich: RN
 ---
 
@@ -74,10 +74,37 @@ Manuell konfigurierte Routen:
 ```bash
 # Linux: Statische Route hinzufügen
 ip route add 10.0.0.0/8 via 192.168.1.254
+ip route add default via 192.168.1.1      # Default-Route
 
 # Windows: Statische Route hinzufügen
 route add 10.0.0.0 mask 255.0.0.0 192.168.1.254
+route add 0.0.0.0 mask 0.0.0.0 192.168.1.1 -p    # -p = persistent
 ```
+
+> [!info] Routing-Tabelle anzeigen
+> ```bash
+> # Linux
+> ip route show             # Alle Routen
+> ip route get 8.8.8.8      # Welche Route wird für Ziel verwendet?
+> ip -6 route show          # IPv6-Routen
+> 
+> # Windows
+> route print               # Komplette Routing-Tabelle
+> route print -4            # Nur IPv4-Routen
+> netstat -rn               # Alternative Darstellung
+> ```
+
+> [!info] Route verfolgen (Traceroute)
+> ```bash
+> # Linux
+> traceroute google.com     # UDP-basiert (Standard)
+> traceroute -I google.com  # ICMP-basiert
+> mtr google.com            # Kontinuierliches Traceroute mit Statistiken
+> 
+> # Windows
+> tracert google.com        # ICMP-basiert
+> pathping google.com       # Kombination aus ping und tracert
+> ```
 
 **Vorteile:**
 - Kein Protokoll-Overhead
