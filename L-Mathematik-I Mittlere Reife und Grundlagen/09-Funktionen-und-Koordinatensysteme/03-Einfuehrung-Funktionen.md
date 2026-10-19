@@ -1,7 +1,7 @@
 ---
 title: "Einführung in Funktionen"
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-19
 chapter: "09"
 section: "03"
 status: "draft - review pending"
@@ -28,14 +28,9 @@ Eine **Funktion** ist eine eindeutige Zuordnung, die jedem Element einer Menge *
 
 > [!tip] **Die Automaten-Metapher**
 > Stell dir eine Funktion wie einen Automaten vor: Du wirfst etwas hinein (den Input, $x$), und der Automat spuckt genau eine Sache aus (den Output, $f(x)$). Ein Getränkeautomat, dem du 2 € gibst, gibt dir **ein** bestimmtes Getränk – nicht manchmal Cola, manchmal Wasser. Das wäre keine Funktion!
->
-> ```
->    ┌─────────────┐
->  x │             │ f(x)
-> ───►  Funktion   ├───►
->    │   f         │
->    └─────────────┘
-> ```
+
+![[funktion-automat.png]]
+*<span class="fig-id">01-09-03-funktion-automat</span>: Die Automaten-Metapher – ein Input $x$ wird in die Funktion $f$ gegeben, die genau einen Output $f(x)$ liefert.*
 
 ### Der historische Kontext
 
@@ -61,14 +56,8 @@ $$f: D \to W, \quad x \mapsto f(x)$$
 > - **Erlaubt**: Verschiedene $x$-Werte haben denselben $y$-Wert
 > - **Nicht erlaubt**: Ein $x$-Wert hat mehrere $y$-Werte
 
-```
-Funktion:            Keine Funktion:
-   x → y                x → y
-   1 → 3                1 → 3
-   2 → 5                1 → 4  ← Widerspruch!
-   3 → 5                2 → 5
-   ✓                    ✗
-```
+![[funktion-eindeutigkeit.png]]
+*<span class="fig-id">01-09-03-funktion-eindeutigkeit</span>: Links eine Funktion – jedem $x$-Wert ist genau ein $y$-Wert zugeordnet (dass 2 und 3 auf denselben Wert 5 zeigen, ist erlaubt). Rechts keine Funktion, weil der $x$-Wert 1 zwei verschiedene $y$-Werte (3 und 4) besitzt.*
 
 ## Alltagsbeispiele für Funktionen
 
@@ -174,16 +163,8 @@ Der **Graph** einer Funktion ist die Menge aller Punkte $(x, f(x))$ im Koordinat
 > [!tip] Vertikaler Linientest
 > Wenn jede senkrechte Linie den Graphen **höchstens einmal** schneidet, liegt eine Funktion vor.
 
-```
-Funktion:              Keine Funktion:
-    │  ╱                   │    ○
-    │ ╱                    │   ╱ ╲
-    │╱                     │  ╱   ╲
-────┼──────                │ ○─────○
-   ╱│                      │
-  ╱ │                      │
- ✓                         ✗ (Kreis: mehrere y zu einem x)
-```
+![[vertikaler-linientest.png]]
+*<span class="fig-id">01-09-03-vertikaler-linientest</span>: Der vertikale Linientest – links schneidet die senkrechte Testlinie die Gerade nur einmal (Funktion), rechts schneidet sie den Kreis zweimal, zu einem $x$-Wert gehören also zwei $y$-Werte (keine Funktion).*
 
 ## Zusammenfassung
 
