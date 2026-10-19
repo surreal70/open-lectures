@@ -1,7 +1,7 @@
 ---
 title: "Schnittpunkte berechnen"
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-19
 chapter: "09"
 section: "10"
 status: "draft - review pending"
@@ -94,6 +94,11 @@ $$f(x) = g(x)$$
 
 Die Lösung $x$ wird in eine der Funktionen eingesetzt, um $y$ zu berechnen.
 
+Warum funktioniert das? Ein Schnittpunkt ist genau der Ort, an dem **beide Graphen durch denselben Punkt** laufen – dort stimmen also sowohl die x- als auch die y-Koordinate überein. Setzt man $f(x) = g(x)$, sucht man genau die x-Werte, bei denen beide Funktionen denselben Funktionswert liefern. Die Gleichsetzung übersetzt die geometrische Frage „Wo treffen sich die Graphen?" in eine lösbare Gleichung.
+
+> [!tip] **In welche Funktion einsetzen?**
+> Für die y-Koordinate darfst du den gefundenen x-Wert in $f$ **oder** $g$ einsetzen – beide liefern denselben Wert (das ist ja gerade die Bedingung am Schnittpunkt). Wähle einfach die Funktion, mit der sich leichter rechnen lässt. Setzt du in beide ein und erhältst verschiedene Werte, war die Rechnung fehlerhaft.
+
 ### Schnittpunkt zweier Geraden
 
 > [!example] Beispiel
@@ -166,18 +171,8 @@ Die Lösung $x$ wird in eine der Funktionen eingesetzt, um $y$ zu berechnen.
 >
 > Diese Begriffe stammen aus dem Lateinischen: *secare* (schneiden), *tangere* (berühren), *passare* (vorbeigehen).
 
-```
-    y
-    ↑
-    │    ╱╲
-    │   ╱──╲ Sekante (2 Schnittpunkte)
-    │  ╱    ╲
-    │ ╱   ───╲─── Tangente (1 Schnittpunkt)
-    │╱        ╲
-────┼──────────╲──→ x
-    │           ╲
-    │    ─────── Passante (0 Schnittpunkte)
-```
+![[sekante-tangente-passante.png]]
+*<span class="fig-id">01-09-10-sekante-tangente-passante</span>: Eine Gerade kann eine Parabel in zwei Punkten schneiden (Sekante), in einem Punkt berühren (Tangente) oder ganz verfehlen (Passante). Welcher Fall vorliegt, entscheidet die Diskriminante der Gleichsetzung.*
 
 > [!warning] **Häufiger Fehler**
 > Beim Berechnen von Schnittpunkten vergessen viele, die gefundenen x-Werte auch noch in eine der Funktionen einzusetzen, um die y-Koordinate zu erhalten. Ein Schnittpunkt besteht aus **zwei** Koordinaten!
