@@ -1,7 +1,7 @@
 ---
 title: "Quadratische Funktionen"
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-19
 chapter: "09"
 section: "08"
 status: "draft - review pending"
@@ -57,24 +57,16 @@ $$f(x) = x^2$$
 |---|---|---|---|---|---|---|---|
 | $f(x)$ | $9$ | $4$ | $1$ | $0$ | $1$ | $4$ | $9$ |
 
-```
-    y
-    ↑
-  9 ┤ ●             ●
-    │
-    │
-  4 ┤   ●       ●
-    │
-  1 ┤     ●   ●
-    │       ●
-────┼───┬───┬───┬───→ x
-   -3  -2  -1  0   1   2   3
-```
+![[normalparabel.png]]
+*<span class="fig-id">01-09-08-normalparabel</span>: Die Normalparabel $f(x)=x^2$ – die Punkte aus der Wertetabelle bilden eine nach oben geöffnete, zur y-Achse symmetrische Kurve mit dem Scheitel im Ursprung.*
 
 **Eigenschaften der Normalparabel**:
 - Scheitelpunkt bei $(0, 0)$
 - Achsensymmetrisch zur y-Achse
 - Öffnung nach oben
+
+> [!note] **Die Normalparabel als Bauplan**
+> Die Normalparabel $f(x) = x^2$ ist die „Mutter" aller Parabeln: Jede andere quadratische Funktion entsteht aus ihr durch **Strecken/Stauchen** (Faktor $a$) und **Verschieben** (Scheitelpunktform). Wer die Normalparabel im Kopf hat, kann jede Parabel schnell skizzieren. Beachte auch die Werte in der Tabelle: Von einem ganzzahligen $x$ zum nächsten wachsen die Funktionswerte in den Sprüngen $1, 3, 5, 7, \dots$ – den ungeraden Zahlen. Dieses Muster ist typisch für quadratisches Wachstum.
 
 ## Der Öffnungsfaktor $a$
 
@@ -93,18 +85,10 @@ $$f(x) = x^2$$
 | $|a| = 1$ | Wie Normalparabel |
 | $0 < |a| < 1$ | Weiter als Normalparabel |
 
-```
-    y
-    ↑        a = 2 (schmal)
-    │        ╱╲
-    │       ╱  ╲
-    │      ╱    ╲   a = 1 (normal)
-    │   ╱╲╱      ╲╱╲
-    │  ╱  ╲      ╱  ╲
-    │ ╱    ╲    ╱    ╲  a = 0.5 (weit)
-────┼╱──────╲──╱──────╲──→ x
-   ╱│        ╲╱        ╲
-```
+![[oeffnungsfaktor.png]]
+*<span class="fig-id">01-09-08-oeffnungsfaktor</span>: Einfluss des Öffnungsfaktors $a$ bei gleichem Scheitel – $a = 2$ ergibt eine schmale, $a = 1$ die Normalparabel und $a = 0{,}5$ eine weite Parabel. Je größer $|a|$, desto steiler steigen die Äste.*
+
+Anschaulich **streckt** der Faktor $a$ die Parabel in y-Richtung: Jeder Funktionswert der Normalparabel wird mit $a$ multipliziert. Bei $a = 2$ erreicht die Parabel doppelt so schnell große Werte, wirkt also schmaler; bei $a = 0{,}5$ nur halb so schnell, wirkt also weiter. Ein **negatives** $a$ spiegelt die Parabel zusätzlich an der x-Achse – die Öffnung zeigt dann nach unten, und der Scheitel wird zum Hochpunkt (Maximum) statt zum Tiefpunkt.
 
 ## Formen der quadratischen Funktion
 
@@ -120,6 +104,8 @@ $$f(x) = ax^2 + bx + c$$
 $$f(x) = a(x - d)^2 + e$$
 
 Scheitelpunkt: $S(d, e)$
+
+Diese Form ist besonders praktisch, weil man an ihr den **Scheitelpunkt direkt ablesen** kann – ohne zu rechnen. $d$ verschiebt die Parabel waagerecht, $e$ senkrecht. Zum schnellen Skizzieren ist sie deshalb oft die beste Wahl: Scheitel einzeichnen, Öffnungsrichtung aus $a$ bestimmen, fertig.
 
 > [!tip] Merkhilfe
 > In der Klammer steht $(x - d)$, der Scheitelpunkt hat aber $x = d$ (nicht $-d$!).
@@ -193,6 +179,8 @@ $$x_{1,2} = -\frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 - q}$$
 | $D > 0$ | 2 verschiedene |
 | $D = 0$ | 1 (Doppelnullstelle = Scheitelpunkt auf x-Achse) |
 | $D < 0$ | keine reellen |
+
+Grafisch bedeutet das einfach, **wie oft die Parabel die x-Achse trifft**: Bei zwei Nullstellen durchstößt sie die Achse an zwei Stellen, bei einer Doppelnullstelle berührt sie die Achse nur im Scheitel, und bei keiner reellen Nullstelle liegt die ganze Parabel vollständig über oder unter der x-Achse. Du kannst die Anzahl der Nullstellen also schon an einer Skizze abschätzen, bevor du rechnest.
 
 ## Zusammenfassung
 
