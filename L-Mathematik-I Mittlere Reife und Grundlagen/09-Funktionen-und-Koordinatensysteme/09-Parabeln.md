@@ -87,11 +87,11 @@ Scheitelpunkt: $S(d, e)$
 
 $$f(x) = a \cdot x^2$$
 
-| $|a|$ | Wirkung |
+| $\lvert a\rvert$ | Wirkung |
 |---|---|
-| $|a| > 1$ | Parabel wird **schmaler** (gestreckt in y-Richtung) |
-| $|a| = 1$ | Normalparabel |
-| $0 < |a| < 1$ | Parabel wird **weiter** (gestaucht in y-Richtung) |
+| $\lvert a\rvert > 1$ | Parabel wird **schmaler** (gestreckt in y-Richtung) |
+| $\lvert a\rvert = 1$ | Normalparabel |
+| $0 < \lvert a\rvert < 1$ | Parabel wird **weiter** (gestaucht in y-Richtung) |
 
 ### Spiegelung an der x-Achse
 

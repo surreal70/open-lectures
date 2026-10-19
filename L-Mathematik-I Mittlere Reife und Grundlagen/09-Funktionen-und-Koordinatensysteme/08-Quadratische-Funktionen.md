@@ -79,11 +79,11 @@ $$f(x) = x^2$$
 
 ### Einfluss auf die Weite
 
-| Wert von $|a|$ | Erscheinung |
+| Wert von $\lvert a\rvert$ | Erscheinung |
 |---|---|
-| $|a| > 1$ | Schmaler als Normalparabel |
-| $|a| = 1$ | Wie Normalparabel |
-| $0 < |a| < 1$ | Weiter als Normalparabel |
+| $\lvert a\rvert > 1$ | Schmaler als Normalparabel |
+| $\lvert a\rvert = 1$ | Wie Normalparabel |
+| $0 < \lvert a\rvert < 1$ | Weiter als Normalparabel |
 
 ![[oeffnungsfaktor.png]]
 *<span class="fig-id">01-09-08-oeffnungsfaktor</span>: Einfluss des Öffnungsfaktors $a$ bei gleichem Scheitel – $a = 2$ ergibt eine schmale, $a = 1$ die Normalparabel und $a = 0{,}5$ eine weite Parabel. Je größer $|a|$, desto steiler steigen die Äste.*
