@@ -56,6 +56,8 @@ $$f(x) = mx$$
 - $f(x)$ ist proportional zu $x$
 - Verdoppelt sich $x$, verdoppelt sich auch $f(x)$
 
+Der y-Achsenabschnitt $b = 0$ bedeutet anschaulich: Es gibt keinen „Startwert" oder „Grundbetrag". Beim Einkauf etwa ist der Gesamtpreis bei einem festen Stückpreis proportional zur Menge – kaufst du nichts, zahlst du nichts. Sobald aber ein fester Zusatzbetrag hinzukommt (z. B. eine Grundgebühr oder Versandkosten), ist $b \neq 0$ und die Funktion ist zwar noch linear, aber **nicht mehr proportional**. Mehr dazu in [[../05-Verhaeltnisse-und-Proportionalitaet/04-Direkte-Proportionalitaet|Direkte Proportionalität]].
+
 > [!example] Beispiel
 > $f(x) = 3x$
 > 
@@ -67,7 +69,9 @@ $$f(x) = mx$$
 
 ## Steigung $m$
 
-Die **Steigung** gibt an, um wie viel der y-Wert zunimmt, wenn x um 1 zunimmt.
+Die **Steigung** gibt an, um wie viel der y-Wert zunimmt, wenn x um 1 zunimmt. Sie ist das Maß dafür, wie „schräg" die Gerade verläuft.
+
+Anschaulich ist die Steigung wie die **Neigung einer Straße oder Rampe**: Eine Steigung von $m = 0{,}1$ bedeutet, dass es pro Meter in der Waagerechten um 10 cm nach oben geht – eine flache Rampe. Je größer $m$, desto steiler. Genau diese Vorstellung steckt auch hinter den Prozentangaben auf Verkehrsschildern („12 % Steigung"). Bei linearen Funktionen ist diese Neigung **überall gleich** – das ist der Grund, warum der Graph eine Gerade und keine Kurve ist.
 
 ### Interpretation
 
@@ -90,10 +94,17 @@ Aus zwei Punkten $P_1(x_1, y_1)$ und $P_2(x_2, y_2)$:
 
 $$m = \frac{y_2 - y_1}{x_2 - x_1} = \frac{\Delta y}{\Delta x}$$
 
+Hinter dieser Formel steckt das **Steigungsdreieck**: $\Delta x$ (gesprochen „Delta x") ist der waagerechte Abstand der beiden Punkte, $\Delta y$ der senkrechte. Man geht also von $P_1$ aus ein Stück nach rechts ($\Delta x$) und dann nach oben oder unten ($\Delta y$) bis zu $P_2$. Das Verhältnis „Höhenunterschied durch waagerechte Strecke" ist die Steigung. Weil die Gerade überall gleich geneigt ist, liefert **jedes** Steigungsdreieck entlang der Geraden denselben Wert $m$ – egal, wie groß du es wählst.
+
+> [!warning] **Reihenfolge beachten**
+> Die Punkte müssen in Zähler und Nenner in **derselben Reihenfolge** eingesetzt werden. Wenn oben $y_2 - y_1$ steht, muss unten $x_2 - x_1$ stehen – nicht $x_1 - x_2$. Sonst erhältst du das falsche Vorzeichen.
+
 > [!example] Beispiel
 > $P_1(1, 2)$ und $P_2(4, 8)$
 > 
 > $$m = \frac{8 - 2}{4 - 1} = \frac{6}{3} = 2$$
+>
+> Deutung: Von $P_1$ nach $P_2$ geht es $\Delta x = 3$ nach rechts und $\Delta y = 6$ nach oben. Pro Schritt nach rechts steigt die Gerade also um $2$.
 
 ## y-Achsenabschnitt $b$
 
