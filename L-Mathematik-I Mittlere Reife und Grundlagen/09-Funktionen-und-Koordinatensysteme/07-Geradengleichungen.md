@@ -1,7 +1,7 @@
 ---
 title: "Geradengleichungen aufstellen"
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-19
 chapter: "09"
 section: "07"
 status: "draft - review pending"
@@ -51,6 +51,8 @@ $$ax + by + c = 0$$
 $$y - y_1 = m(x - x_1)$$
 
 wobei $P(x_1, y_1)$ ein Punkt auf der Geraden ist.
+
+Diese Form ergibt sich direkt aus der Definition der Steigung: Für jeden weiteren Punkt $(x, y)$ auf der Geraden muss das Steigungsdreieck zum Punkt $P$ denselben Wert $m$ liefern, also $\frac{y - y_1}{x - x_1} = m$. Multipliziert man mit $(x - x_1)$, erhält man die Punkt-Steigung-Form. Ihr Vorteil: Man kann sie **sofort hinschreiben**, sobald ein Punkt und die Steigung bekannt sind – ohne erst $b$ auszurechnen.
 
 ## Methode 1: Aus Steigung und y-Achsenabschnitt
 
@@ -129,6 +131,8 @@ Diese Formel liefert direkt die Geradengleichung.
 - Parallele Geraden haben **gleiche Steigung**: $m_h = m_g$
 - Neue Gerade mit Methode 2 bestimmen
 
+Anschaulich leuchtet das ein: Zwei Geraden verlaufen genau dann in dieselbe Richtung (sind parallel), wenn sie **gleich stark geneigt** sind. Nur der y-Achsenabschnitt $b$ unterscheidet sie – er verschiebt die Gerade nach oben oder unten, ohne ihre Richtung zu ändern.
+
 > [!example] Beispiel
 > $g: y = 3x - 1$, Punkt $P(2, 4)$
 > 
@@ -164,6 +168,9 @@ Diese Formel liefert direkt die Geradengleichung.
 
 > [!warning] **Häufiger Fehler**
 > Beim negativen Kehrwert wird oft nur der Kehrwert gebildet und das Minuszeichen vergessen. Bei $m = 3$ ist der negative Kehrwert $-\frac{1}{3}$, nicht $\frac{1}{3}$!
+
+![[parallel-senkrecht.png]]
+*<span class="fig-id">01-09-07-parallel-senkrecht</span>: Links verlaufen zwei parallele Geraden mit gleicher Steigung ($m_1 = m_2$), nur ihr y-Achsenabschnitt unterscheidet sich. Rechts stehen zwei Geraden senkrecht aufeinander – ihre Steigungen sind negative Kehrwerte ($m_2 = -\frac{1}{m_1}$), erkennbar am rechten Winkel im Schnittpunkt.*
 
 ## Übersicht: Was ist gegeben?
 
