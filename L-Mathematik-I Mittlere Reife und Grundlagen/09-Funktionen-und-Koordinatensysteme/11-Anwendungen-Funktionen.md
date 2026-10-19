@@ -1,7 +1,7 @@
 ---
 title: "Anwendungen von Funktionen"
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-19
 chapter: "09"
 section: "11"
 status: "draft - review pending"
@@ -99,14 +99,8 @@ wobei $x$ = horizontale Entfernung (m), $h(x)$ = Höhe (m)
 
 Ein Bauer hat 100 m Zaun und möchte eine rechteckige Weide an einer Hauswand abzäunen (drei Seiten Zaun nötig).
 
-```
-┌──────────────────┐ Hauswand
-│                  │
-│     Weide        │ x
-│                  │
-└──────────────────┘
-        y
-```
+![[weide-hauswand.png]]
+*<span class="fig-id">01-09-11-weide-hauswand</span>: Rechteckige Weide an einer Hauswand – die Wand bildet die vierte Seite, sodass nur die beiden Seiten der Länge $x$ und die Breite $y$ eingezäunt werden müssen. Der gesamte Zaun beträgt $2x + y$.*
 
 **Nebenbedingung**: $2x + y = 100$ → $y = 100 - 2x$
 
@@ -146,29 +140,12 @@ $p_1 = 10$ €, $p_2 = 30$ €
 
 ## Modellierungsprozess
 
-```
-┌─────────────────────────────┐
-│ 1. Reales Problem verstehen │
-└──────────────┬──────────────┘
-               ↓
-┌─────────────────────────────┐
-│ 2. Variablen definieren     │
-│    (was ist x? was ist y?)  │
-└──────────────┬──────────────┘
-               ↓
-┌─────────────────────────────┐
-│ 3. Funktionsgleichung       │
-│    aufstellen               │
-└──────────────┬──────────────┘
-               ↓
-┌─────────────────────────────┐
-│ 4. Mathematisch lösen       │
-└──────────────┬──────────────┘
-               ↓
-┌─────────────────────────────┐
-│ 5. Ergebnis interpretieren  │
-│    (im Sachkontext!)        │
-└─────────────────────────────┘
+```mermaid
+graph TD
+    A[1. Reales Problem verstehen] --> B[2. Variablen definieren<br/>was ist x? was ist y?]
+    B --> C[3. Funktionsgleichung aufstellen]
+    C --> D[4. Mathematisch lösen]
+    D --> E[5. Ergebnis interpretieren<br/>im Sachkontext!]
 ```
 
 ## Wichtige Hinweise
