@@ -1,7 +1,7 @@
 ---
 title: "Parabeln und ihre Eigenschaften"
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-19
 chapter: "09"
 section: "09"
 status: "draft - review pending"
@@ -33,7 +33,10 @@ Die Parabelform begegnet uns überall – oft ohne dass wir es bemerken:
 - **Basketball-Wurf**: Der Ball fliegt auf einer Parabelbahn zum Korb
 
 > [!info] **Die Physik dahinter**
-> Die Parabel hat eine besondere physikalische Eigenschaft: Alle parallel zur Achse eintreffenden Strahlen werden im **Brennpunkt** (Fokus) gebündelt. Diese Eigenschaft nutzen Parabolantennen, Spiegel in Teleskopen und Solaröfen.
+> Die Parabel hat eine besondere physikalische Eigenschaft: Alle parallel zur Achse eintreffenden Strahlen werden im **Brennpunkt** (Fokus) gebündelt. Diese Eigenschaft nutzen Parabolantennen, Spiegel in Teleskopen und Solaröfen. Umgekehrt gilt dasselbe: Eine Lichtquelle im Brennpunkt erzeugt ein paralleles Strahlenbündel – genau so funktionieren Autoscheinwerfer und Taschenlampen. Diese Bündelung funktioniert *nur* bei der Parabelform exakt, nicht bei einer beliebig gekrümmten Schale.
+
+> [!tip] **Eine Transformation genügt zum Skizzieren**
+> Alle Parabeln dieses Kapitels entstehen aus derselben Normalparabel $x^2$ durch Verschieben (Parameter $d$, $e$) und Strecken/Spiegeln (Parameter $a$). Wenn du diese drei Bausteine beherrschst, kannst du jede Parabel skizzieren, ohne eine einzige Wertetabelle zu rechnen – Scheitel setzen, Öffnung und Weite aus $a$ ablesen, fertig.
 
 ## Verschiebungen der Normalparabel
 
@@ -43,18 +46,10 @@ $$f(x) = x^2 + e$$
 
 Die Parabel wird um $e$ Einheiten **nach oben** (wenn $e > 0$) oder **nach unten** (wenn $e < 0$) verschoben.
 
-```
-    y
-    ↑     x² + 2
-  4 ┤    ╱╲
-    │   ╱  ╲      x²
-  2 ┤  ╱╲╱──╲╱╲
-    │ ╱        ╲
-────┼╱──────────╲──→ x
-    │            x² - 2
- -2 ┤  ╱╲
-    │ ╱  ╲
-```
+![[parabel-vertikal.png]]
+*<span class="fig-id">01-09-09-parabel-vertikal</span>: Vertikale Verschiebung der Normalparabel – $x^2+2$ liegt um 2 Einheiten höher, $x^2-2$ um 2 Einheiten tiefer. Form und Öffnung bleiben gleich, nur der Scheitel wandert auf der y-Achse.*
+
+Der Parameter $e$ verschiebt also einfach die **gesamte** Parabel senkrecht, ohne ihre Form zu verändern. Das leuchtet ein, denn zu jedem Funktionswert wird derselbe Betrag $e$ addiert – jeder Punkt des Graphen wandert um $e$ nach oben oder unten. Der Scheitel liegt dann bei $(0, e)$.
 
 ### Horizontale Verschiebung
 
@@ -71,15 +66,8 @@ Die Parabel wird um $d$ Einheiten **nach rechts** (wenn $d > 0$) oder **nach lin
 > [!tip] **Merkregel für Verschiebungen**
 > Denke an die Klammer als „Verzögerung": Bei $(x - 3)^2$ erreicht die Funktion den Wert, den $x^2$ bei $x = 0$ hatte, erst bei $x = 3$ – also 3 Einheiten später/weiter rechts.
 
-```
-    y
-    ↑    (x+2)²     x²    (x-3)²
-    │      ╱╲      ╱╲      ╱╲
-    │     ╱  ╲    ╱  ╲    ╱  ╲
-    │    ╱    ╲  ╱    ╲  ╱    ╲
-────┼───●──────●───────●────────→ x
-       -2      0       3
-```
+![[parabel-horizontal.png]]
+*<span class="fig-id">01-09-09-parabel-horizontal</span>: Horizontale Verschiebung der Normalparabel – $(x+2)^2$ hat den Scheitel bei $x=-2$ (nach links), $(x-3)^2$ bei $x=3$ (nach rechts). Das Vorzeichen in der Klammer ist jeweils umgekehrt zur Verschiebungsrichtung.*
 
 ### Kombinierte Verschiebung
 
