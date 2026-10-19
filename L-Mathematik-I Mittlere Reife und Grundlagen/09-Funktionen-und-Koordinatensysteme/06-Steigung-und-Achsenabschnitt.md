@@ -1,7 +1,7 @@
 ---
 title: "Steigung und y-Achsenabschnitt"
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-19
 chapter: "09"
 section: "06"
 status: "draft - review pending"
@@ -40,17 +40,8 @@ $$m = \frac{\text{Änderung in } y}{\text{Änderung in } x} = \frac{\Delta y}{\D
 
 Das **Steigungsdreieck** ist ein rechtwinkliges Dreieck, das die Steigung veranschaulicht:
 
-```
-    y
-    ↑
-    │        ●P₂
-    │       ╱│
-    │     ╱  │ Δy (Höhe)
-    │   ╱    │
-    │ ●──────┘
-    │ P₁  Δx (Breite)
-────┼──────────→ x
-```
+![[steigungsdreieck.png]]
+*<span class="fig-id">01-09-06-steigungsdreieck</span>: Steigungsdreieck zwischen zwei Punkten $P_1$ und $P_2$ einer Geraden – die waagerechte Kathete ist $\Delta x$ (Breite), die senkrechte $\Delta y$ (Höhe); ihr Verhältnis ergibt die Steigung.*
 
 $$m = \frac{\Delta y}{\Delta x} = \frac{y_2 - y_1}{x_2 - x_1}$$
 
@@ -147,16 +138,8 @@ Bei $f(x) = mx + b$ ist $b$ direkt ablesbar.
 
 Der y-Achsenabschnitt ist dort, wo die Gerade die **y-Achse schneidet** (bei $x = 0$).
 
-```
-    y
-    ↑
-  5 ┤───●────── Schnittpunkt bei b = 5
-    │  ╱
-  3 ┤╱
-    │
-────┼──────→ x
-    │
-```
+![[y-achsenabschnitt.png]]
+*<span class="fig-id">01-09-06-y-achsenabschnitt</span>: Der y-Achsenabschnitt ist der Schnittpunkt der Geraden mit der y-Achse – hier bei $b = 5$, also im Punkt $(0, 5)$.*
 
 ### Aus einem Punkt und der Steigung berechnen
 
@@ -181,13 +164,8 @@ $$f(x) = b \quad (m = 0)$$
 - Parallel zur x-Achse
 - Alle Punkte haben denselben y-Wert
 
-```
-    y
-    ↑
-  3 ├────────────── f(x) = 3
-    │
-────┼──────────→ x
-```
+![[horizontale-gerade.png]]
+*<span class="fig-id">01-09-06-horizontale-gerade</span>: Horizontale Gerade $f(x) = 3$ – die Steigung ist $m = 0$, die Gerade verläuft parallel zur x-Achse, und jeder x-Wert hat denselben y-Wert.*
 
 ### Die x-Achse
 
