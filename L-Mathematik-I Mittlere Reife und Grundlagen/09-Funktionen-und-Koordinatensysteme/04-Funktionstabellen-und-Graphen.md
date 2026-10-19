@@ -86,19 +86,33 @@ $f(x) = x^2 - 2$
 
 ## Eigenschaften aus Graphen ablesen
 
+Ein Graph ist mehr als nur eine hübsche Linie: Aus seinem Verlauf lassen sich viele Eigenschaften der Funktion direkt ablesen, ohne zu rechnen. Das ist eine der größten Stärken der grafischen Darstellung – man sieht auf einen Blick, wo die Funktion null wird, wo sie steigt oder fällt und ob sie symmetrisch ist. Wir nutzen als durchgehendes Beispiel die Parabel $f(x) = x^2 - 2$ aus dem Abschnitt oben.
+
 ### Nullstellen
 
-**Nullstellen** sind die x-Werte, an denen der Graph die **x-Achse schneidet**.
+**Nullstellen** sind die x-Werte, an denen der Graph die **x-Achse schneidet**. An diesen Stellen ist der Funktionswert null:
 
 $$f(x) = 0$$
 
+Grafisch erkennst du Nullstellen als die **Durchstoßpunkte durch die x-Achse**. Eine lineare Funktion hat höchstens eine Nullstelle, eine Parabel kann keine, eine oder zwei haben – je nachdem, ob und wie oft sie die x-Achse berührt.
+
+> [!example] Beispiel am Parabel-Graphen
+> Der Graph von $f(x) = x^2 - 2$ schneidet die x-Achse bei etwa $x \approx -1{,}41$ und $x \approx 1{,}41$. Das sind die Nullstellen $x = \pm\sqrt{2}$ – man kann sie am Graphen abschätzen und später rechnerisch bestätigen.
+
 ### Schnittpunkt mit der y-Achse
 
-Der **y-Achsenabschnitt** ist der Punkt, an dem der Graph die **y-Achse schneidet**.
+Der **y-Achsenabschnitt** ist der Punkt, an dem der Graph die **y-Achse schneidet**. Da auf der y-Achse immer $x = 0$ gilt, findest du ihn, indem du null einsetzt:
 
 $$f(0) = ?$$
 
+Jeder Funktionsgraph schneidet die y-Achse **höchstens einmal** – das folgt direkt aus der Eindeutigkeit von Funktionen (zu $x = 0$ gehört genau ein y-Wert).
+
+> [!example] Beispiel am Parabel-Graphen
+> Für $f(x) = x^2 - 2$ ist $f(0) = 0^2 - 2 = -2$. Der Graph schneidet die y-Achse also bei $(0, -2)$ – genau im Scheitelpunkt der Parabel.
+
 ### Steigungsverhalten
+
+Am Verlauf des Graphen von links nach rechts erkennst du, ob die Funktion wächst oder fällt (ihre **Monotonie**):
 
 | Verlauf | Bedeutung |
 |---|---|
@@ -106,12 +120,19 @@ $$f(0) = ?$$
 | Graph fällt | $f$ ist monoton fallend |
 | Graph hat Maximum/Minimum | Lokale Extremstelle |
 
+Viele Funktionen wechseln ihr Steigungsverhalten. Die Parabel $f(x) = x^2 - 2$ etwa **fällt** für $x < 0$ und **steigt** für $x > 0$; der Übergang liegt im tiefsten Punkt, dem **Scheitel** bei $(0, -2)$. Dieser Tiefpunkt ist ein Minimum.
+
 ### Symmetrie
+
+Symmetrie hilft, einen Graphen schneller zu zeichnen: Kennst du eine Hälfte, ergibt sich die andere durch Spiegelung.
 
 | Symmetrieart | Eigenschaft | Beispiel |
 |---|---|---|
 | Achsensymmetrisch zur y-Achse | $f(-x) = f(x)$ | $f(x) = x^2$ |
 | Punktsymmetrisch zum Ursprung | $f(-x) = -f(x)$ | $f(x) = x^3$ |
+
+> [!example] Beispiel am Parabel-Graphen
+> $f(x) = x^2 - 2$ ist achsensymmetrisch zur y-Achse: Es gilt $f(-x) = (-x)^2 - 2 = x^2 - 2 = f(x)$. Deshalb liegen in der Wertetabelle die Werte links und rechts von $x = 0$ spiegelbildlich (z. B. $f(-2) = f(2) = 2$).
 
 ## Werte aus Graphen ablesen
 
