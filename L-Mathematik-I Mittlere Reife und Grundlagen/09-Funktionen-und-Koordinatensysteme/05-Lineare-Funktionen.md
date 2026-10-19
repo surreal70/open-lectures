@@ -1,7 +1,7 @@
 ---
 title: "Lineare Funktionen"
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-19
 chapter: "09"
 section: "05"
 status: "draft - review pending"
@@ -81,15 +81,8 @@ Die **Steigung** gibt an, um wie viel der y-Wert zunimmt, wenn x um 1 zunimmt.
 
 ### Grafische Darstellung
 
-```
-    y                           y
-    ↑                           ↑
-    │    ╱ m > 0                │╲     m < 0
-    │  ╱                        │ ╲
-    │╱                          │  ╲
-────┼──────→ x              ────┼────╲──→ x
-    │                           │     ╲
-```
+![[steigung-vorzeichen.png]]
+*<span class="fig-id">01-09-05-steigung-vorzeichen</span>: Bei positiver Steigung ($m > 0$) verläuft die Gerade von links unten nach rechts oben (steigend), bei negativer Steigung ($m < 0$) von links oben nach rechts unten (fallend).*
 
 ### Berechnung der Steigung
 
@@ -119,29 +112,13 @@ $$b = f(0)$$
 
 ### Verschiedene Steigungen
 
-```
-    y
-    ↑
-    │      ╱ m = 2
-    │    ╱
-    │  ╱    ╱ m = 1
-    │╱  ──╱── m = 0.5
-────┼────────→ x
-    │
-```
+![[verschiedene-steigungen.png]]
+*<span class="fig-id">01-09-05-verschiedene-steigungen</span>: Drei Ursprungsgeraden mit unterschiedlichen Steigungen – je größer $m$, desto steiler die Gerade ($m = 2$ steiler als $m = 1$ steiler als $m = 0{,}5$).*
 
 ### Verschiedene y-Achsenabschnitte
 
-```
-    y
-    ↑       ╱
-  3 ┤     ╱    f(x) = x + 3
-    │   ╱
-  1 ┤ ╱ ╱      g(x) = x + 1
-────┼╱───────→ x
-   ╱│
- -2╱┤          h(x) = x - 2
-```
+![[verschiedene-achsenabschnitte.png]]
+*<span class="fig-id">01-09-05-verschiedene-achsenabschnitte</span>: Drei Geraden mit gleicher Steigung ($m = 1$), aber unterschiedlichem y-Achsenabschnitt – sie sind parallel und gegeneinander verschoben: $f$ schneidet die y-Achse bei $3$, $g$ bei $1$, $h$ bei $-2$.*
 
 > [!note] Beobachtung
 > Geraden mit **gleicher Steigung** sind **parallel** zueinander. Sie verlaufen in dieselbe Richtung, schneiden sich aber nie (außer sie sind identisch).
