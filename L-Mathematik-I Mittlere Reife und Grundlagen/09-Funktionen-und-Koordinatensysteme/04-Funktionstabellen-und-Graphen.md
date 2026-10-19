@@ -1,7 +1,7 @@
 ---
 title: "Funktionstabellen und graphische Darstellung"
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-19
 chapter: "09"
 section: "04"
 status: "draft - review pending"
@@ -54,19 +54,12 @@ $$f(-2) = 2 \cdot (-2) - 1 = -4 - 1 = -5$$
 
 ### Vorgehensweise
 
-```
-1. Wertetabelle erstellen
-        ↓
-2. Koordinatensystem zeichnen
-   (passende Skalierung wählen)
-        ↓
-3. Punkte einzeichnen
-        ↓
-4. Punkte verbinden
-   (Linie bei linearen Funktionen,
-    Kurve bei anderen)
-        ↓
-5. Graph beschriften
+```mermaid
+graph TD
+    A[Wertetabelle erstellen] --> B[Koordinatensystem zeichnen<br/>passende Skalierung wählen]
+    B --> C[Punkte einzeichnen]
+    C --> D[Punkte verbinden<br/>Gerade bei linearen Funktionen,<br/>Kurve bei anderen]
+    D --> E[Graph beschriften]
 ```
 
 ### Beispiel: Linearer Graph
@@ -77,21 +70,8 @@ $f(x) = \frac{1}{2}x + 1$
 |---|---|---|---|---|---|
 | $f(x)$ | $-1$ | $0$ | $1$ | $2$ | $3$ |
 
-```
-    y
-    ↑
-  4 ┤
-    │            ●
-  3 ┤          ╱
-    │        ╱
-  2 ┤      ●
-    │    ╱
-  1 ┤  ●
-    │╱
-────●───┬───┬───┬───→ x
-   -2   0   2   4
- -1●
-```
+![[graph-linear.png]]
+*<span class="fig-id">01-09-04-graph-linear</span>: Graph der linearen Funktion $f(x)=\frac{1}{2}x+1$ – die Punkte aus der Wertetabelle liegen auf einer Geraden, die mit dem Lineal verbunden wird.*
 
 ### Beispiel: Quadratischer Graph (Parabel)
 
@@ -101,20 +81,8 @@ $f(x) = x^2 - 2$
 |---|---|---|---|---|---|
 | $f(x)$ | $2$ | $-1$ | $-2$ | $-1$ | $2$ |
 
-```
-    y
-    ↑
-  3 ┤
-    │
-  2 ┤  ●             ●
-    │   ╲           ╱
-  1 ┤    ╲         ╱
-    │     ╲       ╱
-────┼───┬──●───●──┬───→ x
-   -2  -1   0   1   2
-    │      ╲   ╱
- -2 ┤       ╲●╱
-```
+![[graph-parabel.png]]
+*<span class="fig-id">01-09-04-graph-parabel</span>: Graph der quadratischen Funktion $f(x)=x^2-2$ – die Punkte aus der Wertetabelle werden zu einer nach oben geöffneten Parabel mit Scheitel bei $(0, -2)$ verbunden.*
 
 ## Eigenschaften aus Graphen ablesen
 
