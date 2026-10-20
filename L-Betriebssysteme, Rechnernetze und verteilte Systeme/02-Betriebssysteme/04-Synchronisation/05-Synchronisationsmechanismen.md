@@ -615,7 +615,6 @@ while (count == 0) {
 > [!warning] **Prüfungsrelevant**
 > - P und V Operationen verstehen und anwenden
 > - Unterschied binärer vs. Counting Semaphor
-> - Unterschied Spinlock vs. Mutex
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Was sind die Operationen P und V bei Semaphoren? Erklären Sie die Semantik!

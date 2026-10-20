@@ -711,7 +711,6 @@ rm /tmp/testpipe
 > - Unterschied Shared Memory vs. Message Passing (Kopieren vs. gemeinsamer Zugriff)
 > - Wann braucht man Synchronisation? (Bei Shared Memory!)
 > - Synchrone vs. asynchrone Kommunikation
-> - Socket-Typen (TCP vs. UDP, Unix Domain)
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Nennen und erklären Sie drei IPC-Mechanismen unter Unix!
