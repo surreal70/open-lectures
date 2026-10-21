@@ -209,7 +209,7 @@ Nennen Sie mindestens drei relevante Normen für die strukturierte Verkabelung u
 > [!tip] **Für Dozenten**
 > Die ausführliche Musterlösung mit drei Varianten (optimal, kostenoptimiert, WLAN-Hybrid) sowie vollständigem Reasoning finden Sie hier:
 > 
-> [[./UE-RN-03-Campus-Verkabelung-Loesung|→ Musterlösung Campus-Verkabelung]]
+> [[../Loesungen/LOE-UE-RN-03-Campus-Verkabelung|→ Musterlösung Campus-Verkabelung]]
 
 ---
 

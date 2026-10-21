@@ -656,4 +656,4 @@ Tertiärverkabelung:
 - [[../../03-Rechnernetze/03-Referenzmodelle/04-Physikalische-Schicht/02-Signale|Signale]]
 - [[../../03-Rechnernetze/04-Basisprotokolle/05-Spanning-Tree|Spanning Tree Protocol]]
 - [[../../03-Rechnernetze/03-Referenzmodelle/05-Sicherungsschicht/00-Sicherungsschicht-Index|Sicherungsschicht]]
-- [[./UE-RN-03-Campus-Verkabelung|Zurück zur Aufgabe]]
+- [[../Uebungen/UE-RN-03-Campus-Verkabelung|Zurück zur Aufgabe]]
