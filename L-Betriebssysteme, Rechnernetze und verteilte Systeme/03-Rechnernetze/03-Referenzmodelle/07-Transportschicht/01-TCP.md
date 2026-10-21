@@ -118,10 +118,59 @@ Das Sliding Window verhindert, dass der Sender den Empfänger überlastet:
 
 ### Window-Size-Ankündigung
 
+Der Empfänger teilt dem Sender über das **Window-Feld** im TCP-Header mit, wie viel Pufferplatz noch verfügbar ist. Dieser Wert wird mit jedem ACK aktualisiert.
+
 ![[tcp-window-size.png]]
 *<span class="fig-id">03-07-01-tcp-window-size</span>: TCP Window Size Ankündigung durch den Empfänger*
 
+#### Funktionsweise
+
+| Situation | Auswirkung |
+|-----------|------------|
+| Anwendung liest Daten | Puffer wird frei → Window vergrößert sich |
+| Daten treffen ein | Puffer füllt sich → Window verkleinert sich |
+| Puffer voll | Window = 0 (Zero Window) |
+
+#### Zero Window
+
+Wenn der Empfänger ein **Window = 0** sendet, muss der Sender die Übertragung pausieren:
+
+1. Sender stoppt Datenübertragung
+2. Sender startet **Persist Timer**
+3. Sender sendet periodisch **Window Probes** (1 Byte)
+4. Empfänger antwortet mit aktuellem Window-Wert
+5. Bei Window > 0: Übertragung wird fortgesetzt
+
+> [!warning] Silly Window Syndrome
+> Häufiges Senden kleiner Window-Updates führt zu ineffizienter Übertragung. **Nagle-Algorithmus** (Sender) und **Clark's Solution** (Empfänger) verhindern dies durch Aggregation kleiner Segmente.
+
+#### Window Scaling (RFC 7323)
+
+Das 16-Bit Window-Feld begrenzt die Fenstergröße auf 65.535 Bytes. Für Hochgeschwindigkeitsnetze ist das zu klein:
+
+| Verbindung | Problem bei 64 KB Window |
+|------------|--------------------------|
+| 1 Gbit/s, 100 ms RTT | Nur 5,2 Mbit/s nutzbar |
+| 10 Gbit/s, 100 ms RTT | Nur 0,5% Auslastung |
+
+**Lösung:** Window Scale Option multipliziert Window-Wert mit 2^n (n = 0-14)
+
+```
+Effektives Window = Window-Feld × 2^(Scale Factor)
+Maximum: 65.535 × 2^14 = 1 GB
+```
+
 ## Staukontrolle (Congestion Control)
+
+Die Staukontrolle schützt das **Netzwerk** vor Überlastung (im Gegensatz zur Flusskontrolle, die den Empfänger schützt). Ohne Staukontrolle würde ein Sender bei Paketverlust einfach neu senden – was die Stausituation verschlimmert.
+
+### Grundprinzip
+
+TCP verwendet ein **Congestion Window (cwnd)**, das die maximale Menge an Daten begrenzt, die ohne Bestätigung unterwegs sein darf:
+
+```
+Effektives Sendefenster = min(cwnd, Empfänger-Window)
+```
 
 ### Algorithmen
 
@@ -133,17 +182,67 @@ TCP verwendet mehrere Mechanismen zur Staukontrolle:
 ### Phasen der Staukontrolle
 
 1. **Slow Start:**
-   - Start mit cwnd = 1 MSS
+   - Start mit cwnd = 1 MSS (oder IW = 10 MSS bei modernen Implementierungen)
    - Exponentielles Wachstum (cwnd × 2 pro RTT)
    - Bis ssthresh erreicht
 
 2. **Congestion Avoidance:**
    - Lineares Wachstum (cwnd + 1 MSS pro RTT)
+   - Vorsichtiges Abtasten der verfügbaren Kapazität
    - Bis Paketverlust erkannt
 
 3. **Bei Paketverlust:**
    - **Timeout:** ssthresh = cwnd/2, cwnd = 1, Slow Start
    - **3 Duplikat-ACKs:** ssthresh = cwnd/2, cwnd = ssthresh (Fast Recovery)
+
+### Verlusterkennung
+
+| Methode | Interpretation | Reaktion |
+|---------|----------------|----------|
+| **Timeout** | Schwere Stausituation | Aggressiver Reset (cwnd = 1) |
+| **3 Duplikat-ACKs** | Leichte Stausituation | Moderater Reset (Fast Recovery) |
+
+### TCP-Varianten
+
+Verschiedene Congestion-Control-Algorithmen wurden entwickelt:
+
+| Variante | Besonderheit | Einsatzgebiet |
+|----------|--------------|---------------|
+| **TCP Tahoe** | Ursprünglicher Algorithmus | Historisch |
+| **TCP Reno** | Fast Recovery | Standard |
+| **TCP NewReno** | Verbessertes Fast Recovery | Weit verbreitet |
+| **TCP CUBIC** | Kubische Wachstumsfunktion | Linux Default |
+| **TCP BBR** | Bandbreitenbasiert | Google, YouTube |
+
+> [!info] TCP CUBIC vs. BBR
+> **CUBIC** reagiert auf Paketverlust (loss-based), während **BBR** die verfügbare Bandbreite aktiv misst (model-based). BBR erreicht bessere Auslastung bei langen Latenzen, ist aber in bestimmten Szenarien weniger fair zu anderen Verbindungen.
+
+### Explicit Congestion Notification (ECN)
+
+Statt auf Paketverlust zu warten, können Router Stau explizit signalisieren:
+
+1. Router markiert Paket mit CE (Congestion Experienced) im IP-Header
+2. Empfänger setzt ECE-Flag im TCP-ACK
+3. Sender reduziert cwnd und setzt CWR-Flag
+
+**Vorteil:** Staureaktion ohne Paketverlust → geringere Latenz
+
+### Berechnungsbeispiel
+
+> [!example] Slow Start Berechnung
+> **Gegeben:** MSS = 1460 Bytes, ssthresh = 64 KB, cwnd initial = 1 MSS
+> 
+> | RTT | cwnd | Gesendete Daten |
+> |-----|------|-----------------|
+> | 1 | 1 MSS | 1.460 Bytes |
+> | 2 | 2 MSS | 2.920 Bytes |
+> | 3 | 4 MSS | 5.840 Bytes |
+> | 4 | 8 MSS | 11.680 Bytes |
+> | 5 | 16 MSS | 23.360 Bytes |
+> | 6 | 32 MSS | 46.720 Bytes |
+> | 7 | 44 MSS | 64.240 Bytes (≈ ssthresh) |
+> 
+> Ab RTT 7: Wechsel zu Congestion Avoidance (lineares Wachstum)
 
 ## TCP-Optionen
 
