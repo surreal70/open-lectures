@@ -97,24 +97,96 @@ Der Verbindungsabbau erfolgt in vier Schritten (Halbduplex-Close):
 
 ## Sequenznummern und Bestätigungen
 
+TCP nummeriert jeden gesendeten Byte-Strom mit **Sequenznummern**. Der Empfänger bestätigt den Empfang mit **Acknowledgment Numbers (ACK)**, die angeben, welches Byte als nächstes erwartet wird.
+
 ### Funktionsweise
 
 ![[tcp-seq-ack.png]]
 *<span class="fig-id">03-07-01-tcp-seq-ack</span>: TCP Sequenznummern und Bestätigungsmechanismus*
 
+Die Grafik zeigt den Ablauf einer typischen Datenübertragung:
+
+1. **Sender schickt Segment** mit SEQ=1000 und 500 Bytes Nutzdaten (Bytes 1000-1499)
+2. **Empfänger bestätigt** mit ACK=1500 – das bedeutet „Alle Bytes bis 1499 erhalten, erwarte Byte 1500"
+3. **Sender schickt nächstes Segment** mit SEQ=1500 und 300 Bytes (Bytes 1500-1799)
+4. **Empfänger bestätigt** mit ACK=1800
+
+**Berechnungsformel:**
+```
+ACK-Nummer = Sequenznummer + Anzahl empfangener Bytes
+```
+
+> [!tip] Kumulative Bestätigungen
+> TCP verwendet **kumulative ACKs**: Ein ACK=1800 bestätigt implizit alle Bytes bis 1799 – auch wenn vorherige ACKs verloren gingen.
+
 ### Retransmission (Neuübertragung)
+
+Wenn ein Segment verloren geht, muss es erneut gesendet werden. TCP erkennt Verluste durch zwei Mechanismen:
 
 ![[tcp-retransmission.png]]
 *<span class="fig-id">03-07-01-tcp-retransmission</span>: TCP Retransmission bei Paketverlust*
 
+Die Grafik illustriert einen typischen Paketverlust:
+
+1. **SEQ=1000** kommt an → Empfänger bestätigt (ACK=1500)
+2. **SEQ=1500 geht verloren** auf dem Weg zum Empfänger
+3. **SEQ=2000** kommt an → Empfänger erkennt Lücke (1500-1999 fehlt)
+4. **Empfänger sendet Duplikat-ACK** (ACK=1500) – „Ich erwarte immer noch Byte 1500"
+5. **Sender erkennt Problem** durch Timeout oder 3 Duplikat-ACKs
+6. **Retransmission:** Sender wiederholt SEQ=1500
+7. **Empfänger kann Lücke füllen** und bestätigt alle Daten (ACK=2500)
+
+#### Auslöser für Retransmission
+
+| Mechanismus | Beschreibung | Reaktionszeit |
+|-------------|--------------|---------------|
+| **Timeout (RTO)** | Retransmission Timeout läuft ab | Langsam (RTT + Sicherheit) |
+| **Fast Retransmit** | 3 identische Duplikat-ACKs empfangen | Schnell (sofort nach 3. Dup-ACK) |
+
+> [!info] Selective Acknowledgment (SACK)
+> Mit SACK (RFC 2018) kann der Empfänger mitteilen, welche Segmente angekommen sind – auch wenn eine Lücke besteht. Der Sender muss dann nur die fehlenden Segmente wiederholen, nicht alle nachfolgenden.
+
 ## Flusskontrolle (Flow Control)
+
+Die Flusskontrolle verhindert, dass ein schneller Sender einen langsamen Empfänger überlastet. TCP implementiert dies mit dem **Sliding Window Protokoll**.
 
 ### Sliding Window
 
-Das Sliding Window verhindert, dass der Sender den Empfänger überlastet:
+Das Sliding Window unterteilt den Sendepuffer in drei Bereiche:
 
 ![[tcp-sliding-window.png]]
 *<span class="fig-id">03-07-01-tcp-sliding-window</span>: TCP Sliding Window Mechanismus*
+
+#### Die drei Pufferbereiche
+
+| Bereich | Beschreibung | Status |
+|---------|--------------|--------|
+| **Gesendet + ACK** | Bytes wurden gesendet und bestätigt | Können aus dem Puffer entfernt werden |
+| **Sendefenster** | Bytes dürfen gesendet werden | Warten auf ACK oder noch nicht gesendet |
+| **Noch nicht gesendet** | Bytes außerhalb des Fensters | Müssen warten, bis Fenster gleitet |
+
+#### Funktionsweise
+
+1. **Sender darf nur Daten innerhalb des Fensters senden** – maximal so viele Bytes, wie das Window erlaubt
+2. **Bei ACK-Empfang gleitet das Fenster nach rechts** – neue Bytes werden sendbar
+3. **Empfänger steuert Fenstergroße** – über das Window-Feld im ACK
+
+#### Beispiel
+
+```
+Fenstergroße: 4 Segmente
+Sendepuffer:  [1][2][3][4][5][6][7][8][9][10]
+                   └─────────┘
+                   Sendefenster
+
+Nach ACK für Segment 1-2:
+Sendepuffer:  [1][2][3][4][5][6][7][8][9][10]
+                         └─────────┘
+                         Fenster gleitet →
+```
+
+> [!tip] Effizienz durch Pipelining
+> Ohne Sliding Window müsste der Sender nach jedem Segment auf ein ACK warten (Stop-and-Wait). Mit Sliding Window können mehrere Segmente gleichzeitig „unterwegs" sein – das erhöht den Durchsatz erheblich, besonders bei hoher Latenz.
 
 ### Window-Size-Ankündigung
 
