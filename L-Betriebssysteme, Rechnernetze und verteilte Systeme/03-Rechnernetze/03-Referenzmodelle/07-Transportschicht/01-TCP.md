@@ -9,7 +9,7 @@ tags:
   - verbindungsorientiert
   - handshake
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-21'
 bereich: RN
 ---
 
@@ -34,25 +34,8 @@ Das **Transmission Control Protocol (TCP)** ist ein verbindungsorientiertes, zuv
 
 Der TCP-Header ist mindestens **20 Bytes** lang:
 
-```
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|          Source Port          |       Destination Port        |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                        Sequence Number                        |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                    Acknowledgment Number                      |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|  Data |       |C|E|U|A|P|R|S|F|                               |
-| Offset| Rsrvd |W|C|R|C|S|S|Y|I|            Window             |
-|       |       |R|E|G|K|H|T|N|N|                               |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|           Checksum            |         Urgent Pointer        |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                    Options (falls vorhanden)                  |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-```
+![[tcp-header.png]]
+*<span class="fig-id">03-07-01-tcp-header</span>: TCP-Header Struktur mit 32-Bit Feldaufteilung*
 
 ### Header-Felder im Detail
 
@@ -85,31 +68,8 @@ Der TCP-Header ist mindestens **20 Bytes** lang:
 
 Der Verbindungsaufbau erfolgt in drei Schritten:
 
-```
-┌──────────────────────────────────────────────────────────────────┐
-│                     TCP 3-Way-Handshake                          │
-├──────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│    Client                                          Server        │
-│    (CLOSED)                                        (LISTEN)      │
-│       │                                               │          │
-│       │         1. SYN (seq=x)                        │          │
-│       │  ─────────────────────────────────────────►   │          │
-│       │                                               │          │
-│    (SYN_SENT)                                    (SYN_RCVD)      │
-│       │                                               │          │
-│       │         2. SYN-ACK (seq=y, ack=x+1)          │          │
-│       │  ◄─────────────────────────────────────────   │          │
-│       │                                               │          │
-│       │         3. ACK (seq=x+1, ack=y+1)            │          │
-│       │  ─────────────────────────────────────────►   │          │
-│       │                                               │          │
-│    (ESTABLISHED)                               (ESTABLISHED)     │
-│       │                                               │          │
-│       │  ◄════════ Datenübertragung ════════════►    │          │
-│                                                                  │
-└──────────────────────────────────────────────────────────────────┘
-```
+![[tcp-3way-handshake.png]]
+*<span class="fig-id">03-07-01-tcp-3way-handshake</span>: TCP 3-Way-Handshake für den Verbindungsaufbau*
 
 > [!tip] Merkhilfe: SYN → SYN-ACK → ACK
 > "**S**ie **S**ind **A**ngenommen" oder einfach "**SSA**"
@@ -124,152 +84,28 @@ Der Verbindungsaufbau erfolgt in drei Schritten:
 
 Der Verbindungsabbau erfolgt in vier Schritten (Halbduplex-Close):
 
-```
-┌──────────────────────────────────────────────────────────────────┐
-│                     TCP 4-Way-Handshake                          │
-├──────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│    Client                                          Server        │
-│    (ESTABLISHED)                               (ESTABLISHED)     │
-│       │                                               │          │
-│       │         1. FIN (seq=u)                        │          │
-│       │  ─────────────────────────────────────────►   │          │
-│       │                                               │          │
-│    (FIN_WAIT_1)                                  (CLOSE_WAIT)    │
-│       │                                               │          │
-│       │         2. ACK (ack=u+1)                      │          │
-│       │  ◄─────────────────────────────────────────   │          │
-│       │                                               │          │
-│    (FIN_WAIT_2)                                  (CLOSE_WAIT)    │
-│       │                                               │          │
-│       │         3. FIN (seq=v)                        │          │
-│       │  ◄─────────────────────────────────────────   │          │
-│       │                                               │          │
-│    (TIME_WAIT)                                   (LAST_ACK)      │
-│       │                                               │          │
-│       │         4. ACK (ack=v+1)                      │          │
-│       │  ─────────────────────────────────────────►   │          │
-│       │                                               │          │
-│    (TIME_WAIT)                                   (CLOSED)        │
-│       │                                               │          │
-│    ~~~ 2*MSL ~~~                                                 │
-│       │                                                          │
-│    (CLOSED)                                                      │
-│                                                                  │
-└──────────────────────────────────────────────────────────────────┘
-```
+![[tcp-4way-handshake.png]]
+*<span class="fig-id">03-07-01-tcp-4way-handshake</span>: TCP 4-Way-Handshake für den Verbindungsabbau*
 
 > [!info] TIME_WAIT
 > Der TIME_WAIT-Zustand dauert 2×MSL (Maximum Segment Lifetime, typisch 60 Sekunden). Dies stellt sicher, dass verspätete Pakete nicht eine neue Verbindung stören.
 
 ## TCP-Zustandsdiagramm
 
-```
-                              ┌─────────────┐
-                              │   CLOSED    │
-                              └──────┬──────┘
-                     Active Open     │     Passive Open
-                     send SYN        │     
-                    ┌────────────────┴────────────────┐
-                    ▼                                 ▼
-             ┌─────────────┐                   ┌─────────────┐
-             │  SYN_SENT   │                   │   LISTEN    │
-             └──────┬──────┘                   └──────┬──────┘
-        rcv SYN-ACK │                     rcv SYN    │
-        send ACK    │                     send SYN-ACK
-                    ▼                                 ▼
-             ┌─────────────┐                   ┌─────────────┐
-             │             │◄──────────────────│  SYN_RCVD   │
-             │ ESTABLISHED │   rcv ACK         └─────────────┘
-             │             │
-             └──────┬──────┘
-                    │
-        Close       │       rcv FIN
-        send FIN    │       send ACK
-           ┌────────┴────────┐
-           ▼                 ▼
-    ┌─────────────┐   ┌─────────────┐
-    │ FIN_WAIT_1  │   │ CLOSE_WAIT  │
-    └──────┬──────┘   └──────┬──────┘
-           │                 │ Close
-           │                 │ send FIN
-           ▼                 ▼
-    ┌─────────────┐   ┌─────────────┐
-    │ FIN_WAIT_2  │   │  LAST_ACK   │
-    └──────┬──────┘   └──────┬──────┘
-   rcv FIN │                 │ rcv ACK
-   send ACK│                 │
-           ▼                 ▼
-    ┌─────────────┐   ┌─────────────┐
-    │  TIME_WAIT  │   │   CLOSED    │
-    └──────┬──────┘   └─────────────┘
-           │ 2*MSL Timeout
-           ▼
-    ┌─────────────┐
-    │   CLOSED    │
-    └─────────────┘
-```
+![[tcp-state-diagram.png]]
+*<span class="fig-id">03-07-01-tcp-state-diagram</span>: TCP Zustandsdiagramm mit allen Verbindungszuständen*
 
 ## Sequenznummern und Bestätigungen
 
 ### Funktionsweise
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                 Sequenznummern und ACKs                        │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Sender                                          Empfänger     │
-│     │                                               │          │
-│     │  SEQ=1000, Daten: 500 Bytes                  │          │
-│     │  ───────────────────────────────────────────► │          │
-│     │                                               │          │
-│     │  ACK=1500 (nächstes erwartetes Byte)         │          │
-│     │  ◄─────────────────────────────────────────── │          │
-│     │                                               │          │
-│     │  SEQ=1500, Daten: 300 Bytes                  │          │
-│     │  ───────────────────────────────────────────► │          │
-│     │                                               │          │
-│     │  ACK=1800                                     │          │
-│     │  ◄─────────────────────────────────────────── │          │
-│                                                                │
-│  ACK-Nummer = Sequenznummer + Datenlänge                      │
-│  ACK=1500 bedeutet: "Alle Bytes bis 1499 erhalten"            │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[tcp-seq-ack.png]]
+*<span class="fig-id">03-07-01-tcp-seq-ack</span>: TCP Sequenznummern und Bestätigungsmechanismus*
 
 ### Retransmission (Neuübertragung)
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    TCP Retransmission                          │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Sender                                          Empfänger     │
-│     │                                               │          │
-│     │  SEQ=1000, Daten: 500 Bytes                  │          │
-│     │  ───────────────────────────────────────────► │          │
-│     │                                               │          │
-│     │  SEQ=1500, Daten: 500 Bytes                  │          │
-│     │  ─────────────X (verloren)                    │          │
-│     │                                               │          │
-│     │  SEQ=2000, Daten: 500 Bytes                  │          │
-│     │  ───────────────────────────────────────────► │          │
-│     │                                               │          │
-│     │  ACK=1500 (Duplikat-ACK, 1500-1999 fehlt)    │          │
-│     │  ◄─────────────────────────────────────────── │          │
-│     │                                               │          │
-│  Timeout oder 3 Duplikat-ACKs → Retransmit         │          │
-│     │                                               │          │
-│     │  SEQ=1500, Daten: 500 Bytes (Wiederholung)   │          │
-│     │  ───────────────────────────────────────────► │          │
-│     │                                               │          │
-│     │  ACK=2500 (alle empfangen)                   │          │
-│     │  ◄─────────────────────────────────────────── │          │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[tcp-retransmission.png]]
+*<span class="fig-id">03-07-01-tcp-retransmission</span>: TCP Retransmission bei Paketverlust*
 
 ## Flusskontrolle (Flow Control)
 
@@ -277,46 +113,13 @@ Der Verbindungsabbau erfolgt in vier Schritten (Halbduplex-Close):
 
 Das Sliding Window verhindert, dass der Sender den Empfänger überlastet:
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                      Sliding Window                            │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Sendepuffer:                                                  │
-│  ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐           │
-│  │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │10 │11 │12 │           │
-│  └───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘           │
-│    ▲           ▲                   ▲                          │
-│    │           │                   │                          │
-│  Gesendet    Gesendet,           Noch nicht                   │
-│  und ACK     warte auf ACK       gesendet                     │
-│              └───────────────────┘                            │
-│                 Sendefenster                                   │
-│                 (Window Size)                                  │
-│                                                                │
-│  Window Size = vom Empfänger advertised                       │
-│  Sender darf max. Window Size Bytes ohne ACK senden           │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[tcp-sliding-window.png]]
+*<span class="fig-id">03-07-01-tcp-sliding-window</span>: TCP Sliding Window Mechanismus*
 
 ### Window-Size-Ankündigung
 
-```
-Empfänger teilt verfügbaren Puffer mit:
-
-  Empfängerpuffer (8 KB):
-  ┌────────────────────────────────┬────────────────────────────┐
-  │  Bereits empfangen (3 KB)      │  Frei (5 KB)               │
-  └────────────────────────────────┴────────────────────────────┘
-                                    ▲
-                                    │
-                              Window = 5120
-                              (wird im ACK gesendet)
-
-  Wenn Anwendung Daten liest → Fenster vergrößert sich
-  Wenn Puffer voll → Window = 0 (Zero Window)
-```
+![[tcp-window-size.png]]
+*<span class="fig-id">03-07-01-tcp-window-size</span>: TCP Window Size Ankündigung durch den Empfänger*
 
 ## Staukontrolle (Congestion Control)
 
@@ -324,32 +127,8 @@ Empfänger teilt verfügbaren Puffer mit:
 
 TCP verwendet mehrere Mechanismen zur Staukontrolle:
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                   TCP Congestion Control                       │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Congestion Window (cwnd)                                      │
-│  ▲                                                             │
-│  │         Congestion          ╱                              │
-│  │         Avoidance     ─────╱                               │
-│  │                      ╱                                      │
-│  │              ───────╱                                       │
-│  │             ╱                                               │
-│  │   Slow    ╱   ← ssthresh (Slow Start Threshold)            │
-│  │   Start  ╱                                                  │
-│  │        ╱                                                    │
-│  │      ╱                                                      │
-│  │    ╱                                                        │
-│  │  ╱                                                          │
-│  │╱                                                            │
-│  └─────────────────────────────────────────────────────► Zeit  │
-│                                                                │
-│  Slow Start:        cwnd verdoppelt pro RTT                   │
-│  Congestion Avoid.: cwnd +1 MSS pro RTT                       │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[tcp-congestion-control.png]]
+*<span class="fig-id">03-07-01-tcp-congestion-control</span>: TCP Congestion Control mit Slow Start und Congestion Avoidance*
 
 ### Phasen der Staukontrolle
 
