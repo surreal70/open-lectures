@@ -49,17 +49,8 @@ bereich: RN
 
 Der UDP-Header ist extrem einfach mit nur **8 Bytes**:
 
-```
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|          Source Port          |       Destination Port        |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|            Length             |           Checksum            |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                             Data                              |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-```
+![[udp-header.png]]
+*<span class="fig-id">03-07-02-udp-header</span>: UDP-Header-Struktur mit 8 Bytes fixem Overhead*
 
 ### Header-Felder
 
@@ -80,34 +71,14 @@ Der UDP-Header ist extrem einfach mit nur **8 Bytes**:
 
 ## UDP vs. TCP
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    TCP vs. UDP Vergleich                       │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  TCP (verbindungsorientiert):                                  │
-│                                                                │
-│    Client                     Server                           │
-│      │     SYN                  │                              │
-│      │ ─────────────────────► │                              │
-│      │     SYN-ACK              │                              │
-│      │ ◄───────────────────── │                              │
-│      │     ACK                  │                              │
-│      │ ─────────────────────► │                              │
-│      │     Daten + ACK          │   ← Handshake erforderlich  │
-│      │ ◄────────────────────► │                              │
-│                                                                │
-│  UDP (verbindungslos):                                         │
-│                                                                │
-│    Client                     Server                           │
-│      │     Datagramm            │                              │
-│      │ ─────────────────────► │   ← Sofort senden            │
-│      │     Datagramm            │                              │
-│      │ ─────────────────────► │   ← Keine Bestätigung        │
-│      │                          │                              │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+### Kommunikationsablauf
+
+**TCP (verbindungsorientiert):** Erfordert einen 3-Way-Handshake (SYN → SYN-ACK → ACK) bevor Daten übertragen werden können. Jedes Datenpaket wird bestätigt.
+
+**UDP (verbindungslos):** Datagramme werden sofort gesendet, ohne vorherigen Handshake und ohne Bestätigung. Der Sender weiß nicht, ob die Daten angekommen sind.
+
+![[tcp-vs-udp.png]]
+*<span class="fig-id">03-07-02-tcp-vs-udp</span>: Vergleich TCP (mit Handshake und Bestätigung) vs. UDP (verbindungslos)*
 
 ### Detaillierter Vergleich
 
@@ -128,49 +99,32 @@ Der UDP-Header ist extrem einfach mit nur **8 Bytes**:
 
 ### Wann UDP verwenden?
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                 Ideale UDP-Anwendungsfälle                     │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  1. ECHTZEITANWENDUNGEN                                        │
-│     ┌─────────────────────────────────────────────────────┐   │
-│     │ • VoIP (Voice over IP)                              │   │
-│     │ • Video-Streaming (Live)                            │   │
-│     │ • Online-Gaming                                     │   │
-│     │                                                     │   │
-│     │ Grund: Veraltete Daten sind wertlos                │   │
-│     │        Neuübertragung käme zu spät                 │   │
-│     └─────────────────────────────────────────────────────┘   │
-│                                                                │
-│  2. KURZE TRANSAKTIONEN                                        │
-│     ┌─────────────────────────────────────────────────────┐   │
-│     │ • DNS-Anfragen                                      │   │
-│     │ • DHCP                                              │   │
-│     │ • NTP (Zeitsynchronisation)                         │   │
-│     │                                                     │   │
-│     │ Grund: Handshake-Overhead > Nutzdaten              │   │
-│     └─────────────────────────────────────────────────────┘   │
-│                                                                │
-│  3. BROADCAST / MULTICAST                                      │
-│     ┌─────────────────────────────────────────────────────┐   │
-│     │ • Service Discovery                                 │   │
-│     │ • Routing-Protokolle (RIP)                          │   │
-│     │ • IPTV Multicast                                    │   │
-│     │                                                     │   │
-│     │ Grund: TCP unterstützt kein Broadcast/Multicast    │   │
-│     └─────────────────────────────────────────────────────┘   │
-│                                                                │
-│  4. EIGENE ZUVERLÄSSIGKEIT                                     │
-│     ┌─────────────────────────────────────────────────────┐   │
-│     │ • QUIC (Google, HTTP/3)                             │   │
-│     │ • Spiele mit eigenem Reliability-Layer              │   │
-│     │                                                     │   │
-│     │ Grund: Anwendung implementiert bessere Kontrolle   │   │
-│     └─────────────────────────────────────────────────────┘   │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+**1. Echtzeitanwendungen**
+- VoIP (Voice over IP)
+- Video-Streaming (Live)
+- Online-Gaming
+
+*Grund:* Veraltete Daten sind wertlos – eine Neuübertragung käme zu spät.
+
+**2. Kurze Transaktionen**
+- DNS-Anfragen
+- DHCP
+- NTP (Zeitsynchronisation)
+
+*Grund:* Der Handshake-Overhead wäre größer als die eigentlichen Nutzdaten.
+
+**3. Broadcast / Multicast**
+- Service Discovery
+- Routing-Protokolle (RIP)
+- IPTV Multicast
+
+*Grund:* TCP unterstützt kein Broadcast oder Multicast.
+
+**4. Eigene Zuverlässigkeitsschicht**
+- QUIC (Google, HTTP/3)
+- Spiele mit eigenem Reliability-Layer
+
+*Grund:* Die Anwendung implementiert eine besser angepasste Kontrolle als TCP bieten würde.
 
 ### Typische UDP-Anwendungen
 
@@ -189,106 +143,45 @@ Der UDP-Header ist extrem einfach mit nur **8 Bytes**:
 
 ### DNS über UDP
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                     DNS-Anfrage über UDP                       │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Client                                    DNS-Server          │
-│  (Port 52345)                              (Port 53)           │
-│      │                                         │               │
-│      │   Query: "www.example.com A?"           │               │
-│      │ ───────────────────────────────────────►│               │
-│      │                                         │               │
-│      │   Response: A = 93.184.216.34          │               │
-│      │◄─────────────────────────────────────── │               │
-│      │                                         │               │
-│                                                                │
-│  Vorteile:                                                     │
-│  • Schnell (kein Handshake)                                   │
-│  • Ein Paket hin, ein Paket zurück                            │
-│  • Bei Verlust: Client wiederholt nach Timeout                │
-│                                                                │
-│  Hinweis: Bei großen Antworten (>512 Bytes) → TCP             │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[dns-udp.png]]
+*<span class="fig-id">03-07-02-dns-udp</span>: DNS-Anfrage über UDP – ein Paket hin, ein Paket zurück*
+
+**Vorteile von DNS über UDP:**
+- Schnell (kein Handshake erforderlich)
+- Ein Paket hin, ein Paket zurück
+- Bei Verlust: Client wiederholt nach Timeout
+
+> [!info] Hinweis
+> Bei großen Antworten (>512 Bytes) wechselt DNS automatisch zu TCP.
 
 ### DHCP über UDP
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                        DHCP (DORA)                             │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Client (0.0.0.0:68)                      Server (x.x.x.x:67) │
-│      │                                         │               │
-│      │  DISCOVER (Broadcast)                   │               │
-│      │ ═══════════════════════════════════════►│               │
-│      │                                         │               │
-│      │  OFFER (Broadcast/Unicast)              │               │
-│      │◄═══════════════════════════════════════ │               │
-│      │                                         │               │
-│      │  REQUEST (Broadcast)                    │               │
-│      │ ═══════════════════════════════════════►│               │
-│      │                                         │               │
-│      │  ACK (Broadcast/Unicast)                │               │
-│      │◄═══════════════════════════════════════ │               │
-│      │                                         │               │
-│  Client hat jetzt IP: 192.168.1.100           │               │
-│                                                                │
-│  DORA = Discover, Offer, Request, Acknowledge                 │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[dhcp-dora.png]]
+*<span class="fig-id">03-07-02-dhcp-dora</span>: DHCP DORA-Prozess – Discover, Offer, Request, Acknowledge*
+
+**DORA = Discover, Offer, Request, Acknowledge**
 
 ### RTP (Real-time Transport Protocol)
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                  RTP für Audio/Video                           │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  ┌─────────────────────────────────────────────────────────┐  │
-│  │                    RTP over UDP                          │  │
-│  ├─────────────────────────────────────────────────────────┤  │
-│  │  IP Header │ UDP Header │ RTP Header │ Audio/Video Data │  │
-│  │  (20 Bytes)│  (8 Bytes) │ (12 Bytes) │    (variabel)    │  │
-│  └─────────────────────────────────────────────────────────┘  │
-│                                                                │
-│  RTP-Header enthält:                                          │
-│  • Sequenznummer (für Reihenfolge/Verlusterkennung)           │
-│  • Timestamp (für Synchronisation)                            │
-│  • SSRC (Synchronization Source Identifier)                   │
-│                                                                │
-│  Warum nicht TCP?                                              │
-│  • Retransmission bei Audio/Video nutzlos                     │
-│  • Head-of-Line Blocking würde Wiedergabe verzögern           │
-│  • Lieber Frame auslassen als Verzögerung                     │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[rtp-udp.png]]
+*<span class="fig-id">03-07-02-rtp-udp</span>: RTP-Paketstruktur über UDP/IP*
+
+**RTP-Header enthält:**
+- Sequenznummer (für Reihenfolge/Verlusterkennung)
+- Timestamp (für Synchronisation)
+- SSRC (Synchronization Source Identifier)
+
+**Warum nicht TCP?**
+- Retransmission bei Audio/Video nutzlos
+- Head-of-Line Blocking würde Wiedergabe verzögern
+- Lieber Frame auslassen als Verzögerung
 
 ## UDP-Checksum
 
 Die Prüfsumme wird über einen Pseudo-Header berechnet:
 
-```
-Pseudo-Header (für Checksum-Berechnung):
-
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                       Source Address                          |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                    Destination Address                        |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|     Zero      |   Protocol    |          UDP Length           |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-
-Checksum = Einerkomplement der Summe aller 16-Bit-Wörter
-           (Pseudo-Header + UDP-Header + Daten)
-```
+![[udp-pseudo-header.png]]
+*<span class="fig-id">03-07-02-udp-pseudo-header</span>: UDP Pseudo-Header für die Checksum-Berechnung*
 
 > [!warning] IPv4 vs. IPv6
 > - **IPv4:** Checksum optional (kann 0 sein)
@@ -309,31 +202,13 @@ Checksum = Einerkomplement der Summe aller 16-Bit-Wörter
 > [!info] QUIC (Quick UDP Internet Connections)
 > QUIC ist ein modernes Transportprotokoll über UDP, das von Google entwickelt wurde und die Basis für **HTTP/3** bildet.
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                      QUIC über UDP                             │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Traditionell:              Mit QUIC:                          │
-│                                                                │
-│  ┌─────────────┐            ┌─────────────┐                   │
-│  │    HTTP     │            │    HTTP/3   │                   │
-│  ├─────────────┤            ├─────────────┤                   │
-│  │    TLS      │            │    QUIC     │ ← Integriert:     │
-│  ├─────────────┤            │  (TLS 1.3)  │   Verschlüsselung │
-│  │    TCP      │            ├─────────────┤   Multiplexing    │
-│  ├─────────────┤            │    UDP      │   Congestion Ctrl │
-│  │    IP       │            ├─────────────┤                   │
-│  └─────────────┘            │    IP       │                   │
-│                             └─────────────┘                   │
-│                                                                │
-│  Vorteile:                                                     │
-│  • 0-RTT Verbindungsaufbau (bei bekanntem Server)             │
-│  • Kein Head-of-Line Blocking                                  │
-│  • Verbindungsmigration (IP-Wechsel möglich)                  │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[quic-udp.png]]
+*<span class="fig-id">03-07-02-quic-udp</span>: Vergleich traditioneller Stack vs. QUIC/HTTP3*
+
+**Vorteile von QUIC:**
+- 0-RTT Verbindungsaufbau (bei bekanntem Server)
+- Kein Head-of-Line Blocking
+- Verbindungsmigration (IP-Wechsel möglich)
 
 ## Prüfungsrelevante Themen
 
@@ -348,32 +223,13 @@ Checksum = Einerkomplement der Summe aller 16-Bit-Wörter
 
 ### Entscheidungsbaum: TCP oder UDP?
 
-```
-                    Anwendung benötigt
-                    Transportprotokoll
-                           │
-                           ▼
-              ┌────────────────────────┐
-              │ Müssen alle Daten      │
-              │ ankommen?              │
-              └───────────┬────────────┘
-                    │           │
-                   Ja          Nein
-                    │           │
-                    ▼           ▼
-              ┌──────────┐  ┌──────────┐
-              │   TCP    │  │ Latenz   │
-              │          │  │ kritisch?│
-              └──────────┘  └────┬─────┘
-                              │     │
-                             Ja    Nein
-                              │     │
-                              ▼     ▼
-                        ┌──────┐ ┌──────┐
-                        │ UDP  │ │ UDP  │
-                        │      │ │(oder │
-                        │      │ │ TCP) │
-                        └──────┘ └──────┘
+```mermaid
+flowchart TD
+    A[Anwendung benötigt<br/>Transportprotokoll] --> B{Müssen alle Daten<br/>ankommen?}
+    B -->|Ja| TCP[TCP]
+    B -->|Nein| C{Latenz kritisch?}
+    C -->|Ja| UDP1[UDP]
+    C -->|Nein| UDP2[UDP oder TCP]
 ```
 
 ## Zusammenhänge
