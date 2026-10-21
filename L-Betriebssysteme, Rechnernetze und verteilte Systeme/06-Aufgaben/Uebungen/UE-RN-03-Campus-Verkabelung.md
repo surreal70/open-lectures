@@ -32,11 +32,11 @@ Ein mittelständisches Unternehmen plant die Netzwerkinfrastruktur für seinen n
 
 ## Gebäudedaten
 
-| Gebäude | Funktion | Grundfläche | Etagen | Arbeitsplätze | Unterverteiler |
-|---------|----------|-------------|--------|---------------|----------------|
-| **A** | Verwaltung | 60m × 30m | 3 | 150 | Hauptverteiler (HV) |
-| **B** | Produktion | 80m × 40m | 2 | 80 | Unterverteiler (UV-B) |
-| **C** | Rechenzentrum | 50m × 50m | 1 | 20 + Server | Unterverteiler (UV-C) |
+| Gebäude | Funktion | Grundfläche | Etagen | Arbeitsplätze | Verteiler |
+|---------|----------|-------------|--------|---------------|-----------|
+| **A** | Verwaltung | 60m × 30m | 3 | 150 | V-A |
+| **B** | Produktion | 80m × 40m | 2 | 80 | V-B |
+| **C** | Rechenzentrum | 50m × 50m | 1 | 20 + Server | V-C |
 
 ---
 
@@ -44,9 +44,9 @@ Ein mittelständisches Unternehmen plant die Netzwerkinfrastruktur für seinen n
 
 | Trasse | Von | Nach | Länge (Luftlinie) | Geschätzte Kabellänge* |
 |--------|-----|------|-------------------|------------------------|
-| **1** | HV (Geb. A) | UV-B (Geb. B) | 120m | ca. 150m |
+| **1** | V-A (Geb. A) | V-B (Geb. B) | 120m | ca. 150m |
 | **2** | Verbindung | Geb. B Eingang | 180m | ca. 220m |
-| **3** | HV (Geb. A) | UV-C (Geb. C) | 280m | ca. 350m |
+| **3** | V-A (Geb. A) | V-C (Geb. C) | 280m | ca. 350m |
 
 *Geschätzte Kabellänge berücksichtigt: Verlegereserve, Steigzonen, Kabelführung in Gebäuden (+20-25%)
 
@@ -109,18 +109,18 @@ Wählen Sie geeignete Ethernet-Standards für die Client-Anbindung in den Gebäu
 
 ---
 
-### Aufgabe 5: Core-Switch im Hauptverteiler (2 Punkte)
+### Aufgabe 5: Core-Switch im Verteiler A (2 Punkte)
 
-Beschreiben Sie die Anforderungen an den Core-Switch im Hauptverteiler (Gebäude A):
+Beschreiben Sie die Anforderungen an den Core-Switch im Verteiler A (Gebäude A):
 - Layer 2 oder Layer 3?
 - Welche Port-Typen werden benötigt?
 - Welche SFP/SFP+-Module für die LWL-Strecken?
 
 ---
 
-### Aufgabe 6: Unterverteiler-Switches (2 Punkte)
+### Aufgabe 6: Switches in Verteiler B und C (2 Punkte)
 
-Bestimmen Sie die Anforderungen an die Switches in den Unterverteilern B und C:
+Bestimmen Sie die Anforderungen an die Switches in den Verteilern B und C:
 - Anzahl und Typ der Uplink-Ports
 - Anzahl der Access-Ports für Clients
 - Besonderheiten für den Switch im Rechenzentrum (Gebäude C)
@@ -194,8 +194,8 @@ Nennen Sie mindestens drei relevante Normen für die strukturierte Verkabelung u
 | 2 | Medienauswahl Trasse 3 (Potentialtrennung) | 2 |
 | 3 | Ethernet-Standards Backbone | 2 |
 | 4 | Ethernet-Standards Client | 2 |
-| 5 | Core-Switch Anforderungen | 2 |
-| 6 | Unterverteiler-Switches | 2 |
+| 5 | Core-Switch Verteiler A | 2 |
+| 6 | Switches Verteiler B und C | 2 |
 | 7 | Redundante Topologie | 2 |
 | 8 | Spanning Tree Protocol | 2 |
 | 9 | Strukturierte Verkabelung | 2 |

@@ -115,9 +115,9 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 
 | Verbindung | Standard | Reichweite | LWL-Typ | Begründung |
 |------------|----------|------------|---------|------------|
-| HV → UV-B | 40GBASE-SR4 | 150m (max) | OM4 | Maximale Bandbreite |
-| HV → UV-C | 40GBASE-LR4 | 10km | OS2 | Singlemode für Zukunft |
-| UV-B → UV-C | 40GBASE-SR4 | 150m | OM4 | Redundanzstrecke |
+| V-A → V-B | 40GBASE-SR4 | 150m (max) | OM4 | Maximale Bandbreite |
+| V-A → V-C | 40GBASE-LR4 | 10km | OS2 | Singlemode für Zukunft |
+| V-B → V-C | 40GBASE-SR4 | 150m | OM4 | Redundanzstrecke |
 
 **Reasoning**: OM4 für kurze Strecken (kostengünstig), OS2 für lange Strecke zu Rechenzentrum (Zukunftssicherheit für 100G+).
 
@@ -125,9 +125,9 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 
 | Verbindung | Standard | Reichweite | LWL-Typ | Begründung |
 |------------|----------|------------|---------|------------|
-| HV → UV-B | 10GBASE-SR | 300m | OM3 | Günstig, ausreichend |
-| HV → UV-C | 10GBASE-LR | 10km | OS2 | Muss Singlemode sein |
-| UV-B → UV-C | 10GBASE-SR | 300m | OM3 | Redundanzstrecke |
+| V-A → V-B | 10GBASE-SR | 300m | OM3 | Günstig, ausreichend |
+| V-A → V-C | 10GBASE-LR | 10km | OS2 | Muss Singlemode sein |
+| V-B → V-C | 10GBASE-SR | 300m | OM3 | Redundanzstrecke |
 
 **Reasoning**: 10G erfüllt Mindestanforderung, OM3 reicht für die Strecken, OS2 nur wo technisch nötig.
 
@@ -135,9 +135,9 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 
 | Verbindung | Standard | Reichweite | LWL-Typ | Begründung |
 |------------|----------|------------|---------|------------|
-| HV → UV-B | 10GBASE-SR | 300m | OM3 | WLAN-Traffic berücksichtigt |
-| HV → UV-C | 10GBASE-LR | 10km | OS2 | Server-Anbindung kritisch |
-| UV-B → UV-C | 10GBASE-SR | 300m | OM3 | Redundanz |
+| V-A → V-B | 10GBASE-SR | 300m | OM3 | WLAN-Traffic berücksichtigt |
+| V-A → V-C | 10GBASE-LR | 10km | OS2 | Server-Anbindung kritisch |
+| V-B → V-C | 10GBASE-SR | 300m | OM3 | Redundanz |
 
 **Reasoning**: WLAN reduziert Client-Dichte am Kabel, aber Backbone muss Spitzenlast aller APs verkraften.
 
@@ -205,13 +205,13 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 
 ---
 
-## Aufgabe 5: Core-Switch im Hauptverteiler (2 Punkte)
+## Aufgabe 5: Core-Switch im Verteiler A (2 Punkte)
 
 ### Reasoning
 
 **Anforderungen an den Core-Switch:**
 1. Zentrale Routing-Instanz für drei Gebäude → Layer 3 sinnvoll
-2. Uplinks zu UV-B und UV-C → LWL-Ports (SFP+/QSFP+)
+2. Uplinks zu V-B und V-C → LWL-Ports (SFP+/QSFP+)
 3. Lokale Anbindung in Gebäude A → Kupfer-Ports oder weitere SFP+
 4. Redundanz → Stack-fähig oder modulares Chassis
 5. Management → Out-of-Band-Management-Port
@@ -232,8 +232,8 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 | Features | OSPF/BGP, VRRP, LACP, QoS, 802.1X |
 
 **SFP/QSFP-Module:**
-- QSFP+ SR4 für OM4-Strecken (HV→UV-B, Redundanz)
-- QSFP+ LR4 für OS2-Strecke (HV→UV-C)
+- QSFP+ SR4 für OM4-Strecken (V-A→V-B, Redundanz)
+- QSFP+ LR4 für OS2-Strecke (V-A→V-C)
 
 #### Variante B: Kostenoptimiert
 
@@ -267,16 +267,16 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 
 ---
 
-## Aufgabe 6: Unterverteiler-Switches (2 Punkte)
+## Aufgabe 6: Switches Verteiler B und C (2 Punkte)
 
 ### Reasoning
 
-**UV-B (Produktion):**
+**V-B (Produktion):**
 - 80 Arbeitsplätze auf 2 Etagen → ca. 40 Ports/Etage
 - Industrie-Umgebung → evtl. robustere Hardware
-- Uplink zum HV und Redundanzlink zu UV-C
+- Uplink zum V-A und Redundanzlink zu V-C
 
-**UV-C (Rechenzentrum):**
+**V-C (Rechenzentrum):**
 - 20 Arbeitsplätze + Server
 - Höchste Anforderungen an Bandbreite und Zuverlässigkeit
 - Server benötigen 10G-Anbindung
@@ -286,22 +286,22 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 
 #### Variante A: Optimal
 
-**UV-B (Produktion):**
+**V-B (Produktion):**
 
 | Komponente | Spezifikation |
 |------------|---------------|
 | Switch-Typ | 2× Layer 2/3 Stackable (einer pro Etage) |
-| Uplink-Ports | 2× SFP+ pro Switch (LACP zum HV) |
+| Uplink-Ports | 2× SFP+ pro Switch (LACP zum V-A) |
 | Access-Ports | 48× 1G/2.5G PoE+ pro Switch |
 | LWL-Module | SFP+ SR (OM4) |
 | Features | 802.1X, VLAN, QoS, IGMP Snooping |
 
-**UV-C (Rechenzentrum):**
+**V-C (Rechenzentrum):**
 
 | Komponente | Spezifikation |
 |------------|---------------|
 | Switch-Typ | 2× Layer 2/3 ToR-Switch (redundant) |
-| Uplink-Ports | 4× QSFP+ (2× zum HV, 2× zu UV-B) |
+| Uplink-Ports | 4× QSFP+ (2× zum V-A, 2× zu V-B) |
 | Server-Ports | 24× SFP+ (10G) oder 10GBASE-T |
 | Client-Ports | 24× 1G/2.5G |
 | Features | MLAG/VPC, Jumbo Frames, DCB (Data Center Bridging) |
@@ -309,7 +309,7 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 
 #### Variante B: Kostenoptimiert
 
-**UV-B (Produktion):**
+**V-B (Produktion):**
 
 | Komponente | Spezifikation |
 |------------|---------------|
@@ -318,7 +318,7 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 | Access-Ports | 48× 1GBASE-T |
 | LWL-Module | SFP+ SR (OM3) |
 
-**UV-C (Rechenzentrum):**
+**V-C (Rechenzentrum):**
 
 | Komponente | Spezifikation |
 |------------|---------------|
@@ -329,7 +329,7 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 
 #### Variante C: WLAN-Hybrid
 
-**UV-B (Produktion):**
+**V-B (Produktion):**
 
 | Komponente | Spezifikation |
 |------------|---------------|
@@ -338,7 +338,7 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 | Access-Ports | 24× PoE++ (für APs + wenige Kabel-Clients) |
 | AP-Anbindung | 802.3bt (bis 90W für WiFi 6E APs) |
 
-**UV-C (Rechenzentrum):**
+**V-C (Rechenzentrum):**
 
 | Komponente | Spezifikation |
 |------------|---------------|
@@ -366,10 +366,10 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 
 **Topologie-Optionen:**
 
-1. **Stern**: Alle zu HV → Kein Ausfall-Schutz für HV
+1. **Stern**: Alle zu V-A → Kein Ausfall-Schutz für V-A
 2. **Ring**: A→B→C→A → Eine Leitung kann ausfallen
 3. **Vollvermaschung**: A↔B, A↔C, B↔C → Maximale Redundanz
-4. **Stern + Ring**: HV als Zentrum mit Bypass B↔C
+4. **Stern + Ring**: V-A als Zentrum mit Bypass B↔C
 
 ### Antwort
 
@@ -380,7 +380,7 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
         │                                     │
         ▼                                     │
    ┌─────────┐      40G LWL (OM4)      ┌─────────┐
-   │   HV    │◄────────────────────────│  UV-B   │
+   │   V-A    │◄────────────────────────│  V-B   │
    │ (Geb.A) │         150m            │ (Geb.B) │
    └────┬────┘                         └────┬────┘
         │                                   │
@@ -389,7 +389,7 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
         │                                   │
         ▼                                   ▼
    ┌─────────────────────────────────────────────┐
-   │                  UV-C (Geb.C)               │
+   │                  V-C (Geb.C)               │
    │                 Rechenzentrum               │
    └─────────────────────────────────────────────┘
 ```
@@ -404,7 +404,7 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 
 ```
    ┌─────────┐      10G LWL (OM3)      ┌─────────┐
-   │   HV    │◄────────────────────────│  UV-B   │
+   │   V-A    │◄────────────────────────│  V-B   │
    │ (Geb.A) │         150m            │ (Geb.B) │
    └────┬────┘                         └────┬────┘
         │                                   │
@@ -413,13 +413,13 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
         │                                   │
         ▼                                   ▼
    ┌─────────────────────────────────────────────┐
-   │                  UV-C (Geb.C)               │
+   │                  V-C (Geb.C)               │
    │                 Rechenzentrum               │
    └─────────────────────────────────────────────┘
 ```
 
 **Eigenschaften:**
-- Ring: HV → UV-B → UV-C → HV
+- Ring: V-A → V-B → V-C → V-A
 - Eine Leitung kann ausfallen
 - Spanning Tree verhindert Schleifen
 - Günstiger als Full Mesh
@@ -428,7 +428,7 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 
 ```
    ┌─────────┐      10G LWL (OM3)      ┌─────────┐
-   │   HV    │◄────────────────────────│  UV-B   │
+   │   V-A    │◄────────────────────────│  V-B   │
    │ (Geb.A) │         150m            │ (Geb.B) │
    │  WLAN   │                         │  WLAN   │
    │Controller                         │   APs   │
@@ -439,13 +439,13 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
         │                                   │
         ▼                                   ▼
    ┌─────────────────────────────────────────────┐
-   │                  UV-C (Geb.C)               │
+   │                  V-C (Geb.C)               │
    │            Rechenzentrum + WLAN            │
    └─────────────────────────────────────────────┘
 ```
 
 **Eigenschaften:**
-- Primär: Stern zum HV
+- Primär: Stern zum V-A
 - Backup: Ring oder WLAN-Mesh zwischen Gebäuden
 - WLAN-Mesh als Not-Backup (geringere Bandbreite)
 - Outdoor-APs für Gebäude-zu-Gebäude-Verbindung
@@ -491,13 +491,13 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 **Konfigurationskonzept:**
 ```
 MST Region: CAMPUS
-  Instance 1: VLANs 1-100 (Clients) → Root: HV
-  Instance 2: VLANs 101-200 (Server) → Root: UV-C
+  Instance 1: VLANs 1-100 (Clients) → Root: V-A
+  Instance 2: VLANs 101-200 (Server) → Root: V-C
   
 LACP:
-  HV ↔ UV-B: 2× 40G gebündelt (Po1)
-  HV ↔ UV-C: 2× 40G gebündelt (Po2)
-  UV-B ↔ UV-C: 2× 40G gebündelt (Po3)
+  V-A ↔ V-B: 2× 40G gebündelt (Po1)
+  V-A ↔ V-C: 2× 40G gebündelt (Po2)
+  V-B ↔ V-C: 2× 40G gebündelt (Po3)
 ```
 
 **Umschaltzeit:**
@@ -516,14 +516,14 @@ LACP:
 **Konfigurationskonzept:**
 ```
 RSTP Bridge Priority:
-  HV:   4096 (Root Bridge)
-  UV-B: 8192
-  UV-C: 12288
+  V-A:   4096 (Root Bridge)
+  V-B: 8192
+  V-C: 12288
 
 Port Roles:
-  HV → UV-B: Designated
-  HV → UV-C: Designated
-  UV-B → UV-C: Alternate (Backup)
+  V-A → V-B: Designated
+  V-A → V-C: Designated
+  V-B → V-C: Alternate (Backup)
 ```
 
 **Umschaltzeit:** 1-3 Sekunden
@@ -544,7 +544,7 @@ Port Roles:
 ```
 RSTP für Backbone (1-3s Konvergenz)
 802.11r für WLAN-Clients (< 50ms Roaming)
-LACP nur für Server-Anbindung in UV-C
+LACP nur für Server-Anbindung in V-C
 ```
 
 **Umschaltzeit:**
@@ -581,22 +581,22 @@ LACP nur für Server-Anbindung in UV-C
 
 | Ebene | Komponenten | Medium | Verteiler |
 |-------|-------------|--------|-----------|
-| **Primär** | HV ↔ UV-B, HV ↔ UV-C, UV-B ↔ UV-C | LWL (OM3/OM4/OS2) | HV (Standortverteiler) |
-| **Sekundär** | UV-B ↔ Etagenverteiler EG/1.OG | LWL oder Cat 6a | UV-B, UV-C (Gebäudeverteiler) |
+| **Primär** | V-A ↔ V-B, V-A ↔ V-C, V-B ↔ V-C | LWL (OM3/OM4/OS2) | V-A (Standortverteiler) |
+| **Sekundär** | V-B ↔ Etagenverteiler EG/1.OG | LWL oder Cat 6a | V-B, V-C (Gebäudeverteiler) |
 | **Tertiär** | Etagenverteiler ↔ Anschlussdosen | Cat 6/6a | Etagenverteiler (Floor Distributor) |
 
 #### Variante A: Optimal
 
 ```
 Primärverkabelung:
-├── HV (Geb. A) ──40G OM4──► UV-B (Geb. B)
-├── HV (Geb. A) ──40G OS2──► UV-C (Geb. C)
-└── UV-B ──────────40G OM4──► UV-C (Redundanz)
+├── V-A (Geb. A) ──40G OM4──► V-B (Geb. B)
+├── V-A (Geb. A) ──40G OS2──► V-C (Geb. C)
+└── V-B ──────────40G OM4──► V-C (Redundanz)
 
 Sekundärverkabelung (Beispiel Geb. A):
-├── HV ──10G OM3──► EV-A-EG (Etagenverteiler EG)
-├── HV ──10G OM3──► EV-A-1OG
-└── HV ──10G OM3──► EV-A-2OG
+├── V-A ──10G OM3──► EV-A-EG (Etagenverteiler EG)
+├── V-A ──10G OM3──► EV-A-1OG
+└── V-A ──10G OM3──► EV-A-2OG
 
 Tertiärverkabelung:
 └── EV-A-EG ──Cat 6a──► Anschlussdosen (max. 90m)
