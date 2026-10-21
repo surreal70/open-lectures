@@ -17,8 +17,8 @@ bereich: RN
 
 ## Definition
 
-**Ports** sind 16-Bit-Nummern (0-65535), die auf der Transportschicht die Zuordnung von Netzwerkverkehr zu spezifischen Anwendungen oder Diensten ermöglichen (Multiplexing/Demultiplexing).
-
+> [!quote] Definition
+> **Ports** sind 16-Bit-Nummern (0-65535), die auf der Transportschicht die Zuordnung von Netzwerkverkehr zu spezifischen Anwendungen oder Diensten ermöglichen (Multiplexing/Demultiplexing).
 ## Multiplexing und Demultiplexing
 
 ```

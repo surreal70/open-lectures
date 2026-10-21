@@ -18,11 +18,11 @@ bereich: RN
 
 ## Definition
 
-Das **Internet Control Message Protocol (ICMP)** ist ein Hilfsprotokoll der Netzwerkschicht, das Fehler- und Statusmeldungen zwischen Netzwerkgeräten übermittelt. Es dient der Diagnose und Verwaltung von IP-Netzwerken.
-
-> [!info] Schichtzuordnung
-> ICMP ist ein **Layer-3-Protokoll** (Netzwerkschicht), obwohl es in IP-Paketen gekapselt wird. Es nutzt IP zur Übertragung, gehört aber funktional zur Netzwerkschicht, da es IP-Fehlermeldungen und Netzwerkdiagnose bereitstellt.
-
+> [!quote] Definition
+> Das **Internet Control Message Protocol (ICMP)** ist ein Hilfsprotokoll der Netzwerkschicht, das Fehler- und Statusmeldungen zwischen Netzwerkgeräten übermittelt. Es dient der Diagnose und Verwaltung von IP-Netzwerken.
+>
+> > [!info] Schichtzuordnung
+> > ICMP ist ein **Layer-3-Protokoll** (Netzwerkschicht), obwohl es in IP-Paketen gekapselt wird. Es nutzt IP zur Übertragung, gehört aber funktional zur Netzwerkschicht, da es IP-Fehlermeldungen und Netzwerkdiagnose bereitstellt.
 ## Einordnung im Protokollstapel
 
 ![[icmp-protokollstapel.png]]

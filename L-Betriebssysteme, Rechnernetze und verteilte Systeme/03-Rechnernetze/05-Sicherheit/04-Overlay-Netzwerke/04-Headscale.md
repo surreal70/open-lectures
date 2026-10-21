@@ -19,8 +19,8 @@ bereich: RN
 
 ## Definition
 
-**Headscale** ist eine Open-Source-Implementierung des Tailscale Coordination Servers. Es ermöglicht Self-Hosting eines Tailscale-kompatiblen Netzwerks ohne Abhängigkeit von Tailscale's Cloud-Diensten.
-
+> [!quote] Definition
+> **Headscale** ist eine Open-Source-Implementierung des Tailscale Coordination Servers. Es ermöglicht Self-Hosting eines Tailscale-kompatiblen Netzwerks ohne Abhängigkeit von Tailscale's Cloud-Diensten.
 ## Eigenschaften
 
 | Eigenschaft | Wert |

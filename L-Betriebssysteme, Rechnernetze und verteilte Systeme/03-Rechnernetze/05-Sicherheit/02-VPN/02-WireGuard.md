@@ -17,8 +17,8 @@ bereich: RN
 
 ## Definition
 
-**WireGuard** ist ein modernes, schlankes VPN-Protokoll, das auf Layer 3 arbeitet. Es zeichnet sich durch minimalen Code, hohe Geschwindigkeit und starke Kryptographie aus.
-
+> [!quote] Definition
+> **WireGuard** ist ein modernes, schlankes VPN-Protokoll, das auf Layer 3 arbeitet. Es zeichnet sich durch minimalen Code, hohe Geschwindigkeit und starke Kryptographie aus.
 ## Eigenschaften
 
 | Eigenschaft | Wert |

@@ -18,8 +18,8 @@ bereich: RN
 
 ## Definition
 
-Das **Internet Protocol Version 4 (IPv4)** ist das zentrale Protokoll der Netzwerkschicht (Layer 3), das die logische Adressierung und Weiterleitung von Paketen über Netzwerkgrenzen hinweg ermöglicht.
-
+> [!quote] Definition
+> Das **Internet Protocol Version 4 (IPv4)** ist das zentrale Protokoll der Netzwerkschicht (Layer 3), das die logische Adressierung und Weiterleitung von Paketen über Netzwerkgrenzen hinweg ermöglicht.
 ## Grundlegende Eigenschaften
 
 IPv4 ist durch folgende Merkmale charakterisiert:

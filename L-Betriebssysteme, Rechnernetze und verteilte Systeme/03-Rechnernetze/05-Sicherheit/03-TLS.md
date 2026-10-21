@@ -17,8 +17,8 @@ bereich: RN
 
 ## Definition
 
-TLS (Transport Layer Security) ist ein Protokoll zur Verschlüsselung und Authentifizierung auf der Transportebene.
-
+> [!quote] Definition
+> TLS (Transport Layer Security) ist ein Protokoll zur Verschlüsselung und Authentifizierung auf der Transportebene.
 ## Erklärung
 
 TLS (früher SSL) sichert die Kommunikation zwischen Anwendungen durch Verschlüsselung und Zertifikate. Es wird für HTTPS, sichere E-Mail (SMTPS, IMAPS) und viele andere Protokolle verwendet.

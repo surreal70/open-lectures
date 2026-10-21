@@ -18,8 +18,8 @@ bereich: RN
 
 ## Definition
 
-**Hamachi** ist eine proprietäre VPN-Lösung von LogMeIn, die ein virtuelles LAN über das Internet erstellt. Sie ermöglicht einfache Peer-to-Peer-Verbindungen ohne komplexe Konfiguration.
-
+> [!quote] Definition
+> **Hamachi** ist eine proprietäre VPN-Lösung von LogMeIn, die ein virtuelles LAN über das Internet erstellt. Sie ermöglicht einfache Peer-to-Peer-Verbindungen ohne komplexe Konfiguration.
 ## Eigenschaften
 
 | Eigenschaft | Wert |

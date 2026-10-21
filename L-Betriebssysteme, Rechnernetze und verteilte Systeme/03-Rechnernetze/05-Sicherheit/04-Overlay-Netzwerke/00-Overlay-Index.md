@@ -18,8 +18,8 @@ bereich: RN
 
 ## Definition
 
-**Overlay-Netzwerke** sind virtuelle Netzwerke, die über einem bestehenden Netzwerk (Underlay) aufgebaut werden. Sie kombinieren VPN-Technologien mit Mesh-Topologien, zentraler Verwaltung und oft Zero-Trust-Prinzipien.
-
+> [!quote] Definition
+> **Overlay-Netzwerke** sind virtuelle Netzwerke, die über einem bestehenden Netzwerk (Underlay) aufgebaut werden. Sie kombinieren VPN-Technologien mit Mesh-Topologien, zentraler Verwaltung und oft Zero-Trust-Prinzipien.
 ## Abgrenzung zu klassischen VPNs
 
 ```

@@ -16,8 +16,8 @@ bereich: RN
 
 ## Definition
 
-Eine Firewall ist ein Sicherheitssystem, das den Netzwerkverkehr basierend auf definierten Regeln filtert.
-
+> [!quote] Definition
+> Eine Firewall ist ein Sicherheitssystem, das den Netzwerkverkehr basierend auf definierten Regeln filtert.
 ## Erklärung
 
 Firewalls kontrollieren den Datenverkehr zwischen Netzwerkzonen (z.B. Internet und LAN). Sie können auf verschiedenen Ebenen arbeiten: Paketfilter (Schicht 3/4), Stateful Inspection und Application-Level-Gateways.

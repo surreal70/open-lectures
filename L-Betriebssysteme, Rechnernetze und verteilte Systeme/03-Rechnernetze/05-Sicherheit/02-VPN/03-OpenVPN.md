@@ -18,8 +18,8 @@ bereich: RN
 
 ## Definition
 
-**OpenVPN** ist eine Open-Source VPN-Lösung, die SSL/TLS für den Schlüsselaustausch und verschiedene Verschlüsselungsalgorithmen für den Datentransport verwendet.
-
+> [!quote] Definition
+> **OpenVPN** ist eine Open-Source VPN-Lösung, die SSL/TLS für den Schlüsselaustausch und verschiedene Verschlüsselungsalgorithmen für den Datentransport verwendet.
 ## Eigenschaften
 
 | Eigenschaft | Wert |

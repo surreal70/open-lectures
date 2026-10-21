@@ -18,8 +18,8 @@ bereich: RN
 
 ## Definition
 
-Ein **Virtual Private Network (VPN)** ermöglicht eine sichere, verschlüsselte Verbindung über ein unsicheres Netzwerk (typischerweise das Internet). VPNs erstellen einen "Tunnel", durch den Daten geschützt übertragen werden.
-
+> [!quote] Definition
+> Ein **Virtual Private Network (VPN)** ermöglicht eine sichere, verschlüsselte Verbindung über ein unsicheres Netzwerk (typischerweise das Internet). VPNs erstellen einen "Tunnel", durch den Daten geschützt übertragen werden.
 ## Grundprinzip
 
 ```

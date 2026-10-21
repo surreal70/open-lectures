@@ -18,8 +18,8 @@ bereich: RN
 
 ## Definition
 
-**Tailscale** ist eine Overlay-Netzwerk-Lösung, die auf WireGuard basiert und ein automatisches Mesh-VPN mit zentraler Verwaltung bietet. Es kombiniert die Sicherheit von WireGuard mit einfacher Einrichtung und Identity-Management.
-
+> [!quote] Definition
+> **Tailscale** ist eine Overlay-Netzwerk-Lösung, die auf WireGuard basiert und ein automatisches Mesh-VPN mit zentraler Verwaltung bietet. Es kombiniert die Sicherheit von WireGuard mit einfacher Einrichtung und Identity-Management.
 ## Eigenschaften
 
 | Eigenschaft | Wert |

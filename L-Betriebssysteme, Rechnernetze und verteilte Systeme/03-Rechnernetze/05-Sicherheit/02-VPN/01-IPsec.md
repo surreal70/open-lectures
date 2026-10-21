@@ -19,11 +19,11 @@ bereich: RN
 
 ## Definition
 
-**IPsec (Internet Protocol Security)** ist eine Protokollsuite zur Absicherung der IP-Kommunikation auf Netzwerkschicht (Layer 3). Es bietet Verschlüsselung, Authentifizierung und Integritätsschutz für IP-Pakete.
-
-> [!info] Schichtenzuordnung
-> IPsec arbeitet auf **Layer 3** und ist bei IPv6 als Extension Header integriert. Siehe auch: [[../../03-Referenzmodelle/06-Netzwerkschicht/06-IPsec|IPsec in der Netzwerkschicht]]
-
+> [!quote] Definition
+> **IPsec (Internet Protocol Security)** ist eine Protokollsuite zur Absicherung der IP-Kommunikation auf Netzwerkschicht (Layer 3). Es bietet Verschlüsselung, Authentifizierung und Integritätsschutz für IP-Pakete.
+>
+> > [!info] Schichtenzuordnung
+> > IPsec arbeitet auf **Layer 3** und ist bei IPv6 als Extension Header integriert. Siehe auch: [[../../03-Referenzmodelle/06-Netzwerkschicht/06-IPsec|IPsec in der Netzwerkschicht]]
 ## Komponenten
 
 ### Protokolle

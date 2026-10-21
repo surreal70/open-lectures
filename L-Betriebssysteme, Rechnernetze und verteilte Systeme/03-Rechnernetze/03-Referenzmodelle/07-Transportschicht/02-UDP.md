@@ -17,8 +17,8 @@ bereich: RN
 
 ## Definition
 
-Das **User Datagram Protocol (UDP)** ist ein verbindungsloses, unzuverlässiges Transportprotokoll mit minimalem Overhead, das eine schnelle Datenübertragung ohne Garantien ermöglicht.
-
+> [!quote] Definition
+> Das **User Datagram Protocol (UDP)** ist ein verbindungsloses, unzuverlässiges Transportprotokoll mit minimalem Overhead, das eine schnelle Datenübertragung ohne Garantien ermöglicht.
 ## Eigenschaften
 
 | Eigenschaft | Beschreibung |

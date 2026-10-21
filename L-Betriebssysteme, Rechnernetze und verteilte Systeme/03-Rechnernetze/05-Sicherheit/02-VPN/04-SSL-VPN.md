@@ -19,8 +19,8 @@ bereich: RN
 
 ## Definition
 
-**SSL VPN** (auch TLS VPN) bezeichnet VPN-Lösungen, die auf SSL/TLS basieren und oft über einen Webbrowser zugänglich sind. Sie arbeiten typischerweise auf Layer 7 (Anwendungsschicht).
-
+> [!quote] Definition
+> **SSL VPN** (auch TLS VPN) bezeichnet VPN-Lösungen, die auf SSL/TLS basieren und oft über einen Webbrowser zugänglich sind. Sie arbeiten typischerweise auf Layer 7 (Anwendungsschicht).
 ## Typen
 
 ```

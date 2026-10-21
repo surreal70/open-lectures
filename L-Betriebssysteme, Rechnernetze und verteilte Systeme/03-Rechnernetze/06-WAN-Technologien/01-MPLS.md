@@ -17,8 +17,8 @@ bereich: RN
 
 ## Definition
 
-**MPLS (Multiprotocol Label Switching)** ist eine Technologie zur effizienten Weiterleitung von Paketen in Provider-Netzwerken. Statt IP-basiertem Routing werden kurze Labels für schnelles Forwarding verwendet.
-
+> [!quote] Definition
+> **MPLS (Multiprotocol Label Switching)** ist eine Technologie zur effizienten Weiterleitung von Paketen in Provider-Netzwerken. Statt IP-basiertem Routing werden kurze Labels für schnelles Forwarding verwendet.
 ## Eigenschaften
 
 | Eigenschaft | Wert |

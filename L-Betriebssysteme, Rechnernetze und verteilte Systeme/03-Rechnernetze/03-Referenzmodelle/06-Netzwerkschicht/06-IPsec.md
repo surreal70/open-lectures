@@ -148,7 +148,6 @@ Lösung: **NAT-T** kapselt ESP in UDP (Port 4500):
 > - IPsec arbeitet auf Layer 3
 > - ESP (Protocol 50) vs. AH (Protocol 51)
 > - Transport-Modus vs. Tunnel-Modus
-> - Bei IPv6 als Extension Header integriert
 > - IKE für Schlüsselaustausch (Phase 1 + Phase 2)
 > - NAT-T für NAT-Kompatibilität
 

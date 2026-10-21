@@ -18,8 +18,8 @@ bereich: RN
 
 ## Definition
 
-**SASE (Secure Access Service Edge)**, ausgesprochen "sassy", ist ein von Gartner 2019 definiertes Cloud-Architekturmodell, das Netzwerk- und Sicherheitsfunktionen in einem einheitlichen, Cloud-nativen Service kombiniert.
-
+> [!quote] Definition
+> **SASE (Secure Access Service Edge)**, ausgesprochen "sassy", ist ein von Gartner 2019 definiertes Cloud-Architekturmodell, das Netzwerk- und Sicherheitsfunktionen in einem einheitlichen, Cloud-nativen Service kombiniert.
 ## Komponenten
 
 ```

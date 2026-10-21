@@ -17,8 +17,8 @@ bereich: RN
 
 ## Definition
 
-**SD-WAN (Software-Defined Wide Area Network)** ist eine Architektur, die Software-Defined-Networking-Konzepte auf WAN-Verbindungen anwendet. Es abstrahiert die Transportschicht und ermöglicht zentrale Steuerung über verschiedene Verbindungstypen hinweg.
-
+> [!quote] Definition
+> **SD-WAN (Software-Defined Wide Area Network)** ist eine Architektur, die Software-Defined-Networking-Konzepte auf WAN-Verbindungen anwendet. Es abstrahiert die Transportschicht und ermöglicht zentrale Steuerung über verschiedene Verbindungstypen hinweg.
 ## Eigenschaften
 
 | Eigenschaft | Beschreibung |

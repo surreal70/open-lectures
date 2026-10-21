@@ -18,8 +18,8 @@ bereich: RN
 
 ## Definition
 
-**ZeroTier** ist eine Overlay-Netzwerk-Lösung, die ein virtuelles Layer-2-Netzwerk über das Internet erstellt. Anders als WireGuard-basierte Lösungen emuliert ZeroTier ein vollständiges Ethernet-Netzwerk mit Broadcast-Support.
-
+> [!quote] Definition
+> **ZeroTier** ist eine Overlay-Netzwerk-Lösung, die ein virtuelles Layer-2-Netzwerk über das Internet erstellt. Anders als WireGuard-basierte Lösungen emuliert ZeroTier ein vollständiges Ethernet-Netzwerk mit Broadcast-Support.
 ## Eigenschaften
 
 | Eigenschaft | Wert |

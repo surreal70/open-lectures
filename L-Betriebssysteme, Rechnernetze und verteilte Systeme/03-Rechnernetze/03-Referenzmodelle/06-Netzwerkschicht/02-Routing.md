@@ -19,8 +19,8 @@ bereich: RN
 
 ## Definition
 
-**Routing** ist der Prozess der Wegfindung und Weiterleitung von IP-Paketen durch ein Netzwerk, bei dem Router anhand von Routing-Tabellen die optimale Route zum Ziel bestimmen.
-
+> [!quote] Definition
+> **Routing** ist der Prozess der Wegfindung und Weiterleitung von IP-Paketen durch ein Netzwerk, bei dem Router anhand von Routing-Tabellen die optimale Route zum Ziel bestimmen.
 ## Grundkonzepte
 
 ### Routing vs. Switching

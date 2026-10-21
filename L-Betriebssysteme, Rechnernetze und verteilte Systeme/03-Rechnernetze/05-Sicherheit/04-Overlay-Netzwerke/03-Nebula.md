@@ -19,8 +19,8 @@ bereich: RN
 
 ## Definition
 
-**Nebula** ist ein Open-Source Overlay-Netzwerk, das von Slack entwickelt wurde. Es nutzt das Noise-Protokoll für Verschlüsselung und ein einzigartiges "Lighthouse"-Konzept für die Peer-Discovery.
-
+> [!quote] Definition
+> **Nebula** ist ein Open-Source Overlay-Netzwerk, das von Slack entwickelt wurde. Es nutzt das Noise-Protokoll für Verschlüsselung und ein einzigartiges "Lighthouse"-Konzept für die Peer-Discovery.
 ## Eigenschaften
 
 | Eigenschaft | Wert |

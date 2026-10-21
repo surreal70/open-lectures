@@ -17,8 +17,8 @@ bereich: RN
 
 ## Definition
 
-Das **Domain Name System (DNS)** ist ein hierarchisches, verteiltes System zur Auflösung von menschenlesbaren Domainnamen in IP-Adressen und umgekehrt.
-
+> [!quote] Definition
+> Das **Domain Name System (DNS)** ist ein hierarchisches, verteiltes System zur Auflösung von menschenlesbaren Domainnamen in IP-Adressen und umgekehrt.
 ## Grundlagen
 
 ### Warum DNS?

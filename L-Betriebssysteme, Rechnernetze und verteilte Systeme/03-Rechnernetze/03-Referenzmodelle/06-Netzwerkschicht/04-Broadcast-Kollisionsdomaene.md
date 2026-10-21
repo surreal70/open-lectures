@@ -28,7 +28,8 @@ bereich: RN
 
 ### Kollisionsdomäne (Collision Domain)
 
-Eine **Kollisionsdomäne** ist der Netzwerkbereich, in dem Datenpakete miteinander kollidieren können, wenn zwei oder mehr Geräte gleichzeitig senden.
+> [!quote] Definition
+> Eine **Kollisionsdomäne** ist der Netzwerkbereich, in dem Datenpakete miteinander kollidieren können, wenn zwei oder mehr Geräte gleichzeitig senden.
 
 **Eigenschaften:**
 - Layer 1 / Layer 2 Konzept (Physisch/Sicherung)
@@ -42,7 +43,8 @@ Eine **Kollisionsdomäne** ist der Netzwerkbereich, in dem Datenpakete miteinand
 
 ### Broadcast-Domäne (Broadcast Domain)
 
-Eine **Broadcast-Domäne** ist der Netzwerkbereich, in dem ein Broadcast-Frame (Ziel: FF:FF:FF:FF:FF:FF) alle Geräte erreicht.
+> [!quote] Definition
+> Eine **Broadcast-Domäne** ist der Netzwerkbereich, in dem ein Broadcast-Frame (Ziel: FF:FF:FF:FF:FF:FF) alle Geräte erreicht.
 
 **Eigenschaften:**
 - Layer 2 / Layer 3 Konzept (Sicherung/Vermittlung)

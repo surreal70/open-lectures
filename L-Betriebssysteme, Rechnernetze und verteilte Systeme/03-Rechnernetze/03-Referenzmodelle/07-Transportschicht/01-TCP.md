@@ -17,8 +17,8 @@ bereich: RN
 
 ## Definition
 
-Das **Transmission Control Protocol (TCP)** ist ein verbindungsorientiertes, zuverlässiges Transportprotokoll, das eine vollständige und geordnete Datenübertragung zwischen Anwendungen gewährleistet.
-
+> [!quote] Definition
+> Das **Transmission Control Protocol (TCP)** ist ein verbindungsorientiertes, zuverlässiges Transportprotokoll, das eine vollständige und geordnete Datenübertragung zwischen Anwendungen gewährleistet.
 ## Eigenschaften
 
 | Eigenschaft | Beschreibung |

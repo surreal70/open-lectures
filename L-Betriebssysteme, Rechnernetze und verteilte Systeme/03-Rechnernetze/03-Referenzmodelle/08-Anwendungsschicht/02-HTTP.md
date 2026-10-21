@@ -17,8 +17,8 @@ bereich: RN
 
 ## Definition
 
-Das **Hypertext Transfer Protocol (HTTP)** ist das Anwendungsprotokoll für die Übertragung von Webinhalten zwischen Clients (Browsern) und Servern im World Wide Web.
-
+> [!quote] Definition
+> Das **Hypertext Transfer Protocol (HTTP)** ist das Anwendungsprotokoll für die Übertragung von Webinhalten zwischen Clients (Browsern) und Servern im World Wide Web.
 ## Eigenschaften
 
 | Eigenschaft | Beschreibung |

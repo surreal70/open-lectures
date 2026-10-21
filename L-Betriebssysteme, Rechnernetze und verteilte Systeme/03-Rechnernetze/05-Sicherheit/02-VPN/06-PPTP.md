@@ -18,11 +18,11 @@ bereich: RN
 
 ## Definition
 
-**PPTP (Point-to-Point Tunneling Protocol)** ist ein von Microsoft entwickeltes VPN-Protokoll auf Layer 2. Es gilt heute als **unsicher** und sollte nicht mehr verwendet werden.
-
-> [!danger] Sicherheitswarnung
-> PPTP ist **kryptographisch gebrochen** und sollte **nicht mehr verwendet** werden. Die MS-CHAPv2-Authentifizierung kann in wenigen Stunden geknackt werden.
-
+> [!quote] Definition
+> **PPTP (Point-to-Point Tunneling Protocol)** ist ein von Microsoft entwickeltes VPN-Protokoll auf Layer 2. Es gilt heute als **unsicher** und sollte nicht mehr verwendet werden.
+>
+> > [!danger] Sicherheitswarnung
+> > PPTP ist **kryptographisch gebrochen** und sollte **nicht mehr verwendet** werden. Die MS-CHAPv2-Authentifizierung kann in wenigen Stunden geknackt werden.
 ## Eigenschaften
 
 | Eigenschaft | Wert |

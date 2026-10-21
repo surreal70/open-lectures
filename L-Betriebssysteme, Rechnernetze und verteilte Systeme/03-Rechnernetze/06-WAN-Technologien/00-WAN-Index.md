@@ -18,8 +18,8 @@ bereich: RN
 
 ## Definition
 
-**Wide Area Network (WAN)**-Technologien verbinden geografisch verteilte Standorte über große Entfernungen. Dieses Kapitel behandelt moderne WAN-Architekturen und deren Evolution.
-
+> [!quote] Definition
+> **Wide Area Network (WAN)**-Technologien verbinden geografisch verteilte Standorte über große Entfernungen. Dieses Kapitel behandelt moderne WAN-Architekturen und deren Evolution.
 ## Evolution der WAN-Technologien
 
 ```
