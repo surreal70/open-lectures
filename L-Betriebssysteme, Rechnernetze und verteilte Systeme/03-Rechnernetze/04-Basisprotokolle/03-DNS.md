@@ -68,6 +68,42 @@ bereich: RN
 
 ---
 
+## DNS-Server-Typen
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                     DNS-Server-Typen                            │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                  │
+│  1. ROOT NAME SERVER (13 logische, ~1500 physische)             │
+│     ┌─────────────────────────────────────────────────────────┐ │
+│     │ Kennen die autoritativen Server für alle TLDs           │ │
+│     │ a.root-servers.net bis m.root-servers.net               │ │
+│     └─────────────────────────────────────────────────────────┘ │
+│                                                                  │
+│  2. TLD NAME SERVER                                             │
+│     ┌─────────────────────────────────────────────────────────┐ │
+│     │ Verwalten eine TLD (.com, .de, .org)                    │ │
+│     │ Kennen autoritative Server der Second-Level Domains     │ │
+│     └─────────────────────────────────────────────────────────┘ │
+│                                                                  │
+│  3. AUTHORITATIVE NAME SERVER                                   │
+│     ┌─────────────────────────────────────────────────────────┐ │
+│     │ Verwalten eine spezifische Domain (z.B. example.de)     │ │
+│     │ Primary: Original-Daten, Secondary: Kopie               │ │
+│     └─────────────────────────────────────────────────────────┘ │
+│                                                                  │
+│  4. RECURSIVE RESOLVER (Caching Name Server)                    │
+│     ┌─────────────────────────────────────────────────────────┐ │
+│     │ Führt Auflösung im Auftrag des Clients durch            │ │
+│     │ Typisch: ISP-DNS, 8.8.8.8 (Google), 1.1.1.1 (CF)        │ │
+│     └─────────────────────────────────────────────────────────┘ │
+│                                                                  │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
 ## DNS-Hierarchie
 
 ```
@@ -107,6 +143,15 @@ bereich: RN
 | **1** | TLD | `.de`, `.com`, `.org` | Top-Level-Domain |
 | **2** | SLD | `example.de` | Second-Level-Domain |
 | **3+** | Subdomain | `www.example.de` | Subdomains/Hosts |
+
+### Top-Level Domains (TLDs)
+
+| Kategorie | Beispiele | Beschreibung |
+|-----------|-----------|--------------|
+| **gTLD** | .com, .org, .net | Generic TLDs |
+| **ccTLD** | .de, .at, .ch | Country-Code TLDs |
+| **sTLD** | .edu, .gov, .mil | Sponsored TLDs |
+| **neue gTLD** | .berlin, .shop, .app | Seit 2012 eingeführt |
 
 ---
 

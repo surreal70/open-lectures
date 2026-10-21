@@ -129,7 +129,7 @@ Nach diesem Kapitel sollten Sie:
 
 ## Inhaltsverzeichnis
 
-1. [[01-DNS]] - Domain Name System
+1. [[../../../04-Basisprotokolle/03-DNS|DNS]] - Domain Name System (→ Basisprotokolle)
 2. [[02-HTTP]] - Hypertext Transfer Protocol
 3. [[03-SMTP]] - E-Mail-Protokolle
 
