@@ -10,11 +10,19 @@ tags:
   - adressierung
   - subnetting
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-21'
 bereich: RN
 ---
 
 # IP-Protokoll (IPv4)
+
+> [!info] Lernziele
+> Nach diesem Kapitel können Sie...
+> - Die Rolle des IP-Protokolls in der Netzwerkschicht erklären
+> - IPv4-Adressen und Subnetzmasken interpretieren
+> - Subnetting und CIDR-Notation anwenden
+> - Den Aufbau eines IPv4-Headers beschreiben
+> - NAT und private Adressbereiche erläutern
 
 ## Definition
 

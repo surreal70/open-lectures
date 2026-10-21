@@ -15,6 +15,13 @@ bereich: RN
 
 # SD-WAN - Software-Defined WAN
 
+> [!info] Lernziele
+> - Verstehen des Overlay/Underlay-Konzepts bei SD-WAN
+> - Kennenlernen der zentralen Steuerung über den SD-WAN Controller
+> - Verstehen der Vorteile gegenüber traditionellem WAN (MPLS)
+> - Kennen der unterstützten Transporttypen (MPLS, Internet, LTE/5G)
+> - Verstehen von Application-aware Routing und QoS-Funktionen
+
 ## Definition
 
 > [!quote] Definition

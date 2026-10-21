@@ -11,11 +11,19 @@ tags:
   - ospf
   - bgp
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-21'
 bereich: RN
 ---
 
 # Routing
+
+> [!info] Lernziele
+> Nach diesem Kapitel können Sie...
+> - Den Unterschied zwischen Routing und Switching erklären
+> - Statisches und dynamisches Routing unterscheiden
+> - Distance-Vector- und Link-State-Protokolle vergleichen
+> - Die Funktionsweise von RIP, OSPF und BGP beschreiben
+> - Routing-Tabellen interpretieren
 
 ## Definition
 

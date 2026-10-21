@@ -9,11 +9,18 @@ tags:
   - sockets
   - multiplexing
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-21'
 bereich: RN
 ---
 
 # Ports und Sockets
+
+> [!info] Lernziele
+> Nach diesem Kapitel können Sie...
+> - Die Funktion von Ports für Multiplexing/Demultiplexing erklären
+> - Die Port-Bereiche (Well-Known, Registered, Dynamic) unterscheiden
+> - Wichtige Port-Nummern und deren Dienste nennen
+> - Den Unterschied zwischen Ports und Sockets erklären
 
 ## Definition
 

@@ -15,6 +15,13 @@ bereich: RN
 
 # MPLS - Multiprotocol Label Switching
 
+> [!info] Lernziele
+> - Verstehen des Label-basierten Forwarding-Konzepts bei MPLS
+> - Kennenlernen des MPLS-Headers (Shim Header) und seiner Felder
+> - Unterscheiden zwischen CE, PE und P-Routern im MPLS-Netzwerk
+> - Verstehen der Label-Operationen (Push, Swap, Pop)
+> - Kennen typischer Einsatzszenarien (Provider-Backbones, VPNs)
+
 ## Definition
 
 > [!quote] Definition

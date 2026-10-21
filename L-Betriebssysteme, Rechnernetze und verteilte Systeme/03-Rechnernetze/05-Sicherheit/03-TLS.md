@@ -15,6 +15,13 @@ bereich: RN
 
 # TLS
 
+> [!info] Lernziele
+> - Verstehen der Grundprinzipien von TLS zur sicheren Kommunikation
+> - Kennenlernen des TLS-Handshake-Ablaufs
+> - Unterscheiden zwischen symmetrischer und asymmetrischer Verschlüsselung bei TLS
+> - Verstehen der Rolle von Zertifikaten bei der Server-Authentifizierung
+> - Kennen der Unterschiede zwischen TLS 1.2 und TLS 1.3
+
 ## Definition
 
 > [!quote] Definition

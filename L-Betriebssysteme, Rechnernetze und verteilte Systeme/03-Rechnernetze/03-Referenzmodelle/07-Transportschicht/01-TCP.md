@@ -15,6 +15,15 @@ bereich: RN
 
 # TCP - Transmission Control Protocol
 
+> [!info] Lernziele
+> Nach diesem Kapitel können Sie...
+> - Die Eigenschaften von TCP (verbindungsorientiert, zuverlässig) erklären
+> - Den 3-Way-Handshake und 4-Way-Handshake beschreiben
+> - Das TCP-Zustandsdiagramm interpretieren
+> - Sequenznummern und Bestätigungen (ACK) verstehen
+> - Sliding Window und Flusskontrolle erläutern
+> - Congestion Control (Slow Start, Congestion Avoidance) beschreiben
+
 ## Definition
 
 > [!quote] Definition

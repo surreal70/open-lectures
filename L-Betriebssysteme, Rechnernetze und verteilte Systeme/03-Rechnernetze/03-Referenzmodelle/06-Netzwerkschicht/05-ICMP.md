@@ -16,6 +16,14 @@ bereich: RN
 
 # ICMP - Internet Control Message Protocol
 
+> [!info] Lernziele
+> Nach diesem Kapitel können Sie...
+> - Die Rolle von ICMP in IP-Netzwerken erklären
+> - Die wichtigsten ICMP-Nachrichtentypen nennen
+> - Die Funktionsweise von Ping und Traceroute beschreiben
+> - ICMP-Fehlermeldungen interpretieren
+> - Sicherheitsaspekte von ICMP einschätzen
+
 ## Definition
 
 > [!quote] Definition

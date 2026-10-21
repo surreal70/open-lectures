@@ -14,6 +14,13 @@ bereich: RN
 
 # Firewalls
 
+> [!info] Lernziele
+> - Verstehen der Grundfunktion und Einsatzzwecke von Firewalls
+> - Unterscheiden zwischen Paketfilter, Stateful Inspection und Application-Level-Gateway
+> - Kennenlernen typischer Firewall-Regeln und Regelaufbau
+> - Verstehen von Default-Deny vs. Default-Allow Konzepten
+> - Wissen über Firewall-Positionierung im Netzwerk
+
 ## Definition
 
 > [!quote] Definition

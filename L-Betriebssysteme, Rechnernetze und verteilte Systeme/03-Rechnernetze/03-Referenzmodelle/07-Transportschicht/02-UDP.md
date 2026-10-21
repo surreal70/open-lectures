@@ -9,11 +9,18 @@ tags:
   - verbindungslos
   - datagramm
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-21'
 bereich: RN
 ---
 
 # UDP - User Datagram Protocol
+
+> [!info] Lernziele
+> Nach diesem Kapitel können Sie...
+> - Die Eigenschaften von UDP (verbindungslos, unzuverlässig) erklären
+> - Den minimalen UDP-Header beschreiben
+> - Typische Anwendungsfälle für UDP nennen
+> - UDP und TCP vergleichen und Einsatzkriterien ableiten
 
 ## Definition
 

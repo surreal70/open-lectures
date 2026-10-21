@@ -16,6 +16,13 @@ bereich: RN
 
 # SASE - Secure Access Service Edge
 
+> [!info] Lernziele
+> - Verstehen des SASE-Konzepts als Kombination von Netzwerk und Sicherheit
+> - Kennenlernen der SASE-Komponenten (ZTNA, SWG, CASB, FWaaS)
+> - Unterscheiden zwischen SSE (Security Service Edge) und SD-WAN als SASE-Bausteine
+> - Verstehen des Zero-Trust-Prinzips bei SASE
+> - Kennen der Vorteile Cloud-nativer Sicherheitsarchitekturen
+
 ## Definition
 
 > [!quote] Definition
