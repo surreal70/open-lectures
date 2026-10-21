@@ -114,15 +114,49 @@ Eine TCP-Verbindung durchläuft verschiedene **Zustände** während ihres Lebens
 
 ### Verbindungsaufbau (Active vs. Passive Open)
 
-**Client (Active Open):**
+Der Verbindungsaufbau unterscheidet zwischen der **aktiven** (initiierenden) und **passiven** (wartenden) Seite.
+
+#### Passive Open (Server)
+
+Der Server bereitet sich auf eingehende Verbindungen vor, ohne selbst eine zu initiieren:
+
+1. **Anwendung ruft `listen()` auf** → Socket wechselt in LISTEN-Zustand
+2. **Server wartet passiv** auf eingehende SYN-Pakete
+3. **Bei SYN-Empfang:** Wechsel zu SYN_RCVD, SYN-ACK wird gesendet
+4. **Bei ACK-Empfang:** Wechsel zu ESTABLISHED
+
 ```
-CLOSED → SYN_SENT → ESTABLISHED
+Zustandsfolge: CLOSED → LISTEN → SYN_RCVD → ESTABLISHED
 ```
 
-**Server (Passive Open):**
+**Typische Anwendungen:** Webserver (Port 80/443), Mailserver (Port 25), SSH-Server (Port 22)
+
+#### Active Open (Client)
+
+Der Client initiiert aktiv eine Verbindung zu einem wartenden Server:
+
+1. **Anwendung ruft `connect()` auf** → Socket wechselt in SYN_SENT
+2. **Client sendet SYN** mit initialer Sequenznummer
+3. **Bei SYN-ACK-Empfang:** Wechsel zu ESTABLISHED, ACK wird gesendet
+
 ```
-CLOSED → LISTEN → SYN_RCVD → ESTABLISHED
+Zustandsfolge: CLOSED → SYN_SENT → ESTABLISHED
 ```
+
+**Typische Anwendungen:** Webbrowser, E-Mail-Client, SSH-Client
+
+#### Vergleich
+
+| Aspekt | Active Open (Client) | Passive Open (Server) |
+|--------|---------------------|----------------------|
+| **Initiiert durch** | `connect()` | `listen()` + `accept()` |
+| **Sendet zuerst** | SYN | SYN-ACK (als Antwort) |
+| **Wartet auf** | SYN-ACK | SYN |
+| **Zustandsanzahl** | 2 (SYN_SENT → ESTABLISHED) | 3 (LISTEN → SYN_RCVD → ESTABLISHED) |
+| **Port** | Ephemeral (zufällig, >1024) | Well-known (fest, z.B. 80) |
+
+> [!info] Backlog-Queue
+> Ein Server im LISTEN-Zustand hat eine **Backlog-Queue** für halboffene Verbindungen (SYN empfangen, aber noch kein ACK). Die Größe wird bei `listen(sockfd, backlog)` festgelegt. Bei SYN-Flood-Angriffen wird diese Queue gezielt überflutet.
 
 ### Verbindungsabbau (Active vs. Passive Close)
 
