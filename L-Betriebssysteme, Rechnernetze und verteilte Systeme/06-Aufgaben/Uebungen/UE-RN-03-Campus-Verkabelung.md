@@ -82,19 +82,19 @@ Ein mittelständisches Unternehmen plant die Netzwerkinfrastruktur für seinen n
 
 ## Aufgaben
 
-### Aufgabe 1: Medienanalyse für Trasse 1 und 2 (5 Punkte)
+### Aufgabe 1: Medienanalyse für Trasse 1 und 2 (2 Punkte)
 
 Analysieren Sie die Trassenlängen für die Verbindungen zwischen Gebäude A und B. Bestimmen Sie, welche Übertragungsmedien (Kupfer oder LWL) für diese Strecken geeignet sind. Berücksichtigen Sie dabei die maximalen Segmentlängen der verschiedenen Ethernet-Standards und die geforderten Bandbreiten.
 
 ---
 
-### Aufgabe 2: Medienauswahl für Trasse 3 (5 Punkte)
+### Aufgabe 2: Medienauswahl für Trasse 3 (2 Punkte)
 
 Begründen Sie, warum für die Verbindung zu Gebäude C (Rechenzentrum) **zwingend Glasfaser** verwendet werden muss. Erklären Sie das Problem der Potentialtrennung und welche Gefahren bei Kupferverkabelung entstehen würden.
 
 ---
 
-### Aufgabe 3: Ethernet-Standards für Backbone (5 Punkte)
+### Aufgabe 3: Ethernet-Standards für Backbone (2 Punkte)
 
 Wählen Sie geeignete Ethernet-Standards für die Backbone-Verbindungen zwischen den Gebäuden. Geben Sie jeweils an:
 - IEEE-Bezeichnung (z.B. 10GBASE-SR)
@@ -103,13 +103,13 @@ Wählen Sie geeignete Ethernet-Standards für die Backbone-Verbindungen zwischen
 
 ---
 
-### Aufgabe 4: Ethernet-Standards für Client-Anbindung (5 Punkte)
+### Aufgabe 4: Ethernet-Standards für Client-Anbindung (2 Punkte)
 
 Wählen Sie geeignete Ethernet-Standards für die Client-Anbindung in den Gebäuden. Begründen Sie Ihre Wahl der Kabelkategorie (Cat 5e, Cat 6, Cat 6a oder Cat 7) unter Berücksichtigung der Zukunftssicherheit.
 
 ---
 
-### Aufgabe 5: Core-Switch im Hauptverteiler (5 Punkte)
+### Aufgabe 5: Core-Switch im Hauptverteiler (2 Punkte)
 
 Beschreiben Sie die Anforderungen an den Core-Switch im Hauptverteiler (Gebäude A):
 - Layer 2 oder Layer 3?
@@ -118,7 +118,7 @@ Beschreiben Sie die Anforderungen an den Core-Switch im Hauptverteiler (Gebäude
 
 ---
 
-### Aufgabe 6: Unterverteiler-Switches (5 Punkte)
+### Aufgabe 6: Unterverteiler-Switches (2 Punkte)
 
 Bestimmen Sie die Anforderungen an die Switches in den Unterverteilern B und C:
 - Anzahl und Typ der Uplink-Ports
@@ -127,25 +127,25 @@ Bestimmen Sie die Anforderungen an die Switches in den Unterverteilern B und C:
 
 ---
 
-### Aufgabe 7: Redundante Backbone-Topologie (5 Punkte)
+### Aufgabe 7: Redundante Backbone-Topologie (2 Punkte)
 
 Entwerfen Sie eine redundante Verkabelungstopologie für die Backbone-Verbindungen. Skizzieren Sie, wie die drei Gebäude so verbunden werden können, dass beim Ausfall einer Leitung die Kommunikation weiterhin möglich ist.
 
 ---
 
-### Aufgabe 8: Spanning Tree Protocol (5 Punkte)
+### Aufgabe 8: Spanning Tree Protocol (2 Punkte)
 
 Erklären Sie, welches Layer-2-Protokoll bei der redundanten Topologie Schleifen verhindert. Vergleichen Sie STP, RSTP und MSTP hinsichtlich ihrer Konvergenzzeit und begründen Sie, welche Variante hier eingesetzt werden sollte, um die geforderte Umschaltzeit < 50ms zu erreichen.
 
 ---
 
-### Aufgabe 9: Strukturierte Verkabelung – Ebenen (5 Punkte)
+### Aufgabe 9: Strukturierte Verkabelung – Ebenen (2 Punkte)
 
 Ordnen Sie Ihre Verkabelungslösung in das Konzept der strukturierten Verkabelung ein. Beschreiben Sie, welche Komponenten zur Primär-, Sekundär- und Tertiärverkabelung gehören.
 
 ---
 
-### Aufgabe 10: Normen und Standards (5 Punkte)
+### Aufgabe 10: Normen und Standards (2 Punkte)
 
 Nennen Sie mindestens drei relevante Normen für die strukturierte Verkabelung und erklären Sie kurz deren Anwendungsbereich:
 - Eine internationale Norm (ISO/IEC)
@@ -186,52 +186,30 @@ Nennen Sie mindestens drei relevante Normen für die strukturierte Verkabelung u
 
 ---
 
-## Lösungshinweise (für Dozenten)
-
-> [!abstract] Erwartete Kernpunkte der Lösung
-> 
-> **Medienauswahl:**
-> - Trasse 1+2: LWL Multimode (OM3/OM4) ausreichend, da < 400m
-> - Trasse 3: LWL **zwingend** wegen Potentialtrennung zu Gebäude C
-> - Intra-Gebäude: Kupfer Cat 6a für Zukunftssicherheit
-> 
-> **Backbone-Standards:**
-> - 10GBASE-SR oder 40GBASE-SR4 für Multimode-Strecken
-> - Alternativ: Singlemode mit 10GBASE-LR für maximale Zukunftssicherheit
-> 
-> **Redundanz:**
-> - Ring-Topologie oder Mesh zwischen allen drei Gebäuden
-> - RSTP (Rapid Spanning Tree) für < 1s Konvergenz
-> - Besser: MSTP oder Link Aggregation (LACP) für Lastverteilung
-> 
-> **Aktive Komponenten:**
-> - Core-Switch Layer 3 im Hauptverteiler (Geb. A)
-> - Distribution-Switches Layer 2/3 in UV-B und UV-C
-> - Access-Switches Layer 2 pro Etage
-> - SFP+/QSFP-Module je nach gewähltem Standard
-> 
-> **Normen:**
-> - ISO/IEC 11801: Strukturierte Verkabelung (international)
-> - EN 50173: Europäische Verkabelungsnorm
-> - TIA-568: Nordamerikanischer Standard
-
----
-
 ## Bewertung
 
 | Aufgabe | Thema | Punkte |
 |---------|-------|--------|
-| 1 | Medienanalyse Trasse 1+2 | 5 |
-| 2 | Medienauswahl Trasse 3 (Potentialtrennung) | 5 |
-| 3 | Ethernet-Standards Backbone | 5 |
-| 4 | Ethernet-Standards Client | 5 |
-| 5 | Core-Switch Anforderungen | 5 |
-| 6 | Unterverteiler-Switches | 5 |
-| 7 | Redundante Topologie | 5 |
-| 8 | Spanning Tree Protocol | 5 |
-| 9 | Strukturierte Verkabelung | 5 |
-| 10 | Normen und Standards | 5 |
-| **Gesamt** | | **50** |
+| 1 | Medienanalyse Trasse 1+2 | 2 |
+| 2 | Medienauswahl Trasse 3 (Potentialtrennung) | 2 |
+| 3 | Ethernet-Standards Backbone | 2 |
+| 4 | Ethernet-Standards Client | 2 |
+| 5 | Core-Switch Anforderungen | 2 |
+| 6 | Unterverteiler-Switches | 2 |
+| 7 | Redundante Topologie | 2 |
+| 8 | Spanning Tree Protocol | 2 |
+| 9 | Strukturierte Verkabelung | 2 |
+| 10 | Normen und Standards | 2 |
+| **Gesamt** | | **20** |
+
+---
+
+## Musterlösung
+
+> [!tip] **Für Dozenten**
+> Die ausführliche Musterlösung mit drei Varianten (optimal, kostenoptimiert, WLAN-Hybrid) sowie vollständigem Reasoning finden Sie hier:
+> 
+> [[./UE-RN-03-Campus-Verkabelung-Loesung|→ Musterlösung Campus-Verkabelung]]
 
 ---
 
