@@ -15,12 +15,33 @@ bereich: RN
 
 # IPsec in der Netzwerkschicht
 
+## Lernziele
+
+> [!ziel] Nach diesem Kapitel können Sie...
+> - Die Funktion von IPsec auf Layer 3 erklären
+> - Den Unterschied zwischen ESP und AH beschreiben
+> - Transport- und Tunnel-Modus unterscheiden
+> - Die Rolle von IKE beim Schlüsselaustausch verstehen
+
 ## Einordnung
 
 **IPsec (Internet Protocol Security)** ist eine Protokollsuite, die direkt auf **Layer 3 (Netzwerkschicht)** arbeitet. Sie sichert IP-Pakete durch Verschlüsselung und Authentifizierung ab.
 
 > [!info] Detaillierte Informationen
 > Für eine ausführliche Behandlung von IPsec siehe: [[../../05-Sicherheit/02-VPN/01-IPsec|IPsec im VPN-Kapitel]]
+
+### Warum IPsec auf Layer 3?
+
+| Vorteil | Beschreibung |
+|---------|--------------|
+| **Transparenz** | Anwendungen müssen nicht angepasst werden |
+| **Universalität** | Schützt alle höheren Protokolle (TCP, UDP, ICMP, ...) |
+| **End-to-End** | Kann Host-to-Host oder Gateway-to-Gateway arbeiten |
+| **Netzwerk-Integration** | Funktioniert mit Routing und Firewalls |
+
+> [!tip] Vergleich mit TLS
+> - **TLS** (Layer 4/5): Schützt einzelne Verbindungen (HTTPS, SMTPS)
+> - **IPsec** (Layer 3): Schützt kompletten IP-Verkehr zwischen Endpunkten
 
 ## Layer-3-Integration
 
@@ -33,6 +54,32 @@ bereich: RN
 |-----------|-------------|----------|
 | **ESP** | 50 | Encapsulating Security Payload – Verschlüsselung + Authentifizierung |
 | **AH** | 51 | Authentication Header – Nur Authentifizierung |
+
+### ESP (Encapsulating Security Payload)
+
+ESP bietet **Vertraulichkeit** (Verschlüsselung) und **Integrität** (Authentifizierung):
+
+| Eigenschaft | Beschreibung |
+|-------------|--------------|
+| **Verschlüsselung** | AES, 3DES, ChaCha20 |
+| **Authentifizierung** | HMAC-SHA256, HMAC-SHA512 |
+| **Replay-Schutz** | Sequenznummern verhindern Wiederholungsangriffe |
+
+> [!tip] ESP ist der Standard
+> In der Praxis wird fast ausschließlich ESP verwendet, da es sowohl verschlüsselt als auch authentifiziert.
+
+### AH (Authentication Header)
+
+AH bietet **nur Integrität** – keine Verschlüsselung:
+
+| Eigenschaft | Beschreibung |
+|-------------|--------------|
+| **Authentifizierung** | Ja – komplettes Paket inkl. IP-Header |
+| **Verschlüsselung** | Nein |
+| **NAT-Kompatibilität** | Nein – IP-Header wird authentifiziert |
+
+> [!warning] AH und NAT
+> AH authentifiziert auch den IP-Header. Da NAT die IP-Adressen ändert, ist AH **nicht NAT-kompatibel**. Deshalb wird AH kaum noch eingesetzt.
 
 ## IPv6-Integration
 
@@ -54,12 +101,46 @@ Bei IPv6 ist IPsec als **Extension Header** definiert:
 ![[ipsec-modi.png]]
 *<span class="fig-id">03-06-06-ipsec-modi</span>: Transport- vs. Tunnel-Modus – unterschiedliche Kapselung der Daten.*
 
-## Schlüsselaustausch
+## Schlüsselaustausch (IKE)
+
+IPsec benötigt gemeinsame Schlüssel für Verschlüsselung und Authentifizierung. Der **Internet Key Exchange (IKE)** handelt diese automatisch aus.
 
 | Protokoll | Port | Verwendung |
 |-----------|------|------------|
 | **IKEv2** | UDP 500, 4500 | Aktueller Standard |
 | **IKEv1** | UDP 500 | Ältere Version |
+
+### IKE-Phasen
+
+| Phase | Funktion | Ergebnis |
+|-------|----------|----------|
+| **Phase 1** | Authentifizierung der Peers | IKE SA (sichere Verbindung für Phase 2) |
+| **Phase 2** | Aushandeln der IPsec-Parameter | IPsec SA (Schlüssel für ESP/AH) |
+
+### Security Association (SA)
+
+Eine **SA** ist ein Satz von Sicherheitsparametern für eine Richtung:
+
+- **SPI** (Security Parameter Index): Identifiziert die SA
+- **Algorithmen**: Verschlüsselung + Authentifizierung
+- **Schlüssel**: Für ESP/AH
+- **Lifetime**: Gültigkeitsdauer
+
+> [!note] Zwei SAs pro Verbindung
+> Da eine SA unidirektional ist, werden für eine bidirektionale Verbindung **zwei SAs** benötigt (eine pro Richtung).
+
+### NAT-Traversal (NAT-T)
+
+Problem: ESP-Pakete haben keine Ports → NAT kann sie nicht zuordnen.
+
+Lösung: **NAT-T** kapselt ESP in UDP (Port 4500):
+
+```
+[IP] [UDP 4500] [ESP] [Daten]
+```
+
+> [!tip] NAT-T wird automatisch erkannt
+> IKE erkennt NAT automatisch und aktiviert NAT-T bei Bedarf.
 
 ## Prüfungsrelevante Themen
 
@@ -68,6 +149,35 @@ Bei IPv6 ist IPsec als **Extension Header** definiert:
 > - ESP (Protocol 50) vs. AH (Protocol 51)
 > - Transport-Modus vs. Tunnel-Modus
 > - Bei IPv6 als Extension Header integriert
+> - IKE für Schlüsselaustausch (Phase 1 + Phase 2)
+> - NAT-T für NAT-Kompatibilität
+
+### Typische Prüfungsfragen
+
+> [!question] Beispielfragen
+> - Warum wird AH kaum noch verwendet? → Nicht NAT-kompatibel
+> - Was ist der Unterschied zwischen Transport- und Tunnel-Modus?
+> - Welche IP-Protokollnummer hat ESP? → 50
+> - Warum braucht IPsec zwei Security Associations? → Unidirektional
+> - Wie löst NAT-T das NAT-Problem? → ESP in UDP kapseln
+
+## Einsatzszenarien
+
+| Szenario | Modus | Typische Konfiguration |
+|----------|-------|------------------------|
+| **Site-to-Site VPN** | Tunnel | Gateway ↔ Gateway, schützt ganzes Netzwerk |
+| **Remote Access VPN** | Tunnel | Client ↔ Gateway, Roadwarrior-Zugang |
+| **Host-to-Host** | Transport | Server ↔ Server, direkte Verschlüsselung |
+| **DMVPN** | Tunnel | Dynamische Tunnels zwischen Standorten |
+
+> [!example] Praxisbeispiel: Site-to-Site VPN
+> ```
+> Büro A (192.168.1.0/24) ←──IPsec-Tunnel──→ Büro B (192.168.2.0/24)
+>        Gateway A                                  Gateway B
+>        (öffentliche IP)                          (öffentliche IP)
+> ```
+> - Alle Pakete zwischen den Netzen werden automatisch verschlüsselt
+> - Für Endgeräte transparent (kein VPN-Client nötig)
 
 ## Zusammenhänge
 
