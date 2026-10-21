@@ -10,7 +10,7 @@ tags:
   - switch
   - router
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-21'
 bereich: RN
 ---
 

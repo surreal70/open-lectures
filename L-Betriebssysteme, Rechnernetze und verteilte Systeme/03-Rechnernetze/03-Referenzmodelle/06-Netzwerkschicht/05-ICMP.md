@@ -10,7 +10,7 @@ tags:
   - traceroute
   - fehlerbehandlung
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-21'
 bereich: RN
 ---
 
@@ -25,54 +25,15 @@ Das **Internet Control Message Protocol (ICMP)** ist ein Hilfsprotokoll der Netz
 
 ## Einordnung im Protokollstapel
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    ICMP im Protokollstapel                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   ┌─────────────────────────────────────────────────────────┐   │
-│   │              Anwendungsschicht (Layer 7)                │   │
-│   │           ping, traceroute, pathping                    │   │
-│   └─────────────────────────────────────────────────────────┘   │
-│                            │                                     │
-│   ┌─────────────────────────────────────────────────────────┐   │
-│   │              Transportschicht (Layer 4)                 │   │
-│   │                  TCP / UDP                               │   │
-│   └─────────────────────────────────────────────────────────┘   │
-│                            │                                     │
-│   ┌─────────────────────────────────────────────────────────┐   │
-│   │              Netzwerkschicht (Layer 3)                  │   │
-│   │     ┌───────────────────────────────────────────┐       │   │
-│   │     │                   IP                      │       │   │
-│   │     │  Protocol = 1 (ICMP) oder 58 (ICMPv6)    │       │   │
-│   │     └───────────────────────────────────────────┘       │   │
-│   │                        │                                │   │
-│   │     ┌───────────────────────────────────────────┐       │   │
-│   │     │              ICMP / ICMPv6                │       │   │
-│   │     └───────────────────────────────────────────┘       │   │
-│   └─────────────────────────────────────────────────────────┘   │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[icmp-protokollstapel.png]]
+*<span class="fig-id">03-06-05-icmp-protokollstapel</span>: ICMP im OSI-Modell – ein Layer-3-Protokoll, das in IP gekapselt wird.*
 
 ## ICMP-Header (ICMPv4)
 
 Der ICMP-Header beginnt direkt nach dem IP-Header:
 
-```
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│     Type      │     Code      │          Checksum             │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                     Rest of Header                            │
-│              (abhängig von Type und Code)                     │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                                                               │
-│                     Data (variabel)                           │
-│                                                               │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-```
+![[icmp-header.png]]
+*<span class="fig-id">03-06-05-icmp-header</span>: ICMP-Header-Format mit Type, Code, Checksum und variablen Daten.*
 
 | Feld | Bits | Beschreibung |
 |------|------|--------------|
@@ -111,42 +72,13 @@ Der ICMP-Header beginnt direkt nach dem IP-Header:
 
 ## Echo Request / Echo Reply (Ping)
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Ping-Ablauf                                  │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Host A                                              Host B    │
-│   192.168.1.10                                   192.168.1.20   │
-│       │                                               │         │
-│       │  ICMP Echo Request (Type 8, Code 0)          │         │
-│       │  Identifier: 1234                             │         │
-│       │  Sequence: 1                                  │         │
-│       │──────────────────────────────────────────────►│         │
-│       │                                               │         │
-│       │  ICMP Echo Reply (Type 0, Code 0)            │         │
-│       │  Identifier: 1234                             │         │
-│       │  Sequence: 1                                  │         │
-│       │◄──────────────────────────────────────────────│         │
-│       │                                               │         │
-│       │  RTT = Empfangszeit - Sendezeit              │         │
-│       │                                               │         │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[icmp-ping-ablauf.png]]
+*<span class="fig-id">03-06-05-icmp-ping-ablauf</span>: Ping-Ablauf – Echo Request und Echo Reply mit RTT-Messung.*
 
 **Echo Request/Reply Header:**
 
-```
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│  Type (8/0)   │    Code (0)   │          Checksum             │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│           Identifier          │       Sequence Number         │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                          Data ...                             │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-```
+![[icmp-echo-header.png]]
+*<span class="fig-id">03-06-05-icmp-echo-header</span>: Echo Request/Reply Header mit Identifier und Sequence Number.*
 
 > [!example] Ping-Beispiel
 > ```bash
@@ -161,93 +93,25 @@ Der ICMP-Header beginnt direkt nach dem IP-Header:
 
 Wird gesendet, wenn ein Router ein Paket verwirft, weil der TTL-Wert auf 0 gefallen ist:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Time Exceeded (Type 11)                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Sender         Router 1        Router 2        Router 3       │
-│   TTL=3          TTL=2           TTL=1           TTL=0!         │
-│     │               │               │               │           │
-│     │  IP-Paket     │               │               │           │
-│     │──────────────►│               │               │           │
-│     │               │──────────────►│               │           │
-│     │               │               │──────────────►│           │
-│     │               │               │               │           │
-│     │               │               │    TTL=0!     │           │
-│     │               │               │   Verwerfen   │           │
-│     │               │               │               │           │
-│     │  ICMP Time Exceeded (Type 11, Code 0)        │           │
-│     │◄──────────────────────────────────────────────│           │
-│     │                                               │           │
-│     │  Enthält: Original IP-Header + 8 Bytes Daten │           │
-│     │                                               │           │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[icmp-time-exceeded.png]]
+*<span class="fig-id">03-06-05-icmp-time-exceeded</span>: Time Exceeded – Router sendet ICMP-Nachricht wenn TTL=0.*
 
 ## Destination Unreachable
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              Destination Unreachable (Type 3)                   │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Code 0: Network Unreachable                                   │
-│   └─► Keine Route zum Zielnetzwerk                              │
-│                                                                  │
-│   Code 1: Host Unreachable                                      │
-│   └─► Host im Zielnetzwerk nicht erreichbar (ARP fehlgeschlagen)│
-│                                                                  │
-│   Code 3: Port Unreachable                                      │
-│   └─► UDP-Port geschlossen (keine Anwendung lauscht)           │
-│                                                                  │
-│   Code 4: Fragmentation Needed and DF Set                       │
-│   └─► Paket zu groß, aber Don't Fragment gesetzt               │
-│       → Wichtig für Path MTU Discovery!                        │
-│                                                                  │
-│   Code 13: Communication Administratively Prohibited            │
-│   └─► Firewall blockiert das Paket                             │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Code | Name | Beschreibung |
+|------|------|--------------|
+| **0** | Network Unreachable | Keine Route zum Zielnetzwerk |
+| **1** | Host Unreachable | Host im Zielnetzwerk nicht erreichbar (ARP fehlgeschlagen) |
+| **3** | Port Unreachable | UDP-Port geschlossen (keine Anwendung lauscht) |
+| **4** | Fragmentation Needed | Paket zu groß, aber Don't Fragment gesetzt → **wichtig für Path MTU Discovery!** |
+| **13** | Administratively Prohibited | Firewall blockiert das Paket |
 
 ## Traceroute / Tracert
 
 Traceroute nutzt **Time Exceeded**-Nachrichten, um den Weg durch das Netzwerk zu ermitteln:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Traceroute-Prinzip                           │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Sender          Router 1       Router 2       Router 3  Ziel  │
-│                                                                  │
-│   1. Paket mit TTL=1                                            │
-│      ──────────►│                                               │
-│                 │ TTL=0 → ICMP Time Exceeded                   │
-│      ◄──────────│                                               │
-│      Router 1 gefunden!                                         │
-│                                                                  │
-│   2. Paket mit TTL=2                                            │
-│      ──────────►│──────────►│                                   │
-│                             │ TTL=0 → ICMP Time Exceeded       │
-│      ◄──────────────────────│                                   │
-│      Router 2 gefunden!                                         │
-│                                                                  │
-│   3. Paket mit TTL=3                                            │
-│      ──────────►│──────────►│──────────►│                       │
-│                                         │ TTL=0 → Time Exceeded│
-│      ◄──────────────────────────────────│                       │
-│      Router 3 gefunden!                                         │
-│                                                                  │
-│   4. Paket mit TTL=4                                            │
-│      ──────────►│──────────►│──────────►│──────────►│           │
-│                                                     │ Ziel!     │
-│      ◄──────────────────────────────────────────────│           │
-│      Echo Reply (oder Port Unreachable bei UDP)                 │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[icmp-traceroute.png]]
+*<span class="fig-id">03-06-05-icmp-traceroute</span>: Traceroute-Prinzip – TTL wird schrittweise erhöht, jeder Router antwortet mit Time Exceeded.*
 
 **Unterschiede der Implementierungen:**
 
@@ -273,15 +137,8 @@ ICMPv6 erweitert ICMP um zusätzliche Funktionen für IPv6:
 
 ### ICMPv6-Header
 
-```
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│     Type      │     Code      │          Checksum             │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                     Message Body                              │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-```
+![[icmpv6-header.png]]
+*<span class="fig-id">03-06-05-icmpv6-header</span>: ICMPv6-Header – gleiche Grundstruktur, aber andere Type-Nummern.*
 
 ### Wichtige ICMPv6-Typen
 
@@ -315,65 +172,31 @@ ICMPv6 erweitert ICMP um zusätzliche Funktionen für IPv6:
 
 ICMPv6 ersetzt ARP vollständig durch NDP:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│               NDP: MAC-Auflösung (ersetzt ARP)                 │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Host A                                              Host B    │
-│   2001:db8::1                                    2001:db8::2    │
-│       │                                               │         │
-│       │  Neighbor Solicitation (Type 135)            │         │
-│       │  Ziel: ff02::1:ff00:0002                     │         │
-│       │  (Solicited-Node Multicast)                   │         │
-│       │──────────────────────────────────────────────►│         │
-│       │                                               │         │
-│       │  Neighbor Advertisement (Type 136)           │         │
-│       │  "2001:db8::2 ist bei MAC aa:bb:cc:dd:ee:ff" │         │
-│       │◄──────────────────────────────────────────────│         │
-│       │                                               │         │
-│                                                                  │
-│   Vorteil: Kein Broadcast! Nur Solicited-Node Multicast        │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[icmpv6-ndp.png]]
+*<span class="fig-id">03-06-05-icmpv6-ndp</span>: NDP MAC-Auflösung – Neighbor Solicitation/Advertisement statt ARP.*
 
 ## ICMP und Sicherheit
 
 ### Sicherheitsaspekte
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                ICMP-Sicherheitsüberlegungen                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   ⚠ Potenzielle Risiken:                                       │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ • Ping Flood / Smurf-Attacke (ICMP-basiertes DDoS)     │  │
-│   │ • Ping of Death (übergroße ICMP-Pakete)                │  │
-│   │ • Netzwerk-Reconnaissance (Hosts entdecken)             │  │
-│   │ • Covert Channels (Daten in ICMP verstecken)           │  │
-│   │ • ICMP Redirect-Attacken (Traffic umleiten)            │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   ✓ Empfehlungen:                                               │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ • Echo Reply nur bei Bedarf erlauben                    │  │
-│   │ • ICMP Redirect blockieren                              │  │
-│   │ • Rate-Limiting für ICMP-Nachrichten                   │  │
-│   │ • ICMP für PMTUD erlauben (Type 3, Code 4)             │  │
-│   │ • Source Quench ignorieren (deprecated)                 │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   ✗ NICHT blockieren:                                          │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ • Type 3, Code 4 (Fragmentation Needed) → PMTUD!       │  │
-│   │ • Type 11 (Time Exceeded) → Traceroute                 │  │
-│   │ • ICMPv6 generell → NDP ist essentiell!                │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+> [!warning] Potenzielle Risiken
+> - **Ping Flood / Smurf-Attacke** – ICMP-basiertes DDoS
+> - **Ping of Death** – übergroße ICMP-Pakete
+> - **Netzwerk-Reconnaissance** – Hosts im Netzwerk entdecken
+> - **Covert Channels** – Daten in ICMP-Paketen verstecken
+> - **ICMP Redirect-Attacken** – Traffic umleiten
+
+**Empfehlungen:**
+- Echo Reply nur bei Bedarf erlauben
+- ICMP Redirect blockieren
+- Rate-Limiting für ICMP-Nachrichten
+- ICMP für PMTUD erlauben (Type 3, Code 4)
+- Source Quench ignorieren (deprecated)
+
+**NICHT blockieren:**
+- Type 3, Code 4 (Fragmentation Needed) → PMTUD funktioniert sonst nicht!
+- Type 11 (Time Exceeded) → Traceroute benötigt diese Antworten
+- ICMPv6 generell → NDP ist essentiell für IPv6!
 
 > [!warning] ICMPv6 nicht blockieren!
 > Anders als bei IPv4 ist ICMPv6 **essentiell** für die Funktion von IPv6:
