@@ -30,69 +30,29 @@ bereich: RN
 
 Eine **Kollisionsdomäne** ist der Netzwerkbereich, in dem Datenpakete miteinander kollidieren können, wenn zwei oder mehr Geräte gleichzeitig senden.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    KOLLISIONSDOMÄNE                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Eigenschaften:                                                 │
-│  • Layer 1 / Layer 2 Konzept (Physisch/Sicherung)             │
-│  • Betrifft das gemeinsam genutzte Übertragungsmedium          │
-│  • Nur relevant bei Half-Duplex und Shared Media              │
-│  • Alle Geräte "hören" die gleichen Signale                   │
-│  • CSMA/CD regelt den Zugriff                                  │
-│                                                                 │
-│  Beispiel: Koaxial-Ethernet (10BASE2, 10BASE5)                 │
-│                                                                 │
-│       ══════════════════════════════════════════               │
-│          │         │         │         │                        │
-│        ┌─┴─┐     ┌─┴─┐     ┌─┴─┐     ┌─┴─┐                    │
-│        │PC1│     │PC2│     │PC3│     │PC4│                    │
-│        └───┘     └───┘     └───┘     └───┘                    │
-│                                                                 │
-│        └─────────────────────────────────────┘                 │
-│                 EINE Kollisionsdomäne                          │
-│                                                                 │
-│  → Wenn PC1 und PC3 gleichzeitig senden: KOLLISION!           │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Eigenschaften:**
+- Layer 1 / Layer 2 Konzept (Physisch/Sicherung)
+- Betrifft das gemeinsam genutzte Übertragungsmedium
+- Nur relevant bei Half-Duplex und Shared Media
+- Alle Geräte "hören" die gleichen Signale
+- CSMA/CD regelt den Zugriff
+
+![[kollisionsdomaene-koaxial.png]]
+*<span class="fig-id">03-06-04-kollisionsdomaene-koaxial</span>: Koaxial-Ethernet (10BASE2/10BASE5) – alle Geräte teilen sich eine Kollisionsdomäne.*
 
 ### Broadcast-Domäne (Broadcast Domain)
 
 Eine **Broadcast-Domäne** ist der Netzwerkbereich, in dem ein Broadcast-Frame (Ziel: FF:FF:FF:FF:FF:FF) alle Geräte erreicht.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    BROADCAST-DOMÄNE                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Eigenschaften:                                                 │
-│  • Layer 2 / Layer 3 Konzept (Sicherung/Vermittlung)          │
-│  • Betrifft die logische Netzwerkstruktur                      │
-│  • Alle Geräte empfangen Broadcast-Frames                      │
-│  • Entspricht typischerweise einem IP-Subnetz                  │
-│  • Begrenzt durch Router (Layer 3 Geräte)                      │
-│                                                                 │
-│  Beispiel: Geswitchtes Ethernet                                │
-│                                                                 │
-│                    ┌────────┐                                  │
-│                    │ Switch │                                  │
-│                    └───┬────┘                                  │
-│           ┌────────┬───┴───┬────────┐                          │
-│           │        │       │        │                          │
-│        ┌──┴──┐  ┌──┴──┐ ┌──┴──┐  ┌──┴──┐                      │
-│        │ PC1 │  │ PC2 │ │ PC3 │  │ PC4 │                      │
-│        └─────┘  └─────┘ └─────┘  └─────┘                      │
-│                                                                 │
-│        └─────────────────────────────────────┘                 │
-│                 EINE Broadcast-Domäne                          │
-│                                                                 │
-│  → Broadcast von PC1 erreicht PC2, PC3 und PC4                │
-│  → Aber: KEINE Kollisionen mehr (Switch trennt!)              │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Eigenschaften:**
+- Layer 2 / Layer 3 Konzept (Sicherung/Vermittlung)
+- Betrifft die logische Netzwerkstruktur
+- Alle Geräte empfangen Broadcast-Frames
+- Entspricht typischerweise einem IP-Subnetz
+- Begrenzt durch Router (Layer 3 Geräte)
+
+![[broadcastdomaene-switch.png]]
+*<span class="fig-id">03-06-04-broadcastdomaene-switch</span>: Geswitchtes Ethernet – alle Geräte teilen sich eine Broadcast-Domäne, aber keine Kollisionen mehr.*
 
 ## Gegenüberstellung
 
@@ -109,305 +69,96 @@ Eine **Broadcast-Domäne** ist der Netzwerkbereich, in dem ein Broadcast-Frame (
 
 ### Visuelle Gegenüberstellung
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│           KOLLISIONSDOMÄNE VS. BROADCAST-DOMÄNE                 │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  SZENARIO 1: Hub (Repeater)                                    │
-│  ───────────────────────────                                   │
-│                                                                 │
-│                    ┌───────┐                                   │
-│                    │  HUB  │                                   │
-│                    └───┬───┘                                   │
-│           ┌────────┬───┴───┬────────┐                          │
-│        ┌──┴──┐  ┌──┴──┐ ┌──┴──┐  ┌──┴──┐                      │
-│        │ PC1 │  │ PC2 │ │ PC3 │  │ PC4 │                      │
-│        └─────┘  └─────┘ └─────┘  └─────┘                      │
-│                                                                 │
-│        Kollisionsdomänen:  1 (alle Geräte)                     │
-│        Broadcast-Domänen:  1 (alle Geräte)                     │
-│                                                                 │
-│  ═══════════════════════════════════════════════════════════   │
-│                                                                 │
-│  SZENARIO 2: Switch                                            │
-│  ──────────────────────                                        │
-│                                                                 │
-│                    ┌────────┐                                  │
-│                    │ SWITCH │                                  │
-│                    └───┬────┘                                  │
-│           ┌────────┬───┴───┬────────┐                          │
-│        ┌──┴──┐  ┌──┴──┐ ┌──┴──┐  ┌──┴──┐                      │
-│        │ PC1 │  │ PC2 │ │ PC3 │  │ PC4 │                      │
-│        └─────┘  └─────┘ └─────┘  └─────┘                      │
-│           │        │       │        │                          │
-│           ▼        ▼       ▼        ▼                          │
-│          KD1      KD2     KD3      KD4                         │
-│                                                                 │
-│        Kollisionsdomänen:  4 (eine pro Port)                   │
-│        Broadcast-Domänen:  1 (alle Geräte)                     │
-│                                                                 │
-│  ═══════════════════════════════════════════════════════════   │
-│                                                                 │
-│  SZENARIO 3: Router (oder Layer-3-Switch)                      │
-│  ────────────────────────────────────────                      │
-│                                                                 │
-│      ┌────────┐           ┌────────┐                          │
-│      │Switch A│           │Switch B│                          │
-│      └───┬────┘           └───┬────┘                          │
-│     ┌────┴────┐          ┌────┴────┐                          │
-│  ┌──┴──┐  ┌──┴──┐    ┌──┴──┐  ┌──┴──┐                        │
-│  │ PC1 │  │ PC2 │    │ PC3 │  │ PC4 │                        │
-│  └─────┘  └─────┘    └─────┘  └─────┘                        │
-│     │        │          │        │                             │
-│    KD1      KD2        KD3      KD4                            │
-│     └────────┘          └────────┘                             │
-│        BD1      ┌────────┐  BD2                                │
-│                 │ ROUTER │                                     │
-│                 └────────┘                                     │
-│                                                                 │
-│        Kollisionsdomänen:  4 (eine pro Switch-Port)            │
-│        Broadcast-Domänen:  2 (eine pro Router-Interface)       │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[szenarien-vergleich.png]]
+*<span class="fig-id">03-06-04-szenarien-vergleich</span>: Vergleich Hub vs. Switch vs. Router – Auswirkung auf Kollisions- und Broadcast-Domänen.*
 
 ## Geräte und ihre Wirkung auf Domänen
 
 ### Übersicht
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              GERÄTE UND DOMÄNENTRENNUNG                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Gerät              │ Kollisions-D. │ Broadcast-D. │ OSI-Layer │
-│  ───────────────────┼───────────────┼──────────────┼───────────│
-│  Repeater/Hub       │ Verbindet     │ Verbindet    │ Layer 1   │
-│  Bridge             │ TRENNT        │ Verbindet    │ Layer 2   │
-│  Switch             │ TRENNT        │ Verbindet    │ Layer 2   │
-│  Router             │ TRENNT        │ TRENNT       │ Layer 3   │
-│  Layer-3-Switch     │ TRENNT        │ TRENNT*      │ Layer 3   │
-│                                                                 │
-│  * Bei Routing zwischen VLANs                                  │
-│                                                                 │
-│  Merksatz:                                                      │
-│  ─────────                                                      │
-│  "Router trennen BEIDE Domänen"                                │
-│  "Switches trennen NUR Kollisionsdomänen"                      │
-│  "Hubs trennen NICHTS"                                         │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Gerät          | Kollisions-Domäne | Broadcast-Domäne | OSI-Layer |
+| -------------- | ----------------- | ---------------- | --------- |
+| Repeater/Hub   | Verbindet         | Verbindet        | Layer 1   |
+| Bridge         | **TRENNT**        | Verbindet        | Layer 2   |
+| Switch         | **TRENNT**        | Verbindet        | Layer 2   |
+| Router         | **TRENNT**        | **TRENNT**       | Layer 3   |
+| Layer-3-Switch | **TRENNT**        | **TRENNT**       | Layer 3   |
+|                |                   |                  |           |
+
+*\* Bei Routing zwischen VLANs*
+
+> [!tip] Merksätze
+> - **Router** trennen **BEIDE** Domänen
+> - **Switches** trennen **NUR** Kollisionsdomänen
+> - **Hubs** trennen **NICHTS**
 
 ### Detailbetrachtung: Switch
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    SWITCH – MIKROSEGMENTIERUNG                  │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Ein Switch mit 24 Ports erzeugt:                              │
-│  • 24 Kollisionsdomänen (eine pro Port)                        │
-│  • 1 Broadcast-Domäne (alle Ports)                             │
-│                                                                 │
-│                    ┌─────────────────────────────────┐         │
-│                    │           SWITCH                │         │
-│                    │  ┌─────────────────────────┐   │         │
-│                    │  │    MAC-Adresstabelle    │   │         │
-│                    │  │   Port │ MAC-Adresse    │   │         │
-│                    │  │   ─────┼──────────────  │   │         │
-│                    │  │    1   │ AA:AA:...:01   │   │         │
-│                    │  │    2   │ AA:AA:...:02   │   │         │
-│                    │  │   ...  │ ...            │   │         │
-│                    │  └─────────────────────────┘   │         │
-│                    └──┬────┬────┬────┬────┬────┬────┘         │
-│                       │    │    │    │    │    │              │
-│  Kollisionsdomänen:  KD1  KD2  KD3  KD4  KD5  KD6  ...       │
-│                       │    │    │    │    │    │              │
-│                      PC1  PC2  PC3  PC4  PC5  PC6             │
-│                                                                 │
-│  Unicast: Switch leitet gezielt an den richtigen Port          │
-│  Broadcast: Switch flutet an ALLE Ports (außer Quell-Port)    │
-│                                                                 │
-│  → Keine Kollisionen bei Unicast (Full-Duplex)                │
-│  → Aber: Broadcast erreicht alle Geräte                       │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+Ein Switch mit n Ports erzeugt:
+- **n Kollisionsdomänen** (eine pro Port)
+- **1 Broadcast-Domäne** (alle Ports)
+
+![[switch-mikrosegmentierung.png]]
+*<span class="fig-id">03-06-04-switch-mikrosegmentierung</span>: Switch mit MAC-Adresstabelle – jeder Port ist eine eigene Kollisionsdomäne.*
+
+- **Unicast:** Switch leitet gezielt an den richtigen Port (MAC-Tabelle)
+- **Broadcast:** Switch flutet an ALLE Ports (außer Quell-Port)
 
 ### Detailbetrachtung: Router
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    ROUTER – BROADCAST-GRENZE                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Ein Router mit 3 Interfaces erzeugt:                          │
-│  • 3 Kollisionsdomänen (eine pro Interface)                    │
-│  • 3 Broadcast-Domänen (eine pro Interface/Subnetz)            │
-│                                                                 │
-│                       ┌────────────┐                           │
-│                       │   ROUTER   │                           │
-│                       │            │                           │
-│                       │ eth0  eth1 │ eth2                      │
-│                       └──┬─────┬───┘──┬                        │
-│                          │     │      │                        │
-│        ┌─────────────────┘     │      └─────────────────┐     │
-│        │                       │                        │     │
-│        ▼                       ▼                        ▼     │
-│   ┌─────────┐            ┌─────────┐            ┌─────────┐   │
-│   │ Switch  │            │ Switch  │            │ Switch  │   │
-│   └────┬────┘            └────┬────┘            └────┬────┘   │
-│   ┌────┴────┐            ┌────┴────┐            ┌────┴────┐   │
-│   │    │    │            │    │    │            │    │    │   │
-│  PC1  PC2  PC3          PC4  PC5  PC6          PC7  PC8  PC9  │
-│                                                                 │
-│  Subnetz A              Subnetz B              Subnetz C       │
-│  192.168.1.0/24         192.168.2.0/24         192.168.3.0/24 │
-│                                                                 │
-│  Broadcast-Domäne 1     Broadcast-Domäne 2     Broadcast-D. 3 │
-│                                                                 │
-│  Broadcast von PC1:                                            │
-│  → Erreicht PC2, PC3 (gleiches Subnetz)                       │
-│  → Erreicht NICHT PC4-PC9 (Router blockiert!)                 │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+Ein Router mit n Interfaces erzeugt:
+- **n Kollisionsdomänen** (eine pro Interface)
+- **n Broadcast-Domänen** (eine pro Interface/Subnetz)
+
+![[router-broadcast-grenze.png]]
+*<span class="fig-id">03-06-04-router-broadcast-grenze</span>: Router mit 3 Interfaces – jedes Interface ist eine eigene Broadcast-Domäne.*
+
+- Broadcast von PC1 erreicht PC2, PC3 (gleiches Subnetz)
+- Broadcast erreicht **NICHT** PC4–PC9 (Router blockiert!)
 
 ## Überlappung und Zusammenhang
 
 ### Wann sind beide Domänen identisch?
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    ÜBERLAPPUNG DER DOMÄNEN                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  FALL 1: Shared Medium (Hub/Koaxial)                           │
-│  ─────────────────────────────────────                         │
-│                                                                 │
-│       ══════════════════════════════                           │
-│          │         │         │                                  │
-│        ┌─┴─┐     ┌─┴─┐     ┌─┴─┐                              │
-│        │PC1│     │PC2│     │PC3│                              │
-│        └───┘     └───┘     └───┘                              │
-│                                                                 │
-│        Kollisionsdomäne = Broadcast-Domäne                     │
-│        (identisch, da keine Trennung)                          │
-│                                                                 │
-│  ═══════════════════════════════════════════════════════════   │
-│                                                                 │
-│  FALL 2: Switched Network (ohne Router)                        │
-│  ──────────────────────────────────────                        │
-│                                                                 │
-│                    ┌────────┐                                  │
-│                    │ SWITCH │                                  │
-│                    └───┬────┘                                  │
-│           ┌────────┬───┴───┬────────┐                          │
-│        ┌──┴──┐  ┌──┴──┐ ┌──┴──┐  ┌──┴──┐                      │
-│        │ PC1 │  │ PC2 │ │ PC3 │  │ PC4 │                      │
-│        └─────┘  └─────┘ └─────┘  └─────┘                      │
-│                                                                 │
-│        4 Kollisionsdomänen ⊂ 1 Broadcast-Domäne               │
-│        (Kollisionsdomänen sind Teilmengen)                     │
-│                                                                 │
-│  ═══════════════════════════════════════════════════════════   │
-│                                                                 │
-│  FALL 3: Routed Network                                        │
-│  ──────────────────────                                        │
-│                                                                 │
-│        ┌────────┐           ┌────────┐                        │
-│        │Switch A│           │Switch B│                        │
-│        └───┬────┘           └───┬────┘                        │
-│       ┌────┴────┐          ┌────┴────┐                        │
-│    ┌──┴──┐  ┌──┴──┐    ┌──┴──┐  ┌──┴──┐                      │
-│    │ PC1 │  │ PC2 │    │ PC3 │  │ PC4 │                      │
-│    └─────┘  └─────┘    └─────┘  └─────┘                      │
-│       └────────┘  ┌────────┐  └────────┘                      │
-│          BD1      │ ROUTER │     BD2                          │
-│                   └────────┘                                   │
-│                                                                 │
-│        4 Kollisionsdomänen, 2 Broadcast-Domänen               │
-│        (unabhängig voneinander)                                │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Fall 1: Shared Medium (Hub/Koaxial)**
+- Kollisionsdomäne = Broadcast-Domäne (identisch)
+- Keine Trennung vorhanden
 
-### Mathematische Beziehung
+**Fall 2: Switched Network (ohne Router)**
+- Mehrere Kollisionsdomänen ⊂ eine Broadcast-Domäne
+- Kollisionsdomänen sind Teilmengen der Broadcast-Domäne
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    MENGENDARSTELLUNG                            │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Bei reinen Switches (ohne VLANs/Router):                      │
-│                                                                 │
-│  ┌───────────────────────────────────────────────────────────┐ │
-│  │                    Broadcast-Domäne                       │ │
-│  │                                                           │ │
-│  │   ┌─────┐   ┌─────┐   ┌─────┐   ┌─────┐   ┌─────┐      │ │
-│  │   │ KD1 │   │ KD2 │   │ KD3 │   │ KD4 │   │ KD5 │ ... │ │
-│  │   └─────┘   └─────┘   └─────┘   └─────┘   └─────┘      │ │
-│  │                                                           │ │
-│  └───────────────────────────────────────────────────────────┘ │
-│                                                                 │
-│  Kollisionsdomänen ⊆ Broadcast-Domäne                         │
-│  (Kollisionsdomänen sind echte Teilmengen)                     │
-│                                                                 │
-│  Bei Routern:                                                   │
-│                                                                 │
-│  ┌─────────────────────┐      ┌─────────────────────┐         │
-│  │   Broadcast-D. 1    │      │   Broadcast-D. 2    │         │
-│  │                     │      │                     │         │
-│  │  ┌────┐   ┌────┐   │      │  ┌────┐   ┌────┐   │         │
-│  │  │KD1 │   │KD2 │   │      │  │KD3 │   │KD4 │   │         │
-│  │  └────┘   └────┘   │      │  └────┘   └────┘   │         │
-│  │                     │      │                     │         │
-│  └─────────────────────┘      └─────────────────────┘         │
-│                                                                 │
-│  BD1 ∩ BD2 = ∅  (Broadcast-Domänen sind disjunkt)             │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Fall 3: Routed Network**
+- Kollisionsdomänen und Broadcast-Domänen unabhängig
+- BD₁ ∩ BD₂ = ∅ (Broadcast-Domänen sind disjunkt)
 
 ## Praktische Auswirkungen
 
-### Probleme großer Domänen
+### Probleme großer Kollisionsdomänen
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    PROBLEME UND LÖSUNGEN                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  GROSSE KOLLISIONSDOMÄNE (z.B. Hub-Netzwerk):                  │
-│  ─────────────────────────────────────────────                 │
-│  Probleme:                                                      │
-│  • Häufige Kollisionen                                         │
-│  • Geringe effektive Bandbreite                                │
-│  • Wartezeiten (Backoff)                                       │
-│  • Maximale Ausdehnung begrenzt                                │
-│                                                                 │
-│  Lösung: → Switches einsetzen (Mikrosegmentierung)            │
-│                                                                 │
-│  ───────────────────────────────────────────────────────────   │
-│                                                                 │
-│  GROSSE BROADCAST-DOMÄNE (z.B. flaches L2-Netzwerk):          │
-│  ─────────────────────────────────────────────────             │
-│  Probleme:                                                      │
-│  • Broadcast-Stürme möglich                                    │
-│  • Jedes Gerät verarbeitet jeden Broadcast                     │
-│  • ARP-Tabellen werden groß                                    │
-│  • Sicherheitsrisiko (alle sehen Broadcasts)                   │
-│  • Skalierungsprobleme (>500 Hosts problematisch)             │
-│                                                                 │
-│  Lösungen:                                                      │
-│  → Router einsetzen (L3-Segmentierung)                        │
-│  → VLANs konfigurieren (virtuelle Trennung)                   │
-│  → Layer-3-Switches mit Inter-VLAN-Routing                    │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+> [!warning] Große Kollisionsdomäne (z.B. Hub-Netzwerk)
+> **Probleme:**
+> - Häufige Kollisionen bei gleichzeitigem Senden
+> - Geringe effektive Bandbreite (alle teilen sich das Medium)
+> - Wartezeiten durch Backoff-Algorithmus
+> - Maximale Ausdehnung begrenzt (5-4-3-Regel)
+> 
+> **Lösung:** Switches einsetzen (Mikrosegmentierung) → jeder Port wird zur eigenen Kollisionsdomäne
+
+### Probleme großer Broadcast-Domänen
+
+> [!warning] Große Broadcast-Domäne (z.B. flaches L2-Netzwerk)
+> **Probleme:**
+> - Broadcast-Stürme möglich (z.B. durch Switching-Loops)
+> - Jedes Gerät verarbeitet jeden Broadcast → CPU-Last
+> - ARP-Tabellen werden groß und langsam
+> - Sicherheitsrisiko: alle Geräte sehen alle Broadcasts
+> - Skalierungsprobleme ab ca. 500 Hosts
+> 
+> **Lösungen:**
+> - Router einsetzen (L3-Segmentierung)
+> - VLANs konfigurieren (virtuelle Trennung auf einem Switch)
+> - Layer-3-Switches mit Inter-VLAN-Routing
 
 ### Empfehlungen für das Netzwerkdesign
 
@@ -419,35 +170,55 @@ Eine **Broadcast-Domäne** ist der Netzwerkbereich, in dem ein Broadcast-Frame (
 
 ## VLANs und Broadcast-Domänen
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              VLAN – VIRTUELLE BROADCAST-DOMÄNEN                 │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  VLANs teilen einen Switch in mehrere logische Switches:       │
-│                                                                 │
-│                    ┌─────────────────────────┐                 │
-│                    │     SWITCH (physisch)   │                 │
-│                    │  ┌───────┐  ┌───────┐  │                 │
-│                    │  │VLAN 10│  │VLAN 20│  │                 │
-│                    │  │ (rot) │  │(blau) │  │                 │
-│                    │  └───┬───┘  └───┬───┘  │                 │
-│                    └──────┼──────────┼──────┘                  │
-│                     ┌─────┼────┐  ┌──┼─────┐                   │
-│                     │     │    │  │  │     │                   │
-│                   ┌─┴─┐ ┌─┴─┐┌─┴─┐┌─┴─┐ ┌─┴─┐                 │
-│                   │PC1│ │PC2││PC3││PC4│ │PC5│                 │
-│                   └───┘ └───┘└───┘└───┘ └───┘                 │
-│                   VLAN10 VLAN10 VLAN20 VLAN20 VLAN20          │
-│                                                                 │
-│  Broadcast-Domäne 1:  PC1, PC2 (VLAN 10)                      │
-│  Broadcast-Domäne 2:  PC3, PC4, PC5 (VLAN 20)                 │
-│                                                                 │
-│  → Broadcast von PC1 erreicht NUR PC2                         │
-│  → Kommunikation VLAN 10 ↔ VLAN 20 nur über Router/L3-Switch │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+VLANs (Virtual Local Area Networks) teilen einen physischen Switch in mehrere logische Switches und damit in separate Broadcast-Domänen.
+
+![[vlan-broadcast-domaenen.png]]
+*<span class="fig-id">03-06-04-vlan-broadcast-domaenen</span>: VLANs erzeugen virtuelle Broadcast-Domänen – gleicher Switch, aber logisch getrennt.*
+
+**Eigenschaften:**
+- Broadcast von PC1 erreicht nur PC2, PC3 (VLAN 10)
+- Broadcast von PC4 erreicht nur PC5, PC6 (VLAN 20)
+- Kommunikation zwischen VLANs nur über Router oder Layer-3-Switch
+
+## WLANs und Domänen
+
+Im Vergleich zu kabelgebundenen Netzwerken verhalten sich WLANs (802.11) bezüglich Kollisions- und Broadcast-Domänen anders:
+
+### Kollisionsdomäne im WLAN
+
+**Alle Geräte eines Access Points teilen sich eine Kollisionsdomäne:**
+- Das Funkmedium ist ein Shared Medium (wie früher Koaxial-Ethernet)
+- Gleichzeitiges Senden führt zu Kollisionen (Interferenz)
+- WLAN nutzt **CSMA/CA** (Collision Avoidance) statt CSMA/CD
+- Kollisionserkennung ist im Funk nicht möglich → Kollisionsvermeidung durch RTS/CTS
+
+> [!info] CSMA/CA vs. CSMA/CD
+> - **CSMA/CD** (Ethernet): Senden, Kollision erkennen, Backoff
+> - **CSMA/CA** (WLAN): Vor dem Senden prüfen, ob Medium frei ist, Wartezeit einhalten, dann senden
+
+### Broadcast-Domäne im WLAN
+
+**Ein WLAN-Netzwerk (SSID) entspricht einer Broadcast-Domäne:**
+- Alle mit demselben AP verbundenen Clients empfangen Broadcasts
+- Der Access Point leitet Broadcasts an alle assoziierten Clients weiter
+- Bei mehreren APs mit gleicher SSID (ESS): gemeinsame Broadcast-Domäne
+
+### Besonderheiten
+
+| Aspekt | Kabel (Switch) | WLAN (Access Point) |
+|--------|----------------|---------------------|
+| Kollisionsdomäne | Pro Port getrennt | Alle Clients teilen sich eine |
+| Broadcast-Domäne | Alle Ports gemeinsam | Alle Clients gemeinsam |
+| Kollisionsvermeidung | Full-Duplex | CSMA/CA |
+| Durchsatz | Dediziert pro Port | Geteilt unter allen Clients |
+
+> [!warning] Praxisrelevanz
+> Ein stark genutzter WLAN Access Point mit vielen Clients leidet unter:
+> - Geteilter Bandbreite (alle teilen sich das Medium)
+> - Erhöhten Wartezeiten durch CSMA/CA
+> - Broadcast-Traffic belastet alle Clients
+> 
+> **Lösungen:** Mehrere APs, verschiedene Kanäle, VLANs über WLAN (Multiple SSIDs)
 
 ## Zusammenfassung
 
