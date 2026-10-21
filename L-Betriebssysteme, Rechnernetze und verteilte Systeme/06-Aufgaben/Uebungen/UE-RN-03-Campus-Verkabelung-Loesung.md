@@ -375,24 +375,8 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 
 #### Variante A: Optimal – Vollvermaschung (Full Mesh)
 
-```
-        ┌─────────────────────────────────────┐
-        │                                     │
-        ▼                                     │
-   ┌─────────┐      40G LWL (OM4)      ┌─────────┐
-   │   V-A    │◄────────────────────────│  V-B   │
-   │ (Geb.A) │         150m            │ (Geb.B) │
-   └────┬────┘                         └────┬────┘
-        │                                   │
-        │ 40G LWL (OS2)                     │ 40G LWL (OM4)
-        │ 350m                              │ 200m
-        │                                   │
-        ▼                                   ▼
-   ┌─────────────────────────────────────────────┐
-   │                  V-C (Geb.C)               │
-   │                 Rechenzentrum               │
-   └─────────────────────────────────────────────┘
-```
+![[topologie-fullmesh.png]]
+*<span class="fig-id">06-UE-03-topologie-fullmesh</span>: Vollvermaschte Backbone-Topologie mit 40G-Verbindungen*
 
 **Eigenschaften:**
 - 3 unabhängige Verbindungen
@@ -402,21 +386,8 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 
 #### Variante B: Kostenoptimiert – Ring-Topologie
 
-```
-   ┌─────────┐      10G LWL (OM3)      ┌─────────┐
-   │   V-A    │◄────────────────────────│  V-B   │
-   │ (Geb.A) │         150m            │ (Geb.B) │
-   └────┬────┘                         └────┬────┘
-        │                                   │
-        │ 10G LWL (OS2)           10G LWL (OM3)
-        │ 350m                         200m │
-        │                                   │
-        ▼                                   ▼
-   ┌─────────────────────────────────────────────┐
-   │                  V-C (Geb.C)               │
-   │                 Rechenzentrum               │
-   └─────────────────────────────────────────────┘
-```
+![[topologie-ring.png]]
+*<span class="fig-id">06-UE-03-topologie-ring</span>: Ring-Topologie mit 10G-Verbindungen*
 
 **Eigenschaften:**
 - Ring: V-A → V-B → V-C → V-A
@@ -426,23 +397,8 @@ Diese Musterlösung präsentiert drei verschiedene Lösungsansätze für die Cam
 
 #### Variante C: WLAN-Hybrid – Stern mit Backup-Ring
 
-```
-   ┌─────────┐      10G LWL (OM3)      ┌─────────┐
-   │   V-A    │◄────────────────────────│  V-B   │
-   │ (Geb.A) │         150m            │ (Geb.B) │
-   │  WLAN   │                         │  WLAN   │
-   │Controller                         │   APs   │
-   └────┬────┘                         └────┬────┘
-        │                                   │
-        │ 10G LWL (OS2)           (Backup via WLAN-Mesh
-        │ 350m                     oder 10G LWL OM3)
-        │                                   │
-        ▼                                   ▼
-   ┌─────────────────────────────────────────────┐
-   │                  V-C (Geb.C)               │
-   │            Rechenzentrum + WLAN            │
-   └─────────────────────────────────────────────┘
-```
+![[topologie-wlan.png]]
+*<span class="fig-id">06-UE-03-topologie-wlan</span>: WLAN-Hybrid-Topologie mit Stern und Backup-Verbindung*
 
 **Eigenschaften:**
 - Primär: Stern zum V-A
