@@ -297,8 +297,8 @@ Nennen Sie mindestens drei relevante Normen für die strukturierte Verkabelung u
 
 ## Weiterführende Themen
 
-- [[../03-Referenzmodelle/04-Physikalische-Schicht/01-Uebertragungsmedien|Übertragungsmedien]] - Kupfer vs. Glasfaser
-- [[../03-Referenzmodelle/04-Physikalische-Schicht/02-Signale|Signale]] - Signalübertragung und Dämpfung
-- [[../04-Basisprotokolle/05-Spanning-Tree|Spanning Tree Protocol]] - Loop-Vermeidung
-- [[../03-Referenzmodelle/05-Sicherungsschicht/00-Sicherungsschicht-Index|Sicherungsschicht]] - Layer 2
+- [[../../03-Rechnernetze/03-Referenzmodelle/04-Physikalische-Schicht/01-Uebertragungsmedien|Übertragungsmedien]] - Kupfer vs. Glasfaser
+- [[../../03-Rechnernetze/03-Referenzmodelle/04-Physikalische-Schicht/02-Signale|Signale]] - Signalübertragung und Dämpfung
+- [[../../03-Rechnernetze/04-Basisprotokolle/05-Spanning-Tree|Spanning Tree Protocol]] - Loop-Vermeidung
+- [[../../03-Rechnernetze/03-Referenzmodelle/05-Sicherungsschicht/00-Sicherungsschicht-Index|Sicherungsschicht]] - Layer 2
 
