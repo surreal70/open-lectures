@@ -92,8 +92,66 @@ Der Verbindungsabbau erfolgt in vier Schritten (Halbduplex-Close):
 
 ## TCP-Zustandsdiagramm
 
+Eine TCP-Verbindung durchläuft verschiedene **Zustände** während ihres Lebenszyklus. Das Zustandsdiagramm zeigt alle möglichen Übergänge zwischen diesen Zuständen.
+
 ![[tcp-state-diagram.png]]
 *<span class="fig-id">03-07-01-tcp-state-diagram</span>: TCP Zustandsdiagramm mit allen Verbindungszuständen*
+
+### Die TCP-Zustände im Überblick
+
+| Zustand | Beschreibung | Typische Situation |
+|---------|--------------|-------------------|
+| **CLOSED** | Keine Verbindung | Ausgangszustand |
+| **LISTEN** | Wartet auf Verbindungsanfragen | Server wartet auf Clients |
+| **SYN_SENT** | SYN gesendet, warte auf SYN-ACK | Client hat Verbindung initiiert |
+| **SYN_RCVD** | SYN empfangen, SYN-ACK gesendet | Server hat SYN vom Client erhalten |
+| **ESTABLISHED** | Verbindung aufgebaut | Datenübertragung möglich |
+| **FIN_WAIT_1** | FIN gesendet, warte auf ACK | Active Close initiiert |
+| **FIN_WAIT_2** | FIN-ACK erhalten, warte auf FIN | Hälfte der Verbindung geschlossen |
+| **CLOSE_WAIT** | FIN empfangen, warte auf Close | Passive Close, Anwendung muss schließen |
+| **LAST_ACK** | FIN gesendet, warte auf letztes ACK | Verbindungsabbau fast abgeschlossen |
+| **TIME_WAIT** | Warte auf verspätete Segmente | 2×MSL bevor CLOSED |
+
+### Verbindungsaufbau (Active vs. Passive Open)
+
+**Client (Active Open):**
+```
+CLOSED → SYN_SENT → ESTABLISHED
+```
+
+**Server (Passive Open):**
+```
+CLOSED → LISTEN → SYN_RCVD → ESTABLISHED
+```
+
+### Verbindungsabbau (Active vs. Passive Close)
+
+**Active Close (initiiert Abbau):**
+```
+ESTABLISHED → FIN_WAIT_1 → FIN_WAIT_2 → TIME_WAIT → CLOSED
+```
+
+**Passive Close (reagiert auf Abbau):**
+```
+ESTABLISHED → CLOSE_WAIT → LAST_ACK → CLOSED
+```
+
+### Wichtige Sonderfälle
+
+#### Simultaneous Open
+Beide Seiten senden gleichzeitig SYN:
+```
+SYN_SENT → SYN_RCVD → ESTABLISHED
+```
+
+#### Simultaneous Close
+Beide Seiten senden gleichzeitig FIN:
+```
+FIN_WAIT_1 → CLOSING → TIME_WAIT → CLOSED
+```
+
+> [!warning] TIME_WAIT und Port-Erschöpfung
+> Ein Socket im TIME_WAIT-Zustand belegt weiterhin den Port (typisch 60-120 Sekunden). Bei vielen kurzlebigen Verbindungen (z.B. HTTP ohne Keep-Alive) können Ports knapp werden. Linux-Option `SO_REUSEADDR` erlaubt Wiederverwendung.
 
 ## Sequenznummern und Bestätigungen
 
