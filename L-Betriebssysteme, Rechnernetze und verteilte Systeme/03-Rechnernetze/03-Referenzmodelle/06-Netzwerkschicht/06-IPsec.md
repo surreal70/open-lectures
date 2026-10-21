@@ -9,7 +9,7 @@ tags:
   - sicherheit
   - verschluesselung
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-21'
 bereich: RN
 ---
 
@@ -24,29 +24,8 @@ bereich: RN
 
 ## Layer-3-Integration
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                IPsec im Protokollstapel                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   ┌─────────────────────────────────────────────────────────┐   │
-│   │              Transportschicht (Layer 4)                 │   │
-│   │                    TCP / UDP                            │   │
-│   └─────────────────────────────────────────────────────────┘   │
-│                            │                                     │
-│   ┌─────────────────────────────────────────────────────────┐   │
-│   │              Netzwerkschicht (Layer 3)                  │   │
-│   │  ┌────────────────────────────────────────────────────┐ │   │
-│   │  │                      IP                            │ │   │
-│   │  │  ┌──────────────┐  ┌──────────────┐               │ │   │
-│   │  │  │  ESP (50)    │  │   AH (51)    │  ← IPsec     │ │   │
-│   │  │  │ Verschlüss.  │  │ Authentif.   │               │ │   │
-│   │  │  └──────────────┘  └──────────────┘               │ │   │
-│   │  └────────────────────────────────────────────────────┘ │   │
-│   └─────────────────────────────────────────────────────────┘   │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[ipsec-protokollstapel.png]]
+*<span class="fig-id">03-06-06-ipsec-protokollstapel</span>: IPsec im OSI-Modell – ESP und AH als Layer-3-Protokolle.*
 
 ## IPsec-Protokolle
 
@@ -59,13 +38,8 @@ bereich: RN
 
 Bei IPv6 ist IPsec als **Extension Header** definiert:
 
-```
-┌──────────────┐   ┌──────────────┐   ┌──────────────┐   ┌────────┐
-│   IPv6       │──►│     ESP      │──►│     TCP      │──►│ Daten  │
-│   Header     │   │ Next Hdr: 6  │   │   Header     │   │        │
-│ Next Hdr: 50 │   │              │   │              │   │        │
-└──────────────┘   └──────────────┘   └──────────────┘   └────────┘
-```
+![[ipsec-ipv6-extension.png]]
+*<span class="fig-id">03-06-06-ipsec-ipv6-extension</span>: IPsec als IPv6 Extension Header in der Header-Kette.*
 
 > [!note] IPv6 und IPsec
 > In der ursprünglichen IPv6-Spezifikation war IPsec als **verpflichtend** vorgesehen. Dies wurde später zu "sollte unterstützt werden" abgeschwächt ([[A-RFC-Index#RFC 6434|RFC 6434]]).
@@ -77,13 +51,8 @@ Bei IPv6 ist IPsec als **Extension Header** definiert:
 | **Transport** | Host-to-Host | Original-IP-Header bleibt |
 | **Tunnel** | Gateway-to-Gateway | Komplettes Paket gekapselt |
 
-```
-Transport:  [IP-Hdr] [ESP/AH] [TCP] [Daten]
-                              └──verschlüsselt──┘
-
-Tunnel:     [Neuer IP] [ESP/AH] [Orig. IP] [TCP] [Daten]
-                                └─────verschlüsselt─────┘
-```
+![[ipsec-modi.png]]
+*<span class="fig-id">03-06-06-ipsec-modi</span>: Transport- vs. Tunnel-Modus – unterschiedliche Kapselung der Daten.*
 
 ## Schlüsselaustausch
 
