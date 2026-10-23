@@ -9,7 +9,7 @@ tags:
   - sockets
   - multiplexing
 created: '2026-10-07'
-modified: '2026-10-21'
+modified: '2026-10-23'
 bereich: RN
 ---
 
@@ -28,41 +28,8 @@ bereich: RN
 > **Ports** sind 16-Bit-Nummern (0-65535), die auf der Transportschicht die Zuordnung von Netzwerkverkehr zu spezifischen Anwendungen oder Diensten ermöglichen (Multiplexing/Demultiplexing).
 ## Multiplexing und Demultiplexing
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    Multiplexing/Demultiplexing                 │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  SENDER (Multiplexing):                                        │
-│                                                                │
-│    Browser    E-Mail     SSH                                   │
-│    (HTTP)     (SMTP)    Client                                 │
-│       │          │         │                                   │
-│       ▼          ▼         ▼                                   │
-│    ┌─────────────────────────────┐                            │
-│    │      Transportschicht       │                            │
-│    │  Fügt Quell-/Zielport hinzu │                            │
-│    └─────────────────────────────┘                            │
-│                   │                                            │
-│                   ▼                                            │
-│              Netzwerk                                          │
-│                                                                │
-│  EMPFÄNGER (Demultiplexing):                                   │
-│                                                                │
-│              Netzwerk                                          │
-│                   │                                            │
-│                   ▼                                            │
-│    ┌─────────────────────────────┐                            │
-│    │      Transportschicht       │                            │
-│    │  Verteilt nach Zielport     │                            │
-│    └─────────────────────────────┘                            │
-│       │          │         │                                   │
-│       ▼          ▼         ▼                                   │
-│    Webserver  Mailserver  SSH                                  │
-│    (Port 80)  (Port 25)   (Port 22)                           │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[multiplexing-demultiplexing.png]]
+*<span class="fig-id">03-07-03-multiplexing-demultiplexing</span>: Multiplexing am Sender und Demultiplexing am Empfänger*
 
 ## Port-Bereiche
 
@@ -70,30 +37,16 @@ Die IANA (Internet Assigned Numbers Authority) teilt Ports in drei Bereiche:
 
 | Bereich | Portnummern | Bezeichnung | Verwendung |
 |---------|-------------|-------------|------------|
-| **Well-Known** | 0 - 1023 | System Ports | Standarddienste (root erforderlich) |
+| **Well-Known** | 0 - 1023 | System Ports | Standarddienste (privilegiert) |
 | **Registered** | 1024 - 49151 | User Ports | Registrierte Anwendungen |
 | **Dynamic** | 49152 - 65535 | Ephemeral Ports | Temporäre Client-Ports |
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                      Port-Bereiche                             │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  0        1023      49151        65535                        │
-│  │         │          │            │                          │
-│  ├─────────┼──────────┼────────────┤                          │
-│  │Well-Known│Registered│  Dynamic   │                          │
-│  │  Ports  │  Ports   │   Ports    │                          │
-│  ├─────────┼──────────┼────────────┤                          │
-│  │         │          │            │                          │
-│  │ HTTP:80 │MySQL:3306│ Client-    │                          │
-│  │ SSH:22  │RDP:3389  │ Verbind.   │                          │
-│  │ DNS:53  │          │ 49152-     │                          │
-│  │         │          │ 65535      │                          │
-│  └─────────┴──────────┴────────────┘                          │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+> [!warning] Privilegierte Ports
+> Die Well-Known Ports (0-1023) sind **privilegierte Ports**. Anwendungen, die sich an diese Ports binden wollen, benötigen erhöhte Systemrechte:
+> - **Linux/Unix:** Root-Rechte (`sudo`) oder `CAP_NET_BIND_SERVICE` Capability
+> - **Windows:** Administrator-Rechte
+> 
+> Dies ist ein Sicherheitsmechanismus: Nur vertrauenswürdige Systemdienste sollen auf Standardports lauschen können.
 
 ## Wichtige Well-Known Ports
 
@@ -163,59 +116,32 @@ Beispiel:
 
 Eine TCP-Verbindung ist eindeutig durch ein **5-Tupel** identifiziert:
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    TCP-Verbindungs-Tupel                       │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  (Protokoll, Quell-IP, Quell-Port, Ziel-IP, Ziel-Port)        │
-│                                                                │
-│  Beispiel:                                                     │
-│  (TCP, 192.168.1.10, 52345, 93.184.216.34, 443)               │
-│        └────────────────┘   └───────────────────┘              │
-│           Client-Socket        Server-Socket                   │
-│                                                                │
-│  ┌─────────────────┐           ┌─────────────────┐            │
-│  │    Client       │           │     Server      │            │
-│  │ 192.168.1.10    │           │ 93.184.216.34   │            │
-│  │                 │           │                 │            │
-│  │ Socket:         │           │ Socket:         │            │
-│  │ Port 52345  ────┼───────────┼──► Port 443     │            │
-│  │ (ephemeral)     │           │ (well-known)    │            │
-│  └─────────────────┘           └─────────────────┘            │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+| Element | Beschreibung | Beispielwert |
+|---------|--------------|--------------|
+| **Protokoll** | TCP oder UDP | TCP |
+| **Quell-IP** | IP-Adresse des Clients | 192.168.1.10 |
+| **Quell-Port** | Port des Clients (ephemeral) | 52345 |
+| **Ziel-IP** | IP-Adresse des Servers | 93.184.216.34 |
+| **Ziel-Port** | Port des Dienstes (well-known) | 443 |
+
+> [!example] Beispiel-Verbindung
+> **Client-Socket:** `192.168.1.10:52345` (ephemeral Port)
+> **Server-Socket:** `93.184.216.34:443` (HTTPS)
+> 
+> Das vollständige 5-Tupel: `(TCP, 192.168.1.10, 52345, 93.184.216.34, 443)`
 
 ### Mehrere Verbindungen zum gleichen Server
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│              Mehrere Clients, ein Server                       │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Client A                        Server                        │
-│  192.168.1.10                    10.0.0.5                      │
-│  ┌───────────┐                   ┌───────────┐                │
-│  │Port 50001 │───────────────────│           │                │
-│  │Port 50002 │───────────────────│  Port 80  │                │
-│  └───────────┘                   │           │                │
-│                                  │           │                │
-│  Client B                        │           │                │
-│  192.168.1.20                    │           │                │
-│  ┌───────────┐                   │           │                │
-│  │Port 50001 │───────────────────│           │                │
-│  └───────────┘                   └───────────┘                │
-│                                                                │
-│  Drei unterschiedliche Verbindungen:                          │
-│  1. (TCP, 192.168.1.10, 50001, 10.0.0.5, 80)                  │
-│  2. (TCP, 192.168.1.10, 50002, 10.0.0.5, 80)                  │
-│  3. (TCP, 192.168.1.20, 50001, 10.0.0.5, 80)                  │
-│                                                                │
-│  Alle drei sind unterscheidbar durch das 5-Tupel!             │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[multiple-clients-server.png]]
+*<span class="fig-id">03-07-03-multiple-clients-server</span>: Mehrere Clients verbunden mit einem Server auf Port 80*
+
+**Drei unterschiedliche Verbindungen:**
+1. `(TCP, 192.168.1.10, 50001, 10.0.0.5, 80)` – Client A, erste Verbindung
+2. `(TCP, 192.168.1.10, 50002, 10.0.0.5, 80)` – Client A, zweite Verbindung
+3. `(TCP, 192.168.1.20, 50001, 10.0.0.5, 80)` – Client B
+
+> [!tip] Eindeutigkeit durch 5-Tupel
+> Obwohl Client A und Client B beide Port 50001 verwenden, sind die Verbindungen durch unterschiedliche Quell-IPs eindeutig unterscheidbar.
 
 ## Port-Zustandsprüfung
 
@@ -254,33 +180,11 @@ netstat -an
 
 ### PAT (Port Address Translation)
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                  PAT / NAT Overload                            │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Internes Netzwerk          NAT-Router         Internet        │
-│                                                                │
-│  PC1: 192.168.1.10:50001 ─┐                                   │
-│                           │   203.0.113.5:10001 ──► Web       │
-│  PC2: 192.168.1.11:50001 ─┼─► NAT-Tabelle                     │
-│                           │   203.0.113.5:10002 ──► Web       │
-│  PC3: 192.168.1.12:52000 ─┘                                   │
-│                               203.0.113.5:10003 ──► Web       │
-│                                                                │
-│  NAT-Tabelle:                                                  │
-│  ┌──────────────────────┬──────────────────────┐              │
-│  │ Intern               │ Extern               │              │
-│  ├──────────────────────┼──────────────────────┤              │
-│  │ 192.168.1.10:50001   │ 203.0.113.5:10001    │              │
-│  │ 192.168.1.11:50001   │ 203.0.113.5:10002    │              │
-│  │ 192.168.1.12:52000   │ 203.0.113.5:10003    │              │
-│  └──────────────────────┴──────────────────────┘              │
-│                                                                │
-│  Eine öffentliche IP, viele interne Hosts!                    │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[pat-nat-overload.png]]
+*<span class="fig-id">03-07-03-pat-nat-overload</span>: PAT/NAT Overload – Eine öffentliche IP für viele interne Hosts*
+
+> [!info] NAT Overload / PAT
+> Bei PAT (Port Address Translation) teilen sich mehrere interne Hosts eine einzige öffentliche IP-Adresse. Der Router unterscheidet die Verbindungen anhand der **Port-Nummern** in seiner NAT-Tabelle.
 
 ## Port-Scanning und Sicherheit
 
