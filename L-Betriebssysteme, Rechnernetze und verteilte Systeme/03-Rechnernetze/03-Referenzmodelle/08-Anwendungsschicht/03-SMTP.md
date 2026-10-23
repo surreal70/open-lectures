@@ -10,7 +10,7 @@ tags:
   - pop3
   - email
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-23'
 bereich: RN
 ---
 
@@ -28,36 +28,8 @@ E-Mail-Kommunikation verwendet verschiedene Protokolle für unterschiedliche Auf
 
 ## E-Mail-Architektur
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    E-Mail-Übertragung                          │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Sender                                            Empfänger   │
-│  alice@example.com                                bob@mail.de │
-│                                                                │
-│  ┌──────────┐    SMTP     ┌──────────┐    SMTP   ┌──────────┐ │
-│  │  E-Mail  │────(587)───►│   MTA    │───(25)───►│   MTA    │ │
-│  │  Client  │             │ example. │           │ mail.de  │ │
-│  │ (MUA)    │             │   com    │           │          │ │
-│  └──────────┘             └──────────┘           └────┬─────┘ │
-│                                                       │        │
-│                                                       ▼        │
-│                                                  ┌──────────┐ │
-│                                   IMAP/POP3      │ Mailbox  │ │
-│                                   (143/110)      │ Server   │ │
-│  ┌──────────┐◄───────────────────────────────────│ (MDA)    │ │
-│  │  E-Mail  │                                    └──────────┘ │
-│  │  Client  │                                                 │
-│  │ (MUA)    │                                                 │
-│  └──────────┘                                                 │
-│                                                                │
-│  MUA = Mail User Agent (E-Mail-Programm)                      │
-│  MTA = Mail Transfer Agent (Mailserver)                       │
-│  MDA = Mail Delivery Agent (Zustellung in Mailbox)            │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[email-architecture.png]]
+*<span class="fig-id">03-08-03-email-architecture</span>: E-Mail-Übertragung von Sender zu Empfänger über MTA-Kette*
 
 ## SMTP - Simple Mail Transfer Protocol
 
@@ -67,71 +39,8 @@ E-Mail-Kommunikation verwendet verschiedene Protokolle für unterschiedliche Auf
 
 ### SMTP-Kommunikation
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    SMTP-Dialog                                 │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Client                                          Server        │
-│     │                                               │          │
-│     │  TCP-Verbindung zu Port 25/587                │          │
-│     │ ─────────────────────────────────────────────►│          │
-│     │                                               │          │
-│     │  220 mail.example.com ESMTP ready             │          │
-│     │ ◄─────────────────────────────────────────────│          │
-│     │                                               │          │
-│     │  EHLO client.example.org                      │          │
-│     │ ─────────────────────────────────────────────►│          │
-│     │                                               │          │
-│     │  250-mail.example.com Hello                   │          │
-│     │  250-SIZE 35882577                            │          │
-│     │  250-AUTH LOGIN PLAIN                         │          │
-│     │  250 STARTTLS                                 │          │
-│     │ ◄─────────────────────────────────────────────│          │
-│     │                                               │          │
-│     │  AUTH LOGIN (Base64-kodierte Credentials)     │          │
-│     │ ─────────────────────────────────────────────►│          │
-│     │                                               │          │
-│     │  235 Authentication successful                │          │
-│     │ ◄─────────────────────────────────────────────│          │
-│     │                                               │          │
-│     │  MAIL FROM:<alice@example.com>                │          │
-│     │ ─────────────────────────────────────────────►│          │
-│     │                                               │          │
-│     │  250 OK                                       │          │
-│     │ ◄─────────────────────────────────────────────│          │
-│     │                                               │          │
-│     │  RCPT TO:<bob@mail.de>                        │          │
-│     │ ─────────────────────────────────────────────►│          │
-│     │                                               │          │
-│     │  250 OK                                       │          │
-│     │ ◄─────────────────────────────────────────────│          │
-│     │                                               │          │
-│     │  DATA                                         │          │
-│     │ ─────────────────────────────────────────────►│          │
-│     │                                               │          │
-│     │  354 Start mail input                         │          │
-│     │ ◄─────────────────────────────────────────────│          │
-│     │                                               │          │
-│     │  From: alice@example.com                      │          │
-│     │  To: bob@mail.de                              │          │
-│     │  Subject: Test                                │          │
-│     │                                               │          │
-│     │  Hallo Bob!                                   │          │
-│     │  .                                            │          │
-│     │ ─────────────────────────────────────────────►│          │
-│     │                                               │          │
-│     │  250 OK, message queued                       │          │
-│     │ ◄─────────────────────────────────────────────│          │
-│     │                                               │          │
-│     │  QUIT                                         │          │
-│     │ ─────────────────────────────────────────────►│          │
-│     │                                               │          │
-│     │  221 Bye                                      │          │
-│     │ ◄─────────────────────────────────────────────│          │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[smtp-dialog.png]]
+*<span class="fig-id">03-08-03-smtp-dialog</span>: SMTP-Dialog zwischen Client und Server*
 
 ### SMTP-Befehle
 
@@ -182,42 +91,8 @@ E-Mail-Kommunikation verwendet verschiedene Protokolle für unterschiedliche Auf
 
 ### IMAP vs. POP3
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    IMAP vs. POP3                               │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  IMAP (Server-zentriert):                                      │
-│                                                                │
-│       PC           Smartphone        Tablet                    │
-│       ▼                ▼               ▼                       │
-│       └────────────────┼───────────────┘                       │
-│                        │                                       │
-│                        ▼                                       │
-│              ┌─────────────────┐                               │
-│              │   Mail-Server   │  ← E-Mails bleiben hier      │
-│              │  ┌───┬───┬───┐  │                               │
-│              │  │ 📧│ 📧│ 📧│  │                               │
-│              │  └───┴───┴───┘  │                               │
-│              └─────────────────┘                               │
-│                                                                │
-│  POP3 (Client-zentriert):                                      │
-│                                                                │
-│              ┌─────────────────┐                               │
-│              │   Mail-Server   │                               │
-│              │     (leer)      │  ← E-Mails werden gelöscht   │
-│              └────────┬────────┘                               │
-│                       │ Download                               │
-│                       ▼                                        │
-│              ┌─────────────────┐                               │
-│              │   Lokaler PC    │  ← E-Mails nur hier          │
-│              │  ┌───┬───┬───┐  │                               │
-│              │  │ 📧│ 📧│ 📧│  │                               │
-│              │  └───┴───┴───┘  │                               │
-│              └─────────────────┘                               │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[imap-vs-pop3.png]]
+*<span class="fig-id">03-08-03-imap-vs-pop3</span>: Vergleich der Speichermodelle von IMAP und POP3*
 
 ### IMAP-Befehle
 
@@ -262,42 +137,8 @@ E-Mail-Kommunikation verwendet verschiedene Protokolle für unterschiedliche Auf
 
 ### POP3-Dialog
 
-```
-Client                           Server
-   │                                │
-   │  +OK POP3 server ready         │
-   │ ◄──────────────────────────────│
-   │                                │
-   │  USER bob                      │
-   │ ────────────────────────────►  │
-   │                                │
-   │  +OK                           │
-   │ ◄──────────────────────────────│
-   │                                │
-   │  PASS geheim123                │
-   │ ────────────────────────────►  │
-   │                                │
-   │  +OK Mailbox open, 3 messages  │
-   │ ◄──────────────────────────────│
-   │                                │
-   │  LIST                          │
-   │ ────────────────────────────►  │
-   │                                │
-   │  +OK                           │
-   │  1 1234                        │
-   │  2 5678                        │
-   │  3 910                         │
-   │  .                             │
-   │ ◄──────────────────────────────│
-   │                                │
-   │  RETR 1                        │
-   │ ────────────────────────────►  │
-   │                                │
-   │  +OK 1234 octets               │
-   │  (Nachrichteninhalt)           │
-   │  .                             │
-   │ ◄──────────────────────────────│
-```
+![[pop3-dialog.png]]
+*<span class="fig-id">03-08-03-pop3-dialog</span>: POP3-Dialog mit Authentifizierung und Nachrichtenabruf*
 
 ## Vergleichstabelle
 
@@ -311,35 +152,41 @@ Client                           Server
 
 ## E-Mail-Format (RFC 5322)
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    E-Mail-Struktur                             │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Header:                                                       │
-│  ──────────────────────────────────────────────────────────   │
-│  From: Alice <alice@example.com>                              │
-│  To: Bob <bob@mail.de>                                        │
-│  Cc: Carol <carol@example.org>                                │
-│  Subject: Wichtige Nachricht                                   │
-│  Date: Mon, 13 Oct 2026 10:30:00 +0200                        │
-│  Message-ID: <abc123@example.com>                             │
-│  MIME-Version: 1.0                                            │
-│  Content-Type: text/plain; charset="UTF-8"                    │
-│  ──────────────────────────────────────────────────────────   │
-│  (Leerzeile)                                                  │
-│  ──────────────────────────────────────────────────────────   │
-│  Body:                                                         │
-│                                                                │
-│  Hallo Bob,                                                   │
-│                                                                │
-│  dies ist eine wichtige Nachricht.                            │
-│                                                                │
-│  Viele Grüße                                                  │
-│  Alice                                                         │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+Eine E-Mail besteht aus **Header** (Metadaten) und **Body** (Inhalt), getrennt durch eine Leerzeile.
+
+### Header-Felder
+
+| Feld | Beschreibung |
+|------|--------------|
+| **From** | Absender-Adresse |
+| **To** | Empfänger-Adresse(n) |
+| **Cc** | Kopie-Empfänger (sichtbar) |
+| **Bcc** | Blindkopie (nicht sichtbar) |
+| **Subject** | Betreff |
+| **Date** | Sendedatum und -zeit |
+| **Message-ID** | Eindeutige Nachrichten-ID |
+| **MIME-Version** | MIME-Standard (meist 1.0) |
+| **Content-Type** | Medientyp und Zeichensatz |
+
+> [!example] E-Mail-Struktur
+> ```
+> From: Alice <alice@example.com>
+> To: Bob <bob@mail.de>
+> Cc: Carol <carol@example.org>
+> Subject: Wichtige Nachricht
+> Date: Mon, 13 Oct 2026 10:30:00 +0200
+> Message-ID: <abc123@example.com>
+> MIME-Version: 1.0
+> Content-Type: text/plain; charset="UTF-8"
+> 
+> Hallo Bob,
+> 
+> dies ist eine wichtige Nachricht.
+> 
+> Viele Grüße
+> Alice
+> ```
+> *Header und Body sind durch eine Leerzeile getrennt*
 
 ## E-Mail-Sicherheit
 
