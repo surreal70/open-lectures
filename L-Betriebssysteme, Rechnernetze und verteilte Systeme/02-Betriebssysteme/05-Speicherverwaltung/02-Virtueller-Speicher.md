@@ -403,7 +403,6 @@ Erst wenn Eltern- oder Kindprozess schreibt:
 
 > [!warning] **Prüfungsrelevant**
 > - Konzept des virtuellen Speichers und Lokalitätsprinzip
-> - Unterschied Swapping vs. Demand Paging
 > - Page Fault: Arten und Behandlung
 > - Speicherhierarchie (Zugriffszeiten kennen!)
 > - Working Set und Thrashing

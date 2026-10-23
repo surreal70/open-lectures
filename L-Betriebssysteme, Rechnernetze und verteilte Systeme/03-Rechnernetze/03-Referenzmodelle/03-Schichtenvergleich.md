@@ -33,15 +33,15 @@ bereich: RN
 
 ### Schicht-für-Schicht-Zuordnung
 
-| OSI | OSI-Name | TCP/IP | TCP/IP-Name | Protokollbeispiele | PDU |
-|-----|----------|--------|-------------|-------------------|-----|
-| 7 | Anwendung | 4 | Anwendung | HTTP, DNS, SMTP, SSH | Daten |
-| 6 | Darstellung | 4 | Anwendung | TLS*, JPEG, ASCII | Daten |
-| 5 | Sitzung | 4 | Anwendung | RPC, NetBIOS | Daten |
-| 4 | Transport | 3 | Transport | TCP, UDP, QUIC | Segment/Datagramm |
-| 3 | Vermittlung | 2 | Internet | IP, ICMP, IGMP | Paket |
-| 2 | Sicherung | 1 | Netzzugang | Ethernet, WLAN, PPP | Frame |
-| 1 | Bitübertragung | 1 | Netzzugang | Kabel, Funk, Glasfaser | Bit |
+| OSI | OSI-Name       | TCP/IP | TCP/IP-Name | Protokollbeispiele     | PDU               |
+| --- | -------------- | ------ | ----------- | ---------------------- | ----------------- |
+| 7   | Anwendung      | 4      | Anwendung   | HTTP, DNS, SMTP, SSH   | Daten             |
+| 6   | Darstellung    | 4      | Anwendung   | TLS*, JPEG, ASCII      | Daten             |
+| 5   | Sitzung        | 4      | Anwendung   | RPC, NetBIOS           | Daten             |
+| 4   | Transport      | 3      | Transport   | TCP, UDP, QUIC         | Segment/Datagramm |
+| 3   | Vermittlung    | 2      | Internet    | IP, ICMP, IGMP         | Paket             |
+| 2   | Sicherung      | 1      | Netzzugang  | Ethernet, WLAN, PPP    | Frame             |
+| 1   | Bitübertragung | 1      | Netzzugang  | Kabel, Funk, Glasfaser | Bit               |
 
 *TLS wird manchmal auch der Transportschicht zugeordnet
 

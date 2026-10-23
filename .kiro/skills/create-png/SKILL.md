@@ -36,6 +36,13 @@ Produce educational PNG illustrations that remain legible in both light and dark
 - Use `scripts/prepare_png.py` to generate a contact sheet (`<name>_preview.png`) when Pillow is available; otherwise prepare equivalent images with available tools.
 - Put preview artifacts in a temporary/staging location. Do **not** add previews to the final Obsidian `assets/` folder unless specifically requested.
 
+## Working directory for drafts
+
+- **Always use `/tmp/open-lectures-drafts/` as the working directory** for Python scripts, draft PNGs, previews, and intermediate files.
+- Create the directory if it doesn't exist: `mkdir -p /tmp/open-lectures-drafts/`
+- Never store drafts or working files inside `.kiro/` or the workspace — these are temporary artifacts that should not be versioned or persist across sessions.
+- Only the final approved PNGs get copied to the chapter's `assets/` directory.
+
 ## Failure behavior
 
 - If the environment cannot generate or preview images, state exactly what is blocked and do not claim the files passed validation.

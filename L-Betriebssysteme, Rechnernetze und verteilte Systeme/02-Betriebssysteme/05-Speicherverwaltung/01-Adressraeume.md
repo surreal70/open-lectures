@@ -341,7 +341,6 @@ $ cat /proc/1234/maps | head -10
 > [!warning] **Prüfungsrelevant**
 > - Unterschied physische vs. logische Adresse
 > - Die drei Aufgaben der Speicherverwaltung
-> - Belegungsstrategien (First-Fit, Best-Fit, Worst-Fit) – Vor- und Nachteile
 > - Funktion der MMU und Adressübersetzung
 > - Aufbau des Prozess-Adressraums (Text, Data, BSS, Heap, Stack)
 

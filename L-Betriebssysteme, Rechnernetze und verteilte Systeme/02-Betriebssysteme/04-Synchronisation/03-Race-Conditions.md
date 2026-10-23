@@ -324,7 +324,6 @@ Der Stromausfall, der 55 Millionen Menschen in den USA und Kanada betraf, wurde 
 > - Warum x++ nicht atomar ist
 > - Lost Update Problem (Bankbeispiel)
 > - Drei Voraussetzungen für Race Conditions
-> - TOCTOU-Probleme
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Was ist eine Race Condition? Geben Sie ein Beispiel!
