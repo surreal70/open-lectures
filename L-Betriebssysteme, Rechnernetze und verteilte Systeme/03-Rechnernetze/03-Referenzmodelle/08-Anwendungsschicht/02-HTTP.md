@@ -9,7 +9,7 @@ tags:
   - https
   - web
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-23'
 bereich: RN
 ---
 
@@ -31,100 +31,71 @@ bereich: RN
 
 ## HTTP-Versionen
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    HTTP-Entwicklung                            │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  HTTP/0.9 (1991)                                              │
-│  └─ Nur GET, keine Header, nur HTML                           │
-│                                                                │
-│  HTTP/1.0 (1996)                                              │
-│  └─ Header, Methoden, Statuscodes, MIME-Types                 │
-│  └─ Eine Verbindung pro Request                               │
-│                                                                │
-│  HTTP/1.1 (1997)  ← Heute noch weit verbreitet                │
-│  └─ Persistent Connections (Keep-Alive)                       │
-│  └─ Pipelining, Chunked Transfer, Host-Header                 │
-│                                                                │
-│  HTTP/2 (2015)                                                │
-│  └─ Binäres Protokoll, Multiplexing                           │
-│  └─ Header-Kompression (HPACK)                                │
-│  └─ Server Push                                               │
-│                                                                │
-│  HTTP/3 (2022)                                                │
-│  └─ Basiert auf QUIC (UDP statt TCP)                         │
-│  └─ Verbesserte Performance, 0-RTT                            │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[http-timeline.png]]
+*<span class="fig-id">03-08-02-http-timeline</span>: Entwicklung des HTTP-Protokolls von 1991 bis 2022*
+
+### HTTP/0.9 (1991)
+Die erste Version von Tim Berners-Lee war extrem einfach: Nur die GET-Methode, keine Header, nur HTML-Dokumente. Eine Anfrage bestand aus einer einzigen Zeile (`GET /page.html`), die Antwort war reiner HTML-Text.
+
+### HTTP/1.0 (1996)
+Mit der Standardisierung kamen Header, verschiedene Methoden (GET, POST, HEAD), Statuscodes und MIME-Types. **Problem:** Jede Anfrage erforderte eine neue TCP-Verbindung – bei Seiten mit vielen Bildern sehr ineffizient.
+
+### HTTP/1.1 (1997)
+Die bis heute am weitesten verbreitete Version löste das Verbindungsproblem:
+- **Persistent Connections (Keep-Alive):** Eine TCP-Verbindung für mehrere Requests
+- **Pipelining:** Mehrere Requests senden ohne auf Antwort zu warten
+- **Host-Header:** Pflicht – ermöglicht Virtual Hosting (mehrere Domains auf einer IP)
+- **Chunked Transfer:** Streaming von Daten unbekannter Größe
+
+### HTTP/2 (2015)
+Ein grundlegender Umbau zur Performanceverbesserung:
+- **Binäres Protokoll:** Nicht mehr textbasiert, effizienter zu parsen
+- **Multiplexing:** Mehrere Streams parallel über eine Verbindung (löst Head-of-Line-Blocking auf Anwendungsebene)
+- **Header-Kompression (HPACK):** Reduziert redundante Header drastisch
+- **Server Push:** Server kann Ressourcen proaktiv senden
+
+> [!info] Warum binär?
+> Textbasierte Protokolle sind menschenlesbar, aber ineffizient. HTTP/2 optimiert für Maschinen – Browser-DevTools zeigen die Daten trotzdem lesbar an.
+
+### HTTP/3 (2022)
+Der radikalste Wechsel: Statt TCP wird **QUIC über UDP** verwendet:
+- **0-RTT Connection Setup:** Bei bekannten Servern kann sofort gesendet werden
+- **Kein Head-of-Line-Blocking:** Paketverlust in einem Stream blockiert andere nicht
+- **Verbindungsmigration:** Wechsel zwischen WLAN und Mobilfunk ohne Verbindungsabbruch
+
+> [!warning] TCP vs. QUIC
+> TCP hat Head-of-Line-Blocking auf Transportebene: Ein verlorenes Paket blockiert alle nachfolgenden. QUIC löst dies durch unabhängige Streams auf UDP-Basis.
 
 ## HTTP-Kommunikation
 
 ### Request-Response-Zyklus
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                  HTTP Request-Response                         │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Client (Browser)                        Server                │
-│       │                                     │                  │
-│       │  1. DNS-Auflösung                   │                  │
-│       │     www.example.com → 93.184.216.34 │                  │
-│       │                                     │                  │
-│       │  2. TCP-Verbindung (3-Way-Handshake)│                  │
-│       │ ◄──────────────────────────────────►│                  │
-│       │                                     │                  │
-│       │  3. HTTP Request                    │                  │
-│       │  GET /index.html HTTP/1.1           │                  │
-│       │  Host: www.example.com              │                  │
-│       │ ────────────────────────────────────►│                  │
-│       │                                     │                  │
-│       │  4. HTTP Response                   │                  │
-│       │  HTTP/1.1 200 OK                    │                  │
-│       │  Content-Type: text/html            │                  │
-│       │  <html>...</html>                   │                  │
-│       │ ◄────────────────────────────────────│                  │
-│       │                                     │                  │
-│       │  5. Weitere Requests (CSS, JS, Bilder)                │
-│       │ ◄────────────────────────────────────►                │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[http-request-response.png]]
+*<span class="fig-id">03-08-02-http-request-response</span>: HTTP Request-Response-Zyklus von DNS bis zur Antwort*
 
 ## HTTP-Request
 
 ### Aufbau
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    HTTP-Request-Format                         │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Request-Line:    METHODE /pfad/ressource HTTP/Version        │
-│  ─────────────────────────────────────────────────────────    │
-│  Header:          Header-Name: Header-Wert                     │
-│                   Header-Name: Header-Wert                     │
-│                   ...                                          │
-│  ─────────────────────────────────────────────────────────    │
-│  Leerzeile:       (trennt Header vom Body)                    │
-│  ─────────────────────────────────────────────────────────    │
-│  Body:            (optional, z.B. bei POST)                   │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
+Ein HTTP-Request besteht aus vier Teilen:
 
-Beispiel:
+| Teil             | Beschreibung                        | Beispiel                   |
+| ---------------- | ----------------------------------- | -------------------------- |
+| **Request-Line** | Methode, Pfad, HTTP-Version         | `GET /index.html HTTP/1.1` |
+| **Header**       | Key-Value-Paare mit Metadaten       | `Host: www.example.com`    |
+| **Body**         | Nutzdaten (optional, z.B. bei POST) | `{"name": "Max"}`          |
 
-GET /search?q=test HTTP/1.1
-Host: www.google.com
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
-Accept: text/html,application/xhtml+xml
-Accept-Language: de-DE,de;q=0.9,en;q=0.8
-Accept-Encoding: gzip, deflate, br
-Connection: keep-alive
-
-```
+> [!example] Beispiel: HTTP GET Request
+> ```http
+> GET /search?q=test HTTP/1.1
+> Host: www.google.com
+> User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+> Accept: text/html,application/xhtml+xml
+> Accept-Language: de-DE,de;q=0.9,en;q=0.8
+> Accept-Encoding: gzip, deflate, br
+> Connection: keep-alive
+> ```
+> *kein Body bei GET*
 
 ### HTTP-Methoden
 
@@ -214,95 +185,49 @@ Connection: keep-alive
 
 ### TLS/SSL-Schicht
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    HTTPS = HTTP + TLS                          │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  HTTP (ohne TLS):                  HTTPS (mit TLS):           │
-│                                                                │
-│  ┌─────────────┐                   ┌─────────────┐            │
-│  │    HTTP     │                   │    HTTP     │            │
-│  ├─────────────┤                   ├─────────────┤            │
-│  │    TCP      │                   │    TLS      │  ← NEU     │
-│  ├─────────────┤                   ├─────────────┤            │
-│  │    IP       │                   │    TCP      │            │
-│  └─────────────┘                   ├─────────────┤            │
-│                                    │    IP       │            │
-│  Port 80                           └─────────────┘            │
-│  Unverschlüsselt                   Port 443                   │
-│                                    Verschlüsselt              │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[https-stack-comparison.png]]
+*<span class="fig-id">03-08-02-https-stack-comparison</span>: HTTPS fügt eine TLS-Verschlüsselungsschicht zwischen HTTP und TCP ein*
 
 ### TLS-Handshake (vereinfacht)
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                      TLS-Handshake                             │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Client                                          Server        │
-│     │                                               │          │
-│     │  1. ClientHello                               │          │
-│     │     (unterstützte Cipher Suites, Random)      │          │
-│     │ ─────────────────────────────────────────────►│          │
-│     │                                               │          │
-│     │  2. ServerHello + Certificate                 │          │
-│     │     (gewählte Cipher Suite, Server-Zertifikat)│          │
-│     │ ◄─────────────────────────────────────────────│          │
-│     │                                               │          │
-│     │  3. Client verifiziert Zertifikat             │          │
-│     │     (Zertifikatskette, CA-Vertrauen)          │          │
-│     │                                               │          │
-│     │  4. Key Exchange                              │          │
-│     │     (Pre-Master Secret, verschlüsselt mit    │          │
-│     │      Server Public Key)                       │          │
-│     │ ─────────────────────────────────────────────►│          │
-│     │                                               │          │
-│     │  5. Beide Seiten berechnen Session Key        │          │
-│     │                                               │          │
-│     │  6. Finished (verschlüsselt)                  │          │
-│     │ ◄────────────────────────────────────────────►│          │
-│     │                                               │          │
-│     │  ═══════ Verschlüsselte Kommunikation ═══════│          │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+![[tls-handshake.png]]
+*<span class="fig-id">03-08-02-tls-handshake</span>: TLS-Handshake – Schlüsselaustausch vor der verschlüsselten Kommunikation*
 
 ## Session-Management
 
 ### Cookies
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    HTTP Cookies                                │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  1. Server setzt Cookie:                                       │
-│                                                                │
-│     HTTP/1.1 200 OK                                           │
-│     Set-Cookie: session_id=abc123; Path=/; HttpOnly; Secure  │
-│     Set-Cookie: user=john; Expires=Wed, 13 Oct 2027 10:00:00 │
-│                                                                │
-│  2. Client sendet Cookie bei folgenden Requests:              │
-│                                                                │
-│     GET /dashboard HTTP/1.1                                   │
-│     Cookie: session_id=abc123; user=john                      │
-│                                                                │
-│  Cookie-Attribute:                                             │
-│  ┌────────────────┬────────────────────────────────────────┐  │
-│  │ Expires/Max-Age│ Lebensdauer des Cookies                │  │
-│  │ Path           │ Gültigkeitspfad                        │  │
-│  │ Domain         │ Gültige Domain(s)                      │  │
-│  │ Secure         │ Nur über HTTPS                         │  │
-│  │ HttpOnly       │ Nicht per JavaScript zugreifbar        │  │
-│  │ SameSite       │ CSRF-Schutz (Strict/Lax/None)          │  │
-│  └────────────────┴────────────────────────────────────────┘  │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+HTTP ist zustandslos – Cookies ermöglichen Session-Management durch kleine Datenpakete, die der Server beim Client speichert.
+
+#### Cookie-Ablauf
+
+1. **Server setzt Cookie** (Response-Header):
+   ```http
+   Set-Cookie: session_id=abc123; Path=/; HttpOnly; Secure
+   Set-Cookie: user=john; Expires=Wed, 13 Oct 2027 10:00:00 GMT
+   ```
+
+2. **Client sendet Cookie** (bei folgenden Requests):
+   ```http
+   GET /dashboard HTTP/1.1
+   Cookie: session_id=abc123; user=john
+   ```
+
+#### Cookie-Attribute
+
+| Attribut | Beschreibung |
+|----------|--------------|
+| **Expires / Max-Age** | Lebensdauer des Cookies (ohne: Session-Cookie) |
+| **Path** | Gültigkeitspfad (z.B. `/admin`) |
+| **Domain** | Gültige Domain(s) inkl. Subdomains |
+| **Secure** | Nur über HTTPS übertragen |
+| **HttpOnly** | Nicht per JavaScript zugreifbar (XSS-Schutz) |
+| **SameSite** | CSRF-Schutz: `Strict`, `Lax`, oder `None` |
+
+> [!warning] Sicherheitsattribute
+> - **HttpOnly** verhindert, dass Angreifer per XSS (Cross-Site Scripting) Session-Cookies stehlen können
+> - **Secure** stellt sicher, dass Cookies nicht über unverschlüsselte Verbindungen abgefangen werden
+> - **SameSite=Strict** blockiert das Cookie bei Cross-Site-Requests (stärkster CSRF-Schutz)
 
 ## REST (Representational State Transfer)
 
@@ -318,39 +243,37 @@ REST ist ein Architekturstil für Web-APIs:
 | **Einheitliche Schnittstelle** | Standardisierte Ressourcen-URLs |
 | **Schichtenarchitektur** | Transparente Zwischenschichten möglich |
 
-### REST-Beispiel
+### REST-Beispiel: Benutzer-API
 
-```
-┌────────────────────────────────────────────────────────────────┐
-│                    RESTful API Beispiel                        │
-├────────────────────────────────────────────────────────────────┤
-│                                                                │
-│  Ressource: Benutzer (/users)                                 │
-│                                                                │
-│  ┌────────────┬─────────────────┬──────────────────────────┐  │
-│  │ Methode    │ URL             │ Aktion                   │  │
-│  ├────────────┼─────────────────┼──────────────────────────┤  │
-│  │ GET        │ /users          │ Alle Benutzer abrufen    │  │
-│  │ GET        │ /users/42       │ Benutzer 42 abrufen      │  │
-│  │ POST       │ /users          │ Neuen Benutzer erstellen │  │
-│  │ PUT        │ /users/42       │ Benutzer 42 ersetzen     │  │
-│  │ PATCH      │ /users/42       │ Benutzer 42 aktualisieren│  │
-│  │ DELETE     │ /users/42       │ Benutzer 42 löschen      │  │
-│  └────────────┴─────────────────┴──────────────────────────┘  │
-│                                                                │
-│  Beispiel POST:                                                │
-│                                                                │
-│  POST /users HTTP/1.1                                         │
-│  Content-Type: application/json                               │
-│                                                                │
-│  {"name": "Max Mustermann", "email": "max@example.de"}        │
-│                                                                │
-│  Response:                                                     │
-│  HTTP/1.1 201 Created                                         │
-│  Location: /users/43                                          │
-│                                                                │
-└────────────────────────────────────────────────────────────────┘
-```
+Eine typische RESTful API für Benutzer (`/users`):
+
+| Methode | URL | Aktion |
+|---------|-----|--------|
+| **GET** | `/users` | Alle Benutzer abrufen |
+| **GET** | `/users/42` | Benutzer 42 abrufen |
+| **POST** | `/users` | Neuen Benutzer erstellen |
+| **PUT** | `/users/42` | Benutzer 42 komplett ersetzen |
+| **PATCH** | `/users/42` | Benutzer 42 teilweise aktualisieren |
+| **DELETE** | `/users/42` | Benutzer 42 löschen |
+
+> [!example] POST-Request mit Response
+> **Request:**
+> ```http
+> POST /users HTTP/1.1
+> Host: api.example.com
+> Content-Type: application/json
+> 
+> {"name": "Max Mustermann", "email": "max@example.de"}
+> ```
+> 
+> **Response:**
+> ```http
+> HTTP/1.1 201 Created
+> Location: /users/43
+> Content-Type: application/json
+> 
+> {"id": 43, "name": "Max Mustermann", "email": "max@example.de"}
+> ```
 
 ## Prüfungsrelevante Themen
 
