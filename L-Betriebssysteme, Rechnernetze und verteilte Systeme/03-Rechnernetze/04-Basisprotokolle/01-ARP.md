@@ -10,7 +10,7 @@ tags:
   - mac
   - adressauflösung
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-23'
 bereich: RN
 ---
 
@@ -36,25 +36,8 @@ bereich: RN
 
 Wenn ein Host ein IP-Paket senden will, kennt er nur die Ziel-IP-Adresse. Aber Switches arbeiten mit MAC-Adressen – sie verstehen keine IP-Adressen:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              Das Adressierungsproblem                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Anwendung will Daten an 192.168.1.20 senden                  │
-│                                                                  │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ IP-Schicht:   "Ziel-IP: 192.168.1.20" ✓                │  │
-│   │ Ethernet:     "Ziel-MAC: ???"         ✗                │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   Ohne MAC-Adresse kann der Switch das Paket nicht zustellen!  │
-│                                                                  │
-│   → ARP fragt im Netzwerk: "Wer hat IP 192.168.1.20?"         │
-│   → Antwort: "Ich! Meine MAC ist 00:1A:2B:3C:4D:5E"           │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[arp-addressing-problem.png]]
+*<span class="fig-id">04-01-arp-addressing-problem</span>: Das Adressierungsproblem – IP kennt keine MAC-Adressen*
 
 > [!example] **Analogie: Telefonbuch**
 > - Du kennst den **Namen** deines Freundes (= IP-Adresse)
@@ -67,33 +50,8 @@ Wenn ein Host ein IP-Paket senden will, kennt er nur die Ziel-IP-Adresse. Aber S
 
 ARP arbeitet zwischen Layer 2 und Layer 3. Es wird direkt in Ethernet-Frames gekapselt (EtherType: 0x0806), nicht in IP:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    ARP im Protokollstapel                       │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   ┌─────────────────────────────────────────────────────────┐   │
-│   │              Netzwerkschicht (Layer 3)                  │   │
-│   │                       IP                                 │   │
-│   │   "Ich will an 192.168.1.20 senden"                     │   │
-│   └─────────────────────────────────────────────────────────┘   │
-│                            │                                     │
-│                            ▼                                     │
-│   ┌─────────────────────────────────────────────────────────┐   │
-│   │                       ARP                                │   │
-│   │   "Welche MAC-Adresse hat 192.168.1.20?"                │   │
-│   │   Antwort: "00:1A:2B:3C:4D:5E"                          │   │
-│   └─────────────────────────────────────────────────────────┘   │
-│                            │                                     │
-│                            ▼                                     │
-│   ┌─────────────────────────────────────────────────────────┐   │
-│   │              Sicherungsschicht (Layer 2)                │   │
-│   │                    Ethernet                              │   │
-│   │   Ziel-MAC: 00:1A:2B:3C:4D:5E                           │   │
-│   └─────────────────────────────────────────────────────────┘   │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[arp-protocol-stack.png]]
+*<span class="fig-id">04-01-arp-protocol-stack</span>: ARP als Brücke zwischen Netzwerk- und Sicherungsschicht*
 
 ---
 
@@ -101,35 +59,8 @@ ARP arbeitet zwischen Layer 2 und Layer 3. Es wird direkt in Ethernet-Frames gek
 
 ### Request und Reply
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    ARP Request/Reply                            │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Host A                      Switch                  Host B    │
-│   192.168.1.10                                    192.168.1.20  │
-│   AA:AA:AA:AA:AA:AA                              BB:BB:BB:BB:..│
-│       │                                               │         │
-│       │                                               │         │
-│       │  1. ARP Request (Broadcast)                   │         │
-│       │     Ziel-MAC: FF:FF:FF:FF:FF:FF              │         │
-│       │     "Wer hat IP 192.168.1.20?                │         │
-│       │      Sagt es 192.168.1.10 (AA:AA:...)"       │         │
-│       │───────────────────────────────────────────────┼────────>│
-│       │               (an alle Ports)                 │         │
-│       │                                               │         │
-│       │  2. ARP Reply (Unicast)                       │         │
-│       │     Ziel-MAC: AA:AA:AA:AA:AA:AA              │         │
-│       │     "192.168.1.20 ist bei BB:BB:BB:BB:BB:BB" │         │
-│       │<──────────────────────────────────────────────┼─────────│
-│       │                                               │         │
-│       │  3. Kommunikation jetzt möglich              │         │
-│       │     IP-Paket mit korrekter Ziel-MAC          │         │
-│       │───────────────────────────────────────────────┼────────>│
-│       │                                               │         │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[arp-request-reply.png]]
+*<span class="fig-id">04-01-arp-request-reply</span>: ARP-Ablauf – Broadcast-Request, Unicast-Reply, dann Kommunikation*
 
 ### Detaillierter Ablauf
 
@@ -151,27 +82,8 @@ ARP arbeitet zwischen Layer 2 und Layer 3. Es wird direkt in Ethernet-Frames gek
 
 Das ARP-Paket ist 28 Bytes groß (für Ethernet/IPv4):
 
-```
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│         Hardware Type         │         Protocol Type         │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│ HW Addr Len   │ Proto Addr Len│           Operation           │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                    Sender Hardware Address                    │
-│                         (6 Bytes MAC)                         │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                    Sender Protocol Address                    │
-│                         (4 Bytes IP)                          │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                    Target Hardware Address                    │
-│                         (6 Bytes MAC)                         │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                    Target Protocol Address                    │
-│                         (4 Bytes IP)                          │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-```
+![[arp-packet-format.png]]
+*<span class="fig-id">04-01-arp-packet-format</span>: ARP-Paketstruktur mit Header-Feldern und Adressen*
 
 | Feld | Bytes | Wert (Ethernet/IPv4) | Beschreibung |
 |------|-------|---------------------|--------------|
@@ -241,44 +153,21 @@ C:\> arp -d *
 
 ### Gratuitous ARP
 
-Ein Host sendet einen ARP Request für seine **eigene** IP-Adresse:
+Ein Host sendet einen ARP Request für seine **eigene** IP-Adresse.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Gratuitous ARP                               │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Sender IP:  192.168.1.10                                      │
-│   Target IP:  192.168.1.10   ← Gleich!                         │
-│                                                                  │
-│   Verwendungszwecke:                                            │
-│   • Duplicate Address Detection (DAD)                          │
-│   • ARP-Cache-Update bei anderen Hosts (z.B. nach MAC-Wechsel) │
-│   • Failover-Szenarien (VRRP, HSRP)                            │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+> [!info] Verwendungszwecke
+> - **Duplicate Address Detection (DAD):** Prüfen, ob die eigene IP bereits vergeben ist
+> - **ARP-Cache-Update:** Andere Hosts über MAC-Änderung informieren (z.B. nach NIC-Wechsel)
+> - **Failover-Szenarien:** VRRP, HSRP – virtueller Router übernimmt IP
 
 ### Proxy ARP
 
-Ein Router antwortet auf ARP Requests im Namen von Hosts in anderen Netzen:
+Ein Router antwortet auf ARP Requests im Namen von Hosts in anderen Netzen.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Proxy ARP                                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Netz A                    Router                    Netz B    │
-│   192.168.1.0/24                                 192.168.2.0/24 │
-│                                                                  │
-│   Host A fragt: "Wer hat 192.168.2.20?"                        │
-│   Router antwortet mit SEINER MAC!                              │
-│                                                                  │
-│   → Host A sendet an Router-MAC                                │
-│   → Router leitet an echtes Ziel weiter                        │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+> [!example] Proxy ARP Ablauf
+> - Host A (Netz 192.168.1.0/24) fragt: "Wer hat 192.168.2.20?"
+> - Router antwortet mit **seiner eigenen MAC**
+> - Host A sendet an Router-MAC → Router leitet an echtes Ziel weiter
 
 > [!warning] **Proxy ARP**
 > Proxy ARP wird heute selten verwendet und kann Sicherheitsrisiken bergen. Es maskiert die tatsächliche Netzwerktopologie.
@@ -293,35 +182,8 @@ Historisches Protokoll – löste MAC-Adressen in IP-Adressen auf (für disklose
 
 ### Das Angriffsszenario
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    ARP-Spoofing-Angriff                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Opfer A         Angreifer          Gateway                    │
-│   192.168.1.10    192.168.1.99       192.168.1.1                │
-│       │               │                   │                     │
-│       │               │                   │                     │
-│       │  Gefälschte ARP Replies          │                     │
-│       │◄──────────────│                   │                     │
-│       │  "192.168.1.1 ist bei            │                     │
-│       │   ANGREIFER-MAC"                  │                     │
-│       │               │                   │                     │
-│       │               │──────────────────►│                     │
-│       │               │  "192.168.1.10    │                     │
-│       │               │   ist bei         │                     │
-│       │               │   ANGREIFER-MAC"  │                     │
-│       │               │                   │                     │
-│       │                                   │                     │
-│       │──────────────►│──────────────────►│                     │
-│       │    Traffic    │    Traffic        │                     │
-│       │  (abgehört!)  │  (weitergeleitet) │                     │
-│       │               │                   │                     │
-│                                                                  │
-│   → Man-in-the-Middle: Angreifer sieht allen Traffic!          │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[arp-spoofing.png]]
+*<span class="fig-id">04-01-arp-spoofing</span>: ARP-Spoofing – Angreifer wird zum Man-in-the-Middle*
 
 ### Mögliche Angriffe
 
