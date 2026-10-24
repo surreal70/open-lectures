@@ -10,7 +10,7 @@ tags:
   - zeitsynchronisation
   - netzwerkdienst
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -34,31 +34,23 @@ bereich: RN
 
 ### Warum ist Zeitsynchronisation wichtig?
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              Warum ist genaue Zeit wichtig?                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   ✓ Logging & Forensik                                         │
-│     → Ereignisse verschiedener Systeme korrelieren             │
-│     → "Was passierte zuerst?"                                  │
-│                                                                  │
-│   ✓ Authentifizierung (Kerberos)                               │
-│     → Tickets haben Zeitstempel                                │
-│     → Max. 5 Minuten Abweichung erlaubt                        │
-│                                                                  │
-│   ✓ TLS-Zertifikate                                            │
-│     → "Not Before" / "Not After" Zeitstempel                   │
-│     → Falsche Uhr → Zertifikat ungültig!                       │
-│                                                                  │
-│   ✓ Datenbank-Replikation                                      │
-│     → Konfliktauflösung basiert auf Zeitstempeln               │
-│                                                                  │
-│   ✓ Verteilte Systeme                                          │
-│     → Konsistenzgarantien                                      │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Logging & Forensik**
+- Ereignisse verschiedener Systeme korrelieren
+- "Was passierte zuerst?"
+
+**Authentifizierung (Kerberos)**
+- Tickets haben Zeitstempel
+- Max. 5 Minuten Abweichung erlaubt
+
+**TLS-Zertifikate**
+- "Not Before" / "Not After" Zeitstempel
+- Falsche Uhr → Zertifikat ungültig!
+
+**Datenbank-Replikation**
+- Konfliktauflösung basiert auf Zeitstempeln
+
+**Verteilte Systeme**
+- Konsistenzgarantien erfordern synchronisierte Uhren
 
 > [!example] **Analogie: Zugfahrplan**
 > - Alle Bahnhöfe brauchen **synchronisierte Uhren**
@@ -78,37 +70,8 @@ bereich: RN
 
 ## NTP-Stratum-Hierarchie
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    NTP-Stratum-Hierarchie                       │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Stratum 0    ┌─────────────────────────────────────────────┐  │
-│   (Referenz)   │  GPS  │  Atomuhr  │  DCF77  │  GLONASS     │  │
-│                │       │ (Caesium) │ (77.5kHz)│              │  │
-│                └────────────────────┬────────────────────────┘  │
-│                                     │                           │
-│                                     │ Direkte Verbindung        │
-│                                     │                           │
-│   Stratum 1    ┌────────────────────┴────────────────────────┐  │
-│   (Primary)    │        Primäre NTP-Server                   │  │
-│                │  time.google.com, ptbtime1.ptb.de           │  │
-│                └────────────────────┬────────────────────────┘  │
-│                                     │                           │
-│   Stratum 2    ┌────────────────────┴────────────────────────┐  │
-│   (Secondary)  │       Sekundäre NTP-Server                  │  │
-│                │  ISP-Server, Unternehmens-Server            │  │
-│                └────────────────────┬────────────────────────┘  │
-│                                     │                           │
-│   Stratum 3+   ┌────────────────────┴────────────────────────┐  │
-│                │    Clients, weitere Server                  │  │
-│                │    (Desktop, Server, IoT-Geräte)           │  │
-│                └─────────────────────────────────────────────┘  │
-│                                                                  │
-│   Stratum 16 = unsynchronisiert (ungültig)                     │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[ntp-stratum.png]]
+*<span class="fig-id">04-04-ntp-stratum</span>: NTP-Stratum-Hierarchie – von Referenzuhren (Stratum 0) bis zu Clients (Stratum 3+).*
 
 ### Stratum-Regeln
 
@@ -124,37 +87,8 @@ bereich: RN
 
 ## Zeitmessung und Offset-Berechnung
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              NTP-Zeitmessung (Algorithmus)                     │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Client                                             Server     │
-│      │                                                  │       │
-│   t1 │ ──────────── NTP Request ────────────────────► │ t2     │
-│      │              (Zeitstempel t1)                    │       │
-│      │                                                  │       │
-│   t4 │ ◄─────────── NTP Response ─────────────────── │ t3     │
-│      │              (Zeitstempel t1, t2, t3)           │       │
-│                                                                  │
-│   Berechnung:                                                   │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │                                                          │  │
-│   │   Offset (θ) = ((t2 - t1) + (t3 - t4)) / 2              │  │
-│   │                                                          │  │
-│   │   → Wie weit geht die Client-Uhr falsch?                │  │
-│   │                                                          │  │
-│   │   Delay (δ) = (t4 - t1) - (t3 - t2)                     │  │
-│   │                                                          │  │
-│   │   → Round-Trip-Zeit (ohne Server-Verarbeitung)          │  │
-│   │                                                          │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   t1 = Client-Sendezeit       t2 = Server-Empfangszeit         │
-│   t3 = Server-Sendezeit       t4 = Client-Empfangszeit         │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[ntp-offset.png]]
+*<span class="fig-id">04-04-ntp-offset</span>: NTP-Zeitmessung mit Offset- und Delay-Berechnung.*
 
 ### NTP-Algorithmen
 
@@ -183,55 +117,27 @@ bereich: RN
 
 ### NTP-Amplification-Angriffe
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              NTP Amplification Attack (DDoS)                   │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Angreifer           NTP-Server             Opfer             │
-│      │                    │                    │               │
-│      │  Kleine Anfrage    │                    │               │
-│      │  (Source IP =      │                    │               │
-│      │   Opfer-IP!)       │                    │               │
-│      │────────────────────►│                    │               │
-│      │                    │                    │               │
-│      │                    │  Große Antwort    │               │
-│      │                    │  (z.B. monlist)   │               │
-│      │                    │───────────────────►│               │
-│                                                                  │
-│   Amplification-Faktor: bis zu 556x!                           │
-│                                                                  │
-│   Gegenmaßnahmen:                                               │
-│   • monlist deaktivieren (ntpd: "disable monitor")             │
-│   • Rate Limiting                                              │
-│   • BCP38 (Ingress Filtering)                                  │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[ntp-amplification.png]]
+*<span class="fig-id">04-04-ntp-amplification</span>: NTP Amplification Attack – Angreifer nutzt IP-Spoofing für DDoS.*
 
 ### NTS (Network Time Security)
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              NTS - Network Time Security                       │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Problem: NTP ist unverschlüsselt und unauthentifiziert       │
-│   → Man-in-the-Middle kann Zeit manipulieren                   │
-│                                                                  │
-│   Lösung: NTS (RFC 8915)                                       │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ 1. NTS-KE (Key Exchange) über TLS (TCP 4460)           │  │
-│   │    → Authentifizierung, Schlüsselaustausch             │  │
-│   │                                                          │  │
-│   │ 2. NTP mit AEAD (Authenticated Encryption)              │  │
-│   │    → Integrität und Authentizität der Zeitdaten        │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   Unterstützung: time.cloudflare.com, Chrony 4.0+, NTPsec     │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Problem:** NTP ist unverschlüsselt und unauthentifiziert – Man-in-the-Middle-Angriffe können die Zeit manipulieren.
+
+**Lösung: NTS (RFC 8915)**
+
+1. **NTS-KE (Key Exchange)** über TLS (TCP Port 4460)
+   - Authentifizierung des Servers
+   - Schlüsselaustausch für nachfolgende NTP-Pakete
+
+2. **NTP mit AEAD** (Authenticated Encryption with Associated Data)
+   - Integrität und Authentizität der Zeitdaten
+   - Schutz vor Manipulation
+
+**Unterstützte Implementierungen:**
+- time.cloudflare.com (öffentlicher NTS-Server)
+- Chrony 4.0+
+- NTPsec
 
 ---
 
