@@ -121,10 +121,32 @@ Der DHCP-Prozess besteht aus vier Schritten – **DORA**:
 
 ## Lease-Verwaltung
 
-Die IP-Adresse wird für eine **Lease-Zeit** vergeben – nicht dauerhaft.
+Die IP-Adresse wird für eine **Lease-Zeit** vergeben – nicht dauerhaft. Diese Lease-Zeit ist am DHCP-Server konfigurierbar und sollte an die Netzwerkumgebung angepasst werden.
 
 ![[dhcp-lease-timeline.png]]
 *<span class="fig-id">04-02-dhcp-lease-timeline</span>: DHCP Lease-Zeitleiste mit T1 (Renewal) und T2 (Rebind) Zeitpunkten.*
+
+### Wahl der Lease-Zeit
+
+Die optimale Lease-Zeit hängt von der Art des Netzwerks ab:
+
+| Aspekt | Kurze Lease (Minuten–Stunden) | Lange Lease (Tage–Wochen) |
+|--------|-------------------------------|---------------------------|
+| **Geeignet für** | Gäste-WLANs, Cafés, Flughäfen, Konferenzräume | Büronetzwerke, Heimnetzwerke, Server-Netze |
+| **IP-Pool-Effizienz** | Hoch – IPs werden schnell recycelt | Niedrig – IPs bleiben lange belegt |
+| **Netzwerk-Traffic** | Höher (häufige Renewals) | Niedriger (seltene Renewals) |
+| **Server-Last** | Höher | Niedriger |
+| **Konfigurationsänderungen** | Schnell wirksam | Verzögert wirksam |
+| **Ausfallsicherheit** | Gering – Server-Ausfall kritisch | Hoch – Clients arbeiten länger autark |
+
+> [!tip] **Typische Lease-Zeiten**
+> - **Gäste-WLAN:** 1–4 Stunden (hohe Fluktuation)
+> - **Büronetzwerk:** 8–24 Stunden (Arbeitstag abdecken)
+> - **Heimnetzwerk:** 24 Stunden – 7 Tage (wenig Fluktuation)
+> - **Server/Infrastruktur:** Statische IPs oder sehr lange Leases (oder Reservierungen)
+
+> [!warning] **Zu kurze Lease-Zeit**
+> Wenn die Lease-Zeit zu kurz ist und der DHCP-Server ausfällt, verlieren Clients schnell ihre IP-Konfiguration. In kritischen Umgebungen sollte die Lease mindestens so lang sein, dass ein Server-Ausfall überbrückt werden kann.
 
 ### Lease-Erneuerung
 
