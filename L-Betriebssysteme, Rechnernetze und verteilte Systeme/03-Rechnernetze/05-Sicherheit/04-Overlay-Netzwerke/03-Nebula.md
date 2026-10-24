@@ -11,7 +11,7 @@ tags:
   - mesh
   - open-source
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -34,78 +34,148 @@ bereich: RN
 
 ## Architektur
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Nebula-Architektur                           │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│            ┌───────────────────────────────┐                    │
-│            │       Lighthouse(s)           │                    │
-│            │  • Öffentliche IP             │                    │
-│            │  • Peer-Discovery             │                    │
-│            │  • NAT Hole Punching Helper   │                    │
-│            │  (kein Traffic-Relay!)        │                    │
-│            └───────────────┬───────────────┘                    │
-│                            │                                    │
-│              ┌─────────────┼─────────────┐                      │
-│              ▼             ▼             ▼                      │
-│         ┌────────┐    ┌────────┐    ┌────────┐                 │
-│         │ Node A │◄══►│ Node B │◄══►│ Node C │                 │
-│         │(hinter │    │(hinter │    │(öffentl│                 │
-│         │  NAT)  │    │  NAT)  │    │  IP)   │                 │
-│         └────────┘    └────────┘    └────────┘                 │
-│                                                                  │
-│   Alle Nodes sind gleichberechtigt (kein zentraler Relay)      │
-│   Lighthouse hilft nur beim Finden, nicht beim Relaying        │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+Nebula nutzt ein **Lighthouse-Konzept** für dezentrale Peer-Discovery:
+
+### Lighthouse
+
+- Server mit öffentlicher IP-Adresse
+- Aufgaben: Peer-Discovery, NAT Hole Punching vermitteln
+- **Kein Traffic-Relay!** – Nur Verbindungsvermittlung
+- Mehrere Lighthouses für Redundanz möglich
+
+### Nodes
+
+- Alle Nodes sind gleichberechtigt (echtes Mesh)
+- Direkte verschlüsselte Verbindungen untereinander
+- Können hinter NAT oder mit öffentlicher IP sein
+- Nach initialem Handshake: Kommunikation ohne Lighthouse
+
+> [!important] **Unterschied zu anderen Lösungen**
+> Anders als bei Tailscale (DERP) oder ZeroTier (Root Servers) gibt es **keinen Relay**. Wenn NAT Hole Punching scheitert, ist keine Verbindung möglich.
 
 ## Zertifikatsbasierte Identität
 
+Nebula nutzt eine eigene PKI statt zentraler Accounts:
+
+### Certificate Authority (CA)
+
+- Erstellt Root-Zertifikat (offline aufbewahren!)
+- Signiert alle Node-Zertifikate
+- Definiert Netzwerk-Zugehörigkeit und Gruppen
+- Tool: `nebula-cert ca`
+
+### Node-Zertifikat
+
+Jedes Zertifikat enthält:
+- **Nebula-IP-Adresse** – Feste IP im Overlay
+- **Gruppenmitgliedschaften** – Für Firewall-Regeln
+- **Gültigkeitszeitraum** – Automatischer Ablauf
+- **Public Key** – Für Verschlüsselung
+
+```bash
+# CA erstellen
+nebula-cert ca -name "MyOrg"
+
+# Node-Zertifikat erstellen
+nebula-cert sign -name "server1" -ip "10.42.0.1/24" -groups "servers,production"
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Nebula PKI                                   │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Certificate Authority (CA)                                    │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ • Erstellt Root-Zertifikat (offline aufbewahren!)       │  │
-│   │ • Signiert Node-Zertifikate                             │  │
-│   │ • Definiert Gruppen und Netzwerk-Zugehörigkeit          │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   Node-Zertifikat enthält:                                      │
-│   • Nebula-IP-Adresse                                          │
-│   • Gruppenmitgliedschaften                                    │
-│   • Gültigkeitszeitraum                                        │
-│   • Public Key                                                  │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+
+> [!tip] **Vorteil der PKI**
+> Keine zentrale Datenbank nötig – Zertifikate sind selbstbeschreibend. Offline-Deployment möglich.
 
 ## Besonderheiten
 
-<!-- TODO: Kein Traffic über Lighthouse -->
-<!-- TODO: Firewall-Regeln im Zertifikat -->
-<!-- TODO: Gruppen-basierte Zugriffskontrolle -->
-<!-- TODO: Unsafe Routes für Subnet-Routing -->
+### Kein Traffic über Lighthouse
 
-## Prüfungsrelevante Themen
+- Lighthouse vermittelt nur Verbindungen
+- Gesamter Daten-Traffic geht direkt P2P
+- Bei NAT-Problemen: Keine Fallback-Option (anders als DERP)
+- Vorteil: Keine Single-Point-of-Failure für Traffic
 
-> [!info] Prüfungshinweis
-> - Lighthouse ist kein Relay (Unterschied zu DERP/Root-Servern)
-> - Zertifikatsbasierte vs. Account-basierte Identität
-> - Vollständig dezentral nach initialem Handshake
+### Firewall-Regeln im Zertifikat
+
+Gruppen im Zertifikat ermöglichen policy-basierte Firewall:
+
+```yaml
+firewall:
+  inbound:
+    - port: 22
+      proto: tcp
+      groups:
+        - admins
+    - port: 443
+      proto: tcp
+      groups:
+        - web-clients
+```
+
+### Gruppen-basierte Zugriffskontrolle
+
+- Gruppen werden bei Zertifikatserstellung definiert
+- Firewall-Regeln referenzieren Gruppen
+- Änderung erfordert neues Zertifikat
+- Zero-Trust-Ansatz: Standardmäßig alles blockiert
+
+### Unsafe Routes für Subnet-Routing
+
+Zugriff auf Netze hinter einem Nebula-Node:
+
+```yaml
+tun:
+  unsafe_routes:
+    - route: 192.168.1.0/24
+      via: 10.42.0.1
+```
+
+- Ähnlich wie Tailscale Subnet Router
+- "Unsafe" weil Traffic nicht Ende-zu-Ende verschlüsselt
+
+## Prüfungstipps
+
+> [!warning] **Prüfungsrelevant**
+N/A
+
+> [!question] **Häufige Prüfungsfragen**
+> 1. Was unterscheidet einen Lighthouse von einem DERP-Relay?
+> 2. Warum nutzt Nebula Zertifikate statt Accounts?
+> 3. Wie funktioniert die gruppenbasierte Zugriffskontrolle?
+> 4. Was passiert, wenn NAT Hole Punching scheitert?
+> 5. Was sind "Unsafe Routes" und warum heißen sie so?
+
+> [!tip] **Merkhilfen**
+> - **Lighthouse** = Leuchturm = zeigt den Weg, trägt nicht
+> - **Kein Relay** = Kein Fallback bei NAT-Problemen
+> - **PKI** = Offline-fähig, selbstbeschreibende Identität
+> - **Gruppen im Zertifikat** = Policy ist portable
+> - **Noise Protocol** = Auch in WireGuard verwendet
+
+---
+
+## Weiterführende Ressourcen
+
+> [!note] **Offizielle Dokumentation**
+> - [github.com/slackhq/nebula](https://github.com/slackhq/nebula) – GitHub Repository
+> - [nebula.defined.net](https://nebula.defined.net/docs/) – Dokumentation
+
+> [!tip] **Praktische Tools**
+> - `nebula-cert` – Zertifikatsverwaltung
+> - `nebula -test` – Konfiguration testen
+> - Defined.net – Managed Nebula Service
+
+---
 
 ## Zusammenhänge
 
-- [[00-Overlay-Index]] - Overlay-Netzwerke
-- [[01-Tailscale]] - Alternative mit managed Service
-- [[../02-VPN/02-WireGuard|WireGuard]] - Ähnliches Verschlüsselungskonzept
+- [[00-Overlay-Index]] → Overlay-Netzwerke Übersicht
+- [[01-Tailscale]] → Alternative mit managed Service
+- [[02-ZeroTier]] → Alternative mit Layer-2-Support
+- [[../02-VPN/02-WireGuard|WireGuard]] → Ähnliches Verschlüsselungskonzept (Noise)
+
+---
 
 ## Quellen
 
-- https://github.com/slackhq/nebula
-- https://nebula.defined.net/docs/
+- Slack Engineering: Nebula – Scalable overlay networking tool.
+- GitHub: slackhq/nebula – Open-Source Repository.
+- defined.net – Managed Nebula Dokumentation und Service.
 
