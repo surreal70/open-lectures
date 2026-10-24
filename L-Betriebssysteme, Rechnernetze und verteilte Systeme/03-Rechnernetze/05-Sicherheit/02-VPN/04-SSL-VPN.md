@@ -107,10 +107,22 @@ Die wichtigsten Enterprise SSL VPN-Lösungen:
 | Performance | Mittel | Gut |
 | Zugriffskontrolle | Granular (App-Level) | Netzwerk-Level |
 
-## Prüfungstipps
+## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-N/A
+> - Portal VPN (clientless, Browser-basiert) vs. Tunnel VPN (Client-Software)
+> - Firewall-Traversal über HTTPS (Port 443)
+> - TLS-basierte Verschlüsselung
+> - Granulare Zugriffskontrolle auf Anwendungsebene
+> - Typische Anbieter: Cisco AnyConnect, Pulse Secure, F5 BIG-IP
+
+---
+
+## Prüfungstipps
+
+> [!warning] **Häufige Klausurfehler**
+> - Portal VPN und Tunnel VPN verwechseln
+> - SSL VPN mit OpenVPN verwechseln (SSL VPN ist meist kommerziell)
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Was ist der Unterschied zwischen Portal VPN und Tunnel VPN?

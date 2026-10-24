@@ -293,13 +293,24 @@ Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
 
 Erzwingt HTTPS für die Domain und optional alle Subdomains. Mit `preload` kann die Domain in Browser-Preload-Listen aufgenommen werden.
 
+## Prüfungsrelevanz
+
+> [!warning] **Prüfungsrelevant**
+> - TLS-Handshake (TLS 1.2 vs. TLS 1.3)
+> - Zertifikatskette: Root CA → Intermediate CA → Server-Zertifikat
+> - Forward Secrecy (Ephemeral Key Exchange)
+> - Cipher Suites: Schlüsselaustausch, Authentifizierung, Verschlüsselung, Hash
+> - Unterschied STARTTLS vs. Implicit TLS
+> - HSTS (HTTP Strict Transport Security)
+
+---
+
 ## Prüfungstipps
 
 > [!warning] Häufige Klausurfehler
 > - Verwechslung von SSL und TLS (SSL ist veraltet, TLS ist der Nachfolger)
 > - Annahme, dass TLS auf Schicht 4 arbeitet – es liegt zwischen Schicht 4 und 7
-> - Vergessen, dass TLS 1.3 **keinen** RSA Key Exchange mehr unterstützt
-> - Verwechslung von symmetrischer (Daten) und asymmetrischer (Handshake) Verschlüsselung
+
 
 > [!question] Typische Prüfungsfragen
 > - Beschreiben Sie den TLS 1.2 Handshake in Grundzügen

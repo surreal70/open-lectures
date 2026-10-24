@@ -631,6 +631,19 @@ New-NetFirewallRule -DisplayName "ICMP Allow" `
     -Protocol ICMPv4 -IcmpType 8
 ```
 
+## Prüfungsrelevanz
+
+> [!warning] **Prüfungsrelevant**
+> - Evolution: Paketfilter → Stateful Inspection → NGFW
+> - Paketfilter: Filterung auf Schicht 3/4 (IP, Port)
+> - Stateful Inspection: Connection Tracking, State Table
+> - NGFW: Deep Packet Inspection, Application Awareness
+> - Verbindungszustände: NEW, ESTABLISHED, RELATED
+> - Default Deny vs. Default Allow
+> - DMZ-Konzept
+
+---
+
 ## Prüfungstipps
 
 > [!warning] Häufige Klausurfehler

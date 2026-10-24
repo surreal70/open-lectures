@@ -142,10 +142,23 @@ wg show wg0
 > [!info] **Benchmark-Hinweis**
 > Werte variieren stark je nach Hardware, Konfiguration und Verschlüsselungsalgorithmen. WireGuard profitiert besonders von Kernel-Integration.
 
-## Prüfungstipps
+## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-N/A
+> - Cryptokey Routing: Public Key → Allowed IPs
+> - Minimalistisches Design (~4.000 Zeilen Code)
+> - Feste Kryptographie (Noise Protocol, ChaCha20, Curve25519)
+> - Kernel-Integration für Performance
+> - 1-RTT Handshake
+> - Roaming-Fähigkeit (Endpoint wechselt automatisch)
+
+---
+
+## Prüfungstipps
+
+> [!warning] **Häufige Klausurfehler**
+> - WireGuard mit OpenVPN/IPsec verwechseln (WireGuard ist viel einfacher)
+> - Annahme, dass WireGuard Zertifikate benötigt
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Was ist Cryptokey Routing und wie funktioniert es?

@@ -164,12 +164,20 @@ WantedBy=multi-user.target
 - Persistent Volume für Datenbank (SQLite/PostgreSQL)
 - Optional: PostgreSQL als externes Backend für HA
 
+## Prüfungsrelevanz
+
+> [!warning] **Prüfungsrelevant**
+> - Headscale als Open-Source-Alternative zu Tailscale Control Server
+> - Trennung Control Plane vs. Data Plane
+> - Self-Hosting-Gründe: Datensouveränität, Compliance, Air-Gapped
+> - Vergleich mit Tailscale, Nebula, ZeroTier
+
+---
+
 ## Prüfungstipps
 
 > [!warning] Häufige Klausurfehler
-> - Verwechslung von Control Plane (Headscale) und Data Plane (WireGuard P2P)
-> - Annahme, dass Headscale den Traffic routet – es koordiniert nur!
-> - Vergessen, dass Standard-Tailscale-Clients verwendet werden
+N/A
 
 > [!question] Typische Prüfungsfragen
 > - Welche Vorteile bietet Self-Hosting eines Coordination Servers?

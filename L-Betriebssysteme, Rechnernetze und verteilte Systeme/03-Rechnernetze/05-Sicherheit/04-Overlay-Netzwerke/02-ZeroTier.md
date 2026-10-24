@@ -105,10 +105,22 @@ drop;
 - Capability-Modell für granulare Rechte
 - Ähnlich wie SDN-Controller (Software-Defined Networking)
 
-## Prüfungstipps
+## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-N/A
+> - Layer-2-Overlay (Ethernet-Frames, Broadcast möglich)
+> - Planet (öffentliche Root-Server) vs. Moon (Self-Hosted)
+> - 16-stellige Hex Network-ID
+> - Network Rules Engine für SDN-artige Kontrolle
+> - Vergleich mit Layer-3-Overlays (Tailscale, WireGuard)
+
+---
+
+## Prüfungstipps
+
+> [!warning] **Häufige Klausurfehler**
+> - Layer 2 vs. Layer 3 Overlay verwechseln
+> - Broadcast-Support bei Layer-3-Overlays annehmen
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Warum arbeitet ZeroTier auf Layer 2?

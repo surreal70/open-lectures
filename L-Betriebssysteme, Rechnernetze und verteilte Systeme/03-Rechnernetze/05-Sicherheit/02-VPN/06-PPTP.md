@@ -103,10 +103,22 @@ Trotz bekannter Sicherheitsprobleme findet man PPTP noch in manchen Umgebungen:
 | Site-to-Site | [[01-IPsec]] |
 | Mobile Geräte | [[01-IPsec\|IKEv2/IPsec]] |
 
-## Prüfungstipps
+## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-> - Warum ist PPTP unsicher? (MS-CHAPv2, MPPE, RC4)
+> - PPTP ist unsicher und sollte nicht mehr verwendet werden
+> - MS-CHAPv2 Authentifizierung ist gebrochen (seit 2012)
+> - MPPE-Verschlüsselung basiert auf RC4 (unsicher)
+> - Keine Perfect Forward Secrecy
+> - Historisch wichtig: erstes weit verbreitetes VPN-Protokoll
+
+---
+
+## Prüfungstipps
+
+> [!warning] **Häufige Klausurfehler**
+> - PPTP als sicher bezeichnen
+> - MS-CHAPv2-Schwächen nicht kennen
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Warum sollte PPTP nicht mehr verwendet werden?

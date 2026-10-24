@@ -98,13 +98,22 @@ Hamachi kombiniert Peer-to-Peer mit zentraler Vermittlung:
 | Enterprise | [[01-IPsec]], [[03-OpenVPN]] |
 | Einfache Nutzung | [[02-WireGuard]] mit Tailscale |
 
+## Prüfungsrelevanz
+
+> [!warning] **Prüfungsrelevant**
+> - Hamachi ist ein proprietäres P2P-VPN (LogMeIn)
+> - 25.x.x.x Adressbereich für Overlay-Netzwerk
+> - Cloud-vermitteltes NAT-Traversal
+> - Historisch wichtig für Gaming-LANs
+> - Nicht für Enterprise geeignet (Datenschutz, keine Compliance)
+
+---
+
 ## Prüfungstipps
 
-> [!info] **Prüfungshinweis**
-> Hamachi ist in Prüfungen eher selten relevant, aber als Beispiel für:
-> - Proprietäre VPN-Lösungen
-> - P2P-VPN-Architektur
-> - NAT-Traversal-Techniken
+> [!warning] **Häufige Klausurfehler**
+> - Hamachi als Enterprise-Lösung empfehlen
+> - 25.x.x.x-Adresskonflikte nicht bedenken
 
 > [!question] **Mögliche Prüfungsfragen**
 > 1. Was unterscheidet Hamachi von klassischen VPN-Lösungen?

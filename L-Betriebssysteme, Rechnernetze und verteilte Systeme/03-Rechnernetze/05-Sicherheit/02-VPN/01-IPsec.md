@@ -200,11 +200,23 @@ IPsec unterstützt verschiedene kryptografische Algorithmen. Die Auswahl erfolgt
 > [!warning] **Praxisempfehlung**
 > PFS sollte immer aktiviert sein, auch wenn es zusätzliche Rechenzeit kostet.
 
-## Prüfungstipps
+## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-> - Transport-Modus vs. Tunnel-Modus – wann welcher?
-> - ESP vs. AH – Unterschiede (Verschlüsselung!)
+> - Transport-Modus vs. Tunnel-Modus
+> - ESP (Verschlüsselung + Integrität) vs. AH (nur Integrität)
+> - IKE Phase 1 (ISAKMP SA) vs. Phase 2 (IPsec SA)
+> - Security Association (SA) und SPI
+> - Perfect Forward Secrecy (PFS)
+> - Main Mode vs. Aggressive Mode
+
+---
+
+## Prüfungstipps
+
+> [!warning] **Häufige Klausurfehler**
+> - ESP und AH verwechseln (AH verschlüsselt NICHT!)
+> - Transport- und Tunnel-Modus verwechseln
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Warum bietet AH keine Vertraulichkeit?

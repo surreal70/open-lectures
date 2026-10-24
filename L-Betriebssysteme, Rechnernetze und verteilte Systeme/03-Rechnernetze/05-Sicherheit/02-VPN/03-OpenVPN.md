@@ -196,10 +196,23 @@ verb 3
 | Plattformen | Sehr viele | Viele (weniger) |
 | Firewall-Traversal | Exzellent (TCP 443) | Eingeschränkt (nur UDP) |
 
-## Prüfungstipps
+## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-N/A
+> - TUN (Layer 3, IP-Routing) vs. TAP (Layer 2, Bridging)
+> - TLS-basierte Verschlüsselung
+> - PKI mit CA, Server- und Client-Zertifikaten
+> - Control Channel (TLS) vs. Data Channel (symmetrisch)
+> - UDP bevorzugt, TCP möglich (Firewall-Traversal)
+> - TCP-over-TCP-Problem
+
+---
+
+## Prüfungstipps
+
+> [!warning] **Häufige Klausurfehler**
+> - TUN und TAP verwechseln
+> - TCP-over-TCP-Problem nicht kennen
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Was ist der Unterschied zwischen TUN und TAP?
