@@ -167,17 +167,10 @@ WantedBy=multi-user.target
 ## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-> - Headscale als Open-Source-Alternative zu Tailscale Control Server
-> - Trennung Control Plane vs. Data Plane
-> - Self-Hosting-Gründe: Datensouveränität, Compliance, Air-Gapped
-> - Vergleich mit Tailscale, Nebula, ZeroTier
-
+NA
 ---
 
 ## Prüfungstipps
-
-> [!warning] Häufige Klausurfehler
-N/A
 
 > [!question] Typische Prüfungsfragen
 > - Welche Vorteile bietet Self-Hosting eines Coordination Servers?

@@ -9,7 +9,7 @@ tags:
   - sicherheit
   - verschluesselung
 created: '2026-10-13'
-modified: '2026-10-21'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -142,9 +142,9 @@ Lösung: **NAT-T** kapselt ESP in UDP (Port 4500):
 > [!tip] NAT-T wird automatisch erkannt
 > IKE erkennt NAT automatisch und aktiviert NAT-T bei Bedarf.
 
-## Prüfungsrelevante Themen
+## Prüfungsrelevanz
 
-> [!warning] Klausurrelevanz
+> [!warning] **Prüfungsrelevant**
 > - IPsec arbeitet auf Layer 3
 > - ESP (Protocol 50) vs. AH (Protocol 51)
 > - Transport-Modus vs. Tunnel-Modus

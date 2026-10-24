@@ -10,7 +10,7 @@ tags:
   - pop3
   - email
 created: '2026-10-07'
-modified: '2026-10-23'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -210,16 +210,21 @@ ip4:...       → Erlaubt IP-Bereich
 -all          → Alle anderen ablehnen
 ```
 
-## Prüfungsrelevante Themen
+## Prüfungsrelevanz
 
-> [!warning] Klausurrelevanz: Mittel bis Hoch
->
-> **Häufige Prüfungsthemen:**
-> 1. SMTP-Kommandos (EHLO, MAIL FROM, RCPT TO, DATA)
-> 2. Unterschied IMAP vs. POP3
-> 3. Portnummern für E-Mail-Protokolle
-> 4. E-Mail-Übertragungsweg (MUA → MTA → MTA → MDA)
-> 5. Grundlegendes Verständnis von SPF/DKIM
+> [!warning] **Prüfungsrelevant**
+> - SMTP-Kommandos (EHLO, MAIL FROM, RCPT TO, DATA)
+> - Unterschied IMAP vs. POP3
+> - Portnummern für E-Mail-Protokolle
+> - E-Mail-Übertragungsweg (MUA → MTA → MTA → MDA)
+> - Grundlegendes Verständnis von SPF/DKIM
+
+> [!question] Typische Prüfungsfragen
+> - Beschreiben Sie den Weg einer E-Mail vom Absender zum Empfänger.
+> - Was ist der Unterschied zwischen IMAP und POP3?
+> - Nennen Sie die wichtigsten SMTP-Kommandos und ihre Funktion.
+> - Welche Ports werden für SMTP, IMAP und POP3 verwendet?
+> - Wozu dienen SPF und DKIM?
 
 ### Merkregeln
 

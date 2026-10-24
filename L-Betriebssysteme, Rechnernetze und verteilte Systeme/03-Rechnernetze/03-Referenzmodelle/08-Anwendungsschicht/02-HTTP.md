@@ -9,7 +9,7 @@ tags:
   - https
   - web
 created: '2026-10-07'
-modified: '2026-10-23'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -275,16 +275,21 @@ Eine typische RESTful API für Benutzer (`/users`):
 > {"id": 43, "name": "Max Mustermann", "email": "max@example.de"}
 > ```
 
-## Prüfungsrelevante Themen
+## Prüfungsrelevanz
 
-> [!warning] Klausurrelevanz: Hoch
->
-> **Häufige Prüfungsthemen:**
-> 1. HTTP-Methoden (GET, POST, PUT, DELETE)
-> 2. Wichtige Statuscodes (200, 301, 404, 500)
-> 3. Request/Response-Aufbau
-> 4. HTTP vs. HTTPS (TLS)
-> 5. Cookies und Session-Management
+> [!warning] **Prüfungsrelevant**
+> - HTTP-Methoden (GET, POST, PUT, DELETE)
+> - Wichtige Statuscodes (200, 301, 404, 500)
+> - Request/Response-Aufbau
+> - HTTP vs. HTTPS (TLS)
+> - Cookies und Session-Management
+
+> [!question] Typische Prüfungsfragen
+> - Erklären Sie den Unterschied zwischen GET und POST.
+> - Was bedeuten die HTTP-Statuscodes 200, 301, 404 und 500?
+> - Wie ist eine HTTP-Anfrage aufgebaut?
+> - Was ist der Unterschied zwischen HTTP und HTTPS?
+> - Wie funktioniert Session-Management mit Cookies?
 
 ### Merkregeln
 

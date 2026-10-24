@@ -10,7 +10,7 @@ tags:
   - traceroute
   - fehlerbehandlung
 created: '2026-10-13'
-modified: '2026-10-21'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -278,16 +278,21 @@ ICMPv6 ersetzt ARP vollständig durch NDP:
 > # Filter: icmp oder icmpv6
 > ```
 
-## Prüfungsrelevante Themen
+## Prüfungsrelevanz
 
-> [!warning] Klausurrelevanz: Hoch
->
-> **Häufige Prüfungsthemen:**
-> 1. ICMP-Nachrichtentypen (Echo, Time Exceeded, Destination Unreachable)
-> 2. Wie funktioniert Ping? (Type 8 → Type 0)
-> 3. Wie funktioniert Traceroute? (TTL-Trick)
-> 4. Unterschied ICMPv4 vs. ICMPv6
-> 5. Warum ist ICMPv6 wichtiger als ICMPv4? (NDP)
+> [!warning] **Prüfungsrelevant**
+> - ICMP-Nachrichtentypen (Echo, Time Exceeded, Destination Unreachable)
+> - Wie funktioniert Ping? (Type 8 → Type 0)
+> - Wie funktioniert Traceroute? (TTL-Trick)
+> - Unterschied ICMPv4 vs. ICMPv6
+> - Warum ist ICMPv6 wichtiger als ICMPv4? (NDP)
+
+> [!question] Typische Prüfungsfragen
+> - Welche ICMP-Typen werden bei Ping verwendet?
+> - Wie ermittelt Traceroute den Pfad durch das Netzwerk?
+> - Was passiert, wenn der TTL-Wert eines Pakets auf 0 fällt?
+> - Warum ist ICMPv6 für IPv6-Netzwerke essentiell?
+> - Welche Funktion übernimmt NDP in IPv6?
 
 ### Merkregeln
 

@@ -140,9 +140,10 @@ Der Router empfängt den Frame und verarbeitet ihn nur bis Layer 3:
 
 ## Prüfungsrelevante Konzepte
 
-> [!warning] Klausurrelevanz: Sehr hoch
->
-> **Häufige Prüfungsfragen:**
+> [!warning] **Prüfungsrelevant**
+> NA
+
+> [!warning] **Häufige Prüfungsfragen:**
 > 1. Beschreiben Sie den Weg eines Pakets durch die Schichten
 > 2. Was ist Einkapselung (Encapsulation)?
 > 3. Welche Header werden auf welcher Schicht hinzugefügt?

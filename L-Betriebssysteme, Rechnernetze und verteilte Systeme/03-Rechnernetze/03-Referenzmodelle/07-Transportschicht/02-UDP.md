@@ -9,7 +9,7 @@ tags:
   - verbindungslos
   - datagramm
 created: '2026-10-07'
-modified: '2026-10-21'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -210,16 +210,21 @@ Die Prüfsumme wird über einen Pseudo-Header berechnet:
 - Kein Head-of-Line Blocking
 - Verbindungsmigration (IP-Wechsel möglich)
 
-## Prüfungsrelevante Themen
+## Prüfungsrelevanz
 
-> [!warning] Klausurrelevanz: Hoch
->
-> **Häufige Prüfungsthemen:**
-> 1. UDP-Header-Aufbau (8 Bytes!)
-> 2. Unterschiede TCP vs. UDP
-> 3. Anwendungsfälle für UDP
-> 4. Warum UDP für DNS/DHCP/VoIP?
-> 5. Vor- und Nachteile von UDP
+> [!warning] **Prüfungsrelevant**
+> - UDP-Header-Aufbau (8 Bytes!)
+> - Unterschiede TCP vs. UDP
+> - Anwendungsfälle für UDP
+> - Warum UDP für DNS/DHCP/VoIP?
+> - Vor- und Nachteile von UDP
+
+> [!question] Typische Prüfungsfragen
+> - Vergleichen Sie TCP und UDP hinsichtlich Zuverlässigkeit und Overhead.
+> - Warum wird UDP für DNS-Anfragen bevorzugt?
+> - Wie groß ist der UDP-Header und welche Felder enthält er?
+> - Nennen Sie drei Anwendungen, die UDP verwenden, und begründen Sie warum.
+> - Was ist der Vorteil von UDP bei Echtzeitanwendungen?
 
 ### Entscheidungsbaum: TCP oder UDP?
 

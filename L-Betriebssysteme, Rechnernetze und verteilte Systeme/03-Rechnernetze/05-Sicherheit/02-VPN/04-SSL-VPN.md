@@ -110,11 +110,7 @@ Die wichtigsten Enterprise SSL VPN-Lösungen:
 ## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-> - Portal VPN (clientless, Browser-basiert) vs. Tunnel VPN (Client-Software)
-> - Firewall-Traversal über HTTPS (Port 443)
-> - TLS-basierte Verschlüsselung
-> - Granulare Zugriffskontrolle auf Anwendungsebene
-> - Typische Anbieter: Cisco AnyConnect, Pulse Secure, F5 BIG-IP
+> NA
 
 ---
 

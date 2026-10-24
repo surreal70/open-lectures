@@ -9,7 +9,7 @@ tags:
   - sockets
   - multiplexing
 created: '2026-10-07'
-modified: '2026-10-23'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -203,16 +203,21 @@ netstat -an
 > - Regelmäßige Port-Scans zur Überprüfung
 > - Dienste auf nicht-Standard-Ports (Security through Obscurity) ist **keine** echte Sicherheit
 
-## Prüfungsrelevante Themen
+## Prüfungsrelevanz
 
-> [!warning] Klausurrelevanz: Hoch
->
-> **Häufige Prüfungsthemen:**
-> 1. Port-Bereiche (Well-Known, Registered, Dynamic)
-> 2. Wichtige Portnummern auswendig kennen
-> 3. Socket-Definition und 5-Tupel
-> 4. Multiplexing/Demultiplexing erklären
-> 5. NAT/PAT-Funktionsweise
+> [!warning] **Prüfungsrelevant**
+> - Port-Bereiche (Well-Known, Registered, Dynamic)
+> - Wichtige Portnummern auswendig kennen
+> - Socket-Definition und 5-Tupel
+> - Multiplexing/Demultiplexing erklären
+> - NAT/PAT-Funktionsweise
+
+> [!question] Typische Prüfungsfragen
+> - Nennen Sie die drei Port-Bereiche und ihre Nummerierung.
+> - Was ist ein Socket und aus welchen Komponenten besteht das 5-Tupel?
+> - Erklären Sie Multiplexing und Demultiplexing auf der Transportschicht.
+> - Welche Portnummer hat HTTP/HTTPS/SSH/DNS?
+> - Wie funktioniert NAT/PAT und welche Rolle spielen Ports dabei?
 
 ### Merkregeln für wichtige Ports
 

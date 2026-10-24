@@ -138,21 +138,14 @@ SASE = SSE + SD-WAN
 ## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-> - SASE-Definition: Kombination von Netzwerk + Sicherheit, Cloud-native
-> - SASE-Komponenten: ZTNA, SWG, CASB, FWaaS, DLP
-> - Zero-Trust-Prinzip: "Never trust, always verify"
-> - ZTNA vs. Traditional VPN (Netzwerkzugriff vs. Anwendungszugriff)
-> - SSE vs. SASE (SSE = Security only, SASE = SSE + SD-WAN)
-> - Identity-Centric Architecture
+NA
 
 ---
 
 ## Prüfungstipps
 
 > [!warning] Häufige Fehler
-> - SASE und SSE verwechseln: SSE ist nur der Security-Teil
-> - ZTNA mit VPN gleichsetzen: ZTNA ist anwendungsbasiert, VPN netzwerkbasiert
-> - Zero Trust als Produkt verstehen – es ist ein Architekturprinzip
+NA
 
 > [!question] Typische Prüfungsfragen
 > - Was sind die Kernkomponenten von SASE?

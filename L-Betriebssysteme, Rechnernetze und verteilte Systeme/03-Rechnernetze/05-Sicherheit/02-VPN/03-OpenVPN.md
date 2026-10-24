@@ -199,12 +199,7 @@ verb 3
 ## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-> - TUN (Layer 3, IP-Routing) vs. TAP (Layer 2, Bridging)
-> - TLS-basierte Verschlüsselung
-> - PKI mit CA, Server- und Client-Zertifikaten
-> - Control Channel (TLS) vs. Data Channel (symmetrisch)
-> - UDP bevorzugt, TCP möglich (Firewall-Traversal)
-> - TCP-over-TCP-Problem
+> NA
 
 ---
 

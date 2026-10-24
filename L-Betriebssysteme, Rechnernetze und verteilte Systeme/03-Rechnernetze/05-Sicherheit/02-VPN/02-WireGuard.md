@@ -145,12 +145,7 @@ wg show wg0
 ## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-> - Cryptokey Routing: Public Key → Allowed IPs
-> - Minimalistisches Design (~4.000 Zeilen Code)
-> - Feste Kryptographie (Noise Protocol, ChaCha20, Curve25519)
-> - Kernel-Integration für Performance
-> - 1-RTT Handshake
-> - Roaming-Fähigkeit (Endpoint wechselt automatisch)
+> NA
 
 ---
 

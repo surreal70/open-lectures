@@ -106,11 +106,7 @@ Trotz bekannter Sicherheitsprobleme findet man PPTP noch in manchen Umgebungen:
 ## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-> - PPTP ist unsicher und sollte nicht mehr verwendet werden
-> - MS-CHAPv2 Authentifizierung ist gebrochen (seit 2012)
-> - MPPE-Verschlüsselung basiert auf RC4 (unsicher)
-> - Keine Perfect Forward Secrecy
-> - Historisch wichtig: erstes weit verbreitetes VPN-Protokoll
+NA
 
 ---
 

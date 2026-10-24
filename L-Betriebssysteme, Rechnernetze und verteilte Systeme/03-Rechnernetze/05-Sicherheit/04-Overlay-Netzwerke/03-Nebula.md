@@ -133,20 +133,11 @@ tun:
 ## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-> - Vollständig dezentrales Overlay ohne zentrale Kontrolle
-> - Lighthouse = Koordination (kein Relay!)
-> - PKI-basierte Authentifizierung mit eigenen Zertifikaten
-> - Gruppenbasierte Firewall-Regeln im Zertifikat
-> - Noise Protocol (wie WireGuard)
-> - Kein Relay-Fallback bei NAT-Problemen
+NA
 
 ---
 
 ## Prüfungstipps
-
-> [!warning] **Häufige Klausurfehler**
-> - Lighthouse mit DERP-Relay verwechseln (Lighthouse leitet keinen Traffic!)
-> - Nebula-Firewall mit Host-Firewall verwechseln
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Was unterscheidet einen Lighthouse von einem DERP-Relay?

@@ -10,7 +10,7 @@ tags:
   - tunnel
   - verschluesselung
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -126,9 +126,9 @@ bereich: RN
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-## Prüfungsrelevante Themen
+## Prüfungsrelevanz
 
-> [!warning] Klausurrelevanz
+> [!warning] **Prüfungsrelevant**
 > - Unterschied Site-to-Site vs. Remote Access VPN
 > - IPsec-Modi: Tunnel vs. Transport
 > - Warum ist PPTP unsicher?

@@ -101,11 +101,7 @@ Hamachi kombiniert Peer-to-Peer mit zentraler Vermittlung:
 ## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-> - Hamachi ist ein proprietäres P2P-VPN (LogMeIn)
-> - 25.x.x.x Adressbereich für Overlay-Netzwerk
-> - Cloud-vermitteltes NAT-Traversal
-> - Historisch wichtig für Gaming-LANs
-> - Nicht für Enterprise geeignet (Datenschutz, keine Compliance)
+NA
 
 ---
 

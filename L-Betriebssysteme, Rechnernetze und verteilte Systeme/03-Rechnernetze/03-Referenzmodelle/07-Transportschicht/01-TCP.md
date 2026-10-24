@@ -9,7 +9,7 @@ tags:
   - verbindungsorientiert
   - handshake
 created: '2026-10-07'
-modified: '2026-10-21'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -441,16 +441,21 @@ Statt auf Paketverlust zu warten, können Router Stau explizit signalisieren:
 | **SSH** | Interaktive Sitzung erfordert Zuverlässigkeit |
 | **Datenbanken** | Transaktionen müssen vollständig sein |
 
-## Prüfungsrelevante Themen
+## Prüfungsrelevanz
 
-> [!warning] Klausurrelevanz: Sehr hoch
->
-> **Häufige Prüfungsthemen:**
-> 1. TCP-Header-Aufbau und Flags
-> 2. 3-Way-Handshake (SYN, SYN-ACK, ACK)
-> 3. Sequenznummern und ACK-Berechnung
-> 4. Sliding Window und Flusskontrolle
-> 5. Slow Start und Congestion Control
+> [!warning] **Prüfungsrelevant**
+> - TCP-Header-Aufbau und Flags
+> - 3-Way-Handshake (SYN, SYN-ACK, ACK)
+> - Sequenznummern und ACK-Berechnung
+> - Sliding Window und Flusskontrolle
+> - Slow Start und Congestion Control
+
+> [!question] Typische Prüfungsfragen
+> - Beschreiben Sie den 3-Way-Handshake beim TCP-Verbindungsaufbau.
+> - Wie werden Sequenznummern bei TCP berechnet?
+> - Was ist der Unterschied zwischen Flusskontrolle und Staukontrolle?
+> - Erklären Sie das Sliding-Window-Verfahren.
+> - Welche TCP-Flags kennen Sie und wofür werden sie verwendet?
 
 ### Berechnungsbeispiel
 

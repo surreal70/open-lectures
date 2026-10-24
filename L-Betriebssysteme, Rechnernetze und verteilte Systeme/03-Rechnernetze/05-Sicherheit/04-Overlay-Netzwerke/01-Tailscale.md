@@ -116,11 +116,7 @@ Für Self-Hosting: [[04-Headscale]]
 ## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-> - WireGuard-basiertes Mesh-VPN
-> - Trennung Control Plane (Coordination Server) vs. Data Plane (direkte Verbindungen)
-> - CGNAT-Bereich 100.64.0.0/10 für Overlay-Adressen
-> - NAT-Traversal: STUN, DERP-Relays
-> - Mesh-Topologie vs. Hub-and-Spoke
+> NA
 
 ---
 
