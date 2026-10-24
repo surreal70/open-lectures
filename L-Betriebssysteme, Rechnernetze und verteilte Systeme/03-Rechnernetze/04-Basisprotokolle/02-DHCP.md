@@ -11,7 +11,7 @@ tags:
   - ip-konfiguration
   - netzwerkdienst
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -38,31 +38,19 @@ bereich: RN
 
 Ohne DHCP müsste jedes Gerät manuell konfiguriert werden:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              Das Konfigurationsproblem                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Ohne DHCP:                                                    │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ • Jedes Gerät manuell konfigurieren                     │  │
-│   │ • IP-Adressen manuell vergeben und dokumentieren       │  │
-│   │ • Bei Änderungen: alle Geräte anfassen                 │  │
-│   │ • Fehleranfällig: Tippfehler, Duplikate                │  │
-│   │ • Hoher Administrationsaufwand                          │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   Mit DHCP:                                                     │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ • Gerät anschließen → automatisch konfiguriert         │  │
-│   │ • Zentrale Verwaltung aller IP-Parameter               │  │
-│   │ • Änderungen nur am Server → alle Clients aktualisiert │  │
-│   │ • Keine Duplikate möglich                               │  │
-│   │ • Skaliert auf tausende Geräte                         │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Ohne DHCP:**
+- Jedes Gerät manuell konfigurieren
+- IP-Adressen manuell vergeben und dokumentieren
+- Bei Änderungen: alle Geräte anfassen
+- Fehleranfällig: Tippfehler, Duplikate
+- Hoher Administrationsaufwand
+
+**Mit DHCP:**
+- Gerät anschließen → automatisch konfiguriert
+- Zentrale Verwaltung aller IP-Parameter
+- Änderungen nur am Server → alle Clients aktualisiert
+- Keine Duplikate möglich
+- Skaliert auf tausende Geräte
 
 > [!example] **Analogie: Hotel-Rezeption**
 > - Du kommst in ein Hotel (= Netzwerk) und brauchst ein Zimmer (= IP-Adresse)
@@ -78,36 +66,8 @@ Ohne DHCP müsste jedes Gerät manuell konfiguriert werden:
 > [!info] **Schichtzuordnung**
 > DHCP ist ein **Layer 7-Protokoll** (Anwendungsschicht), das auf UDP aufsetzt. Es hat jedoch eine Besonderheit: Es muss funktionieren, **bevor** der Client eine IP-Adresse hat. Deshalb nutzt es Broadcast auf Layer 2/3 mit den speziellen Adressen 0.0.0.0 (Quelle) und 255.255.255.255 (Ziel).
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DHCP im Protokollstapel                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   ┌─────────────────────────────────────────────────────────┐   │
-│   │              Anwendungsschicht (Layer 7)                │   │
-│   │                      DHCP                                │   │
-│   │           Client-Port: 68 / Server-Port: 67             │   │
-│   └─────────────────────────────────────────────────────────┘   │
-│                            │                                     │
-│   ┌─────────────────────────────────────────────────────────┐   │
-│   │              Transportschicht (Layer 4)                 │   │
-│   │                       UDP                                │   │
-│   └─────────────────────────────────────────────────────────┘   │
-│                            │                                     │
-│   ┌─────────────────────────────────────────────────────────┐   │
-│   │              Netzwerkschicht (Layer 3)                  │   │
-│   │                        IP                                │   │
-│   │   Quelle: 0.0.0.0 / Ziel: 255.255.255.255 (Broadcast)  │   │
-│   └─────────────────────────────────────────────────────────┘   │
-│                            │                                     │
-│   ┌─────────────────────────────────────────────────────────┐   │
-│   │              Sicherungsschicht (Layer 2)                │   │
-│   │                     Ethernet                             │   │
-│   │          Ziel-MAC: FF:FF:FF:FF:FF:FF (Broadcast)        │   │
-│   └─────────────────────────────────────────────────────────┘   │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[dhcp-protocol-stack.png]]
+*<span class="fig-id">04-02-dhcp-protocol-stack</span>: DHCP im Protokollstapel – Layer 7 Protokoll über UDP mit Broadcast-Adressen.*
 
 ### Portnummern
 
@@ -124,47 +84,8 @@ Ohne DHCP müsste jedes Gerät manuell konfiguriert werden:
 
 Der DHCP-Prozess besteht aus vier Schritten – **DORA**:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DHCP DORA-Prozess                            │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Client                                         DHCP-Server    │
-│   (keine IP)                                     192.168.1.1    │
-│       │                                               │         │
-│       │  ┌─────────────────────────────────────────┐ │         │
-│       │  │ 1. DHCPDISCOVER (Broadcast)             │ │         │
-│       │  │    Quelle: 0.0.0.0:68                   │ │         │
-│       │  │    Ziel: 255.255.255.255:67             │ │         │
-│       │  │    "Gibt es einen DHCP-Server?"         │ │         │
-│       │──┴─────────────────────────────────────────┴─┼────────>│
-│       │                                               │         │
-│       │  ┌─────────────────────────────────────────┐ │         │
-│       │  │ 2. DHCPOFFER (Broadcast/Unicast)        │ │         │
-│       │  │    "Ich biete dir 192.168.1.100 an"     │ │         │
-│       │  │    Lease: 24 Stunden                    │ │         │
-│       │<─┴─────────────────────────────────────────┴─┼─────────│
-│       │                                               │         │
-│       │  ┌─────────────────────────────────────────┐ │         │
-│       │  │ 3. DHCPREQUEST (Broadcast)              │ │         │
-│       │  │    "Ich nehme das Angebot von           │ │         │
-│       │  │     Server 192.168.1.1 an"              │ │         │
-│       │──┴─────────────────────────────────────────┴─┼────────>│
-│       │                                               │         │
-│       │  ┌─────────────────────────────────────────┐ │         │
-│       │  │ 4. DHCPACK (Broadcast/Unicast)          │ │         │
-│       │  │    "Bestätigt! Deine IP ist             │ │         │
-│       │  │     192.168.1.100 für 24h"              │ │         │
-│       │<─┴─────────────────────────────────────────┴─┼─────────│
-│       │                                               │         │
-│   Client hat jetzt:                                   │         │
-│   • IP: 192.168.1.100                                │         │
-│   • Subnet: 255.255.255.0                            │         │
-│   • Gateway: 192.168.1.1                             │         │
-│   • DNS: 8.8.8.8                                     │         │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[dhcp-dora.png]]
+*<span class="fig-id">04-02-dhcp-dora</span>: Der DORA-Prozess – Discover, Offer, Request, Acknowledge.*
 
 ### Die vier DORA-Schritte im Detail
 
@@ -189,23 +110,12 @@ Der DHCP-Prozess besteht aus vier Schritten – **DORA**:
 | **DHCPRELEASE** | Client → Server | Client gibt IP vorzeitig frei |
 | **DHCPINFORM** | Client → Server | Client hat statische IP, fragt nur nach Optionen |
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DHCP-Nachrichtenübersicht                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Normaler Ablauf:    D → O → R → A                            │
-│                                                                  │
-│   Fehlerfall:         D → O → R → NAK (Server lehnt ab)        │
-│                                                                  │
-│   IP-Konflikt:        D → O → R → A → DECLINE (Client)         │
-│                                                                  │
-│   Vorzeitige Freigabe: RELEASE (Client gibt IP zurück)         │
-│                                                                  │
-│   Nur Optionen:       INFORM (Client hat statische IP)         │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+> [!info] Nachrichtenabläufe
+> - **Normaler Ablauf:** D → O → R → A
+> - **Fehlerfall:** D → O → R → NAK (Server lehnt ab)
+> - **IP-Konflikt:** D → O → R → A → DECLINE (Client erkennt Duplikat per ARP)
+> - **Vorzeitige Freigabe:** RELEASE (Client gibt IP zurück)
+> - **Nur Optionen:** INFORM (Client hat statische IP)
 
 ---
 
@@ -213,30 +123,8 @@ Der DHCP-Prozess besteht aus vier Schritten – **DORA**:
 
 Die IP-Adresse wird für eine **Lease-Zeit** vergeben – nicht dauerhaft.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DHCP Lease-Zeitleiste                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Lease Start                                      Lease Ende   │
-│       │                                               │         │
-│       │         T1 (50%)           T2 (87.5%)        │         │
-│       │            │                   │              │         │
-│       ├────────────┼───────────────────┼──────────────┤         │
-│       │            │                   │              │         │
-│       │  Normale   │  Renewal-Phase    │  Rebind-    │         │
-│       │  Nutzung   │  (Unicast an      │  Phase      │         │
-│       │            │   ursprünglichen  │  (Broadcast │         │
-│       │            │   Server)         │   an alle)  │         │
-│       │            │                   │              │         │
-│                                                                  │
-│   Bei Lease = 24h:                                              │
-│   • T1 = 12h  → Renewal-Versuch (Unicast)                      │
-│   • T2 = 21h  → Rebind-Versuch (Broadcast)                     │
-│   • 24h       → Lease abgelaufen, IP muss aufgegeben werden    │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[dhcp-lease-timeline.png]]
+*<span class="fig-id">04-02-dhcp-lease-timeline</span>: DHCP Lease-Zeitleiste mit T1 (Renewal) und T2 (Rebind) Zeitpunkten.*
 
 ### Lease-Erneuerung
 
@@ -252,33 +140,8 @@ Die IP-Adresse wird für eine **Lease-Zeit** vergeben – nicht dauerhaft.
 
 DHCP basiert auf dem älteren **BOOTP**-Format:
 
-```
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│     op (1)    │   htype (1)   │   hlen (1)    │   hops (1)    │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                            xid (4)                            │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│           secs (2)            │           flags (2)           │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                          ciaddr (4)                           │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                          yiaddr (4)                           │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                          siaddr (4)                           │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                          giaddr (4)                           │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                          chaddr (16)                          │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                          sname (64)                           │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                          file (128)                           │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-│                    options (variable)                         │
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-```
+![[dhcp-packet-format.png]]
+*<span class="fig-id">04-02-dhcp-packet-format</span>: DHCP-Paketformat basierend auf BOOTP.*
 
 | Feld | Bytes | Beschreibung |
 |------|-------|--------------|
@@ -314,40 +177,8 @@ DHCP-Optionen transportieren die eigentlichen Konfigurationsparameter:
 
 Da DHCP Broadcasts verwendet, funktioniert es nur im lokalen Netzwerk. Ein **DHCP-Relay-Agent** leitet Anfragen an Server in anderen Netzen weiter.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DHCP-Relay-Agent                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Netz A: 192.168.1.0/24          Netz B: 10.0.0.0/24          │
-│                                                                  │
-│   Client                Router               DHCP-Server        │
-│   (keine IP)           (Relay Agent)         10.0.0.5           │
-│       │                     │                     │             │
-│       │  DISCOVER           │                     │             │
-│       │  (Broadcast)        │                     │             │
-│       │────────────────────>│                     │             │
-│       │                     │                     │             │
-│       │                     │  DISCOVER           │             │
-│       │                     │  (Unicast)          │             │
-│       │                     │  giaddr=192.168.1.1 │             │
-│       │                     │────────────────────>│             │
-│       │                     │                     │             │
-│       │                     │  OFFER              │             │
-│       │                     │  (Unicast)          │             │
-│       │                     │<────────────────────│             │
-│       │                     │                     │             │
-│       │  OFFER              │                     │             │
-│       │  (Broadcast)        │                     │             │
-│       │<────────────────────│                     │             │
-│       │                     │                     │             │
-│                                                                  │
-│   giaddr = Gateway IP Address                                   │
-│   → Teilt dem Server mit, aus welchem Netz die Anfrage kam     │
-│   → Server wählt passenden IP-Pool für dieses Netz             │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[dhcp-relay.png]]
+*<span class="fig-id">04-02-dhcp-relay</span>: DHCP-Relay-Agent leitet Anfragen über Subnetzgrenzen weiter.*
 
 ---
 
@@ -364,31 +195,21 @@ DHCPv6 unterscheidet sich von DHCPv4:
 
 ### Stateful vs. Stateless
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              DHCPv6: Stateful vs. Stateless                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Stateless (SLAAC + DHCPv6):                                  │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ • IP-Adresse: Router Advertisement (SLAAC)              │  │
-│   │ • DNS, NTP, etc.: DHCPv6                                │  │
-│   │ • Server speichert keine IP-Zuordnungen                 │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   Stateful (nur DHCPv6):                                       │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ • IP-Adresse: DHCPv6                                    │  │
-│   │ • Alle Optionen: DHCPv6                                 │  │
-│   │ • Server führt Lease-Datenbank                          │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   Steuerung über Router Advertisement Flags:                    │
-│   • M-Flag (Managed): Stateful DHCPv6 verwenden                │
-│   • O-Flag (Other): Zusätzliche Infos per DHCPv6              │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+> [!info] **Stateful vs. Stateless Konfiguration**
+> 
+> **Stateless (SLAAC + DHCPv6):**
+> - IP-Adresse: Router Advertisement (SLAAC)
+> - DNS, NTP, etc.: DHCPv6
+> - Server speichert keine IP-Zuordnungen
+> 
+> **Stateful (nur DHCPv6):**
+> - IP-Adresse: DHCPv6
+> - Alle Optionen: DHCPv6
+> - Server führt Lease-Datenbank
+> 
+> **Steuerung über Router Advertisement Flags:**
+> - **M-Flag** (Managed): Stateful DHCPv6 verwenden
+> - **O-Flag** (Other): Zusätzliche Infos per DHCPv6
 
 ---
 
@@ -396,49 +217,27 @@ DHCPv6 unterscheidet sich von DHCPv4:
 
 ### DHCP-Starvation
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DHCP Starvation Attack                       │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Angreifer sendet massenhaft DHCPDISCOVER mit                 │
-│   gefälschten MAC-Adressen                                     │
-│                                                                  │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ DISCOVER (MAC: AA:...) → Server vergibt IP 1           │  │
-│   │ DISCOVER (MAC: BB:...) → Server vergibt IP 2           │  │
-│   │ DISCOVER (MAC: CC:...) → Server vergibt IP 3           │  │
-│   │ ...                                                      │  │
-│   │ DISCOVER (MAC: ZZ:...) → Pool erschöpft!               │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   Folge: Legitime Clients bekommen keine IP mehr!              │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+Bei einem **DHCP-Starvation-Angriff** versucht ein Angreifer, den gesamten IP-Adresspool des DHCP-Servers zu erschöpfen. Der Angreifer sendet massenhaft DHCPDISCOVER-Nachrichten mit gefälschten MAC-Adressen. Da der Server für jede scheinbar neue MAC-Adresse eine IP reserviert, ist der Pool schnell aufgebraucht.
+
+![[dhcp-starvation-flow.png]]
+*<span class="fig-id">04-02-dhcp-starvation-flow</span>: Ablauf eines DHCP-Starvation-Angriffs.*
+
+**Auswirkungen:**
+- Legitime Clients können keine IP-Adresse mehr erhalten
+- Denial-of-Service für neue Geräte im Netzwerk
+- Vorbereitung für einen Rogue-Server-Angriff (siehe unten)
 
 ### Rogue DHCP Server
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Rogue DHCP Server                            │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Client        Legitimer Server       Rogue Server            │
-│      │               │                      │                   │
-│      │  DISCOVER     │                      │                   │
-│      │───────────────┼──────────────────────┼─────────────>     │
-│      │               │                      │                   │
-│      │  OFFER        │    OFFER (schneller!)│                   │
-│      │◄──────────────│◄─────────────────────│                   │
-│      │               │                      │                   │
-│      │                                      │                   │
-│   Client akzeptiert Rogue-Angebot:         │                   │
-│   • Gateway: Angreifer-IP (MITM!)          │                   │
-│   • DNS: Angreifer-DNS (Phishing!)         │                   │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+Ein **Rogue DHCP Server** ist ein bösartiger oder unbeabsichtigt aktiver DHCP-Server im Netzwerk, der nicht vom Administrator kontrolliert wird. Da DHCP keine Authentifizierung verwendet, akzeptiert ein Client das erste OFFER, das er erhält – unabhängig davon, ob es vom legitimen Server stammt.
+
+![[dhcp-rogue-flow.png]]
+*<span class="fig-id">04-02-dhcp-rogue-flow</span>: Ein Rogue Server antwortet schneller als der legitime Server.*
+
+**Was der Angreifer erreichen kann:**
+- **Falsches Gateway:** Der Angreifer wird zum Default Gateway → Man-in-the-Middle
+- **Falsche DNS-Server:** Alle DNS-Anfragen gehen zum Angreifer → Phishing, Umleitungen
+- **Falsches Subnetz:** Client kann nicht richtig kommunizieren → DoS
 
 ### Gegenmaßnahmen
 
