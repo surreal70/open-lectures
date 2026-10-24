@@ -10,7 +10,7 @@ tags:
   - p2p
   - proprietaer
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -32,59 +32,63 @@ bereich: RN
 
 ## Architektur
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Hamachi-Netzwerk                             │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│                    ┌─────────────────┐                          │
-│                    │  Hamachi Cloud  │                          │
-│                    │  (Mediation &   │                          │
-│                    │   Relay Server) │                          │
-│                    └────────┬────────┘                          │
-│                             │                                    │
-│              ┌──────────────┼──────────────┐                    │
-│              │              │              │                    │
-│              ▼              ▼              ▼                    │
-│        ┌─────────┐    ┌─────────┐    ┌─────────┐              │
-│        │  Peer A │◄──►│  Peer B │◄──►│  Peer C │              │
-│        │25.0.0.1 │    │25.0.0.2 │    │25.0.0.3 │              │
-│        └─────────┘    └─────────┘    └─────────┘              │
-│                                                                  │
-│   Direkte P2P-Verbindung wenn möglich (NAT Traversal)          │
-│   Relay über Cloud wenn direkter Kontakt nicht möglich         │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+Hamachi kombiniert Peer-to-Peer mit zentraler Vermittlung:
+
+**Hamachi Cloud (Mediation Server):**
+- Zentrale Registrierung und Authentifizierung
+- Vermittelt Verbindungen zwischen Peers
+- Relay-Funktion wenn direkter P2P-Kontakt unmöglich
+
+**Peer-to-Peer-Verbindungen:**
+- Direkte verschlüsselte Verbindung zwischen Clients
+- NAT-Traversal (UDP Hole Punching)
+- Virtuelle IP-Adressen im 25.x.x.x-Bereich
+
+**Verbindungsaufbau:**
+1. Peers registrieren sich bei Hamachi Cloud
+2. Cloud vermittelt Verbindungsinformationen
+3. Peers versuchen direkte P2P-Verbindung (NAT-Traversal)
+4. Bei Fehlschlag: Traffic über Relay-Server
+
+> [!info] **25.x.x.x Adressbereich**
+> Hamachi nutzt den reservierten, aber nicht standardmäßigen Bereich 25.0.0.0/8. Dies kann zu Konflikten führen, wenn dieser Bereich anderweitig genutzt wird.
 
 ## Anwendungsfälle
 
-<!-- TODO: Gaming (LAN-Spiele über Internet) -->
-<!-- TODO: Kleine Büro-Netzwerke -->
-<!-- TODO: Remote-Desktop-Zugriff -->
+**Gaming (LAN-Spiele über Internet):**
+- Klassischer Use Case – ältere Spiele ohne Online-Multiplayer
+- Simuliert lokales Netzwerk für LAN-Party-Feeling
+- Minecraft, Age of Empires, etc.
+
+**Kleine Büro-Netzwerke:**
+- Verbindung von Home-Office-Mitarbeitern
+- Zugriff auf Dateifreigaben und Drucker
+- Einfache Alternative zu komplexen VPN-Setups
+
+**Remote-Desktop-Zugriff:**
+- Zugriff auf entfernte Computer ohne Port-Forwarding
+- Funktioniert auch hinter NAT/Firewall
+- Kombination mit RDP, VNC, etc.
 
 ## Vor- und Nachteile
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                Hamachi: Vor- und Nachteile                      │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   ✓ Vorteile:                                                   │
-│     • Extrem einfache Einrichtung                              │
-│     • Keine Netzwerkkenntnisse nötig                           │
-│     • NAT-Traversal funktioniert meist automatisch             │
-│     • Kostenlose Version verfügbar                             │
-│                                                                  │
-│   ✗ Nachteile:                                                  │
-│     • Proprietär (nicht auditierbar)                           │
-│     • Abhängigkeit von LogMeIn-Servern                         │
-│     • Kostenlose Version auf 5 Geräte limitiert                │
-│     • 25.x.x.x kann Konflikte verursachen                      │
-│     • Nicht für Enterprise geeignet                            │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+### Vorteile
+
+- **Extrem einfache Einrichtung** – wenige Klicks, keine Netzwerkkenntnisse nötig
+- **NAT-Traversal funktioniert meist automatisch** – kein Port-Forwarding erforderlich
+- **Kostenlose Version verfügbar** – für kleine Netzwerke ausreichend
+- **Plattformübergreifend** – Windows, macOS, Linux
+
+### Nachteile
+
+- **Proprietär** – Quellcode nicht einsehbar, nicht auditierbar
+- **Abhängigkeit von LogMeIn-Servern** – ohne Cloud-Service kein Betrieb
+- **Kostenlose Version limitiert** – maximal 5 Geräte pro Netzwerk
+- **25.x.x.x Adressbereich** – kann Konflikte mit anderen Netzwerken verursachen
+- **Nicht für Enterprise geeignet** – keine granulare Zugriffskontrolle, keine Compliance
+
+> [!warning] **Datenschutzbedenken**
+> Der gesamte Traffic wird über LogMeIn-Server vermittelt. Für sensible Daten ist Hamachi nicht empfehlenswert.
 
 ## Alternativen
 
@@ -94,20 +98,46 @@ bereich: RN
 | Enterprise | [[01-IPsec]], [[03-OpenVPN]] |
 | Einfache Nutzung | [[02-WireGuard]] mit Tailscale |
 
-## Prüfungsrelevante Themen
+## Prüfungstipps
 
-> [!info] Prüfungshinweis
+> [!info] **Prüfungshinweis**
 > Hamachi ist in Prüfungen eher selten relevant, aber als Beispiel für:
 > - Proprietäre VPN-Lösungen
 > - P2P-VPN-Architektur
 > - NAT-Traversal-Techniken
 
+> [!question] **Mögliche Prüfungsfragen**
+> 1. Was unterscheidet Hamachi von klassischen VPN-Lösungen?
+> 2. Welche Vor- und Nachteile hat ein P2P-VPN?
+> 3. Warum ist der 25.x.x.x-Adressbereich problematisch?
+
+> [!tip] **Merkhilfen**
+> - **P2P + Cloud** = Hamachi-Architektur
+> - **25.x.x.x** = Hamachi-Adressbereich
+> - **Gaming** = Klassischer Anwendungsfall
+> - **Proprietär** = Keine Audit-Möglichkeit
+
+---
+
+## Weiterführende Ressourcen
+
+> [!note] **Moderne Alternativen**
+> - **Tailscale** – WireGuard-basiert, ähnlich einfach wie Hamachi
+> - **ZeroTier** – Open-Source P2P-VPN
+> - **Nebula** – Open-Source Overlay-Netzwerk (von Slack entwickelt)
+
+---
+
 ## Zusammenhänge
 
-- [[00-VPN-Index]] - VPN-Übersicht
-- [[02-WireGuard]] - Moderne Alternative
+- [[00-VPN-Index]] → VPN-Übersicht
+- [[02-WireGuard]] → Moderne Alternative (mit Tailscale)
+- [[../04-Overlay-Netzwerke/00-Overlay-Index|Overlay-Netzwerke]] → Ähnliches Konzept
+
+---
 
 ## Quellen
 
-- https://www.vpn.net/ (LogMeIn Hamachi)
+- LogMeIn: Hamachi Documentation – vpn.net
+- Wikipedia: Hamachi (software) – Übersicht und Geschichte.
 

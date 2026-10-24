@@ -9,7 +9,7 @@ tags:
   - wireguard
   - modern
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -31,56 +31,166 @@ bereich: RN
 
 ## Vorteile
 
-<!-- TODO: Einfachheit und Auditierbarkeit -->
-<!-- TODO: Geschwindigkeit und Latenz -->
-<!-- TODO: Roaming-Unterstützung -->
-<!-- TODO: Cryptokey Routing -->
+### Einfachheit und Auditierbarkeit
+
+- **~4.000 Zeilen Code** (vs. ~400.000 bei OpenVPN, ~600.000 bei IPsec-Implementierungen)
+- Vollständiger Code-Review in wenigen Stunden möglich
+- Weniger Angriffsfläche durch minimale Codebasis
+- Keine Legacy-Optionen oder veraltete Algorithmen
+
+### Geschwindigkeit und Latenz
+
+- **Kernel-Space-Implementierung** (kein Context-Switch User/Kernel)
+- Deutlich höherer Durchsatz als OpenVPN (oft 2-4x schneller)
+- Geringere Latenz durch effizientes Protokolldesign
+- Ideal für mobile Anwendungen und Echtzeit-Traffic
+
+### Roaming-Unterstützung
+
+- **Verbindungslos:** Kein Session-State auf Protokollebene
+- Automatischer Wechsel zwischen Netzwerken (WLAN → Mobilfunk)
+- Peer-Adresse wird bei eingehendem Paket automatisch aktualisiert
+- Keine Reconnects nötig bei IP-Wechsel
+
+### Cryptokey Routing
+
+WireGuards innovatives Konzept: Die Routing-Tabelle basiert auf Public Keys.
+
+| Peer Public Key | Allowed IPs |
+|-----------------|-------------|
+| `abc123...` | 10.0.0.2/32, 192.168.1.0/24 |
+| `def456...` | 10.0.0.3/32 |
+
+- **Eingehend:** Paket wird nur akzeptiert, wenn Quell-IP in `AllowedIPs` des Peers
+- **Ausgehend:** Ziel-IP bestimmt, welcher Peer-Key für Verschlüsselung verwendet wird
+- Einfache Konfiguration: Ein Public Key, eine Liste erlaubter IPs
 
 ## Architektur
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    WireGuard-Konzept                            │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Peer A                                           Peer B       │
-│   ┌─────────────┐                           ┌─────────────┐    │
-│   │ Public Key  │◄─────── Cryptokey ───────►│ Public Key  │    │
-│   │ Private Key │         Routing           │ Private Key │    │
-│   │ Allowed IPs │                           │ Allowed IPs │    │
-│   └─────────────┘                           └─────────────┘    │
-│                                                                  │
-│   Kein Handshake-State, keine Zertifikate                      │
-│   → Jeder Peer kennt Public Keys der anderen                   │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[wireguard-concept.png]]
+*<span class="fig-id">05-02-02-wireguard-concept</span>: WireGuard Cryptokey Routing – Peers authentifizieren sich nur über Public Keys.*
+
+**Kernprinzipien:**
+- Kein zentraler Server – alle Teilnehmer sind gleichberechtigte Peers
+- Authentifizierung ausschließlich über Public Keys (keine Zertifikate)
+- Kein persistenter Handshake-State auf Protokollebene
+- Minimale Angriffsfläche durch feste Kryptographie-Auswahl
 
 ## Konfiguration
 
-<!-- TODO: Beispielkonfiguration -->
-<!-- TODO: wg-quick Befehle -->
+### Beispielkonfiguration (Server/Peer A)
+
+```ini
+[Interface]
+PrivateKey = SERVER_PRIVATE_KEY
+Address = 10.0.0.1/24
+ListenPort = 51820
+
+[Peer]
+PublicKey = CLIENT_PUBLIC_KEY
+AllowedIPs = 10.0.0.2/32
+```
+
+### Beispielkonfiguration (Client/Peer B)
+
+```ini
+[Interface]
+PrivateKey = CLIENT_PRIVATE_KEY
+Address = 10.0.0.2/24
+DNS = 1.1.1.1
+
+[Peer]
+PublicKey = SERVER_PUBLIC_KEY
+Endpoint = vpn.example.com:51820
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 25
+```
+
+### wg-quick Befehle
+
+```bash
+# Schlüsselpaar generieren
+wg genkey | tee privatekey | wg pubkey > publickey
+
+# Interface starten
+wg-quick up wg0
+
+# Interface stoppen
+wg-quick down wg0
+
+# Status anzeigen
+wg show
+
+# Detaillierter Status
+wg show wg0
+```
+
+> [!tip] **PersistentKeepalive**
+> Wichtig für Clients hinter NAT: Sendet alle 25 Sekunden ein Keepalive-Paket, um die NAT-Zuordnung aufrechtzuerhalten.
 
 ## Vergleich mit IPsec/OpenVPN
 
-<!-- TODO: Performance-Vergleich -->
-<!-- TODO: Komplexitätsvergleich -->
+### Performance-Vergleich
 
-## Prüfungsrelevante Themen
+| Kriterium     | WireGuard   | IPsec (IKEv2) | OpenVPN       |
+| ------------- | ----------- | ------------- | ------------- |
+| **Durchsatz** | ~1000 Mbps  | ~500-800 Mbps | ~200-400 Mbps |
+| **Latenz**    | Sehr gering | Gering        | Mittel        |
+| **CPU-Last**  | Niedrig     | Mittel        | Hoch          |
+| **Handshake** | 1-RTT       | 2-4 RTT       | 4+ RTT        |
 
-> [!tip] Prüfungshinweis
-> - Warum ist WireGuard schneller als IPsec/OpenVPN?
-> - Cryptokey Routing Konzept
-> - Verwendete Kryptographie-Algorithmen
+> [!info] **Benchmark-Hinweis**
+> Werte variieren stark je nach Hardware, Konfiguration und Verschlüsselungsalgorithmen. WireGuard profitiert besonders von Kernel-Integration.
+
+## Prüfungstipps
+
+> [!warning] **Prüfungsrelevant**
+N/A
+
+> [!question] **Häufige Prüfungsfragen**
+> 1. Was ist Cryptokey Routing und wie funktioniert es?
+> 2. Warum hat WireGuard nur ~4.000 Codezeilen?
+> 3. Welche Vorteile bietet die Kernel-Integration?
+> 4. Wie funktioniert Roaming bei WireGuard?
+> 5. Warum verwendet WireGuard keine Zertifikate?
+> 6. Was bedeutet "feste Kryptographie-Auswahl"?
+
+> [!tip] **Merkhilfen**
+> - **Cryptokey Routing** = Public Key bestimmt erlaubte IPs
+> - **4.000 Zeilen** = Auditierbar, weniger Bugs
+> - **Kernel-Space** = Kein Context-Switch = schneller
+> - **ChaCha20** = Verschlüsselung (schnell in Software)
+> - **Curve25519** = Schlüsselaustausch (ECDH)
+> - **UDP 51820** = Standardport
+> - **Stateless** = Kein Handshake-State = Roaming funktioniert
+
+---
+
+## Weiterführende Ressourcen
+
+> [!note] **Offizielle Dokumentation**
+> - [wireguard.com](https://www.wireguard.com/) – Offizielle Projektseite
+> - [WireGuard Whitepaper](https://www.wireguard.com/papers/wireguard.pdf) – Technische Spezifikation
+
+> [!tip] **Praktische Tools**
+> - **wg** → WireGuard CLI-Tool für Konfiguration und Status
+> - **wg-quick** → Vereinfachte Interface-Verwaltung
+> - **Wireshark** → WireGuard-Traffic analysieren (ab Version 3.0)
+
+---
 
 ## Zusammenhänge
 
-- [[00-VPN-Index]] - VPN-Übersicht
-- [[01-IPsec]] - Klassischer Vergleich
-- [[03-OpenVPN]] - Alternativer Ansatz
+- [[00-VPN-Index]] → VPN-Übersicht
+- [[01-IPsec]] → Klassischer Vergleich (komplexer, aber mehr Features)
+- [[03-OpenVPN]] → User-Space Alternative (mehr Plattformen)
+- [[../03-TLS|TLS]] → Ähnliche moderne Kryptographie-Auswahl
+
+---
 
 ## Quellen
 
-- https://www.wireguard.com/
-- https://www.wireguard.com/papers/wireguard.pdf
+- Donenfeld, Jason A.: WireGuard: Next Generation Kernel Network Tunnel – Das offizielle Whitepaper.
+- wireguard.com – Offizielle Projektdokumentation und Referenz.
+- Linux Kernel Documentation – WireGuard Kernel-Modul (seit Linux 5.6).
 
