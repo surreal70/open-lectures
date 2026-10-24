@@ -1,80 +1,128 @@
 ---
 author: Andreas Hümmer
-title: "MC Index"
-tags: [index, mc, mobile]
+title: Mobile Computing - Index
+tags:
+  - index
+  - rn
+  - mobile-computing
 created: '2026-10-13'
-modified: '2026-10-13'
-bereich: MC
+modified: '2026-10-24'
+bereich: RN
 ---
 
 # Mobile Computing
 
-Übersicht über den Bereich **Mobile Computing**.
+Übersicht über den Bereich **Mobile Computing** im Kontext von Rechnernetzen.
 
 ## Lernziele
 
-> [!info] Nach diesem Kapitel können Sie...
-> - Die Besonderheiten mobiler Systeme gegenüber stationären Systemen erklären
-> - Mobile Betriebssysteme und ihre Architekturen verstehen
-> - Herausforderungen wie Energiemanagement, Konnektivität und Sicherheit einordnen
-> - Mobile Anwendungsarchitekturen (Native, Hybrid, Web) unterscheiden
-> - Drahtlose Kommunikationstechnologien und ihre Einsatzgebiete kennen
+> [!ziel] Nach diesem Kapitel können Sie...
+> - Die Besonderheiten mobiler Kommunikation gegenüber stationären Systemen erklären
+> - Herausforderungen wie Verbindungsunterbrechungen und Sicherheit einordnen
+> - Standortbestimmung mittels GNSS und alternativer Verfahren verstehen
+> - Funktechnologien nach Reichweite klassifizieren (PAN, LAN, MAN, WAN)
+> - Multiplexing-Verfahren im Funkbereich (FDMA, TDMA, CDMA) unterscheiden
 
 ## Inhalte
 
 | Nr. | Kapitel | Beschreibung |
 |-----|---------|--------------|
-| 01 | [[01-Grundlagen/00-Grundlagen-Index\|Grundlagen]] | Definition, Geschichte, Herausforderungen |
-| 02 | [[02-Betriebssysteme/00-Betriebssysteme-Index\|Mobile Betriebssysteme]] | Android, iOS, Architektur |
-| 03 | [[03-Kommunikation/00-Kommunikation-Index\|Drahtlose Kommunikation]] | Mobilfunk, WLAN, Bluetooth |
-| 04 | [[04-Anwendungen/00-Anwendungen-Index\|Mobile Anwendungen]] | Native, Hybrid, Web-Apps |
+| 01 | [[01-Einfuehrung\|Einführung]] | Definition, Charakteristiken, Herausforderungen |
+| 02 | [[02-Kommunikation\|Kommunikation]] | Anforderungen, Proxies, VPN, QUIC/HTTP/3 |
+| 03 | [[03-Standortbestimmung\|Standortbestimmung]] | GNSS, WLAN-Ortung, Funkzellen |
+| 04 | [[04-Funknetze\|Funknetze]] | Mobilfunk (2G-5G), WLAN, Bluetooth, NFC |
+| 05 | [[05-Kanalaufteilung\|Kanalaufteilung]] | FDMA, TDMA, CDMA, SDMA, OFDMA |
 
 ---
 
 ## Kapitelübersicht
 
-### 01 – Grundlagen
+### 01 – Einführung Mobile Computing
 
-Das Kapitel behandelt die Grundlagen des Mobile Computing:
 - **Definition** – Was ist Mobile Computing?
-- **Geschichte** – Von PDAs zu Smartphones
-- **Herausforderungen** – Energie, Konnektivität, Ressourcen
+- **Charakteristiken** – Mobilität, drahtlose Kommunikation, Ressourcenbeschränkungen
+- **Herausforderungen** – Unterbrechungen, Abkopplungen, Sicherheit
+- **Abgrenzung** – Ubiquitous Computing, Pervasive Computing
 
-### 02 – Mobile Betriebssysteme
+### 02 – Kommunikationsanforderungen
 
-Das Kapitel behandelt mobile Betriebssysteme:
-- **Android** – Architektur, Komponenten, Sicherheit
-- **iOS** – Architektur, Sandbox, App-Lebenszyklus
-- **Vergleich** – Android vs. iOS
+- **Verbindungsunterbrechungen** – Funklöcher, Handover, Netzüberlastung
+- **Kompensationsmaßnahmen** – TCP-Retransmission, Proxies
+- **Resiliente VPNs** – WireGuard, IKEv2/MOBIKE
+- **Moderne Protokolle** – QUIC, HTTP/3, Connection Migration
 
-### 03 – Drahtlose Kommunikation
+### 03 – Standortbestimmung
 
-Das Kapitel behandelt Kommunikationstechnologien:
-- **Mobilfunk** – GSM, LTE, 5G
-- **WLAN** – IEEE 802.11, Handover
-- **Nahbereich** – Bluetooth, NFC
+- **GNSS** – GPS, GLONASS, Galileo, BeiDou
+- **Funktionsprinzip** – Trilateration, Laufzeitmessung
+- **Genauigkeit** – Standard (2-15m), DGPS, RTK (cm-Bereich)
+- **Alternative Verfahren** – WLAN-Ortung, Funkzellen-Triangulation
 
-### 04 – Mobile Anwendungen
+### 04 – Funknetze und Reichweiten
 
-Das Kapitel behandelt App-Entwicklung:
-- **Native Apps** – Plattformspezifisch
-- **Hybrid Apps** – Cross-Platform
-- **Web Apps** – Progressive Web Apps (PWA)
+- **WAN** – Mobilfunk: GSM, UMTS, LTE, 5G
+- **LAN** – WLAN/WiFi (802.11 a/b/g/n/ac/ax), DECT
+- **MAN** – LPWAN, LoRaWAN, NB-IoT
+- **PAN** – Bluetooth, NFC, ZigBee
+
+### 05 – Kanalaufteilung im Funkbereich
+
+- **FDMA** – Frequency Division Multiple Access
+- **TDMA** – Time Division Multiple Access
+- **CDMA** – Code Division Multiple Access
+- **SDMA** – Space Division (Zellen, Beamforming)
+- **OFDMA** – Orthogonal Frequency Division (LTE, WiFi 6)
 
 ---
+
+## Zusammenhänge
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                    Mobile Computing                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  Rechnernetze          Verteilte Systeme       Sicherheit  │
+│  ┌───────────┐         ┌───────────┐          ┌─────────┐  │
+│  │Protokolle │◄───────►│ Sync,     │◄────────►│ VPN,    │  │
+│  │TCP/IP,    │         │ Replikat. │          │ TLS,    │  │
+│  │QUIC       │         │           │          │ WLAN-   │  │
+│  └───────────┘         └───────────┘          │ Security│  │
+│       ▲                      ▲                └─────────┘  │
+│       │                      │                     ▲       │
+│       └──────────┬───────────┴─────────────────────┘       │
+│                  │                                          │
+│           ┌──────┴──────┐                                  │
+│           │   Mobile    │                                  │
+│           │  Computing  │                                  │
+│           └─────────────┘                                  │
+└─────────────────────────────────────────────────────────────┘
+```
 
 ## Verwandte Themen
 
-- [[../03-Rechnernetze/00-RN-Index|Rechnernetze]] – Netzwerkgrundlagen
-- [[../04-Verteilte-Systeme/00-VS-Index|Verteilte Systeme]] – Client-Server, Cloud
-- [[../02-Betriebssysteme/00-Betriebssysteme-Index|Betriebssysteme]] – OS-Grundlagen
+- [[../04-Bitübertragungsschicht/01-Uebertragungsmedien|Übertragungsmedien]] – Funktechnologien
+- [[../05-Sicherheit/02-VPN/00-VPN-Index|VPN]] – Sichere mobile Verbindungen
+- [[../04-Basisprotokolle/00-Basisprotokolle-Index|Basisprotokolle]] – DNS, DHCP für Mobile
+- [[../../04-Verteilte-Systeme/00-VS-Index|Verteilte Systeme]] – Cloud, Synchronisation
 
 ---
 
-## Alle Dateien in diesem Bereich
+## Prüfungsrelevanz
 
-```dataview
-LIST
-FROM "05-Mobile-Computing"
-SORT file.name ASC
-```
+> [!warning] **Prüfungsrelevant**
+> - Charakteristiken und Herausforderungen von Mobile Computing
+> - GNSS-Funktionsprinzip (Trilateration, 4 Satelliten)
+> - Mobilfunkgenerationen (2G-5G) und ihre Merkmale
+> - Multiplexing-Verfahren: FDMA, TDMA, CDMA
+
+> [!question] Typische Prüfungsfragen
+> - Welche besonderen Herausforderungen gibt es bei Mobile Computing?
+> - Wie funktioniert GPS? Warum werden 4 Satelliten benötigt?
+> - Ordnen Sie die Technologien nach Reichweite: NFC, WLAN, LTE, Bluetooth
+> - Erklären Sie den Unterschied zwischen FDMA und TDMA.
+> - Welches Multiplexing nutzt GSM? Welches nutzt LTE?
+
+---
+
+*Dateiende*
