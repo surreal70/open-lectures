@@ -11,7 +11,7 @@ tags:
   - switching
   - schleifenvermeidung
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -35,41 +35,23 @@ bereich: RN
 
 ### Warum sind Layer-2-Schleifen fatal?
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              Warum sind Layer-2-Schleifen fatal?               │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   OHNE STP (Schleife vorhanden):                               │
-│                                                                  │
-│        Switch A ◄─────────────────────► Switch B               │
-│            │                                │                   │
-│            └────────────► Switch C ◄────────┘                   │
-│                              │                                  │
-│                           Host X                                │
-│                                                                  │
-│   Problem 1: Broadcast-Sturm                                    │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ Host X sendet einen Broadcast                           │  │
-│   │ → Switch C flutet an A und B                            │  │
-│   │ → A flutet an B, B flutet an A                          │  │
-│   │ → Endlosschleife! Netzwerk kollabiert!                  │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   Problem 2: MAC-Flapping                                       │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ Switch sieht dieselbe MAC an verschiedenen Ports       │  │
-│   │ → MAC-Tabelle instabil → Pakete falsch zugestellt      │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   Problem 3: Mehrfachzustellung                                │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ Unicast-Frames erreichen Ziel mehrfach                  │  │
-│   │ → Anwendungsprobleme, Duplikate                         │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[stp-loop-problem.png]]
+*<span class="fig-id">04-05-stp-loop-problem</span>: Layer-2-Schleife ohne STP – Switches A, B, C bilden einen Ring.*
+
+**Problem 1: Broadcast-Sturm**
+- Host X sendet einen Broadcast
+- Switch C flutet an A und B
+- A flutet an B, B flutet an A
+- Endlosschleife! Netzwerk kollabiert!
+
+**Problem 2: MAC-Flapping**
+- Switch sieht dieselbe MAC an verschiedenen Ports
+- MAC-Tabelle wird instabil
+- Pakete werden falsch zugestellt
+
+**Problem 3: Mehrfachzustellung**
+- Unicast-Frames erreichen Ziel mehrfach
+- Anwendungsprobleme, Duplikate
 
 > [!example] **Analogie: Einbahnstraßen-Netz**
 > - Eine Stadt mit **kreisförmigen Straßen** (= Schleifen)
@@ -89,25 +71,8 @@ bereich: RN
 
 ## STP-Lösung: Der Spannbaum
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              STP erstellt schleifenfreien Baum                 │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   VORHER (mit Schleife):        NACHHER (mit STP):             │
-│                                                                  │
-│        A ◄────────► B                A ◄────────► B             │
-│        │            │                │    Root     │            │
-│        │            │                │   Bridge    │            │
-│        └─────► C ◄──┘                └─────► C ◄───┘            │
-│             Schleife!                      │ X                  │
-│                                       Blocked                   │
-│                                                                  │
-│   STP blockiert einen Port, um die Schleife zu unterbrechen.   │
-│   Bei Ausfall wird der blockierte Port automatisch aktiviert.  │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[stp-before-after.png]]
+*<span class="fig-id">04-05-stp-before-after</span>: STP blockiert redundante Ports für einen schleifenfreien Spannbaum.*
 
 ---
 
@@ -115,31 +80,17 @@ bereich: RN
 
 Der erste Schritt in STP ist die Wahl der **Root Bridge** – der zentrale Punkt des Spannbaums.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Root Bridge Election                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Jeder Switch hat eine Bridge ID (8 Bytes):                   │
-│                                                                  │
-│   ┌──────────────────┬──────────────────────────────────────┐  │
-│   │ Priority (2 Byte)│      MAC-Adresse (6 Byte)            │  │
-│   │   0 - 65535      │      z.B. 00:1A:2B:3C:4D:5E          │  │
-│   │   Default: 32768 │                                       │  │
-│   └──────────────────┴──────────────────────────────────────┘  │
-│                                                                  │
-│   Regel: Die NIEDRIGSTE Bridge ID gewinnt!                     │
-│                                                                  │
-│   Beispiel:                                                     │
-│   Switch A: Priority 32768, MAC 00:11:22:33:44:55              │
-│   Switch B: Priority 32768, MAC 00:11:22:33:44:44  ← Root!     │
-│   Switch C: Priority 32768, MAC 00:11:22:33:44:66              │
-│                                                                  │
-│   → Switch B wird Root Bridge (niedrigste MAC bei gleicher     │
-│     Priority)                                                   │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[stp-bridge-id.png]]
+*<span class="fig-id">04-05-stp-bridge-id</span>: Aufbau der Bridge ID – Priority (2 Byte) + MAC-Adresse (6 Byte).*
+
+**Regel:** Die **niedrigste** Bridge ID gewinnt!
+
+> [!example] **Beispiel Root Bridge Election**
+> - Switch A: Priority 32768, MAC 00:11:22:33:44:55
+> - Switch B: Priority 32768, MAC 00:11:22:33:44:44 ← **Root!**
+> - Switch C: Priority 32768, MAC 00:11:22:33:44:66
+> 
+> → Switch B wird Root Bridge (niedrigste MAC bei gleicher Priority)
 
 ---
 
@@ -164,34 +115,8 @@ Nach der Root Bridge Election berechnet jeder Switch den kürzesten Pfad zur Roo
 | **Designated Port (DP)** | Bester Port für ein Segment zur Root Bridge | Forwarding |
 | **Blocked/Alternate Port** | Redundanter Port, deaktiviert | Blocking |
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Port-Rollen Beispiel                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│                     Root Bridge (A)                             │
-│                    ┌──────────────┐                             │
-│                    │   DP    DP   │                             │
-│                    └───┬──────┬───┘                             │
-│                        │      │                                 │
-│              ┌─────────┘      └─────────┐                       │
-│              │                          │                       │
-│         ┌────┴────┐                ┌────┴────┐                  │
-│         │RP    DP │                │ RP   DP │                  │
-│         │ Switch B│                │Switch C │                  │
-│         └────┬────┘                └────┬────┘                  │
-│              │                          │                       │
-│              │         ┌────────────────┘                       │
-│              │         │                                        │
-│         ┌────┴─────────┴────┐                                   │
-│         │RP      Blocked    │                                   │
-│         │     Switch D      │                                   │
-│         └───────────────────┘                                   │
-│                                                                  │
-│   RP = Root Port, DP = Designated Port                         │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[stp-port-roles.png]]
+*<span class="fig-id">04-05-stp-port-roles</span>: Port-Rollen im Spannbaum – Root Port, Designated Port und Blocked Port.*
 
 ---
 
@@ -205,35 +130,8 @@ Nach der Root Bridge Election berechnet jeder Switch den kürzesten Pfad zur Roo
 | **Learning** | ✗ | ✓ | RX/TX | 15s (forward delay) |
 | **Forwarding** | ✓ | ✓ | RX/TX | — |
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              STP Port-Zustandsübergänge                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Port aktiviert                                                │
-│        │                                                        │
-│        ▼                                                        │
-│   ┌─────────┐                                                   │
-│   │Blocking │ ←──── Port wird blockiert                        │
-│   └────┬────┘                                                   │
-│        │ (20s Max Age)                                         │
-│        ▼                                                        │
-│   ┌─────────┐                                                   │
-│   │Listening│  ←── Sendet/empfängt BPDUs                       │
-│   └────┬────┘       (15s Forward Delay)                        │
-│        ▼                                                        │
-│   ┌─────────┐                                                   │
-│   │Learning │  ←── Lernt MAC-Adressen                          │
-│   └────┬────┘       (15s Forward Delay)                        │
-│        ▼                                                        │
-│   ┌──────────┐                                                  │
-│   │Forwarding│ ←── Leitet Frames weiter                        │
-│   └──────────┘                                                  │
-│                                                                  │
-│   Gesamte Konvergenzzeit: 30-50 Sekunden!                      │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[stp-port-states.png]]
+*<span class="fig-id">04-05-stp-port-states</span>: STP Port-Zustandsübergänge – 30-50 Sekunden Konvergenzzeit.*
 
 ---
 
@@ -241,73 +139,46 @@ Nach der Root Bridge Election berechnet jeder Switch den kürzesten Pfad zur Roo
 
 RSTP (IEEE 802.1w) verbessert die Konvergenzzeit drastisch:
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              STP vs. RSTP Konvergenz                           │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   STP:  Blocking → Listening → Learning → Forwarding           │
-│         (20s)       (15s)       (15s)                          │
-│         Gesamt: 30-50 Sekunden                                 │
-│                                                                  │
-│   RSTP: Discarding ────────────────────► Forwarding            │
-│         Proposal/Agreement-Mechanismus                         │
-│         Gesamt: < 1 Sekunde (oft Millisekunden!)               │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+**STP:** Blocking → Listening → Learning → Forwarding (20s + 15s + 15s = **30-50 Sekunden**)
+
+**RSTP:** Discarding → Forwarding via Proposal/Agreement-Mechanismus (**< 1 Sekunde**, oft Millisekunden!)
 
 ### RSTP Proposal/Agreement
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              RSTP Proposal/Agreement                           │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Switch A (Root)                    Switch B                   │
-│       │                                  │                      │
-│       │  BPDU mit Proposal-Flag         │                      │
-│       │────────────────────────────────►│                      │
-│       │                                  │                      │
-│       │                        B blockiert alle                 │
-│       │                        anderen Ports                    │
-│       │                                  │                      │
-│       │  BPDU mit Agreement-Flag        │                      │
-│       │◄────────────────────────────────│                      │
-│       │                                  │                      │
-│       │  Port geht sofort auf           │                      │
-│       │  Forwarding!                    │                      │
-│                                                                  │
-│   → Kein Warten auf Timer, sofortige Konvergenz!               │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[rstp-proposal-agreement.png]]
+*<span class="fig-id">04-05-rstp-proposal-agreement</span>: RSTP Proposal/Agreement – sofortige Konvergenz ohne Timer.*
 
 ---
 
 ## MSTP (Multiple Spanning Tree)
 
-MSTP (IEEE 802.1s) ermöglicht mehrere STP-Instanzen für verschiedene VLANs:
+MSTP (IEEE 802.1s) ermöglicht mehrere STP-Instanzen für verschiedene VLANs innerhalb einer **MSTP-Region**.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              MSTP - Multiple Instances                         │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Problem mit klassischem STP:                                 │
-│   → Eine Root Bridge für alle VLANs                            │
-│   → Suboptimale Pfade, keine Lastverteilung                   │
-│                                                                  │
-│   MSTP-Lösung:                                                  │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ Instance 1 (VLAN 10, 20):    Root = Switch A            │  │
-│   │ Instance 2 (VLAN 30, 40):    Root = Switch B            │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   → Lastverteilung über verschiedene Pfade                     │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+**Problem mit klassischem STP/RSTP:**
+- Nur eine einzige Root Bridge für das gesamte Netzwerk
+- Alle VLANs nutzen denselben Spannbaum
+- Suboptimale Pfade: Traffic muss immer über die Root Bridge
+- Keine Möglichkeit zur Lastverteilung auf redundanten Links
+
+**MSTP-Lösung:**
+- Mehrere **Spanning Tree Instances** (MSTIs) pro Region
+- Jede Instance kann eine eigene Root Bridge haben
+- VLANs werden auf Instances gemappt
+
+**Beispiel-Konfiguration:**
+- **Instance 1** (VLAN 10, 20): Root = Switch A → Traffic über Link West
+- **Instance 2** (VLAN 30, 40): Root = Switch B → Traffic über Link Ost
+- Ergebnis: Lastverteilung über beide redundanten Pfade
+
+**MSTP-Region:**
+- Switches mit identischer Konfiguration (Region Name, Revision, VLAN-Mapping)
+- Innerhalb der Region: Mehrere Instances
+- Zwischen Regionen: Eine gemeinsame Instance (IST – Internal Spanning Tree)
+
+**Vorteile gegenüber PVST+:**
+- Weniger CPU-Last (nicht eine Instance pro VLAN)
+- Skaliert besser bei vielen VLANs
+- Standardisiert (IEEE 802.1s, in 802.1Q integriert)
 
 ---
 
@@ -315,51 +186,83 @@ MSTP (IEEE 802.1s) ermöglicht mehrere STP-Instanzen für verschiedene VLANs:
 
 ### BPDU Guard
 
+BPDU Guard schützt Access-Ports vor unautorisierten Switches oder Angriffen auf die STP-Topologie.
+
+**Einsatzszenario:**
+- Access-Ports, an denen nur Endgeräte (PCs, Drucker, IP-Telefone) angeschlossen werden
+- Ports mit aktiviertem PortFast (sofortiges Forwarding)
+- Edge-Ports in Richtung Benutzer
+
+**Bedrohung ohne BPDU Guard:**
+- Angreifer schließt eigenen Switch mit niedriger Priority an
+- Sendet BPDUs und wird zur Root Bridge gewählt
+- Gesamter Traffic fließt über den Angreifer-Switch
+- Man-in-the-Middle (MITM) Angriff möglich!
+- Auch versehentlich: Mitarbeiter bringt privaten Switch mit
+
+**Schutzverhalten:**
+- Port überwacht eingehende BPDUs
+- Bei Empfang einer BPDU: Port wird sofort in **err-disabled** State versetzt
+- Kein automatisches Recovery – Admin-Eingriff erforderlich
+- Optional: Auto-Recovery nach konfigurierbarer Zeit
+
+**Cisco-Konfiguration:**
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                    BPDU Guard                                   │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Problem: Angreifer schließt Switch mit niedriger Priority an │
-│           → Wird zur Root Bridge → MITM möglich!               │
-│                                                                  │
-│   Lösung: BPDU Guard auf Access-Ports                          │
-│                                                                  │
-│   ┌──────────────────────────────────────────┐                 │
-│   │ Wenn BPDU empfangen wird:                │                 │
-│   │ → Port wird sofort disabled (err-disabled)│                 │
-│   │ → Admin-Eingriff nötig zur Reaktivierung │                 │
-│   └──────────────────────────────────────────┘                 │
-│                                                                  │
-│   Cisco-Konfiguration:                                         │
-│   Switch(config-if)# spanning-tree bpduguard enable           │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
+! BPDU Guard auf einzelnem Port
+Switch(config-if)# spanning-tree bpduguard enable
+
+! BPDU Guard global für alle PortFast-Ports
+Switch(config)# spanning-tree portfast bpduguard default
+
+! Auto-Recovery nach 300 Sekunden (optional)
+Switch(config)# errdisable recovery cause bpduguard
+Switch(config)# errdisable recovery interval 300
 ```
+
+> [!warning] **Best Practice**
+> BPDU Guard sollte auf **allen Access-Ports** aktiviert sein. In Kombination mit PortFast sorgt er dafür, dass Endgeräte sofort Netzwerkzugang haben, aber unautorisierte Switches sofort blockiert werden.
 
 ### Root Guard
 
+Root Guard schützt die Position der Root Bridge und verhindert, dass Downstream-Switches die Topologie übernehmen.
+
+**Einsatzszenario:**
+- Ports in Richtung Access- oder Distribution-Layer
+- Verbindungen zu Partner-Netzwerken oder fremden Switches
+- Überall dort, wo die Root Bridge nicht wechseln darf
+
+**Bedrohung ohne Root Guard:**
+- Downstream-Switch sendet BPDUs mit besserer (niedrigerer) Bridge ID
+- Wird zur neuen Root Bridge gewählt
+- Traffic-Pfade ändern sich unkontrolliert
+- Mögliche Ursachen: Fehlkonfiguration, absichtlicher Angriff, defekter Switch
+
+**Unterschied zu BPDU Guard:**
+
+| Aspekt | BPDU Guard | Root Guard |
+|--------|------------|------------|
+| Einsatzort | Access-Ports (Endgeräte) | Trunk-Ports (zu anderen Switches) |
+| Trigger | Jede BPDU | Nur Superior BPDUs |
+| Reaktion | Port err-disabled | Port root-inconsistent |
+| Recovery | Manuell (oder Timer) | Automatisch wenn BPDUs stoppen |
+
+**Schutzverhalten:**
+- Port akzeptiert BPDUs, aber prüft deren Inhalt
+- Bei **Superior BPDU** (bessere Bridge ID als aktuelle Root): Port geht in **root-inconsistent** State
+- Port blockiert Traffic, bleibt aber aktiv für BPDUs
+- Automatische Erholung sobald keine Superior BPDUs mehr empfangen werden
+
+**Cisco-Konfiguration:**
 ```
-┌─────────────────────────────────────────────────────────────────┐
-│                    Root Guard                                   │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Problem: Downstream-Switch sendet bessere BPDUs             │
-│           → Wird zur Root Bridge                               │
-│                                                                  │
-│   Lösung: Root Guard auf Ports zu Downstream-Switches          │
-│                                                                  │
-│   ┌──────────────────────────────────────────┐                 │
-│   │ Wenn Superior BPDU empfangen wird:       │                 │
-│   │ → Port geht in "root-inconsistent" State │                 │
-│   │ → Automatische Erholung wenn BPDU stoppt │                 │
-│   └──────────────────────────────────────────┘                 │
-│                                                                  │
-│   Cisco-Konfiguration:                                         │
-│   Switch(config-if)# spanning-tree guard root                 │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
+! Root Guard auf Trunk-Port aktivieren
+Switch(config-if)# spanning-tree guard root
+
+! Status prüfen
+Switch# show spanning-tree inconsistentports
 ```
+
+> [!tip] **Designregel**
+> Root Guard auf allen Ports aktivieren, hinter denen **keine Root Bridge** stehen sollte. Die Root Bridge gehört ins Netzwerk-Core – nicht in den Access-Layer oder bei Partnern.
 
 ---
 
