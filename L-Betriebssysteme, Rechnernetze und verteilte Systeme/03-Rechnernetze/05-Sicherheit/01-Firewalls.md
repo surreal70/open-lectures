@@ -85,6 +85,45 @@ Paketfilter analysieren jedes Paket **isoliert** anhand von Header-Informationen
 [Nummer] [Aktion] [Protokoll] [Quelle] [Ziel] [Port] [Optionen]
 ```
 
+### Vereinfachtes Regelwerk (Beispiel)
+
+| Nr. | Aktion | Protokoll | Quelle | Ziel | Dest-Port | Beschreibung |
+|-----|--------|-----------|--------|------|-----------|--------------|
+| 1 | ALLOW | TCP | any | Server | 22 | SSH erlauben |
+| 2 | ALLOW | TCP | any | Server | 80, 443 | Web erlauben |
+| 3 | ALLOW | ICMP | any | Server | - | Ping erlauben |
+| 4 | DENY | TCP | any | Server | 3389 | RDP blockieren |
+| 5 | DENY | any | any | any | any | **Default Deny** |
+
+### Abarbeitungsreihenfolge (First Match Wins)
+
+> [!important] Reihenfolge ist entscheidend!
+> Firewall-Regeln werden **von oben nach unten** abgearbeitet. Die **erste passende Regel** entscheidet – nachfolgende Regeln werden ignoriert.
+
+**Beispiel der Auswertung:**
+
+```
+Eingehendes Paket: TCP, Quelle: 203.0.113.50, Ziel: Server:443
+
+Regel 1: SSH (Port 22) → passt nicht → weiter
+Regel 2: Web (Port 80, 443) → PASST! → ALLOW → ENDE
+
+Ergebnis: Paket erlaubt (Regel 2)
+```
+
+**Häufiger Fehler – falsche Reihenfolge:**
+
+| Nr. | Aktion | Protokoll | Quelle | Ziel | Port | Problem |
+|-----|--------|-----------|--------|------|------|---------|
+| 1 | DENY | any | any | any | any | ⚠️ Blockiert ALLES! |
+| 2 | ALLOW | TCP | any | Server | 22 | ❌ Wird nie erreicht |
+| 3 | ALLOW | TCP | any | Server | 443 | ❌ Wird nie erreicht |
+
+> [!tip] Best Practice
+> - Spezifische Regeln **vor** allgemeinen Regeln
+> - DENY-Regeln für bekannte Bedrohungen **vor** ALLOW-Regeln
+> - Default-Deny-Regel **immer am Ende**
+
 ### Beispiel: Linux iptables (Legacy)
 
 ```bash
