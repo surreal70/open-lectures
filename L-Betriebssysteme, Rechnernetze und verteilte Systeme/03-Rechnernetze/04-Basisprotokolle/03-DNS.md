@@ -10,7 +10,7 @@ tags:
   - namensauflösung
   - netzwerkdienst
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-24'
 bereich: RN
 ---
 
@@ -34,23 +34,15 @@ bereich: RN
 
 ### Warum ist DNS notwendig?
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              Das Problem: Menschen vs. Computer                 │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Menschen merken sich:     Computer brauchen:                  │
-│   ────────────────────      ──────────────────                  │
-│   www.google.de             142.250.185.99                      │
-│   mail.example.org          93.184.216.34                       │
-│   ftp.firma.local           192.168.1.50                        │
-│                                                                  │
-│   DNS ist das "Telefonbuch" des Internets:                     │
-│   Name → IP-Adresse (Forward Lookup)                           │
-│   IP-Adresse → Name (Reverse Lookup)                           │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Menschen merken sich | Computer brauchen |
+|---------------------|-------------------|
+| www.google.de | 142.250.185.99 |
+| mail.example.org | 93.184.216.34 |
+| ftp.firma.local | 192.168.1.50 |
+
+DNS ist das "Telefonbuch" des Internets:
+- **Forward Lookup:** Name → IP-Adresse
+- **Reverse Lookup:** IP-Adresse → Name
 
 > [!example] **Analogie: Telefonbuch**
 > - Du kennst den **Namen** deines Freundes (= Domainname)
@@ -70,70 +62,28 @@ bereich: RN
 
 ## DNS-Server-Typen
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                     DNS-Server-Typen                            │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  1. ROOT NAME SERVER (13 logische, ~1500 physische)             │
-│     ┌─────────────────────────────────────────────────────────┐ │
-│     │ Kennen die autoritativen Server für alle TLDs           │ │
-│     │ a.root-servers.net bis m.root-servers.net               │ │
-│     └─────────────────────────────────────────────────────────┘ │
-│                                                                  │
-│  2. TLD NAME SERVER                                             │
-│     ┌─────────────────────────────────────────────────────────┐ │
-│     │ Verwalten eine TLD (.com, .de, .org)                    │ │
-│     │ Kennen autoritative Server der Second-Level Domains     │ │
-│     └─────────────────────────────────────────────────────────┘ │
-│                                                                  │
-│  3. AUTHORITATIVE NAME SERVER                                   │
-│     ┌─────────────────────────────────────────────────────────┐ │
-│     │ Verwalten eine spezifische Domain (z.B. example.de)     │ │
-│     │ Primary: Original-Daten, Secondary: Kopie               │ │
-│     └─────────────────────────────────────────────────────────┘ │
-│                                                                  │
-│  4. RECURSIVE RESOLVER (Caching Name Server)                    │
-│     ┌─────────────────────────────────────────────────────────┐ │
-│     │ Führt Auflösung im Auftrag des Clients durch            │ │
-│     │ Typisch: ISP-DNS, 8.8.8.8 (Google), 1.1.1.1 (CF)        │ │
-│     └─────────────────────────────────────────────────────────┘ │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+**1. Root Name Server** (13 logische, ~1500 physische)
+- Kennen die autoritativen Server für alle TLDs
+- a.root-servers.net bis m.root-servers.net
+
+**2. TLD Name Server**
+- Verwalten eine TLD (.com, .de, .org)
+- Kennen autoritative Server der Second-Level Domains
+
+**3. Authoritative Name Server**
+- Verwalten eine spezifische Domain (z.B. example.de)
+- Primary: Original-Daten, Secondary: Kopie
+
+**4. Recursive Resolver** (Caching Name Server)
+- Führt Auflösung im Auftrag des Clients durch
+- Typisch: ISP-DNS, 8.8.8.8 (Google), 1.1.1.1 (Cloudflare)
 
 ---
 
 ## DNS-Hierarchie
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DNS-Hierarchie (Baumstruktur)                │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│                            . (Root)                             │
-│                    13 Root-Server weltweit                      │
-│                    a.root-servers.net bis                       │
-│                    m.root-servers.net                           │
-│                               │                                  │
-│         ┌─────────────────────┼─────────────────────┐           │
-│         │                     │                     │           │
-│        com                   de                    org          │
-│    (Generic TLD)        (Country Code       (Generic TLD)       │
-│                           TLD - ccTLD)                          │
-│         │                     │                     │           │
-│    ┌────┴────┐          ┌─────┴─────┐              │           │
-│    │         │          │           │              │           │
-│  google   amazon     example     bund         wikipedia         │
-│ (SLD)    (SLD)       (SLD)      (SLD)          (SLD)           │
-│    │                    │                                       │
-│   www                 mail                                      │
-│ (Host)              (Host)                                      │
-│                                                                  │
-│   FQDN: www.google.com.  (beachte den Punkt am Ende!)          │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[dns-hierarchy.png]]
+*<span class="fig-id">04-03-dns-hierarchy</span>: DNS-Hierarchie als Baumstruktur – von Root über TLD und SLD bis zu Hosts.*
 
 ### Hierarchie-Ebenen
 
@@ -159,78 +109,25 @@ bereich: RN
 
 ### Rekursive vs. Iterative Auflösung
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              Rekursive Auflösung (Client-Sicht)                │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Client ───────────────────────────► Resolver                  │
-│     │                                     │                     │
-│     │  "Löse www.example.de auf"         │                     │
-│     │ ─────────────────────────────────► │                     │
-│     │                                     │ ← Resolver          │
-│     │                                     │   erledigt alles    │
-│     │  "Antwort: 93.184.216.34"          │                     │
-│     │ ◄───────────────────────────────── │                     │
-│                                                                  │
-│   → Client fragt einmal, Resolver liefert Endergebnis          │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────────┐
-│              Iterative Auflösung (Resolver-Sicht)              │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Resolver    Root-Server    TLD-Server    Auth-Server         │
-│      │             │              │              │              │
-│      │ "www.example.de?"         │              │              │
-│      │────────────►│              │              │              │
-│      │             │              │              │              │
-│      │ "Frag .de-Server"         │              │              │
-│      │◄────────────│              │              │              │
-│      │                            │              │              │
-│      │ "www.example.de?"         │              │              │
-│      │───────────────────────────►│              │              │
-│      │                            │              │              │
-│      │ "Frag ns1.example.de"     │              │              │
-│      │◄───────────────────────────│              │              │
-│      │                                           │              │
-│      │ "www.example.de?"                        │              │
-│      │──────────────────────────────────────────►│              │
-│      │                                           │              │
-│      │ "93.184.216.34"                          │              │
-│      │◄──────────────────────────────────────────│              │
-│                                                                  │
-│   → Resolver erhält bei jedem Schritt nur einen Verweis        │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[dns-resolution.png]]
+*<span class="fig-id">04-03-dns-resolution</span>: DNS-Auflösung – rekursiv (Client→Resolver) und iterativ (Resolver→Server).*
 
 ---
 
 ## DNS-Caching
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DNS-Caching                                  │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Caching-Ebenen:                                               │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │ 1. Browser-Cache (Chrome, Firefox, etc.)                │  │
-│   │ 2. Betriebssystem-Cache (nscd, systemd-resolved)        │  │
-│   │ 3. Lokaler Resolver-Cache (Router, Pi-hole)             │  │
-│   │ 4. ISP-Resolver-Cache                                   │  │
-│   │ 5. Öffentliche Resolver (8.8.8.8, 1.1.1.1)             │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   TTL (Time To Live):                                          │
-│   • Bestimmt, wie lange ein Eintrag gecacht werden darf       │
-│   • Typische Werte: 300s (5 Min) bis 86400s (1 Tag)           │
-│   • Nach Ablauf: Neue Anfrage erforderlich                    │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Ebene | Caching-Ort | Beispiel |
+|-------|-------------|----------|
+| 1 | Browser-Cache | Chrome, Firefox, Edge |
+| 2 | Betriebssystem-Cache | nscd, systemd-resolved, Windows DNS Client |
+| 3 | Lokaler Resolver | Router, Pi-hole |
+| 4 | ISP-Resolver | Provider-DNS |
+| 5 | Öffentliche Resolver | 8.8.8.8 (Google), 1.1.1.1 (Cloudflare) |
+
+**TTL (Time To Live):**
+- Bestimmt, wie lange ein Eintrag gecacht werden darf
+- Typische Werte: 300s (5 Min) bis 86400s (1 Tag)
+- Nach Ablauf: Neue Anfrage erforderlich
 
 ---
 
@@ -290,33 +187,8 @@ ftp     IN  CNAME   www.example.de.
 
 ### Zone Transfers
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DNS Zone Transfer                            │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Primary                                      Secondary        │
-│   (Master)                                     (Slave)          │
-│      │                                            │             │
-│      │  1. SOA-Anfrage (UDP)                     │             │
-│      │◄───────────────────────────────────────────│             │
-│      │                                            │             │
-│      │  2. SOA-Antwort mit Seriennummer          │             │
-│      │────────────────────────────────────────────►│             │
-│      │                                            │             │
-│      │     Seriennummer geändert? → Transfer!    │             │
-│      │                                            │             │
-│      │  3. AXFR/IXFR Request (TCP)               │             │
-│      │◄───────────────────────────────────────────│             │
-│      │                                            │             │
-│      │  4. Zonendaten übertragen (TCP)           │             │
-│      │────────────────────────────────────────────►│             │
-│                                                                  │
-│   AXFR = Full Transfer (komplette Zone)                        │
-│   IXFR = Incremental Transfer (nur Änderungen)                 │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[dns-zone-transfer.png]]
+*<span class="fig-id">04-03-dns-zone-transfer</span>: DNS Zone Transfer zwischen Primary und Secondary Server.*
 
 ---
 
@@ -324,50 +196,25 @@ ftp     IN  CNAME   www.example.de.
 
 ### DNS Cache Poisoning
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DNS Cache Poisoning                          │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Client         Resolver         Angreifer      Auth-Server   │
-│      │               │                │               │         │
-│      │  Anfrage      │                │               │         │
-│      │──────────────►│                │               │         │
-│      │               │  Anfrage       │               │         │
-│      │               │────────────────┼──────────────►│         │
-│      │               │                │               │         │
-│      │               │  Gefälschte    │  Echte       │         │
-│      │               │  Antwort!      │  Antwort     │         │
-│      │               │◄───────────────│               │         │
-│      │               │◄───────────────┼───────────────│         │
-│                                                                  │
-│   Resolver akzeptiert die schnellere (gefälschte) Antwort!    │
-│   → Nutzer wird auf Phishing-Seite umgeleitet                  │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[dns-cache-poisoning.png]]
+*<span class="fig-id">04-03-dns-cache-poisoning</span>: DNS Cache Poisoning – Angreifer schleust gefälschte Antworten ein.*
 
 ### DNSSEC (DNS Security Extensions)
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    DNSSEC-Funktionsweise                        │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   DNSSEC fügt kryptographische Signaturen zu DNS hinzu:        │
-│                                                                  │
-│   Neue Record-Typen:                                            │
-│   • RRSIG  - Signatur für einen Record-Set                     │
-│   • DNSKEY - Öffentlicher Schlüssel der Zone                   │
-│   • DS     - Delegation Signer (Vertrauenskette)               │
-│   • NSEC   - Authenticated Denial of Existence                 │
-│                                                                  │
-│   ✓ Authentizität: Record stammt vom Zoneninhaber             │
-│   ✓ Integrität: Record wurde nicht verändert                   │
-│   ✗ Keine Verschlüsselung! Nur Signierung.                     │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+DNSSEC fügt kryptographische Signaturen zu DNS hinzu:
+
+**Neue Record-Typen:**
+- **RRSIG** – Signatur für einen Record-Set
+- **DNSKEY** – Öffentlicher Schlüssel der Zone
+- **DS** – Delegation Signer (Vertrauenskette)
+- **NSEC/NSEC3** – Authenticated Denial of Existence
+
+**Was DNSSEC bietet:**
+- ✓ **Authentizität:** Record stammt vom Zoneninhaber
+- ✓ **Integrität:** Record wurde nicht verändert
+
+**Was DNSSEC NICHT bietet:**
+- ✗ Keine Verschlüsselung! Nur Signierung.
 
 ### DoH und DoT (Verschlüsseltes DNS)
 
