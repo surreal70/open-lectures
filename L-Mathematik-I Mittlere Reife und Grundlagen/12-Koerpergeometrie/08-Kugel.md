@@ -31,6 +31,9 @@ tags:
 > [!note] Definition
 > Eine **Kugel** ist die Menge aller Punkte im Raum, die von einem festen Punkt (Mittelpunkt) den gleichen Abstand (Radius) haben.
 
+![[kugel-3d.png]]
+*<span class="fig-id">12-08-kugel-3d</span>: Schrägbild einer Kugel mit Radius $r$ vom Mittelpunkt zur Oberfläche. Der hintere Teil des Äquators ist gestrichelt dargestellt.*
+
 Die Kugel ist der perfekteste aller Körper – sie hat keine Ecken, keine Kanten, keine ausgezeichnete Richtung. In der Natur entstehen Kugeln überall dort, wo Kräfte gleichmäßig aus allen Richtungen wirken: Seifenblasen, Wassertropfen im freien Fall, Planeten und Sterne. 
 
 Der griechische Mathematiker Archimedes (287–212 v. Chr.) war so stolz auf seine Entdeckung des Zusammenhangs zwischen Kugel und Zylinder, dass er wünschte, eine Kugel in einem Zylinder auf seinem Grabstein abgebildet zu bekommen. Er hatte bewiesen, dass eine Kugel genau zwei Drittel des Volumens eines umschriebenen Zylinders einnimmt.

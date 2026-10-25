@@ -32,6 +32,9 @@ tags:
 > [!note] Definition
 > Ein **Würfel** (auch Hexaeder) ist ein regelmäßiger Körper, bei dem alle sechs Begrenzungsflächen kongruente Quadrate sind.
 
+![[wuerfel-3d.png]]
+*<span class="fig-id">12-02-wuerfel-3d</span>: Schrägbild eines Würfels mit der Kantenlänge $a$. Verdeckte Kanten sind gestrichelt dargestellt.*
+
 Der Würfel ist einer der fünf platonischen Körper und gilt seit der Antike als Symbol für Stabilität und Vollkommenheit. Platon (ca. 428–348 v. Chr.) ordnete ihn dem Element Erde zu, weil er so fest und unverrückbar erscheint. Das Wort „Hexaeder" kommt aus dem Griechischen: „hexa" = sechs und „hedra" = Fläche.
 
 ### Eigenschaften

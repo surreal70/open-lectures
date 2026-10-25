@@ -34,6 +34,9 @@ tags:
 > - Zwei kongruenten, parallelen kreisförmigen Grundflächen
 > - Einer gekrümmten Mantelfläche, die beide Grundflächen verbindet
 
+![[zylinder-3d.png]]
+*<span class="fig-id">12-05-zylinder-3d</span>: Schrägbild eines Zylinders mit Radius $r$ und Höhe $h$. Die verdeckte Grundkante ist gestrichelt dargestellt.*
+
 Der Begriff „Zylinder" stammt vom griechischen Wort „kylindros" (= Rolle, Walze). Zylinder sind in der Technik und im Alltag allgegenwärtig: Getränkedosen, Rohre, Säulen, Baumstämme, Kerzen – die zylindrische Form verbindet praktische Vorteile wie gute Stapelbarkeit, gleichmäßige Materialverteilung und einfache Herstellung.
 
 ### Eigenschaften

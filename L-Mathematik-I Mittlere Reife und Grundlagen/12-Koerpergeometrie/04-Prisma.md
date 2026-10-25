@@ -33,6 +33,9 @@ tags:
 > - Zwei kongruenten, parallelen Grundflächen (Vielecke)
 > - Seitenflächen, die Parallelogramme sind (bei geraden Prismen: Rechtecke)
 
+![[prisma-3d.png]]
+*<span class="fig-id">12-04-prisma-3d</span>: Schrägbild eines Dreiecksprismas mit Grundfläche $G$ und Höhe $h$. Verdeckte Kanten sind gestrichelt dargestellt.*
+
 Der Begriff „Prisma" kommt aus dem Griechischen und bedeutet „das Gesägte" – eine Anspielung auf die Form, die entsteht, wenn man einen Körper mit parallelen Schnitten bearbeitet. In der Optik kennen wir das Glasprisma, das weißes Licht in seine Spektralfarben zerlegt – auch dieses hat meist eine dreieckige Grundfläche.
 
 ### Arten von Prismen

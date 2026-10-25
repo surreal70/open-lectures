@@ -32,6 +32,9 @@ tags:
 > [!note] Definition
 > Ein **Quader** ist ein Körper mit sechs rechteckigen Flächen. Gegenüberliegende Flächen sind parallel und kongruent. Alle Winkel sind rechte Winkel (90°).
 
+![[quader-3d.png]]
+*<span class="fig-id">12-03-quader-3d</span>: Schrägbild eines Quaders mit Länge $a$, Breite $b$ und Höhe $c$. Verdeckte Kanten sind gestrichelt dargestellt.*
+
 Der Quader ist die häufigste Körperform in unserer gebauten Umwelt: Räume, Möbel, Bücher, Smartphones, Verpackungen – fast alles hat Quaderform. Der Grund ist einfach: Quader lassen sich optimal stapeln ohne Lücken, und rechteckige Formen sind leicht herzustellen und zu vermessen.
 
 ### Eigenschaften
