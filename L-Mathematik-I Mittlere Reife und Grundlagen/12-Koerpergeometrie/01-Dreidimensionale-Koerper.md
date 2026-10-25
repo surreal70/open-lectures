@@ -65,6 +65,9 @@ Die fünf platonischen Körper sind nach dem griechischen Philosophen Platon (ca
 - Dodekaeder - 12 Fünfecke
 - Ikosaeder - 20 gleichseitige Dreiecke
 
+![[platonische-koerper.png]]
+*<span class="fig-id">12-01-platonische-koerper</span>: Die fünf platonischen Körper als Schrägbilder – vom Tetraeder (4 Flächen) bis zum Ikosaeder (20 Flächen). Verdeckte Kanten sind gestrichelt dargestellt.*
+
 > [!info] **Historischer Kontext**
 > Platon ordnete vier dieser Körper den klassischen Elementen zu: Tetraeder = Feuer (wegen der „scharfen" Spitzen), Würfel = Erde (wegen der Stabilität), Oktaeder = Luft, Ikosaeder = Wasser. Das Dodekaeder repräsentierte das Universum als Ganzes.
 
