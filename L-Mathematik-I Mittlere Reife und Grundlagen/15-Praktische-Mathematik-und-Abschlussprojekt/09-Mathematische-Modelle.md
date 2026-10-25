@@ -4,7 +4,7 @@ chapter: "15"
 section: "15.9"
 type: lecture
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/anwendung
@@ -46,24 +46,15 @@ Ein mathematisches Modell ist eine vereinfachte Darstellung der Realität mithil
 
 ### Der Kreislauf im Detail
 
+```mermaid
+graph TD
+    A["Problem verstehen<br/>(reale Welt)"] -->|Vereinfachen,<br/>Mathematisieren| B["Modell aufstellen<br/>(math. Welt)"]
+    B -->|Berechnen| C["Lösung finden<br/>(math. Welt)"]
+    C -->|Interpretieren,<br/>Übersetzen| D["Ergebnis deuten<br/>(reale Welt)"]
+    D -->|Validieren| A
 ```
-┌─────────────────────────────────────────────────────────┐
-│                    REALE WELT                           │
-│  ┌──────────────┐                    ┌──────────────┐  │
-│  │   Problem    │                    │  Ergebnis    │  │
-│  │  verstehen   │                    │ interpretieren│  │
-│  └──────┬───────┘                    └───────▲──────┘  │
-└─────────┼────────────────────────────────────┼─────────┘
-          │ Vereinfachen                       │ Übersetzen
-          │ Mathematisieren                    │
-┌─────────▼────────────────────────────────────┼─────────┐
-│                 MATHEMATISCHE WELT           │         │
-│  ┌──────────────┐                    ┌───────┴──────┐  │
-│  │    Modell    │────────────────────│   Lösung     │  │
-│  │  aufstellen  │     Berechnen      │   finden     │  │
-│  └──────────────┘                    └──────────────┘  │
-└─────────────────────────────────────────────────────────┘
-```
+
+*<span class="fig-id">15-09-modellierungskreislauf</span>: Der Modellierungskreislauf pendelt zwischen realer und mathematischer Welt – vom Problem über Modell und Lösung zurück zur Interpretation.*
 
 ### Die Phasen erklärt
 

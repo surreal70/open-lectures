@@ -4,7 +4,7 @@ chapter: "15"
 section: "15.3"
 type: lecture
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/anwendung
@@ -48,13 +48,9 @@ Diese drei Formeln sind eigentlich nur eine einzige Formel, die nach verschieden
 - **t** (time) = Zeit – wie lange?
 
 > [!tip] **Merkregel: Das Dreieck**
-> ```
->       ┌─────┐
->       │  s  │
->       ├──┬──┤
->       │v │ t│
->       └──┴──┘
-> ```
+> ![[praxis-vst-dreieck.png]]
+> *<span class="fig-id">15-03-vst-dreieck</span>: Das v-s-t-Dreieck als Merkhilfe für die Formeln $v=\tfrac{s}{t}$, $s=v\cdot t$ und $t=\tfrac{s}{v}$.*
+> 
 > Decken Sie die gesuchte Größe ab:
 > - s abdecken → v × t (nebeneinander = multiplizieren)
 > - v abdecken → s ÷ t (übereinander = dividieren)
@@ -123,13 +119,8 @@ Das Hebelgesetz wurde bereits von Archimedes (ca. 287–212 v. Chr.) formuliert.
 
 Ein Hebel ist im Gleichgewicht, wenn das Produkt aus Kraft und Hebelarm auf beiden Seiten gleich ist:
 
-```
-        F₁                     F₂
-        ↓                       ↓
-   ─────┴───────────▲───────────┴─────
-        ←── l₁ ────►│◄──── l₂ ────→
-                  Drehpunkt
-```
+![[praxis-hebel.png]]
+*<span class="fig-id">15-03-hebel</span>: Das Hebelgesetz – im Gleichgewicht gilt $F_1 \cdot l_1 = F_2 \cdot l_2$.*
 
 > [!example] Beispiel: Wippe
 > Ein Kind (30 kg) sitzt 2 m vom Drehpunkt entfernt. Wo muss ein Erwachsener (75 kg) sitzen, damit die Wippe im Gleichgewicht ist?

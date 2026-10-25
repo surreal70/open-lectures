@@ -4,7 +4,7 @@ chapter: "15"
 section: "15.8"
 type: lecture
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/wahrscheinlichkeit
@@ -113,21 +113,8 @@ Dieses fundamentale Gesetz der Wahrscheinlichkeitstheorie wurde erstmals von Jak
 
 ### Visualisierung des Konvergierens
 
-```
-Rel. Häufigkeit der 6
-    │
-0.25│  *
-    │    *
-0.20│      *  *
-    │          *  *
-0.17│──────────────*──*──*──*──*──── (Theorie: 1/6)
-    │                        
-0.15│
-    │
-0.10│
-    └────────────────────────────────▶
-         10   100  1000  10000    Anzahl Würfe
-```
+![[praxis-simulation.png]]
+*<span class="fig-id">15-08-simulation</span>: Simulierte relative Häufigkeit der 6 bei wachsender Wurfzahl – sie nähert sich dem theoretischen Wert $\tfrac{1}{6} \approx 0{,}167$ an.*
 
 > [!example] Konvergenz beobachten
 > ```python

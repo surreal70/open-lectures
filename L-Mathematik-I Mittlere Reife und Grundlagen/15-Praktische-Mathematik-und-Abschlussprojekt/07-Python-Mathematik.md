@@ -4,7 +4,7 @@ chapter: "15"
 section: "15.7"
 type: lecture
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/anwendung

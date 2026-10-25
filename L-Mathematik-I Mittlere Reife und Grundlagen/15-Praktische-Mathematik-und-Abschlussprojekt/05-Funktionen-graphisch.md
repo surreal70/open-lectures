@@ -4,7 +4,7 @@ chapter: "15"
 section: "15.5"
 type: lecture
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/funktionen
@@ -71,19 +71,8 @@ Graphen begegnen uns überall:
 
 ### Das Koordinatensystem richtig einrichten
 
-```
-        y
-        │
-    4 ──┼──────────────
-        │
-    2 ──┼──────────────
-        │
-  ──┼───┼───┼───┼───┼──▶ x
-   -2  -1   0   1   2
-        │
-   -2 ──┼──────────────
-        │
-```
+![[praxis-koordinatensystem.png]]
+*<span class="fig-id">15-05-koordinatensystem</span>: Die Gerade $f(x) = 2x - 1$ mit den Punkten aus der Wertetabelle im Koordinatensystem.*
 
 > [!tip] **Tipps für gute Graphen**
 > - **Skalierung**: Beide Achsen müssen nicht gleich skaliert sein
@@ -120,15 +109,8 @@ Die Nullstellen sind die x-Werte, an denen der Graph die x-Achse schneidet. Hier
 
 Bei linearen Funktionen kann die Steigung direkt aus dem Graphen abgelesen werden:
 
-```
-        │      /
-        │     /
-        │    /   Δy = 2
-        │   ╱────
-        │  /    Δx = 1
-        │ /
-   ─────┼─────────▶
-```
+![[praxis-steigungsdreieck.png]]
+*<span class="fig-id">15-05-steigungsdreieck</span>: Das Steigungsdreieck – die Steigung $m$ ist das Verhältnis von $\Delta y$ zu $\Delta x$.*
 
 $$m = \frac{\Delta y}{\Delta x} = \frac{\text{Änderung in y}}{\text{Änderung in x}}$$
 

@@ -4,7 +4,7 @@ chapter: "15"
 section: "15.2"
 type: lecture
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/anwendung
@@ -48,10 +48,8 @@ Das heute weltweit verwendete **Système International d'Unités (SI)** wurde 17
 
 Eine praktische Darstellung für Längenumrechnungen:
 
-```
-km ──×1000──▶ m ──×10──▶ dm ──×10──▶ cm ──×10──▶ mm
-km ◀──÷1000── m ◀──÷10── dm ◀──÷10── cm ◀──÷10── mm
-```
+![[praxis-einheitenkette.png]]
+*<span class="fig-id">15-02-einheitenkette</span>: Die Längen-Einheitenkette – nach rechts wird mit dem Stufenfaktor multipliziert, nach links dividiert.*
 
 > [!tip] **Merkregel: Stufen zählen**
 > Zählen Sie die Stufen zwischen den Einheiten und multiplizieren/dividieren Sie entsprechend:

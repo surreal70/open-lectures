@@ -4,7 +4,7 @@ chapter: "15"
 section: "15.6"
 type: lecture
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/statistik
@@ -109,19 +109,8 @@ Ein gutes Diagramm braucht:
 - **Legende**: Bei mehreren Datenreihen
 
 > [!example] Professionelles Diagramm
-> ```
-> Monatlicher Stromverbrauch 2024 (kWh)
-> 
-> 400 ┤                      ╭──╮
->     │         ╭──╮        │  │
-> 300 ┤    ╭──╮ │  │ ╭──╮   │  │
->     │╭──╮│  │ │  │ │  │╭──╮  │
-> 200 ┤│  ││  │ │  │ │  ││  │  │
->     ││  ││  │ │  │ │  ││  │  │
-> 100 ┤│  ││  │ │  │ │  ││  │  │
->     └┴──┴┴──┴─┴──┴─┴──┴┴──┴──┴─
->      Jan Feb Mär Apr Mai Jun
-> ```
+> ![[praxis-stromverbrauch.png]]
+> *<span class="fig-id">15-06-stromverbrauch</span>: Säulendiagramm des monatlichen Stromverbrauchs mit Titel, Achsenbeschriftung und Einheit.*
 
 ---
 
