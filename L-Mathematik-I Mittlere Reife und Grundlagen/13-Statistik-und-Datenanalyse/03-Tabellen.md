@@ -4,7 +4,7 @@ chapter: "13"
 section: "13.3"
 type: lecture
 created: 2026-10-13
-modified: 2025-01-17
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/statistik
@@ -77,8 +77,11 @@ Die **absolute Häufigkeit** gibt an, wie oft ein Wert vorkommt (hier: 8 Schüle
 
 Der typische Arbeitsablauf in der Statistik:
 
-```
-Urliste → Strichliste → Häufigkeitstabelle → Diagramm
+```mermaid
+graph TD
+    A[Urliste] --> B[Strichliste]
+    B --> C[Häufigkeitstabelle]
+    C --> D[Diagramm]
 ```
 
 1. **Urliste**: Rohdaten in Erhebungsreihenfolge

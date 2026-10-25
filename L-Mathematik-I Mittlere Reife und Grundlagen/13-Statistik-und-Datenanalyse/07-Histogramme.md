@@ -4,7 +4,7 @@ chapter: "13"
 section: "13.7"
 type: lecture
 created: 2026-10-13
-modified: 2025-01-17
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/statistik
@@ -62,6 +62,9 @@ Bei stetigen Daten (z.B. Körpergröße) gibt es theoretisch unendlich viele mö
 > | 190–199 cm | 2 |
 > | **Summe** | **30** |
 
+![[stat-histogramm.png]]
+*<span class="fig-id">13-07-histogramm</span>: Histogramm der Körpergrößen – die Säulen grenzen lückenlos aneinander, da die Daten stetig und klassiert sind.*
+
 Das resultierende Histogramm zeigt auf einen Blick: Die meisten Schüler sind zwischen 170 und 179 cm groß.
 
 > [!tip] **Regeln für die Klassenbildung**
@@ -82,6 +85,9 @@ Das resultierende Histogramm zeigt auf einen Blick: Die meisten Schüler sind zw
 ## Verteilungsformen
 
 Histogramme zeigen charakteristische Verteilungsmuster, die wichtige Informationen über die Daten verraten:
+
+![[stat-verteilungsformen.png]]
+*<span class="fig-id">13-07-verteilungsformen</span>: Vier typische Verteilungsformen – symmetrisch, rechtsschief, linksschief und bimodal. Der „Schwanz" zeigt in die Richtung der Schiefe.*
 
 - **Symmetrisch (glockenförmig)**: Die Werte verteilen sich gleichmäßig um einen Mittelwert – typisch für viele natürliche Phänomene (Körpergröße, IQ). Dies ist die berühmte **Normalverteilung** oder „Gaußsche Glockenkurve".
 

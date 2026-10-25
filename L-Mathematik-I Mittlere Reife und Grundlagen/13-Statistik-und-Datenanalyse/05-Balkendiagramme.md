@@ -4,7 +4,7 @@ chapter: "13"
 section: "13.5"
 type: lecture
 created: 2026-10-13
-modified: 2025-01-17
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/statistik
@@ -55,14 +55,8 @@ Ein vollständiges Balken- oder Säulendiagramm besteht aus folgenden Elementen:
 ## Beispiel
 
 > [!example] Lieblingssportarten (n = 30)
-> ```
-> Fußball    ████████████████ 16
-> Basketball ████████ 8
-> Tennis     ████ 4
-> Schwimmen  ██ 2
->            ─────────────────
->            0    5   10   15
-> ```
+> ![[stat-balkendiagramm.png]]
+> *<span class="fig-id">13-05-balkendiagramm</span>: Balkendiagramm der Lieblingssportarten – die Balkenlänge ist proportional zur Häufigkeit.*
 
 Die Länge jedes Balkens ist proportional zur Häufigkeit. So sieht man sofort: Fußball ist doppelt so beliebt wie Basketball und viermal so beliebt wie Tennis.
 

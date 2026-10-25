@@ -4,7 +4,7 @@ chapter: "13"
 section: "13.9"
 type: lecture
 created: 2026-10-13
-modified: 2025-01-17
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/statistik

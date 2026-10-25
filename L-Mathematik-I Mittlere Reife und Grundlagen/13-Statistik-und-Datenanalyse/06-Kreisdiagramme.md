@@ -4,7 +4,7 @@ chapter: "13"
 section: "13.6"
 type: lecture
 created: 2026-10-13
-modified: 2025-01-17
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/statistik
@@ -64,6 +64,9 @@ Die Umrechnung funktioniert so: 100% entsprechen 360°, also entspricht 1% genau
 > | Zu Fuß | 6 | 20% | 72° |
 > | Auto | 3 | 10% | 36° |
 > | **Summe** | **30** | **100%** | **360°** |
+
+![[stat-kreisdiagramm.png]]
+*<span class="fig-id">13-06-kreisdiagramm</span>: Kreisdiagramm der Verkehrsmittel zur Schule – jeder Sektor entspricht dem Anteil einer Kategorie.*
 
 **Beispielrechnung für „Bus":**
 $$\text{Winkel} = \frac{12}{30} \times 360° = 0{,}4 \times 360° = 144°$$
