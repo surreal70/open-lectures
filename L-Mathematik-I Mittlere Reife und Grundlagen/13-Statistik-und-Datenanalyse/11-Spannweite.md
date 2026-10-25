@@ -59,6 +59,9 @@ Das Symbol $R$ kommt vom englischen *range* (Bereich, Reichweite). Die Spannweit
 > 
 > Die Spannweite beträgt 10 °C – die Temperaturen schwankten also um maximal 10 Grad.
 
+![[spannweite.png]]
+*<span class="fig-id">13-11-spannweite</span>: Die Tageshöchstwerte auf dem Zahlenstrahl; die Spannweite $R$ ist der Abstand zwischen kleinstem (18 °C) und größtem Wert (28 °C).*
+
 ## Interpretation
 
 Die Spannweite gibt einen schnellen Überblick über die Streuung:

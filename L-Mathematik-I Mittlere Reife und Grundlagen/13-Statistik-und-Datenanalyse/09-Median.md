@@ -82,6 +82,9 @@ Bei $n$ Werten (gerade): Der Median ist das arithmetische Mittel der beiden mitt
 
 Das folgende Beispiel zeigt den entscheidenden Unterschied zwischen Median und arithmetischem Mittel:
 
+![[median-vs-mittel.png]]
+*<span class="fig-id">13-09-median-vs-mittel</span>: Beim Einkommensbeispiel liegt der Median (2200 €) beim Datencluster, während der eine Ausreißer (50 000 €) den Mittelwert (11 720 €) nach rechts zieht.*
+
 > [!example] **Einkommensbeispiel**
 > Fünf Personen verdienen: 2000, 2100, 2200, 2300, 50000 €
 > 

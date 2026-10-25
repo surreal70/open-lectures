@@ -78,6 +78,7 @@ $$s = \sqrt{s^2} = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n}}$$
 > $$\bar{x} = \frac{2 + 4 + 4 + 4 + 5 + 5 + 7 + 9}{8} = \frac{40}{8} = 5$$
 > 
 > **Schritt 2: Abweichungen und Quadrate**
+> 
 > | Wert $x_i$ | Abweichung $x_i - \bar{x}$ | Quadrat $(x_i - \bar{x})^2$ |
 > |------------|----------------------------|----------------------------|
 > | 2 | 2 − 5 = −3 | 9 |
@@ -111,6 +112,9 @@ Die Standardabweichung gibt die „typische" Streuung um den Mittelwert an:
 > - Ca. **68%** der Werte liegen innerhalb von $\bar{x} \pm s$
 > - Ca. **95%** der Werte liegen innerhalb von $\bar{x} \pm 2s$
 > - Ca. **99,7%** der Werte liegen innerhalb von $\bar{x} \pm 3s$
+
+![[standardabweichung.png]]
+*<span class="fig-id">13-12-standardabweichung</span>: Normalverteilung mit der 68-95-99,7-Regel: Je weiter man sich vom Mittelwert $\bar{x}$ entfernt, desto mehr Werte werden eingeschlossen.*
 
 > [!warning] **Häufiger Fehler: Einheit vergessen**
 > Die Standardabweichung hat dieselbe Einheit wie die Daten!

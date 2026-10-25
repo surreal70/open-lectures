@@ -44,6 +44,9 @@ Das Symbol $\bar{x}$ (sprich: „x-quer") bezeichnet das arithmetische Mittel ei
 
 Das arithmetische Mittel kann als **Schwerpunkt** oder **Gleichgewichtspunkt** der Daten verstanden werden. Stell dir eine Wippe vor, auf der die Datenwerte als Gewichte platziert sind – der Punkt, an dem die Wippe im Gleichgewicht ist, entspricht dem arithmetischen Mittel.
 
+![[mittel-wippe.png]]
+*<span class="fig-id">13-08-mittel-wippe</span>: Die Datenwerte (Noten 1–5) als Gewichte auf dem Zahlenstrahl; das arithmetische Mittel $\bar{x} = 2{,}7$ ist der Gleichgewichtspunkt.*
+
 ## Berechnung
 
 > [!example] Beispiel: Klassenarbeitsnoten

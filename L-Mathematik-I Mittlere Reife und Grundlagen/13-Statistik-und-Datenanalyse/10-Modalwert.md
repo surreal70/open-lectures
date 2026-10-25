@@ -71,6 +71,9 @@ Im Gegensatz zu Mittelwert und Median ist der Modalwert nicht immer eindeutig:
 > 
 > Diese Verteilung nennt man **bimodal**.
 
+![[modalwert.png]]
+*<span class="fig-id">13-10-modalwert</span>: Links eine unimodale Verteilung (ein häufigster Wert), rechts eine bimodale (zwei gleich häufige Gipfel). Die Modalwerte sind dunkel hervorgehoben.*
+
 > [!tip] **Was bedeutet eine bimodale Verteilung?**
 > Eine bimodale Verteilung deutet oft darauf hin, dass die Daten aus **zwei verschiedenen Gruppen** stammen.
 > 
