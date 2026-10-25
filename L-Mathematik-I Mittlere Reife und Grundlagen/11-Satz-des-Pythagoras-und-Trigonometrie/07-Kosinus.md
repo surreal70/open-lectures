@@ -4,7 +4,7 @@ created: 2026-10-13
 modified: 2026-10-25
 chapter: "11"
 section: "07"
-status: "draft - review pending"
+status: final
 type: lecture
 keywords:
   - Kosinus

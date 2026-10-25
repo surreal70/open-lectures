@@ -3,7 +3,7 @@ title: "Satz des Pythagoras und Trigonometrie"
 created: 2026-10-13
 modified: 2026-10-25
 chapter: "11"
-status: "draft - review pending"
+status: final
 type: index
 keywords:
   - Pythagoras

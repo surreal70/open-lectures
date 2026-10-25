@@ -2,7 +2,7 @@
 title: Glossar – Mathematik I
 type: glossar
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-25
 tags:
   - meta
   - glossar
@@ -40,6 +40,12 @@ Grundannahme, die ohne Beweis als wahr akzeptiert wird.
 ---
 
 ## B
+
+### Balkendiagramm
+Diagramm, das Häufigkeiten durch waagerechte oder senkrechte Balken darstellt. Die Balkenlänge ist proportional zum Wert.
+
+### Baumdiagramm
+Grafische Darstellung mehrstufiger Zufallsexperimente. Knoten stellen Zustände dar, Kanten die Übergänge mit ihren Wahrscheinlichkeiten.
 
 ### Basis
 1. Bei Potenzen: Die Zahl, die potenziert wird ($a$ in $a^n$)
@@ -101,6 +107,9 @@ Die Hochzahl bei einer Potenz ($n$ in $a^n$). Gibt an, wie oft die Basis mit sic
 
 ## F
 
+### Fakultät
+Produkt aller natürlichen Zahlen von 1 bis $n$. Notation: $n! = n \cdot (n-1) \cdot \ldots \cdot 2 \cdot 1$. Gibt die Anzahl der Anordnungen von $n$ Objekten an.
+
 ### Faktor
 Zahl, die bei einer Multiplikation verwendet wird. In $a \cdot b$ sind $a$ und $b$ Faktoren.
 
@@ -119,6 +128,9 @@ Eindeutige Zuordnung, die jedem Element einer Definitionsmenge genau ein Element
 
 ### Ganze Zahlen
 Die natürlichen Zahlen, ihre Gegenzahlen und die Null. $\mathbb{Z} = \{..., -2, -1, 0, 1, 2, ...\}$
+
+### Gegenereignis
+Das Ereignis $\bar{A}$, das genau dann eintritt, wenn $A$ nicht eintritt. Es gilt $P(\bar{A}) = 1 - P(A)$.
 
 ### Gerade (Linie)
 Unendlich lange, beidseitig unbegrenzte Linie ohne Krümmung.
@@ -146,6 +158,9 @@ Untere Begrenzungsfläche eines Körpers (Prisma, Pyramide, etc.).
 ### Höhe
 Senkrechter Abstand zwischen Grundlinie und gegenüberliegender Ecke oder Seite.
 
+### Histogramm
+Säulendiagramm für klassierte (stetige) Daten. Die Säulen grenzen lückenlos aneinander; die Fläche entspricht der Häufigkeit.
+
 ### Hypotenuse
 Die längste Seite eines rechtwinkligen Dreiecks (gegenüber dem rechten Winkel).
 
@@ -162,8 +177,20 @@ Körper mit kreisförmiger Grundfläche und einer Spitze.
 ### Kommutativgesetz
 $a + b = b + a$ und $a \cdot b = b \cdot a$
 
+### Kombinatorik
+Teilgebiet der Mathematik, das sich mit dem systematischen Abzählen von Anordnungen und Auswahlen beschäftigt (Permutationen, Variationen, Kombinationen).
+
+### Kombination
+Auswahl von $k$ aus $n$ Objekten **ohne** Beachtung der Reihenfolge. Anzahl: $\binom{n}{k} = \frac{n!}{k!(n-k)!}$
+
 ### Kongruenz
-Zwei geometrische Figuren sind kongruent, wenn sie deckungsgleich sind (gleiche Form und Größe).
+Zwei geometrische Figuren sind kongruent, wenn sie deckungsgleich sind (gleiche Form und Größe). Kongruenzsätze: SSS, SWS, WSW, SsW.
+
+### Kreisdiagramm
+Diagramm, bei dem Anteile als Sektoren („Tortenstücke") eines Kreises dargestellt werden. Sektorwinkel = relative Häufigkeit × 360°.
+
+### Kreissektor
+Teil einer Kreisfläche, der von zwei Radien und einem Kreisbogen begrenzt wird.
 
 ### Koordinatensystem
 System zur eindeutigen Bestimmung von Punkten durch Zahlenwerte (Koordinaten).
@@ -194,6 +221,9 @@ Funktion der Form $f(x) = mx + b$. Graph ist eine Gerade.
 ### Mantelfläche
 Seitenfläche eines Körpers (ohne Grund- und Deckfläche).
 
+### Mantellinie
+Die Strecke von einem Punkt des Grundkreises zur Spitze eines Kegels. Es gilt $s = \sqrt{r^2 + h^2}$.
+
 ### Median
 Zentralwert einer geordneten Datenmenge. Teilt die Daten in zwei gleich große Hälften.
 
@@ -205,6 +235,9 @@ Siehe [[#Arithmetisches Mittel]]
 
 ### Modalwert
 Häufigster Wert einer Datenmenge (Modus).
+
+### Modellierung
+Das Übersetzen eines realen Problems in die Sprache der Mathematik, Lösen und Rückübersetzen (Modellierungskreislauf).
 
 ### Multiplikation
 Grundrechenart zur wiederholten Addition. Ergebnis: Produkt.
@@ -235,6 +268,12 @@ Gesamtfläche aller Außenflächen eines Körpers.
 
 ### Parallele
 Zwei Geraden sind parallel, wenn sie den gleichen Abstand haben und sich nie schneiden.
+
+### Pfadregeln
+Regeln zur Berechnung von Wahrscheinlichkeiten im Baumdiagramm: **Produktregel** (entlang eines Pfades multiplizieren) und **Summenregel** (mehrere Pfade addieren).
+
+### Platonische Körper
+Die fünf regelmäßigen Körper, deren Flächen kongruente regelmäßige Vielecke sind: Tetraeder, Hexaeder (Würfel), Oktaeder, Dodekaeder, Ikosaeder.
 
 ### Potenz
 Schreibweise für wiederholte Multiplikation. $a^n = \underbrace{a \cdot a \cdot ... \cdot a}_{n \text{ Faktoren}}$
@@ -280,6 +319,9 @@ Ergebnis einer Division.
 ### Radius
 Abstand vom Mittelpunkt eines Kreises oder einer Kugel zur Randlinie bzw. Oberfläche.
 
+### Raumdiagonale
+Die längste Strecke in einem Körper, die zwei gegenüberliegende Ecken verbindet. Im Quader: $d = \sqrt{a^2 + b^2 + c^2}$.
+
 ### Rationale Zahlen
 Alle Zahlen, die als Bruch darstellbar sind. $\mathbb{Q}$
 
@@ -300,7 +342,10 @@ Differenz zwischen größtem und kleinstem Wert einer Datenmenge.
 Maß für die Streuung von Daten um den Mittelwert.
 
 ### Steigung
-Maß für die Steilheit einer Geraden. Bei $f(x) = mx + b$ ist $m$ die Steigung.
+Maß für die Steilheit einer Geraden. Bei $f(x) = mx + b$ ist $m$ die Steigung. Es gilt $m = \tan(\alpha)$ mit dem Neigungswinkel $\alpha$.
+
+### Strahlensatz
+Satz über Streckenverhältnisse bei parallelen Geraden, die von zwei sich schneidenden Geraden geschnitten werden. Grundlage der Ähnlichkeit.
 
 ### Strecke
 Teil einer Geraden mit zwei Endpunkten.
@@ -323,6 +368,9 @@ Trigonometrische Funktion. Im rechtwinkligen Dreieck: $\tan(\alpha) = \frac{\tex
 
 ### Teiler
 Eine Zahl $a$ ist Teiler von $b$, wenn $b$ durch $a$ ohne Rest teilbar ist.
+
+### Thaleskreis
+Halbkreis über einer Strecke $\overline{AB}$. Jeder Punkt auf dem Halbkreis bildet mit $A$ und $B$ ein rechtwinkliges Dreieck (Satz des Thales).
 
 ### Term
 Mathematischer Ausdruck aus Zahlen, Variablen und Rechenzeichen.
@@ -349,6 +397,12 @@ Zahl, die nicht durch 2 teilbar ist. {1, 3, 5, 7, 9, ...}
 
 ### Variable
 Platzhalter für einen unbekannten oder veränderlichen Wert. Übliche Symbole: x, y, z
+
+### Variation
+Auswahl von $k$ aus $n$ Objekten **mit** Beachtung der Reihenfolge. Anzahl: $\frac{n!}{(n-k)!}$
+
+### Varianz
+Mittel der quadrierten Abweichungen vom Mittelwert; das Quadrat der Standardabweichung. $s^2 = \frac{\sum (x_i - \bar{x})^2}{n}$
 
 ### Volumen
 Rauminhalt eines Körpers. Einheit: Kubikmeter (m³), Liter, etc.

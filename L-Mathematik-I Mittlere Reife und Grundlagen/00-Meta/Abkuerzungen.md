@@ -2,7 +2,7 @@
 title: Abkürzungsverzeichnis – Mathematik I
 type: abkuerzungen
 created: 2026-10-13
-modified: 2026-10-13
+modified: 2026-10-25
 tags:
   - meta
   - abkuerzungen

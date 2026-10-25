@@ -1,10 +1,10 @@
 ---
 title: "Punkte und Koordinaten"
 created: 2026-10-13
-modified: 2026-10-16
+modified: 2026-10-25
 chapter: "09"
 section: "02"
-status: "draft - review pending"
+status: final
 type: lecture
 keywords:
   - Koordinaten

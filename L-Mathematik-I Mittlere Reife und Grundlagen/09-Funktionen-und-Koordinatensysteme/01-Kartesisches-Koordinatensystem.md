@@ -1,10 +1,10 @@
 ---
 title: "Das kartesische Koordinatensystem"
 created: 2026-10-13
-modified: 2026-10-16
+modified: 2026-10-25
 chapter: "09"
 section: "01"
-status: "draft - review pending"
+status: final
 type: lecture
 keywords:
   - Koordinatensystem

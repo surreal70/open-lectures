@@ -5,7 +5,7 @@ section: "14.5"
 type: lecture
 created: 2026-10-13
 modified: 2026-10-25
-status: draft - review pending
+status: final
 tags:
   - mathematik/wahrscheinlichkeit
   - laplace

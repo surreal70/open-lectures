@@ -1,9 +1,9 @@
 ---
 title: "Funktionen und Koordinatensysteme"
 created: 2026-10-13
-modified: 2025-07-18
+modified: 2026-10-25
 chapter: "09"
-status: "draft - review pending"
+status: final
 type: index
 keywords:
   - Funktionen

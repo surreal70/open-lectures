@@ -1,9 +1,9 @@
 ---
 title: "Grundlagen der Geometrie"
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 chapter: "10"
-status: "draft - review pending"
+status: final
 type: index
 keywords:
   - Geometrie

@@ -4,8 +4,8 @@ chapter: "15"
 section: "Index"
 type: index
 created: 2026-10-13
-modified: 2026-10-16
-status: draft - review pending
+modified: 2026-10-25
+status: final
 tags:
   - mathematik/anwendung
   - praxis

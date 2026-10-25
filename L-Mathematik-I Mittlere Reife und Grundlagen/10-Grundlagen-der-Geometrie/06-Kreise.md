@@ -4,7 +4,7 @@ created: 2026-10-13
 modified: 2026-10-25
 chapter: "10"
 section: "06"
-status: "draft - review pending"
+status: final
 type: lecture
 keywords:
   - Kreis

@@ -1,10 +1,10 @@
 ---
 title: "Lineare Funktionen"
 created: 2026-10-13
-modified: 2026-10-19
+modified: 2026-10-25
 chapter: "09"
 section: "05"
-status: "draft - review pending"
+status: final
 type: lecture
 keywords:
   - Lineare Funktion
