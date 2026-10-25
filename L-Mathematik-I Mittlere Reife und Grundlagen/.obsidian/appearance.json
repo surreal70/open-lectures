@@ -1,7 +1,8 @@
 {
   "cssTheme": "Blue Topaz",
   "enabledCssSnippets": [
-    "lecture-figures"
+    "lecture-figures",
+    "math-scale"
   ],
   "baseFontSizeAction": true
 }
