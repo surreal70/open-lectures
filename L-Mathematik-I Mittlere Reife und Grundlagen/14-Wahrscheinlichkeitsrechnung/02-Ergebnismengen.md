@@ -4,7 +4,7 @@ chapter: "14"
 section: "14.2"
 type: lecture
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/wahrscheinlichkeit
@@ -82,16 +82,8 @@ Diese Formel gilt, wenn jede Stufe unabhängig von den vorherigen ist und immer 
 
 Bei mehrstufigen Experimenten hilft ein Baumdiagramm, alle Ergebnisse systematisch zu erfassen:
 
-```
-Zweimal Münze:
-           Start
-          /     \
-        K         Z
-       / \       / \
-      K   Z     K   Z
-      
-Ergebnisse: KK  KZ  ZK  ZZ
-```
+![[baum-muenze2.png]]
+*<span class="fig-id">14-02-baum-muenze2</span>: Baumdiagramm für zweimaliges Münzwerfen – jeder Pfad vom Start bis zum Ende ergibt ein Element der Ergebnismenge $\Omega = \{KK, KZ, ZK, ZZ\}$.*
 
 Die Ergebnismenge liest man ab, indem man jeden Pfad vom Start bis zum Ende verfolgt.
 

@@ -4,7 +4,7 @@ chapter: "14"
 section: "14.8"
 type: lecture
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/wahrscheinlichkeit
@@ -34,15 +34,8 @@ Das Baumdiagramm wurde im 19. Jahrhundert als Darstellungsform populär und ist 
 
 Ein Baumdiagramm besteht aus Knoten (Kreise) und Kanten (Linien), die die Knoten verbinden:
 
-```
-        Start
-       /     \
-     K(½)    Z(½)     ← 1. Stufe
-    /  \    /  \
-  K(½) Z(½) K(½) Z(½)  ← 2. Stufe
-  
-  KK   KZ   ZK   ZZ   ← Ergebnisse
-```
+![[baum-muenze2.png]]
+*<span class="fig-id">14-08-baum-muenze2</span>: Aufbau eines Baumdiagramms: Startknoten, Kanten mit Kantengewichten (½) und Knoten auf jeder Stufe; jeder vollständige Pfad ergibt ein Ergebnis.*
 
 ### Leserichtung
 
@@ -66,19 +59,8 @@ Ein Baumdiagramm besteht aus Knoten (Kreise) und Kanten (Linien), die die Knoten
 
 ## Beispiel: Zweimal Münze werfen
 
-```
-              Start
-             /     \
-          K(½)     Z(½)
-          /  \     /  \
-       K(½) Z(½) K(½) Z(½)
-       
-Pfade und Ergebnisse:
-- Start → K → K = KK (Kopf-Kopf)
-- Start → K → Z = KZ (Kopf-Zahl)
-- Start → Z → K = ZK (Zahl-Kopf)
-- Start → Z → Z = ZZ (Zahl-Zahl)
-```
+![[baum-muenze2.png]]
+*<span class="fig-id">14-08-baum-muenze2</span>: Die vier Pfade ergeben die Ergebnisse $KK$, $KZ$, $ZK$ und $ZZ$.*
 
 ### Systematisches Ablesen
 
@@ -104,17 +86,8 @@ Um kein Ergebnis zu vergessen, liest man systematisch:
 5. **Ergebnisse** am Ende jedes Pfades notieren
 
 > [!example] **Beispiel: Urne mit 3 roten und 2 blauen Kugeln, 2× ziehen ohne Zurücklegen**
-> ```
->               Start
->              /     \
->           R(3/5)  B(2/5)
->           /  \     /  \
->        R(2/4) B(2/4) R(3/4) B(1/4)
->        
-> Beachte: Die Wahrscheinlichkeiten ändern sich!
-> Nach Ziehen einer roten Kugel:
-> - Noch 2 rote und 2 blaue von 4 Kugeln
-> ```
+> ![[baum-urne.png]]
+> *<span class="fig-id">14-08-baum-urne</span>: Ziehen ohne Zurücklegen aus einer Urne mit 3 roten und 2 blauen Kugeln – die Kantengewichte ändern sich von der ersten zur zweiten Stufe.*
 
 ---
 

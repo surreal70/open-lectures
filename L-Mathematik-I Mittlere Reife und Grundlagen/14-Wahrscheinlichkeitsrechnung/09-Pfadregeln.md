@@ -4,7 +4,7 @@ chapter: "14"
 section: "14.9"
 type: lecture
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/wahrscheinlichkeit
@@ -40,13 +40,8 @@ Diese Regeln folgen direkt aus den Grundgesetzen der Wahrscheinlichkeitsrechnung
 Jede Stufe „filtert" die Möglichkeiten. Wenn bei der 1. Stufe nur ½ der Fälle zu einem bestimmten Ergebnis führen und bei der 2. Stufe wieder nur ½, dann führen insgesamt nur ½ × ½ = ¼ aller Fälle zu diesem kombinierten Ergebnis.
 
 > [!example] **Zweimal Kopf**
-> ```
->      Start
->       / \
->    K(½)  Z(½)
->    / \
-> K(½) Z(½)
-> ```
+> ![[pfad-produktregel.png]]
+> *<span class="fig-id">14-09-pfad-produktregel</span>: Entlang des hervorgehobenen Pfades $K \to K$ werden die Kantengewichte multipliziert: $\tfrac{1}{2} \cdot \tfrac{1}{2} = \tfrac{1}{4}$.*
 > 
 > Pfad Start → K → K:
 > $P(K \cap K) = P(K) \cdot P(K) = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4} = 25\%$
@@ -66,6 +61,9 @@ Jede Stufe „filtert" die Möglichkeiten. Wenn bei der 1. Stufe nur ½ der Fäl
 Wenn mehrere Pfade zum gleichen Ereignis führen, sind das verschiedene Möglichkeiten, wie das Ereignis eintreten kann. Diese Möglichkeiten schließen sich gegenseitig aus (jeder Versuch folgt genau einem Pfad), daher addieren wir ihre Wahrscheinlichkeiten.
 
 > [!example] **Genau einmal Kopf bei zweimal Werfen**
+> ![[pfad-summenregel.png]]
+> *<span class="fig-id">14-09-pfad-summenregel</span>: Zwei Pfade führen zu „genau einmal Kopf" ($KZ$ und $ZK$); ihre Wahrscheinlichkeiten werden addiert.*
+> 
 > Das Ereignis „genau einmal Kopf" kann auf zwei Wegen eintreten:
 > - Pfad K-Z: $P = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}$
 > - Pfad Z-K: $P = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}$

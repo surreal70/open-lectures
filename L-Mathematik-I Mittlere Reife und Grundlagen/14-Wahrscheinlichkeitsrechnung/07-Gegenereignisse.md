@@ -4,7 +4,7 @@ chapter: "14"
 section: "14.7"
 type: lecture
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/wahrscheinlichkeit
@@ -41,17 +41,8 @@ Dieser Trick ist besonders nützlich bei Formulierungen wie „mindestens einmal
 
 Wenn A eintritt, tritt $\bar{A}$ nicht ein – und umgekehrt. Die beiden Ereignisse schließen sich gegenseitig aus und ergänzen sich zu 100%.
 
-```
-┌──────────────────────────────────┐
-│              Ω                   │
-│   ┌──────────┐                   │
-│   │    A     │      Ā            │
-│   │          │                   │
-│   └──────────┘                   │
-└──────────────────────────────────┘
-
-A und Ā zusammen = Ω (alle Möglichkeiten)
-```
+![[gegenereignis-venn.png]]
+*<span class="fig-id">14-07-gegenereignis-venn</span>: Das Ereignis $A$ und sein Gegenereignis $\bar{A}$ ergänzen sich zur gesamten Ergebnismenge $\Omega$.*
 
 ---
 

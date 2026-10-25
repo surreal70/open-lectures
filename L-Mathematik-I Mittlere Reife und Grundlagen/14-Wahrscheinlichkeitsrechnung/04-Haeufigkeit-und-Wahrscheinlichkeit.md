@@ -4,7 +4,7 @@ chapter: "14"
 section: "14.4"
 type: lecture
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/wahrscheinlichkeit
@@ -79,6 +79,9 @@ Je mehr Versuche, desto stabiler wird die relative Häufigkeit – und desto nä
 > | 10000 | 4987 | 0,4987 |
 > 
 > → Annäherung an P(Kopf) = 0,5
+
+![[grosse-zahlen.png]]
+*<span class="fig-id">14-04-grosse-zahlen</span>: Gesetz der großen Zahlen – mit wachsender Anzahl Würfe nähert sich die relative Häufigkeit von „Kopf" dem Wert $P = 0{,}5$ an.*
 
 Die Schwankungen werden immer kleiner, die relative Häufigkeit stabilisiert sich um den Wert 0,5.
 
