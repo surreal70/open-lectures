@@ -1,7 +1,7 @@
 ---
 title: "Kongruenz"
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 chapter: "10"
 section: "10"
 status: "draft - review pending"
@@ -62,31 +62,15 @@ $$\triangle ABC \cong \triangle DEF$$
 
 Zwei Dreiecke sind kongruent, wenn sie in allen **drei Seitenlängen** übereinstimmen.
 
-```
-     C                       F
-    /\                      /\
- a / ╲ b                 d / ╲ e
-  /   ╲                   /   ╲
- /_____╲                 /_____╲
-B   c   A               E   f   D
-
-Wenn a = d, b = e, c = f → kongruent
-```
+![[kongruenz-sss.png]]
+*<span class="fig-id">10-10-kongruenz-sss</span>: Kongruenzsatz SSS: Stimmen zwei Dreiecke in allen drei Seiten ($a$, $b$, $c$) überein, sind sie kongruent.*
 
 ### SWS – Seite-Winkel-Seite
 
 Zwei Dreiecke sind kongruent, wenn sie in **zwei Seiten** und dem **eingeschlossenen Winkel** übereinstimmen.
 
-```
-     C
-    /\
- a /γ ╲ b
-  /   ╲
- /_____╲
-B   c   A
-
-Seiten a und b mit eingeschlossenem Winkel γ
-```
+![[kongruenz-sws.png]]
+*<span class="fig-id">10-10-kongruenz-sws</span>: Kongruenzsatz SWS: zwei Seiten ($a$, $b$) und der eingeschlossene Winkel $\gamma$ bestimmen das Dreieck eindeutig.*
 
 > [!warning] Wichtig
 > Der Winkel muss **zwischen** den beiden Seiten liegen!
@@ -95,16 +79,8 @@ Seiten a und b mit eingeschlossenem Winkel γ
 
 Zwei Dreiecke sind kongruent, wenn sie in **einer Seite** und den **beiden anliegenden Winkeln** übereinstimmen.
 
-```
-     C
-    /\
-   /  ╲
-  /α  β╲
- /_____╲
-B   c   A
-
-Seite c mit anliegenden Winkeln α und β
-```
+![[kongruenz-wsw.png]]
+*<span class="fig-id">10-10-kongruenz-wsw</span>: Kongruenzsatz WSW: eine Seite ($c$) und die beiden anliegenden Winkel $\alpha$ und $\beta$ bestimmen das Dreieck eindeutig.*
 
 ### SsW – Seite-Seite-Winkel (gegenüber der größeren Seite)
 
@@ -119,14 +95,8 @@ Zwei Dreiecke sind kongruent, wenn sie in **zwei Seiten** und dem **Winkel gegen
 
 Drei gleiche Winkel garantieren **keine Kongruenz**, sondern nur **Ähnlichkeit**.
 
-```
-     △                ╱╲
-    ╱ ╲              ╱  ╲
-   ╱   ╲            ╱    ╲
-  ╱_____╲          ╱______╲
-  
-  Gleiche Winkel, verschiedene Größen
-```
+![[kongruenz-www.png]]
+*<span class="fig-id">10-10-kongruenz-www</span>: WWW ist kein Kongruenzsatz: gleiche Winkel, aber unterschiedliche Größe – die Dreiecke sind nur ähnlich, nicht kongruent.*
 
 ### SSW – Warum problematisch?
 

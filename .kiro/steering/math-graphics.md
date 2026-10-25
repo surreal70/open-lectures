@@ -24,6 +24,11 @@ Diese Regeln gelten **zusätzlich** zu den allgemeinen PNG-Regeln aus dem `creat
 - **Stattdessen:** Mittleres bis helles Grau (`#E5E7EB` oder `#F3F4F6`)
 - Dies verbessert die Lesbarkeit in beiden Obsidian-Themes
 
+### Graustufen-Variante
+- **Abweichend von der allgemeinen Regel:** Eine Graustufen-Variante (`<name>_g.png`) wird für Mathematik-Vaults **nicht benötigt** und ist **nicht zu erzeugen**.
+- Es wird ausschließlich die farbige PNG-Datei (`<name>.png`) erstellt.
+- Dies überschreibt den „two-file"-Output-Contract des `create-png` Skills (Farb- **und** Graustufen-Datei) für alle `L-Mathematik*`-Vaults.
+
 ## Workflow bei Grafikerstellung
 
 ### Pflicht-Rückfrage
@@ -65,3 +70,9 @@ Linien:       #2563EB (Blau)
 Flächen:      #60A5FA (helles Blau, 50% Deckkraft)
 Beschriftung: #1E40AF (dunkles Blau)
 ```
+
+## Linienstile
+
+- **Symmetrieachsen und Symmetrielinien** (Spiegelachsen, Punktsymmetrie-Linien, Dreh-/Symmetrieachsen): **Strichpunkt-Muster** (`-·-·`, in matplotlib `linestyle="-."`). Dies entspricht der mathematischen Konvention und unterscheidet Symmetrielinien klar von anderen Hilfslinien.
+- **Hilfs-/Konstruktionslinien** (Höhen, Lote, Diagonalen, Verbindungsstrecken): gestrichelt (`--`).
+- **Figurenkanten/Umrisse**: durchgezogen (`-`).

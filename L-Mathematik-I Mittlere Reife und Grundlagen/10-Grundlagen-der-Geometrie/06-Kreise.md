@@ -1,7 +1,7 @@
 ---
 title: "Kreise"
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 chapter: "10"
 section: "06"
 status: "draft - review pending"
@@ -43,15 +43,8 @@ Ein **Kreis** ist die Menge aller Punkte, die von einem festen Punkt (Mittelpunk
 
 ### Grundbegriffe
 
-```
-           ●───────● B
-          ╱│      ╱
-         ╱ │r    ╱d
-        ╱  │    ╱
-       ╱   ●M  ╱
-      A●──────●
-          Sehne
-```
+![[kreis-grundbegriffe.png]]
+*<span class="fig-id">10-06-kreis-grundbegriffe</span>: Grundbegriffe am Kreis: Mittelpunkt $M$, Radius $r$, Durchmesser $d$ und eine Sehne.*
 
 | Begriff | Beschreibung | Symbol |
 |---|---|---|
@@ -138,13 +131,8 @@ $$r = \sqrt{\frac{A}{\pi}}$$
 
 Ein **Kreisausschnitt** ist ein „Tortenstück" mit Mittelpunktswinkel $\alpha$.
 
-```
-         ╱╲
-        ╱α ╲
-       ╱    ╲
-      ╱──────╲
-     Kreissektor
-```
+![[kreis-sektor.png]]
+*<span class="fig-id">10-06-kreis-sektor</span>: Kreisausschnitt (Sektor) mit Mittelpunktswinkel $\alpha$ und Bogenlänge $b$.*
 
 ### Bogenlänge
 
@@ -165,15 +153,8 @@ $$A_{Sektor} = \frac{\alpha}{360°} \cdot \pi r^2$$
 
 Ein **Kreisring** entsteht zwischen zwei konzentrischen Kreisen.
 
-```
-    ╭───────────────╮
-   ╱   ╭───────╮    ╲
-  │   │         │    │
-  │   │    M    │    │
-  │   │         │    │
-   ╲   ╰───────╯    ╱
-    ╰───────────────╯
-```
+![[kreis-ring.png]]
+*<span class="fig-id">10-06-kreis-ring</span>: Kreisring zwischen zwei konzentrischen Kreisen mit äußerem Radius $R$ und innerem Radius $r$.*
 
 $$A_{Ring} = \pi \cdot R^2 - \pi \cdot r^2 = \pi(R^2 - r^2)$$
 

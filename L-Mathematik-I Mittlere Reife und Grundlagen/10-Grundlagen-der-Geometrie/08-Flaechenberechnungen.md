@@ -1,7 +1,7 @@
 ---
 title: "Flächenberechnungen"
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 chapter: "10"
 section: "08"
 status: "draft - review pending"
@@ -71,6 +71,9 @@ $$A = l \cdot b$$
 
 wobei $l$ = Länge und $b$ = Breite
 
+![[flaeche-rechteck.png]]
+*<span class="fig-id">10-08-flaeche-rechteck</span>: Fläche des Rechtecks: Länge $l$ mal Breite $b$.*
+
 > [!example] Beispiel
 > Rechteck mit $l = 8$ cm, $b = 5$ cm
 > 
@@ -79,6 +82,9 @@ wobei $l$ = Länge und $b$ = Breite
 ### Quadrat
 
 $$A = a^2$$
+
+![[flaeche-quadrat.png]]
+*<span class="fig-id">10-08-flaeche-quadrat</span>: Fläche des Quadrats: Seitenlänge $a$ zum Quadrat.*
 
 > [!example] Beispiel
 > Quadrat mit $a = 6$ cm
@@ -91,14 +97,8 @@ $$A = g \cdot h$$
 
 wobei $g$ = Grundseite und $h$ = Höhe (senkrecht zur Grundseite!)
 
-```
-        ┌─────────────┐
-       ╱│            ╱
-      ╱ │h          ╱
-     ╱  │          ╱
-    └───┴─────────┘
-         g
-```
+![[flaeche-parallelogramm.png]]
+*<span class="fig-id">10-08-flaeche-parallelogramm</span>: Fläche des Parallelogramms: Grundseite $g$ mal Höhe $h$ (senkrechter Abstand, nicht die Seitenlänge).*
 
 > [!warning] Achtung
 > Die Höhe $h$ ist **nicht** die Seitenlänge, sondern der senkrechte Abstand!
@@ -107,16 +107,8 @@ wobei $g$ = Grundseite und $h$ = Höhe (senkrecht zur Grundseite!)
 
 $$A = \frac{1}{2} \cdot g \cdot h = \frac{g \cdot h}{2}$$
 
-```
-           C
-          /|\
-         / | \
-        /  |h \
-       /   |   \
-      /___ |____\
-     A     F     B
-         g
-```
+![[flaeche-dreieck.png]]
+*<span class="fig-id">10-08-flaeche-dreieck</span>: Fläche des Dreiecks: Grundseite $g$ mal Höhe $h$, geteilt durch 2.*
 
 > [!tip] Merkregel
 > Das Dreieck ist das „halbe Parallelogramm".
@@ -132,14 +124,8 @@ $$A = \frac{1}{2}(a + c) \cdot h = \frac{(a + c) \cdot h}{2}$$
 
 wobei $a$ und $c$ die parallelen Seiten und $h$ die Höhe ist.
 
-```
-        ┌───c───┐
-       ╱│       │╲
-      ╱ │h      │ ╲
-     ╱  │       │  ╲
-    └───┴───────┴───┘
-           a
-```
+![[flaeche-trapez.png]]
+*<span class="fig-id">10-08-flaeche-trapez</span>: Fläche des Trapezes: Mittelwert der parallelen Seiten $a$ und $c$ mal Höhe $h$.*
 
 > [!tip] Merkregel
 > Mittelwert der parallelen Seiten mal Höhe.
@@ -155,6 +141,9 @@ $$A = \frac{e \cdot f}{2}$$
 
 wobei $e$ und $f$ die Diagonalen sind.
 
+![[flaeche-raute-drachen.png]]
+*<span class="fig-id">10-08-flaeche-raute-drachen</span>: Fläche von Raute und Drachen: Produkt der Diagonalen $e$ und $f$, geteilt durch 2.*
+
 > [!example] Beispiel
 > Raute mit $e = 8$ cm, $f = 6$ cm
 > 
@@ -163,6 +152,9 @@ wobei $e$ und $f$ die Diagonalen sind.
 ## Kreis
 
 $$A = \pi \cdot r^2$$
+
+![[flaeche-kreis.png]]
+*<span class="fig-id">10-08-flaeche-kreis</span>: Fläche des Kreises: $\pi$ mal Radius $r$ zum Quadrat.*
 
 > [!example] Beispiel
 > Kreis mit $r = 5$ cm
@@ -173,9 +165,15 @@ $$A = \pi \cdot r^2$$
 
 $$A = \frac{\alpha}{360°} \cdot \pi r^2$$
 
+![[flaeche-kreissektor.png]]
+*<span class="fig-id">10-08-flaeche-kreissektor</span>: Fläche des Kreissektors: Anteil $\frac{\alpha}{360°}$ der gesamten Kreisfläche.*
+
 ### Kreisring
 
 $$A = \pi(R^2 - r^2)$$
+
+![[flaeche-kreisring.png]]
+*<span class="fig-id">10-08-flaeche-kreisring</span>: Fläche des Kreisrings: äußere Kreisfläche minus innere Kreisfläche.*
 
 ## Zusammengesetzte Flächen
 
@@ -188,15 +186,9 @@ Die Figur in bekannte Teilfiguren zerlegen und die Flächen addieren.
 Die Figur zu einer einfacheren ergänzen und dann subtrahieren.
 
 > [!example] Beispiel: L-Form
-> ```
->     ┌───────────┐
->     │           │
->     │     ┌─────┘
->     │     │
->     │     │
->     └─────┘
-> ```
-> 
+>
+> ![[flaeche-l-form.png]]
+>
 > Gesamtrechteck: $12 \times 8 = 96$ cm²
 > Minus Ausschnitt: $6 \times 4 = 24$ cm²
 > **Fläche: $96 - 24 = 72$ cm²**

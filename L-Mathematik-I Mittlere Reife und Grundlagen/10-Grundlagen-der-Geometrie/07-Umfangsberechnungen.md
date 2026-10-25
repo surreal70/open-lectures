@@ -1,7 +1,7 @@
 ---
 title: "Umfangsberechnungen"
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 chapter: "10"
 section: "07"
 status: "draft - review pending"
@@ -120,13 +120,8 @@ Bei zusammengesetzten Figuren müssen nur die **äußeren Begrenzungslinien** be
 
 ### Beispiel 1: Rechteck mit Halbkreis
 
-```
-    ┌────────┐
-    │        │
-    │        │
-    └────╮ ╭─┘
-         ╰─╯
-```
+![[umfang-rechteck-halbkreis.png]]
+*<span class="fig-id">10-07-umfang-rechteck-halbkreis</span>: Zusammengesetzte Figur aus Rechteck ($10 \times 6$ cm) und angesetztem Halbkreis ($d = 6$ cm).*
 
 Ein Rechteck ($l = 10$ cm, $b = 6$ cm) mit einem angesetzten Halbkreis (Durchmesser = 6 cm).
 
@@ -140,14 +135,8 @@ $$U = 10 + 12 + 4 + 3\pi = 26 + 3\pi \approx 35{,}42 \text{ cm}$$
 
 ### Beispiel 2: L-förmige Figur
 
-```
-    ┌───────────┐
-    │           │
-    │     ┌─────┘
-    │     │
-    │     │
-    └─────┘
-```
+![[umfang-l-figur.png]]
+*<span class="fig-id">10-07-umfang-l-figur</span>: L-förmige Figur mit äußeren Maßen $12 \times 8$ cm und einem Ausschnitt von $6 \times 4$ cm.*
 
 Äußere Maße: $12 \times 8$ cm, Ausschnitt: $6 \times 4$ cm
 

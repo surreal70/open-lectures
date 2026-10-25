@@ -1,7 +1,7 @@
 ---
 title: "Symmetrie"
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 chapter: "10"
 section: "09"
 status: "draft - review pending"
@@ -51,14 +51,8 @@ Eine Figur ist **achsensymmetrisch**, wenn sie durch eine Gerade (Symmetrieachse
 > [!tip] Test
 > Faltet man die Figur entlang der Symmetrieachse, liegen beide Hälften exakt übereinander.
 
-```
-      │
-   ╱╲ │ ╱╲
-  ╱  ╲│╱  ╲
- ╱    │    ╲
-      │
- Symmetrieachse
-```
+![[symmetrie-achse.png]]
+*<span class="fig-id">10-09-symmetrie-achse</span>: Achsensymmetrische Figur: Die Symmetrieachse (Strichpunktlinie) teilt sie in zwei spiegelgleiche Hälften.*
 
 ### Beispiele achsensymmetrischer Figuren
 
@@ -78,12 +72,8 @@ Bei der Spiegelung eines Punktes $P$ an einer Achse $g$:
 - Die Achse steht **senkrecht** auf der Verbindung $PP'$
 - Die Achse **halbiert** die Strecke $PP'$
 
-```
-        │
-   P ●──┼──● P'
-        │
-        g
-```
+![[symmetrie-achsenspiegelung.png]]
+*<span class="fig-id">10-09-symmetrie-achsenspiegelung</span>: Spiegelung eines Punktes $P$ an der Achse $g$: $g$ steht senkrecht auf $\overline{PP'}$ und halbiert sie.*
 
 ## Punktsymmetrie (Drehsymmetrie 180°)
 
@@ -94,14 +84,8 @@ Eine Figur ist **punktsymmetrisch**, wenn sie bei einer Drehung um 180° um eine
 > [!tip] Test
 > Dreht man die Figur um 180° um das Zentrum, sieht sie genauso aus wie vorher.
 
-```
-      ●───────╮
-     ╱         ╲
-    ╱     ● Z   ╲
-   ╱             ╲
-  ╱               ╲
- ╰───────●
-```
+![[symmetrie-punkt.png]]
+*<span class="fig-id">10-09-symmetrie-punkt</span>: Punktsymmetrische Figur: Bei Drehung um 180° um das Zentrum $Z$ geht die Figur in sich selbst über.*
 
 ### Beispiele punktsymmetrischer Figuren
 
@@ -143,17 +127,8 @@ Das **Quadrat** hat besonders viele Symmetrien:
 - Punktsymmetrie
 - 4-fache Drehsymmetrie
 
-```
-      │
-      │
-  ╲   │   ╱
-   ╲  │  ╱
-────╲─│─╱────
-    ╱─│─╲
-   ╱  │  ╲
-  ╱   │   ╲
-      │
-```
+![[symmetrie-quadrat-achsen.png]]
+*<span class="fig-id">10-09-symmetrie-quadrat-achsen</span>: Das Quadrat besitzt vier Symmetrieachsen (Strichpunktlinien): zwei durch die Seitenmitten, zwei durch die Ecken.*
 
 ## Symmetrie im Koordinatensystem
 

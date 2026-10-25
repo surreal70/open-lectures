@@ -31,7 +31,8 @@ Produce educational PNG illustrations that remain legible in both light and dark
 
 ## Preview requirements
 
-- The preview may have temporary opaque backgrounds for inspection; **the final PNGs must remain transparent**.
+- **Always present previews as artifacts for visual review.** When showing any draft PNG (single figure, grayscale pair, or contact sheet) to the user, register it with the artifact tool (`kind: image`, `sourcePath: <draft png>`) so it renders full-size in the artifact panel. Do not rely only on inline file reads; the user must be able to review each visual as a proper artifact before approving.
+- The preview may have temporary opaque backgrounds for inspection; **the final PNGs must remain transparent** (except where a vault-specific rule mandates a solid background).
 - Show both original color and grayscale versions on a light and a dark background, ideally as a labeled 2×2 contact sheet.
 - Use `scripts/prepare_png.py` to generate a contact sheet (`<name>_preview.png`) when Pillow is available; otherwise prepare equivalent images with available tools.
 - Put preview artifacts in a temporary/staging location. Do **not** add previews to the final Obsidian `assets/` folder unless specifically requested.

@@ -1,7 +1,7 @@
 ---
 title: "Winkel und Winkelarten"
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 chapter: "10"
 section: "02"
 status: "draft - review pending"
@@ -43,15 +43,8 @@ Ein **Winkel** entsteht, wenn sich zwei Strahlen (oder Halbgeraden) in einem gem
 
 ### Bestandteile eines Winkels
 
-```
-              Schenkel a
-             ╱
-            ╱
-           ╱
-          ╱ α
-         ●─────────────
-      Scheitel    Schenkel b
-```
+![[winkel-bestandteile.png]]
+*<span class="fig-id">10-02-winkel-bestandteile</span>: Ein Winkel $\alpha$ besteht aus dem Scheitel und zwei Schenkeln.*
 
 | Bestandteil | Beschreibung |
 |---|---|
@@ -101,25 +94,8 @@ $$1° = 60' = 3600''$$
 
 ### Übersicht
 
-```
-Spitzer Winkel      Rechter Winkel     Stumpfer Winkel
-     ╱                    │                  ╱
-    ╱                     │                 ╱
-   ╱                      │ ┐              ╱
-  ╱ α                     │               ╱ α
- ●─────                   ●─────         ●─────
- 0° < α < 90°           α = 90°       90° < α < 180°
-```
-
-```
-Gestreckter Winkel     Überstumpfer       Vollwinkel
-                         Winkel
-                           ╲
- ●─────────────────        ╲              ●
-        180°               ╲ α          ╱│
-                           ●─────      ╱ │ 360°
-                      180° < α < 360°  ──┘
-```
+![[winkelarten.png]]
+*<span class="fig-id">10-02-winkelarten</span>: Die sechs Winkelarten nach ihrer Größe: spitzer, rechter, stumpfer, gestreckter, überstumpfer und Vollwinkel.*
 
 ### Tabelle der Winkelarten
 

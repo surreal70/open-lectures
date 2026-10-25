@@ -1,7 +1,7 @@
 ---
 title: "Winkelberechnungen"
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 chapter: "10"
 section: "03"
 status: "draft - review pending"
@@ -42,16 +42,8 @@ Die Winkelsätze am Parallelenschnitt sind mehr als abstrakte Mathematik:
 
 Wenn sich zwei Geraden schneiden, entstehen vier Winkel.
 
-```
-           g
-          ╱
-    α₂   ╱   α₁
-        ╱
-───────●───────── h
-      ╱
- α₃  ╱  α₄
-    ╱
-```
+![[schneidende-geraden.png]]
+*<span class="fig-id">10-03-schneidende-geraden</span>: Beim Schnitt zweier Geraden $g$ und $h$ entstehen vier Winkel $\alpha_1$ bis $\alpha_4$.*
 
 ### Nebenwinkel
 
@@ -87,20 +79,8 @@ Scheitelwinkel sind **gleich groß**.
 
 Wenn eine Gerade $t$ (Transversale) zwei parallele Geraden $g \parallel h$ schneidet, entstehen besondere Winkelbeziehungen.
 
-```
-              t
-             ╱
-      α₁    ╱  α₂
-    ─────g─●────────
-          ╱
-    α₃   ╱  α₄
-        ╱
-   β₁  ╱  β₂
-─────h●────────
-     ╱
-β₃  ╱  β₄
-   ╱
-```
+![[parallelenschnitt.png]]
+*<span class="fig-id">10-03-parallelenschnitt</span>: Eine Transversale $t$ schneidet die parallelen Geraden $g \parallel h$ und bildet je vier Winkel an beiden Schnittpunkten.*
 
 ### Stufenwinkel (F-Winkel)
 
@@ -112,13 +92,8 @@ $$\alpha_1 = \beta_1 \quad \text{und} \quad \alpha_2 = \beta_2$$
 
 > [!tip] Merkregel
 > Die Form eines „F" hilft beim Erkennen:
-> ```
->     F
-> ────┼────
->     │
->     ├────
->     │
-> ```
+>
+> ![[stufenwinkel-f.png|120]]
 
 ### Wechselwinkel (Z-Winkel)
 
@@ -130,12 +105,8 @@ $$\alpha_1 = \beta_3 \quad \text{und} \quad \alpha_3 = \beta_1$$
 
 > [!tip] Merkregel
 > Die Form eines „Z" hilft beim Erkennen:
-> ```
->     ╱────
->    ╱
->   ╱
->  ╱────
-> ```
+>
+> ![[wechselwinkel-z.png|120]]
 
 ### Übersicht der Winkelbeziehungen
 
@@ -152,15 +123,8 @@ $$\alpha_1 = \beta_3 \quad \text{und} \quad \alpha_3 = \beta_1$$
 
 Gegeben: $\alpha = 65°$
 
-```
-         ╱
-    ?   ╱  65°
-       ╱
-──────●────────
-     ╱
- ?  ╱  ?
-   ╱
-```
+![[beispiel-scheitelwinkel.png]]
+*<span class="fig-id">10-03-beispiel-scheitelwinkel</span>: Gegeben ist ein Winkel von $65°$; die drei übrigen Winkel sind gesucht.*
 
 **Lösung**:
 - Scheitelwinkel: $65°$
@@ -172,15 +136,8 @@ Alle Winkel: $65°$, $115°$, $65°$, $115°$
 
 Gegeben: $g \parallel h$, $\alpha = 72°$
 
-```
-              t
-             ╱
-      72°   ╱  ?
-    ─────g─●────────
-          ╱
-    ?    ╱  ?
-        ╱
-```
+![[beispiel-parallelenschnitt.png]]
+*<span class="fig-id">10-03-beispiel-parallelenschnitt</span>: Bei parallelen Geraden $g \parallel h$ ist ein Winkel von $72°$ gegeben; die übrigen folgen aus den Winkelsätzen.*
 
 **Lösung**:
 - Nebenwinkel zu 72°: $180° - 72° = 108°$

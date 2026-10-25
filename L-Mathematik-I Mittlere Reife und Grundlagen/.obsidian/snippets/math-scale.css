@@ -1,0 +1,23 @@
+/* Math scaling for this vault.
+   - Inline math ($...$): unchanged.
+   - Free-standing display math ($$ ... $$) in normal content: scaled up.
+   - Display math inside callouts: left at normal size (callouts already
+     render at their own proportions; scaling made them oversized).
+   Applies in both Reading view and Live Preview. */
+
+/* Inline math: explicitly unchanged */
+mjx-container:not([display="true"]) {
+  font-size: 1em;
+}
+
+/* Free-standing (display) math in normal content: +30% */
+.markdown-rendered mjx-container[display="true"],
+.markdown-source-view.mod-cm6 mjx-container[display="true"] {
+  font-size: 1.3em;
+}
+
+/* Display math inside callouts: keep at normal size */
+.markdown-rendered .callout mjx-container[display="true"],
+.markdown-source-view.mod-cm6 .callout mjx-container[display="true"] {
+  font-size: 1em;
+}

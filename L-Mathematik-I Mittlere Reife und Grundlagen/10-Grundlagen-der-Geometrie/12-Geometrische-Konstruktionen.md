@@ -1,7 +1,7 @@
 ---
 title: "Geometrische Konstruktionen"
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 chapter: "10"
 section: "12"
 status: "draft - review pending"
@@ -76,18 +76,8 @@ In der Praxis (und im Unterricht) werden oft auch Geodreieck, Winkelmesser und m
 3. Kreisbogen um $B$ mit gleicher Öffnung schlagen
 4. Beide Schnittpunkte verbinden
 
-```
-         ●
-        ╱│╲
-       ╱ │ ╲
-      ╱  │  ╲
-●────────●────────●
-A    M   │        B
-     ╲   │   ╱
-      ╲  │  ╱
-       ╲ │ ╱
-         ●
-```
+![[konstruktion-mittelsenkrechte.png]]
+*<span class="fig-id">10-12-konstruktion-mittelsenkrechte</span>: Konstruktion der Mittelsenkrechten: Kreisbögen gleicher Öffnung um $A$ und $B$ schneiden sich; ihre Verbindung ist die Mittelsenkrechte durch $M$.*
 
 > [!tip] Anwendung
 > Jeder Punkt auf der Mittelsenkrechten hat den gleichen Abstand zu $A$ und $B$.
@@ -112,15 +102,8 @@ A    M   │        B
 4. Schnittpunkt $C$ der Kreisbögen
 5. Strahl von $S$ durch $C$ ist die Winkelhalbierende
 
-```
-              C
-             ╱
-            ╱
-    ●──────●──────●
-   A      ╱S      B
-         ╱
-        ╱
-```
+![[konstruktion-winkelhalbierende.png]]
+*<span class="fig-id">10-12-konstruktion-winkelhalbierende</span>: Konstruktion der Winkelhalbierenden $w$: Ein Bogen um $S$ liefert $A$ und $B$; gleich große Bögen um $A$ und $B$ schneiden sich, und der Strahl von $S$ dorthin halbiert den Winkel.*
 
 ### 5. Parallele durch einen Punkt
 

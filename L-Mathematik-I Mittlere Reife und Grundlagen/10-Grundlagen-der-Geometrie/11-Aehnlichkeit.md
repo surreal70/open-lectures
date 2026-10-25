@@ -1,7 +1,7 @@
 ---
 title: "Ähnlichkeit"
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 chapter: "10"
 section: "11"
 status: "draft - review pending"
@@ -107,16 +107,8 @@ Die **Strahlensätze** beschreiben Verhältnisse bei parallelen Geraden.
 
 ### Konfiguration
 
-```
-           Z
-          ╱╲
-         ╱  ╲
-        ╱    ╲
-    ───A──────B───    g
-      ╱        ╲
-     ╱          ╲
-────A'──────────B'─── h (parallel zu g)
-```
+![[aehnlichkeit-strahlensatz.png]]
+*<span class="fig-id">10-11-aehnlichkeit-strahlensatz</span>: Strahlensatz-Konfiguration: Zwei Strahlen aus $Z$ werden von den parallelen Geraden $g$ und $h$ geschnitten.*
 
 ### Erster Strahlensatz
 
@@ -149,6 +141,9 @@ $$\text{Maßstab} = \frac{\text{Länge auf der Karte}}{\text{Länge in Wirklichk
 ### Höhenbestimmung
 
 Mit Ähnlichkeit kann man Höhen messen, die nicht direkt zugänglich sind.
+
+![[aehnlichkeit-baumhoehe.png]]
+*<span class="fig-id">10-11-aehnlichkeit-baumhoehe</span>: Höhenbestimmung über Schatten: Stock und Baum bilden mit ihren Schatten zwei ähnliche Dreiecke (gleicher Sonnenwinkel).*
 
 > [!example] Beispiel: Baumhöhe
 > Ein 2 m langer Stock wirft einen 1,5 m langen Schatten.

@@ -1,7 +1,7 @@
 ---
 title: "Dreiecke"
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 chapter: "10"
 section: "04"
 status: "draft - review pending"
@@ -48,15 +48,8 @@ Ein **Dreieck** ist eine geschlossene Figur aus drei Seiten und drei Ecken.
 
 ### Standardbezeichnung
 
-```
-           C
-          /\
-         /  \
-      a /    \ b
-       /      \
-      /________\
-     B    c     A
-```
+![[dreieck-bezeichnung.png]]
+*<span class="fig-id">10-04-dreieck-bezeichnung</span>: Standardbezeichnung: Ecken $A$, $B$, $C$, gegenüberliegende Seiten $a$, $b$, $c$ und Winkel $\alpha$, $\beta$, $\gamma$.*
 
 | Element | Bezeichnung |
 |---|---|
@@ -91,31 +84,20 @@ Dieser Satz ist einer der wichtigsten in der Geometrie. Er gilt für **jedes** D
 
 ## Dreieckarten nach Seiten
 
+![[dreieck-nach-seiten.png]]
+*<span class="fig-id">10-04-dreieck-nach-seiten</span>: Einteilung nach Seitenlängen: gleichseitig, gleichschenklig und ungleichseitig.*
+
 ### Gleichseitiges Dreieck
 
 Alle drei Seiten gleich lang: $a = b = c$
 
 Alle Winkel gleich: $\alpha = \beta = \gamma = 60°$
 
-```
-         △
-        ╱ ╲
-       ╱   ╲
-      ╱─────╲
-```
-
 ### Gleichschenkliges Dreieck
 
 Zwei Seiten gleich lang (z.B. $a = b$)
 
 Die Basiswinkel sind gleich: $\alpha = \beta$
-
-```
-         △
-        ╱|╲
-       ╱ | ╲
-      ╱──┴──╲
-```
 
 ### Ungleichseitiges Dreieck
 
@@ -125,6 +107,9 @@ Alle Winkel verschieden.
 
 ## Dreieckarten nach Winkeln
 
+![[dreieck-nach-winkeln.png]]
+*<span class="fig-id">10-04-dreieck-nach-winkeln</span>: Einteilung nach Winkeln: spitzwinklig (alle < 90°), rechtwinklig (ein Winkel = 90°) und stumpfwinklig (ein Winkel > 90°).*
+
 ### Spitzwinkliges Dreieck
 
 Alle Winkel kleiner als 90°.
@@ -133,15 +118,8 @@ Alle Winkel kleiner als 90°.
 
 Ein Winkel ist genau 90°.
 
-```
-       C
-       │╲
-       │ ╲
-       │  ╲
-       │   ╲
-       │____╲
-       A     B
-```
+![[dreieck-rechtwinklig.png]]
+*<span class="fig-id">10-04-dreieck-rechtwinklig</span>: Im rechtwinkligen Dreieck liegt die Hypotenuse dem rechten Winkel gegenüber; die beiden anderen Seiten sind die Katheten.*
 
 Die Seite gegenüber dem rechten Winkel heißt **Hypotenuse**.
 Die anderen beiden Seiten heißen **Katheten**.
@@ -156,15 +134,8 @@ Ein Winkel ist größer als 90°.
 
 Die **Höhe** $h_a$ ist das Lot von der Ecke $A$ auf die Gegenseite $a$.
 
-```
-           C
-          /|\
-         / | \
-        /  |h \
-       /   |   \
-      /____|____\
-     B     F     A
-```
+![[dreieck-hoehe.png]]
+*<span class="fig-id">10-04-dreieck-hoehe</span>: Die Höhe $h_a$ ist das Lot von Ecke $A$ auf die Gegenseite mit Fußpunkt $F$.*
 
 - Jedes Dreieck hat drei Höhen
 - Die Höhen schneiden sich im **Höhenschnittpunkt** $H$
@@ -176,17 +147,26 @@ Die **Seitenhalbierende** $s_a$ verbindet Ecke $A$ mit dem Mittelpunkt von Seite
 - Die drei Seitenhalbierenden schneiden sich im **Schwerpunkt** $S$
 - Der Schwerpunkt teilt jede Seitenhalbierende im Verhältnis 2:1
 
+![[dreieck-seitenhalbierende.png]]
+*<span class="fig-id">10-04-dreieck-seitenhalbierende</span>: Die drei Seitenhalbierenden verbinden jede Ecke mit dem Mittelpunkt der Gegenseite und schneiden sich im Schwerpunkt $S$.*
+
 ### Mittelsenkrechte
 
 Die **Mittelsenkrechte** einer Seite steht senkrecht auf dieser und geht durch ihren Mittelpunkt.
 
 - Die drei Mittelsenkrechten schneiden sich im **Umkreismittelpunkt** $U$
 
+![[dreieck-mittelsenkrechte.png]]
+*<span class="fig-id">10-04-dreieck-mittelsenkrechte</span>: Die Mittelsenkrechten schneiden sich im Umkreismittelpunkt $U$, dem Mittelpunkt des Umkreises durch alle drei Ecken.*
+
 ### Winkelhalbierende
 
 Die **Winkelhalbierende** teilt einen Winkel in zwei gleich große Teile.
 
 - Die drei Winkelhalbierenden schneiden sich im **Inkreismittelpunkt** $I$
+
+![[dreieck-winkelhalbierende.png]]
+*<span class="fig-id">10-04-dreieck-winkelhalbierende</span>: Die Winkelhalbierenden schneiden sich im Inkreismittelpunkt $I$, dem Mittelpunkt des Inkreises, der alle drei Seiten berührt.*
 
 ## Übersicht: Besondere Punkte
 
@@ -206,12 +186,51 @@ Die **Winkelhalbierende** teilt einen Winkel in zwei gleich große Teile.
 > $$b < a + c$$
 > $$c < a + b$$
 
-> [!example] Beispiel
+### Anschauliche Begründung
+
+Warum muss das so sein? Stell dir vor, du baust ein Dreieck aus drei Stäben. Zwei Stäbe sind an der Grundseite (Länge $c$) mit Gelenken befestigt und sollen sich oben zur Spitze treffen.
+
+- Sind die beiden oberen Stäbe **zusammen länger** als die Grundseite, treffen sie sich und bilden eine Spitze – ein Dreieck entsteht.
+- Sind sie **zusammen genau so lang** wie die Grundseite, klappen sie flach auf die Grundseite. Alle drei Punkte liegen auf einer Geraden – ein „entartetes" Dreieck ohne Fläche.
+- Sind sie **zusammen kürzer** als die Grundseite, können sie sich gar nicht erreichen – es klafft eine Lücke, kein Dreieck ist möglich.
+
+Kurz gesagt: Der direkte Weg von einer Ecke zur anderen (die eine Seite) ist immer **kürzer** als jeder Umweg über die dritte Ecke (die beiden anderen Seiten). Das ist dieselbe Idee wie bei der [[01-Punkte-Strecken-Geraden|Strecke als kürzester Verbindung]] zweier Punkte.
+
+### Kurzform: Nur die längste Seite prüfen
+
+Man muss nicht alle drei Ungleichungen testen. Es genügt, die **längste** Seite zu betrachten:
+
+> [!tip] Merkregel
+> Ist die **längste** Seite kleiner als die Summe der beiden anderen, ist die Bedingung automatisch für alle drei Seiten erfüllt.
+
+Der Grund: Ist $c$ die längste Seite, dann sind $a < b + c$ und $b < a + c$ ohnehin erfüllt (eine kleinere Zahl ist immer kleiner als eine größere plus etwas Positives). Nur $c < a + b$ kann überhaupt „scheitern".
+
+### Der Grenzfall: entartetes Dreieck
+
+Gilt statt „$<$" die **Gleichheit**, z. B. $c = a + b$, so liegen alle drei Ecken auf einer Geraden. Man spricht von einem **entarteten Dreieck**: Es hat die Fläche $0$ und keine echten Innenwinkel. Deshalb steht in der Bedingung bewusst ein echtes Kleiner-Zeichen ($<$) und kein $\leq$.
+
+### Beispiele
+
+> [!example] Beispiel 1 – kein Dreieck
 > Können die Seiten $a = 3$, $b = 4$, $c = 8$ ein Dreieck bilden?
 > 
-> Prüfung: $3 + 4 = 7 < 8$ ✗
+> Längste Seite ist $c = 8$. Prüfung: $a + b = 3 + 4 = 7 < 8$ ✗
 > 
-> Nein, kein Dreieck möglich!
+> Die beiden kurzen Seiten sind zusammen kürzer als die lange – **kein Dreieck möglich**.
+
+> [!example] Beispiel 2 – gültiges Dreieck
+> Können die Seiten $a = 5$, $b = 6$, $c = 9$ ein Dreieck bilden?
+> 
+> Längste Seite ist $c = 9$. Prüfung: $a + b = 5 + 6 = 11 > 9$ ✓
+> 
+> Die Bedingung ist erfüllt – **ein Dreieck existiert**.
+
+> [!example] Beispiel 3 – Grenzfall
+> Seiten $a = 4$, $b = 6$, $c = 10$:
+> 
+> $a + b = 4 + 6 = 10 = c$ → Gleichheit
+> 
+> Es entsteht ein **entartetes Dreieck** (alle Punkte auf einer Geraden, Fläche $0$) – im strengen Sinn kein echtes Dreieck.
 
 ## Zusammenfassung
 

@@ -1,7 +1,7 @@
 ---
 title: "Punkte, Strecken und Geraden"
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 chapter: "10"
 section: "01"
 status: "draft - review pending"
@@ -47,11 +47,8 @@ In der Praxis markieren wir Punkte durch kleine Kreuze oder Punkte – diese sin
 
 Punkte werden mit **Großbuchstaben** bezeichnet: $A$, $B$, $C$, $P$, $Q$, ...
 
-```
-         • A
-    
-    • B        • C
-```
+![[punkte.png]]
+*<span class="fig-id">10-01-punkte</span>: Punkte werden mit Großbuchstaben benannt und markieren eine exakte Position.*
 
 > [!tip] **Koordinaten geben Punkten eine Adresse**
 > Im [[01-Kartesisches-Koordinatensystem|Koordinatensystem]] erhält jeder Punkt eine eindeutige „Adresse" durch seine Koordinaten, z.B. $P(3, 2)$. So können wir Punkte nicht nur benennen, sondern auch rechnerisch verarbeiten.
@@ -76,10 +73,8 @@ Die Strecke von $A$ nach $B$: $\overline{AB}$ oder $[AB]$
 
 Die Länge der Strecke: $|\overline{AB}|$ oder einfach $AB$
 
-```
-    A •────────────• B
-         Strecke AB
-```
+![[strecke.png]]
+*<span class="fig-id">10-01-strecke</span>: Die Strecke $\overline{AB}$ verbindet zwei Endpunkte und hat eine endliche Länge.*
 
 > [!note] **Warum ist die Strecke „die kürzeste Verbindung"?**
 > Dies ist ein Grundsatz der euklidischen Geometrie: Zwischen zwei Punkten gibt es unendlich viele Wege, aber nur einer ist der kürzeste – die gerade Verbindung. In der Praxis nutzen wir dieses Prinzip unbewusst, wenn wir „Abkürzungen" nehmen.
@@ -96,10 +91,8 @@ Ein **Strahl** hat:
 
 Der Strahl von $A$ durch $B$: $\overrightarrow{AB}$
 
-```
-    A •────────────────────→
-         Strahl AB
-```
+![[strahl.png]]
+*<span class="fig-id">10-01-strahl</span>: Der Strahl $\overrightarrow{AB}$ beginnt in $A$, verläuft durch $B$ und ist einseitig unbegrenzt.*
 
 > [!note] Unterschied Strahl/Strecke
 > - Strecke: zwei Endpunkte, endliche Länge
@@ -121,20 +114,17 @@ Die Gerade durch $A$ und $B$: $AB$ oder $g_{AB}$
 
 Allgemein: kleine Buchstaben: $g$, $h$, $k$, ...
 
-```
-    ←────────•────────•────────→
-             A        B
-             Gerade g
-```
+![[gerade.png]]
+*<span class="fig-id">10-01-gerade</span>: Die Gerade $g$ ist durch zwei Punkte $A$ und $B$ eindeutig bestimmt und beidseitig unbegrenzt.*
 
 ## Übersicht: Grundobjekte
 
-| Objekt | Anfang | Ende | Länge | Symbol |
-|---|---|---|---|---|
-| Punkt | – | – | 0 | $A$ |
-| Strecke | ja | ja | endlich | $\overline{AB}$ |
-| Strahl | ja | nein | unendlich | $\overrightarrow{AB}$ |
-| Gerade | nein | nein | unendlich | $g$ |
+| Objekt  | Anfang | Ende | Länge     | Symbol                |
+| ------- | ------ | ---- | --------- | --------------------- |
+| Punkt   | –      | –    | 0         | $A$                   |
+| Strecke | ja     | ja   | endlich   | $\overline{AB}$       |
+| Strahl  | ja     | nein | unendlich | $\overrightarrow{AB}$ |
+| Gerade  | nein   | nein | unendlich | $g$                   |
 
 ## Lagebeziehungen zwischen Geraden
 
@@ -142,20 +132,14 @@ Wenn wir zwei Geraden in einer Ebene betrachten, gibt es genau drei Möglichkeit
 
 ### Zwei Geraden in der Ebene
 
-```
-parallel:           schneidend:         identisch:
-                    
-g ─────────         g ─────╲            g ═══════
-                           ╲
-h ─────────         h ──────╳────       h ═══════
-                            ╲
-```
+![[lagebeziehungen.png]]
+*<span class="fig-id">10-01-lagebeziehungen</span>: Die drei möglichen Lagebeziehungen zweier Geraden in der Ebene: parallel, schneidend und identisch.*
 
-| Lagebeziehung | Beschreibung | Gemeinsame Punkte |
-|---|---|---|
-| **Parallel** | Gleiche Richtung, kein Schnittpunkt | 0 |
-| **Schneidend** | Genau ein Schnittpunkt | 1 |
-| **Identisch** | Dieselbe Gerade | unendlich viele |
+| Lagebeziehung  | Beschreibung                        | Gemeinsame Punkte |
+| -------------- | ----------------------------------- | ----------------- |
+| **Parallel**   | Gleiche Richtung, kein Schnittpunkt | 0                 |
+| **Schneidend** | Genau ein Schnittpunkt              | 1                 |
+| **Identisch**  | Dieselbe Gerade                     | unendlich viele   |
 
 > [!note] **Parallelität im Alltag**
 > Parallele Geraden begegnen uns täglich: Eisenbahnschienen, die Linien auf einem Collegeblock, gegenüberliegende Kanten eines Rechtecks. In der euklidischen Geometrie treffen sich parallele Geraden niemals – auch wenn sie ins Unendliche verlängert werden.
@@ -166,12 +150,8 @@ Zwei Geraden sind **senkrecht** (orthogonal), wenn sie sich im **rechten Winkel*
 
 Schreibweise: $g \perp h$
 
-```
-         g
-         │
-    ─────┼───── h
-         │
-```
+![[senkrechte-geraden.png]]
+*<span class="fig-id">10-01-senkrechte-geraden</span>: Senkrechte (orthogonale) Geraden schneiden sich im rechten Winkel: $g \perp h$.*
 
 Senkrechte Geraden spielen eine besondere Rolle in Architektur und Technik: Wände stehen senkrecht zum Boden, Fensterrahmen haben rechte Winkel, Koordinatenachsen stehen senkrecht aufeinander.
 
@@ -202,14 +182,8 @@ $$d(A, B) = \sqrt{(x_B - x_A)^2 + (y_B - y_A)^2}$$
 
 Der Abstand eines Punktes $P$ zu einer Geraden $g$ ist die **Länge des Lots** von $P$ auf $g$.
 
-```
-         P •
-           │
-           │ d (Lot)
-           │
-    ───────•────── g
-         Fußpunkt F
-```
+![[abstand-punkt-gerade.png]]
+*<span class="fig-id">10-01-abstand-punkt-gerade</span>: Der Abstand $d$ von Punkt $P$ zur Geraden $g$ ist die Länge des Lots mit Fußpunkt $F$.*
 
 > [!warning] **Häufiger Fehler**
 > Der Abstand eines Punktes zu einer Geraden ist **nicht** der Abstand zu irgendeinem Punkt auf der Geraden, sondern immer der kürzeste Abstand – und der verläuft senkrecht!

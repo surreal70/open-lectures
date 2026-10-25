@@ -1,7 +1,7 @@
 ---
 title: "Vierecke"
 created: 2026-10-13
-modified: 2025-01-20
+modified: 2026-10-25
 chapter: "10"
 section: "05"
 status: "draft - review pending"
@@ -47,14 +47,8 @@ Ein **Viereck** ist eine geschlossene Figur mit vier Seiten und vier Ecken.
 
 ### Bezeichnung
 
-```
-    D ●────────────● C
-     ╱              ╲
-    ╱                ╲
-   ╱                  ╲
-  ●────────────────────●
-  A                     B
-```
+![[viereck-allgemein.png]]
+*<span class="fig-id">10-05-viereck-allgemein</span>: Allgemeines Viereck mit Ecken $A$–$D$, Seiten $a$–$d$ und den Diagonalen $e$ und $f$.*
 
 - Eckpunkte: $A$, $B$, $C$, $D$ (gegen den Uhrzeigersinn)
 - Seiten: $a = \overline{AB}$, $b = \overline{BC}$, $c = \overline{CD}$, $d = \overline{DA}$
@@ -78,13 +72,8 @@ Das **Quadrat** ist das regelmäßigste Viereck.
 - Diagonalen gleich lang, halbieren sich rechtwinklig
 - Achsensymmetrisch (4 Achsen), punktsymmetrisch
 
-```
-    ┌────────┐
-    │        │
-    │        │
-    │        │
-    └────────┘
-```
+![[viereck-quadrat.png]]
+*<span class="fig-id">10-05-viereck-quadrat</span>: Das Quadrat – alle Seiten gleich lang, alle Winkel $90°$.*
 
 ### Das Rechteck
 
@@ -94,12 +83,8 @@ Das **Quadrat** ist das regelmäßigste Viereck.
 - Diagonalen gleich lang, halbieren sich
 - Achsensymmetrisch (2 Achsen), punktsymmetrisch
 
-```
-    ┌────────────────┐
-    │                │
-    │                │
-    └────────────────┘
-```
+![[viereck-rechteck.png]]
+*<span class="fig-id">10-05-viereck-rechteck</span>: Das Rechteck – gegenüberliegende Seiten gleich lang, alle Winkel $90°$.*
 
 ### Das Parallelogramm
 
@@ -110,12 +95,8 @@ Das **Quadrat** ist das regelmäßigste Viereck.
 - Diagonalen halbieren sich
 - Punktsymmetrisch
 
-```
-        ┌─────────────┐
-       ╱             ╱
-      ╱             ╱
-     └─────────────┘
-```
+![[viereck-parallelogramm.png]]
+*<span class="fig-id">10-05-viereck-parallelogramm</span>: Das Parallelogramm – gegenüberliegende Seiten parallel und gleich lang.*
 
 ### Die Raute (Rhombus)
 
@@ -125,17 +106,8 @@ Das **Quadrat** ist das regelmäßigste Viereck.
 - Diagonalen halbieren sich rechtwinklig
 - Achsensymmetrisch (2 Achsen), punktsymmetrisch
 
-```
-        ◇
-       ╱ ╲
-      ╱   ╲
-     ╱     ╲
-    ◇       ◇
-     ╲     ╱
-      ╲   ╱
-       ╲ ╱
-        ◇
-```
+![[viereck-raute.png]]
+*<span class="fig-id">10-05-viereck-raute</span>: Die Raute – alle Seiten gleich lang, Diagonalen stehen senkrecht aufeinander.*
 
 ### Das Trapez
 
@@ -144,12 +116,8 @@ Das **Quadrat** ist das regelmäßigste Viereck.
 - Die parallelen Seiten heißen **Grundseiten**
 - Die anderen heißen **Schenkel**
 
-```
-      ┌────────┐
-     ╱          ╲
-    ╱            ╲
-   └──────────────┘
-```
+![[viereck-trapez.png]]
+*<span class="fig-id">10-05-viereck-trapez</span>: Das Trapez – genau ein Paar paralleler Seiten (die Grundseiten).*
 
 ### Das gleichschenklige Trapez
 
@@ -167,34 +135,22 @@ Das **Quadrat** ist das regelmäßigste Viereck.
 - Die Diagonalen stehen senkrecht aufeinander
 - Achsensymmetrisch (1 Achse)
 
-```
-        ◇
-       ╱ ╲
-      ╱   ╲
-     ╱     ╲
-    ◇───────◇
-      ╲   ╱
-       ╲ ╱
-        ◇
-```
+![[viereck-drachen.png]]
+*<span class="fig-id">10-05-viereck-drachen</span>: Der Drachen – zwei Paare benachbarter gleich langer Seiten, Diagonalen stehen senkrecht aufeinander.*
 
 ## Hierarchie der Vierecke
 
-```
-                    Viereck
-                       │
-           ┌───────────┼───────────┐
-           │           │           │
-        Trapez    Parallelogramm  Drachen
-           │           │           │
-    gleichschenkliges  │           │
-        Trapez    ┌────┴────┐      │
-                  │         │      │
-              Rechteck    Raute────┘
-                  │         │
-                  └────┬────┘
-                       │
-                    Quadrat
+```mermaid
+graph TD
+    V[Viereck] --> T[Trapez]
+    V --> P[Parallelogramm]
+    V --> D[Drachen]
+    T --> GT[gleichschenkliges Trapez]
+    P --> RE[Rechteck]
+    P --> RA[Raute]
+    D --> RA
+    RE --> Q[Quadrat]
+    RA --> Q
 ```
 
 > [!note] Vererbung
