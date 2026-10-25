@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.2"
 type: lecture
 created: 2026-10-13
-modified: 2025-06-23
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -166,11 +166,8 @@ Mit dem [[11-Satz-des-Pythagoras-und-Trigonometrie/02-Satz-des-Pythagoras|Satz d
 
 Es gibt 11 verschiedene Würfelnetze. Das bekannteste:
 
-```
-    ▢
-  ▢ ▢ ▢ ▢
-    ▢
-```
+![[wuerfelnetz.png]]
+*<span class="fig-id">12-02-wuerfelnetz</span>: Das bekannteste der elf Würfelnetze – vier Quadrate in einer Reihe mit je einem oben und unten.*
 
 ### Praktische Anwendung
 

@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.3"
 type: lecture
 created: 2026-10-13
-modified: 2025-06-23
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -206,15 +206,8 @@ Die Raumdiagonale verbindet zwei gegenüberliegende Ecken des Quaders und ist di
 
 Ein Quadernetz besteht aus 6 Rechtecken, die zusammengefaltet den Quader ergeben:
 
-```
-        ┌────────┐
-        │   c×b  │
-┌───────┼────────┼───────┬────────┐
-│  c×b  │  a×b   │  c×b  │  a×b   │
-└───────┼────────┼───────┴────────┘
-        │   c×b  │
-        └────────┘
-```
+![[quadernetz.png]]
+*<span class="fig-id">12-03-quadernetz</span>: Quadernetz aus sechs Rechtecken – je zwei Flächen mit den Maßen $a\times b$, $b\times c$ und $a\times c$.*
 
 ## Zusammenfassung
 

@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.1"
 type: lecture
 created: 2026-10-13
-modified: 2025-06-23
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -170,12 +170,8 @@ In der Architektur spielen geometrische Körper eine besondere Rolle: Die Pyrami
 Ein Körpernetz zeigt alle Flächen flach ausgebreitet:
 
 > [!example] Würfelnetz
-> ```
->     ▢
->   ▢ ▢ ▢ ▢
->     ▢
-> ```
-> 6 Quadrate ergeben zusammengefaltet einen Würfel.
+> ![[wuerfelnetz.png]]
+> *<span class="fig-id">12-01-wuerfelnetz</span>: Ein Würfelnetz aus sechs Quadraten, das zusammengefaltet einen Würfel ergibt.*
 
 ### Schrägbild
 

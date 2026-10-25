@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.7"
 type: lecture
 created: 2026-10-13
-modified: 2025-06-23
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -60,15 +60,8 @@ Mit dem [[11-Satz-des-Pythagoras-und-Trigonometrie/02-Satz-des-Pythagoras|Satz d
 
 Die Mantellinie $s$ ist die Strecke von einem Punkt auf dem Grundkreis zur Spitze. Sie bildet mit dem Radius und der Höhe ein rechtwinkliges Dreieck – daher die Anwendung des Satzes des Pythagoras.
 
-```
-      Spitze
-        /|\
-       / | \
-      /  |h \ s
-     /   |   \
-    /____|____\
-         r
-```
+![[kegel.png]]
+*<span class="fig-id">12-07-kegel</span>: Kreiskegel mit Radius $r$, Körperhöhe $h$ und Mantellinie $s$. Es gilt $s = \sqrt{r^2 + h^2}$.*
 
 ## Volumen des Kegels
 

@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.12"
 type: lecture
 created: 2026-10-13
-modified: 2025-06-23
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper

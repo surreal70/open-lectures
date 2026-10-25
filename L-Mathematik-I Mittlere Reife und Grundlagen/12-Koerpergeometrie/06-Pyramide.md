@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.6"
 type: lecture
 created: 2026-10-13
-modified: 2025-06-23
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -144,18 +144,8 @@ Mit dem [[11-Satz-des-Pythagoras-und-Trigonometrie/02-Satz-des-Pythagoras|Satz d
 
 ### Zusammenhang (quadratische Pyramide)
 
-```
-      Spitze
-        /|\
-       / | \
-      /  |h \
-     /   |   \
-    /____|____\
-    |    |    |
-    a/2      a/2
-    
-    h_s² = h² + (a/2)²
-```
+![[pyramide.png]]
+*<span class="fig-id">12-06-pyramide</span>: Quadratische Pyramide mit Spitze $S$, Körperhöhe $h$ und Grundkante $a$. Es gilt $h_s^2 = h^2 + (a/2)^2$.*
 
 > [!example] Beispiel 4: Alle Maße berechnen
 > Eine quadratische Pyramide hat $a = 8$ cm und $s = 10$ cm (Seitenkante).

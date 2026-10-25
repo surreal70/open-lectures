@@ -4,7 +4,7 @@ chapter: "12"
 section: "12.9"
 type: lecture
 created: 2026-10-13
-modified: 2025-06-23
+modified: 2026-10-25
 status: draft - review pending
 tags:
   - mathematik/geometrie/koerper
@@ -78,10 +78,8 @@ Die Kugelformel steht für sich allein – sie folgt weder dem Prisma- noch dem 
 
 ### Umrechnungsfaktoren
 
-```
-mm³  →  cm³  →  dm³  →  m³
-    ÷1000   ÷1000   ÷1000
-```
+![[volumen-einheiten.png]]
+*<span class="fig-id">12-09-volumen-einheiten</span>: Umrechnung der Volumeneinheiten – jeder Schritt entspricht dem Faktor 1000.*
 
 > [!tip] Merkhilfe
 > Bei Volumeneinheiten verschiebt man das Komma immer um **drei** Stellen (weil Volumen = Länge³).
