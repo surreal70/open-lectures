@@ -1,7 +1,7 @@
 ---
 title: "Der Kosinus"
 created: 2026-10-13
-modified: 2025-06-20
+modified: 2026-10-25
 chapter: "11"
 section: "07"
 status: "draft - review pending"
@@ -29,20 +29,8 @@ Der Kosinus ist der „Bruder" des Sinus und beschreibt das Verhältnis von Anka
 
 $$\cos(\alpha) = \frac{\text{Ankathete}}{\text{Hypotenuse}}$$
 
-```
-       C
-       │╲
-       │ ╲
-       │  ╲
-    a  │   ╲  c
-       │    ╲(Hypotenuse)
-       │  α ╲
-       │______╲
-       A   b   B
-       (Ankathete)
-       
-       cos(α) = b/c
-```
+![[kosinus-dreieck.png]]
+*<span class="fig-id">11-07-kosinus-dreieck</span>: Im rechtwinkligen Dreieck ist $\cos(\alpha)$ das Verhältnis von Ankathete $b$ zur Hypotenuse $c$.*
 
 > [!tip] **Anschauliche Vorstellung**
 > Wenn du auf der Hypotenuse entlanggehst, gibt der Kosinus an, wie viel du dabei „horizontal" vorankommst. Bei α = 0° gehst du rein horizontal (cos = 1), bei α = 90° gehst du rein vertikal und kommst horizontal nicht voran (cos = 0).
@@ -112,15 +100,8 @@ $$0 < \cos(\alpha) < 1$$
 
 ## Der Graph der Kosinusfunktion
 
-```
-  cos(α)
-    1 ┤●
-      │ ╲
-  0,5 ┤   ╲
-      │     ╲
-    0 ┼───────●────→ α
-      │  30  60  90
-```
+![[kosinus-graph.png]]
+*<span class="fig-id">11-07-kosinus-graph</span>: Der Kosinus fällt zwischen 0° und 90° monoton von 1 auf 0 ab.*
 
 - Bei 0°: cos = 1 (Maximum)
 - Bei 90°: cos = 0
@@ -166,13 +147,8 @@ $$\sin^2(\alpha) + \cos^2(\alpha) = 1$$
 > [!example] Schatten
 > Ein 12 m hoher Mast wirft bei einem Sonnenstand von 35° (gemessen zur Horizontalen) einen Schatten. Wie lang ist der Schatten?
 > 
-> ```
->     │  ╱
->     │ ╱
-> 12m │╱ 35°
->     └─────────
->       Schatten
-> ```
+> ![[kosinus-schatten.png]]
+> *<span class="fig-id">11-07-kosinus-schatten</span>: Ein 12 m hoher Mast mit Sonnenstand 35° zur Horizontalen wirft einen Schatten.*
 > 
 > Der Schattenwinkel am Boden ist der Komplementwinkel: $90° - 35° = 55°$
 > 

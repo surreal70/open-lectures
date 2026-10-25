@@ -1,7 +1,7 @@
 ---
 title: "Steigungen und Neigungswinkel"
 created: 2026-10-13
-modified: 2025-06-20
+modified: 2026-10-25
 chapter: "11"
 section: "11"
 status: "draft - review pending"
@@ -32,15 +32,8 @@ Die **Steigung** einer Geraden oder Fläche ist definiert als:
 
 $$\text{Steigung} = \frac{\text{Höhenunterschied}}{\text{Horizontale Entfernung}} = \tan(\alpha)$$
 
-```
-         ╱│
-        ╱ │ Höhe h
-       ╱α │
-      ╱───┘
-       Länge l
-       
-    Steigung = h/l = tan(α)
-```
+![[steigung-dreieck.png]]
+*<span class="fig-id">11-11-steigung-dreieck</span>: Die Steigung ist der Quotient aus Höhe $h$ und horizontaler Länge $l$ – also der Tangens des Neigungswinkels $\alpha$.*
 
 > [!note] **Warum ist Steigung = Tangens?**
 > Die Definition der Steigung (Höhe geteilt durch horizontale Länge) entspricht exakt der Definition des Tangens (Gegenkathete geteilt durch Ankathete). Deshalb ist der Tangens die „natürliche" Funktion für Steigungsberechnungen.
@@ -104,11 +97,8 @@ $$p = \tan(\alpha) \times 100$$
 
 ### Straßenschilder
 
-```
-   ╱╲
-  ╱12%╲
- ╱────╲
-```
+![[steigung-strassenschild.png]]
+*<span class="fig-id">11-11-steigung-strassenschild</span>: Verkehrszeichen für 12 % Steigung.*
 
 Ein Schild „12% Steigung" bedeutet:
 - Auf 100 m horizontaler Strecke gewinnt man 12 m Höhe

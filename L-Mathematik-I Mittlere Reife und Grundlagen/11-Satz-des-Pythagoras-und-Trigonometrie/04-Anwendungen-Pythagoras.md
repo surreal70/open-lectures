@@ -1,7 +1,7 @@
 ---
 title: "Anwendungen des Satzes des Pythagoras"
 created: 2026-10-13
-modified: 2025-06-20
+modified: 2026-10-25
 chapter: "11"
 section: "04"
 status: "draft - review pending"
@@ -46,20 +46,8 @@ Bei einem Quadrat mit Seitenlänge $a$ ist die Diagonale immer $a \cdot \sqrt{2}
 
 Die Raumdiagonale verbindet zwei gegenüberliegende Ecken eines Quaders und durchquert den gesamten Körper. Die Berechnung erfolgt durch zweimalige Anwendung des Pythagoras – oder mit der eleganten Formel:
 
-```
-        ┌─────────────────┐
-       ╱│                ╱│
-      ╱ │               ╱ │
-     ╱  │       d      ╱  │
-    ┌───│─────────────┐   │ c
-    │   │             │   │
-    │   └─────────────│───┘
-    │  ╱              │  ╱
-    │ ╱               │ ╱  b
-    │╱                │╱
-    └─────────────────┘
-            a
-```
+![[quader-raumdiagonale.png]]
+*<span class="fig-id">11-04-quader-raumdiagonale</span>: Die Raumdiagonale $d$ des Quaders. Die gestrichelte Flächendiagonale der Grundfläche dient als Zwischenschritt der Herleitung.*
 
 $$d = \sqrt{a^2 + b^2 + c^2}$$
 
@@ -88,17 +76,8 @@ Ein Würfel mit Kantenlänge $a$ hat eine Raumdiagonale von $a \cdot \sqrt{3} \a
 
 Im gleichschenkligen Dreieck halbiert die Höhe die Basis und erzeugt zwei kongruente rechtwinklige Dreiecke. Diese Eigenschaft macht die Höhenberechnung mit Pythagoras besonders elegant.
 
-```
-           A
-          ╱╲
-         ╱  ╲
-        ╱    ╲   a
-       ╱  h   ╲
-      ╱   │    ╲
-     ╱____|____╲
-    B     M     C
-        c/2
-```
+![[gleichschenklig-hoehe.png]]
+*<span class="fig-id">11-04-gleichschenklig-hoehe</span>: Die Höhe $h$ halbiert die Basis im Punkt $M$ und bildet zwei rechtwinklige Dreiecke mit Hypotenuse $a$ und halber Basis $\tfrac{c}{2}$.*
 
 Die Höhe $h$ im gleichschenkligen Dreieck:
 

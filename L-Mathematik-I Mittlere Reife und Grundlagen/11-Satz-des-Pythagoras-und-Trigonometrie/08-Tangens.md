@@ -1,7 +1,7 @@
 ---
 title: "Der Tangens"
 created: 2026-10-13
-modified: 2025-06-20
+modified: 2026-10-25
 chapter: "11"
 section: "08"
 status: "draft - review pending"
@@ -29,20 +29,8 @@ Der Tangens ist die dritte Winkelfunktion und hat eine besondere praktische Bede
 
 $$\tan(\alpha) = \frac{\text{Gegenkathete}}{\text{Ankathete}}$$
 
-```
-       C
-       │╲
-       │ ╲
-       │  ╲
-    a  │   ╲
-(Gegen-│    ╲
-kathete)│  α ╲
-       │______╲
-       A   b   B
-       (Ankathete)
-       
-       tan(α) = a/b
-```
+![[tangens-dreieck.png]]
+*<span class="fig-id">11-08-tangens-dreieck</span>: Im rechtwinkligen Dreieck ist $\tan(\alpha)$ das Verhältnis von Gegenkathete $a$ zur Ankathete $b$.*
 
 > [!tip] **Anschauliche Vorstellung**
 > Der Tangens beschreibt direkt die „Steilheit" eines Winkels: Wie viel geht es nach oben, wenn ich eine Einheit nach vorne gehe? Bei 45° ist die Antwort genau 1 (tan(45°) = 1), denn beide Katheten sind gleich lang.
@@ -119,14 +107,8 @@ Im rechtwinkligen Dreieck (0° < α < 90°):
 
 Dies ist eine der wichtigsten praktischen Anwendungen des Tangens. In der Analysis und bei linearen Funktionen spielt diese Verbindung eine zentrale Rolle.
 
-```
-    y
-    ↑
-    │      ╱
-    │    ╱  m = tan(α)
-    │  ╱ α
-    │╱________→ x
-```
+![[tangens-steigung.png]]
+*<span class="fig-id">11-08-tangens-steigung</span>: Die Steigung $m$ einer Geraden entspricht dem Tangens ihres Steigungswinkels $\alpha$.*
 
 $$m = \tan(\alpha)$$
 
@@ -152,15 +134,8 @@ $$\alpha = \arctan(m)$$
 > [!example] Höhenmessung
 > Von einem Punkt, der 25 m vom Fuß eines Turms entfernt ist, wird die Turmspitze unter einem Winkel von 58° gesehen. Wie hoch ist der Turm?
 > 
-> ```
->         ╱
->        ╱│
->       ╱ │ h
->      ╱  │
->     ╱58°│
->    ●────┘
->     25 m
-> ```
+> ![[tangens-hoehenmessung.png]]
+> *<span class="fig-id">11-08-tangens-hoehenmessung</span>: Aus 25 m Entfernung wird die Turmspitze unter 58° gesehen; der Tangens liefert die Höhe $h$.*
 > 
 > **Lösung**:
 > $\tan(58°) = \frac{h}{25}$

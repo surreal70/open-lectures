@@ -1,7 +1,7 @@
 ---
 title: "Berechnung von Winkeln"
 created: 2026-10-13
-modified: 2025-06-20
+modified: 2026-10-25
 chapter: "11"
 section: "10"
 status: "draft - review pending"
@@ -111,12 +111,8 @@ $$\beta = 90° - \alpha$$
 
 Eine Rampe ist 10 m lang und überwindet eine Höhe von 1,5 m.
 
-```
-    ╱│
- 10m╱ │1,5m
-  ╱α │
- ╱───┘
-```
+![[winkel-rampe.png]]
+*<span class="fig-id">11-10-winkel-rampe</span>: Eine 10 m lange Rampe überwindet 1,5 m Höhe; der Arkussinus liefert den Neigungswinkel $\alpha$.*
 
 $$\alpha = \arcsin\left(\frac{1{,}5}{10}\right) = \arcsin(0{,}15) \approx 8{,}6°$$
 

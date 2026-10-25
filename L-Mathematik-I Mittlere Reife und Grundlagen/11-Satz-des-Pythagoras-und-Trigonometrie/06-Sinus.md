@@ -1,7 +1,7 @@
 ---
 title: "Der Sinus"
 created: 2026-10-13
-modified: 2025-06-20
+modified: 2026-10-25
 chapter: "11"
 section: "06"
 status: "draft - review pending"
@@ -29,19 +29,8 @@ Der Sinus ist die wohl bekannteste der drei Winkelfunktionen. Er beschreibt das 
 
 $$\sin(\alpha) = \frac{\text{Gegenkathete}}{\text{Hypotenuse}}$$
 
-```
-       C
-       │╲
-       │ ╲
-       │  ╲
-    a  │   ╲  c
-(Gegen-│    ╲(Hypotenuse)
-kathete)│  α ╲
-       │______╲
-       A       B
-       
-       sin(α) = a/c
-```
+![[sinus-dreieck.png]]
+*<span class="fig-id">11-06-sinus-dreieck</span>: Im rechtwinkligen Dreieck ist $\sin(\alpha)$ das Verhältnis von Gegenkathete $a$ zur Hypotenuse $c$.*
 
 > [!tip] **Anschauliche Vorstellung**
 > Stelle dir vor, du schaust von Punkt A aus zum Punkt C hinauf. Der Sinus gibt an, wie „steil" dieser Blick ist – als Anteil der Hypotenuse. Bei α = 0° schaust du horizontal (sin = 0), bei α = 90° schaust du senkrecht nach oben (sin = 1).
@@ -118,15 +107,8 @@ Diese Werte solltest du auswendig kennen – sie kommen in Prüfungen häufig vo
 
 ## Der Graph der Sinusfunktion
 
-```
-  sin(α)
-    1 ┤      ●
-      │    ╱   ╲
-  0,5 ┤  ╱       ╲
-      │╱           ╲
-    0 ┼──────────────────→ α
-      │  30  60  90
-```
+![[sinus-graph.png]]
+*<span class="fig-id">11-06-sinus-graph</span>: Der Sinus steigt zwischen 0° und 90° monoton von 0 auf 1 an.*
 
 - Bei 0°: sin = 0
 - Bei 90°: sin = 1 (Maximum)
@@ -137,12 +119,8 @@ Diese Werte solltest du auswendig kennen – sie kommen in Prüfungen häufig vo
 > [!example] Rampe
 > Eine Rollstuhlrampe soll einen Höhenunterschied von 60 cm überwinden. Der maximale Steigungswinkel beträgt 6°. Wie lang muss die Rampe mindestens sein?
 > 
-> ```
->     ╱│
->    ╱ │ 0,6 m
->   ╱6°│
->  ╱───┘
-> ```
+> ![[sinus-rampe.png]]
+> *<span class="fig-id">11-06-sinus-rampe</span>: Rampe mit Höhenunterschied 0,6 m und Steigungswinkel 6°.*
 > 
 > **Lösung**:
 > $\sin(6°) = \frac{0{,}6}{c}$

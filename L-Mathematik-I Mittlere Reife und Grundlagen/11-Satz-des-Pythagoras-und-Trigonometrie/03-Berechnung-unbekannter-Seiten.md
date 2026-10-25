@@ -1,7 +1,7 @@
 ---
 title: "Berechnung unbekannter Seiten"
 created: 2026-10-13
-modified: 2025-06-20
+modified: 2026-10-25
 chapter: "11"
 section: "03"
 status: "draft - review pending"
@@ -31,20 +31,14 @@ Ein strukturiertes Vorgehen hilft, Fehler zu vermeiden und auch komplexere Aufga
 
 ### Schritt-für-Schritt
 
-```
-1. Skizze anfertigen
-         ↓
-2. Rechtwinkliges Dreieck identifizieren
-         ↓
-3. Hypotenuse und Katheten benennen
-         ↓
-4. Bekannte Werte einsetzen
-         ↓
-5. Nach der Unbekannten umstellen
-         ↓
-6. Ausrechnen
-         ↓
-7. Ergebnis prüfen (Plausibilität)
+```mermaid
+graph TD
+    S1[1. Skizze anfertigen] --> S2[2. Rechtwinkliges Dreieck identifizieren]
+    S2 --> S3[3. Hypotenuse und Katheten benennen]
+    S3 --> S4[4. Bekannte Werte einsetzen]
+    S4 --> S5[5. Nach der Unbekannten umstellen]
+    S5 --> S6[6. Ausrechnen]
+    S6 --> S7[7. Ergebnis prüfen - Plausibilität]
 ```
 
 > [!tip] **Warum eine Skizze?**
@@ -113,16 +107,8 @@ Eine 5 m lange Leiter steht 1,5 m von der Hauswand entfernt. Wie hoch reicht sie
 > [!note] **Sicherheitshinweis**
 > Im echten Leben gilt: Der optimale Anstellwinkel einer Leiter beträgt etwa 70–75°. Das entspricht ungefähr einem Fußabstand von einem Viertel der Leiterlänge.
 
-```
-         │
-         │● Oberkante
-         │╲
-    h=?  │ ╲ 5 m
-         │  ╲
-         │   ╲
-    ─────┴────●
-         1,5 m
-```
+![[berechnung-leiter.png]]
+*<span class="fig-id">11-03-berechnung-leiter</span>: Die Leiter (5 m) bildet mit Wand und Boden ein rechtwinkliges Dreieck; der Fußabstand beträgt 1,5 m, gesucht ist die Höhe $h$.*
 
 **Lösung**:
 $$h = \sqrt{5^2 - 1{,}5^2} = \sqrt{25 - 2{,}25} = \sqrt{22{,}75} \approx 4{,}77 \text{ m}$$
@@ -133,14 +119,8 @@ Ein Rechteck hat die Seiten 6 cm und 8 cm. Wie lang ist die Diagonale?
 
 Diese Berechnung ist besonders wichtig bei Bildschirmen und Fernsehern – die Zollangabe bezeichnet immer die Diagonale!
 
-```
-    ┌────────────┐
-    │╲           │
-    │ ╲     d    │ 6
-    │  ╲         │
-    └───╲────────┘
-           8
-```
+![[berechnung-rechteck-diagonale.png]]
+*<span class="fig-id">11-03-berechnung-rechteck-diagonale</span>: Im Rechteck ($8 \times 6$) bildet die Diagonale $d$ mit zwei Seiten ein rechtwinkliges Dreieck.*
 
 **Lösung**:
 $$d = \sqrt{6^2 + 8^2} = \sqrt{36 + 64} = \sqrt{100} = 10 \text{ cm}$$
@@ -154,18 +134,8 @@ Im Koordinatensystem: $A(2, 1)$ und $B(6, 4)$. Wie groß ist der Abstand?
 
 Diese Methode wird auch als **Abstandsformel** bezeichnet und ist eine direkte Anwendung des Satzes des Pythagoras im Koordinatensystem. Sie bildet die Grundlage für GPS-Navigation und Computergrafik.
 
-```
-    y
-    ↑
-  4 ┤        ● B
-    │       ╱│
-    │     ╱  │3
-  1 ┤   ●    │
-    │   A    │
-    └───┬────┬──→ x
-        2    6
-         └4┘
-```
+![[berechnung-abstand-koordinaten.png]]
+*<span class="fig-id">11-03-berechnung-abstand-koordinaten</span>: Der Abstand der Punkte $A(2,1)$ und $B(6,4)$ ist die Hypotenuse eines Dreiecks mit den Katheten $\Delta x = 4$ und $\Delta y = 3$.*
 
 **Lösung**:
 $$d = \sqrt{(6-2)^2 + (4-1)^2} = \sqrt{16 + 9} = \sqrt{25} = 5$$

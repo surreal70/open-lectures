@@ -1,7 +1,7 @@
 ---
 title: "Der Satz des Pythagoras"
 created: 2026-10-13
-modified: 2025-06-20
+modified: 2026-10-25
 chapter: "11"
 section: "02"
 status: "draft - review pending"
@@ -40,6 +40,9 @@ Der Satz des Pythagoras ist einer der bekanntesten und wichtigsten Sätze der ge
 
 Diese Formulierung macht deutlich, dass der Satz eigentlich eine Aussage über **Flächen** ist, nicht nur über Längen. Wenn du tatsächlich Quadrate auf die drei Seiten zeichnest, dann ist das große Quadrat (auf der Hypotenuse) genauso groß wie die beiden kleinen Quadrate (auf den Katheten) zusammen.
 
+![[pythagoras-quadrate.png]]
+*<span class="fig-id">11-02-pythagoras-quadrate</span>: Der Satz als Flächenaussage: Die Quadrate über den Katheten ($a^2$ und $b^2$) sind zusammen so groß wie das Quadrat über der Hypotenuse ($c^2$).*
+
 ## Historischer Hintergrund
 
 > [!note] **Wer war Pythagoras?**
@@ -58,31 +61,12 @@ Die Pythagoreer hielten ihr Wissen zunächst geheim. Der Legende nach wurde ein 
 
 Dieser Beweis ist einer der elegantesten und anschaulichsten. Er basiert auf der Idee, dass die gleiche Fläche auf zwei verschiedene Arten zerlegt werden kann.
 
-Zwei gleich große Quadrate mit Seitenlänge $(a + b)$:
+Man betrachtet ein großes Quadrat mit der Seitenlänge $(a + b)$. In seine Ecken legt man vier gleiche rechtwinklige Dreiecke (Katheten $a$, $b$); dazwischen bleibt ein gekipptes Quadrat mit der Seitenlänge $c$.
 
-**Anordnung 1**:
-```
-┌────┬────────┐
-│    │        │
-│ a² │        │
-│    │        │
-├────┼────────┤
-│    │   b²   │
-└────┴────────┘
-```
-Plus zwei Rechtecke der Fläche $a \cdot b$
+![[pythagoras-beweis.png]]
+*<span class="fig-id">11-02-pythagoras-beweis</span>: Zerlegungsbeweis: Das große Quadrat $(a+b)^2$ besteht aus dem gekippten Quadrat $c^2$ und vier rechtwinkligen Dreiecken mit je Fläche $\tfrac{1}{2}ab$.*
 
-**Anordnung 2**:
-```
-    ╱╲
-   ╱  ╲
-  ╱ c² ╲
- ╱      ╲
-╱────────╲
-```
-Ein Quadrat $c^2$ plus vier Dreiecke mit je Fläche $\frac{1}{2}ab$
-
-Da beide Anordnungen dieselbe Gesamtfläche haben:
+Die Gesamtfläche des großen Quadrats lässt sich auf zwei Arten ausdrücken – einmal als $(a+b)^2$ ausmultipliziert, einmal als inneres Quadrat plus vier Dreiecke. Da beide dieselbe Fläche beschreiben:
 
 $$a^2 + b^2 + 2ab = c^2 + 4 \cdot \frac{1}{2}ab$$
 $$a^2 + b^2 + 2ab = c^2 + 2ab$$

@@ -1,7 +1,7 @@
 ---
 title: "Einführung in die Trigonometrie"
 created: 2026-10-13
-modified: 2025-06-20
+modified: 2026-10-25
 chapter: "11"
 section: "05"
 status: "draft - review pending"
@@ -40,17 +40,8 @@ Die Trigonometrie erweitert unsere Möglichkeiten, mit Dreiecken zu arbeiten, er
 
 ## Das rechtwinklige Dreieck als Grundlage
 
-```
-       C
-       │╲
-       │ ╲
-       │  ╲
-  Gegen-│   ╲  Hypotenuse
-  kathete│    ╲
-       │  α  ╲
-       │______╲
-       A Ankathete B
-```
+![[trigonometrie-dreieck.png]]
+*<span class="fig-id">11-05-trigonometrie-dreieck</span>: Bezogen auf den Winkel $\alpha$: Ankathete (anliegend), Gegenkathete (gegenüber) und Hypotenuse (gegenüber dem rechten Winkel).*
 
 Bezogen auf den Winkel $\alpha$:
 - **Ankathete**: die Kathete, die am Winkel $\alpha$ anliegt

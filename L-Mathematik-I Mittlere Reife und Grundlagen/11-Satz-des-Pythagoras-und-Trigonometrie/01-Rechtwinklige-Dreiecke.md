@@ -1,7 +1,7 @@
 ---
 title: "Rechtwinklige Dreiecke"
 created: 2026-10-13
-modified: 2025-06-20
+modified: 2026-10-25
 chapter: "11"
 section: "01"
 status: "draft - review pending"
@@ -34,17 +34,8 @@ Ein **rechtwinkliges Dreieck** ist ein Dreieck, bei dem ein Winkel genau **90°*
 > [!note] **Historischer Kontext**
 > Die systematische Beschäftigung mit rechtwinkligen Dreiecken begann bereits bei den Babyloniern um 1800 v. Chr. Sie nutzten diese Dreiecke zur Landvermessung und beim Bau von Bewässerungsanlagen. Die Ägypter verwendeten das berühmte 3-4-5-Dreieck beim Pyramidenbau, um rechte Winkel präzise abzustecken – eine Technik, die von den „Seilspannern" (Harpedonapten) ausgeführt wurde.
 
-```
-       C
-       │╲
-       │ ╲
-       │  ╲
-    a  │   ╲  c (Hypotenuse)
-       │    ╲
-       │     ╲
-       │______╲
-       A   b   B
-```
+![[rechtwinklig-bezeichnung.png]]
+*<span class="fig-id">11-01-rechtwinklig-bezeichnung</span>: Rechtwinkliges Dreieck: Die Katheten $a$ und $b$ schließen den rechten Winkel ein, die Hypotenuse $c$ liegt ihm gegenüber.*
 
 ## Bezeichnungen
 
@@ -72,19 +63,8 @@ Man unterscheidet:
 > [!warning] **Häufiger Fehler**
 > Die Bezeichnungen Ankathete und Gegenkathete sind **nicht fest einer Seite zugeordnet** – sie ändern sich je nachdem, welchen der beiden spitzen Winkel du betrachtest! Was für Winkel α die Ankathete ist, ist für Winkel β die Gegenkathete.
 
-```
-       C
-       │╲
-       │ ╲
-       │  ╲   Gegenkathete zu α
-    a  │   ╲
-       │  α ╲
-       │______╲
-       A   b   B
-       
-       b = Ankathete zu α
-       a = Gegenkathete zu α
-```
+![[rechtwinklig-ankathete-gegenkathete.png]]
+*<span class="fig-id">11-01-rechtwinklig-ankathete-gegenkathete</span>: Bezogen auf den Winkel $\alpha$: Die Ankathete liegt an $\alpha$ an, die Gegenkathete liegt $\alpha$ gegenüber.*
 
 ## Eigenschaften
 
@@ -153,15 +133,8 @@ Wenn diese Gleichung erfüllt ist (mit $c$ als längster Seite), ist das Dreieck
 > [!note] Satz des Thales
 > Jeder Punkt auf einem Halbkreis über dem Durchmesser bildet mit den Endpunkten des Durchmessers ein **rechtwinkliges Dreieck**.
 
-```
-           C
-          ╱╲
-         ╱  ╲
-        ╱    ╲
-       ╱      ╲
-    A ●────────● B
-        Durchmesser
-```
+![[thaleskreis.png]]
+*<span class="fig-id">11-01-thaleskreis</span>: Satz des Thales: Liegt $C$ auf dem Halbkreis über dem Durchmesser $\overline{AB}$, so ist der Winkel bei $C$ stets $90°$.*
 
 Der Winkel bei $C$ ist immer 90°.
 

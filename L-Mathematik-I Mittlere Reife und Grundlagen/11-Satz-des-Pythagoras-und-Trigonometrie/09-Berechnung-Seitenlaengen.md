@@ -1,7 +1,7 @@
 ---
 title: "Berechnung von Seitenlängen"
 created: 2026-10-13
-modified: 2025-06-20
+modified: 2026-10-25
 chapter: "11"
 section: "09"
 status: "draft - review pending"
@@ -56,18 +56,12 @@ Bezogen auf den gegebenen Winkel:
 
 Der folgende Entscheidungsbaum hilft dir, schnell die richtige Funktion zu finden:
 
-```
-Ist die Hypotenuse beteiligt?
-          │
-    ┌─────┴─────┐
-   Ja          Nein
-    │            │
-    │         → tan
-    │
-Gegenkathete   Ankathete
-beteiligt?     beteiligt?
-    │            │
-  → sin        → cos
+```mermaid
+graph TD
+    A[Ist die Hypotenuse<br/>beteiligt?] -->|Nein| T[Tangens]
+    A -->|Ja| B[Welche Kathete?]
+    B -->|Gegenkathete| S[Sinus]
+    B -->|Ankathete| C[Kosinus]
 ```
 
 > [!tip] **Einfache Merkregel**
@@ -114,15 +108,8 @@ $$c = \frac{b}{\cos(\alpha)} = \frac{8}{\cos(55°)} = \frac{8}{0{,}574} \approx 
 
 Von einem 48 m hohen Leuchtturm sieht man ein Schiff unter einem Tiefenwinkel von 8°. Wie weit ist das Schiff entfernt?
 
-```
-    ●─────────── Horizontale
-    │╲ 8°
- 48m│ ╲
-    │  ╲
-    │   ╲
-    └────● Schiff
-      x
-```
+![[seitenlaengen-leuchtturm.png]]
+*<span class="fig-id">11-09-seitenlaengen-leuchtturm</span>: Von einem 48 m hohen Leuchtturm wird ein Schiff unter einem Tiefenwinkel von 8° gesehen; der Tangens liefert die Entfernung $x$.*
 
 **Lösung**:
 $$\tan(8°) = \frac{48}{x}$$

@@ -1,7 +1,7 @@
 ---
 title: "Praktische Vermessungsaufgaben"
 created: 2026-10-13
-modified: 2025-06-20
+modified: 2026-10-25
 chapter: "11"
 section: "12"
 status: "draft - review pending"
@@ -37,17 +37,8 @@ Das Besondere an Vermessungsaufgaben: Wir können oft nicht direkt messen, was u
 
 Um die Höhe eines Objekts zu bestimmen, das man nicht direkt messen kann:
 
-```
-                     │
-                     │ h₂
-        ╱────────────●
-       ╱   α         │
-      ╱              │ h₁
-     ●───────────────┘
-     │      d
-     │ Augenhöhe a
-     ├───────────────
-```
+![[vermessung-anvisieren.png]]
+*<span class="fig-id">11-12-vermessung-anvisieren</span>: Höhenmessung durch Anvisieren – zur berechneten Höhe $h_2 = d \cdot \tan(\alpha)$ wird die Augenhöhe $a$ addiert.*
 
 Gesamthöhe = Augenhöhe + berechnete Höhe
 
@@ -62,16 +53,8 @@ $$h_{gesamt} = a + d \cdot \tan(\alpha)$$
 
 Wenn der Abstand zum Objekt unbekannt ist, misst man von zwei Punkten:
 
-```
-                ● Spitze
-               ╱│
-              ╱ │
-             ╱  │ h
-            ╱   │
-        β  ╱  α │
-    ●─────●─────●
-    B  d  A
-```
+![[vermessung-zwei-standorte.png]]
+*<span class="fig-id">11-12-vermessung-zwei-standorte</span>: Messung von zwei Standorten B und A im Abstand $d$ mit den Höhenwinkeln $\beta$ und $\alpha$.*
 
 Mit bekanntem Abstand $d$ zwischen den Standorten:
 
@@ -92,14 +75,8 @@ $$d = \frac{h}{\tan(\alpha)}$$
 
 ### Peiltriangulation
 
-```
-        ● Ziel
-       ╱ ╲
-      ╱   ╲
-   α ╱     ╲ β
-    ●───────●
-    A   b   B
-```
+![[vermessung-peiltriangulation.png]]
+*<span class="fig-id">11-12-vermessung-peiltriangulation</span>: Peiltriangulation – aus der Basislinie $b$ und den Peilwinkeln $\alpha$ und $\beta$ lässt sich die Entfernung zum Ziel bestimmen.*
 
 Mit der Basislinie $b$ und den Peilwinkeln:
 
@@ -112,16 +89,8 @@ $$\text{Entfernung von A} = \frac{b \cdot \sin(\beta)}{\sin(180° - \alpha - \be
 > [!example] Beispiel
 > Von einem Punkt P sieht man die Spitze eines Turms unter einem Höhenwinkel von 28°. Man geht 50 m auf den Turm zu und misst nun einen Winkel von 42°. Wie hoch ist der Turm?
 > 
-> ```
->           ● Spitze
->          ╱│
->         ╱ │
->        ╱  │ h
->     42°╱   │
->    ●──╱────● Fuß
->    Q╱  50m  P
->     x
-> ```
+> ![[vermessung-turmhoehe.png]]
+> *<span class="fig-id">11-12-vermessung-turmhoehe</span>: Turmhöhe aus zwei Messungen – von Q unter 28°, nach 50 m von P unter 42°.*
 > 
 > Es gilt:
 > - $\tan(28°) = \frac{h}{x + 50}$
