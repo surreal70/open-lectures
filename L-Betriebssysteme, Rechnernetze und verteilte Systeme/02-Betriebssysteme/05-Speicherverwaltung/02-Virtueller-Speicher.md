@@ -405,7 +405,6 @@ Erst wenn Eltern- oder Kindprozess schreibt:
 > - Konzept des virtuellen Speichers und Lokalitätsprinzip
 > - Page Fault: Arten und Behandlung
 > - Speicherhierarchie (Zugriffszeiten kennen!)
-> - Working Set und Thrashing
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Was ist virtueller Speicher und welche Vorteile bietet er?

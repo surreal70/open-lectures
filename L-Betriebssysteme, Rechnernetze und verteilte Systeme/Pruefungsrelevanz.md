@@ -12,7 +12,7 @@ Diese Datei gibt einen Überblick über den Status der Prüfungsrelevanz-Callout
 
 ## Statistik
 
-- **Dateien mit Prüfungsrelevanz:** 58 von 90
+- **Dateien mit Prüfungsrelevanz:** 63 von 95
 
 ## Dateien nach Kapitel
 
@@ -101,6 +101,11 @@ Diese Datei gibt einen Überblick über den Status der Prüfungsrelevanz-Callout
 | [[01-MPLS]] | ✅ | ❌ | ✅ |
 | [[02-SD-WAN]] | ✅ | ❌ | ✅ |
 | [[03-SASE]] | ✅ | ❌ | ✅ |
+| [[01-Einfuehrung]] | ✅ | ✅ | ✅ |
+| [[02-Kommunikation]] | ✅ | ✅ | ✅ |
+| [[03-Standortbestimmung]] | ✅ | ✅ | ✅ |
+| [[04-Funknetze]] | ✅ | ✅ | ✅ |
+| [[05-Kanalaufteilung]] | ✅ | ✅ | ✅ |
 
 ### 04-Verteilte-Systeme
 
