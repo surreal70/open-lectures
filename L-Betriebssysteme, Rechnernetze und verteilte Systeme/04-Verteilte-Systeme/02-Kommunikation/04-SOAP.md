@@ -9,7 +9,7 @@ tags:
   - xml
   - webservices
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-24'
 bereich: VS
 ---
 
@@ -47,20 +47,8 @@ SOAP (Simple Object Access Protocol, auch: Simple Object Architecture Protocol) 
 </s:Envelope>
 ```
 
-```mermaid
-graph TB
-    subgraph envelope["SOAP Envelope"]
-        subgraph header["Header (optional)"]
-            H1["Authentifizierung"]
-            H2["Routing-Infos"]
-            H3["Transaktions-ID"]
-        end
-        subgraph body["Body (required)"]
-            B1["Request/Response Daten"]
-            B2["Fault (bei Fehlern)"]
-        end
-    end
-```
+![[soap-envelope.png]]
+*<span class="fig-id">04-02-04-soap-envelope</span>: Struktur einer SOAP-Nachricht mit Envelope, Header und Body*
 
 ### Komponenten
 
@@ -100,6 +88,76 @@ graph TB
 - **Performance**: Parsing von XML ist aufwändig
 - **Flexibilität**: Strikte Struktur weniger agil
 
+---
+
+## WS-*-Standards im Detail
+
+> [!important] Die Stärke von SOAP liegt in den WS-*-Standards
+> Diese Standards machen SOAP für Enterprise-Anwendungen attraktiv, erhöhen aber die Komplexität erheblich.
+
+### WS-Security
+
+Bietet End-to-End-Sicherheit auf Nachrichtenebene (nicht nur Transportebene):
+
+| Feature | Beschreibung |
+|---------|--------------|
+| **Verschlüsselung** | XML Encryption für Teile oder ganze Nachricht |
+| **Signatur** | XML Signature für Integrität und Authentizität |
+| **Tokens** | Username/Password, X.509, Kerberos, SAML |
+| **Timestamps** | Schutz vor Replay-Attacken |
+
+**Vorteil gegenüber HTTPS:** Sicherheit bleibt erhalten, auch wenn die Nachricht über Intermediäre (Proxies, Message Broker) geroutet wird.
+
+### WS-ReliableMessaging
+
+Garantierte Zustellung auch bei Netzwerkproblemen:
+
+```
+Sender: Message 1, Sequence=1
+Sender: Message 2, Sequence=2
+Receiver: Ack für Sequence 1, 2
+Sender: Message 3, Sequence=3
+[Netzwerkfehler]
+Sender: (Timeout) Retry Message 3, Sequence=3
+Receiver: Ack für Sequence 3
+```
+
+### WS-AtomicTransaction
+
+Verteilte Transaktionen über mehrere Services:
+
+```
+Coordinator: Begin Transaction
+  → Service A: Reserve Inventory
+  → Service B: Charge Payment
+  → Service C: Create Shipping Order
+Coordinator: Commit (alle erfolgreich) oder Rollback (einer fehlgeschlagen)
+```
+
+---
+
+## Warum SOAP heute noch?
+
+> [!question] Ist SOAP nicht veraltet?
+> SOAP ist weniger populär als früher, aber in bestimmten Branchen immer noch Standard.
+
+### Branchen mit SOAP-Dominanz
+
+| Branche | Grund |
+|---------|-------|
+| **Banken & Finanzwesen** | WS-Security, Transaktionen, Compliance |
+| **Versicherungen** | Komplexe Datenstrukturen, Legacy-Integration |
+| **Gesundheitswesen** | HL7/FHIR-Integration, Audit-Anforderungen |
+| **Regierung** | Standards, Interoperabilität, Dokumentation |
+| **SAP-Ökosystem** | RFC, BAPI, native SOAP-Unterstützung |
+
+### Migration von SOAP zu REST
+
+Viele Unternehmen migrieren schrittweise:
+1. **Facade-Pattern**: REST-API vor SOAP-Backend
+2. **Parallel-Betrieb**: Neue Features in REST, alte in SOAP
+3. **Strangler Pattern**: Schrittweises Ersetzen von SOAP-Endpoints
+
 ## WSDL (Web Services Description Language)
 
 WSDL beschreibt SOAP-Services maschinenlesbar:
@@ -120,32 +178,28 @@ SOAP eignet sich besonders für:
 
 ## Zusammenhänge
 
-```mermaid
-graph TD
-    SOAP[SOAP] --> |"Alternative zu"| REST[REST]
-    SOAP --> |"basiert auf"| XML[XML]
-    SOAP --> |"beschrieben durch"| WSDL[WSDL]
-    SOAP --> |"Sicherheit"| WS[WS-Security]
-    SOAP --> |"nutzt"| HTTP[HTTP/HTTPS]
-    
-    style SOAP fill:#4a86e8,color:#fff
-```
+| Beziehung | Konzept | Beschreibung |
+|-----------|---------|--------------|
+| Alternative zu | [[03-REST]] | Schwergewichtiger, aber sicherer |
+| Basiert auf | XML | Nachrichtenformat |
+| Beschrieben durch | WSDL | Maschinenlesbare Schnittstellenbeschreibung |
+| Sicherheit | WS-Security | End-to-End-Verschlüsselung und Signatur |
+| Nutzt | HTTP/HTTPS | Transportprotokoll |
 
 ---
 
-## Prüfungstipps
+> [!warning] **Prüfungsrelevant**
+> - SOAP-Nachrichtenstruktur (Envelope, Header, Body)
+> - Unterschiede zwischen SOAP und REST
 
-> [!warning] Häufige Prüfungsfragen
-> - Erklären Sie den Aufbau einer SOAP-Nachricht
-> - Vergleichen Sie SOAP und REST
+> [!question] **Typische Prüfungsfragen**
+> - Vergleichen Sie SOAP und REST hinsichtlich Overhead, Sicherheit und Flexibilität.
 > - Wann würden Sie SOAP statt REST einsetzen?
-
-> [!question] Verständnisfragen
 > - Warum gilt SOAP als sicherer als REST?
 > - Was ist der Unterschied zwischen einem Protokoll und einem Architekturstil?
 > - Welche Rolle spielt WSDL bei SOAP?
 
-> [!tip] Merkhilfe
+> [!tip] **Merkhilfe**
 > **SOAP = Sicherer, aber aufwändiger**:
 > - **S**trikt strukturiert (XML)
 > - **O**verhead durch Envelope
@@ -164,4 +218,7 @@ graph TD
 
 ## Quellen
 
-Die Inhalte basieren auf dem Kurshandbuch "Betriebssysteme, Rechnernetze und verteilte Systeme" der IU Internationalen Hochschule sowie den zugehörigen Vorlesungsmaterialien. SOAP-Spezifikation: https://www.w3.org/TR/soap12-part1/
+- W3C (2007). SOAP Version 1.2 Part 1: Messaging Framework. https://www.w3.org/TR/soap12-part1/
+- W3C (2007). SOAP Version 1.2 Part 2: Adjuncts. https://www.w3.org/TR/soap12-part2/
+- W3C (2007). Web Services Description Language (WSDL) Version 2.0. https://www.w3.org/TR/wsdl20/
+- OASIS (2006). Web Services Security (WS-Security) 1.1. OASIS Standard.

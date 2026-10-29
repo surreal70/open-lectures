@@ -9,7 +9,7 @@ tags:
   - asynchron
   - middleware
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-24'
 bereich: VS
 ---
 
@@ -35,20 +35,11 @@ Message Queues sind asynchrone Kommunikationsmechanismen, bei denen Nachrichten 
 
 ### Synchron vs. Asynchron
 
-```mermaid
-flowchart TB
-    subgraph sync["Synchron (RPC)"]
-        C1[Client] -->|"Request"| S1[Server]
-        S1 -->|"Response"| C1
-        note1["Client wartet blockierend"]
-    end
-    
-    subgraph async["Asynchron (Message Queue)"]
-        C2[Producer] -->|"Nachricht"| Q[Queue]
-        Q -->|"Nachricht"| S2[Consumer]
-        note2["Producer arbeitet weiter"]
-    end
-```
+![[mq-synchron.png]]
+*<span class="fig-id">04-02-02-mq-synchron</span>: Synchrone Kommunikation – Client blockiert während der Verarbeitung*
+
+![[mq-asynchron.png]]
+*<span class="fig-id">04-02-02-mq-asynchron</span>: Asynchrone Kommunikation – Producer arbeitet sofort weiter*
 
 ### Messaging-Pattern
 
@@ -60,9 +51,6 @@ flowchart TB
 | **Fan-out** | Eine Nachricht an viele Consumer verteilen |
 
 ## Liefergarantien
-
-> [!warning] Wichtig für die Prüfung
-> Die verschiedenen Liefergarantien sind ein häufiges Prüfungsthema!
 
 | Garantie | Beschreibung | Trade-off |
 |----------|--------------|-----------|
@@ -76,6 +64,101 @@ Die Exactly-once-Garantie erfordert:
 - Idempotente Consumer (mehrfache Verarbeitung hat gleichen Effekt)
 - Transaktionale Verarbeitung
 - Deduplizierung auf Basis von Message-IDs
+
+---
+
+## Dead Letter Queues (DLQ)
+
+### Wohin mit fehlerhaften Nachrichten?
+Nicht jede Nachricht kann erfolgreich verarbeitet werden. **Dead Letter Queues** sind spezielle Queues für Nachrichten, die nach mehreren Versuchen nicht verarbeitet werden konnten.
+
+#### Gründe für DLQ
+
+| Grund                    | Beispiel                                    |
+| ------------------------ | ------------------------------------------- |
+| **Poison Message**       | Nachricht verursacht immer einen Fehler     |
+| **Schema-Mismatch**      | Nachricht passt nicht zum erwarteten Format |
+| **Abhängigkeit fehlt**   | Referenzierte Ressource existiert nicht     |
+| **TTL abgelaufen**       | Nachricht ist zu alt                        |
+| **Max Retries erreicht** | Verarbeitung scheitert wiederholt           |
+
+#### DLQ-Workflow
+
+![[dlq-workflow.png]]
+*<span class="fig-id">04-02-02-dlq-workflow</span>: Dead Letter Queue Workflow – Fehlerhafte Nachrichten werden nach mehreren Retries in die DLQ verschoben*
+
+**Best Practices:**
+- DLQ-Nachrichten mit Metadaten anreichern (Fehlergrund, Retry-Count)
+- Alerting bei DLQ-Einträgen
+- Regelmäßige manuelle Review der DLQ
+- Möglichkeit zum Replay nach Bugfix
+
+---
+
+## Ordering-Garantien
+
+### Das Ordering-Problem
+
+In verteilten Queues ist die Reihenfolge nicht trivial:
+
+```
+Producer sendet: A, B, C
+Consumer 1 empfängt: A, C
+Consumer 2 empfängt: B
+
+Globale Reihenfolge? Nicht garantiert!
+```
+
+### Lösungsansätze
+
+| Strategie | Ordering | Throughput | Beispiel |
+|-----------|----------|------------|----------|
+| **Single Partition** | Strikt (FIFO) | Begrenzt | Eine Queue |
+| **Partition Key** | Pro Key | Hoch | Kafka mit Customer-ID |
+| **Sequence Numbers** | Rekonstruierbar | Hoch | Client sortiert |
+| **Kein Ordering** | Keine Garantie | Maximal | SQS Standard |
+
+### Kafka-Beispiel: Partition Key
+
+```
+Topic: orders (3 Partitionen)
+
+Order für Customer A → Partition 0 (Hash von "A")
+Order für Customer B → Partition 1 (Hash von "B")
+Order für Customer A → Partition 0 (gleicher Hash!)
+
+→ Alle Orders eines Customers sind geordnet
+```
+
+---
+
+## Backpressure
+
+**Was tun, wenn Consumer zu langsam?**
+Wenn Producer schneller Nachrichten senden als Consumer verarbeiten können, füllt sich die Queue. **Backpressure** sind Mechanismen, um mit diesem Ungleichgewicht umzugehen.
+
+### Strategien
+
+| Strategie | Beschreibung | Trade-off |
+|-----------|--------------|-----------|
+| **Unbounded Queue** | Queue wächst unbegrenzt | Speicher-Explosion |
+| **Bounded Queue + Drop** | Neue Nachrichten verwerfen | Datenverlust |
+| **Bounded Queue + Block** | Producer blockiert | Producer wird langsamer |
+| **Rate Limiting** | Producer drosseln | Kontrollierter Durchsatz |
+| **Sampling** | Nur Stichproben verarbeiten | Für Metriken ok |
+
+### Reactive Streams
+
+Moderne Frameworks (Project Reactor, RxJava, Akka Streams) implementieren Backpressure:
+
+```
+Subscriber: "Ich kann 100 Nachrichten verarbeiten"
+Publisher: Sendet 100 Nachrichten
+Subscriber: "Ich bin fertig, gib mir 50 mehr"
+Publisher: Sendet 50 Nachrichten
+```
+
+Der Consumer **zieht** (pull) statt der Producer **drückt** (push).
 
 ## Implementierungen
 
@@ -106,25 +189,20 @@ Die Exactly-once-Garantie erfordert:
 
 ## Zusammenhänge
 
-```mermaid
-graph TD
-    MQ[Message Queues] --> |"Alternative zu"| RPC[RPC]
-    MQ --> |"ermöglicht"| MS[Microservices]
-    MQ --> |"nutzt"| ASYNC[Asynchrone Verarbeitung]
-    MQ --> |"unterstützt"| SCALE[Horizontale Skalierung]
-    MQ --> |"erfordert"| EC[Eventual Consistency]
-    
-    style MQ fill:#4a86e8,color:#fff
-```
+| Beziehung | Konzept | Beschreibung |
+|-----------|---------|--------------|
+| Alternative zu | [[01-RPC]] | Asynchron statt synchron |
+| Ermöglicht | Microservices | Lose Kopplung zwischen Services |
+| Nutzt | Asynchrone Verarbeitung | Fire-and-Forget Pattern |
+| Unterstützt | Horizontale Skalierung | Mehrere Consumer parallel |
+| Erfordert | Eventual Consistency | Keine sofortige Konsistenz |
 
 ---
 
 ## Prüfungstipps
 
 > [!warning] Häufige Prüfungsfragen
-> - Erklären Sie die drei Liefergarantien
-> - Nennen Sie Vor- und Nachteile von Message Queues gegenüber RPC
-> - Wann würden Sie Message Queues einsetzen?
+NA 
 
 > [!question] Verständnisfragen
 > - Warum ist Exactly-once so schwer zu implementieren?
@@ -150,4 +228,7 @@ graph TD
 
 ## Quellen
 
-Die Inhalte basieren auf dem Kurshandbuch "Betriebssysteme, Rechnernetze und verteilte Systeme" der IU Internationalen Hochschule sowie den zugehörigen Vorlesungsmaterialien. Ergänzend wurden Dokumentationen von Apache Kafka und RabbitMQ herangezogen.
+- Kreps, J. (2011). *The Log: What every software engineer should know about real-time data's unifying abstraction*. LinkedIn Engineering Blog.
+- Apache Kafka Documentation: https://kafka.apache.org/documentation/
+- RabbitMQ Documentation: https://www.rabbitmq.com/documentation.html
+- Hohpe, G., & Woolf, B. (2003). *Enterprise Integration Patterns*. Addison-Wesley.

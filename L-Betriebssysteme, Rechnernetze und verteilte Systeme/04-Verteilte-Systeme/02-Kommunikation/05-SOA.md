@@ -9,7 +9,7 @@ tags:
   - architektur
   - microservices
 created: '2026-10-13'
-modified: '2026-10-13'
+modified: '2026-10-24'
 bereich: VS
 ---
 
@@ -33,20 +33,8 @@ SOA (Service Oriented Architecture) ist ein Organisationskonzept für verteilte 
 
 ## SOA-Dreiecksmodell
 
-```mermaid
-graph TD
-    SR[Service Registry<br/>Verzeichnisdienst] 
-    SP[Service Provider<br/>Dienstanbieter]
-    SC[Service Consumer<br/>Dienstnehmer]
-    
-    SP -->|"1. publish<br/>Service veröffentlichen"| SR
-    SC -->|"2. lookup<br/>Service suchen"| SR
-    SC -->|"3. bind/invoke<br/>Service nutzen"| SP
-    
-    style SR fill:#f9f,stroke:#333
-    style SP fill:#9f9,stroke:#333
-    style SC fill:#99f,stroke:#333
-```
+![[soa-dreieck.png]]
+*<span class="fig-id">04-02-05-soa-dreieck</span>: SOA-Dreiecksmodell – publish, lookup, bind*
 
 ### Komponenten
 
@@ -100,35 +88,127 @@ Microservices sind eine moderne Ausprägung des SOA-Paradigmas:
 | **Deployment** | Oft gemeinsam | Unabhängig |
 | **Technologie** | Homogen | Polyglott |
 
-## Zusammenhänge
+---
 
-```mermaid
-graph TD
-    SOA[SOA] --> |"nutzt"| REST[REST]
-    SOA --> |"nutzt"| SOAP[SOAP]
-    SOA --> |"moderne Form"| MS[Microservices]
-    SOA --> |"erfordert"| SD[Service Discovery]
-    SD --> |"implementiert durch"| DNS[DNS SRV]
-    SD --> |"implementiert durch"| K8S[Kubernetes]
-    
-    style SOA fill:#4a86e8,color:#fff
-```
+## Enterprise Service Bus (ESB)
+
+> [!important] Zentrale Komponente klassischer SOA
+> Der **ESB** ist ein Middleware-System, das als zentrale Drehscheibe für die Kommunikation zwischen Services dient.
+
+### Funktionen des ESB
+
+| Funktion | Beschreibung |
+|----------|--------------|
+| **Routing** | Nachrichten zum richtigen Empfänger leiten |
+| **Transformation** | Datenformate konvertieren (XML ↔ JSON) |
+| **Orchestrierung** | Mehrere Services zu einem Workflow verbinden |
+| **Protokoll-Bridging** | HTTP ↔ JMS ↔ SOAP ↔ ... |
+| **Monitoring** | Zentrale Überwachung aller Kommunikation |
+| **Security** | Authentifizierung, Autorisierung |
+
+### ESB-Architektur
+
+![[esb-architektur.png]]
+*<span class="fig-id">04-02-05-esb-architektur</span>: Enterprise Service Bus als zentrale Middleware*
+
+### Kritik am ESB
+
+- **Single Point of Failure**: ESB-Ausfall legt alles lahm
+- **Bottleneck**: Alle Kommunikation geht durch eine Stelle
+- **Komplexität**: ESB-Konfiguration wird zum Monolithen
+- **Vendor Lock-in**: Proprietäre ESB-Produkte
 
 ---
 
-## Prüfungstipps
+## API Gateway
 
-> [!warning] Häufige Prüfungsfragen
-> - Erklären Sie das SOA-Dreiecksmodell (Provider, Registry, Consumer)
+> [!tip] Modernes Pendant zum ESB
+> Das **API Gateway** übernimmt viele ESB-Funktionen, aber ohne die zentrale Orchestrierungslogik.
+
+### Funktionen
+
+| Funktion | API Gateway | ESB |
+|----------|-------------|-----|
+| Routing | ✓ | ✓ |
+| Authentifizierung | ✓ | ✓ |
+| Rate Limiting | ✓ | Teilweise |
+| Protokoll-Transformation | Einfach | Komplex |
+| Orchestrierung | ✗ | ✓ |
+| Business-Logik | ✗ | ✓ |
+
+### Bekannte API Gateways
+
+- **Kong**: Open Source, Lua/Nginx-basiert
+- **AWS API Gateway**: Managed Service
+- **Apigee**: Google Cloud, Enterprise-Features
+- **Traefik**: Cloud-native, Kubernetes-Integration
+
+---
+
+## Service Mesh
+
+> [!important] Die nächste Evolution nach API Gateway
+> Ein **Service Mesh** ist eine dedizierte Infrastrukturschicht für Service-zu-Service-Kommunikation in Microservices-Architekturen.
+
+### Architektur: Sidecar-Pattern
+
+![[service-mesh.png]]
+*<span class="fig-id">04-02-05-service-mesh</span>: Service Mesh mit Sidecar-Proxies und Control Plane*
+
+### Funktionen
+
+| Funktion | Beschreibung |
+|----------|--------------|
+| **mTLS** | Automatische Verschlüsselung zwischen Services |
+| **Traffic Management** | Canary Releases, A/B Testing, Retries |
+| **Observability** | Distributed Tracing, Metriken, Logs |
+| **Resilience** | Circuit Breaker, Timeouts, Rate Limiting |
+| **Policy Enforcement** | Autorisierung auf Service-Ebene |
+
+### Bekannte Service Meshes
+
+| Produkt | Beschreibung |
+|---------|--------------|
+| **Istio** | Feature-reich, Kubernetes-native |
+| **Linkerd** | Leichtgewichtig, einfacher |
+| **Consul Connect** | HashiCorp, Multi-Plattform |
+| **AWS App Mesh** | AWS-managed |
+
+### Wann Service Mesh?
+
+Service Meshes lohnen sich bei:
+- Vielen Services (>10-20)
+- Hohen Security-Anforderungen
+- Komplexem Traffic Management
+- Bedarf an Observability
+
+Für kleinere Systeme ist der Overhead oft zu hoch.
+
+## Zusammenhänge
+
+| Beziehung | Konzept | Beschreibung |
+|-----------|---------|--------------|
+| Nutzt | [[03-REST]] | Häufiges Protokoll für Services |
+| Nutzt | [[04-SOAP]] | Enterprise-Protokoll für Services |
+| Moderne Form | Microservices | Feinkörnige, unabhängige Services |
+| Erfordert | Service Discovery | DNS SRV, Kubernetes, Consul |
+
+---
+
+> [!warning] **Prüfungsrelevant**
+> - SOA-Dreiecksmodell (Provider, Registry, Consumer)
+> - Unterschied SOA vs. Protokoll (SOA ist Architekturparadigma)
+> - Vorteile: Wiederverwendung, Flexibilität, Skalierbarkeit
+> - Zusammenhang SOA und Microservices
+
+> [!question] **Typische Prüfungsfragen**
+> - Erklären Sie das SOA-Dreiecksmodell (Provider, Registry, Consumer).
 > - Was unterscheidet SOA von einem Protokoll wie SOAP?
 > - Welche Vorteile bietet SOA?
-
-> [!question] Verständnisfragen
 > - Warum ist ein Verzeichnisdienst wichtig für SOA?
 > - Wie hängen SOA und Microservices zusammen?
-> - Was passiert, wenn die Service Registry ausfällt?
 
-> [!tip] Merkhilfe
+> [!tip] **Merkhilfe**
 > **SOA = Gelbe Seiten für Services**:
 > - **S**ervices werden veröffentlicht (publish)
 > - **O**rganisiert in einem Verzeichnis (registry)
@@ -146,4 +226,7 @@ graph TD
 
 ## Quellen
 
-Die Inhalte basieren auf dem Kurshandbuch "Betriebssysteme, Rechnernetze und verteilte Systeme" der IU Internationalen Hochschule sowie den zugehörigen Vorlesungsmaterialien.
+- Erl, T. (2007). *SOA Principles of Service Design*. Prentice Hall.
+- OASIS (2006). Reference Model for Service Oriented Architecture 1.0.
+- Newman, S. (2015). *Building Microservices*. O'Reilly Media.
+- Fowler, M. (2014). Microservices – a definition of this new architectural term. martinfowler.com.

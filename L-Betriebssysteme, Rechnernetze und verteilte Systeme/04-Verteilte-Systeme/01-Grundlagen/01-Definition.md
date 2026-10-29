@@ -7,7 +7,7 @@ tags:
   - grundlagen
   - definition
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-29'
 bereich: VS
 ---
 
@@ -29,29 +29,20 @@ bereich: VS
 
 ### Klassische Definitionen
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              Definitionen verteilter Systeme                   │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Tanenbaum:                                                    │
-│   "Verteilte Systeme sind eine Sammlung von unabhängigen       │
-│    Computern, die sich gegenüber dem Anwender als ein          │
-│    kohärentes System darstellen."                               │
-│                                                                  │
-│   Bal:                                                          │
-│   "Ein verteiltes Computersystem besteht aus mehreren          │
-│    autonomen Prozessoren, die sich keinen Hauptspeicher        │
-│    teilen, aber mittels Austausch von Nachrichten über ein     │
-│    Netzwerk miteinander kooperieren."                          │
-│                                                                  │
-│   Lamport:                                                      │
-│   "Ein verteiltes System ist es, wenn ein Fehler eines         │
-│    Computers, von dessen Existenz Du nichts wusstest,          │
-│    deinen eigenen Rechner unbrauchbar macht."                  │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+> [!quote] **Tanenbaum**
+> "Verteilte Systeme sind eine Sammlung von unabhängigen Computern, die sich gegenüber dem Anwender als ein kohärentes System darstellen."
+
+Tanenbaums Definition betont die **Benutzerperspektive**: Egal wie viele Server im Hintergrund arbeiten – für den Anwender erscheint alles als eine Einheit. Wenn du Netflix schaust, siehst du einen Streaming-Dienst, nicht die tausenden Server weltweit, die den Stream liefern.
+
+> [!quote] **Bal**
+> "Ein verteiltes Computersystem besteht aus mehreren autonomen Prozessoren, die sich keinen Hauptspeicher teilen, aber mittels Austausch von Nachrichten über ein Netzwerk miteinander kooperieren."
+
+Bal beschreibt die **technische Architektur**: Jeder Node hat seinen eigenen Speicher (kein Shared Memory wie bei Multiprozessorsystemen). Die Kommunikation erfolgt ausschließlich über Nachrichten – das ist fundamental anders als bei Threads, die über gemeinsamen Speicher kommunizieren können.
+
+> [!quote] **Lamport**
+> "Ein verteiltes System ist es, wenn ein Fehler eines Computers, von dessen Existenz Du nichts wusstest, deinen eigenen Rechner unbrauchbar macht."
+
+Lamports humorvolle Definition trifft den Kern der **Komplexität**: In verteilten Systemen entstehen Abhängigkeiten, die nicht offensichtlich sind. Ein DNS-Server in Frankfurt kann einen Webshop in München lahmlegen – obwohl der Shopbetreiber von diesem Server nie gehört hat. Diese versteckten Abhängigkeiten machen Debugging und Fehleranalyse in verteilten Systemen besonders herausfordernd.
 
 > [!example] **Analogie: Restaurant-Kette**
 > - Viele **Filialen** (= Nodes) arbeiten unabhängig
@@ -64,74 +55,28 @@ bereich: VS
 
 ## Abgrenzung: Distributed vs. Parallel vs. Multi
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              Abgrenzung der Begriffe                           │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Multithreading          Multitasking          Multiprocessing │
-│   ───────────────         ────────────          ─────────────── │
-│   Quasi-gleichzeitiges    Quasi-gleichzeitiges  Echtes gleich-  │
-│   Abarbeiten mehrerer     Abarbeiten mehrerer   zeitiges Abarb. │
-│   Threads des selben      Prozesse              auf mehreren    │
-│   Prozesses                                     Prozessoren     │
-│                                                                  │
-│         │                       │                     │         │
-│         └───────────────────────┴─────────────────────┘         │
-│                         │                                       │
-│                    Nebenläufig                                  │
-│                   (concurrent)                                  │
-│                                                                  │
-│   Zielsetzung: Optimale Ausnutzung der Ressourcen und          │
-│                schnellerer Ablauf der Programme                 │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+| Begriff | Beschreibung |
+|---------|--------------|
+| **Multithreading** | Quasi-gleichzeitiges Abarbeiten mehrerer Threads des selben Prozesses |
+| **Multitasking** | Quasi-gleichzeitiges Abarbeiten mehrerer Prozesse |
+| **Multiprocessing** | Echtes gleichzeitiges Abarbeiten auf mehreren Prozessoren |
+
+Alle drei Konzepte sind **nebenläufig** (concurrent) und haben das gemeinsame Ziel: *Optimale Ausnutzung der Ressourcen und schnellerer Ablauf der Programme.*
 
 ### Distributed Computing vs. Parallel Computing
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│        Distributed Computing vs. Parallel Computing            │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   Distributed Computing:                                        │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │      CPU              CPU              CPU               │  │
-│   │   ┌───────┐        ┌───────┐        ┌───────┐           │  │
-│   │   │Speicher│       │Speicher│       │Speicher│          │  │
-│   │   └───────┘        └───────┘        └───────┘           │  │
-│   │        │               │               │                 │  │
-│   │        └───────────────┼───────────────┘                 │  │
-│   │                    Netzwerk                              │  │
-│   │                                                          │  │
-│   │   → Eigenständige Systeme, kommunizieren über Netzwerk  │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   Parallel Computing:                                           │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │      CPU        CPU        CPU                           │  │
-│   │        │          │          │                           │  │
-│   │        └──────────┼──────────┘                           │  │
-│   │              Speicher                                    │  │
-│   │                                                          │  │
-│   │   → Mehrere CPUs, gemeinsamer Speicher                  │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-│   Multiprocessing mit Shared Storage:                          │
-│   ┌─────────────────────────────────────────────────────────┐  │
-│   │    CPU         CPU         CPU                           │  │
-│   │  ┌─────┐     ┌─────┐     ┌─────┐                        │  │
-│   │  │Speicher│  │Speicher│  │Speicher│                     │  │
-│   │  └───┬───┘   └───┬───┘   └───┬───┘                      │  │
-│   │      └───────────┼───────────┘                           │  │
-│   │            Shared Storage                                │  │
-│   │                                                          │  │
-│   │   → Eigener Speicher + gemeinsamer Speicher             │  │
-│   └─────────────────────────────────────────────────────────┘  │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+![[distributed-vs-parallel.png]]
+*<span class="fig-id">04-01-01-distributed-vs-parallel</span>: Architekturvergleich – Distributed Computing (Netzwerk), Parallel Computing (Shared Memory) und Hybrid-Ansatz (Shared Storage).*
+
+| Aspekt | Distributed | Parallel | Hybrid |
+|--------|-------------|----------|--------|
+| **Kopplung** | Lose gekoppelt | Eng gekoppelt | Kombination |
+| **Speicher** | Kein gemeinsamer | Shared Memory | Lokal + Shared |
+| **Kommunikation** | Netzwerk | Bus | Flexible Architektur |
+
+Der entscheidende Unterschied liegt in der **Speicherarchitektur**: Bei Parallel Computing teilen sich alle CPUs denselben Speicher – Kommunikation erfolgt durch Lesen und Schreiben gemeinsamer Variablen. Bei Distributed Computing hat jeder Node seinen eigenen Speicher – Kommunikation erfordert expliziten Nachrichtenaustausch über das Netzwerk. 
+
+Diese Unterscheidung hat weitreichende Konsequenzen: Parallele Systeme sind schneller (kein Netzwerk-Overhead), aber begrenzt durch die Speicherbandbreite. Verteilte Systeme skalieren besser (mehr Nodes hinzufügen), müssen aber mit Netzwerklatenz, Paketverlusten und Partitionierung umgehen.
 
 ---
 
@@ -147,35 +92,22 @@ Ein **Node** ist ein Teilnehmer in einem verteilten System:
 | **Teil** | Kann Teil eines Mehrprozessorsystems sein |
 | **Vernetzt** | Nodes sind miteinander über ein Netzwerk verbunden |
 
+Der Begriff "Node" ist bewusst abstrakt gehalten: Ein Node kann ein physischer Server im Rechenzentrum sein, ein Docker-Container, ein Smartphone oder ein Sensor im IoT-Netzwerk. Entscheidend ist, dass jeder Node **autonom** handeln kann – er hat eigene Rechenkapazität, eigenen Speicher und kann unabhängig von anderen Nodes Entscheidungen treffen. Diese Autonomie unterscheidet Nodes von Threads oder Prozessen innerhalb eines Systems.
+
 ---
 
 ## Grundlegende Definitionen
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│              Kernpunkte verteilter Systeme                     │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│   ✓ Teilnehmer werden als Nodes bezeichnet                     │
-│   ✓ Die teilnehmenden Nodes sind miteinander vernetzt          │
-│   ✓ Nodes kommunizieren auf unterschiedliche Weise             │
-│                                                                  │
-│   ✓ Prozessor, Speicher und Kommunikation müssen gemeinsam    │
-│     betrachtet werden                                          │
-│                                                                  │
-│   ✓ Konflikte und kritische Abschnitte erfordern sorgfältige  │
-│     Synchronisation                                            │
-│                                                                  │
-│   ✓ Transaktionsverwaltung muss Konsistenz garantieren        │
-│   ✓ Persistenz der (flüchtigen) Daten muss sichergestellt sein│
-│                                                                  │
-│   ✓ Der Service verbirgt die Komplexität gegenüber dem        │
-│     Benutzer                                                   │
-│   ✓ Es erscheint als würde der Dienst von "einem" System      │
-│     erbracht                                                   │
-│                                                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+> [!summary] **Kernpunkte verteilter Systeme**
+> - Teilnehmer werden als **Nodes** bezeichnet
+> - Die teilnehmenden Nodes sind miteinander **vernetzt**
+> - Nodes kommunizieren auf unterschiedliche Weise
+> - Prozessor, Speicher und Kommunikation müssen **gemeinsam betrachtet** werden
+> - Konflikte und kritische Abschnitte erfordern sorgfältige **Synchronisation**
+> - Transaktionsverwaltung muss **Konsistenz** garantieren
+> - Persistenz der (flüchtigen) Daten muss sichergestellt sein
+> - Der Service verbirgt die Komplexität gegenüber dem Benutzer (**Transparenz**)
+> - Es erscheint als würde der Dienst von "einem" System erbracht
 
 ---
 
@@ -203,7 +135,6 @@ graph LR
 ## Prüfungstipps
 
 > [!warning] **Prüfungsrelevant**
-> - Definition nach Tanenbaum, Bal und Lamport
 > - Unterschied Distributed vs. Parallel Computing
 > - Begriff "Node" und dessen Eigenschaften
 > - Transparenz als zentrales Merkmal
