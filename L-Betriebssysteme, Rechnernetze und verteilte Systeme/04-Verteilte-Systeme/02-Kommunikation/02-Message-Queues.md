@@ -9,7 +9,7 @@ tags:
   - asynchron
   - middleware
 created: '2026-10-07'
-modified: '2026-10-24'
+modified: '2026-10-29'
 bereich: VS
 ---
 
@@ -201,13 +201,14 @@ Der Consumer **zieht** (pull) statt der Producer **drückt** (push).
 
 ## Prüfungstipps
 
-> [!warning] Häufige Prüfungsfragen
-NA 
+> [!warning] **Prüfungsrelevant**
+> N/A – Dieses Thema ist nicht prüfungsrelevant, dient aber dem Verständnis asynchroner Kommunikationsmuster.
 
-> [!question] Verständnisfragen
-> - Warum ist Exactly-once so schwer zu implementieren?
-> - Was passiert, wenn die Queue voll ist?
-> - Wie erreicht man Ordering in verteilten Queues?
+> [!question] **Häufige Prüfungsfragen**
+> 1. Warum ist Exactly-once so schwer zu implementieren?
+> 2. Was passiert, wenn die Queue voll ist?
+> 3. Wie erreicht man Ordering in verteilten Queues?
+> 4. Vergleichen Sie Message Queues mit RPC.
 
 > [!tip] Merkhilfe
 > **Message Queue = Asynchroner Briefkasten**:

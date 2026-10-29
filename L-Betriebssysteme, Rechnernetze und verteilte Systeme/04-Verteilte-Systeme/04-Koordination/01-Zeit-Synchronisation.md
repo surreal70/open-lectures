@@ -1,194 +1,186 @@
 ---
 author: Andreas Hümmer
-title: Zeit-Synchronisation
+title: Zeit-Synchronisation in Verteilten Systemen
 tags:
   - content
   - vs
   - koordination
   - zeit
-  - ntp
   - synchronisation
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-29'
 bereich: VS
 ---
 
-# Zeit-Synchronisation
+# Zeit-Synchronisation in Verteilten Systemen
 
 > [!info] Lernziele
 > - Problem der Zeitsynchronisation in verteilten Systemen verstehen
-> - NTP-Funktionsweise und Stratum-Hierarchie erklären können
-> - Cristians und Berkeley-Algorithmus kennen
-> - Grenzen physikalischer Zeitsynchronisation verstehen
+> - Unterschied zwischen externer und interner Synchronisation kennen
+> - Cristians und Berkeley-Algorithmus erklären können
+> - Google TrueTime und dessen Bedeutung für verteilte Datenbanken verstehen
+> - Grenzen physikalischer Zeitsynchronisation einordnen
+
+> [!note] Verweis
+> Für Details zum **Network Time Protocol (NTP)** mit Stratum-Hierarchie, Offset-Berechnung und Sicherheitsaspekten siehe [[../../03-Rechnernetze/04-Basisprotokolle/04-NTP|NTP – Network Time Protocol]].
 
 ## Einleitung
 
 Zeit-Synchronisation ist eine fundamentale Herausforderung in verteilten Systemen. Da physikalische Uhren aufgrund von Quarz-Ungenauigkeiten driften, müssen Mechanismen zur Synchronisation eingesetzt werden.
 
 > [!important] Kernkonzept
-> **Physikalische Uhren driften** – keine zwei Uhren laufen exakt gleich. In verteilten Systemen, wo verschiedene Knoten basierend auf Zeitstempeln Entscheidungen treffen, kann Uhrendrift zu inkonsistenten Zuständen führen. Synchronisationsprotokolle wie **NTP** reduzieren diese Drift, können sie aber nicht vollständig eliminieren.
+> **Physikalische Uhren driften** – keine zwei Uhren laufen exakt gleich. In verteilten Systemen, wo verschiedene Knoten basierend auf Zeitstempeln Entscheidungen treffen, kann Uhrendrift zu inkonsistenten Zuständen führen. Die Frage ist: **Externe** Synchronisation (mit einer Referenzzeit) oder **interne** Synchronisation (untereinander übereinstimmen)?
 
 > [!example] Analogie
-> Zeit-Synchronisation ist wie das Stellen von Uhren in verschiedenen Büros: Selbst wenn alle Uhren morgens synchronisiert werden, gehen sie abends unterschiedlich – manche vor, manche nach. Ein Mitarbeiter, der um 17:00 Uhr einen Bericht abschickt, könnte laut der Uhr eines anderen Büros "aus der Zukunft" senden. NTP ist wie ein regelmäßiger Rundgang, bei dem alle Uhren nachgestellt werden.
+> Zeit-Synchronisation ist wie das Stellen von Uhren in verschiedenen Büros: Selbst wenn alle Uhren morgens synchronisiert werden, gehen sie abends unterschiedlich – manche vor, manche nach. Ein Mitarbeiter, der um 17:00 Uhr einen Bericht abschickt, könnte laut der Uhr eines anderen Büros "aus der Zukunft" senden.
 
 ## Probleme physikalischer Uhren
 
-### Uhrendrift
+### Drift, Skew und Offset
 
-```mermaid
-graph LR
-    subgraph drift["Uhrendrift über Zeit"]
-        T0["t=0: Synchron"]
-        T1["t=1h: Δ=10ms"]
-        T2["t=24h: Δ=240ms"]
-    end
-    
-    T0 --> T1 --> T2
-```
+| Begriff | Definition | Auswirkung |
+|---------|------------|------------|
+| **Drift** | Rate der Abweichung von der Referenzzeit | Uhren weichen kontinuierlich voneinander ab |
+| **Skew** | Momentane Differenz zwischen zwei Uhren | Ereignisse erscheinen in falscher Reihenfolge |
+| **Offset** | Absoluter Zeitunterschied zur Referenz | Zeitstempel sind nicht vergleichbar |
 
-| Problem | Ursache | Auswirkung |
-|---------|---------|------------|
-| **Drift** | Quarz-Ungenauigkeit | Uhren weichen voneinander ab |
-| **Skew** | Unterschiedliche Geschwindigkeit | Relative Abweichung wächst |
-| **Offset** | Absoluter Zeitunterschied | Ereignisreihenfolge unklar |
+**Typische Drift-Raten:**
+- Quarzuhr: ±10 ppm (parts per million) → ~0,86 Sekunden/Tag
+- Temperaturkompensiert: ±1 ppm → ~86 ms/Tag
+- Atomuhr: ±10⁻¹² → vernachlässigbar
 
-## NTP (Network Time Protocol)
+### Externe vs. Interne Synchronisation
 
-### Stratum-Hierarchie
-
-```mermaid
-graph TD
-    S0["Stratum 0<br/>Referenzuhren<br/>(Atomuhr, GPS)"]
-    S1["Stratum 1<br/>Primäre Zeitserver"]
-    S2["Stratum 2<br/>Sekundäre Server"]
-    S3["Stratum 3<br/>Clients"]
-    
-    S0 --> S1
-    S1 --> S2
-    S1 --> S2
-    S2 --> S3
-    S2 --> S3
-```
-
-| Stratum | Beschreibung | Genauigkeit |
-|---------|--------------|-------------|
-| **0** | Referenzuhren (Atomuhr, GPS) | Nanosekunden |
-| **1** | Direkt mit Stratum 0 verbunden | Mikrosekunden |
-| **2** | Sekundäre Server | Millisekunden |
-| **3+** | Clients, weitere Server | ~10-100ms |
-
-### NTP-Zeitmessung
-
-NTP berechnet Offset und Round-Trip-Delay:
-
-```
-Offset θ = ((T2 - T1) + (T3 - T4)) / 2
-Delay δ = (T4 - T1) - (T3 - T2)
-```
-
-```mermaid
-sequenceDiagram
-    participant C as Client
-    participant S as Server
-    
-    Note over C: T1: Request gesendet
-    C->>S: NTP Request
-    Note over S: T2: Request empfangen
-    Note over S: T3: Response gesendet
-    S-->>C: NTP Response
-    Note over C: T4: Response empfangen
-```
+| Typ | Ziel | Beispiel |
+|-----|------|----------|
+| **Externe Synchronisation** | Alle Uhren stimmen mit einer autoritativen Quelle überein | NTP mit Stratum-0-Referenz |
+| **Interne Synchronisation** | Alle Uhren stimmen untereinander überein (nicht unbedingt mit Realzeit) | Berkeley-Algorithmus |
 
 ## Synchronisationsalgorithmen
 
-### Cristians Algorithmus
+### Cristians Algorithmus (1989)
 
-1. Client sendet Request an Zeitserver
-2. Server antwortet mit seiner Zeit T
-3. Client setzt Uhr auf: T + RTT/2
+Für **externe Synchronisation** mit einem Zeitserver:
 
-> [!warning] Limitation
-> Geht von symmetrischen Netzwerklatenzen aus, was oft nicht zutrifft.
+**Ablauf:**
+1. Client sendet Request an Zeitserver zum Zeitpunkt T₀
+2. Server empfängt Request, liest seine Zeit T_server
+3. Server sendet Response mit T_server
+4. Client empfängt Response zum Zeitpunkt T₁
+5. Client setzt Uhr auf: **T_server + RTT/2**
 
-### Berkeley-Algorithmus
+**Annahme:** Die Netzwerklatenz ist symmetrisch (Hinweg = Rückweg).
 
-Für Systeme ohne externe Referenz (interne Synchronisation):
+> [!warning] Limitationen
+> - Geht von symmetrischen Netzwerklatenzen aus – oft nicht erfüllt
+> - Single Point of Failure (nur ein Server)
+> - Server-Zeit muss vertrauenswürdig sein
 
-1. Master fragt alle Slaves nach ihrer Zeit
-2. Master berechnet Durchschnitt (ohne Ausreißer)
-3. Master sendet Korrekturen an alle
+**Genauigkeit:** Wenn RTT = Round-Trip-Time und die minimale Übertragungszeit min bekannt ist:
+- Fehler ≤ (RTT/2 - min)
 
-```mermaid
-sequenceDiagram
-    participant M as Master
-    participant S1 as Slave 1
-    participant S2 as Slave 2
-    
-    M->>S1: Zeit anfragen
-    M->>S2: Zeit anfragen
-    S1-->>M: 10:00:05
-    S2-->>M: 10:00:15
-    Note over M: Durchschnitt: 10:00:10
-    M->>S1: +5 Sekunden
-    M->>S2: -5 Sekunden
-```
+### Berkeley-Algorithmus (1989)
+
+Für **interne Synchronisation** ohne externe Referenz:
+
+**Ablauf:**
+1. **Master** sendet seine Zeit an alle Slaves
+2. Slaves antworten mit ihrer **Differenz** zur Master-Zeit
+3. Master berechnet **Durchschnitt** (verwirft Ausreißer)
+4. Master sendet **Korrekturen** (Δt) an alle Teilnehmer
+
+> [!tip] Vorteile
+> - Keine externe Referenz nötig
+> - Robuster gegen einzelne fehlerhafte Uhren (Ausreißer-Filterung)
+> - Master kann selbst eine falsche Uhr haben – Durchschnitt gleicht aus
+
+> [!warning] Nachteile
+> - Master ist Single Point of Failure
+> - Erfordert Master-Election bei Ausfall
+> - Keine Garantie für "echte" Zeit
+
+**Anwendung:** Ursprünglich für BSD UNIX entwickelt, heute relevant für geschlossene Cluster ohne Internet-Zugang.
 
 ## Moderne Ansätze
 
-| System | Mechanismus | Genauigkeit |
-|--------|-------------|-------------|
-| **NTP** | Internet-Protokoll | ~10-100ms |
-| **PTP** (IEEE 1588) | Hardware-Zeitstempel | ~1µs |
-| **GPS** | Satellitenbasiert | ~10ns |
-| **Google TrueTime** | GPS + Atomuhren | ~7ms Unsicherheit |
+### Vergleich der Synchronisationsmethoden
 
-> [!tip] Google TrueTime
-> Spanner nutzt TrueTime, das nicht nur eine Zeit, sondern ein **Intervall** zurückgibt: [earliest, latest]. So kann Unsicherheit explizit berücksichtigt werden.
+| System | Typ | Genauigkeit | Einsatz |
+|--------|-----|-------------|---------|
+| **NTP** | Extern | 1-100 ms | Allgemeine IT-Systeme |
+| **PTP** (IEEE 1588) | Extern | < 1 µs | Industrie, Finanzhandel |
+| **GPS** | Extern | ~10 ns | Referenzuhren, Mobilfunk |
+| **Berkeley** | Intern | Variable | Geschlossene Cluster |
+| **TrueTime** | Extern | ~7 ms Unsicherheit | Google Spanner |
+
+### Google TrueTime
+
+> [!important] Innovation
+> TrueTime gibt nicht einen Zeitpunkt zurück, sondern ein **Intervall [earliest, latest]**, das die Unsicherheit explizit macht.
+
+**API:**
+- `TT.now()` → Intervall [earliest, latest]
+- `TT.after(t)` → true, wenn t definitiv vergangen ist
+- `TT.before(t)` → true, wenn t definitiv in der Zukunft liegt
+
+**Implementierung:**
+- Kombination aus GPS-Empfängern und Atomuhren in jedem Rechenzentrum
+- Unsicherheitsintervall typisch: 1-7 ms
+- Ermöglicht **external consistency** in Spanner
+
+> [!example] Anwendung in Spanner
+> Bei einem Commit wartet Spanner, bis `TT.after(commit_timestamp)` wahr ist. Dadurch ist garantiert, dass alle anderen Knoten den Commit in der korrekten Reihenfolge sehen – selbst ohne verteilte Sperren.
+
+## Grenzen physikalischer Synchronisation
+
+| Grenze | Ursache | Konsequenz |
+|--------|---------|------------|
+| **Netzwerklatenz** | Variable Verzögerungen | Perfekte Sync unmöglich |
+| **Drift** | Physikalische Uhren-Ungenauigkeit | Kontinuierliche Re-Sync nötig |
+| **Relativität** | Bei hohen Geschwindigkeiten/Gravitation | Für IT meist vernachlässigbar |
+| **Byzantinische Fehler** | Defekte/manipulierte Uhren | Ausreißer-Filterung nötig |
+
+> [!tip] Konsequenz für Verteilte Systeme
+> Da perfekte physikalische Synchronisation unmöglich ist, nutzen viele Systeme **logische Uhren** (→ [[02-Logische-Uhren]]), die nur die Kausalität von Ereignissen erfassen, nicht die absolute Zeit.
 
 ## Zusammenhänge
 
-```mermaid
-graph TD
-    ZS[Zeit-Synchronisation] --> |"Alternative"| LU[Logische Uhren]
-    ZS --> |"nutzt"| NTP[NTP]
-    ZS --> |"wichtig für"| KO[Koordination]
-    NTP --> |"Hierarchie"| STRAT[Stratum-Levels]
-    
-    style ZS fill:#4a86e8,color:#fff
-```
+| Thema | Beziehung | Verweis |
+|-------|-----------|---------|
+| Logische Uhren | Alternative zur physikalischen Zeit | [[02-Logische-Uhren]] |
+| NTP-Protokoll | Standardprotokoll für externe Sync | [[../../03-Rechnernetze/04-Basisprotokolle/04-NTP]] |
+| Konsensalgorithmen | Benötigen oft Zeitbounds | [[03-Konsensalgorithmen]] |
+| Konsistenz | TrueTime ermöglicht external consistency | [[../03-Konsistenz/02-Konsistenzmodelle]] |
 
 ---
 
 ## Prüfungstipps
 
-> [!warning] Häufige Prüfungsfragen
-> - Erklären Sie die NTP-Stratum-Hierarchie
-> - Beschreiben Sie Cristians Algorithmus
-> - Was sind die Grenzen physikalischer Zeitsynchronisation?
+> [!warning] **Prüfungsrelevant**
+NA
 
 > [!question] Verständnisfragen
-> - Warum kann NTP keine perfekte Synchronisation erreichen?
+> - Warum reicht NTP nicht für alle Anwendungsfälle?
 > - Was ist der Unterschied zwischen Drift und Skew?
-> - Wann ist der Berkeley-Algorithmus sinnvoll?
+> - Wann würde man Berkeley statt NTP verwenden?
+> - Wie löst TrueTime das Problem der Unsicherheit?
 
 > [!tip] Merkhilfe
-> **NTP Stratum = Schichten wie bei Erdöl**:
-> - Stratum 0 = Quelle (Atomuhr) – das Beste
-> - Je höher die Zahl, desto weiter entfernt und ungenauer
-> 
-> **Cristian**: Server hat die Zeit → Client stellt nach
-> **Berkeley**: Demokratie → Durchschnitt aller Uhren
+> **Cristian**: Server hat **die** Zeit → Client stellt nach (passiv)
+> **Berkeley**: **Demokratie** → Durchschnitt aller Uhren (aktiv)
+> **TrueTime**: Nicht "wann?", sondern **"frühestens/spätestens wann?"**
 
 ---
 
-## Weiterführende Ressourcen
-
-- [[02-Logische-Uhren]] – Alternative ohne physikalische Zeit
-- [[03-Konsensalgorithmen]] – Koordination zwischen Knoten
-- [[../03-Konsistenz/01-CAP-Theorem]] – Bedeutung für Konsistenz
+> [!tip] **Weiterführende Ressourcen**
+> - [[02-Logische-Uhren]] – Alternative ohne physikalische Zeit
+> - [[03-Konsensalgorithmen]] – Koordination zwischen Knoten
+> - [[../../03-Rechnernetze/04-Basisprotokolle/04-NTP]] – NTP-Protokolldetails
 
 ---
 
 ## Quellen
 
-Die Inhalte basieren auf dem Kurshandbuch "Betriebssysteme, Rechnernetze und verteilte Systeme" der IU Internationalen Hochschule sowie den zugehörigen Vorlesungsmaterialien. NTP ist in RFC 5905 spezifiziert.
+- Cristian, Flaviu: Probabilistic Clock Synchronization, Distributed Computing, 1989
+- Gusella, Riccardo; Zatti, Stefano: The Accuracy of the Clock Synchronization Achieved by TEMPO in Berkeley UNIX 4.3BSD, IEEE Transactions on Software Engineering, 1989
+- Corbett, James C. et al.: Spanner – Google's Globally-Distributed Database, OSDI, 2012

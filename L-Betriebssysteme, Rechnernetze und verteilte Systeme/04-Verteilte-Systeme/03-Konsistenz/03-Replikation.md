@@ -9,7 +9,7 @@ tags:
   - redundanz
   - verfuegbarkeit
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-29'
 bereich: VS
 ---
 
@@ -35,27 +35,8 @@ Replikation ist das Speichern von Kopien derselben Daten auf mehreren Knoten ein
 
 ### Synchron vs. Asynchron
 
-```mermaid
-sequenceDiagram
-    participant C as Client
-    participant P as Primary
-    participant R1 as Replica 1
-    participant R2 as Replica 2
-    
-    Note over C,R2: Synchrone Replikation
-    C->>P: Write
-    P->>R1: Replicate
-    P->>R2: Replicate
-    R1-->>P: ACK
-    R2-->>P: ACK
-    P-->>C: Commit
-    
-    Note over C,R2: Asynchrone Replikation
-    C->>P: Write
-    P-->>C: Commit
-    P->>R1: Replicate (später)
-    P->>R2: Replicate (später)
-```
+![[replikation-sync-async.png]]
+*<span class="fig-id">04-03-03-replikation-sync-async</span>: Vergleich von synchroner und asynchroner Replikation.*
 
 | Aspekt | Synchron | Asynchron |
 |--------|----------|-----------|
@@ -71,22 +52,8 @@ sequenceDiagram
 | **Primary-Backup** | Ein Primary für Schreiboperationen | Einfach, keine Konflikte | Single Point of Failure, Failover nötig |
 | **Multi-Primary** | Mehrere Knoten akzeptieren Writes | Höhere Verfügbarkeit | Konfliktauflösung nötig |
 
-```mermaid
-graph LR
-    subgraph pb["Primary-Backup"]
-        P[Primary] --> R1[Replica]
-        P --> R2[Replica]
-        Client1[Client] --> P
-    end
-    
-    subgraph mp["Multi-Primary"]
-        P1[Primary 1] <--> P2[Primary 2]
-        P1 <--> P3[Primary 3]
-        P2 <--> P3
-        Client2[Client] --> P1
-        Client3[Client] --> P2
-    end
-```
+![[replikation-architekturen.png]]
+*<span class="fig-id">04-03-03-replikation-architekturen</span>: Primary-Backup vs. Multi-Primary Architekturen.*
 
 ## Quorum-basierte Replikation
 
@@ -105,17 +72,8 @@ Bei N Replikaten:
 | **Read-optimiert** | 3 | 1 | Langsame Writes, schnelle Reads |
 | **Balanced** | 2 | 2 | Kompromiss |
 
-```mermaid
-graph TD
-    subgraph quorum["Quorum (N=3, W=2, R=2)"]
-        N1[Node 1 ✓]
-        N2[Node 2 ✓]
-        N3[Node 3]
-        
-        W["Write: 2 von 3 ACK"]
-        R["Read: 2 von 3 abfragen"]
-    end
-```
+![[replikation-quorum.png]]
+*<span class="fig-id">04-03-03-replikation-quorum</span>: Quorum-basierte Replikation mit N=3, W=2, R=2.*
 
 ## Vor- und Nachteile
 
@@ -135,25 +93,20 @@ graph TD
 
 ## Zusammenhänge
 
-```mermaid
-graph TD
-    REP[Replikation] --> |"Trade-off"| CAP[CAP-Theorem]
-    REP --> |"beeinflusst"| KM[Konsistenzmodelle]
-    REP --> |"erfordert"| SYNC[Synchronisation]
-    REP --> |"erhöht"| AVAIL[Verfügbarkeit]
-    QUORUM[Quorum] --> |"Strategie für"| REP
-    
-    style REP fill:#4a86e8,color:#fff
-```
+| Thema | Beziehung | Verweis |
+|-------|-----------|---------|
+| CAP-Theorem | beschreibt Trade-offs der Replikation | [[01-CAP-Theorem]] |
+| Konsistenzmodelle | werden durch Replikation beeinflusst | [[02-Konsistenzmodelle]] |
+| Synchronisation | wird für Replikation benötigt | [[../04-Koordination/03-Konsensalgorithmen]] |
+| Verfügbarkeit | wird durch Replikation erhöht | [[../01-Grundlagen/02-Eigenschaften]] |
+| Quorum | Strategie zur Replikationssteuerung | siehe oben |
 
 ---
 
 ## Prüfungstipps
 
-> [!warning] Häufige Prüfungsfragen
-> - Vergleichen Sie synchrone und asynchrone Replikation
-> - Erklären Sie die Quorum-Formel R + W > N
-> - Was sind Vor- und Nachteile von Primary-Backup?
+> [!warning] **Prüfungsrelevant**
+NA
 
 > [!question] Verständnisfragen
 > - Wann kann bei asynchroner Replikation Datenverlust auftreten?
@@ -169,14 +122,14 @@ graph TD
 
 ---
 
-## Weiterführende Ressourcen
-
-- [[01-CAP-Theorem]] – Trade-offs bei Replikation
-- [[02-Konsistenzmodelle]] – Konsistenzgarantien
-- [[../04-Koordination/03-Konsensalgorithmen]] – Koordination zwischen Replikaten
+> [!tip] **Weiterführende Ressourcen**
+> - [[01-CAP-Theorem]] – Trade-offs bei Replikation
+> - [[02-Konsistenzmodelle]] – Konsistenzgarantien
+> - [[../04-Koordination/03-Konsensalgorithmen]] – Koordination zwischen Replikaten
 
 ---
 
 ## Quellen
 
-Die Inhalte basieren auf dem Kurshandbuch "Betriebssysteme, Rechnernetze und verteilte Systeme" der IU Internationalen Hochschule sowie den zugehörigen Vorlesungsmaterialien.
+- Tanenbaum, Andrew S. & Van Steen, Maarten: Distributed Systems – Principles and Paradigms, 3rd Edition, 2017
+- Kleppmann, Martin: Designing Data-Intensive Applications, O'Reilly, 2017

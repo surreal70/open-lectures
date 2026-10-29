@@ -10,7 +10,7 @@ tags:
   - raft
   - fehlertoleranz
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-29'
 bereich: VS
 ---
 
@@ -72,29 +72,8 @@ Konsensalgorithmen ermöglichen es verteilten Systemen, sich auf einen gemeinsam
 
 ### Phasen
 
-```mermaid
-sequenceDiagram
-    participant P as Proposer
-    participant A1 as Acceptor 1
-    participant A2 as Acceptor 2
-    participant A3 as Acceptor 3
-    
-    Note over P,A3: Phase 1: Prepare
-    P->>A1: Prepare(n)
-    P->>A2: Prepare(n)
-    P->>A3: Prepare(n)
-    A1-->>P: Promise(n)
-    A2-->>P: Promise(n)
-    A3-->>P: Promise(n)
-    
-    Note over P,A3: Phase 2: Accept
-    P->>A1: Accept(n, v)
-    P->>A2: Accept(n, v)
-    P->>A3: Accept(n, v)
-    A1-->>P: Accepted
-    A2-->>P: Accepted
-    A3-->>P: Accepted
-```
+![[paxos-phasen.png]]
+*<span class="fig-id">04-04-03-paxos-phasen</span>: Paxos Zwei-Phasen-Protokoll – Prepare/Promise und Accept/Accepted.*
 
 1. **Phase 1a (Prepare)**: Proposer sendet Prepare(n) mit Proposal-Nummer n
 2. **Phase 1b (Promise)**: Acceptor antwortet mit Promise, wenn n höher als alle bisherigen
@@ -115,15 +94,8 @@ Raft wurde als "verständlichere Alternative zu Paxos" entwickelt.
 
 ### Leader Election
 
-```mermaid
-stateDiagram-v2
-    [*] --> Follower
-    Follower --> Candidate: Election Timeout
-    Candidate --> Leader: Erhält Mehrheit
-    Candidate --> Follower: Höherer Term entdeckt
-    Leader --> Follower: Höherer Term entdeckt
-    Candidate --> Candidate: Split Vote, neuer Versuch
-```
+![[raft-states.png]]
+*<span class="fig-id">04-04-03-raft-states</span>: Raft Zustandsübergänge – Leader Election mit Follower, Candidate und Leader.*
 
 ### Ablauf
 
@@ -152,25 +124,20 @@ stateDiagram-v2
 
 ## Zusammenhänge
 
-```mermaid
-graph TD
-    KA[Konsensalgorithmen] --> |"ermöglichen"| REP[Replikation]
-    KA --> |"basieren auf"| LU[Logische Uhren]
-    KA --> |"limitiert durch"| FLP[FLP-Theorem]
-    PAXOS[Paxos] --> |"Alternative"| RAFT[Raft]
-    KA --> |"Grundlage für"| SM[State Machines]
-    
-    style KA fill:#4a86e8,color:#fff
-```
+| Thema | Beziehung | Verweis |
+|-------|-----------|---------|
+| Replikation | wird durch Konsens ermöglicht | [[../03-Konsistenz/03-Replikation]] |
+| Logische Uhren | Grundlage für Konsensalgorithmen | [[02-Logische-Uhren]] |
+| FLP-Theorem | limitiert Konsensalgorithmen | siehe oben |
+| Paxos vs. Raft | alternative Konsensalgorithmen | siehe oben |
+| State Machines | nutzen Konsens für Replikation | – |
 
 ---
 
 ## Prüfungstipps
 
-> [!warning] Häufige Prüfungsfragen
-> - Erklären Sie die zwei Phasen von Paxos
-> - Was besagt das FLP-Theorem?
-> - Beschreiben Sie die Leader Election in Raft
+> [!warning] **Prüfungsrelevant**
+NA
 
 > [!question] Verständnisfragen
 > - Warum braucht man für f Crash-Failures 2f+1 Knoten?
@@ -189,14 +156,15 @@ graph TD
 
 ---
 
-## Weiterführende Ressourcen
-
-- [[02-Logische-Uhren]] – Ordnung für Konsens
-- [[01-Zeit-Synchronisation]] – Timing für Timeouts
-- [[../03-Konsistenz/03-Replikation]] – Anwendung von Konsens
+> [!tip] **Weiterführende Ressourcen**
+> - [[02-Logische-Uhren]] – Ordnung für Konsens
+> - [[01-Zeit-Synchronisation]] – Timing für Timeouts
+> - [[../03-Konsistenz/03-Replikation]] – Anwendung von Konsens
 
 ---
 
 ## Quellen
 
-Die Inhalte basieren auf dem Kurshandbuch "Betriebssysteme, Rechnernetze und verteilte Systeme" der IU Internationalen Hochschule sowie den zugehörigen Vorlesungsmaterialien. Grundlegend sind Lamports "Paxos Made Simple" und das Raft-Paper von Ongaro & Ousterhout (2014).
+- Lamport, Leslie: Paxos Made Simple, ACM SIGACT News, 2001
+- Ongaro, Diego & Ousterhout, John: In Search of an Understandable Consensus Algorithm (Raft), USENIX ATC, 2014
+- Fischer, Michael J., Lynch, Nancy A. & Paterson, Michael S.: Impossibility of Distributed Consensus with One Faulty Process, Journal of the ACM, 1985

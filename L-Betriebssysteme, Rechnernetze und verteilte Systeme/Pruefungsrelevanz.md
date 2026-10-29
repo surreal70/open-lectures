@@ -1,3 +1,9 @@
+---
+title: Prüfungsrelevanz Übersicht
+created: 2025-01-15
+modified: 2026-10-29
+---
+
 # Prüfungsrelevanz Übersicht
 
 Diese Datei gibt einen Überblick über den Status der Prüfungsrelevanz-Callouts in allen Vorlesungsdateien.
@@ -6,15 +12,18 @@ Diese Datei gibt einen Überblick über den Status der Prüfungsrelevanz-Callout
 
 | Symbol | Bedeutung |
 |--------|-----------|
-| ✅ | Vorhanden |
-| ⚠️ | Vorhanden aber leer/N/A |
-| ❌ | Nicht vorhanden |
+| ✅ | Vorhanden / Prüfungsrelevant |
+| ❌ | Nicht vorhanden / Nicht prüfungsrelevant (N/A) |
 
 ## Statistik
 
-- **Dateien mit Prüfungsrelevanz:** 63 von 95
+- **Dateien mit Prüfungsrelevanz-Callout:** 96 von 98
+- **Davon prüfungsrelevant:** 68
+- **Davon nicht prüfungsrelevant (N/A):** 28
+- **Dateien mit Prüfungsfragen:** 85
 
 ## Dateien nach Kapitel
+
 
 ### 02-Betriebssysteme
 
@@ -58,28 +67,28 @@ Diese Datei gibt einen Überblick über den Status der Prüfungsrelevanz-Callout
 | [[01-Uebersicht]] | ✅ | ✅ | ✅ |
 | [[02-IEEE-Standards]] | ✅ | ✅ | ✅ |
 | [[03-RFCs]] | ✅ | ✅ | ✅ |
-| [[01-OSI-Modell]] | ✅ | ✅ | ✅ |
-| [[02-TCP-IP-Modell]] | ✅ | ✅ | ✅ |
-| [[03-Schichtenvergleich]] | ✅ | ✅ | ✅ |
-| [[04-Arbeitsweise-Schichtenmodell]] | ✅ | ❌ | ✅ |
-| [[01-Uebertragungsmedien]] | ✅ | ✅ | ✅ |
-| [[02-Signale]] | ✅ | ✅ | ✅ |
-| [[03-Power-over-Ethernet]] | ✅ | ❌ | ✅ |
-| [[04-Auto-MDI-X]] | ✅ | ❌ | ✅ |
-| [[01-Rahmenbildung]] | ✅ | ✅ | ✅ |
-| [[02-Fehlererkennung]] | ✅ | ✅ | ✅ |
-| [[03-MAC-Protokolle]] | ✅ | ✅ | ✅ |
 | [[01-IP-Protokoll]] | ✅ | ✅ | ✅ |
+| [[01-OSI-Modell]] | ✅ | ✅ | ✅ |
+| [[01-Rahmenbildung]] | ✅ | ✅ | ✅ |
+| [[01-TCP]] | ✅ | ✅ | ✅ |
+| [[01-Uebertragungsmedien]] | ✅ | ✅ | ✅ |
+| [[02-Fehlererkennung]] | ✅ | ✅ | ✅ |
+| [[02-HTTP]] | ✅ | ✅ | ✅ |
 | [[02-Routing]] | ✅ | ✅ | ✅ |
+| [[02-Signale]] | ✅ | ✅ | ✅ |
+| [[02-TCP-IP-Modell]] | ✅ | ✅ | ✅ |
+| [[02-UDP]] | ✅ | ✅ | ✅ |
 | [[03-IPv6]] | ✅ | ❌ | ✅ |
+| [[03-MAC-Protokolle]] | ✅ | ✅ | ✅ |
+| [[03-Ports]] | ✅ | ✅ | ✅ |
+| [[03-Power-over-Ethernet]] | ✅ | ❌ | ✅ |
+| [[03-SMTP]] | ✅ | ✅ | ✅ |
+| [[03-Schichtenvergleich]] | ✅ | ✅ | ✅ |
+| [[04-Arbeitsweise-Schichtenmodell]] | ✅ | ❌ | ❌ |
+| [[04-Auto-MDI-X]] | ✅ | ❌ | ✅ |
 | [[04-Broadcast-Kollisionsdomaene]] | ✅ | ✅ | ✅ |
 | [[05-ICMP]] | ✅ | ✅ | ✅ |
-| [[06-IPsec]] | ✅ | ✅ | ✅ |
-| [[01-TCP]] | ✅ | ✅ | ✅ |
-| [[02-UDP]] | ✅ | ✅ | ✅ |
-| [[03-Ports]] | ✅ | ✅ | ✅ |
-| [[02-HTTP]] | ✅ | ✅ | ✅ |
-| [[03-SMTP]] | ✅ | ✅ | ✅ |
+| [[06-IPsec]] | ✅ | ✅ | ❌ |
 | [[01-ARP]] | ✅ | ✅ | ✅ |
 | [[02-DHCP]] | ✅ | ✅ | ✅ |
 | [[03-DNS]] | ✅ | ✅ | ✅ |
@@ -87,17 +96,17 @@ Diese Datei gibt einen Überblick über den Status der Prüfungsrelevanz-Callout
 | [[05-Spanning-Tree]] | ✅ | ✅ | ✅ |
 | [[01-Firewalls]] | ✅ | ✅ | ✅ |
 | [[01-IPsec]] | ✅ | ✅ | ✅ |
+| [[01-Tailscale]] | ✅ | ❌ | ✅ |
 | [[02-WireGuard]] | ✅ | ❌ | ✅ |
+| [[02-ZeroTier]] | ✅ | ❌ | ✅ |
+| [[03-Nebula]] | ✅ | ❌ | ✅ |
 | [[03-OpenVPN]] | ✅ | ❌ | ✅ |
+| [[03-TLS]] | ✅ | ✅ | ✅ |
+| [[04-Headscale]] | ✅ | ❌ | ✅ |
 | [[04-SSL-VPN]] | ✅ | ❌ | ✅ |
 | [[05-L2TP]] | ✅ | ❌ | ✅ |
 | [[06-PPTP]] | ✅ | ❌ | ✅ |
-| [[07-Hamachi]] | ✅ | ❌ | ✅ |
-| [[03-TLS]] | ✅ | ✅ | ✅ |
-| [[01-Tailscale]] | ✅ | ❌ | ✅ |
-| [[02-ZeroTier]] | ✅ | ❌ | ✅ |
-| [[03-Nebula]] | ✅ | ❌ | ✅ |
-| [[04-Headscale]] | ✅ | ❌ | ✅ |
+| [[07-Hamachi]] | ✅ | ❌ | ❌ |
 | [[01-MPLS]] | ✅ | ❌ | ✅ |
 | [[02-SD-WAN]] | ✅ | ❌ | ✅ |
 | [[03-SASE]] | ✅ | ❌ | ✅ |
@@ -113,15 +122,18 @@ Diese Datei gibt einen Überblick über den Status der Prüfungsrelevanz-Callout
 |-------|---------|------------------|--------|
 | [[01-Definition]] | ✅ | ✅ | ✅ |
 | [[02-Eigenschaften]] | ✅ | ✅ | ✅ |
-| [[03-Fallacies]] | ❌ | ❌ | ❌ |
-| [[01-RPC]] | ❌ | ❌ | ✅ |
-| [[02-Message-Queues]] | ❌ | ❌ | ✅ |
-| [[03-REST]] | ❌ | ❌ | ✅ |
-| [[04-SOAP]] | ❌ | ❌ | ✅ |
-| [[05-SOA]] | ❌ | ❌ | ✅ |
-| [[01-CAP-Theorem]] | ❌ | ❌ | ✅ |
-| [[02-Konsistenzmodelle]] | ❌ | ❌ | ✅ |
-| [[03-Replikation]] | ❌ | ❌ | ✅ |
-| [[01-Zeit-Synchronisation]] | ❌ | ❌ | ✅ |
-| [[02-Logische-Uhren]] | ❌ | ❌ | ✅ |
-| [[03-Konsensalgorithmen]] | ❌ | ❌ | ✅ |
+| [[03-Fallacies]] | ✅ | ❌ | ✅ |
+| [[01-RPC]] | ✅ | ✅ | ✅ |
+| [[02-Message-Queues]] | ✅ | ❌ | ✅ |
+| [[03-REST]] | ✅ | ✅ | ✅ |
+| [[04-SOAP]] | ✅ | ✅ | ✅ |
+| [[05-SOA]] | ✅ | ✅ | ✅ |
+| [[06-gRPC]] | ✅ | ❌ | ✅ |
+| [[07-GraphQL]] | ✅ | ❌ | ✅ |
+| [[08-WebSockets]] | ✅ | ❌ | ✅ |
+| [[01-CAP-Theorem]] | ✅ | ❌ | ❌ |
+| [[02-Konsistenzmodelle]] | ✅ | ✅ | ❌ |
+| [[03-Replikation]] | ✅ | ❌ | ❌ |
+| [[01-Zeit-Synchronisation]] | ✅ | ❌ | ❌ |
+| [[02-Logische-Uhren]] | ✅ | ❌ | ❌ |
+| [[03-Konsensalgorithmen]] | ✅ | ❌ | ❌ |

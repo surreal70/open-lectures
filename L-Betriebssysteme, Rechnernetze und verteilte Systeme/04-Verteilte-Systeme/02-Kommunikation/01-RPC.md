@@ -9,7 +9,7 @@ tags:
   - middleware
   - client-server
 created: '2026-10-07'
-modified: '2026-10-24'
+modified: '2026-10-29'
 bereich: VS
 ---
 
@@ -167,13 +167,18 @@ Bei RPC-Aufrufen können verschiedene Fehler auftreten, die unterschiedlich beha
 
 ## Prüfungstipps
 
-> [!warning] Häufige Prüfungsfragen
-> - Beschreiben Sie den Ablauf eines RPC-Aufrufs
+> [!warning] **Prüfungsrelevant**
+> - Ablauf eines RPC-Aufrufs (Client-Stub → Netzwerk → Server-Stub → Prozedur → Rückweg)
+> - Marshalling/Unmarshalling und dessen Notwendigkeit
+> - Synchrones vs. asynchrones RPC
+> - Fehlerbehandlung bei Netzwerkproblemen (Timeouts, Idempotenz)
 
-> [!question] Verständnisfragen
-> - Warum braucht man Marshalling/Unmarshalling?
-> - Welche Probleme können bei RPC auftreten (Netzwerkfehler, Timeouts)?
-> - Wie unterscheidet sich synchrones von asynchronem RPC?
+> [!question] **Häufige Prüfungsfragen**
+> 1. Beschreiben Sie den Ablauf eines RPC-Aufrufs.
+> 2. Warum braucht man Marshalling/Unmarshalling?
+> 3. Welche Probleme können bei RPC auftreten (Netzwerkfehler, Timeouts)?
+> 4. Wie unterscheidet sich synchrones von asynchronem RPC?
+> 5. Was bedeutet Idempotenz im Kontext von RPC?
 
 > [!tip] Merkhilfe
 > **RPC = Remote Procedure Call**: Der Client "ruft an", der Server "führt aus", das Ergebnis wird "zurückgerufen". Denke an einen Telefonanruf – während du wartest, ist die Leitung blockiert.

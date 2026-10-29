@@ -6,7 +6,7 @@ tags:
   - referenz
   - fachbegriffe
 created: 2026-10-07
-modified: 2026-10-07
+modified: 2026-10-29
 ---
 
 # Glossar
@@ -26,6 +26,10 @@ Dieses Glossar enthält Definitionen wichtiger Fachbegriffe aus den Bereichen **
 ## B
 
 - **Bandbreite**: Die maximale Datenübertragungsrate einer Netzwerkverbindung, gemessen in Bit pro Sekunde.
+
+- **BASE**: Ein Konsistenzmodell für verteilte Systeme (Basically Available, Soft State, Eventually Consistent), das schwächere Garantien als ACID bietet, dafür aber höhere Verfügbarkeit.
+
+- **Berkeley-Algorithmus**: Ein Algorithmus zur internen Zeitsynchronisation in verteilten Systemen, bei dem ein Master-Knoten die Durchschnittszeit aller Teilnehmer berechnet.
 
 - **Betriebssystem**: Software, die die Hardware eines Computers verwaltet und eine Plattform für Anwendungsprogramme bereitstellt.
 
@@ -50,6 +54,8 @@ Dieses Glossar enthält Definitionen wichtiger Fachbegriffe aus den Bereichen **
 ## E
 
 - **Ethernet**: Eine Familie von Netzwerktechnologien für lokale Netzwerke (LANs).
+
+- **Eventual Consistency**: Ein Konsistenzmodell, bei dem alle Replikate irgendwann denselben Zustand erreichen, wenn keine weiteren Updates erfolgen.
 
 ## F
 
@@ -79,13 +85,21 @@ Dieses Glossar enthält Definitionen wichtiger Fachbegriffe aus den Bereichen **
 
 - **Kernel**: Der Kern eines Betriebssystems, der grundlegende Dienste bereitstellt.
 
+- **Konsens**: Die Einigung mehrerer verteilter Prozesse auf einen gemeinsamen Wert, trotz möglicher Ausfälle.
+
 - **Konsistenz**: Die Eigenschaft, dass alle Knoten in einem verteilten System dieselben Daten sehen.
 
 ## L
 
+- **Lamport-Uhr**: Ein logischer Zeitstempel-Mechanismus, der eine totale Ordnung von Ereignissen in verteilten Systemen ermöglicht, ohne physikalische Uhren zu synchronisieren.
+
 - **Latenz**: Die Verzögerung zwischen dem Senden und dem Empfangen von Daten.
 
+- **Leader Election**: Der Prozess, bei dem verteilte Knoten einen Koordinator wählen, der bestimmte Aufgaben übernimmt.
+
 - **Load Balancing**: Die Verteilung von Arbeitslast auf mehrere Ressourcen.
+
+- **Logische Uhr**: Ein Mechanismus zur Ordnung von Ereignissen basierend auf Kausalität statt physikalischer Zeit.
 
 ## M
 
@@ -105,6 +119,8 @@ Dieses Glossar enthält Definitionen wichtiger Fachbegriffe aus den Bereichen **
 
 - **Paging**: Ein Speicherverwaltungsschema, das den virtuellen Speicher in Seiten fester Größe unterteilt.
 
+- **Paxos**: Ein Konsensalgorithmus für verteilte Systeme, der Einigung trotz Knotenausfällen ermöglicht.
+
 - **Prozess**: Eine Instanz eines ausgeführten Programms mit eigenem Speicherbereich.
 
 - **Protokoll**: Eine Vereinbarung über den Ablauf der Kommunikation zwischen Systemen.
@@ -113,7 +129,11 @@ Dieses Glossar enthält Definitionen wichtiger Fachbegriffe aus den Bereichen **
 
 - **QoS (Quality of Service)**: Mechanismen zur Priorisierung bestimmter Netzwerkverkehrsarten.
 
+- **Quorum**: Die Mindestanzahl von Knoten, die einer Operation zustimmen müssen, um Konsistenz in replizierten Systemen zu gewährleisten.
+
 ## R
+
+- **Raft**: Ein Konsensalgorithmus, der als verständlichere Alternative zu Paxos entwickelt wurde und Leader-basierte Replikation verwendet.
 
 - **Replikation**: Die Speicherung von Datenkopien auf mehreren Knoten zur Erhöhung der Verfügbarkeit.
 
@@ -142,6 +162,8 @@ Dieses Glossar enthält Definitionen wichtiger Fachbegriffe aus den Bereichen **
 - **UDP (User Datagram Protocol)**: Ein verbindungsloses Transportprotokoll.
 
 ## V
+
+- **Vektoruhr**: Ein logischer Zeitstempel-Mechanismus mit einem Vektor von Zählern, der im Gegensatz zur Lamport-Uhr auch Nebenläufigkeit erkennen kann.
 
 - **Virtualisierung**: Die Abstraktion von Hardware-Ressourcen zur Erstellung virtueller Systeme.
 

@@ -9,7 +9,7 @@ tags:
   - theorem
   - tradeoff
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-29'
 bereich: VS
 ---
 
@@ -59,29 +59,8 @@ Das CAP-Theorem ist eines der fundamentalsten Konzepte in verteilten Systemen. E
 
 ## CAP-Trade-offs
 
-```mermaid
-graph TD
-    subgraph cap["CAP-Dreieck"]
-        C[Consistency]
-        A[Availability]
-        P[Partition Tolerance]
-        
-        C --- A
-        A --- P
-        P --- C
-    end
-    
-    CP["CP-System<br/>z.B. HBase, ZooKeeper"]
-    AP["AP-System<br/>z.B. Cassandra, DynamoDB"]
-    CA["CA-System<br/>z.B. Single-Node RDBMS"]
-    
-    C -.-> CP
-    P -.-> CP
-    A -.-> AP
-    P -.-> AP
-    C -.-> CA
-    A -.-> CA
-```
+![[cap-dreieck.png]]
+*<span class="fig-id">04-03-01-cap-dreieck</span>: Das CAP-Dreieck zeigt die Trade-offs in verteilten Systemen.*
 
 ### Systemklassifikation
 
@@ -109,25 +88,20 @@ Das PACELC-Theorem erweitert CAP um das Verhalten im Normalfall (ohne Partition)
 
 ## Zusammenhänge
 
-```mermaid
-graph TD
-    CAP[CAP-Theorem] --> |"erweitert durch"| PACELC[PACELC]
-    CAP --> |"beeinflusst"| KM[Konsistenzmodelle]
-    CAP --> |"bestimmt"| REP[Replikationsstrategien]
-    CAP --> |"Gegensatz zu"| ACID[ACID-Transaktionen]
-    ACID --> |"relaxiert zu"| BASE[BASE]
-    
-    style CAP fill:#4a86e8,color:#fff
-```
+| Thema | Beziehung | Verweis |
+|-------|-----------|---------|
+| PACELC | erweitert CAP-Theorem | [[02-Konsistenzmodelle]] |
+| Konsistenzmodelle | werden durch CAP beeinflusst | [[02-Konsistenzmodelle]] |
+| Replikationsstrategien | werden durch CAP bestimmt | [[03-Replikation]] |
+| ACID-Transaktionen | stehen im Gegensatz zu CAP | [[02-Konsistenzmodelle#ACID-Eigenschaften]] |
+| BASE | relaxierte Alternative zu ACID | [[02-Konsistenzmodelle#BASE als Alternative zu ACID]] |
 
 ---
 
 ## Prüfungstipps
 
-> [!warning] Häufige Prüfungsfragen
-> - Erklären Sie das CAP-Theorem und seine drei Eigenschaften
-> - Klassifizieren Sie gegebene Systeme als CP oder AP
-> - Warum gibt es praktisch keine CA-Systeme?
+> [!warning] **Prüfungsrelevant**
+NA
 
 > [!question] Verständnisfragen
 > - Was passiert bei einem CP-System während einer Partition?
@@ -144,14 +118,14 @@ graph TD
 
 ---
 
-## Weiterführende Ressourcen
-
-- [[02-Konsistenzmodelle]] – Verschiedene Konsistenzstufen
-- [[03-Replikation]] – Replikationsstrategien
-- [[../01-Grundlagen/02-Eigenschaften]] – ACID-Eigenschaften
+> [!tip] **Weiterführende Ressourcen**
+> - [[02-Konsistenzmodelle]] – Verschiedene Konsistenzstufen
+> - [[03-Replikation]] – Replikationsstrategien
+> - [[../01-Grundlagen/02-Eigenschaften]] – ACID-Eigenschaften
 
 ---
 
 ## Quellen
 
-Die Inhalte basieren auf dem Kurshandbuch "Betriebssysteme, Rechnernetze und verteilte Systeme" der IU Internationalen Hochschule sowie den zugehörigen Vorlesungsmaterialien. Grundlegend ist Eric Brewer's Keynote "Towards Robust Distributed Systems" (PODC 2000) und das formale Proof von Gilbert & Lynch (2002).
+- Brewer, Eric: Towards Robust Distributed Systems, Keynote PODC, 2000
+- Gilbert, Seth & Lynch, Nancy: Brewer's Conjecture and the Feasibility of Consistent, Available, Partition-Tolerant Web Services, ACM SIGACT News, 2002

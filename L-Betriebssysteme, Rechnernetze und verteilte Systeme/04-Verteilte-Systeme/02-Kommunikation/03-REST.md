@@ -10,7 +10,7 @@ tags:
   - api
   - webservices
 created: '2026-10-07'
-modified: '2026-10-24'
+modified: '2026-10-29'
 bereich: VS
 ---
 
@@ -321,14 +321,18 @@ X-RateLimit-Reset: 1699520400
 
 ## Prüfungstipps
 
-> [!warning] Häufige Prüfungsfragen
-> - Erklären Sie die HTTP-Methoden und ihre Semantik
-> - Vergleichen Sie REST und SOAP
+> [!warning] **Prüfungsrelevant**
+> - HTTP-Methoden und ihre Semantik (GET, POST, PUT, DELETE, PATCH)
+> - REST-Prinzipien: Ressourcenorientierung, Zustandslosigkeit, einheitliche Schnittstelle
+> - Vergleich REST vs. SOAP
+> - Idempotenz bei HTTP-Methoden
 
-> [!question] Verständnisfragen
-> - Was bedeutet "zustandslos" und warum ist das wichtig?
-> - Was ist der Unterschied zwischen PUT und POST?
-> - Warum ist REST leichtgewichtiger als SOAP?
+> [!question] **Häufige Prüfungsfragen**
+> 1. Erklären Sie die HTTP-Methoden und ihre Semantik.
+> 2. Vergleichen Sie REST und SOAP.
+> 3. Was bedeutet "zustandslos" und warum ist das wichtig?
+> 4. Was ist der Unterschied zwischen PUT und POST?
+> 5. Warum ist REST leichtgewichtiger als SOAP?
 
 > [!tip] Merkhilfe
 > **REST = Ressourcen über HTTP**: 

@@ -10,7 +10,7 @@ tags:
   - vektor
   - kausalitaet
 created: '2026-10-07'
-modified: '2026-10-13'
+modified: '2026-10-29'
 bereich: VS
 ---
 
@@ -54,21 +54,8 @@ Leslie Lamport definierte 1978 die "happened-before" Relation (→):
 3. **Beim Senden einer Nachricht**: C := C + 1, sende C mit der Nachricht
 4. **Beim Empfangen einer Nachricht mit Zeitstempel T**: C := max(C, T) + 1
 
-```mermaid
-sequenceDiagram
-    participant P1 as Prozess 1
-    participant P2 as Prozess 2
-    participant P3 as Prozess 3
-    
-    Note over P1: C=1
-    P1->>P2: msg (C=1)
-    Note over P2: C=max(0,1)+1=2
-    Note over P2: C=3 (lokales Event)
-    P2->>P3: msg (C=3)
-    Note over P3: C=max(0,3)+1=4
-    P3->>P1: msg (C=4)
-    Note over P1: C=max(1,4)+1=5
-```
+![[lamport-uhr.png]]
+*<span class="fig-id">04-04-02-lamport-uhr</span>: Lamport-Uhr – Nachrichtenaustausch zwischen drei Prozessen mit Zeitstempelberechnung.*
 
 ### Eigenschaften
 
@@ -104,15 +91,8 @@ Bei n Prozessen hat jeder einen Vektor V[1..n]:
 | V < W ⟺ V ≤ W ∧ V ≠ W | V strikt vor W (a → b) |
 | V || W ⟺ ¬(V ≤ W) ∧ ¬(W ≤ V) | Nebenläufig |
 
-```mermaid
-graph LR
-    subgraph beispiel["Vektoruhr-Beispiel (3 Prozesse)"]
-        A["[1,0,0]"] --> B["[2,0,0]"]
-        C["[0,1,0]"] --> D["[0,2,0]"]
-        B --> E["[2,3,0]"]
-        D --> E
-    end
-```
+![[vektoruhr.png]]
+*<span class="fig-id">04-04-02-vektoruhr</span>: Vektoruhren – Beispiel mit drei Prozessen, zeigt kausale Beziehungen und Nebenläufigkeit.*
 
 **Beispiel-Vergleich**:
 - [2,0,0] < [2,3,0]: Kausal davor (→)
@@ -130,24 +110,19 @@ graph LR
 
 ## Zusammenhänge
 
-```mermaid
-graph TD
-    LU[Logische Uhren] --> |"Alternative zu"| ZS[Zeit-Synchronisation]
-    LU --> |"Grundlage für"| KA[Konsensalgorithmen]
-    LAM[Lamport-Uhren] --> |"erweitert durch"| VU[Vektoruhren]
-    LU --> |"ermöglicht"| KK[Kausale Konsistenz]
-    
-    style LU fill:#4a86e8,color:#fff
-```
+| Thema | Beziehung | Verweis |
+|-------|-----------|---------|
+| Zeit-Synchronisation | Alternative zu logischen Uhren | [[01-Zeit-Synchronisation]] |
+| Konsensalgorithmen | nutzen logische Ordnung | [[03-Konsensalgorithmen]] |
+| Lamport-Uhren | werden erweitert durch Vektoruhren | siehe oben |
+| Kausale Konsistenz | wird durch logische Uhren ermöglicht | [[../03-Konsistenz/02-Konsistenzmodelle]] |
 
 ---
 
 ## Prüfungstipps
 
-> [!warning] Häufige Prüfungsfragen
-> - Definieren Sie die Happened-before Relation
-> - Wenden Sie die Lamport-Uhr-Regeln auf ein Beispiel an
-> - Vergleichen Sie zwei gegebene Vektoruhren
+> [!warning] **Prüfungsrelevant**
+NA
 
 > [!question] Verständnisfragen
 > - Warum können Lamport-Uhren keine Nebenläufigkeit erkennen?
@@ -165,14 +140,13 @@ graph TD
 
 ---
 
-## Weiterführende Ressourcen
-
-- [[01-Zeit-Synchronisation]] – Physikalische Alternative
-- [[03-Konsensalgorithmen]] – Anwendung logischer Ordnung
-- [[../03-Konsistenz/02-Konsistenzmodelle]] – Kausale Konsistenz
+> [!tip] **Weiterführende Ressourcen**
+> - [[01-Zeit-Synchronisation]] – Physikalische Alternative
+> - [[03-Konsensalgorithmen]] – Anwendung logischer Ordnung
+> - [[../03-Konsistenz/02-Konsistenzmodelle]] – Kausale Konsistenz
 
 ---
 
 ## Quellen
 
-Die Inhalte basieren auf dem Kurshandbuch "Betriebssysteme, Rechnernetze und verteilte Systeme" der IU Internationalen Hochschule sowie den zugehörigen Vorlesungsmaterialien. Grundlegend ist Lamports Paper "Time, Clocks, and the Ordering of Events in a Distributed System" (1978).
+- Lamport, Leslie: Time, Clocks, and the Ordering of Events in a Distributed System, Communications of the ACM, 1978

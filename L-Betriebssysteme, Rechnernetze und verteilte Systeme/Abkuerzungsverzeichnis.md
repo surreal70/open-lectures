@@ -6,7 +6,7 @@ tags:
   - referenz
   - akronyme
 created: 2026-10-07
-modified: 2026-10-07
+modified: 2026-10-29
 ---
 
 # Abkürzungsverzeichnis
@@ -20,6 +20,7 @@ Dieses Verzeichnis enthält Erklärungen zu Abkürzungen und Akronymen aus den B
 | Abkürzung | Bedeutung | Erklärung |
 |-----------|-----------|-----------|
 | ACK | Acknowledgement | Bestätigung des Empfangs |
+| ACID | Atomicity, Consistency, Isolation, Durability | Transaktionseigenschaften in Datenbanken |
 | AES | Advanced Encryption Standard | Symmetrischer Verschlüsselungsalgorithmus |
 | API | Application Programming Interface | Programmierschnittstelle |
 | ARP | Address Resolution Protocol | Protokoll zur Auflösung von IP- zu MAC-Adressen |
@@ -28,6 +29,7 @@ Dieses Verzeichnis enthält Erklärungen zu Abkürzungen und Akronymen aus den B
 
 | Abkürzung | Bedeutung | Erklärung |
 |-----------|-----------|-----------|
+| BASE | Basically Available, Soft State, Eventually Consistent | Konsistenzmodell für verteilte Systeme |
 | BGP | Border Gateway Protocol | Routing-Protokoll für das Internet |
 | BIOS | Basic Input/Output System | Firmware für Systeminitialisierung |
 | BSD | Berkeley Software Distribution | Unix-Variante |
@@ -63,6 +65,7 @@ Dieses Verzeichnis enthält Erklärungen zu Abkürzungen und Akronymen aus den B
 |-----------|-----------|-----------|
 | FAT | File Allocation Table | Dateisystem |
 | FIFO | First In, First Out | Warteschlangenprinzip |
+| FLP | Fischer, Lynch, Paterson | Unmöglichkeitstheorem für verteilten Konsens |
 | FTP | File Transfer Protocol | Protokoll zur Dateiübertragung |
 
 ## G
