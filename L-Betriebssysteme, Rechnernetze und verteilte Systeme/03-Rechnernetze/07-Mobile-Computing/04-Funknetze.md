@@ -11,7 +11,7 @@ tags:
   - 5g
   - bluetooth
 created: '2026-10-24'
-modified: '2026-10-24'
+modified: '2026-10-29'
 bereich: RN
 ---
 
@@ -29,27 +29,12 @@ bereich: RN
 
 ## Klassifikation nach Reichweite
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│              Funknetze nach Reichweite                      │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  Reichweite    Kategorie        Technologien               │
-│                                                             │
-│  < 10 m        PAN              NFC, Bluetooth, ZigBee     │
-│                (Personal)                                   │
-│                                                             │
-│  10-100 m      LAN              WLAN/WiFi, DECT            │
-│                (Local)                                      │
-│                                                             │
-│  100 m-10 km   MAN              LPWAN, LoRaWAN             │
-│                (Metropolitan)                               │
-│                                                             │
-│  > 10 km       WAN              GSM, LTE, 5G, Satellit     │
-│                (Wide)                                       │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+| Reichweite | Kategorie | Technologien |
+|------------|-----------|--------------|
+| < 10 m | **PAN** (Personal) | NFC, Bluetooth, ZigBee |
+| 10-100 m | **LAN** (Local) | WLAN/WiFi, DECT |
+| 100 m - 10 km | **MAN** (Metropolitan) | LPWAN, LoRaWAN |
+| > 10 km | **WAN** (Wide) | GSM, LTE, 5G, Satellit |
 
 ## WAN – Zelluläre Mobilfunknetze
 
@@ -74,23 +59,9 @@ bereich: RN
 > GSM war der erste digitale Mobilfunkstandard und ist noch heute weltweit in Betrieb (wird aber abgeschaltet).
 
 **Architektur:**
-```
-┌────────┐     ┌─────┐     ┌─────┐     ┌──────┐
-│   MS   │────►│ BTS │────►│ BSC │────►│ MSC  │
-│(Handy) │     │     │     │     │     │      │
-└────────┘     └─────┘     └─────┘     └──────┘
-                                           │
-                                           ▼
-                                       ┌──────┐
-                                       │ PSTN │
-                                       │/ISDN │
-                                       └──────┘
 
-MS  = Mobile Station
-BTS = Base Transceiver Station
-BSC = Base Station Controller
-MSC = Mobile Switching Center
-```
+![[gsm-architecture.png]]
+*<span class="fig-id">03-07-04-gsm-architecture</span>: GSM-Netzarchitektur – vom Mobilgerät (MS) über Basisstationen (BTS/BSC) zur Vermittlung (MSC) und ins Festnetz.*
 
 **Frequenzen:** 900 MHz, 1800 MHz
 **Zellgröße:** 2-35 km
@@ -109,28 +80,20 @@ MSC = Mobile Switching Center
 
 ### 5G (NR – New Radio)
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    5G Use Cases                             │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│         eMBB                    mMTC                        │
-│   (enhanced Mobile        (massive Machine                  │
-│    Broadband)              Type Comm.)                      │
-│   - 20 Gbit/s              - 1 Mio. Geräte/km²             │
-│   - 4K/8K Video            - IoT, Sensoren                  │
-│   - VR/AR                  - Smart City                     │
-│                                                             │
-│                    URLLC                                    │
-│              (Ultra Reliable                                │
-│           Low Latency Comm.)                                │
-│              - < 1 ms Latenz                                │
-│              - 99,999% Zuverlässigkeit                      │
-│              - Autonomes Fahren                             │
-│              - Industrie 4.0                                │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+**5G Use Cases:**
+
+- **eMBB** (enhanced Mobile Broadband)
+  - Bis 20 Gbit/s Datenrate
+  - 4K/8K Video, VR/AR
+  
+- **mMTC** (massive Machine Type Communications)
+  - Bis 1 Mio. Geräte/km²
+  - IoT, Sensoren, Smart City
+  
+- **URLLC** (Ultra Reliable Low Latency Communications)
+  - < 1 ms Latenz
+  - 99,999% Zuverlässigkeit
+  - Autonomes Fahren, Industrie 4.0
 
 **5G Frequenzbereiche:**
 
@@ -156,21 +119,8 @@ MSC = Mobile Switching Center
 
 ### WLAN-Architektur
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   WLAN-Modi                                 │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│   Infrastructure Mode              Ad-hoc Mode             │
-│                                                             │
-│   📱 ─────┐                        📱 ◄────► 📱            │
-│           │                          \    /                 │
-│   📱 ─────┼───► 📶 ───► Internet      \  /                 │
-│           │     AP                     \/                   │
-│   💻 ─────┘                           📱                   │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+![[wlan-modi.png]]
+*<span class="fig-id">03-07-04-wlan-modi</span>: WLAN-Betriebsmodi – Infrastructure Mode mit zentralem Access Point vs. Ad-hoc Mode mit direkter Peer-to-Peer-Kommunikation.*
 
 ### DECT
 
@@ -180,6 +130,8 @@ MSC = Mobile Switching Center
 - Frequenz: 1880-1900 MHz (Europa)
 - Reichweite: 50 m indoor, 300 m outdoor
 - Verschlüsselung: DSAA (optional)
+
+**Kanalzugriff:** DECT verwendet TDMA/FDMA mit 10 Trägerfrequenzen und 24 Zeitschlitzen pro Träger (12 Duplex-Kanäle). Ein Rahmen dauert 10 ms – die ersten 12 Slots dienen dem Downlink (Basisstation → Mobilteil), die letzten 12 dem Uplink.
 
 ## MAN – LPWAN für IoT
 

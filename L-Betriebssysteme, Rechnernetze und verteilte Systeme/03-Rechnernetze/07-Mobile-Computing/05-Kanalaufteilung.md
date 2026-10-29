@@ -11,7 +11,7 @@ tags:
   - cdma
   - ofdma
 created: '2026-10-24'
-modified: '2026-10-24'
+modified: '2026-10-29'
 bereich: RN
 ---
 
@@ -35,18 +35,12 @@ bereich: RN
 
 **Lösung:** Multiplexing – Aufteilung der Ressourcen nach verschiedenen Dimensionen:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│              Dimensionen der Kanalaufteilung                │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│   ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐      │
-│   │Frequenz │  │  Zeit   │  │  Code   │  │  Raum   │      │
-│   │ (FDMA)  │  │ (TDMA)  │  │ (CDMA)  │  │ (SDMA)  │      │
-│   └─────────┘  └─────────┘  └─────────┘  └─────────┘      │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+| Dimension | Verfahren | Beschreibung |
+|-----------|-----------|--------------|
+| **Frequenz** | FDMA | Jeder Teilnehmer erhält eigenen Frequenzbereich |
+| **Zeit** | TDMA | Jeder Teilnehmer erhält Zeitschlitze |
+| **Code** | CDMA | Unterscheidung durch eindeutige Codes |
+| **Raum** | SDMA | Räumliche Trennung durch Zellen/Beamforming |
 
 ## FDMA – Frequency Division Multiple Access
 
@@ -55,19 +49,8 @@ bereich: RN
 
 ### Prinzip
 
-```
-Frequenz ▲
-         │
-    f4   │  ████████████████████████  Teilnehmer D
-         │
-    f3   │  ████████████████████████  Teilnehmer C
-         │
-    f2   │  ████████████████████████  Teilnehmer B
-         │
-    f1   │  ████████████████████████  Teilnehmer A
-         │
-         └──────────────────────────────────────► Zeit
-```
+![[fdma-prinzip.png]]
+*<span class="fig-id">03-07-05-fdma-prinzip</span>: FDMA – jeder Teilnehmer erhält einen exklusiven Frequenzbereich über die gesamte Zeit.*
 
 ### Eigenschaften
 
@@ -90,16 +73,8 @@ Frequenz ▲
 
 ### Prinzip
 
-```
-Frequenz ▲
-         │
-         │  ┌──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┐
-    f    │  │A │B │C │D │A │B │C │D │A │B │C │D │
-         │  └──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┘
-         │
-         └──────────────────────────────────────► Zeit
-              Frame 1    Frame 2    Frame 3
-```
+![[tdma-prinzip.png]]
+*<span class="fig-id">03-07-05-tdma-prinzip</span>: TDMA – alle Teilnehmer teilen sich eine Frequenz, aber erhalten periodisch zugewiesene Zeitschlitze.*
 
 ### Eigenschaften
 
@@ -113,28 +88,8 @@ Frequenz ▲
 
 GSM kombiniert FDMA und TDMA:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                  GSM: FDMA + TDMA                           │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  Frequenz ▲                                                 │
-│           │  ┌──┬──┬──┬──┬──┬──┬──┬──┐                     │
-│  Kanal 3  │  │1 │2 │3 │4 │5 │6 │7 │8 │  8 Zeitschlitze    │
-│           │  └──┴──┴──┴──┴──┴──┴──┴──┘                     │
-│           │  ┌──┬──┬──┬──┬──┬──┬──┬──┐                     │
-│  Kanal 2  │  │1 │2 │3 │4 │5 │6 │7 │8 │                     │
-│           │  └──┴──┴──┴──┴──┴──┴──┴──┘                     │
-│           │  ┌──┬──┬──┬──┬──┬──┬──┬──┐                     │
-│  Kanal 1  │  │1 │2 │3 │4 │5 │6 │7 │8 │                     │
-│           │  └──┴──┴──┴──┴──┴──┴──┴──┘                     │
-│           └──────────────────────────────────────► Zeit     │
-│                                                             │
-│  Jeder GSM-Kanal hat 200 kHz Bandbreite                    │
-│  8 Zeitschlitze pro Frame (4,615 ms)                       │
-│  1 Teilnehmer = 1 Frequenz + 1 Zeitschlitz                 │
-└─────────────────────────────────────────────────────────────┘
-```
+![[gsm-fdma-tdma.png]]
+*<span class="fig-id">03-07-05-gsm-fdma-tdma</span>: GSM kombiniert FDMA (mehrere Kanäle) mit TDMA (8 Zeitschlitze pro Kanal).*
 
 ## CDMA – Code Division Multiple Access
 
@@ -143,41 +98,20 @@ GSM kombiniert FDMA und TDMA:
 
 ### Prinzip
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                      CDMA-Prinzip                           │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  Sender A: Daten × Code_A ──────┐                          │
-│                                  │                          │
-│  Sender B: Daten × Code_B ──────┼──► Überlagertes Signal   │
-│                                  │       im Funkkanal       │
-│  Sender C: Daten × Code_C ──────┘                          │
-│                                                             │
-│                        │                                    │
-│                        ▼                                    │
-│                                                             │
-│  Empfänger: Signal × Code_A ──► Nur Daten von A            │
-│             (Korrelation)                                   │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+![[cdma-prinzip.png]]
+*<span class="fig-id">03-07-05-cdma-prinzip</span>: CDMA – alle Sender übertragen gleichzeitig auf derselben Frequenz, Unterscheidung durch individuelle Codes.*
 
 ### Spreizspektrum-Verfahren
 
 **Direct Sequence Spread Spectrum (DSSS):**
+
+![[dsss-spreading.png]]
+*<span class="fig-id">03-07-05-dsss-spreading</span>: DSSS-Verfahren – das Datenbit wird mit einem Chip-Code multipliziert und über ein breiteres Frequenzband gespreizt.*
+
 - Jedes Datenbit wird mit einem Chip-Code (z.B. 64 Chips) multipliziert
 - Signal wird über breites Frequenzband "gespreizt"
 - Empfänger kennt Code und kann Signal "entspreizen"
-
-```
-Datenbit:     1
-Chip-Code:    1 0 1 1 0 1 0 0 (8 Chips)
-Gesendetes:   1 0 1 1 0 1 0 0
-
-→ Bandbreite wird um Faktor 8 erhöht
-→ Andere Codes erscheinen als Rauschen
-```
+- Andere Codes erscheinen als Rauschen
 
 ### Eigenschaften
 
@@ -206,25 +140,8 @@ Gesendetes:   1 0 1 1 0 1 0 0
 
 ### Prinzip: Frequenzwiederverwendung
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│              Zelluläres Netz mit SDMA                       │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│         ╱╲      ╱╲      ╱╲      ╱╲                         │
-│        ╱ 1╲    ╱ 2╲    ╱ 3╲    ╱ 1╲                        │
-│       ╱    ╲  ╱    ╲  ╱    ╲  ╱    ╲                       │
-│       ╲    ╱  ╲    ╱  ╲    ╱  ╲    ╱                       │
-│        ╲ 4╱╲ 5╱╲ 6╱╲ 7╱╲ 4╱╲ 5╱                           │
-│         ╲╱  ╲╱  ╲╱  ╲╱  ╲╱  ╲╱                            │
-│         ╱╲  ╱╲  ╱╲  ╱╲  ╱╲  ╱╲                            │
-│        ╱ 2╲╱ 3╲╱ 1╲╱ 2╲╱ 3╲╱ 1╲                           │
-│                                                             │
-│  Zahlen = Frequenzgruppen                                  │
-│  Gleiche Zahlen = gleiche Frequenz (mit räumlichem Abstand)│
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+![[sdma-cells.png]]
+*<span class="fig-id">03-07-05-sdma-cells</span>: SDMA – Frequenzwiederverwendung durch räumliche Trennung in Zellen. Gleiche Frequenzgruppen mit ausreichendem Abstand.*
 
 ### Cluster-Größe
 
@@ -238,27 +155,8 @@ Gesendetes:   1 0 1 1 0 1 0 0
 
 In 5G wird SDMA durch **Beamforming** erweitert:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Beamforming (5G)                         │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│                     Antenne (MIMO-Array)                    │
-│                          ║║║║                               │
-│                         ╱    ╲                              │
-│                        ╱      ╲                             │
-│                       ╱        ╲                            │
-│                      ╱    📱    ╲                           │
-│                     ╱   Beam 1   ╲                          │
-│                    ╱              ╲                         │
-│                   ╱                ╲                        │
-│                             📱                              │
-│                           Beam 2                            │
-│                                                             │
-│  Gerichtete Strahlen zu einzelnen Nutzern                  │
-│  Gleiche Frequenz, aber räumlich getrennt                  │
-└─────────────────────────────────────────────────────────────┘
-```
+![[beamforming.png]]
+*<span class="fig-id">03-07-05-beamforming</span>: Beamforming in 5G – gerichtete Strahlen zu einzelnen Nutzern ermöglichen räumliche Trennung auf derselben Frequenz.*
 
 ## OFDMA – Orthogonal Frequency Division Multiple Access
 
@@ -267,27 +165,8 @@ In 5G wird SDMA durch **Beamforming** erweitert:
 
 ### Prinzip
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   OFDMA Resource Grid                       │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  Frequenz ▲                                                 │
-│           │  ┌──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┬──┐        │
-│  Subcarr. │  │A │A │B │B │C │A │A │B │C │C │D │D │        │
-│     12    │  ├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤        │
-│     11    │  │A │A │B │B │C │A │B │B │C │C │D │D │        │
-│     10    │  ├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤        │
-│      9    │  │A │B │B │C │C │A │B │B │C │D │D │D │        │
-│      .    │  ├──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┼──┤        │
-│      .    │  │  │  │  │  │  │  │  │  │  │  │  │  │        │
-│           └──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──┴──► Zeit │
-│               Slot 1    Slot 2    Slot 3    Slot 4         │
-│                                                             │
-│  A, B, C, D = Verschiedene Nutzer                          │
-│  Jeder Nutzer bekommt Resource Blocks (RB)                 │
-└─────────────────────────────────────────────────────────────┘
-```
+![[ofdma-grid.png]]
+*<span class="fig-id">03-07-05-ofdma-grid</span>: OFDMA Resource Grid – flexible Zuweisung von Frequenz-Zeit-Blöcken (Resource Blocks) an verschiedene Nutzer.*
 
 ### Vorteile
 
@@ -311,9 +190,7 @@ In 5G wird SDMA durch **Beamforming** erweitert:
 > [!warning] **Prüfungsrelevant**
 > - Unterschied FDMA, TDMA, CDMA, SDMA
 > - Prinzip der Frequenzwiederverwendung (Zellen)
-> - GSM nutzt FDMA + TDMA
-> - UMTS nutzt W-CDMA
-> - LTE nutzt OFDMA
+
 
 > [!question] Typische Prüfungsfragen
 > - Erklären Sie den Unterschied zwischen FDMA und TDMA.

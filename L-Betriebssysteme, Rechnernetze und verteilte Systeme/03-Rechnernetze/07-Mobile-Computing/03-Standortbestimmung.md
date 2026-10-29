@@ -10,7 +10,7 @@ tags:
   - location
   - positioning
 created: '2026-10-24'
-modified: '2026-10-24'
+modified: '2026-10-29'
 bereich: RN
 ---
 
@@ -27,21 +27,11 @@ bereich: RN
 
 ## Übersicht Lokalisierungsmethoden
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                 Lokalisierungsmethoden                      │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │
-│  │    GNSS     │  │    WLAN     │  │  Mobilfunk  │         │
-│  │ (Satellit)  │  │  (WiFi)     │  │  (Zellen)   │         │
-│  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘         │
-│         │                │                │                 │
-│    2-15 m           10-50 m          50-300 m              │
-│   outdoor          in/outdoor        outdoor               │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+| Methode | Genauigkeit | Einsatzbereich |
+|---------|-------------|----------------|
+| **GNSS (Satellit)** | 2-15 m | Outdoor |
+| **WLAN (WiFi)** | 10-50 m | Indoor/Outdoor |
+| **Mobilfunk (Zellen)** | 50-300 m | Outdoor |
 
 ## GNSS - Global Navigation Satellite System
 
@@ -61,21 +51,8 @@ bereich: RN
 
 ### Funktionsprinzip GNSS
 
-```
-              Satellit 1                Satellit 2
-                  🛰️                        🛰️
-                   \                       /
-                    \  d1              d2 /
-                     \                   /
-                      \       🛰️       /
-                       \   Satellit 3 /
-                        \     |      /
-                         \   d3    /
-                          \  |   /
-                           \ | /
-                            📱
-                         Empfänger
-```
+![[gnss-triangulation.png]]
+*<span class="fig-id">03-07-03-gnss-triangulation</span>: GNSS-Positionsbestimmung durch Trilateration – aus den Entfernungen d1, d2, d3 zu mindestens drei Satelliten wird die Position berechnet.*
 
 **Triangulation durch Laufzeitmessung:**
 
@@ -116,23 +93,8 @@ bereich: RN
 
 ### Funktionsprinzip
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   WLAN-Ortung                               │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│    📶 AP1 (-65 dBm)        📶 AP2 (-72 dBm)                │
-│         \                      /                            │
-│          \                    /                             │
-│           \      📱         /                               │
-│            \    Gerät      /                                │
-│             \             /                                 │
-│              \           /                                  │
-│               📶 AP3 (-80 dBm)                             │
-│                                                             │
-│  Signalstärke → Entfernung → Position (Trilateration)      │
-└─────────────────────────────────────────────────────────────┘
-```
+![[wlan-positioning.png]]
+*<span class="fig-id">03-07-03-wlan-positioning</span>: WLAN-Ortung durch Trilateration – aus den Signalstärken mehrerer Access Points wird die Position bestimmt.*
 
 **Methoden:**
 
@@ -161,22 +123,8 @@ Große Technologieunternehmen betreiben Datenbanken mit WLAN-Standorten:
 
 Das Mobilgerät ist immer mit einer oder mehreren Funkzellen verbunden:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                  Funkzellen-Triangulation                   │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│       🗼 Zelle A              🗼 Zelle B                    │
-│      /    \                  /    \                         │
-│     /      \                /      \                        │
-│    /   📱   \--------------/        \                       │
-│   /   Gerät  \            /          \                      │
-│  /            \          /            \                     │
-│               🗼 Zelle C                                    │
-│                                                             │
-│  Mehrere Zellen → Triangulation → Position                 │
-└─────────────────────────────────────────────────────────────┘
-```
+![[cell-triangulation.png]]
+*<span class="fig-id">03-07-03-cell-triangulation</span>: Funkzellen-Triangulation – durch Messung zu mehreren Basisstationen wird die Position eingegrenzt.*
 
 ### Genauigkeit nach Technologie
 
@@ -205,31 +153,8 @@ Das Mobilgerät ist immer mit einer oder mehreren Funkzellen verbunden:
 
 Moderne Smartphones kombinieren mehrere Verfahren:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│              Hybride Ortung (Sensor Fusion)                 │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌─────┐   ┌─────┐   ┌─────┐   ┌─────┐   ┌─────┐          │
-│  │GNSS │   │WLAN │   │Cell │   │BT   │   │IMU  │          │
-│  │     │   │     │   │     │   │     │   │     │          │
-│  └──┬──┘   └──┬──┘   └──┬──┘   └──┬──┘   └──┬──┘          │
-│     │         │         │         │         │              │
-│     └─────────┴────┬────┴─────────┴─────────┘              │
-│                    │                                        │
-│                    ▼                                        │
-│          ┌─────────────────┐                               │
-│          │  Sensor Fusion  │                               │
-│          │   (Kalman)      │                               │
-│          └────────┬────────┘                               │
-│                   │                                         │
-│                   ▼                                         │
-│          ┌─────────────────┐                               │
-│          │   Optimierte    │                               │
-│          │    Position     │                               │
-│          └─────────────────┘                               │
-└─────────────────────────────────────────────────────────────┘
-```
+![[sensor-fusion.png]]
+*<span class="fig-id">03-07-03-sensor-fusion</span>: Hybride Ortung durch Sensor Fusion – verschiedene Quellen werden mittels Kalman-Filter zu einer optimierten Position kombiniert.*
 
 **Komponenten:**
 - **GNSS**: Primäre Quelle outdoor
@@ -255,8 +180,6 @@ Für Gebäude existieren spezielle Systeme:
 
 > [!warning] **Prüfungsrelevant**
 > - GNSS-Systeme: GPS, GLONASS, Galileo, BeiDou
-> - Funktionsprinzip der Satellitennavigation (Trilateration)
-> - Genauigkeitsstufen (zivil, DGPS, RTK)
 > - Alternative Ortung: WLAN, Funkzellen
 > - Hybride Ortung und Sensor Fusion
 

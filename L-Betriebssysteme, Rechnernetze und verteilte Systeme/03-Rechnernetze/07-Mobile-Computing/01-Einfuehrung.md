@@ -8,7 +8,7 @@ tags:
   - wireless
   - mobility
 created: '2026-10-24'
-modified: '2026-10-24'
+modified: '2026-10-29'
 bereich: RN
 ---
 
@@ -63,18 +63,8 @@ Mobile Geräte wechseln häufig ihren Standort – teilweise sehr schnell (z.B. 
 
 ## Abgrenzung zu verwandten Konzepten
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Verteilte Systeme                        │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │              Mobile Computing                        │   │
-│  │  ┌─────────────────────────────────────────────┐    │   │
-│  │  │         Ubiquitous Computing                │    │   │
-│  │  │  (Allgegenwärtige Vernetzung, IoT)         │    │   │
-│  │  └─────────────────────────────────────────────┘    │   │
-│  └─────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────┘
-```
+![[computing-hierarchy.png]]
+*<span class="fig-id">03-07-01-computing-hierarchy</span>: Einordnung von Mobile Computing im Kontext verteilter Systeme und Ubiquitous Computing.*
 
 | Begriff | Fokus | Beispiel |
 |---------|-------|----------|

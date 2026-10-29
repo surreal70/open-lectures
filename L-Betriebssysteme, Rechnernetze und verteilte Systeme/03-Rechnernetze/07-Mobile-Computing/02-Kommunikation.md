@@ -10,7 +10,7 @@ tags:
   - tcp
   - quic
 created: '2026-10-24'
-modified: '2026-10-24'
+modified: '2026-10-29'
 bereich: RN
 ---
 
@@ -55,21 +55,8 @@ Zwei Arten von Abkopplungen:
 
 TCP bietet bereits Mechanismen zur Fehlerbehebung:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    TCP-Retransmission                       │
-├─────────────────────────────────────────────────────────────┤
-│  Client              Unterbrechung              Server      │
-│    │                      │                        │        │
-│    │──── Segment 1 ──────►│                        │        │
-│    │                      │ (verloren)             │        │
-│    │                      │                        │        │
-│    │◄──── Timeout ────────│                        │        │
-│    │                      │                        │        │
-│    │──── Segment 1 (Retry)────────────────────────►│        │
-│    │◄──────────────────── ACK ─────────────────────│        │
-└─────────────────────────────────────────────────────────────┘
-```
+![[tcp-retransmission.png]]
+*<span class="fig-id">03-07-02-tcp-retransmission</span>: TCP-Retransmission bei Verbindungsunterbrechung – das verlorene Segment wird nach Timeout erneut gesendet.*
 
 **Probleme von TCP bei mobilen Verbindungen:**
 - Interpretiert Paketverlust als Stau → reduziert Sendefenster
@@ -80,17 +67,11 @@ TCP bietet bereits Mechanismen zur Fehlerbehebung:
 
 Proxies können mobile Verbindungen optimieren:
 
-```
-┌────────┐       ┌─────────┐       ┌────────┐
-│ Mobile │ ───── │  Proxy  │ ───── │ Server │
-│ Device │  funk │ (stabil)│ kabel │        │
-└────────┘       └─────────┘       └────────┘
-     ▲                │
-     │                │
-  instabil         stabil
-```
+![[proxy-architecture.png]]
+*<span class="fig-id">03-07-02-proxy-architecture</span>: Proxy als stabiler Vermittler zwischen instabiler Funkverbindung und kabelgebundenem Server.*
 
 **Proxy-Funktionen:**
+
 | Funktion | Beschreibung |
 |----------|--------------|
 | **Caching** | Speichert häufig angefragte Daten |
@@ -129,19 +110,8 @@ Klassische VPNs (IPsec, OpenVPN) haben Probleme bei IP-Wechseln:
 | **Multiplexing ohne HoL-Blocking** | Streams unabhängig voneinander |
 | **Integrierte Verschlüsselung** | TLS 1.3 eingebaut |
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│              TCP vs. QUIC bei IP-Wechsel                    │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  TCP:    [WLAN: 192.168.1.5] ──X──► Verbindung abbricht    │
-│          [LTE: 10.0.0.42]   ──────► Neuer 3-Way-Handshake  │
-│                                                             │
-│  QUIC:   [WLAN: 192.168.1.5] ──────┐                       │
-│          [LTE: 10.0.0.42]   ───────┴──► Gleiche Connection │
-│                                         (via Connection-ID) │
-└─────────────────────────────────────────────────────────────┘
-```
+![[tcp-vs-quic.png]]
+*<span class="fig-id">03-07-02-tcp-vs-quic</span>: Vergleich TCP vs. QUIC bei IP-Wechsel – QUIC erhält die Verbindung durch Connection-ID.*
 
 **HTTP/3:**
 - Nutzt QUIC als Transportprotokoll
@@ -152,23 +122,8 @@ Klassische VPNs (IPsec, OpenVPN) haben Probleme bei IP-Wechseln:
 
 Moderne mobile Anwendungen sollten nach dem **Offline-First-Prinzip** entwickelt werden:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Offline-First App                        │
-├─────────────────────────────────────────────────────────────┤
-│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐     │
-│  │   UI/UX     │◄───│ Local Cache │◄───│   Sync      │     │
-│  │             │    │  (SQLite,   │    │   Engine    │     │
-│  │             │───►│  IndexedDB) │───►│             │     │
-│  └─────────────┘    └─────────────┘    └──────┬──────┘     │
-│                                               │             │
-│                                               ▼             │
-│                                        ┌─────────────┐     │
-│                                        │   Server    │     │
-│                                        │   (Cloud)   │     │
-│                                        └─────────────┘     │
-└─────────────────────────────────────────────────────────────┘
-```
+![[offline-first-app.png]]
+*<span class="fig-id">03-07-02-offline-first-app</span>: Offline-First Architektur – lokaler Cache ermöglicht Funktion auch ohne Netzwerkverbindung.*
 
 **Prinzipien:**
 1. App funktioniert immer – auch ohne Netzwerk
