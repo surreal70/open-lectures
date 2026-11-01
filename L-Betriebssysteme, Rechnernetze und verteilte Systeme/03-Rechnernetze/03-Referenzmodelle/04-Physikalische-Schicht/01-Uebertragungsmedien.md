@@ -26,12 +26,12 @@ bereich: RN
 
 ## Übersicht der Übertragungsmedien
 
-| Leitungsgebunden | Beschreibung | Drahtlos | Beschreibung |
-|------------------|--------------|----------|--------------|
-| **Twisted Pair** | Kupferkabel (Cat5e-Cat8) | **WLAN (802.11)** | 2,4 / 5 / 6 GHz |
-| **Koaxialkabel** | Historisch (10BASE2/5) | **Bluetooth** | 2,4 GHz, PAN |
-| **Glasfaser** | Lichtübertragung | **Mobilfunk** | LTE, 5G |
-| **Twinax** | Rechenzentrum (kurz) | **Satellit/Richtfunk** | Weitverkehr |
+| Leitungsgebunden | Beschreibung             | Drahtlos               | Beschreibung    |
+| ---------------- | ------------------------ | ---------------------- | --------------- |
+| **Twisted Pair** | Kupferkabel (Cat5e-Cat8) | **WLAN (802.11)**      | 2,4 / 5 / 6 GHz |
+| **Koaxialkabel** | Historisch (10BASE2/5)   | **Bluetooth**          | 2,4 GHz, PAN    |
+| **Glasfaser**    | Lichtübertragung         | **Mobilfunk**          | LTE, 5G         |
+| **Twinax**       | Rechenzentrum (kurz)     | **Satellit/Richtfunk** | Weitverkehr     |
 
 ## Twisted-Pair-Kabel (Kupfer)
 
