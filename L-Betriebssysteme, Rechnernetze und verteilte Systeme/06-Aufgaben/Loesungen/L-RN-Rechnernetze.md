@@ -7,7 +7,7 @@ tags:
   - klausur
 bereich: RN
 created: '2026-11-01'
-modified: '2026-11-01'
+modified: '2025-07-18'
 ---
 
 # Lösung: Rechnernetze (Klausurformat)
@@ -143,7 +143,7 @@ modified: '2026-11-01'
 > [!success] **Musterlösung**
 > | Anwendungsschicht | Transportschicht | Internetschicht | Netzzugangsschicht |
 > |-------------------|-----------------|-----------------|-------------------|
-> | HTTP, DNS | TCP, UDP | IP, ARP | Ethernet |
+> | HTTP, DNS | TCP, UDP | IP | Ethernet, ARP |
 
 ---
 
