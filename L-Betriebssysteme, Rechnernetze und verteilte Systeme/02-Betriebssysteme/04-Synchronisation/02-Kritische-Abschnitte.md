@@ -184,7 +184,9 @@ Das Problem der kritischen Abschnitte wurde in den 1960er Jahren erkannt, als di
 
 ---
 
-## Prüfungstipps
+Root Bridge Election (Bridge ID = Priority + MAC)
+> - Port-Rollen (Root, Designated, Blocked)
+> - Port-Zustände (Blocking, Listening, Learning, Forwarding)## Prüfungstipps
 
 > [!warning] **Prüfungsrelevant**
 > - Definition kritischer Abschnitt

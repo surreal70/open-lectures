@@ -116,12 +116,12 @@ Die Subnetzmaske definiert die Grenze zwischen Netzwerk- und Hostanteil:
 Originalnetzwerk: 192.168.1.0/24 (254 Hosts)
 Subnetting auf /26 ergibt 4 Subnetze mit je 62 Hosts:
 
-| Subnetz | Netzwerkadresse | Hostbereich | Broadcast |
-|---------|-----------------|-------------|-----------|
-| 1 | 192.168.1.0/26 | 192.168.1.1 – 192.168.1.62 | 192.168.1.63 |
-| 2 | 192.168.1.64/26 | 192.168.1.65 – 192.168.1.126 | 192.168.1.127 |
-| 3 | 192.168.1.128/26 | 192.168.1.129 – 192.168.1.190 | 192.168.1.191 |
-| 4 | 192.168.1.192/26 | 192.168.1.193 – 192.168.1.254 | 192.168.1.255 |
+| Subnetz | Netzwerkadresse  | Hostbereich                   | Broadcast     |
+| ------- | ---------------- | ----------------------------- | ------------- |
+| 1       | 192.168.1.0/26   | 192.168.1.1 – 192.168.1.62    | 192.168.1.63  |
+| 2       | 192.168.1.64/26  | 192.168.1.65 – 192.168.1.126  | 192.168.1.127 |
+| 3       | 192.168.1.128/26 | 192.168.1.129 – 192.168.1.190 | 192.168.1.191 |
+| 4       | 192.168.1.192/26 | 192.168.1.193 – 192.168.1.254 | 192.168.1.255 |
 
 ## IP-Adressklassen (historisch)
 
@@ -204,8 +204,6 @@ Für Dokumentation, Bücher und Beispielkonfigurationen sind drei TEST-NET-Berei
 
 #### Link-Local (APIPA)
 
-#### Link-Local (APIPA)
-
 **Automatische Zuweisung wenn:**
 - Kein DHCP-Server erreichbar
 - Statische IP nicht konfiguriert
@@ -234,12 +232,6 @@ Für Dokumentation, Bücher und Beispielkonfigurationen sind drei TEST-NET-Berei
 | 224.0.1.0/24 | Internetwork | Kontrollierte Multicast-Dienste |
 | 239.0.0.0/8 | Administrativ | Privater Multicast (wie RFC 1918) |
 
-> [!tip] Prüfungshinweis
-> Die speziellen Adressbereiche sind ein beliebtes Prüfungsthema:
-> - Private Adressen (10/172.16/192.168) und deren Größe
-> - Dokumentationsadressen für Beispiele
-> - Loopback (127.0.0.1) und Link-Local (169.254.x.x)
-> - CGNAT als Übergangslösung
 
 ## NAT - Network Address Translation
 

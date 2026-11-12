@@ -41,7 +41,9 @@ Die Synchronisation adressiert drei zentrale Probleme, die eng miteinander zusam
 
 ### 1. Kritische Abschnitte
 
-Wenn ein Programm auf gemeinsame Daten zugreift, muss dieser Codebereich besonders geschützt werden. Man nennt ihn **kritischen Abschnitt**. Das fundamentale Problem: Wie stellt man sicher, dass nur **ein einziger Prozess** gleichzeitig in einem kritischen Abschnitt arbeitet?
+Wenn ein Programm auf gemeinsamRoot Bridge Election (Bridge ID = Priority + MAC)
+> - Port-Rollen (Root, Designated, Blocked)
+> - Port-Zustände (Blocking, Listening, Learning, Forwarding)e Daten zugreift, muss dieser Codebereich besonders geschützt werden. Man nennt ihn **kritischen Abschnitt**. Das fundamentale Problem: Wie stellt man sicher, dass nur **ein einziger Prozess** gleichzeitig in einem kritischen Abschnitt arbeitet?
 
 Die Anforderungen sind strenger als man zunächst denkt. Es genügt nicht, einfach "einen nach dem anderen" durchzulassen. Ein korrekter Schutzmechanismus muss garantieren:
 - **Gegenseitiger Ausschluss**: Niemals zwei Prozesse gleichzeitig im kritischen Bereich

@@ -266,7 +266,7 @@ Die Default-Route (0.0.0.0/0) wird verwendet, wenn keine spezifischere Route exi
 ## Prüfungsrelevante Themen
 
 > [!warning] **Prüfungsrelevant**
-> Routing ist ein zentrales Thema in der Netzwerktechnik und wird regelmäßig in Prüfungen abgefragt.
+> Grundlegende Funktionsweise von IP Routing und Zusamengang mit IP-Subnetting verstehen.
 
 > [!question] **Typische Prüfungsfragen**
 > 1. Erklären Sie den Unterschied zwischen statischem und dynamischem Routing.

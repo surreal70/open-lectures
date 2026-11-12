@@ -112,13 +112,13 @@ bereich: RN
 
 ### Spezielle MAC-Adressen
 
-| Adresse | Bedeutung |
-|---------|-----------|
+| Adresse           | Bedeutung           |
+| ----------------- | ------------------- |
 | FF:FF:FF:FF:FF:FF | Broadcast (an alle) |
-| 01:00:5E:xx:xx:xx | IPv4 Multicast |
-| 33:33:xx:xx:xx:xx | IPv6 Multicast |
+| 01:00:5E:xx:xx:xx | IPv4 Multicast      |
+| 33:33:xx:xx:xx:xx | IPv6 Multicast      |
 | 01:80:C2:00:00:00 | STP (Spanning Tree) |
-| 01:80:C2:00:00:0E | LLDP |
+| 01:80:C2:00:00:0E | LLDP                |
 
 ### OUI-Beispiele (Hersteller)
 
@@ -380,7 +380,6 @@ wobei:
 ## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-> - Felder eines Ethernet-Frames (Präambel, SFD, MAC-Adressen, Type, Payload, FCS)
 > - MAC-Adressen: 48 Bit, Aufbau OUI (Hersteller) + NIC (Geräte-ID)
 > - Broadcast-Adresse: FF:FF:FF:FF:FF:FF
 

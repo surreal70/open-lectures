@@ -447,8 +447,6 @@ Statt auf Paketverlust zu warten, können Router Stau explizit signalisieren:
 > - TCP-Header-Aufbau und Flags
 > - 3-Way-Handshake (SYN, SYN-ACK, ACK)
 > - Sequenznummern und ACK-Berechnung
-> - Sliding Window und Flusskontrolle
-> - Slow Start und Congestion Control
 
 > [!question] Typische Prüfungsfragen
 > - Beschreiben Sie den 3-Way-Handshake beim TCP-Verbindungsaufbau.

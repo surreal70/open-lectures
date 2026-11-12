@@ -247,10 +247,7 @@ graph LR
 > [!warning] **Prüfungsrelevant**
 > - Zweck von ARP (Brücke Layer 2/Layer 3)
 > - ARP-Ablauf: Request (Broadcast) → Reply (Unicast)
-> - ARP-Paketformat (Operation: 1=Request, 2=Reply)
 > - ARP-Cache und Timeouts
-> - ARP-Spoofing als Sicherheitsrisiko
-> - Unterschied ARP vs. NDP
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Warum wird ein ARP-Request als Broadcast gesendet?

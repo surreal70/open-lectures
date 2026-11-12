@@ -311,11 +311,8 @@ graph LR
 
 > [!warning] **Prüfungsrelevant**
 > - Warum sind Layer-2-Schleifen problematisch?
-> - Root Bridge Election (Bridge ID = Priority + MAC)
-> - Port-Rollen (Root, Designated, Blocked)
-> - Port-Zustände (Blocking, Listening, Learning, Forwarding)
 > - STP vs. RSTP Konvergenzzeit
-> - BPDU Guard / Root Guard
+
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Was passiert ohne STP bei redundanten Verbindungen?

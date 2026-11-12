@@ -204,9 +204,7 @@ graph LR
 > [!warning] **Prüfungsrelevant**
 > - Stratum-Hierarchie (0-16)
 > - Warum ist Zeitsynchronisation wichtig?
-> - Offset-Berechnung (Grundprinzip)
 > - NTP vs. SNTP vs. PTP
-> - Sicherheitsrisiken (Amplification)
 
 > [!question] **Häufige Prüfungsfragen**
 > 1. Was bedeutet Stratum 2?

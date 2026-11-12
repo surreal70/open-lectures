@@ -278,7 +278,7 @@ Eine typische RESTful API für Benutzer (`/users`):
 ## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-> - HTTP-Methoden (GET, POST, PUT, DELETE)
+> - HTTP-Methoden (GET, POST)
 > - Wichtige Statuscodes (200, 301, 404, 500)
 > - Request/Response-Aufbau
 > - HTTP vs. HTTPS (TLS)

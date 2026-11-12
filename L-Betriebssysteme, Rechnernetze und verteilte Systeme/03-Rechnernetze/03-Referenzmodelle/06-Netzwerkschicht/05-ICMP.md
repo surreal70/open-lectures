@@ -284,8 +284,6 @@ ICMPv6 ersetzt ARP vollständig durch NDP:
 > - ICMP-Nachrichtentypen (Echo, Time Exceeded, Destination Unreachable)
 > - Wie funktioniert Ping? (Type 8 → Type 0)
 > - Wie funktioniert Traceroute? (TTL-Trick)
-> - Unterschied ICMPv4 vs. ICMPv6
-> - Warum ist ICMPv6 wichtiger als ICMPv4? (NDP)
 
 > [!question] Typische Prüfungsfragen
 > - Welche ICMP-Typen werden bei Ping verwendet?

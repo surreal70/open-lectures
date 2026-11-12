@@ -213,11 +213,9 @@ ip4:...       → Erlaubt IP-Bereich
 ## Prüfungsrelevanz
 
 > [!warning] **Prüfungsrelevant**
-> - SMTP-Kommandos (EHLO, MAIL FROM, RCPT TO, DATA)
 > - Unterschied IMAP vs. POP3
 > - Portnummern für E-Mail-Protokolle
 > - E-Mail-Übertragungsweg (MUA → MTA → MTA → MDA)
-> - Grundlegendes Verständnis von SPF/DKIM
 
 > [!question] Typische Prüfungsfragen
 > - Beschreiben Sie den Weg einer E-Mail vom Absender zum Empfänger.
